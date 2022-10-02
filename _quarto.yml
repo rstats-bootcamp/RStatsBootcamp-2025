@@ -5,13 +5,14 @@ project:
 website:
   title: "R Stats Bootcamp"
   sidebar:
-#    logo: 
+    logo: "img/rstats-logo.png"
     style: "docked"
     search: true
     contents: 
       - section: "Information"
         contents:
           - index.qmd
+          - about.qmd
 format:
   html:
     highlight-style: a11y
