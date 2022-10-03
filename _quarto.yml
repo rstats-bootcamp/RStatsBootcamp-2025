@@ -12,7 +12,11 @@ website:
       - section: "Information"
         contents:
           - index.qmd
+          - schedule.qmd
+      - section: "Module 1: R"
+        contents:
           - about.qmd
+ 
 format:
   html:
     highlight-style: a11y

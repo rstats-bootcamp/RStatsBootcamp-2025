@@ -4,13 +4,195 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is a self-guided tutorial designed for people new to data science, statistics and R, and for those who would like a review. The materials can help you get going with critical skills in R programming, traditional data analysis and open science tools. The aim is to provide open, foundational training you can build on in the most efficient format possible. This will help prepare you for further training and to get you working with data in R as quickly as possible.\nThe Bootcamp is self-paced and has built-in assessment materials. The material is meant to work through in order as an experience, but is not in any way intended to be a reference to the presented topics."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "“Data science”"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp",
+    "href": "slides-overview.html#r-stats-bootcamp",
+    "title": "Bootcamp overview",
+    "section": "R Stats bootcamp",
+    "text": "R Stats bootcamp\n\n\nhttps://rstats-bootcamp.github.io/website/"
+  },
+  {
+    "objectID": "slides-overview.html#what-is-the-r-stats-bootcamp-about",
+    "href": "slides-overview.html#what-is-the-r-stats-bootcamp-about",
+    "title": "Bootcamp overview",
+    "section": "What is the R Stats Bootcamp about?",
+    "text": "What is the R Stats Bootcamp about?\n\n\nModern tools for thinking about data :: evidence :: claims"
+  },
+  {
+    "objectID": "slides-overview.html#traditional-bootcamp",
+    "href": "slides-overview.html#traditional-bootcamp",
+    "title": "Bootcamp overview",
+    "section": "Traditional Bootcamp",
+    "text": "Traditional Bootcamp\n\nDifficult, unfriendly,\nweed out the weak"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-1",
+    "href": "slides-overview.html#r-stats-bootcamp-1",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp",
+    "text": "R Stats Bootcamp\n\nWork hard, do something good with others,\nhelp everyone succeed"
+  },
+  {
+    "objectID": "slides-overview.html#title",
+    "href": "slides-overview.html#title",
+    "title": "Bootcamp overview",
+    "section": "title",
+    "text": "title"
+  },
+  {
+    "objectID": "slides-overview.html#title-1",
+    "href": "slides-overview.html#title-1",
+    "title": "Bootcamp overview",
+    "section": "title",
+    "text": "title"
+  },
+  {
+    "objectID": "slides-overview.html#title-2",
+    "href": "slides-overview.html#title-2",
+    "title": "Bootcamp overview",
+    "section": "title",
+    "text": "title"
+  },
+  {
+    "objectID": "slides-overview.html#purpose-of-r-stats-bootcamp",
+    "href": "slides-overview.html#purpose-of-r-stats-bootcamp",
+    "title": "Bootcamp overview",
+    "section": "Purpose of R Stats Bootcamp",
+    "text": "Purpose of R Stats Bootcamp\n\nProvide a self-guided resource to:\n\nLearn or refresh skills in R scripting, basic statistics\nBoost success in statistics for assessments, project work\nBe accessible with no prior knowledge"
+  },
+  {
+    "objectID": "slides-overview.html#who-is-the-r-stats-bootcamp-for",
+    "href": "slides-overview.html#who-is-the-r-stats-bootcamp-for",
+    "title": "Bootcamp overview",
+    "section": "Who is the R Stats Bootcamp for?",
+    "text": "Who is the R Stats Bootcamp for?\n\n\nStudents in applied sciences\nAspiring data scientists\nAcademic colleague who want to learn R\nPostgraduate researchers\nOther nteresting people (who want to learn from data)"
+  },
+  {
+    "objectID": "slides-overview.html#what-will-you-learn",
+    "href": "slides-overview.html#what-will-you-learn",
+    "title": "Bootcamp overview",
+    "section": "What will you learn",
+    "text": "What will you learn\n\n\nR scripting basics\nBest practice for reproducible research\nTidy data practice\nA practical review of basic statistics (just enough…)"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization",
+    "href": "slides-overview.html#r-stats-bootcamp-organization",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\n\nhttps://rstats-bootcamp.github.io/website/\n\n\nModule 1: Introduction to R and Rstudio\nModule 2: R for traditional data analysis\nModule 3: Reproducible code, R Markdown, and Github"
+  },
+  {
+    "objectID": "slides-overview.html#coding",
+    "href": "slides-overview.html#coding",
+    "title": "Bootcamp overview",
+    "section": "Coding",
+    "text": "Coding\n\n\nIt is important to type and run code for practice"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "This material is intended to require a significant time commitment to complete (most students report about 20-50 hours). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.\nFor all of the lab pages it is intended that you type and run 100% of the code in examples and then explicitly answer the exercise questions, which are based on examples for given code on the pages. Thus, to answer the questions it is recommended to adapt code you have already run when completing the pages.\n\n\n\n\nTopics\n\n\n\n\n Bootcamp overview \nSetup\n\n\nModule 1: R scripting\n1.1 R syntax\n1.2 Functions and packages\n1.3 Data objects\n1.4 Data frames\n1.5 Data sub-setting and manipulation\n\n\nModule 2: Statistics review\n2.1 Question, explore, analyze\n2.2 Sampling distributions\n2.3 Correlation\n2.4 Simple linear regression\n2.5 T-test\n2.6 1-way ANOVA\n\n\nModule 3: reproducibility, collaboration\n3.1 Reproducibility\n3.2 Automate reports\n3.3 Git and version control"
+  },
+  {
+    "objectID": "schedule.html#references",
+    "href": "schedule.html#references",
+    "title": "Schedule",
+    "section": "References",
+    "text": "References\nTextbook: James et al. 2021 Introduction to statistical learning 2ed\nall refs zip\nAho, K., Derryberry, D., Peterson, T., 2014. Model selection for ecologists: the worldviews of AIC and BIC. Ecology 95, 631–636.\nBarnard, D.M., Germino, M.J., Pilliod, D.S., Arkle, R.S., Applestein, C., Davidson, B.E., Fisk, M.R., 2019. Cannot see the random forest for the decision trees: selecting predictive models for restoration ecology. Restoration Ecology 27, 1053–1063.\nEbrahimi, M.A., Khoshtaghaza, M.H., Minaei, S., Jamshidi, B., 2017. Vision-based pest detection based on SVM classification method. Computers and Electronics in Agriculture 137, 52–58.\nEfron, B., 2020. Prediction, Estimation, and Attribution. Journal of the American Statistical Association 115, 636–655.\nHowell, O., Wenping, C., Marsland, R., Mehta, P., 2020. Machine learning as ecology. J. Phys. A: Math. Theor. 53, 334001.\nJames, G., Witten, D., Hastie, T., Tibshirani, R., 2021. An Introduction to Statistical Learning: with Applications in R, Springer Texts in Statistics 2ed. Springer-Verlag, New York.\nMelesse, S., Sobratee, N., Workneh, T., 2016. Application of logistic regression statistical technique to evaluate tomato quality subjected to different pre- and post-harvest treatments. Biological Agriculture & Horticulture 32, 277–287.\nOtukei, J.R., Blaschke, T., 2010. Land cover change assessment using decision trees, support vector machines and maximum likelihood classification algorithms. International Journal of Applied Earth Observation and Geoinformation, Supplement Issue on “Remote Sensing for Africa – A Special Collection from the African Association for Remote Sensing of the Environment (AARSE)” 12, S27–S31."
+  },
+  {
+    "objectID": "schedule.html#harper-adams-data-science",
+    "href": "schedule.html#harper-adams-data-science",
+    "title": "Schedule",
+    "section": "Harper Adams Data Science",
+    "text": "Harper Adams Data Science\n\nThis module supports the MSc in Data Science for Global Agriculture, Food, and Environment at Harper Adams University, led by Ed Harris."
+  },
+  {
+    "objectID": "about.html#r-stats-bootcamp",
+    "href": "about.html#r-stats-bootcamp",
+    "title": "About",
+    "section": "R Stats Bootcamp",
+    "text": "R Stats Bootcamp\nThis is a website created to help people get started in statistical analysis and data science: to explore, visualize and analyze data, and to share and communicate results with others. The goal is to use a practical approach to scientific question formulation and evidence, through curating a range of high quality and open resources. The philosophy is practical with more emphasis on asking meaningful questions and statistical reasoning (and less on programming and engineering)."
+  },
+  {
+    "objectID": "about.html#harper-adams-data-science",
+    "href": "about.html#harper-adams-data-science",
+    "title": "About",
+    "section": "Harper Adams Data Science",
+    "text": "Harper Adams Data Science\n\nThis module supports the MSc in Data Science for Global Agriculture, Food, and Environment at Harper Adams University, led by Ed Harris."
+  },
+  {
+    "objectID": "index.html#bootcamp-modules",
+    "href": "index.html#bootcamp-modules",
+    "title": "Home",
+    "section": "Bootcamp modules",
+    "text": "Bootcamp modules\nModule 1 A bare-bones introduction to R scripting and the RStudio interface for beginners\nModule 2 (pages 2.x): A bare-bones introduction to using R for traditional data analysis\nModuel 3 (pages 3.x): An introduction to reproducible code, R Markdown, and Github.\nThese pages will help orient you if you are a beginner, and we will also cover our design approach for the materials and the tools you will need to get started right away. If you are already an RStudio user and comfortable managing and storing script files and scripts in R, you may want to jump straight to the exercises on each page.\nWe make a few suggestions about this material:\n\nFollow along consecutively with the workshop pages\nComplete each page before moving on to the next\nFormally attempt all problems at the end of each page\nJoin us in Slack if you need assistance\n\nThat’s it!"
+  },
+  {
+    "objectID": "index.html#harper-adams-data-science",
+    "href": "index.html#harper-adams-data-science",
+    "title": "Home",
+    "section": "Harper Adams Data Science",
+    "text": "Harper Adams Data Science\n\nThis module supports the MSc in Data Science for Global Agriculture, Food, and Environment at Harper Adams University, led by Ed Harris."
+  },
+  {
+    "objectID": "slides-setup.html",
+    "href": "slides-setup.html",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "",
+    "text": "https://dsgarage.netlify.app/bootcamp/0.1-bootcamp-intro/"
+  },
+  {
+    "objectID": "slides-setup.html#what-will-you-learn",
+    "href": "slides-setup.html#what-will-you-learn",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "What will you learn?",
+    "text": "What will you learn?\n \n\nInstall R and RStudio\nPractice of good, reproducible scripting\nDesign vision of learning materials: Read the pages and type and run all code"
+  },
+  {
+    "objectID": "slides-setup.html#tour-of-rstudio-interface",
+    "href": "slides-setup.html#tour-of-rstudio-interface",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "Tour of RStudio interface",
+    "text": "Tour of RStudio interface"
+  },
+  {
+    "objectID": "slides-setup.html#reproducible-script",
+    "href": "slides-setup.html#reproducible-script",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "Reproducible script",
+    "text": "Reproducible script"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization-1",
+    "href": "slides-overview.html#r-stats-bootcamp-organization-1",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\nModule 1: R scripting\n1.1 R syntax\n1.2 Functions and packages\n1.3 Data objects\n1.4 Data frames\n1.5 Data sub-setting and manipulation"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization-2",
+    "href": "slides-overview.html#r-stats-bootcamp-organization-2",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\nModule 2: Statistics review\n2.1 Question, explore, analyze\n2.2 Sampling distributions\n2.3 Correlation\n2.4 Simple linear regression\n2.5 T-test\n2.6 1-way ANOVA"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization-3",
+    "href": "slides-overview.html#r-stats-bootcamp-organization-3",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\nModule 3: reproducibility, collaboration\n3.1 Reproducibility\n3.2 Automate reports\n3.3 Git and version control"
   }
 ]

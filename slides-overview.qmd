@@ -1,0 +1,188 @@
+---
+title: "Bootcamp overview"
+author: "Ed Harris"
+date: "2022-10-02 (updated)"
+format: revealjs
+editor: visual
+---
+
+## R Stats bootcamp
+
+<br>
+<center>
+
+[https://rstats-bootcamp.github.io/website/](https://rstats-bootcamp.github.io/website/)
+
+
+![](img/rstats-logo.png)
+
+</center>
+
+## What is the R Stats Bootcamp about?
+
+<br>
+
+<center>
+
+Modern tools for thinking about data :: evidence :: claims
+
+![](img/ds_venn.png){width="40%"}
+</center>
+
+## Traditional Bootcamp
+
+
+<center>
+
+Difficult, unfriendly, 
+
+weed out the weak
+
+![](img/bootcamp1.jpg){width="60%"}
+
+</center>
+
+## R Stats Bootcamp
+
+<center>
+
+Work hard, do something good with others, 
+
+help everyone succeed
+
+![](img/bootcamp2.jpg){width="25%"}
+
+</center>
+
+## Purpose of R Stats Bootcamp
+
+<br>
+
+Provide a self-guided resource to:
+
+- `Learn or refresh skills` in R scripting, basic statistics
+
+- `Boost success` in statistics for assessments, project work
+
+- Be accessible with `no prior knowledge`
+
+<br>
+
+
+## Who is the R Stats Bootcamp for?
+
+<br>
+
+- `Students` in applied sciences
+
+- Aspiring `data scientists`
+
+- `Academic colleague` who want to learn R
+
+- `Postgraduate researchers`
+
+- Other nteresting people (who want to learn from data)
+
+<br>
+
+<center>
+
+</center>
+
+
+## What will you learn
+
+<br>
+
+- `R scripting` basics
+
+- Best practice for `reproducible research`
+
+- `Tidy data` practice
+
+- A practical review of `basic statistics` (just enough...)
+
+<center>
+
+</center>
+
+
+## R Stats Bootcamp organization
+
+<br>
+
+<center>
+
+[https://rstats-bootcamp.github.io/website/](https://rstats-bootcamp.github.io/website/)
+
+</center>
+
+<br>
+
+`Module 1`: Introduction to `R and Rstudio` 
+
+`Module 2`: R for `traditional data analysis`
+
+`Module 3`: `Reproducible code`, R Markdown, and GithuB
+
+
+## R Stats Bootcamp organization
+
+<br>
+
+**Module 1: R scripting**
+
+1.1 R syntax
+
+1.2 Functions and packages
+
+1.3 Data objects
+
+1.4 Data frames
+
+1.5 Data sub-setting and manipulation
+
+
+## R Stats Bootcamp organization
+
+<br>
+
+**Module 2: Statistics review**
+
+2.1 Question, explore, analyze
+
+2.2 Sampling distributions
+
+2.3 Correlation
+
+2.4 Simple linear regression
+
+2.5 T-test
+
+2.6 1-way ANOVA
+
+## R Stats Bootcamp organization
+
+<br>
+
+**Module 3: reproducibility, collaboration**
+
+3.1 Reproducibility
+
+3.2  Automate reports
+
+3.3 Git and version control
+
+
+## Coding
+
+<br>
+
+
+<center>
+
+It is important to type and run code for practice
+
+![](img/cat-laptop.jfif){width="60%"}
+
+</center>

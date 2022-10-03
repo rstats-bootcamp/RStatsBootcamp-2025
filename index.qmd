@@ -2,6 +2,43 @@
 title: "Home"
 ---
 
-This is a Quarto website.
+## R Stats Bootcamp
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This is a self-guided tutorial designed for people new to data science, statistics and R, and for those who would like a review. The materials can help you get going with critical skills in **R programming**, traditional **data analysis** and **open science** tools. The aim is to provide open, foundational training you can build on in the most efficient format possible. This will help prepare you for further training and to get you working with data in R as quickly as possible. 
+
+The Bootcamp is self-paced and has built-in assessment materials. The material is meant to work through in order as an experience, but is not in any way intended to be a reference to the presented topics.
+
+
+## Bootcamp modules
+
+**Module 1** A bare-bones introduction to R scripting and the RStudio interface for beginners
+
+**Module 2** (pages 2.x): A bare-bones introduction to using R for traditional data analysis
+
+**Moduel 3** (pages 3.x): An introduction to reproducible code, R Markdown, and Github.
+
+
+These pages will help orient you if you are a beginner, and we will also cover our design approach for the materials and the tools you will need to get started right away. If you are already an RStudio user and comfortable managing and storing script files and scripts in R, you may want to jump straight to the exercises on each page.
+
+
+
+We make a few suggestions about this material:
+
+- Follow along consecutively with the workshop pages 
+
+- Complete each page before moving on to the next
+
+- Formally attempt all problems at the end of each page
+
+- Join us in Slack if you need assistance
+
+That's it!
+
+<br>
+<br>
+
+## Harper Adams Data Science
+
+![](img/HDS.png){fig-alt="Harper Data Science" width="125"}
+
+This module supports the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University"), led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
