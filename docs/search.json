@@ -1,558 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About",
-    "section": "",
-    "text": "“Data science”"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "“Data science”"
-  },
-  {
-    "objectID": "slides-overview.html#r-stats-bootcamp",
-    "href": "slides-overview.html#r-stats-bootcamp",
-    "title": "Bootcamp overview",
-    "section": "R Stats bootcamp",
-    "text": "R Stats bootcamp\n\n\nhttps://rstats-bootcamp.github.io/website/"
-  },
-  {
-    "objectID": "slides-overview.html#what-is-the-r-stats-bootcamp-about",
-    "href": "slides-overview.html#what-is-the-r-stats-bootcamp-about",
-    "title": "Bootcamp overview",
-    "section": "What is the R Stats Bootcamp about?",
-    "text": "What is the R Stats Bootcamp about?\n\n\nModern tools for thinking about data :: evidence :: claims"
-  },
-  {
-    "objectID": "slides-overview.html#traditional-bootcamp",
-    "href": "slides-overview.html#traditional-bootcamp",
-    "title": "Bootcamp overview",
-    "section": "Traditional Bootcamp",
-    "text": "Traditional Bootcamp\n\nDifficult, unfriendly,\nweed out the weak"
-  },
-  {
-    "objectID": "slides-overview.html#r-stats-bootcamp-1",
-    "href": "slides-overview.html#r-stats-bootcamp-1",
-    "title": "Bootcamp overview",
-    "section": "R Stats Bootcamp",
-    "text": "R Stats Bootcamp\n\nWork hard, do something good with others,\nhelp everyone succeed"
-  },
-  {
-    "objectID": "slides-overview.html#title",
-    "href": "slides-overview.html#title",
-    "title": "Bootcamp overview",
-    "section": "title",
-    "text": "title"
-  },
-  {
-    "objectID": "slides-overview.html#title-1",
-    "href": "slides-overview.html#title-1",
-    "title": "Bootcamp overview",
-    "section": "title",
-    "text": "title"
-  },
-  {
-    "objectID": "slides-overview.html#title-2",
-    "href": "slides-overview.html#title-2",
-    "title": "Bootcamp overview",
-    "section": "title",
-    "text": "title"
-  },
-  {
-    "objectID": "slides-overview.html#purpose-of-r-stats-bootcamp",
-    "href": "slides-overview.html#purpose-of-r-stats-bootcamp",
-    "title": "Bootcamp overview",
-    "section": "Purpose of R Stats Bootcamp",
-    "text": "Purpose of R Stats Bootcamp\n\nProvide a self-guided resource to:\n\nLearn or refresh skills in R scripting, basic statistics\nBoost success in statistics for assessments, project work\nBe accessible with no prior knowledge"
-  },
-  {
-    "objectID": "slides-overview.html#who-is-the-r-stats-bootcamp-for",
-    "href": "slides-overview.html#who-is-the-r-stats-bootcamp-for",
-    "title": "Bootcamp overview",
-    "section": "Who is the R Stats Bootcamp for?",
-    "text": "Who is the R Stats Bootcamp for?\n\n\nStudents in applied sciences\nAspiring data scientists\nAcademic colleague who want to learn R\nPostgraduate researchers\nOther nteresting people (who want to learn from data)"
-  },
-  {
-    "objectID": "slides-overview.html#what-will-you-learn",
-    "href": "slides-overview.html#what-will-you-learn",
-    "title": "Bootcamp overview",
-    "section": "What will you learn",
-    "text": "What will you learn\n\n\nR scripting basics\nBest practice for reproducible research\nTidy data practice\nA practical review of basic statistics (just enough…)"
-  },
-  {
-    "objectID": "slides-overview.html#r-stats-bootcamp-organization",
-    "href": "slides-overview.html#r-stats-bootcamp-organization",
-    "title": "Bootcamp overview",
-    "section": "R Stats Bootcamp organization",
-    "text": "R Stats Bootcamp organization\n\n\nhttps://rstats-bootcamp.github.io/website/\n\n\nModule 1: Introduction to R and Rstudio\nModule 2: R for traditional data analysis\nModule 3: Reproducible code, R Markdown, and GithuB"
-  },
-  {
-    "objectID": "slides-overview.html#coding",
-    "href": "slides-overview.html#coding",
-    "title": "Bootcamp overview",
-    "section": "Coding",
-    "text": "Coding\n\n\nIt is important to type and run code for practice"
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "I call this “Robot farmer with calendar”"
-  },
-  {
-    "objectID": "schedule.html#references",
-    "href": "schedule.html#references",
-    "title": "Schedule",
-    "section": "References",
-    "text": "References\nTextbook: James et al. 2021 Introduction to statistical learning 2ed\nall refs zip\nAho, K., Derryberry, D., Peterson, T., 2014. Model selection for ecologists: the worldviews of AIC and BIC. Ecology 95, 631–636.\nBarnard, D.M., Germino, M.J., Pilliod, D.S., Arkle, R.S., Applestein, C., Davidson, B.E., Fisk, M.R., 2019. Cannot see the random forest for the decision trees: selecting predictive models for restoration ecology. Restoration Ecology 27, 1053–1063.\nEbrahimi, M.A., Khoshtaghaza, M.H., Minaei, S., Jamshidi, B., 2017. Vision-based pest detection based on SVM classification method. Computers and Electronics in Agriculture 137, 52–58.\nEfron, B., 2020. Prediction, Estimation, and Attribution. Journal of the American Statistical Association 115, 636–655.\nHowell, O., Wenping, C., Marsland, R., Mehta, P., 2020. Machine learning as ecology. J. Phys. A: Math. Theor. 53, 334001.\nJames, G., Witten, D., Hastie, T., Tibshirani, R., 2021. An Introduction to Statistical Learning: with Applications in R, Springer Texts in Statistics 2ed. Springer-Verlag, New York.\nMelesse, S., Sobratee, N., Workneh, T., 2016. Application of logistic regression statistical technique to evaluate tomato quality subjected to different pre- and post-harvest treatments. Biological Agriculture & Horticulture 32, 277–287.\nOtukei, J.R., Blaschke, T., 2010. Land cover change assessment using decision trees, support vector machines and maximum likelihood classification algorithms. International Journal of Applied Earth Observation and Geoinformation, Supplement Issue on “Remote Sensing for Africa – A Special Collection from the African Association for Remote Sensing of the Environment (AARSE)” 12, S27–S31."
-  },
-  {
-    "objectID": "schedule.html#harper-adams-data-science",
-    "href": "schedule.html#harper-adams-data-science",
-    "title": "Schedule",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "about.html#r-stats-bootcamp",
-    "href": "about.html#r-stats-bootcamp",
-    "title": "About",
-    "section": "R Stats Bootcamp",
-    "text": "R Stats Bootcamp\nThis is a website created to help people get started in statistical analysis and data science: to explore, visualize and analyze data, and to share and communicate results with others. The goal is to use a practical approach to scientific question formulation and evidence, through curating a range of high quality and open resources. The philosophy is practical with more emphasis on asking meaningful questions and statistical reasoning (and less on programming and engineering)."
-  },
-  {
-    "objectID": "about.html#harper-adams-data-science",
-    "href": "about.html#harper-adams-data-science",
-    "title": "About",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports the MSc in Data Science for Global Agriculture, Food, and Environment and other MSc programmes at Harper Adams University, led by Ed Harris."
-  },
-  {
-    "objectID": "index.html#bootcamp-modules",
-    "href": "index.html#bootcamp-modules",
-    "title": "About",
-    "section": "Bootcamp modules",
-    "text": "Bootcamp modules\nModule 1 Introduction to R scripting and the RStudio interface for beginners\nModule 2 Introduction to using R for simple data analysis\nModule 3 Introduction to reproducible code, R Markdown, and Github.\nThese pages will help orient you if you are a beginner, and we will also cover our design approach for the materials and the tools you will need to get started right away. If you are already an RStudio user and comfortable managing and storing script files and scripts in R, you may want to jump straight to the exercises on each page.\n\nWe make a few suggestions about this material:\n\nFollow along consecutively with the workshop pages\nActually type and run all of the example code yourself\nComplete each page before moving on to the next\nFormally attempt all problems at the end of each page\nJoin us in Slack if you need assistance\n\n\nThat’s it!"
-  },
-  {
-    "objectID": "index.html#harper-adams-data-science",
-    "href": "index.html#harper-adams-data-science",
-    "title": "About",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "slides-setup.html",
-    "href": "slides-setup.html",
-    "title": "R Bootcamp RStudio & R Scripts",
-    "section": "",
-    "text": "https://dsgarage.netlify.app/bootcamp/0.1-bootcamp-intro/"
-  },
-  {
-    "objectID": "slides-setup.html#what-will-you-learn",
-    "href": "slides-setup.html#what-will-you-learn",
-    "title": "R Bootcamp RStudio & R Scripts",
-    "section": "What will you learn?",
-    "text": "What will you learn?\n \n\nInstall R and RStudio\nPractice of good, reproducible scripting\nDesign vision of learning materials: Read the pages and type and run all code"
-  },
-  {
-    "objectID": "slides-setup.html#tour-of-rstudio-interface",
-    "href": "slides-setup.html#tour-of-rstudio-interface",
-    "title": "R Bootcamp RStudio & R Scripts",
-    "section": "Tour of RStudio interface",
-    "text": "Tour of RStudio interface"
-  },
-  {
-    "objectID": "slides-setup.html#reproducible-script",
-    "href": "slides-setup.html#reproducible-script",
-    "title": "R Bootcamp RStudio & R Scripts",
-    "section": "Reproducible script",
-    "text": "Reproducible script"
-  },
-  {
-    "objectID": "slides-overview.html#r-stats-bootcamp-organization-1",
-    "href": "slides-overview.html#r-stats-bootcamp-organization-1",
-    "title": "Bootcamp overview",
-    "section": "R Stats Bootcamp organization",
-    "text": "R Stats Bootcamp organization\n\nModule 1: R scripting\n1.1 R syntax\n1.2 Functions and packages\n1.3 Data objects\n1.4 Data frames\n1.5 Data sub-setting and manipulation"
-  },
-  {
-    "objectID": "slides-overview.html#r-stats-bootcamp-organization-2",
-    "href": "slides-overview.html#r-stats-bootcamp-organization-2",
-    "title": "Bootcamp overview",
-    "section": "R Stats Bootcamp organization",
-    "text": "R Stats Bootcamp organization\n\nModule 2: Statistics review\n2.1 Question, explore, analyze\n2.2 Sampling distributions\n2.3 Correlation\n2.4 Simple linear regression\n2.5 T-test\n2.6 1-way ANOVA"
-  },
-  {
-    "objectID": "slides-overview.html#r-stats-bootcamp-organization-3",
-    "href": "slides-overview.html#r-stats-bootcamp-organization-3",
-    "title": "Bootcamp overview",
-    "section": "R Stats Bootcamp organization",
-    "text": "R Stats Bootcamp organization\n\nModule 3: reproducibility, collaboration\n3.1 Reproducibility\n3.2 Automate reports\n3.3 Git and version control"
-  },
-  {
-    "objectID": "1.2-r-syntax.html#r-syntax-basics-r-as-a-passive-aggressive-butler",
-    "href": "1.2-r-syntax.html#r-syntax-basics-r-as-a-passive-aggressive-butler",
-    "title": "1.2 R language",
-    "section": "R Syntax basics (R as a passive-aggressive butler)",
-    "text": "R Syntax basics (R as a passive-aggressive butler)\nSlides :: Video\n\nOverview\n\nWe love the R language, but sometimes it is a little bit like talking to a passive aggressive butler - if you aren’t careful with your language, the interaction may have unexpected outcomes…\n\nR is a programming language and popular open source software design to help non-programmers perform statistical analyses and to make graphs. This page is intended to guide people through some of the basics of the R programming language, just enough to get started. We hope that these pages help make learning R simple (but it can difficult at times while you are learning)"
-  },
-  {
-    "objectID": "1.2-r-syntax.html#example-script-comments-help-pseudocode",
-    "href": "1.2-r-syntax.html#example-script-comments-help-pseudocode",
-    "title": "1.2 R language",
-    "section": "1 Example script, comments, help, pseudocode",
-    "text": "1 Example script, comments, help, pseudocode\nThe most important thing to keep in mind right at the beginning of learning R is to view the script as something you are writing to document a piece of work (e.g. progress in a workshop like this, an analysis, a research project, etc.). Organising every script you write is extremely important to build “good habits” for reproducibility of your work. A good guideline for best practice in writing scripts is to pretend you are writing the script, comments and contents, for a respected colleague - someone who you respect and want to impress, but might not be able to explain in person about the purpose of the script (even if this is your future self).\nTo get the most out of this page, we strongly recommend that you work through the instructions here while using R and RStudio as you go along. We consider it very important that you type you own code rather than using copy and paste. Finally, document all the code in your own script and write clear, concise comments.\nExample script\nDownload the script at the top of the page and save it in a logical place on your computer. Open it in RStudio.\n\nRight at the top you should see the HEADER.\n\n## HEADER ####\n## Who: <YOUR NAME>\n## https://dsgarage.netlify.app/\n## What: 1.1 R syntax basics\n## Last edited: <DATE TODAY in yyyy-mm-dd format>\n####\n\n\nGo ahead and fill in the header with your own information.\nNext you should see the CONTENTS section. The idea here is for you to list the CONTENTS of a script that can act as a roadmap to the user, but that can also help organize a large project into manageable chunks. Each title under the CONTENTS section will become the title in a code chunk below. You should see the contents section in the script you downloaded like this:\n\n## CONTENTS ####\n## 1.1.1 Example script, help, pseudocode  \n## 1.1.2 Math operators  \n## 1.1.3 Logical Boolean operators  \n## 1.1.4 Regarding base R and the Tidyverse   \n## 1.1.5 Practice exercises  \n\n\nEach item in the CONTENTS section will become the title of individual code chunks. RStudio recognizes code chunks that have a particular syntax:\nCode chunks begin with two ## signs (one works too, but convention is to use two)\nCode chunks end with at least four #### signs\nThe first code chunk should already be placed in your script\n\n## 1.1 Example script, help, pseudocode  ####\n\n\nhelp\nOne of the great things about using R is the community and the spirit of helping others. However, there are so many websites, books, blogs and other resources that it can be overwhelming. Best practice is to learn to use the R Help system first, then seek help elsewhere.\nThe basic way to access the built-in help in R, is to use the help() function, with the name of tool you need help using inside the brackets. For example, to calculate the mean of some numbers, we would use the function mean(), and to display the help for the mean() function we would run. Run the following code in your own script:\n# Display help page for the function mean\nhelp(mean)"
-  },
-  {
-    "objectID": "1.2-r-syntax.html#harper-adams-data-science",
-    "href": "1.2-r-syntax.html#harper-adams-data-science",
-    "title": "1.2 R language",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "1.1-get-started.html#harper-adams-data-science",
-    "href": "1.1-get-started.html#harper-adams-data-science",
-    "title": "1.1 Setup & intro",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports the MSc in Data Science for Global Agriculture, Food, and Environment and other MSc programmes at Harper Adams University, led by Ed Harris."
-  },
-  {
-    "objectID": "1.1-get-started.html",
-    "href": "1.1-get-started.html",
-    "title": "1.1 Setup & intro",
-    "section": "",
-    "text": "0.1 slides"
-  },
-  {
-    "objectID": "1.1-get-started.html#bootcamp-intro-your-first-day-with-r",
-    "href": "1.1-get-started.html#bootcamp-intro-your-first-day-with-r",
-    "title": "1.1 Setup & intro",
-    "section": "0.1 Bootcamp Intro (Your first day with R)",
-    "text": "0.1 Bootcamp Intro (Your first day with R)\n \nSCRIPT 0.1 You can use this for the practice exercises below (download and open with RStudio).\n \nOverview\nThis page is intended to guide people during their first installation and use of R and RStudio.\n \nContents\n0.1.1 How Data Science Garage works\n0.1.2 R motivation\n0.1.3 Install R and RStudio or set up RStudio Cloud\n0.1.4 RStudio components and setup\n0.1.5 Workflow for scripts in R\n0.1.6 Practice exercises"
-  },
-  {
-    "objectID": "1-setup.html",
-    "href": "1-setup.html",
-    "title": "1 Setup & intro",
-    "section": "",
-    "text": "R.A. Fisher the father of statistics"
-  },
-  {
-    "objectID": "1-setup.html#bootcamp-introduction-first-day-with-r",
-    "href": "1-setup.html#bootcamp-introduction-first-day-with-r",
-    "title": "1 Setup & intro",
-    "section": "1 Bootcamp Introduction (first day with R)",
-    "text": "1 Bootcamp Introduction (first day with R)\n\nThis page is intended to guide people during their first installation and use of R and RStudio.\n\n\n1.1 Objectives\nHere is what we will work on:\n\nHow the R Stats Bootcamp works\nR motivation\nInstall R and RStudio or set up RStudio Cloud\nRStudio components and setup\nWorkflow for scripts in R\nPractice exercises"
-  },
-  {
-    "objectID": "1-setup.html#how-the-r-stats-bootcamp-works",
-    "href": "1-setup.html#how-the-r-stats-bootcamp-works",
-    "title": "1 Setup & intro",
-    "section": "2 How the R Stats Bootcamp works",
-    "text": "2 How the R Stats Bootcamp works\nThe R Stats Bootcamp aims to provide practical, open instructional materials to support learning the R programming language, to review simple statistics in R, and to introduce reproducibility and collaboration tools. The content is a blend of practical, referenced material with videos and self-assessment.\nWe also a have a friendly community Slack channel - go over and introduce yourself and say hi!"
-  },
-  {
-    "objectID": "1-setup.html#r-motivation",
-    "href": "1-setup.html#r-motivation",
-    "title": "1 Setup & intro",
-    "section": "3 R motivation",
-    "text": "3 R motivation\nThe motivation for using R is that it is designed to help people with no programming experience to perform sophisticated statistical analysis with minimum effort. R has grown in popularity recently and is used extensively by universities, companies, and researchers everywhere. Because of this, there is a very large community of users and a demand in business and academia for skills using R.\nR is free and open source. R is easy to learn and works the same for folks with fast and slow computers, no matter what kind of operating system or computer they like to use, and it is easy to use via the web on any device."
-  },
-  {
-    "objectID": "1-setup.html#r-install-r-and-rstudio-or-set-up-rstudio-cloud",
-    "href": "1-setup.html#r-install-r-and-rstudio-or-set-up-rstudio-cloud",
-    "title": "1 Setup & intro",
-    "section": "4 R Install R and RStudio or set up RStudio Cloud",
-    "text": "4 R Install R and RStudio or set up RStudio Cloud\nYou have two options for following along with these materials as they are intended.\n\nOption 1 Download and install R from CRAN and then download and install RStudio desktop.\nInstall R first, then RStudio. It is probably a idea to go ahead and install the latest version of each if you have older versions installed. If you have a PC or laptop you regularly use, this option is probably best and will work for almost all hardware and operating systems.\nHelp for Windows\nHelp for Macs\nHelp for Linux\n\nOption 2 If you can’t install R or do not wish to, or if you prefer to work in “the cloud” from a web browser, you may wish to start a free account at RStudio Cloud and follow along that way."
-  },
-  {
-    "objectID": "1-setup.html#rstudio-components-and-setup",
-    "href": "1-setup.html#rstudio-components-and-setup",
-    "title": "1 Setup & intro",
-    "section": "5 RStudio components and setup",
-    "text": "5 RStudio components and setup\nRStudio desktop is an environment to write R code, perform statistical analysis, organize big or small projects with multiple files, and view and organize outputs. There are many features of RStudio, but we are only going to point out a few. One of the most useful features is syntax highlighting, that gives visual cues to help you write computer code.\n\n\n\n\nRStudio layout\n\n\n\nBe aware (beware?) of:\nThe Script window\nThe script window is located in the upper right of the RStudio console by default. You may need to open a script or start a new one: File > New File > R Script (hotkey Ctrl+Shift+N).\nThe script window is where you are likely to spend most of your time building scripts and executing commands you write. You can have many scripts open at the same time (in “tabs”), and you can have different kinds of scripts, e.g., for different parts of a project or even for programming languages.\n\nThe Console window\nThe Console window is in the lower left by default. Notice there are several other tabs visible, but we will only mention the Console for now. The Console is the place where text outputs will be printed (e.g. the results of statistical tests), and also is a place where R will print Warning and Error messages.\n\nThe Global Environment\nThe Global Environment is in the Environment tab in the upper right of RStudio by default. This pane is useful in displaying data objects that you have loaded and available.\n\nThe Plots window\nThe Plots window is a tab in the lower right by default. This is the place where graphics output is displayed and where plots can be named, resized, copied and saved. There are some other important tabs here as well, which you can also explore. When a new plot is produced, the Plots tab will become active."
-  },
-  {
-    "objectID": "1-setup.html#workflow-for-r-scripts",
-    "href": "1-setup.html#workflow-for-r-scripts",
-    "title": "1 Setup & intro",
-    "section": "6 Workflow for R scripts",
-    "text": "6 Workflow for R scripts\nScript setup\nAn R script is a plain text file where the file name ends in “dot R” (.R) by default.\nAn R script serves several purposes:\nFirst, it documents your analysis allowing it to be reproduced exactly by yourself (your future self!) or by others like collaborators, friends, colleagues, your professor, your student, etc.\nSecond, it is the interface between your commands and R software.\nA goal is that your scripts should contain only important R commands and information, in an organized and logical way that has meaning for other people, maybe for people you have never spoken to. A typical way to achieve this is to organize every script according to the same plan.\n\n\nYour R script should be a file good enough to show to a person in the future (like a supervisor, or even your future self). Someone who can help you, but also someone who you may not be able to explain the contents to. The script should be documented and complete. Think of this future person as a friend you respect.\n\n\nAlthough there are many ways to achieve this, for the purposes of the Bootcamp we strongly encourage you to organize you scripts like this:\n\nHeader\nContents\nOne separate section for each item of contents\n\n\nHeader\nStart every script with a Header, that contains your name, the date of the most recent edit, and a short description of the PURPOSE of the script.\n# A typical script Header\n\n## HEADER ####\n## Who: <your name>\n## What: My first script\n## Last edited: yyyy-mm-dd (ISO 8601 date format... Google it!)\n####\n\n\n6.1 Contents\nA Contents section should also be present near the top, to provide a road map for the analysis.\n# A typical script Contents section\n\n## CONTENTS ####\n## 00 Setup\n## 01 Graphs\n## 02 Analysis\n## 03 Etc\n\n\n\n6.2 Section for each item of contents\nFinally, code chunk breaks should be used to aid the readability of the script and to provide a section for each item in your table of contents. A code chunk is just a section of code set off from other sections.\nBelow is the beginning of a typical code chunk in an R script.\n\nCode chunks must start with at least one hash sign “#”,\nshould have a title descriptive of code chunk contents,\nand end with (at least) four hash signs “####”\nconsecutively numbered titles makes things very tidy\n\n## 01 This here is the first line of MY CODE CHUNK ####\n\nWe will practice each of these components.\n\n\n\n6.3 Comments\nComments are messages that explain code in your script, and they should be used throughout every script. You can think of comments like the methods section of a scientific paper - there should be enough detail to exactly replicate and understand the script, but it should also be concise.\nComment lines begin with the # character and are not treated as “code” by R.\n\n# Make a vector of numbers <--- a comment\nmy_variable <- c(2,5,3,6,3,4,7)\n\n# Calculate the mean of my_variable <--- another comment\nmean(my_variable)\n\n[1] 4.285714\n\n\n\n\n\n6.4 Submitting commands\nA final thing that must be mentioned here is how to actually submit commands in your R script for R to execute. There are a few ways to do this.\n\nrun the whole line of code your cursor rests on (no selection) Ctrl+Enter (Cmd+Return in Macs)\nrun code you have selected with your cursor Ctrl+Enter (Cmd+Return in Macs).\nUse the “Run” button along the top of the Script window\nRun code from the menu Code > Run Selected Line(s)."
-  },
-  {
-    "objectID": "1-setup.html#practice-exercises",
-    "href": "1-setup.html#practice-exercises",
-    "title": "1 Setup & intro",
-    "section": "7 Practice exercises",
-    "text": "7 Practice exercises\n\n7.1\nDownload this script and open it with RStudio. Save the script in a specific folder on your computer that you can find again and where you will save other scripts for the Bootcamp.\nRead the script comments and examine the structure of the code chunks. Run the code in the script using one of the methods above, and examine the output in the Console window.\n\n\n\n7.2\nAdd a code chunk title to your CONTENTS section and to your script. Make sure to write brief comments for your code. Add the following code to your chunk run it and examine the output:\nDon’t worry about understanding the code for now. We are just working on interfacing with R and submitting commands.\n# Create a new variable\nmy_variable <- c(6.5, 1.35, 3.5)\n\n# Calculate the mean of my_variable\nmean(my_variable)\n\n# Calculate the standard deviation of my_variable\nsd(my_variable)"
-  },
-  {
-    "objectID": "1-setup.html#harper-adams-data-science",
-    "href": "1-setup.html#harper-adams-data-science",
-    "title": "1 Setup & intro",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "1-setup.html#install-r-and-rstudio-or-set-up-rstudio-cloud",
-    "href": "1-setup.html#install-r-and-rstudio-or-set-up-rstudio-cloud",
-    "title": "1 Setup & intro",
-    "section": "4 Install R and RStudio or set up RStudio Cloud",
-    "text": "4 Install R and RStudio or set up RStudio Cloud\nYou have two options for following along with these materials as they are intended.\n\nOption 1 Download and install R from CRAN and then download and install RStudio desktop.\nInstall R first, then RStudio. It is probably a good idea to go ahead and install the latest version of each if you have older versions installed. If you have a PC or laptop you regularly use, this option is probably best and will work for almost all hardware and operating systems.\nHelp for Windows\nHelp for Macs\nHelp for Linux\n\nOption 2 If you can’t install R or do not wish to, or if you prefer to work in “the cloud” from a web browser, you may wish to start a free account at RStudio Cloud and follow along that way."
-  },
-  {
-    "objectID": "index.html#r-stats-bootcamp",
-    "href": "index.html#r-stats-bootcamp",
-    "title": "About",
-    "section": "R Stats Bootcamp",
-    "text": "R Stats Bootcamp\nThis is a self-guided tutorial designed for people new to data science, statistics and R, and for those who would like a review. The materials can help you get going with critical skills in R programming, traditional data analysis and open science tools. The aim is to provide open, foundational training you can build on in the most efficient format possible. This will help prepare you for further training and to get you working with data in R as quickly as possible.\nThe Bootcamp is self-paced and has built-in assessment materials. The material is meant to work through in order as an experience, but is not in any way intended to be a reference to the presented topics."
-  },
-  {
-    "objectID": "schedule.html#bootcamp-resources",
-    "href": "schedule.html#bootcamp-resources",
-    "title": "Schedule",
-    "section": "Bootcamp resources",
-    "text": "Bootcamp resources\nThis material is intended to require a significant time commitment to complete (most students report about 20 hours at minimum). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.\nFor all of the lab pages it is intended that you type and run 100% of the code in examples and then explicitly answer the exercise questions, which are based on examples for given code on the pages. Thus, to answer the questions it is recommended to adapt code you have already run when completing the pages.\n\n\n\n\nTopics\n\n\n\n\n  Bootcamp overview\n\n\nModule 1: R scripting\n1 R and RStudio Setup\n2 R language\n3 Functions and packages\n4 Data objects\n5 Data frames\n6 Data sub-setting and manipulation\n\n\nModule 2: Statistics review\n7 Question, explore, analyze\n8 Sampling distributions\n9 Correlation\n10 Simple linear regression\n11 T-test\n12 1-way ANOVA\n\n\nModule 3: reproducibility, collaboration\n13 Reproducibility\n14 Automate reports\n15 Git and version control"
-  },
-  {
-    "objectID": "2-r-lang.html#r-syntax-basics-r-as-a-passive-aggressive-butler",
-    "href": "2-r-lang.html#r-syntax-basics-r-as-a-passive-aggressive-butler",
-    "title": "2 R language",
-    "section": "1 R Syntax basics (R as a passive-aggressive butler)",
-    "text": "1 R Syntax basics (R as a passive-aggressive butler)\n\n\nWe love the R language, but sometimes it is a little bit like talking to a passive aggressive butler - if you aren’t careful with your language, the interaction may have unexpected outcomes…\n\nR is a very popular statistical programming language and open source software design to help scientists and other non-programmers perform statistical analyses and to make great graphs. This page is intended to guide people through some of the basics of the R programming language, just enough to get started. We hope that these pages help make learning R simple (though it can difficult at times while you are learning)\n\n\n1.1 Objectives\nHere is what we will work on:\n\nExample script, comments, help, pseudocode\nMath operators\nLogical Boolean operators\nRegarding “base R” and the Tidyverse\nPractice exercises"
-  },
-  {
-    "objectID": "2-r-lang.html#harper-adams-data-science",
-    "href": "2-r-lang.html#harper-adams-data-science",
-    "title": "2 R language",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "2-r-lang.html",
-    "href": "2-r-lang.html",
-    "title": "2 R language",
-    "section": "",
-    "text": "Choose your language carefully"
-  },
-  {
-    "objectID": "2-r-lang.html#example-script-comments-help-pseudocode",
-    "href": "2-r-lang.html#example-script-comments-help-pseudocode",
-    "title": "2 R language",
-    "section": "2 Example script, comments, help, pseudocode",
-    "text": "2 Example script, comments, help, pseudocode\n\nThe most important thing to keep in mind right at the beginning of learning R is to view the script as something you are writing to document a piece of work (e.g. progress in a workshop like this, an analysis, a research project, etc.). Organizing every script you write is extremely important to build “good habits” for reproducibility of your work. A good guideline for best practice in writing scripts is to pretend you are writing the script, comments and contents, for a respected colleague - someone who you respect and want to impress, but might not be able to explain in person about the purpose of the script (even if this is your future self).\nTo get the most out of this page, we strongly recommend that you:\n\nWork through the instructions here while using R and RStudio as you go along.\nType you own code rather than using copy and paste\nDocument all the code in your own script and write clear, concise comments\n\n\n2.1 Example script\nDownload this example script.\nSave it in a logical place on your computer. Open it in RStudio.\n\nRight at the top you should see the HEADER.\n## HEADER ####\n## Who: <YOUR NAME>\n## What: 2 R language basics\n## Last edited: <DATE TODAY in yyyy-mm-dd format)\n####\n\nGo ahead and fill in the header with your own information.\nNext you should see the CONTENTS section. The idea here is for you to list the CONTENTS of a script that can act as a roadmap to the user, but that can also help organize a large project into manageable chunks. Each title under the CONTENTS section will become the title in a code chunk below. You should see the contents section in the script you downloaded like this:\n## CONTENTS ####\n## 2 Example script, help, pseudocode  \n## 3 Math operators  \n## 4 Logical Boolean operators  \n## 5 Regarding base R and the Tidyverse   \n## 6 Practice exercises  \n\nEach item in the CONTENTS section will become the title of individual code chunks. RStudio recognizes code chunks that have a particular syntax:\nCode chunks begin with 2 “##” signs (1 works too, we prefer 2)\nCode chunks end with at least 4 “####” signs\nThe first code chunk should already be placed in your script\n## 2 Example script, help, pseudocode  ####\n\n\n\n2.2 Help\nOne of the great things about using R is the community and the spirit of helping others. However, there are so many websites, books, blogs and other resources that it can be overwhelming. Best practice is to learn to use the R Help system first, then seek help elsewhere.\nThe basic way to access the built-in help in R, is to use the help() function, with the name of tool you need help using inside the brackets. For example, to calculate the mean of some numbers, we would use the function mean(), and to display the help for the mean() function we would run. Run the following code in your own script:\n# Display help page for the function mean\nhelp(mean)\n\nYou should see:\n\n\n\n\nMean help page (pun intended)\n\n\n\n\nDoes this help look mean enough?\nLet’s orient to the information that is here because the help pages are essential to understand and every help page on every subject is organised in exactly the same way (and we will practice a lot using them).\n\n1 Function name {Package name} This field let’s you know what “R package” the function belongs to. We can ignore this for now, but it can be very useful.\n2 Short description This tells you in a few words what the function does.\n3 (longer) description This gives a longer description of what the function does\n4 Usage This usually gives an example of the function in use and lists the “arguments” that you are required to supply to the function for it to work on. Of course, you need to know about the arguments…\n5 Argument definitions This field tells you what the argument are and do!\n\n\n\n2.3 Deeper help\nUsing the Usage and Argument fields, we can figure out how to make the function do the work we want.\n# Under Usage:\n# mean(x, ...)\n\n# The \"x\" is an argument that is required\n# The \"...\" means there are other optional arguments\n\n# Under Arguments:\n\n# x \n# An R object... for numeric/logical vectors ...\n\n# try this code in your own script\nmy_length <- c(101, 122, 97) # 3 numerical measures\nmean(x = my_length) \n\n\n\n2.4 Pseudocode\nThe idea of pseudocode is to break up a big task into a series of smaller tasks. An example of a task might be ANALYZE YOUR DATA (in shouty capitals because it is a big task). To accomplish this task, we might have to walk through a series of steps, e.g.,\nAnalyze your data:\n\nRead data into R\nTest assumption for statistical testing\nGraph the data\nPerform statistical test\nOrganize outputs to communicate in report\n\n\nIt is often a good idea to break down a task into pseudocode both to organize and document the methods in a logical way, but also to conceptually simplify a problem that is difficult to solve. Practically, the items in a typical table of contents in an R script might be similar to psuedocode. Note that this technique extends very well to any problem, not just R code and programming.\nE.g., what steps would be involved in a problem like: Send a rocket with people in it to Mars such that they survive and return to Earth."
-  },
-  {
-    "objectID": "2-r-lang.html#math-operators",
-    "href": "2-r-lang.html#math-operators",
-    "title": "2 R language",
-    "section": "3 Math operators",
-    "text": "3 Math operators\nBasic manipulation of numbers in R is very easy to do and is so intuitive that you may be able to guess what they are and what they do. There are just a few specifics that we will practice. This list is not exhaustive; the goal is to get enough to begin practicing.\n\n\n3.1 Arithmetic\nTry these in your practice script:\n# There are a few others, but these are the basics\n\n# Add with \"+\"\n2 + 5\n\n# Subtract with \"-\"\n10 - 15\n\n# Multiply with \"*\"\n6 * 4.2\n\n# Divide by \"/\"\n\n10 / 4\n\n# raise to the power of x\n2^3 \n9^(1/2) # same as sqrt()!\n\nYour output should look similar to this:\n\n# There are a few others, but these are the basics\n\n# Add with \"+\"\n2 + 5\n\n[1] 7\n\n# Subtract with \"-\"\n10 - 15\n\n[1] -5\n\n# Multiply with \"*\"\n6 * 4.2\n\n[1] 25.2\n\n# Divide by \"/\"\n\n10 / 4\n\n[1] 2.5\n\n# raise to the power of x\n2^3 \n\n[1] 8\n\n9^(1/2) # same as sqrt()!\n\n[1] 3\n\n\n\nOrder of operation\nThe “order of operation” refers to the order in which mathematical calculations are carried out. A phrase like 2 + 2 is simple, but we need to consider order for more complicated phrases like 2 + 2 * 8 - 6. In general multiplication and division are carried out before addition and subtraction unless specific order is coded.\n# Try this\n\n4 + 2 * 3\n\n# Order control - same\n4 + (2 * 3)\n\n# Order control - different...\n(4 + 2) * 3\n\n\n\n3.2 Use of spaces\nIn some cases, the use of spaces does not matter in the R language. Which one of the following ways of writing math operation might be easier to document and read?\n# Try this\n\n6+10                                  # no spaces\n7     -5                              # uneven spaces\n1.6             /                2.3  # large spaces\n16 * 3                                # exactly 1 space\n\n# exactly 1 space is probably easiest to read...\nYour output should look like this:\n\n# Try this\n\n6+10                                  # no spaces\n\n[1] 16\n\n7     -5                              # uneven spaces\n\n[1] 2\n\n1.6             /                2.3  # large spaces\n\n[1] 0.6956522\n\n16 * 3                                # exactly 1 space\n\n[1] 48"
-  },
-  {
-    "objectID": "2-r-lang.html#logical-boolean-operators",
-    "href": "2-r-lang.html#logical-boolean-operators",
-    "title": "2 R language",
-    "section": "4 Logical “Boolean” operators",
-    "text": "4 Logical “Boolean” operators\nBoolean operators are expressions that resolve TRUE (treated as 1 in most computing systems including R) versus FALSE (0). A typical expression might be something like asking if 5 > 3, which is TRUE. More sophisticated phrases are possible, and sometimes useful.\n\n4.1 Boolean example\n# Try this\n# simplest example\n3 > 5\n\n# 3 is compared to each element\n3 < c(1, 2, 3, 4, 5, 6) \n\n# Logic and math\n# & (ampersand) means \"and\"\n# | (pipe) means \"or\"\n\n# This asks if both phrases are true (true AND true)\n# notice \"TRUE\" has a special meaning in R\n\nTRUE & TRUE # both phrases are the same, TRUE\n\n3 > 1 & 1 < 5 # both phrases are true\n\n# Are both phrases true?\n\nTRUE & FALSE # are both true?\n\nFALSE & FALSE # are both true?\n\nBoolean expressions are often used to select groups of data, for example asking whether values in a column of variables are greater than some threshold.\n\n\n4.2 Selecting with Booleans\nWe often use Booleans to select particular parts of our data in a powerful way, as an alternative to creating different versions of a particular dataset.\n# Try this\n\n# Put some data into a variable and then print the variable\n# Note \"<-\" is the ASSIGNMENT syntax in R, which puts the value on the left \"into\" x\n\nx <- c(21, 3, 5, 6, 22)\nx\n\nx > 20\n\n# the square brackets act as the index for the data vector\nx[x > 20]\n\n\n\n4.3 The “not” operator, ! (Sorry !Sorry)**\nThe ! operator sets a Boolean value to the opposite. This is sometimes used when an expression can be made simpler by representing it as an opposite. For now we will just demonstrate how it works.\n# Try this\nTRUE # plain true\n\n!FALSE # not false is true!\n\n6 < 5 #definitely false\n\n!(6 < 5) #not false...\n\n!(c(23, 44, 16, 51, 12) > 50)"
-  },
-  {
-    "objectID": "2-r-lang.html#base-r-versus-the-tidyverse",
-    "href": "2-r-lang.html#base-r-versus-the-tidyverse",
-    "title": "2 R language",
-    "section": "5 “Base R” versus the ‘Tidyverse’",
-    "text": "5 “Base R” versus the ‘Tidyverse’\n\n5.1 Base R\nThe R language as it was invented and continues to be developed is extremely popular, powerful and easy to use, especially for people without formal programming training or experience in different computing languages. In general, we refer to this pure form of R as Base R.\nSince the late 1990s, the R-user community and Base R resources on have exploded on the web and this form of the language continues to be extremely popular for experts and beginners alike. If interested, you can read more here.\n\n\n\n5.2 Tidyverse R\nRelatively recently, a second version of R has evolved that puts forward different conventions in the R lanuage. The differences are practical, but also philosophical. This form of R use is generally referred to as The Tidyverse. The Tidyverse is extremely powerful and we love it. However, we feel that it is far more efficient to first learn base R for non-programmers, before learning the Tidyverse, and we will exclusively use base R for this bootcamp.\nThere is some disagreement over which “version” of R is better or easier to learn and teach with. You will definitely encounter the Tidyverse at some point and eventually you can choose how much or how little you will use it.\n\nThe Argument for Base R\nThe Argument for the Tidyverse"
-  },
-  {
-    "objectID": "2-r-lang.html#practice-exercises",
-    "href": "2-r-lang.html#practice-exercises",
-    "title": "2 R language",
-    "section": "6 Practice exercises",
-    "text": "6 Practice exercises\n\n\n6.1\nName and describe the purpose of the first 2 sections that should be present in every R script\n\n\n\n6.2\nWhat is the purpose of “subset” argument in the boxplot() function (hint: use help())\n\n\n\n6.3\nWrite an expression using good R spacing syntax that takes the sum of 3, 6, and 12 and divides it by 25\n\n\n\n6.4\nWrite pseudocode steps for calculating the volume of a cylinder (hint, if you do not know it by heart, you may need to research the equation for the volume of a cylinder!). For a cylinder of height = 3.2 cm and end radius of 5.5 cm, report the volume in cm to 2 decimal points of accuracy. Use at least 3 decimal points of accuracy for pi (hint, the quantity named pi is a standard variable in R!).\n\n\n\n6.5\nExecute the code and explain the outcome in comments.\nTRUE & 3 < 5 & 6 > 2 & !FALSE\n\n\n\n6.6\nWrite a plausible practice question involving the use of the not Boolean operator, !.\n\nNote: for this R Stats Bootcamp page, and only for this one, a sample of solutions is offered. For others, we avoid explicit solutions to encourage you to formulate your own unique solutions and to interact in Slack for help if you need support coming to your own solutions.\nSCRIPT 2 Example SOLUTIONS"
-  },
-  {
-    "objectID": "3-functions.html",
-    "href": "3-functions.html",
-    "title": "3 Functions & packages",
-    "section": "",
-    "text": "R as a garage full of tools"
-  },
-  {
-    "objectID": "3-functions.html#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools",
-    "href": "3-functions.html#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools",
-    "title": "3 Functions & packages",
-    "section": "1 Functions and Packages Toolboxes (R as a garage full of tools)",
-    "text": "1 Functions and Packages Toolboxes (R as a garage full of tools)\n\nThe garage and toolbox metaphors\nOne of the best things about R is that it can be customized to accomplish a huge variety of kinds of tasks: perform all sorts of statistical analyses from simple to bleeding edge, produce professional graphs, format analyses into presentations, manuscripts and web pages, collaboration, GIS and mapping, and a lot more. The tools themselves are contained in toolboxes and in a given toolbox, the tools are related to each other, usually in a focus to the kind of tasks they are suited for.\n\nThe tools in R are functions, and the toolboxes are packages.\n\nWhile R comes with a lot of packages, there is an enormous amount available for instant download at any time you want or need them (over 18,000 different packages at the moment…). Making use of all these resources is usually a case of identifying a problem to solve, finding the package that can help you, and then learning how to use the functions in the package This page is all about introducing functions, packages and the R help system.\n\n\n1.1 Objectives\n\nFunction tour\nUsing functions and getting help\nR packages\nFinding, downloading and using packages\nPractice exercises"
-  },
-  {
-    "objectID": "3-functions.html#function-tour",
-    "href": "3-functions.html#function-tour",
-    "title": "3 Functions & packages",
-    "section": "2 Function tour",
-    "text": "2 Function tour\n\nThink of functions in R as tools that do work for you.\n\nCode for functions is is simple once you get the idea, but you have to understand how they work to use them in the most powerful way. Also, to make the most of functions, you must get to know which ones perform common tasks, and how to use them. We will practice that in this section. We consider the USE of functions (for a given problem) as a separate issue from discovering a function, and here we focus on USE.\nA generic might look like this: function_name(). The function name is (obviously) the function_name part and all functions must have the bracket notation (). There are some rules for function names and for naming R objects in general, but for now the most important thing to keep in mind is that details like capitalization are important, that is, R is case sensitive.\nThus, function_name() is not the same as Function_name() or function_Name() (see what I did there?).\n\n2.1 Using functions\nFunctions are typically used by providing some information inside the brackets, usually data for the function to do work on or settings for the function. Function values and settings are assigned to function arguments and most functions have several arguments.\n\nfunction_name(argument_1 = value_1, argument_2 = value_2, ...)\nA general rule is that you INPUT information or data into function brackets that you want the function to do work and function OUTPUT is the work being done, sometimes including information output (like the results of a statistical test, or a plot).\n\nEach argument has a unique name\nArgument values are assigned using the equals sign =, the assignment operator\nEach argument is separated by a comma ,\nThe ... means there are additional arguments that can be used optionally (for now we can ignore those)\n\n\n\n\n2.2 Function names\nFinding functions by their names is often easy for very simple and common tasks. For example:\nmean() Calculates the arithmetic mean\nlog() Calculates the log\nsd() Calculates the standard deviation\nplot() Draws plots\nboxplot() Draws boxplots\nhelp() Used to access help pages\nYou get the idea…\n\nThe most important thing here is that you would generally get the help page up as a reference to what arguments are required and how to customize your function use. This is the key to learning R in the easiest way. That is, until you memorize the use and arguments for common functions."
-  },
-  {
-    "objectID": "3-functions.html#using-functions-and-getting-help",
-    "href": "3-functions.html#using-functions-and-getting-help",
-    "title": "3 Functions & packages",
-    "section": "3 Using functions and getting help",
-    "text": "3 Using functions and getting help\nFor now, let’s assume that you know:\n\nWhat tasks you want to do (maybe outlined with pseudocode), and\nWhat function(s) can perform those tasks.\n\n\nTry this out in your own script:\n## A workflow for using functions ####\n\n## (make pseudocode of steps in comments)\n\n# Overall task: calculate the mean for a vector of numbers\n# Step 1: Code the vector of data - c() function\n# Step 2: Calculate the mean - mean() function\n# Step 3: Plot the data - boxplot()\n\n# Step 1: Code the vector of data - c() function\n\nhelp(c) # We use this a lot - it \"combines\" numbers\nc(2, 6, 7, 8.1, 5, 6) \n\n# Step 2: Calculate the mean - mean() function\n\nhelp(mean) \n# Notice under Usage, the \"x\" argument\n# Notice under Arguments, x is a numeric vector\n\nmean(x = c(2, 6, 7, 8.1, 5, 6)) # Easy\n\n# Step 3: Plot the data - boxplot()\n\nhelp(boxplot) # x again!\nboxplot(x = c(2, 6, 7, 8.1, 5, 6))\n\n# Challenge: Add an axis label to the y-axis - can you find the name of the argument?\n\n\n# without a y-axis label this is not a good graph\n\nboxplot(x = c(2, 6, 7, 8.1, 5, 6))"
-  },
-  {
-    "objectID": "3-functions.html#r-packages",
-    "href": "3-functions.html#r-packages",
-    "title": "3 Functions & packages",
-    "section": "4 R packages",
-    "text": "4 R packages\nThere are a lot of R packages. These are “toolboxes” often built in the spirit of identifying a problem, literally making a tools that solves the problem, and then sharing the tool for other to use as well. In fact, all official R packages are “open source”, meaning that you may use them freely, but also you can improve them and add functionality. This section is about the basics of R packages that are additional to the base R installation.\nTypically, you only download a package once you identify you need to use functions in it. There are are several ways to accomplish this. We are going to practice 2 different ways, one with R code that is simple and will work no matter how you use R, and one that uses menus in RStudio.\n\n\n4.1 Finding, downloading and using packages\nFinding packages happens a variety of ways in practice. A package may be recommended to you, you might be told to use a particular package for a task or assignment, or you may discover it on the web.\nInstalling and loading packages with code\nThere are 2 steps here - installing, then loading. Installing is very easy to do using the install.packages() function. Loading a package making the functions in it available for use is done using the library() package. Basic usage of these functions is:\n# Step 1: install a package\n\nhelp(install.packages) # just have a look\ninstall.packages(pkgs = \"package_name\")\n\n# The package is downloaded from a remote repository, often\n# with additional packages that are required for use.\n\n# Step 2: load a package\n\nlibrary(\"package_name\")\n\n# Challenge: Install and load the \"ggplot2\" package, and then use help() to look at the help page for the function ggplot().  What kind of R object is required by the \"data\" argument?\n \n\n\n\n4.2 Installing and loading packages with the RStudio Packages tab\nYou can find the packages tab in RStudio in the lower left pane by default.\n\n\n\nPackages tab\n\n\n\nWhen you click on the Packages tab (A in the picture above), you can see a list of packages that are available to you (i.e., in RStudio desktop these have already been downloaded locally).\nIn order to load a package, you can find the package name in the list and click the radio button (B in the picture).\nTo install a package, you can click on the Install button (C in the image).\nYou should see the Install Packages window, where you can enter the name of a package for installation, searching the official Comprehensive R Archive Network (Repository (CRAN)) by default:\n\n\n\n\n\nInstall packages in RStudio"
-  },
-  {
-    "objectID": "3-functions.html#finding-downloading-and-using-packages",
-    "href": "3-functions.html#finding-downloading-and-using-packages",
-    "title": "3 Functions & packages",
-    "section": "5 Finding, downloading and using packages",
-    "text": "5 Finding, downloading and using packages\nFinding packages happens a variety of ways in practice. A package may be recommended to you, you might be told to use a particular package for a task or assignment, or you may discover it on the web.\nInstalling and loading packages with code\nThere are 2 steps here - installing, then loading. Installing is very easy to do using the install.packages() function. Loading a package making the functions in it available for use is done using the library() package. Basic usage of these functions is:\n# Step 1: install a package\n\nhelp(install.packages) # just have a look\ninstall.packages(pkgs = \"package_name\")\n\n# The package is downloaded from a remote repository, often\n# with additional packages that are required for use.\n\n# Step 2: load a package\n\nlibrary(\"package_name\")\n\n# Challenge: Install and load the \"ggplot2\" package, and then use help() to look at the help page for the function ggplot().  What kind of R object is required by the \"data\" argument?\n \n\nInstalling and loading packages with the RStudio Packages tab\nYou can find the packages tab in RStudio in the lower left pane by default.\n\n\n\nPackages tab\n\n\n\nWhen you click on the Packages tab (A in the picture above), you can see a list of packages that are available to you (i.e., in RStudio desktop these have already been downloaded locally).\nIn order to load a package, you can find the package name in the list and click the radio button (B in the picture).\nTo install a package, you can click on the Install button (C in the image).\nYou should see the Installe Packages window, where you can enter the name of a package for installation, searching the official Comprehensive R Archive Network (Repository (CRAN)) by default:\n\n\n\nInstall pkgs windows in RStudio"
-  },
-  {
-    "objectID": "3-functions.html#practice-exercises",
-    "href": "3-functions.html#practice-exercises",
-    "title": "3 Functions & packages",
-    "section": "5 Practice exercises",
-    "text": "5 Practice exercises\n\n\n5.1\nExplain in your own words what the freq argument in the hist() function does. It often helps to practice trail and error to understand what is happening with data. Try experimenting with the data vector below with the hist() function to explore the freq argument:\nc(1,2,4,3,5,6,7,8,6,5,5,5,3,4,5,7)\n\n\n\n5.2\nTailor your code from the hist() example in problem 1 so that your histogram has a main title, axis labels, and set the col argument to “blue”. We are just scratching the surface with plot customization - try to incorporate other arguments to make an attractive graph.\n\n\n\n5.3\nUse the mean() function on the following data vector\nc(1,2,4,3,5,6,7,8,6,5,NA,5,3,4,5,7)\nYou will see an error message. The symbol “NA” has a special meaning in R, indicating a missing value. Use help() for the mean function and implement the na.rm argument to fix the problem. Show your code.\n\n\n\n5.4\nIn your own words, what value is required for the “d” argument in the pwr.t.test() function in the {pwr} package? Show the code involved including any appropriate comment code required to answer this question. (hint: you will probably need to install the package, load it, and use help() on the function name)\n\n\n\n5.5\nEvery official R package has a webpage on the Comprehensive R Archive Network (CRAN) and there are often tutorials called “vignettes”. Google the CRAN page for the package {ggplot2} and find the vignette called “Aesthetic specifications”. Read the section right near the top called “Colour and fill”.\nFollow the instructions to list all of the built-in colours in R and list them in the console. Ed’s personal favourite is “goldenrod”, index number [147]. Can you find the index number for “tomato2”?\n\n\n\n5.6\nWrite a plausible practice question involving the use of help() for an R function."
-  },
-  {
-    "objectID": "3-functions.html#harper-adams-data-science",
-    "href": "3-functions.html#harper-adams-data-science",
-    "title": "3 Functions & packages",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "4-data.html",
-    "href": "4-data.html",
-    "title": "4 Data objects",
-    "section": "",
-    "text": "Data objects in ‘R’ space"
-  },
-  {
-    "objectID": "4-data.html#data-objects-in-r",
-    "href": "4-data.html#data-objects-in-r",
-    "title": "4 Data objects",
-    "section": "1 Data objects in R",
-    "text": "1 Data objects in R\n\nImagine you are floating in space in the R Global Environment and any data object you can see, you can call on by name to manipulate with functions. Let’s call it R Space\n\nThe fundamental way to analyse data in R is to be able to manipulate it with code. In order to do that, we need a system of containers to store the data in. This page is about the rules used for storing data in data objects. We will examine basic data types at the same time as how R stores them. R is actually very flexible in the way it handles data, making it as easy as possible for non-programmers to get going.\n\n\n1.1 Objectives\n\nBasic data types in R, str()\nData with factors\nclass() and converting variables\nVector and Matrix fun\nPractice exercises"
-  },
-  {
-    "objectID": "4-data.html#basic-data-types-str",
-    "href": "4-data.html#basic-data-types-str",
-    "title": "4 Data objects",
-    "section": "2 Basic data types, str()",
-    "text": "2 Basic data types, str()\n\n2.1 Storage containers types\nThe first things to examine are the way that R variables are named, and the organization system for storing the data. The organization part is particularly important, because it is used to actually access and use data.\nVariable names in R are simple and do not need to be “declared” like in some computing languages, and they can be almost anything, but there are a few rules. The R system has a built-in error message and warning message system (also known as the Passive-Aggressive Butler), which will usually give a hint when some of these rules are violated.\n\n\n\n2.2 The Global Environment\nOne of the things we notice when people begin using R, even if they are experienced in data analysis, is that they expect to “see” data and data sets, almost as they are physical things. This might be because of experience using Excel and seeing the visual representation of data in spreadsheets (indeed, a graphical representation of physical spreadsheets!).\nThe regular R system for interacting with data is a little more abstract which can be disconcerting to new users. Typical use is to create variables in code script files and, usually, the bring data into the Global Environment from external files on the local PC, or from the web. We will practice using the Global Environment is the main way to interact with data.\nYou can use the class() function to find out the variable type (using this this is a good idea, since R occasionally guesses the intended data type incorrectly).\n# Try this\n\nvariable_1 <- c(4,5,7,6,5,4,5,6,7,10,3,4,5,6) # a numeric vector\n\nvariable_2 <- c(TRUE, TRUE, TRUE, FALSE) # a logical vector\n\nvariable_3 <- c(\"Peter Parker\", \"Bruce Wayne\", \"Groo the Wanderer\") # a character vector\n\nclass(variable_1) # \"numeric\"\nclass(variable_2) # \"logical\"\nclass(variable_3) # \"character\"\n\nLook at the upper right pane of your RStudio and you should see something like:\n\n\n\n\nRStudio Global Environment\n\n\n\n\nThe Environment tab contains the Global Environment (labelled A in the picture above). There are some other tabs, but we will ignore these for now. The Global Environment itself contains information about the variables that are held in memory. If we think of this as “R Space”, a general rule is that if you can see a variable here in the Global Environment, you can manipulate it and work with it.\nNotice that there is quite a lot of information in the Global Environment about the actual variables (B in the picture). There is a column with the variable NAME (variable_1, variable_2, etc.), a column with the variable TYPES (num, logi, etc.), a column with the variable dimensions ([1:14] is an index like a unique “street address” for each of the 14 numeric values contained in “variable_1”)\n\n\n\n2.3 Naming conventions for variables\nVariable names:\n\nCan contain letters, numbers, some symbolic characters\nMust begin with a letter\nMust not contain spaces\nSome forbidden characters like math operators, “@”, and a few others\nShould be human-readable, consistent, and not too long\nCase sensitive\n\n# Try this\n\n## Variable name rules ####\n\n# Can contain letters, numbers, some symbolic characters\nx1 <- 5  # OK\n\nx2 <- \"It was a dark and stormy night\" # OK\n\nmy_variable_9283467 <- 1 # technically works, but hard to read\n\n# Must begin with a letter \n\nvarieties <- c(\"red delicious\", \"granny smith\") # OK\n\nx432 <- c(\"a\", \"b\") # OK\n\n22catch <- c(TRUE, TRUE, FALSE)  # nope\n\n# Must not contain spaces\nmy_variable <- 3 # OK\n\nmy.variable <- 4 # OK\n\nmyVariable <- 5 # OK\n\nmy variable <- 6 # nope\n\n\"my variable\" <- 7 # nope\n\n# Must not contain forbidden characters like \n# math operators, \"@\", and a few others\nmy@var <- 1 # nope\n\nmy-var <- 1 # nope\n\nmy=var <- 1 # nope\n\n# etc.\n\n# Should be human-readable, consistent, and not too long\n\nDiameter_Breast_Height_cm <- c(22, 24, 29, 55, 43) # legal but too long\n\nDBH_cm <- c(22, 24, 29, 55, 43) # much better\n\n#Case sensitive\nheight <- c(180, 164, 177) # OK\n\nHeight # Error: object 'Height' not found (notice capital H)\n\nheight # OK"
-  },
-  {
-    "objectID": "4-data.html#data-with-factor",
-    "href": "4-data.html#data-with-factor",
-    "title": "4 Data objects",
-    "section": "3 Data with factor()",
-    "text": "3 Data with factor()\nSometimes you will need to analyze data that is a factor, where the different values are categories. Factors in R can be a cause for confusion, but there needn’t be problems if you understand them. The information here is a starting point, and we skip some complexities, but essentially\n\n3.1 Two types of factors, non-ordered and ordinal\nNon-ordered factors are simply categories and the levels are simply the names of the categories. By definition, non-ordered factor do not have a specific order! an example here might be plant varieties.\nOrdered factors have a specific order, which can be important for analysis or for graphing. You usually have to specify the order explicitly to get this right. An example here might be the days of the week, where the order of day is important."
-  },
-  {
-    "objectID": "4-data.html#class-and-converting-variables",
-    "href": "4-data.html#class-and-converting-variables",
-    "title": "4 Data objects",
-    "section": "4 Class() and converting variables",
-    "text": "4 Class() and converting variables\nWe use the class() function to query what data category a variable is set too. R is pretty good at setting this correctly, but it is a good idea to check sometimes and occasionally you will have to manually set variable characteristics.\n\n# try this\n\n# non-ordered factor\nvariety <- c(\"short\", \"short\", \"short\",\n             \"early\", \"early\", \"early\",\n             \"hybrid\", \"hybrid\", \"hybrid\")\nclass(variety)  # \"character\", but this is really a factor...\nvariety # Notice the character strings are just printed out\n\nvariety <- factor(variety) # use factor() to convert the character vector to a factor\nclass(variety)  # now variety is a \"factor\"\nvariety # notice the output has changed\n\nNow, try some code manipulating ordered factors.\n# Ordered factors\nday <- c(\"Monday\", \"Monday\", \n         \"Tuesday\", \"Tuesday\", \n         \"Wednesday\", \"Wednesday\", \n         \"Thursday\")\nclass(day) # character\n\n#make day a factor\nday <- factor(day)\nclass(day)\nday # Notice the Levels: Monday Thursday Tuesday Wednesday\n\n# To set the order explicitly we need to set them explicitly\nhelp(factor) # notice the levels argument - it sets the order of the level names\n\nday <- factor(x = day, levels = c(\"Monday\", \"Tuesday\",\n                         \"Wednesday\", \"Thursday\"))\nday # Notice the level order now"
-  },
-  {
-    "objectID": "4-data.html#vector-and-matrix-fun",
-    "href": "4-data.html#vector-and-matrix-fun",
-    "title": "4 Data objects",
-    "section": "5 Vector and Matrix fun",
-    "text": "5 Vector and Matrix fun\nVector and matrix data structures are two fundamental ways to arrange data in R. We have already looked at vectors, which store data in a single dimension.\nThere are actually a few different data organisation structures in R.\n\nVector - stores data in a single dimension from 1 to i, my_vec[i]\nMatrix - stores data in two dimensions 1 to i rows, 1 to j columns my_mat[i, j]\nArray - Three (or more) dimensions from 1 to to i, j, and k, my_array[i, j, k]\n\nVectors, Matrices and Arrays can only store the same TYPE of data.\n\n\n5.1 Vector practice\n# Try this\n\nmyvec1 <- c(1,2,3,4,5) # numeric vector\nmyvec1\nclass(myvec1) # see? I told ya!\n\nmyvec2 <- as.character(myvec1) #convert to character\nmyvec2 # notice the quotes\nclass(myvec2) # now character\n\nmyvec3 <- c(2, 3, \"male\")\nmyvec3 #notice the numbers now have quotes - forced to character...\n\nmyvec4 <- as.numeric(myvec3) #notice the warning\nmyvec4 # The vector element that could not be coerced to be a numeric was converted to NA\n\n\n\n5.2 Matrices\nMatrices can be quite useful - you can manipulate data into matrix form with the matrix() function. By default rows and columns are merely numbered, but they can be named as well.\n\n# Try this\n\nvec1 <- 1:16 # make a numeric vector with 16 elements\nvec1 \n\nhelp(matrix) #notice the ncol, nrow and byrow arguments\n\nmat1 <- matrix(data = vec1, ncol = 4, byrow = FALSE) #byrow = FALSE is the default\n\nmat1 # Notice the numbers filled in by columns\ncolnames(mat1) # The Columns and Rows have no names\n\ncolnames(mat1) <- c(\"A\", \"B\", \"C\", \"D\") # Set the column names for mat1\ncolnames(mat1)\n\nmat1 # Yep the columns shows names\n\n\n\n5.3 Matrix challenge\n# Challenge 1: Set the Row names for Mat1 using the rownames() function\n\n# Challenge 2: make a matrix with 3 rows with the following vector, \n# so the the first COLUMN contains the numbers 2, 5, and 9, in the order,\n# for rows 1, 2, and 3 respectively:\n\nvec2 <- c(2,3,5,4,5,6,7,8,9,5,3,1)"
-  },
-  {
-    "objectID": "4-data.html#practice-exercises",
-    "href": "4-data.html#practice-exercises",
-    "title": "4 Data objects",
-    "section": "6 Practice exercises",
-    "text": "6 Practice exercises\n\n\n6.1\nCreate a vector named my_var1 that contains the following 6 integers: 3, 6, 12, 7, 5, 1. Create a Second vector called my_var2 that contains the following 2 integers: 2, 3. Evaluate the expression my_var1 + my_var 2. Explain the output in terms of R mechanics in your own words.\n\n\n\n6.2\nCreate a character vector with the names of the 12 months of the year. Convert the vector to a factor, with the month names in chronological order. Show your code.\n\n\n\n6.3\nWhat is wrong with the following code? Describe, show the code, and justify a fix for the problem in your own words.\nmymat <- matrix(data = c( 12,   23,   45,\n                         \"34\", \"22\", \"31\"))\n\n\n\n6.4\nUse the array() function to make a 2 x 2 x 3 array to produce the following output:\n, , 1\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n, , 2\n\n     [,1] [,2]\n[1,]    5    7\n[2,]    6    8\n\n, , 3\n\n     [,1] [,2]\n[1,]    9   11\n[2,]   10   12\n\n\n\n6.5\nShow the code to make the following matrix:\n       cat dog\nmale    22  88\nfemale  71  29\n\n\n\n6.6\nWrite a plausible practice question involving the use of the matrix() and vector() functions."
-  },
-  {
-    "objectID": "4-data.html#harper-adams-data-science",
-    "href": "4-data.html#harper-adams-data-science",
-    "title": "4 Data objects",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "5-data-frames.html",
-    "href": "5-data-frames.html",
-    "title": "5 Data frames",
-    "section": "",
-    "text": "Like your room, data should be tidy"
-  },
-  {
-    "objectID": "5-data-frames.html#data-frames-in-r",
-    "href": "5-data-frames.html#data-frames-in-r",
-    "title": "5 Data frames",
-    "section": "1 Data frames in R",
-    "text": "1 Data frames in R\nNB for this page we assume you have access to Microsoft Excel. However, similar spreadsheet software (like Libre Office Calc) will work fine.\n\n\nThe first step in using R for data analysis is getting your data into R. The first step for getting your data into R is making your data tidy.\n\nThe commonest question we have experienced for new users of R who want to perform analysis on their data is how to get data into R. There is good news and bad news. The good news is that it is exceedingly easy to get data into R for analysis, in almost any format. The bad news is that a step most new users find challenging is taking responsibility for their own data.\nWhat we mean here is that best practice in data management involves active engagement with your dataset. This includes choosing appropriate variable names, error checking, and documenting information about variables and data collection. We also aim to avoid proliferation of excessive dataset versions, and, worst of all, embedding graphs and data summaries into Excel spreadsheets with data.\n\n\n1.1 Objectives\n\nCommon data file types\nExcel, data setup, and the Data Dictionary\nGetting data into R\nManipulating variables in the Data Frame\nPractice exercises"
-  },
-  {
-    "objectID": "5-data-frames.html#tidy-data-concept",
-    "href": "5-data-frames.html#tidy-data-concept",
-    "title": "5 Data frames",
-    "section": "2 Tidy data concept",
-    "text": "2 Tidy data concept\n\n2.1 The Tidy Data concept\nA concept to streamline data preparation for analysis is Tidy Data. The basic idea is to format data for analysis in a way that\n\nArchives data for reproducibility of results, and\nMakes the data transparent to colleagues or researchers by documenting a data dictionary.\n\n\nThis page is all about the tidy data concept and a simple recipe for best practice to prepare data for analysis and to get data into R.\nThe definition of Tidy Data is generally attributed to Wickham (2014), and is based on the idea that with a few simple rules, data can be archived for complete reproducibility of results. This practice benefits any user because it facilitates collaboration at the same time as documenting both data and analysis methods for value to future use.\nThe essentials of Tidy Data are:\n\nEach variable should be in a column\nEach independent observation should be in a row\nA Data Dictionary should be associatied with the dataset, such that completely reproducible analysis is possible"
-  },
-  {
-    "objectID": "5-data-frames.html#harper-adams-data-science",
-    "href": "5-data-frames.html#harper-adams-data-science",
-    "title": "5 Data frames",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
-  },
-  {
-    "objectID": "5-data-frames.html#common-data-file-types",
-    "href": "5-data-frames.html#common-data-file-types",
-    "title": "5 Data frames",
-    "section": "3 Common data file types",
-    "text": "3 Common data file types\nThe best file type for the majority of people to archive data for analysis is in a plain text Comma Separated Values (CSV or .csv) file, or just an Excel Spreadsheet. Best practice in contemporary scientific data analysis dictates that proprietary data formats should be avoided, like those produced by SPSS, Genstat, Minitab or other programs.\nThe reason for this is that data stored in those formats is not necessarily useful to people who do not have access to the software, and that for archiving purposes, such software file formats tend to change over time. While Excel is a proprietary format, we find that it is is easy to use, (almost completely) ubiquitous, and relatively resilient to backwards compatibility issues. Thus, sticking to CSV or Excel is a rule you should have a very good reason if you choose to break from it.\nWe recommend using Excel to store data with the goal (for simple datasets and analyses) of having one table for the actual data, in Tidy Data format, and a second tab consisting of a Data Dictionary where each variable is described in enough detail to completely reproduce any analysis. Generally, no formatting or results should ever be embedded in an Excel spreadsheet that is used to store data."
-  },
-  {
-    "objectID": "5-data-frames.html#excel-data-setup-and-the-data-dictionary",
-    "href": "5-data-frames.html#excel-data-setup-and-the-data-dictionary",
-    "title": "5 Data frames",
-    "section": "4 Excel, data setup, and the Data Dictionary",
-    "text": "4 Excel, data setup, and the Data Dictionary\n\n4.1 Tidy Data and Excel\nFor this section, you should download the following files in Excel (.xlsx) format:\n\nTidy Data example Excel file\nThe exact same information as un-Tidy Data\n\n\nThe aphid experiment\n\nYou are contacted by someone who wants help with data analysis and they give you some information about their experiment. They are interested in how diet affects the production of an important metabolite in pest aphids. They designed an experiment with a control treatment where aphids were allowed to feed on plain plants, another treatment where their diet was supplemented with one additive, “AD”, and a third treatment where their diet was supplemented with two additives, “AD” and “SA”. Another factor was aphid Genus, where individuals from the genera Brevicoryne and Myzus were tested. Three replicates of each treatment combination were performed:\n\n\naphid genus [2 levels] \\(\\times\\) food treatment [3 levels].\n\n\nThe metabolite of interest was measured with a spectrometer using three individual aphids from each replicate. The spectrometer peak area (an arbitrary scale) represents the total amount of the metabolite, which was converted to a real scale of metabolite total concentration. Finally, this total concentration was divided by 3 to estimate the concentration of the metabolite in each individual aphid.\n\n\n\n\n4.2 Untidy data\nHave a look at the file 5-untidy.xlsx in Excel.\n\nThe aphid dataset is fairly small and it is readable by humans, but in its current form it is not usable for analysis in R or other statistical software and there are a few ambiguous aspects which we will explore and try to improve.\n\nUntidy\n\n\n\nUntidy data\n\n\n\n\nThe file contains embedded figures and summary tables\nThere is empty white space in the file (Row 1 and Column A)\nThe variable names violate several naming conventions (spaces, special characters)\nMissing data is coded incorrectly (Row 13 was a failed data reading, but records zeros for the actual measurements)\nConversion information accessory to the data is present (Row 3)\nThere is no Data Dictionary (i.e. explanation of the variables)\nThe Aphid and Diet treatments are “confounded” in their coding\nWhat the heck is the “RT” column (most of the values are identical)\n\n\nNow, have a look at the Tidy Data version of the data file.\n\n\n\nTidy version of the data\n\n\n\n\nThe embedded figures have been removed\nThe white space rows and columns have been removed\nThe variable names have been edited but still are equally informative\nMissing data is coded correctly with “NA”\nThe conversion info has been removed and placed in the Data Dictionary\nA complete Data Dictionary on a new tab (“dictionary”) was added, explaining each variable\nThe aphid and food treatment variables were made separate\n\n\nTidy Data version Data Dictionary tab\n\n\n\nTidy data dictionary\n\n\n\nNotice in the Data Dictionary how there is a row for each variable with the name of the variable and an explanation for each variable.\n\n\n\n4.3 CSV files\nOnce your data is tidy, it is very easy to read in Excel data files, or they can be exported into a text file format like CSV (comma separated values) to read straight into R or other programs.\nHave a look at the Tidy Data dataset in .csv file format.\nOpen it with a plain text editor (e.g. Notepad in Windows, or similar). You will notice that each column entry is separated from others with a comma ,, hence the name Comma Separated Values!\n\nTidy csv\n\n\n\nTidy csv"
-  },
-  {
-    "objectID": "5-data-frames.html#getting-data-into-r",
-    "href": "5-data-frames.html#getting-data-into-r",
-    "title": "5 Data frames",
-    "section": "5 Getting data into R",
-    "text": "5 Getting data into R\nWe still need to actually “read data into R” from external files. There are a very large number of ways to do this and most people eventually find their own workflow. We think it is best for most people to use Excel or CSV files in Tidy Data format.\nThe basics of reading external files from a script is to to use the read.xlsx() function in the {openxlsx} package (you will probably need to install this with the install.packages() function), or else to use read.csv() that comes standard in base R. We will briefly try both.\n\n\n5.1 Working directory\n\nBest practice when working with files is to formally set your “working directory”. Basically, this tells R where your input (i.e. data) and output (like scripts or figures) files should be.\n\n\nThere are several viable ways to set your working directory in R, e.g. via the Session menu:\n\n\n\nWorking directory\n\n\n\nHowever, the best way to do this this is to set your working directory using code with the setwd() function. Here we should a workflow for Windows, which is similar on other computer systems. We consider the step of setting a working directory essential for best practice.\nIf you are unfamiliar with how to obtain the path to your working directory, open windows explorer, navigate to the folder you wish to save your script, data files and other inputs and outputs. You can think of this folder as one that contains all related files for e.g. a data analysis project, or perhaps this bootcamp module!\n\n\n\n\nYour directory window might look similar to this\n\n\n\nNotice the folder “view” is set to “Details”, and also notice that the folder options are set to “Show file extensions”. We recommend setting your own settings like this (if using Windows Explorer).\nThe pointer is indicated in the circle marked A in the picture above.\nLeft click the area to the right of the folder text once (where the pointer is in the picture above) and you should see something similar to the figure below, where the folder path is displayed and the text is automatically selected.\n\n\n\n\nYour selected file path might look similar to this\n\n\n\nAssuming you have opened the File Explorer in your working directory or navigated there, the selected PATH is the working directory path which you can copy (Ctrl + c in Windows). In your script, you can now use getwd() to get and print your working directory path, and setwd(), which takes a single character string of the path for your working directory for the argument dir , to set it.\n\n\nR file paths use the forward slash symbol “/” to separate file names. A very important step for Windows users when setting the working directory in R is to change the Windows default “” for forward slashes…\n\n\n\n\n5.2 Read in your first file\nYou need this for the following code if you did not already download it above: .xlsx data file\n# Try this\n\ngetwd() # Prints working directory in Console\n\nsetwd(\"D:/Dropbox/git-rstats-bootcamp/website/data\")\n\n# NB the quotes\n# NB the use of \"/\"\n# NB this is MY directory - change the PATH to YOUR directory :)\n\ngetwd() # Check that change worked\n\n## Read in Excel data file\n\n\ninstall.packages(openxlsx, dep = T) # Run if needed\n\nlibrary(openxlsx) # Load package needed to read Excel files\n\n# Make sure the data file \"5-tidy.xlsx\" is in your working directory\nmy_data <- read.xlsx(\"5-tidy.xlsx\")\n\nAll being well, you should see the following data object in your Global Environement. Note the small blue button (A, circled below) you can press to espand the view of the variables in your data frame.\n\n\n\nData in your Global Environment\n\n\n\nNote that the same procedure works with Comma Separated Values data files, and other kinds of files that you want to read into R, except that the R function used will be specific to the file type. E.g., read.csv() for CSV files, read.delim for TAB delimited files, or read.table() as a generic function to tailor to many types of plain text data files (there are many others, but this is enough for now)."
-  },
-  {
-    "objectID": "5-data-frames.html#manipulating-variables-in-the-data-frame",
-    "href": "5-data-frames.html#manipulating-variables-in-the-data-frame",
-    "title": "5 Data frames",
-    "section": "6 Manipulating variables in the Data Frame",
-    "text": "6 Manipulating variables in the Data Frame\n\nNow that there is a data frame in your working environment, we can start working with the variables. This is a good time to think about the “R Space” metaphor. You are floating in R Space and you can see a data frame called my_data. You cannot see inside the container, so we will look at methods of accessing the data inside by name…\n\n\n\n6.1 Data manipulation in R\n\nThe names() function\nThe use of the $ operator for data frames\nThe use of the str() function for data frames\nThe use of the index operator [ , ]\nThe use of the attach() function\n\n\nCarefully use the follow code and try some data manipulation on your own.\n\n\n6.2 class()\n# Try this\n\nclass(my_data) # data.frame, a generic class for holding data\n\n\n6.3 names()\nThe names() function returns the name of attributes in R objects. When used on a data frame it returns the names of the variables.\n# Try this\nnames(my_data)\n\n\n6.4 $ operator for data frames\nThe $ operator allows us to access variable names inside R objects. Use it like this:\ndata_object$variable_name\n# Try this\n\nconc.ind # Error because the variable conc.ind is INSIDE my_data\n\nmy_data$conc.ind\n\n\n6.5 str()\nThe str() function returns the STRUCTURE of a data frame. This includes variable names, classes, and the first few values\n# Try this\nstr(my_data) \nThe output similar to the graphical Global Environment view in RStudio. Note the conc.ind variable is classed numeric\nNote the treatment variable is classed as character (not a factor)\n\n\n\n6.6 [ , ] the index operator\nThe index operator allows us to access specified rows and columns in data frames (this works exactly the same in matrices and other indexed objects).\n# Try this\nmy_data$conc.tot # The conc.tot variable with $\nmy_data$conc.tot[1:6] # each variable is a vector - 1st to 6th values\n\nhelp(dim)\ndim(my_data) # my_data has 18 rows, 6 columns\n\nmy_data[ , ] # Leaving blanks means return all rows and columns\n\nnames(my_data) # Note conc.tot is the 6th variable\n\nnames(my_data)[6] # Returns the name of the 6th variable\n\nmy_data[ , 6] # Returns all rows of the 6th variable in my_data\n\n# We can explicitly specify all rows (there are 18 remember)\nmy_data[1:18 , 6] # ALSO returns all rows of the 6th variable in my_data\n\n# We can specify the variable names with a character\nmy_data[ , \"conc.tot\"]\nmy_data[ , \"conc.ind\"]\n\n# Specify more than 1 by name with c() in the column slot of [ , ]\nmy_data[ , c(\"conc.tot\", \"conc.ind\")] \n\n\n6.7 attach()\nThe attach() function makes variable names available for a data frame in R space\n# Try this\nconc.ind # Error; the Passive-Aggressive Butler doesn't understand...\n\nattach(my_data)\nconc.ind # Now that my_data is \"attached\", the Butler can find variables inside\n\nhelp(detach) # Undo attach()\ndetach(my_data)\nconc.ind # Is Sir feeling well, Sir?"
-  },
-  {
-    "objectID": "5-data-frames.html#practice-exercises",
-    "href": "5-data-frames.html#practice-exercises",
-    "title": "5 Data frames",
-    "section": "7 Practice exercises",
-    "text": "7 Practice exercises\n\nButterfly data in xlsx format\nThe data are from a small experiment measuring antenna length in butterflies manipulating diet in both sexes.\n\n7.1\nDownload the data file above and place it in a working directory. Set your working directory. Read in the data file and place it in a data frame object named data1. After examining the data, use mean() to calculate the mean of the variable length and report the results in a comment to two decimal points accuracy. Show your R code.\n\n\n\n7.2\nShow the code to convert the diet variable to an ordinal factor with the order “control” > “enhanced”, and the sex variable to a plain categorical factor.\n\n\n\n7.3\nShow code for two different variations of using only the [ , ] operator with your data frame to show the following output:\n       diet length\n8   control      6\n9   control      7\n10  control      6\n11 enhanced      8\n12 enhanced      7\n13 enhanced      9\n\n\n\n7.4\nShow code to read in a comma separated values data file that does not have a header (first row containing variable names).\n\n\n\n7.5\nDescribe in your own words what the attach() function does.\n\n\n\n7.6\nWrite a plausible practice question involving any aspect of manipulation of a data frame."
-  },
-  {
     "objectID": "6-data-manipulation.html",
     "href": "6-data-manipulation.html",
     "title": "6 Data subsetting and manipulation",
@@ -591,6 +38,286 @@
     "objectID": "6-data-manipulation.html#harper-adams-data-science",
     "href": "6-data-manipulation.html#harper-adams-data-science",
     "title": "6 Data subsetting and manipulation",
+    "section": "Harper Adams Data Science",
+    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
+  },
+  {
+    "objectID": "slides-overview.html",
+    "href": "slides-overview.html",
+    "title": "R Bootcamp Launch",
+    "section": "",
+    "text": "�\n\nhttps://dsgarage.netlify.app/"
+  },
+  {
+    "objectID": "slides-overview.html#what-is-ds-garage-about",
+    "href": "slides-overview.html#what-is-ds-garage-about",
+    "title": "R Bootcamp Launch",
+    "section": "What is DS garage about?",
+    "text": "What is DS garage about?\n�\n\nModern tools for thinking about data :: evidence"
+  },
+  {
+    "objectID": "slides-overview.html#traditional-bootcamp",
+    "href": "slides-overview.html#traditional-bootcamp",
+    "title": "Bootcamp overview",
+    "section": "Traditional Bootcamp",
+    "text": "Traditional Bootcamp\n\nDifficult, unfriendly,\nweed out the weak"
+  },
+  {
+    "objectID": "slides-overview.html#eds-r-bootcamp",
+    "href": "slides-overview.html#eds-r-bootcamp",
+    "title": "R Bootcamp Launch",
+    "section": "Ed’s R Bootcamp",
+    "text": "Ed’s R Bootcamp\n�\n\nWorking together to do something good and worthwhile"
+  },
+  {
+    "objectID": "slides-overview.html#why-r-bootcamp",
+    "href": "slides-overview.html#why-r-bootcamp",
+    "title": "R Bootcamp Launch",
+    "section": "Why R bootcamp?",
+    "text": "Why R bootcamp?\n�\n\nThe purpose of the bootcamp is to\n\n�\n\nbe a SELF-GUIDED resource to\nlearn basic R programming and basic statistics\nassume no prior knowledge"
+  },
+  {
+    "objectID": "slides-overview.html#who-is-it-for",
+    "href": "slides-overview.html#who-is-it-for",
+    "title": "R Bootcamp Launch",
+    "section": "Who is it for?",
+    "text": "Who is it for?\n�\n\nAnyone who wants to learn from data\nAcademic colleagues who want to learn R\nLearning data scientists\nOther interesting people"
+  },
+  {
+    "objectID": "slides-overview.html#what-will-you-learn",
+    "href": "slides-overview.html#what-will-you-learn",
+    "title": "Bootcamp overview",
+    "section": "What will you learn",
+    "text": "What will you learn\n\n\nR scripting basics\nBest practice for reproducible research\nTidy data practice\nA practical review of basic statistics (just enough…)"
+  },
+  {
+    "objectID": "slides-overview.html#how-is-it-organised-httpsdsgarage.netlify.appbootcamp",
+    "href": "slides-overview.html#how-is-it-organised-httpsdsgarage.netlify.appbootcamp",
+    "title": "R Bootcamp Launch",
+    "section": "How is it organised? https://dsgarage.netlify.app/bootcamp/",
+    "text": "How is it organised? https://dsgarage.netlify.app/bootcamp/\n�\nModule 1 (pages 1.x): A bare-bones introduction to R and Rstudio for beginners\nModule 2 (pages 2.x): A bare-bones introduction to using R for traditional data analysis\nModule 3 (pages 3.x): An introduction to reproducible code, R Markdown, and Github"
+  },
+  {
+    "objectID": "slides-overview.html#how-is-it-organised",
+    "href": "slides-overview.html#how-is-it-organised",
+    "title": "R Bootcamp Launch",
+    "section": "How is it organised?",
+    "text": "How is it organised?\n\nModule 1"
+  },
+  {
+    "objectID": "slides-overview.html#how-is-it-organised-1",
+    "href": "slides-overview.html#how-is-it-organised-1",
+    "title": "R Bootcamp Launch",
+    "section": "How is it organised?",
+    "text": "How is it organised?\n\nModule 2"
+  },
+  {
+    "objectID": "slides-overview.html#how-is-it-organised-2",
+    "href": "slides-overview.html#how-is-it-organised-2",
+    "title": "R Bootcamp Launch",
+    "section": "How is it organised?",
+    "text": "How is it organised?\n\nModule 3"
+  },
+  {
+    "objectID": "slides-overview.html#coding",
+    "href": "slides-overview.html#coding",
+    "title": "Bootcamp overview",
+    "section": "Coding",
+    "text": "Coding\n\n\nIt is important to type and run code for practice"
+  },
+  {
+    "objectID": "slides-setup.html",
+    "href": "slides-setup.html",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "",
+    "text": "https://dsgarage.netlify.app/bootcamp/0.1-bootcamp-intro/"
+  },
+  {
+    "objectID": "slides-setup.html#what-will-you-learn",
+    "href": "slides-setup.html#what-will-you-learn",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "What will you learn?",
+    "text": "What will you learn?\n \n\nInstall R and RStudio\nPractice of good, reproducible scripting\nDesign vision of learning materials: Read the pages and type and run all code"
+  },
+  {
+    "objectID": "slides-setup.html#tour-of-rstudio-interface",
+    "href": "slides-setup.html#tour-of-rstudio-interface",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "Tour of RStudio interface",
+    "text": "Tour of RStudio interface"
+  },
+  {
+    "objectID": "slides-setup.html#reproducible-script",
+    "href": "slides-setup.html#reproducible-script",
+    "title": "R Bootcamp RStudio & R Scripts",
+    "section": "Reproducible script",
+    "text": "Reproducible script"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp",
+    "href": "slides-overview.html#r-stats-bootcamp",
+    "title": "Bootcamp overview",
+    "section": "R Stats bootcamp",
+    "text": "R Stats bootcamp\n\n\nhttps://rstats-bootcamp.github.io/website/"
+  },
+  {
+    "objectID": "slides-overview.html#what-is-the-r-stats-bootcamp-about",
+    "href": "slides-overview.html#what-is-the-r-stats-bootcamp-about",
+    "title": "Bootcamp overview",
+    "section": "What is the R Stats Bootcamp about?",
+    "text": "What is the R Stats Bootcamp about?\n\n\nModern tools for thinking about data :: evidence :: claims"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-1",
+    "href": "slides-overview.html#r-stats-bootcamp-1",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp",
+    "text": "R Stats Bootcamp\n\nWork hard, do something good with others,\nhelp everyone succeed"
+  },
+  {
+    "objectID": "slides-overview.html#purpose-of-r-stats-bootcamp",
+    "href": "slides-overview.html#purpose-of-r-stats-bootcamp",
+    "title": "Bootcamp overview",
+    "section": "Purpose of R Stats Bootcamp",
+    "text": "Purpose of R Stats Bootcamp\n\nProvide a self-guided resource to:\n\nLearn or refresh skills in R scripting, basic statistics\nBoost success in statistics for assessments, project work\nBe accessible with no prior knowledge"
+  },
+  {
+    "objectID": "slides-overview.html#who-is-the-r-stats-bootcamp-for",
+    "href": "slides-overview.html#who-is-the-r-stats-bootcamp-for",
+    "title": "Bootcamp overview",
+    "section": "Who is the R Stats Bootcamp for?",
+    "text": "Who is the R Stats Bootcamp for?\n\n\nStudents in applied sciences\nAspiring data scientists\nAcademic colleague who want to learn R\nPostgraduate researchers\nOther nteresting people (who want to learn from data)"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization",
+    "href": "slides-overview.html#r-stats-bootcamp-organization",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\n\nhttps://rstats-bootcamp.github.io/website/\n\n\nModule 1: Introduction to R and Rstudio\nModule 2: R for traditional data analysis\nModule 3: Reproducible code, R Markdown, and GithuB"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization-1",
+    "href": "slides-overview.html#r-stats-bootcamp-organization-1",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\nModule 1: R scripting\n1.1 R syntax\n1.2 Functions and packages\n1.3 Data objects\n1.4 Data frames\n1.5 Data sub-setting and manipulation"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization-2",
+    "href": "slides-overview.html#r-stats-bootcamp-organization-2",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\nModule 2: Statistics review\n2.1 Question, explore, analyze\n2.2 Sampling distributions\n2.3 Correlation\n2.4 Simple linear regression\n2.5 T-test\n2.6 1-way ANOVA"
+  },
+  {
+    "objectID": "slides-overview.html#r-stats-bootcamp-organization-3",
+    "href": "slides-overview.html#r-stats-bootcamp-organization-3",
+    "title": "Bootcamp overview",
+    "section": "R Stats Bootcamp organization",
+    "text": "R Stats Bootcamp organization\n\nModule 3: reproducibility, collaboration\n3.1 Reproducibility\n3.2 Automate reports\n3.3 Git and version control"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "“Data science”"
+  },
+  {
+    "objectID": "index.html#r-stats-bootcamp",
+    "href": "index.html#r-stats-bootcamp",
+    "title": "About",
+    "section": "R Stats Bootcamp",
+    "text": "R Stats Bootcamp\nThis is a self-guided tutorial designed for people new to data science, statistics and R, and for those who would like a review. The materials can help you get going with critical skills in R programming, traditional data analysis and open science tools. The aim is to provide open, foundational training you can build on in the most efficient format possible. This will help prepare you for further training and to get you working with data in R as quickly as possible.\nThe Bootcamp is self-paced and has built-in assessment materials. The material is meant to work through in order as an experience, but is not in any way intended to be a reference to the presented topics."
+  },
+  {
+    "objectID": "index.html#bootcamp-modules",
+    "href": "index.html#bootcamp-modules",
+    "title": "About",
+    "section": "Bootcamp modules",
+    "text": "Bootcamp modules\nModule 1 Introduction to R scripting and the RStudio interface for beginners\nModule 2 Introduction to using R for simple data analysis\nModule 3 Introduction to reproducible code, R Markdown, and Github.\nThese pages will help orient you if you are a beginner, and we will also cover our design approach for the materials and the tools you will need to get started right away. If you are already an RStudio user and comfortable managing and storing script files and scripts in R, you may want to jump straight to the exercises on each page.\n\nWe make a few suggestions about this material:\n\nFollow along consecutively with the workshop pages\nActually type and run all of the example code yourself\nComplete each page before moving on to the next\nFormally attempt all problems at the end of each page\nJoin us in Slack if you need assistance\n\n\nThat’s it!"
+  },
+  {
+    "objectID": "index.html#harper-adams-data-science",
+    "href": "index.html#harper-adams-data-science",
+    "title": "About",
+    "section": "Harper Adams Data Science",
+    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "I call this “Robot farmer with calendar”"
+  },
+  {
+    "objectID": "schedule.html#bootcamp-resources",
+    "href": "schedule.html#bootcamp-resources",
+    "title": "Schedule",
+    "section": "Bootcamp resources",
+    "text": "Bootcamp resources\nThis material is intended to require a significant time commitment to complete (most students report about 20 hours at minimum). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.\nFor all of the lab pages it is intended that you type and run 100% of the code in examples and then explicitly answer the exercise questions, which are based on examples for given code on the pages. Thus, to answer the questions it is recommended to adapt code you have already run when completing the pages.\n\n\n\n\nTopics\n\n\n\n\n  Bootcamp overview\n\n\nModule 1: R scripting\n1 R and RStudio Setup\n2 R language\n3 Functions and packages\n4 Data objects\n5 Data frames\n6 Data sub-setting and manipulation\n\n\nModule 2: Statistics review\n7 Question, explore, analyze\n8 Sampling distributions\n9 Correlation\n10 Simple linear regression\n11 T-test\n12 1-way ANOVA\n\n\nModule 3: reproducibility, collaboration\n13 Reproducibility\n14 Automate reports\n15 Git and version control"
+  },
+  {
+    "objectID": "schedule.html#harper-adams-data-science",
+    "href": "schedule.html#harper-adams-data-science",
+    "title": "Schedule",
+    "section": "Harper Adams Data Science",
+    "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
+  },
+  {
+    "objectID": "1-setup.html#bootcamp-introduction-first-day-with-r",
+    "href": "1-setup.html#bootcamp-introduction-first-day-with-r",
+    "title": "1 Setup & intro",
+    "section": "1 Bootcamp Introduction (first day with R)",
+    "text": "1 Bootcamp Introduction (first day with R)\n\nThis page is intended to guide people during their first installation and use of R and RStudio.\n\n\n1.1 Objectives\nHere is what we will work on:\n\nHow the R Stats Bootcamp works\nR motivation\nInstall R and RStudio or set up RStudio Cloud\nRStudio components and setup\nWorkflow for scripts in R\nPractice exercises"
+  },
+  {
+    "objectID": "1-setup.html#how-the-r-stats-bootcamp-works",
+    "href": "1-setup.html#how-the-r-stats-bootcamp-works",
+    "title": "1 Setup & intro",
+    "section": "2 How the R Stats Bootcamp works",
+    "text": "2 How the R Stats Bootcamp works\nThe R Stats Bootcamp aims to provide practical, open instructional materials to support learning the R programming language, to review simple statistics in R, and to introduce reproducibility and collaboration tools. The content is a blend of practical, referenced material with videos and self-assessment.\nWe also a have a friendly community Slack channel - go over and introduce yourself and say hi!"
+  },
+  {
+    "objectID": "1-setup.html#r-motivation",
+    "href": "1-setup.html#r-motivation",
+    "title": "1 Setup & intro",
+    "section": "3 R motivation",
+    "text": "3 R motivation\nThe motivation for using R is that it is designed to help people with no programming experience to perform sophisticated statistical analysis with minimum effort. R has grown in popularity recently and is used extensively by universities, companies, and researchers everywhere. Because of this, there is a very large community of users and a demand in business and academia for skills using R.\nR is free and open source. R is easy to learn and works the same for folks with fast and slow computers, no matter what kind of operating system or computer they like to use, and it is easy to use via the web on any device."
+  },
+  {
+    "objectID": "1-setup.html#install-r-and-rstudio-or-set-up-rstudio-cloud",
+    "href": "1-setup.html#install-r-and-rstudio-or-set-up-rstudio-cloud",
+    "title": "1 Setup & intro",
+    "section": "4 Install R and RStudio or set up RStudio Cloud",
+    "text": "4 Install R and RStudio or set up RStudio Cloud\nYou have two options for following along with these materials as they are intended.\n\nOption 1 Download and install R from CRAN and then download and install RStudio desktop.\nInstall R first, then RStudio. It is probably a good idea to go ahead and install the latest version of each if you have older versions installed. If you have a PC or laptop you regularly use, this option is probably best and will work for almost all hardware and operating systems.\nHelp for Windows\nHelp for Macs\nHelp for Linux\n\nOption 2 If you can’t install R or do not wish to, or if you prefer to work in “the cloud” from a web browser, you may wish to start a free account at RStudio Cloud and follow along that way."
+  },
+  {
+    "objectID": "1-setup.html#rstudio-components-and-setup",
+    "href": "1-setup.html#rstudio-components-and-setup",
+    "title": "1 Setup & intro",
+    "section": "5 RStudio components and setup",
+    "text": "5 RStudio components and setup\nRStudio desktop is an environment to write R code, perform statistical analysis, organize big or small projects with multiple files, and view and organize outputs. There are many features of RStudio, but we are only going to point out a few. One of the most useful features is syntax highlighting, that gives visual cues to help you write computer code.\n\n\n\n\nRStudio layout\n\n\n\nBe aware (beware?) of:\nThe Script window\nThe script window is located in the upper right of the RStudio console by default. You may need to open a script or start a new one: File > New File > R Script (hotkey Ctrl+Shift+N).\nThe script window is where you are likely to spend most of your time building scripts and executing commands you write. You can have many scripts open at the same time (in “tabs”), and you can have different kinds of scripts, e.g., for different parts of a project or even for programming languages.\n\nThe Console window\nThe Console window is in the lower left by default. Notice there are several other tabs visible, but we will only mention the Console for now. The Console is the place where text outputs will be printed (e.g. the results of statistical tests), and also is a place where R will print Warning and Error messages.\n\nThe Global Environment\nThe Global Environment is in the Environment tab in the upper right of RStudio by default. This pane is useful in displaying data objects that you have loaded and available.\n\nThe Plots window\nThe Plots window is a tab in the lower right by default. This is the place where graphics output is displayed and where plots can be named, resized, copied and saved. There are some other important tabs here as well, which you can also explore. When a new plot is produced, the Plots tab will become active."
+  },
+  {
+    "objectID": "1-setup.html#workflow-for-r-scripts",
+    "href": "1-setup.html#workflow-for-r-scripts",
+    "title": "1 Setup & intro",
+    "section": "6 Workflow for R scripts",
+    "text": "6 Workflow for R scripts\nScript setup\nAn R script is a plain text file where the file name ends in “dot R” (.R) by default.\nAn R script serves several purposes:\nFirst, it documents your analysis allowing it to be reproduced exactly by yourself (your future self!) or by others like collaborators, friends, colleagues, your professor, your student, etc.\nSecond, it is the interface between your commands and R software.\nA goal is that your scripts should contain only important R commands and information, in an organized and logical way that has meaning for other people, maybe for people you have never spoken to. A typical way to achieve this is to organize every script according to the same plan.\n\n\nYour R script should be a file good enough to show to a person in the future (like a supervisor, or even your future self). Someone who can help you, but also someone who you may not be able to explain the contents to. The script should be documented and complete. Think of this future person as a friend you respect.\n\n\nAlthough there are many ways to achieve this, for the purposes of the Bootcamp we strongly encourage you to organize you scripts like this:\n\nHeader\nContents\nOne separate section for each item of contents\n\n\nHeader\nStart every script with a Header, that contains your name, the date of the most recent edit, and a short description of the PURPOSE of the script.\n# A typical script Header\n\n## HEADER ####\n## Who: <your name>\n## What: My first script\n## Last edited: yyyy-mm-dd (ISO 8601 date format... Google it!)\n####\n\n\n6.1 Contents\nA Contents section should also be present near the top, to provide a road map for the analysis.\n# A typical script Contents section\n\n## CONTENTS ####\n## 00 Setup\n## 01 Graphs\n## 02 Analysis\n## 03 Etc\n\n\n\n6.2 Section for each item of contents\nFinally, code chunk breaks should be used to aid the readability of the script and to provide a section for each item in your table of contents. A code chunk is just a section of code set off from other sections.\nBelow is the beginning of a typical code chunk in an R script.\n\nCode chunks must start with at least one hash sign “#”,\nshould have a title descriptive of code chunk contents,\nand end with (at least) four hash signs “####”\nconsecutively numbered titles makes things very tidy\n\n## 01 This here is the first line of MY CODE CHUNK ####\n\nWe will practice each of these components.\n\n\n\n6.3 Comments\nComments are messages that explain code in your script, and they should be used throughout every script. You can think of comments like the methods section of a scientific paper - there should be enough detail to exactly replicate and understand the script, but it should also be concise.\nComment lines begin with the # character and are not treated as “code” by R.\n\n# Make a vector of numbers <--- a comment\nmy_variable <- c(2,5,3,6,3,4,7)\n\n# Calculate the mean of my_variable <--- another comment\nmean(my_variable)\n\n[1] 4.285714\n\n\n\n\n\n6.4 Submitting commands\nA final thing that must be mentioned here is how to actually submit commands in your R script for R to execute. There are a few ways to do this.\n\nrun the whole line of code your cursor rests on (no selection) Ctrl+Enter (Cmd+Return in Macs)\nrun code you have selected with your cursor Ctrl+Enter (Cmd+Return in Macs).\nUse the “Run” button along the top of the Script window\nRun code from the menu Code > Run Selected Line(s)."
+  },
+  {
+    "objectID": "1-setup.html#practice-exercises",
+    "href": "1-setup.html#practice-exercises",
+    "title": "1 Setup & intro",
+    "section": "7 Practice exercises",
+    "text": "7 Practice exercises\n\n7.1\nDownload this script and open it with RStudio. Save the script in a specific folder on your computer that you can find again and where you will save other scripts for the Bootcamp.\nRead the script comments and examine the structure of the code chunks. Run the code in the script using one of the methods above, and examine the output in the Console window.\n\n\n\n7.2\nAdd a code chunk title to your CONTENTS section and to your script. Make sure to write brief comments for your code. Add the following code to your chunk run it and examine the output:\nDon’t worry about understanding the code for now. We are just working on interfacing with R and submitting commands.\n# Create a new variable\nmy_variable <- c(6.5, 1.35, 3.5)\n\n# Calculate the mean of my_variable\nmean(my_variable)\n\n# Calculate the standard deviation of my_variable\nsd(my_variable)"
+  },
+  {
+    "objectID": "1-setup.html#harper-adams-data-science",
+    "href": "1-setup.html#harper-adams-data-science",
+    "title": "1 Setup & intro",
     "section": "Harper Adams Data Science",
     "text": "Harper Adams Data Science\n\nThis module supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
   }
