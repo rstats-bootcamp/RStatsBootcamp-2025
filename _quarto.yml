@@ -21,6 +21,9 @@ website:
           - 4-data.qmd
           - 5-data-frames.qmd
           - 6-data-manipulation.qmd
+      - section: "Module 2: Stats"
+        contents:
+          - 7-question-explore.qmd
 
 format:
   html:

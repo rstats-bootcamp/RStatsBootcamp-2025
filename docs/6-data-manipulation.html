@@ -243,8 +243,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#which-and-subsetting" id="toc-which-and-subsetting" class="nav-link" data-scroll-target="#which-and-subsetting">3 <code>which()</code> and subsetting</a></li>
   <li><a href="#selection-on-data.frame-objects" id="toc-selection-on-data.frame-objects" class="nav-link" data-scroll-target="#selection-on-data.frame-objects">4 Selection on <code>data.frame</code> objects</a>
   <ul class="collapse">
-  <li><a href="#using-aggregate" id="toc-using-aggregate" class="nav-link" data-scroll-target="#using-aggregate">1.5.4 Using aggregate()</a></li>
-  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">1.5.5 Practice exercises</a></li>
+  <li><a href="#orchardsprays-data" id="toc-orchardsprays-data" class="nav-link" data-scroll-target="#orchardsprays-data">4.1 <code>OrchardSprays</code> data</a></li>
+  <li><a href="#practice-selecting-parts-a-data-frame" id="toc-practice-selecting-parts-a-data-frame" class="nav-link" data-scroll-target="#practice-selecting-parts-a-data-frame">4.2 Practice selecting parts a data frame</a></li>
+  <li><a href="#selection-based-on-more-than-one-variable-value" id="toc-selection-based-on-more-than-one-variable-value" class="nav-link" data-scroll-target="#selection-based-on-more-than-one-variable-value">4.3 Selection based on more than one variable value</a></li>
+  </ul></li>
+  <li><a href="#aggregate-function" id="toc-aggregate-function" class="nav-link" data-scroll-target="#aggregate-function">5 <code>aggregate()</code> function</a></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">6 Practice exercises</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">6.1</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">6.2</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">6.3</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">6.4</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">6.5</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">6.6</a></li>
   </ul></li>
   <li><a href="#harper-adams-data-science" id="toc-harper-adams-data-science" class="nav-link" data-scroll-target="#harper-adams-data-science">Harper Adams Data Science</a></li>
   </ul>
@@ -465,19 +476,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>subtlety may exist, even in simple data</strong>.</p>
 <p>There are a couple of data object types that have a special characteristic in that they store data of different types, where vectors, matrices and arrays can only store one type of data (e.g., numeric, character, logical, etc.). The special data objects that can contain multiple data types are list objects, and data frames. Here we will focus on data frames.</p>
 <p><strong>Data frames can have different vector types arranged by column</strong> but there is a constraint that each vector must be the same length, that is, <strong>each ROW is considered an observation for each variable value</strong> (though there may be missing data coded by <code>NA</code>).</p>
-<p>There are a few ways to think about selecting values in a data frame. The first is simply to access values through the variable names, which can either be done by using the data frame name with the <code>$</code> operator and the variable name, or by using the <code>[ , ]</code> syntax with either the variable name or the column number of the variable of interest <a href="https://dsgarage.netlify.app/bootcamp/1.4-m1-data-frames/#anchor-5">see here</a>.</p>
+<p>There are a few ways to think about selecting values in a data frame. The first is simply to access values through the variable names, which can either be done by using the data frame name with the <code>$</code> operator and the variable name, or by using the <code>[ , ]</code> syntax with either the variable name or the column number of the variable of interest <a href="https://rstats-bootcamp.github.io/website/5-data-frames.html#the-index-operator">see here</a>.</p>
 <p>A second powerful way to access variables in a data frame is by selecting particular rows of a data frame. This may be done by selecting the rows of a data based on values of one or more variables. We will practice doing this using <code>which()</code>, the <code>[ , ]</code> syntax, and boolean phrases is the following code block.</p>
-<p>For the following section, we will use the <code>OrchardSprays</code> dataset that exists as a data frame in the in-built <code>{datasets}</code> package. You can use <code>help(OrchardSprays)</code> to see the help page (the help page is characteristically terse, so some description is given here.</p>
+<p>For the following section, we will use the <code>OrchardSprays</code> dataset that exists as a data frame in the in-built <code>{datasets}</code> package. You can use <code>help(OrchardSprays)</code> to see the help page (the help page is characteristically terse, so some description is given here).</p>
 <p><br></p>
-<p><strong>The OrchardSprays experiment</strong></p>
+<section id="orchardsprays-data" class="level3">
+<h3 class="anchored" data-anchor-id="orchardsprays-data">4.1 <code>OrchardSprays</code> data</h3>
 <p>This is a classic dataset based on <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-7348.1943.tb06173.x">an experiment looking at how a chemical additive could be used to deter honeybees from being attracted to crops and subsequently killed by pesticides</a>.</p>
-<p>The experiment involved having a treatment consisting of adding a “lime sulphur emulsion” (honeybee deterrent) in increasing concentrations to a sucrose solution. <strong>The <code>treatment</code> variable</strong> had 8 levels including a control (no deterrent) and 7 other levels with increasing concentration of the deterrent. The treatment levels were named A (the highest amount of deterrent), B (second highest deterrent) through to G (lowest deterrent) and H (control - no deterrent) <strong>The decrease variable</strong> was a measure of the quantity of sucrose solution that was taken by honeybees (the prediction here is that higher concentrations of the deterrent should result in a lower decrease in the sucrose solution).</p>
-<p>The experiment involved a <a href="https://en.wikipedia.org/wiki/Latin_square">Latin Square</a> design, with the order of the 8 treatments arranged randomly in an array of 8 columns (the purpose of this design is to randomize any effect of the treatment ORDER or POSITION on the response variable). This resulted in an 8 row by 8 column experiment. The response was measured after placing 100 honeybees into an experimental chamber with the 64 containers of sucrose solution.</p>
+<p>The experiment involved having a <code>treatment</code> consisting of adding a “lime sulfur emulsion” (honeybee deterrent) in increasing concentrations to a sucrose solution. <strong>The <code>treatment</code> variable</strong> had 8 levels including a control (no deterrent) and 7 other levels with increasing concentration of the deterrent. The treatment levels were named A (the highest amount of deterrent), B (second highest deterrent) through to G (lowest deterrent) and H (control - no deterrent) <strong>The <code>decrease</code> variable</strong> was a measure of the quantity of sucrose solution that was taken by honeybees (the prediction here is that higher concentrations of the deterrent should result in a lower decrease in the sucrose solution).</p>
+<p>The experiment involved a <a href="https://en.wikipedia.org/wiki/Latin_square">Latin Square</a> design, with the order of the 8 treatments arranged randomly in an array of 8 columns (the purpose of this design is to randomize any effect of the <code>treatment</code> ORDER or POSITION on the response variable). This resulted in an 8 row by 8 column experiment. The response was measured after placing 100 honeybees into an experimental chamber with the 64 containers of sucrose solution.</p>
 <p><br></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## OrchardSprays ####</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Understand the data - an important step</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the OrchardSpray data using the data() function</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(OrchardSprays) <span class="co"># Should see OrchardSprays &lt;promise&gt; in the Global Env.</span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -506,32 +518,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">Column</span><span class="sc">\"</span><span class="st"> position"</span>,</span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">Row</span><span class="sc">\"</span><span class="st"> position"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<p><strong>Practice selecting parts a data frame</strong></p>
+</section>
+<section id="practice-selecting-parts-a-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="practice-selecting-parts-a-data-frame">4.2 Practice selecting parts a data frame</h3>
 <p>Selecting particular parts of a data frame based on the values of <strong>one variable</strong> is a common and extremely useful task.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Practice selecting parts a data frame ####</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the rows of the dataset for treatment "D"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (Pseudocode steps to solve) </span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Break it down to make small steps easy to read</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 01 Boolean phrase to identify rows where treatment value is "D"</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 02 which() to obtain index of TRUE in boolean vector</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 03 Exploit [ , ] syntax with data frame object to slice out rows</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 01 Boolean phrase</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>OrchardSprays<span class="sc">$</span>treatment <span class="co"># Just print variable to compare visually to boolean</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>OrchardSprays<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"D"</span> <span class="co"># logical vector - TRUE in "D" positions</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 02 which()</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(OrchardSprays<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"D"</span>) <span class="co"># Index of TRUE values</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>my_selection <span class="ot">&lt;-</span> <span class="fu">which</span>(OrchardSprays<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"D"</span>) <span class="co"># Place index in a variable</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>my_selection <span class="co"># Just checking</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 03 Exploit [ , ] syntax with data frame object to slice out rows</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>OrchardSprays[my_selection, ]</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Flash challenge: Select and print all rows at "colpos" values of 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># (Pseudocode steps to solve) </span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Break it down to make small steps easy to read</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 01 Boolean phrase to identify rows where treatment value is "D"</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 02 which() to obtain index of TRUE in boolean vector</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 03 Exploit [ , ] syntax with data frame object to slice out rows</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 01 Boolean phrase</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>OrchardSprays<span class="sc">$</span>treatment <span class="co"># Just print variable to compare visually to boolean</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>OrchardSprays<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"D"</span> <span class="co"># logical vector - TRUE in "D" positions</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 02 which()</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(OrchardSprays<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"D"</span>) <span class="co"># Index of TRUE values</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>my_selection <span class="ot">&lt;-</span> <span class="fu">which</span>(OrchardSprays<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"D"</span>) <span class="co"># Place index in a variable</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>my_selection <span class="co"># Just checking</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 03 Exploit [ , ] syntax with data frame object to slice out rows</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>OrchardSprays[my_selection, ]</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Flash challenge: Select and print all rows at "colpos" values of 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<p><strong>Selection based on more than one variable value</strong></p>
+</section>
+<section id="selection-based-on-more-than-one-variable-value" class="level3">
+<h3 class="anchored" data-anchor-id="selection-based-on-more-than-one-variable-value">4.3 Selection based on more than one variable value</h3>
 <p>Using the basic building blocks of boolean selection, more complex rules for selecting data can be made.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Compound boolean for selection ####</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -570,10 +588,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Flash challenge: Calculate the mean of decrease for treatment "A" </span></span>
 <span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="co"># and the mean of decrease for treatment "H"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<section id="using-aggregate" class="level3">
-<h3 class="anchored" data-anchor-id="using-aggregate">1.5.4 Using aggregate()</h3>
-<p><strong>The aggregate() function</strong></p>
-<p>We often may wish to summarise parts of a data set according to some index of variable values. A very convenient tool for the is the <code>aggregate()</code> function, which we will practice here.</p>
+</section>
+</section>
+<section id="aggregate-function" class="level2">
+<h2 class="anchored" data-anchor-id="aggregate-function">5 <code>aggregate()</code> function</h2>
+<p>We often may wish to summarize parts of a data set according to some index of variable values. A very convenient tool for the is the <code>aggregate()</code> function, which we will practice here.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(aggregate)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A few important things to note about how this function works:</span></span>
@@ -664,30 +683,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a><span class="co"># This time, add error bars showing on both the top and the bottom of the mean values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
-<section id="practice-exercises" class="level3">
-<h3 class="anchored" data-anchor-id="practice-exercises">1.5.5 Practice exercises</h3>
-<p>For the following exercises, use the trees dataset, which has Girth, Height and Volume variables for 31 Black Cherry trees.</p>
+<section id="practice-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="practice-exercises">6 Practice exercises</h2>
+<p>For the following exercises, use the <code>trees</code> dataset built into <code>R</code>, which has <code>Girth</code>, <code>Height</code> and <code>Volume</code> variables for 31 Black Cherry trees.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the data</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(trees)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(trees)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(trees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<p><strong>1</strong> Show code to calculate the mean Girth of Black Cherry trees with Height less than 75 ft.</p>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">6.1</h3>
+<p>Show code to calculate the mean <code>Girth</code> of Black Cherry trees with <code>Height</code> less than 75 ft.</p>
 <p><br></p>
-<p><strong>2</strong> Use <code>help(cut)</code> and then use the <code>cut()</code> function to create a new factor variable based on the <code>Height</code> numeric variable in the <code>trees</code> dataset. Try setting the <code>breaks</code> argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.</p>
+</section>
+<section id="section-1" class="level3">
+<h3 class="anchored" data-anchor-id="section-1">6.2</h3>
+<p>Use <code>help(cut)</code> and then use the <code>cut()</code> function to create a new factor variable based on the <code>Height</code> numeric variable in the <code>trees</code> dataset. Try setting the <code>breaks</code> argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.</p>
 <p><br></p>
-<p><strong>3</strong> Using the new factor from question 2, use <code>aggregate()</code> to calculate the mean and standard deviation of all three variables in the <code>trees</code> data. Show your code and report the results to 2 decimal points of accuracy.</p>
+</section>
+<section id="section-2" class="level3">
+<h3 class="anchored" data-anchor-id="section-2">6.3</h3>
+<p>Using the new factor from question 2, use <code>aggregate()</code> to calculate the mean and standard deviation of all three variables in the <code>trees</code> data. Show your code and report the results to 2 decimal points of accuracy.</p>
 <p><br></p>
-<p><strong>4</strong> Show the code using which() and boolean phrases as appropriate to find the rows in the <code>trees</code> dataset where Girth is higher than 11 and Height is lower than 75.</p>
+</section>
+<section id="section-3" class="level3">
+<h3 class="anchored" data-anchor-id="section-3">6.4</h3>
+<p>Show the code using <code>which()</code> and boolean phrases as appropriate to find the rows in the <code>trees</code> dataset where <code>Girth</code> is higher than 11 and <code>Height</code> is lower than 75.</p>
 <p><br></p>
-<p><strong>5</strong> Run the following code:</p>
+</section>
+<section id="section-4" class="level3">
+<h3 class="anchored" data-anchor-id="section-4">6.5</h3>
+<p>Run the following code:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">volume =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="cn">NA</span>,<span class="dv">10</span>),</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">population =</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Use <code>aggregate()</code> to calculate the mean of volume for each population (hint: you may need to use help for the functions involved and pay close attention to your data frame…).</p>
+<p>Use <code>aggregate()</code> to calculate the mean of <code>volume</code> for each <code>population</code> (hint: you may need to use help for the functions involved and pay close attention to your data frame…).</p>
 <p><br></p>
-<p><strong>6</strong> Write a plausible practice question involving any aspect of using <code>which()</code>, boolean phrases and/or <code>aggregate()</code> involving the in-built R dataset <code>iris</code>.</p>
-<p><br></p>
+</section>
+<section id="section-5" class="level3">
+<h3 class="anchored" data-anchor-id="section-5">6.6</h3>
+<p>Write a plausible practice question involving any aspect of using <code>which()</code>, boolean phrases and/or <code>aggregate()</code> involving the in-built <code>R</code> dataset <code>iris</code>.</p>
 <p><br></p>
 </section>
 </section>
