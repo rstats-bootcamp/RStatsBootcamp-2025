@@ -2,79 +2,57 @@
 title: "Schedule"
 ---
 
+<center>![I call this "Robot farmer with calendar"](img/robot-farmer.jpeg){height="200px"}</center>
+
 ## Bootcamp resources
 
-This material is intended to require a significant time commitment to complete (most students report about 20-50 hours). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.
+This material is intended to require a significant time commitment to complete (most students report about 20 hours at minimum). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.
 
 For all of the lab pages it is intended that you type and run 100% of the code in examples and then explicitly answer the exercise questions, which are based on examples for given code on the pages. Thus, to answer the questions it is recommended to adapt code you have already run when completing the pages.
 
 <br>
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-| Topics                                                                                                                             |
-+====================================================================================================================================+
-| [![](img/slides.png){width="20" height="24"}](slides-overview.html) Bootcamp overview ![](img/youtube.png){width="35" height="25"} |
-|                                                                                                                                    |
-| R and RStudio Setup                                                                                                                |
-+------------------------------------------------------------------------------------------------------------------------------------+
-| **Module 1: R scripting**                                                                                                          |
-|                                                                                                                                    |
-| 1.1 R syntax                                                                                                                       |
-|                                                                                                                                    |
-| 1.2 Functions and packages                                                                                                         |
-|                                                                                                                                    |
-| 1.3 Data objects                                                                                                                   |
-|                                                                                                                                    |
-| 1.4 Data frames                                                                                                                    |
-|                                                                                                                                    |
-| 1.5 Data sub-setting and manipulation                                                                                              |
-+------------------------------------------------------------------------------------------------------------------------------------+
-| **Module 2: Statistics review**                                                                                                    |
-|                                                                                                                                    |
-| 2.1 Question, explore, analyze                                                                                                     |
-|                                                                                                                                    |
-| 2.2 Sampling distributions                                                                                                         |
-|                                                                                                                                    |
-| 2.3 Correlation                                                                                                                    |
-|                                                                                                                                    |
-| 2.4 Simple linear regression                                                                                                       |
-|                                                                                                                                    |
-| 2.5 T-test                                                                                                                         |
-|                                                                                                                                    |
-| 2.6 1-way ANOVA                                                                                                                    |
-+------------------------------------------------------------------------------------------------------------------------------------+
-| **Module 3: reproducibility, collaboration**                                                                                       |
-|                                                                                                                                    |
-| 3.1 Reproducibility                                                                                                                |
-|                                                                                                                                    |
-| 3.2 Automate reports                                                                                                               |
-|                                                                                                                                    |
-| 3.3 Git and version control                                                                                                        |
-+------------------------------------------------------------------------------------------------------------------------------------+
-
-<br>
-
-## References
-
-**Textbook**: [James et al. 2021 Introduction to statistical learning 2ed](https://www.statlearning.com/)
-
-[all refs zip](pdfs/c7081-2022-readings.zip)
-
-Aho, K., Derryberry, D., Peterson, T., 2014. Model selection for ecologists: the worldviews of AIC and BIC. Ecology 95, 631--636.
-
-Barnard, D.M., Germino, M.J., Pilliod, D.S., Arkle, R.S., Applestein, C., Davidson, B.E., Fisk, M.R., 2019. Cannot see the random forest for the decision trees: selecting predictive models for restoration ecology. Restoration Ecology 27, 1053--1063.
-
-Ebrahimi, M.A., Khoshtaghaza, M.H., Minaei, S., Jamshidi, B., 2017. Vision-based pest detection based on SVM classification method. Computers and Electronics in Agriculture 137, 52--58.
-
-Efron, B., 2020. Prediction, Estimation, and Attribution. Journal of the American Statistical Association 115, 636--655.
-
-Howell, O., Wenping, C., Marsland, R., Mehta, P., 2020. Machine learning as ecology. J. Phys. A: Math. Theor. 53, 334001.
-
-James, G., Witten, D., Hastie, T., Tibshirani, R., 2021. An Introduction to Statistical Learning: with Applications in R, Springer Texts in Statistics 2ed. Springer-Verlag, New York.
-
-Melesse, S., Sobratee, N., Workneh, T., 2016. Application of logistic regression statistical technique to evaluate tomato quality subjected to different pre- and post-harvest treatments. Biological Agriculture & Horticulture 32, 277--287.
-
-Otukei, J.R., Blaschke, T., 2010. Land cover change assessment using decision trees, support vector machines and maximum likelihood classification algorithms. International Journal of Applied Earth Observation and Geoinformation, Supplement Issue on "Remote Sensing for Africa -- A Special Collection from the African Association for Remote Sensing of the Environment (AARSE)" 12, S27--S31.
++--------------------------------------------------------------------------------------------------------------------------------------+
+| Topics                                                                                                                               |
++======================================================================================================================================+
+| [![](img/slides.png){width="18" height="20"}](slides-overview.html) ![](img/youtube.png){width="30" height="20"} Bootcamp overview   |
++--------------------------------------------------------------------------------------------------------------------------------------+
+| **Module 1: R scripting**                                                                                                            |
+|                                                                                                                                      |
+| 1 R and RStudio Setup                                                                                                                |
+|                                                                                                                                      |
+| 2 R language                                                                                                                         |
+|                                                                                                                                      |
+| 3 Functions and packages                                                                                                             |
+|                                                                                                                                      |
+| 4 Data objects                                                                                                                       |
+|                                                                                                                                      |
+| 5 Data frames                                                                                                                        |
+|                                                                                                                                      |
+| 6 Data sub-setting and manipulation                                                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------------+
+| **Module 2: Statistics review**                                                                                                      |
+|                                                                                                                                      |
+| 7 Question, explore, analyze                                                                                                         |
+|                                                                                                                                      |
+| 8 Sampling distributions                                                                                                             |
+|                                                                                                                                      |
+| 9 Correlation                                                                                                                        |
+|                                                                                                                                      |
+| 10 Simple linear regression                                                                                                          |
+|                                                                                                                                      |
+| 11 T-test                                                                                                                            |
+|                                                                                                                                      |
+| 12 1-way ANOVA                                                                                                                       |
++--------------------------------------------------------------------------------------------------------------------------------------+
+| **Module 3: reproducibility, collaboration**                                                                                         |
+|                                                                                                                                      |
+| 13 Reproducibility                                                                                                                   |
+|                                                                                                                                      |
+| 14 Automate reports                                                                                                                  |
+|                                                                                                                                      |
+| 15 Git and version control                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------+
 
 <br> <br>
 
@@ -82,4 +60,4 @@ Otukei, J.R., Blaschke, T., 2010. Land cover change assessment using decision tr
 
 ![](img/HDS.png){fig-alt="Harper Data Science" width="125"}
 
-This module supports the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University"), led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
+This module supports students and staff at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University") and the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").

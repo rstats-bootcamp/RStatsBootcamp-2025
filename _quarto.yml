@@ -15,8 +15,13 @@ website:
           - schedule.qmd
       - section: "Module 1: R"
         contents:
-          - about.qmd
- 
+          - 1-setup.qmd
+          - 2-r-lang.qmd
+          - 3-functions.qmd
+          - 4-data.qmd
+          - 5-data-frames.qmd
+          - 6-data-manipulation.qmd
+
 format:
   html:
     highlight-style: a11y

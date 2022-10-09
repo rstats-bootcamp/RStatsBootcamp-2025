@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -127,7 +127,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  <a href="./1-setup.html" class="sidebar-item-text sidebar-link">1 Setup &amp; intro</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-r-lang.html" class="sidebar-item-text sidebar-link">2 R language</a>
   </div>
 </li>
       </ul>
@@ -142,7 +147,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#bootcamp-resources" id="toc-bootcamp-resources" class="nav-link active" data-scroll-target="#bootcamp-resources">Bootcamp resources</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#harper-adams-data-science" id="toc-harper-adams-data-science" class="nav-link" data-scroll-target="#harper-adams-data-science">Harper Adams Data Science</a></li>
   </ul>
 </nav>
@@ -166,9 +170,17 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/robot-farmer.jpeg" height="200" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">I call this “Robot farmer with calendar”</figcaption><p></p>
+</figure>
+</div>
+</center>
 <section id="bootcamp-resources" class="level2">
 <h2 class="anchored" data-anchor-id="bootcamp-resources">Bootcamp resources</h2>
-<p>This material is intended to require a significant time commitment to complete (most students report about 20-50 hours). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.</p>
+<p>This material is intended to require a significant time commitment to complete (most students report about 20 hours at minimum). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.</p>
 <p>For all of the lab pages it is intended that you type and run 100% of the code in examples and then explicitly answer the exercise questions, which are based on examples for given code on the pages. Thus, to answer the questions it is recommended to adapt code you have already run when completing the pages.</p>
 <p><br></p>
 <table class="table">
@@ -179,54 +191,40 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="lectures/00-course-intro.pptx"><img src="img/slides.png" width="20" height="24"></a> Bootcamp overview <a href="https://liveharperac-my.sharepoint.com/:v:/g/personal/00762450_harper-adams_ac_uk/ESxgYxKIDdhBte_oFUPGpucBTi3oGHKbHELXBV7_RAbI_w"><img src="img/youtube.png" width="35" height="25"></a></p>
-<p>Setup</p></td>
+<td><a href="slides-overview.html"><img src="img/slides.png" width="18" height="20"></a> <img src="img/youtube.png" width="30" height="20"> Bootcamp overview</td>
 </tr>
 <tr class="even">
 <td><p><strong>Module 1: R scripting</strong></p>
-<p>1.1 R syntax</p>
-<p>1.2 Functions and packages</p>
-<p>1.3 Data objects</p>
-<p>1.4 Data frames</p>
-<p>1.5 Data sub-setting and manipulation</p></td>
+<p>1 R and RStudio Setup</p>
+<p>2 R language</p>
+<p>3 Functions and packages</p>
+<p>4 Data objects</p>
+<p>5 Data frames</p>
+<p>6 Data sub-setting and manipulation</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Module 2: Statistics review</strong></p>
-<p>2.1 Question, explore, analyze</p>
-<p>2.2 Sampling distributions</p>
-<p>2.3 Correlation</p>
-<p>2.4 Simple linear regression</p>
-<p>2.5 T-test</p>
-<p>2.6 1-way ANOVA</p></td>
+<p>7 Question, explore, analyze</p>
+<p>8 Sampling distributions</p>
+<p>9 Correlation</p>
+<p>10 Simple linear regression</p>
+<p>11 T-test</p>
+<p>12 1-way ANOVA</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Module 3: reproducibility, collaboration</strong></p>
-<p>3.1 Reproducibility</p>
-<p>3.2 Automate reports</p>
-<p>3.3 Git and version control</p></td>
+<p>13 Reproducibility</p>
+<p>14 Automate reports</p>
+<p>15 Git and version control</p></td>
 </tr>
 </tbody>
 </table>
-<p><br></p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p><strong>Textbook</strong>: <a href="https://www.statlearning.com/">James et al.&nbsp;2021 Introduction to statistical learning 2ed</a></p>
-<p><a href="pdfs/c7081-2022-readings.zip">all refs zip</a></p>
-<p>Aho, K., Derryberry, D., Peterson, T., 2014. Model selection for ecologists: the worldviews of AIC and BIC. Ecology 95, 631–636.</p>
-<p>Barnard, D.M., Germino, M.J., Pilliod, D.S., Arkle, R.S., Applestein, C., Davidson, B.E., Fisk, M.R., 2019. Cannot see the random forest for the decision trees: selecting predictive models for restoration ecology. Restoration Ecology 27, 1053–1063.</p>
-<p>Ebrahimi, M.A., Khoshtaghaza, M.H., Minaei, S., Jamshidi, B., 2017. Vision-based pest detection based on SVM classification method. Computers and Electronics in Agriculture 137, 52–58.</p>
-<p>Efron, B., 2020. Prediction, Estimation, and Attribution. Journal of the American Statistical Association 115, 636–655.</p>
-<p>Howell, O., Wenping, C., Marsland, R., Mehta, P., 2020. Machine learning as ecology. J. Phys. A: Math. Theor. 53, 334001.</p>
-<p>James, G., Witten, D., Hastie, T., Tibshirani, R., 2021. An Introduction to Statistical Learning: with Applications in R, Springer Texts in Statistics 2ed. Springer-Verlag, New York.</p>
-<p>Melesse, S., Sobratee, N., Workneh, T., 2016. Application of logistic regression statistical technique to evaluate tomato quality subjected to different pre- and post-harvest treatments. Biological Agriculture &amp; Horticulture 32, 277–287.</p>
-<p>Otukei, J.R., Blaschke, T., 2010. Land cover change assessment using decision trees, support vector machines and maximum likelihood classification algorithms. International Journal of Applied Earth Observation and Geoinformation, Supplement Issue on “Remote Sensing for Africa – A Special Collection from the African Association for Remote Sensing of the Environment (AARSE)” 12, S27–S31.</p>
 <p><br> <br></p>
 </section>
 <section id="harper-adams-data-science" class="level2">
 <h2 class="anchored" data-anchor-id="harper-adams-data-science">Harper Adams Data Science</h2>
 <p><img src="img/HDS.png" class="img-fluid" alt="Harper Data Science" width="125"></p>
-<p>This module supports the <a href="https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment" title="MSc in Data Science">MSc in Data Science for Global Agriculture, Food, and Environment</a> at <a href="https://www.harper-adams.ac.uk/" title="Harper Adams University">Harper Adams University</a>, led by <a href="https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/" title="Ed's Faculty page">Ed Harris</a>.</p>
+<p>This module supports students and staff at <a href="https://www.harper-adams.ac.uk/" title="Harper Adams University">Harper Adams University</a> and the <a href="https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment" title="MSc in Data Science">MSc in Data Science for Global Agriculture, Food, and Environment</a> led by <a href="https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/" title="Ed's Faculty page">Ed Harris</a>.</p>
 
 
 </section>

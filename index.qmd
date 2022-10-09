@@ -1,6 +1,12 @@
 ---
-title: "Home"
+title: "About"
 ---
+
+<center>
+
+!["Data science"](img/ds_venn_sm.png)
+
+</center>
 
 ## R Stats Bootcamp
 
@@ -11,20 +17,22 @@ The Bootcamp is self-paced and has built-in assessment materials. The material i
 
 ## Bootcamp modules
 
-**Module 1** A bare-bones introduction to R scripting and the RStudio interface for beginners
+**Module 1** Introduction to R scripting and the RStudio interface for beginners
 
-**Module 2** (pages 2.x): A bare-bones introduction to using R for traditional data analysis
+**Module 2** Introduction to using R for simple data analysis
 
-**Moduel 3** (pages 3.x): An introduction to reproducible code, R Markdown, and Github.
+**Module 3** Introduction to reproducible code, R Markdown, and Github.
 
 
 These pages will help orient you if you are a beginner, and we will also cover our design approach for the materials and the tools you will need to get started right away. If you are already an RStudio user and comfortable managing and storing script files and scripts in R, you may want to jump straight to the exercises on each page.
 
-
+<br>
 
 We make a few suggestions about this material:
 
-- Follow along consecutively with the workshop pages 
+- Follow along consecutively with the workshop pages
+
+- Actually type and run all of the example code yourself
 
 - Complete each page before moving on to the next
 
@@ -32,13 +40,14 @@ We make a few suggestions about this material:
 
 - Join us in Slack if you need assistance
 
+<br> 
+
 That's it!
 
-<br>
 <br>
 
 ## Harper Adams Data Science
 
 ![](img/HDS.png){fig-alt="Harper Data Science" width="125"}
 
-This module supports the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University"), led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
+This module supports students and staff at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University") and the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
