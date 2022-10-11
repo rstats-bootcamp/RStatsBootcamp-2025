@@ -1,5 +1,5 @@
 ---
-title: "3 Functions & packages"
+title: "3 R Functions"
 ---
 
 <center>![R as a garage full of tools](/img/toolbox2.png)</center>

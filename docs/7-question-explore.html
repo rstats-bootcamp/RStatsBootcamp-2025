@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.179">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R Stats Bootcamp - 7 Question, explore, analyze</title>
+<title>R Stats Bootcamp - 7 Explore data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">7 Question, explore, analyze</h1>
+      <h1 class="quarto-secondary-nav-title">7 Explore data</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-functions.html" class="sidebar-item-text sidebar-link">3 Functions &amp; packages</a>
+  <a href="./3-functions.html" class="sidebar-item-text sidebar-link">3 R Functions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -215,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./6-data-manipulation.html" class="sidebar-item-text sidebar-link">6 Data subsetting and manipulation</a>
+  <a href="./6-data-manipulation.html" class="sidebar-item-text sidebar-link">6 Data subsetting</a>
   </div>
 </li>
       </ul>
@@ -230,7 +230,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./7-question-explore.html" class="sidebar-item-text sidebar-link active">7 Question, explore, analyze</a>
+  <a href="./7-question-explore.html" class="sidebar-item-text sidebar-link active">7 Explore data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8-sampling-dist.html" class="sidebar-item-text sidebar-link">8 Distributions</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9-correlation.html" class="sidebar-item-text sidebar-link">9 Correlation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-regression.html" class="sidebar-item-text sidebar-link">10 Regression</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-t-test.html" class="sidebar-item-text sidebar-link">11 T-test</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-1-way-anova.html" class="sidebar-item-text sidebar-link">12 ANOVA</a>
   </div>
 </li>
       </ul>
@@ -293,7 +318,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">7 Question, explore, analyze</h1>
+<h1 class="title d-none d-lg-block">7 Explore data</h1>
 </div>
 
 
@@ -324,6 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p><br></p>
 <p>The very first task for any data analysis is to gain an understanding of the data itself. This typically involves examining the variables. Are they as we expect? Do we need to adjust the variable types?</p>
+<p><br></p>
 <p><strong>EDA Exploratory Data Analysis</strong></p>
 <p>This almost always involves graphing the data, and possibly examining numerical summaries and statistical assumptions. Further, it is necessary to look for errors in the data both trivial (e.g.&nbsp;misspelling factor level names like “control” with an extra space “control”), and more serious errors such as numerical typographical errors (e.g.&nbsp;misplacing a decimal point is a classic: height of 5 men in feet: <code>c(5.5, 5.8, 6.1, 5.9, 52.)</code>.</p>
 <p>In total, this part of data analysis is sometimes referred to as <strong>Exploratory Data Analysis</strong>.</p>
@@ -359,6 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It is the primary responsibility of the scientist to agree on the specific details of generating evidence from data to answer questions (i.e., statistical analysis). When these roles are occupied by the same person, this matter should be settled before collecting any data.</p>
 </blockquote>
 <p>The general topic of formulating statistical questions is vast; many books have been written on the subject. The tradition and practice of statistical analysis has evolved through time. Here we will focus on the traditional starting point for a “first statistics course”, within the context of <strong>Null Hypothesis Significance testing (NHST)</strong>.</p>
+<p><br></p>
 <section id="sampling-concept-and-nhst" class="level3">
 <h3 class="anchored" data-anchor-id="sampling-concept-and-nhst">2.1 Sampling concept and NHST</h3>
 <p>The gambit of NHST is that there is a <strong>population of interest</strong> but that the population cannot be directly measured because it is too big or otherwise inconvenient or impossible to measure. Thus, <strong>experimental samples</strong> are drawn randomly from the population, possibly subjected to <strong>experimental conditions</strong>, and the magnitude of observed differences or measured associations are summarized by various <strong>test statistics</strong> and compared to how likely such an observed difference or association would be to observe in the absence of the hypothesized effect.</p>
@@ -506,6 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><br></p>
 <p>You can think of <code>R</code> graphics as a way to “build up information in layers” onto a graph. There are many aesthetic features of graph that can be controlled, like adding colors, text, lines, legends, etc. The <code>R</code> graphics system is very simple to use, but can also be very powerful (mastering this takes practice). We make a distinction here between <code>R</code> <strong>base graphics</strong> and packages that can be used to make specialized and varied graphs (like the powerful and popular package {<code>ggplot</code>})</p>
+<p><br></p>
 </section>
 <section id="layering-information" class="level3">
 <h3 class="anchored" data-anchor-id="layering-information">4.2 Layering information</h3>

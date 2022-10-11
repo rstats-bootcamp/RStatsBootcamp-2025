@@ -1,5 +1,5 @@
 ---
-title: "7 Question, explore, analyze"
+title: "7 Explore data"
 ---
 
 <center>![We call sizing up the data "weighing the pig"](img/unsplash-pig.png)</center>

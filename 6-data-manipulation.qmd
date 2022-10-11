@@ -1,12 +1,8 @@
 ---
-title: "6 Data subsetting and manipulation"
+title: "6 Data subsetting"
 ---
 
-<center> 
-
-![Command data and you are powerful](img/sumo.png)  
-
-</center>
+<center>![Command data and you are powerful](img/sumo.png)</center>
 
 <br>
 
@@ -14,21 +10,21 @@ title: "6 Data subsetting and manipulation"
 
 > With a good basic set of moves for subsetting and manipulating data, you can overpower any dataset no matter how large and powerful they may be. Then, you will have strong data Sumo.
 
-Subsetting and manipulating data is probably the commonest activity for anyone who works with data.  This is a core activity for exploratory data analysis, but is also extensively used in simple data acquisition, analysis and graphing, while also being related to more general data manipulating activities, for example database queries.  This page is an introduction to the core syntax and some of the tools for manipulating and subsetting data in R.
+Subsetting and manipulating data is probably the commonest activity for anyone who works with data. This is a core activity for exploratory data analysis, but is also extensively used in simple data acquisition, analysis and graphing, while also being related to more general data manipulating activities, for example database queries. This page is an introduction to the core syntax and some of the tools for manipulating and subsetting data in R.
 
 <br>
 
 ### 1.1 Objectives
 
-- Indexing concept
+-   Indexing concept
 
-- Using `which()` and subsetting
+-   Using `which()` and subsetting
 
-- Selection on data.frame objects
+-   Selection on data.frame objects
 
-- Using `aggregate()`
+-   Using `aggregate()`
 
-- Practice exercises
+-   Practice exercises
 
 <br>
 
@@ -42,37 +38,35 @@ The basics of the indexing concept in `R` syntax is very simple, where data stor
 
 ### 2.1 How indexing works
 
-Say you have a numeric vector called `my_vector` that has 10 values. The index values will be `1` to `10`, with each value corresponding consecutively to the data value at that position. 
+Say you have a numeric vector called `my_vector` that has 10 values. The index values will be `1` to `10`, with each value corresponding consecutively to the data value at that position.
 
-```r
+``` r
 my_vector <- c(11.3, 11.2, 10.4, 10.4, 8.7, 
                10.8, 10.5, 10.3, 9.7, 11.2)
   
 my_vector
-
 ```
 
-```
-[1] 11.3 11.2 10.4 10.4 8.7 10.8 10.5 10.3  9.7 11.2
-```
+    [1] 11.3 11.2 10.4 10.4 8.7 10.8 10.5 10.3  9.7 11.2
 
 <br>
 
-Notice the `[1]` in the R console output? This indicates the index of value right next to it and the R system will provide an index value for longer vectors as the wrap in the console.  If we could see the actual index values it would look something like this:
+Notice the `[1]` in the R console output? This indicates the index of value right next to it and the R system will provide an index value for longer vectors as the wrap in the console. If we could see the actual index values it would look something like this:
 
-```r
+``` r
 > my_vector
  [1] 11.3 11.2 10.4 10.4  8.7 10.8 10.5 10.3  9.7 11.2
 #     ^    ^    ^    ^    ^    ^    ^    ^    ^    ^
 #     1    2    3    4    5    6    7    8    9    10
 ```
+
 <br>
 
 ### 2.2 Vectors
 
-You can create vector subsets by manipulating the index. Vector objects have indices in 1 dimension.  For example, `my_vector[1:i]`, where `i` is the length of the vector.
+You can create vector subsets by manipulating the index. Vector objects have indices in 1 dimension. For example, `my_vector[1:i]`, where `i` is the length of the vector.
 
-```r
+``` r
 ## Vectors ####
 # Try this
 
@@ -91,13 +85,14 @@ my_vector[ 1:3] # Notice consecutive indices can use the ":" operator
 # Return 5th and 9th values
 my_vector[ c(5, 9)] # Notice we have to place non-consecutive index values in the c() function
 ```
+
 <br>
 
 ### 2.3 Matrices
 
 Matrix objects have 2 dimensions denoted as `my_matrix[1:i, 1:j]`, where `i` is the number of rows and `j` is the number of columns.
 
-```r
+``` r
 ## Matrices ####
 # Try this
 
@@ -142,15 +137,16 @@ my_matrix["dogs", c("b", "d")]
 # Finally, functions act on values, not the index
 mean(my_matrix["dogs", c("b", "d")])
 ```
+
 <br>
 
 ### 2.4 Arrays
 
-Arrays are data objects with more than 2 dimensions (well, technically a matrix with 2 dimensions is also an array, but let's ignore that for now). Array dimensions are denoted as `my_array[1:i, 1:j, 1:k]`, where `i` is the number of rows and `j`  the columns and `k` the "depth" of `i * j`.
+Arrays are data objects with more than 2 dimensions (well, technically a matrix with 2 dimensions is also an array, but let's ignore that for now). Array dimensions are denoted as `my_array[1:i, 1:j, 1:k]`, where `i` is the number of rows and `j` the columns and `k` the "depth" of `i * j`.
 
 ![my_array](img/1.5-array.png)
 
-```r
+``` r
 ## Arrays ####
 # Try this
 
@@ -169,16 +165,15 @@ my_array
 # Flash challenge: 
 # Specify and print the 1st and 3rd  slice of the k dimension of my_array
 # Assuming my_array has dimensions i, j, k like my_array[i,j,k]
-
 ```
 
 <br>
 
 ## 3 `which()` and subsetting
 
-Subsetting data objects is done by exploiting the index system.  We usually do this by either specifying index values explicitly (effective, but it requires that you know A LOT about the data object), or by constructing *queries* that choose subset of data based on particular values.  The `which()` function is a powerful way to construct queries.
+Subsetting data objects is done by exploiting the index system. We usually do this by either specifying index values explicitly (effective, but it requires that you know A LOT about the data object), or by constructing *queries* that choose subset of data based on particular values. The `which()` function is a powerful way to construct queries.
 
-```r
+``` r
 # Try this
 help(which) # Notice how the x argument is required to be a LOGICAL vector?
 
@@ -192,11 +187,12 @@ vector_a > 5 # Interesting... it is a LOGICAL vector!
 # In other words, WHICH values in vector_a are greater than 5?
 which(vector_a > 5)
 ```
+
 <br>
 
 What is the point of all this? **THE POINT** is to be able to use expressions to obtain indices and values in data structures...
 
-```r
+``` r
 # What VALUES in vector_a are > 5?
 vector_a[which(vector_a > 5)]
 
@@ -217,39 +213,39 @@ char_vec[ char_vec == "wheat"]        # Same output
 
 <br>
 
-We are just beginning to scratch the surface of possibilities with the `which()` function.  Keep this function in mind and practice it when you can.
+We are just beginning to scratch the surface of possibilities with the `which()` function. Keep this function in mind and practice it when you can.
 
 <br>
 
 ## 4 Selection on `data.frame` objects
 
-> Data frames are the ultimate data object for getting, storing, organizing and analyzing data. A good scientist must learn to communicate the subtlety of data.  A good statistician must learn not to underestimate the subtletly of data. A good student must learn that 
+> Data frames are the ultimate data object for getting, storing, organizing and analyzing data. A good scientist must learn to communicate the subtlety of data. A good statistician must learn not to underestimate the subtletly of data. A good student must learn that
 
 **subtlety may exist, even in simple data**.
 
-There are a couple of data object types that have a special characteristic in that they store data of different types, where vectors, matrices and arrays can only store one type of data (e.g., numeric, character, logical, etc.).  The special data objects that can contain multiple data types are list objects, and data frames. Here we will focus on data frames.  
+There are a couple of data object types that have a special characteristic in that they store data of different types, where vectors, matrices and arrays can only store one type of data (e.g., numeric, character, logical, etc.). The special data objects that can contain multiple data types are list objects, and data frames. Here we will focus on data frames.
 
 **Data frames can have different vector types arranged by column** but there is a constraint that each vector must be the same length, that is, **each ROW is considered an observation for each variable value** (though there may be missing data coded by `NA`).
 
-There are a few ways to think about selecting values in a data frame.  The first is simply to access values through the variable names, which can either be done by using the data frame name with the `$` operator and the variable name, or by using the `[ , ]` syntax with either the variable name or the column number of the variable of interest [see here](https://rstats-bootcamp.github.io/website/5-data-frames.html#the-index-operator).
+There are a few ways to think about selecting values in a data frame. The first is simply to access values through the variable names, which can either be done by using the data frame name with the `$` operator and the variable name, or by using the `[ , ]` syntax with either the variable name or the column number of the variable of interest [see here](https://rstats-bootcamp.github.io/website/5-data-frames.html#the-index-operator).
 
-A second powerful way to access variables in a data frame is by selecting particular rows of a data frame.  This may be done by selecting the rows of a data based on values of one or more variables.  We will practice doing this using `which()`, the `[ , ]` syntax, and boolean phrases is the following code block.
+A second powerful way to access variables in a data frame is by selecting particular rows of a data frame. This may be done by selecting the rows of a data based on values of one or more variables. We will practice doing this using `which()`, the `[ , ]` syntax, and boolean phrases is the following code block.
 
-For the following section, we will use the `OrchardSprays` dataset that exists as a data frame in the in-built `{datasets}` package. You can use `help(OrchardSprays)` to see the help page (the help page is characteristically terse, so some description is given here). 
+For the following section, we will use the `OrchardSprays` dataset that exists as a data frame in the in-built `{datasets}` package. You can use `help(OrchardSprays)` to see the help page (the help page is characteristically terse, so some description is given here).
 
 <br>
 
 ### 4.1 `OrchardSprays` data
 
-This is a classic dataset based on [an experiment looking at how a chemical additive could be used to deter honeybees from being attracted to crops and subsequently killed by pesticides](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-7348.1943.tb06173.x). 
+This is a classic dataset based on [an experiment looking at how a chemical additive could be used to deter honeybees from being attracted to crops and subsequently killed by pesticides](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-7348.1943.tb06173.x).
 
-The experiment involved having a `treatment` consisting of adding a "lime sulfur emulsion" (honeybee deterrent) in increasing concentrations to a sucrose solution.  **The `treatment` variable** had 8 levels including a control (no deterrent) and 7 other levels with increasing concentration of the deterrent. The treatment levels were named A (the highest amount of deterrent), B (second highest deterrent) through to G (lowest deterrent) and H (control - no deterrent) **The `decrease` variable** was a measure of the quantity of sucrose solution that was taken by honeybees (the prediction here is that higher concentrations of the deterrent should result in a lower decrease in the sucrose solution).
+The experiment involved having a `treatment` consisting of adding a "lime sulfur emulsion" (honeybee deterrent) in increasing concentrations to a sucrose solution. **The `treatment` variable** had 8 levels including a control (no deterrent) and 7 other levels with increasing concentration of the deterrent. The treatment levels were named A (the highest amount of deterrent), B (second highest deterrent) through to G (lowest deterrent) and H (control - no deterrent) **The `decrease` variable** was a measure of the quantity of sucrose solution that was taken by honeybees (the prediction here is that higher concentrations of the deterrent should result in a lower decrease in the sucrose solution).
 
-The experiment involved a [Latin Square](https://en.wikipedia.org/wiki/Latin_square) design, with the order of the 8 treatments arranged randomly in an array of 8 columns (the purpose of this design is to randomize any effect of the `treatment` ORDER or POSITION on the response variable).  This resulted in an 8 row by 8 column experiment.  The response was measured after placing 100 honeybees into an experimental chamber with the 64 containers of sucrose solution.
+The experiment involved a [Latin Square](https://en.wikipedia.org/wiki/Latin_square) design, with the order of the 8 treatments arranged randomly in an array of 8 columns (the purpose of this design is to randomize any effect of the `treatment` ORDER or POSITION on the response variable). This resulted in an 8 row by 8 column experiment. The response was measured after placing 100 honeybees into an experimental chamber with the 64 containers of sucrose solution.
 
 <br>
 
-```r
+``` r
 ## OrchardSprays ####
 ## Understand the data - an important step
 
@@ -282,13 +278,14 @@ plot(x = OrchardSprays$colpos,  # NB use of $ syntax to access data
      xlab = "\"Column\" position",
      ylab = "\"Row\" position")
 ```
+
 <br>
 
 ### 4.2 Practice selecting parts a data frame
 
 Selecting particular parts of a data frame based on the values of **one variable** is a common and extremely useful task.
 
-```r
+``` r
 ## Practice selecting parts a data frame ####
 
 # Select the rows of the dataset for treatment "D"
@@ -321,7 +318,7 @@ OrchardSprays[my_selection, ]
 
 Using the basic building blocks of boolean selection, more complex rules for selecting data can be made.
 
-```r
+``` r
 ## Compound boolean for selection ####
 
 # Select all rows of the data frame where 
@@ -364,9 +361,9 @@ OrchardSprays[my_selec2, ] # Double check it works and is similar to expectation
 
 ## 5 `aggregate()` function
 
-We often may wish to summarize parts of a data set according to some index of variable values.  A very convenient tool for the is the `aggregate()` function, which we will practice here.
+We often may wish to summarize parts of a data set according to some index of variable values. A very convenient tool for the is the `aggregate()` function, which we will practice here.
 
-```r
+``` r
 help(aggregate)
 
 # A few important things to note about how this function works:
@@ -463,7 +460,7 @@ axis(side = 1,
 
 For the following exercises, use the `trees` dataset built into `R`, which has `Girth`, `Height` and `Volume` variables for 31 Black Cherry trees.
 
-```r
+``` r
 # Examine the data
 help(trees)
 data(trees)
@@ -472,7 +469,7 @@ str(trees)
 
 <br>
 
-### 6.1 
+### 6.1
 
 Show code to calculate the mean `Girth` of Black Cherry trees with `Height` less than 75 ft.
 
@@ -480,13 +477,13 @@ Show code to calculate the mean `Girth` of Black Cherry trees with `Height` less
 
 ### 6.2
 
-Use `help(cut)` and then use the `cut()` function to create a new factor variable based on the `Height` numeric variable in the `trees` dataset. Try setting the `breaks` argument to 2 or 3.  Rename the levels of your new factor to something meaningful.  Show the code.  
+Use `help(cut)` and then use the `cut()` function to create a new factor variable based on the `Height` numeric variable in the `trees` dataset. Try setting the `breaks` argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.
 
 <br>
 
 ### 6.3
 
-Using the new factor from question 2, use `aggregate()` to calculate the mean and standard deviation of all three variables in the `trees` data.  Show your code and report the results to 2 decimal points of accuracy.
+Using the new factor from question 2, use `aggregate()` to calculate the mean and standard deviation of all three variables in the `trees` data. Show your code and report the results to 2 decimal points of accuracy.
 
 <br>
 
@@ -494,17 +491,18 @@ Using the new factor from question 2, use `aggregate()` to calculate the mean an
 
 Show the code using `which()` and boolean phrases as appropriate to find the rows in the `trees` dataset where `Girth` is higher than 11 and `Height` is lower than 75.
 
-
 <br>
 
 ### 6.5
 
 Run the following code:
-```r
+
+``` r
 data_1 <- data.frame(volume = c(4,5,6,5,6,7,6,5,6,8,7,3,8,7,NA,10),
            population = c("A","A","A","A","A","A","A","A",
            "B","B","B","B","B","B","B","B"))
 ```
+
 Use `aggregate()` to calculate the mean of `volume` for each `population` (hint: you may need to use help for the functions involved and pay close attention to your data frame...).
 
 <br>

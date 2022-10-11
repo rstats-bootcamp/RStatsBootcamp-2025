@@ -26,6 +26,9 @@ website:
           - 7-question-explore.qmd
           - 8-sampling-dist.qmd
           - 9-correlation.qmd
+          - 10-regression.qmd
+          - 11-t-test.qmd
+          - 12-1-way-anova.qmd
 
 format:
   html:

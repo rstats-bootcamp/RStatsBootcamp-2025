@@ -1,5 +1,5 @@
 ---
-title: "8 Sampling and distributions"
+title: "8 Distributions"
 ---
 
 <center>![Can you guess the weight of this bull? What about you and 99 friends?](img/unsplash-bull.png)</center>
