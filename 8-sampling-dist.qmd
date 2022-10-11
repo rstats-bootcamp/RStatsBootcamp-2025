@@ -201,7 +201,7 @@ We can describe the expected perfect (i.e., theoretical) Gaussian distribution b
 
 <br>
 
-![](img/2.2-gaussian.png)
+![](img/2.2-gaussian.png){width="600px"}
 
 <br>
 
@@ -338,7 +338,7 @@ rpois(20, 4)
 
 The Poisson parameter:
 
-![](img/2.2-poisson.png)
+![](img/2.2-poisson.png){width="500px"}
 
 <br>
 
@@ -460,7 +460,7 @@ Described by 2 parameters, The number of trials with a binary outcome in a singl
 
 The Binomial parameters:
 
-![](img/2.2-binomial.png)
+![](img/2.2-binomial.png){width="500px"}
 
 <br>
 
