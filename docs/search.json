@@ -537,5 +537,19 @@
     "title": "8 Sampling and distributions",
     "section": "7 Practice exercises",
     "text": "7 Practice exercises\nFor the following exercises, run the code below to create the data oibject dat.\n# The code below loads and prints the data frame \"dat\"\n\n# Data dictionary for \"dat\", a dataset with different measures of 20 sheep\n# weight - weight in Kg\n# ked - count of wingless flies\n# trough - 2 feed troughs, proportion of times \"Trough A\" fed from\n# shear - minutes taken to \"hand shear\" each sheep\n\n(dat <- data.frame(\n  weight = c(44.1, 38.3, 41.1, 41.9, 41.2, 39.7, 44.5, 39.7, 46.1, 39.8, \n    43.9, 46.9, 35.8, 39.2, 39.6, 41.9, 39.1, 32.0, 32.7, 44.0),\n  \n  ked = c(9, 4, 15, 11, 10, 8, 12, 12, 6, 11,\n             12, 13, 8, 11, 19, 19, 12, 7, 8, 14),\n  \n  trough = c(0.52, 0.74, 0.62, 0.63, 0.22, 0.22, 0.39, 0.94, 0.96, 0.74,\n              0.73, 0.54, 0.00, 0.61, 0.84, 0.75, 0.45, 0.54, 0.54, 0.00),\n  \n  shear = c(14.0, 8.0, 14.0, 11.0, 14.0, 5.0, 9.5, 11.0, 6.5, 11.0, \n            18.5, 11.0, 18.5, 8.0, 8.0, 6.5, 18.5, 15.5, 14.0, 8.0)\n  ))\n\n\n7.1\nDo you expect weight to be Gaussian distributed? How about ked? Explain your answer for each. \n\n\n7.2\nShow the code to graphically diagnose and decide whether weight is Gaussian and explain your conclusion.\n\n\n\n7.3\nShow the code to graphically diagnose and decide whether ked is Gaussian and explain your conclusion. If you choose another likely distribution, test it as well and similarly diagnose.\n\n\n\n7.4\nExplore whether trough is Gaussian, and explain whether you expect it to be so. If not, does transforming the data “persuade it” to conform to Gaussian? Discuss.\n\n\n\n7.5\nWrite a plausible practice question involving any aspect of graphical diagnosis of a data distribution using the iris data."
+  },
+  {
+    "objectID": "9-correlation.html#section",
+    "href": "9-correlation.html#section",
+    "title": "9 Correlation",
+    "section": "1",
+    "text": "1"
+  },
+  {
+    "objectID": "9-correlation.html#harper-adams-data-science",
+    "href": "9-correlation.html#harper-adams-data-science",
+    "title": "9 Correlation",
+    "section": "Harper Adams Data Science",
+    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris."
   }
 ]

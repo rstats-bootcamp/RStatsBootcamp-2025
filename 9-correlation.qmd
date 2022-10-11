@@ -2,11 +2,11 @@
 title: "9 Correlation"
 ---
 
-<center> ![](img/murmur.png) </center>
+<center>![](img/murmur.png)</center>
 
 <br>
 
-## 1 
+## 1
 
 <br>
 
