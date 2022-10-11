@@ -24,6 +24,8 @@ website:
       - section: "Module 2: Stats"
         contents:
           - 7-question-explore.qmd
+          - 8-sampling-dist.qmd
+          - 9-correlation.qmd
 
 format:
   html:
