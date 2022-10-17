@@ -302,7 +302,7 @@ Boolean operators are expressions that resolve `TRUE` (treated as `1` in most co
 # This asks if both phrases are true (true AND true)
 # notice "TRUE" has a special meaning in R
 
-TRUE & TRUE # both phrases are the same, TRUE
+TRUE & TRUE # both phrases are the same and true, TRUE
 
 3 > 1 & 1 < 5 # both phrases are true
 
