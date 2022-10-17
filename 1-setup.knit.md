@@ -2,6 +2,7 @@
 title: "1 Setup & intro"
 ---
 
+
 <br>
 
 <center>![R.A. Fisher the father of statistics](img/pop-fisher-sm.png)</center>
@@ -200,13 +201,24 @@ Comments are messages that explain code in your script, and they should be used 
 
 Comment lines begin with the `#` character and are not treated as "code" by `R`.
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 # Make a vector of numbers <--- a comment
 my_variable <- c(2,5,3,6,3,4,7)
 
 # Calculate the mean of my_variable <--- another comment
 mean(my_variable)
 ```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 4.285714
+```
+:::
+:::
+
 
 <br>
 
@@ -258,3 +270,4 @@ sd(my_variable)
 ![](img/HDS.png){fig-alt="Harper Data Science" width="125"}
 
 This website supports students and staff at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University") and the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
+
