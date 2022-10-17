@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 website:
+  favicon: "img/rstats-logo.png"
   title: "R Stats Bootcamp"
   sidebar:
     logo: "img/rstats-logo.png"
