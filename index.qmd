@@ -2,18 +2,13 @@
 title: "About"
 ---
 
-<center>
-
-!["Data science"](img/ds_venn_sm.png)
-
-</center>
+<center>!["Data science"](img/ds_venn_sm.png)</center>
 
 ## R Stats Bootcamp
 
-This is a self-guided tutorial designed for people new to data science, statistics and R, and for those who would like a review. The materials can help you get going with critical skills in **R programming**, traditional **data analysis** and **open science** tools. The aim is to provide open, foundational training you can build on in the most efficient format possible. This will help prepare you for further training and to get you working with data in R as quickly as possible. 
+This is a self-guided tutorial designed for people new to data science, statistics and R, and for those who would like a review. The materials can help you get going with critical skills in **R programming**, traditional **data analysis** and **open science** tools. The aim is to provide open, foundational training you can build on in the most efficient format possible. This will help prepare you for further training and to get you working with data in R as quickly as possible.
 
 The Bootcamp is self-paced and has built-in assessment materials. The material is meant to work through in order as an experience, but is not in any way intended to be a reference to the presented topics.
-
 
 ## Bootcamp modules
 
@@ -23,24 +18,23 @@ The Bootcamp is self-paced and has built-in assessment materials. The material i
 
 **Module 3** Introduction to reproducible code, R Markdown, and Github.
 
-
 These pages will help orient you if you are a beginner, and we will also cover our design approach for the materials and the tools you will need to get started right away. If you are already an RStudio user and comfortable managing and storing script files and scripts in R, you may want to jump straight to the exercises on each page.
 
 <br>
 
 We make a few suggestions about this material:
 
-- Follow along consecutively with the workshop pages
+-   Follow along consecutively with the workshop pages
 
-- Actually type and run all of the example code yourself
+-   Actually type and run all of the example code yourself
 
-- Complete each page before moving on to the next
+-   Complete each page before moving on to the next
 
-- Formally attempt all problems at the end of each page
+-   Formally attempt all problems at the end of each page
 
-- Join us in Slack if you need assistance
+-   Join us in Slack if you need assistance
 
-<br> 
+<br>
 
 That's it!
 
