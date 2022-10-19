@@ -12,6 +12,8 @@ For all of the lab pages it is intended that you type and run 100% of the code i
 
 <br>
 
+We also a have a [friendly community Slack channel](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) - go over and introduce yourself and say hi!
+
 +------------------------------------------------------------------------------------------------+
 | Topics                                                                                         |
 +================================================================================================+
