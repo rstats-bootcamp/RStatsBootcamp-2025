@@ -2,7 +2,11 @@
 title: "Schedule"
 ---
 
-<center>![I call this "Robot farmer with calendar"](img/robot-farmer.jpeg){height="200px"}</center>
+<center>
+
+![I call this "Robot farmer with calendar"](img/robot-farmer.jpeg){height="200px"}
+
+</center>
 
 ## Bootcamp resources
 
@@ -14,47 +18,46 @@ For all of the lab pages it is intended that you type and run 100% of the code i
 
 We also a have a [friendly community Slack channel](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) - go over and introduce yourself and say hi!
 
-+------------------------------------------------------------------------------------------------+
-| Topics                                                                                         |
-+================================================================================================+
-| ![](img/slides.png){width="18" height="20"} ![](img/youtube.png){width="30"} Bootcamp overview |
-+------------------------------------------------------------------------------------------------+
-| **Module 1: R scripting**                                                                      |
-|                                                                                                |
-| 1 R and RStudio Setup                                                                          |
-|                                                                                                |
-| 2 R language                                                                                   |
-|                                                                                                |
-| 3 Functions and packages                                                                       |
-|                                                                                                |
-| 4 Data objects                                                                                 |
-|                                                                                                |
-| 5 Data frames                                                                                  |
-|                                                                                                |
-| 6 Data sub-setting and manipulation                                                            |
-+------------------------------------------------------------------------------------------------+
-| **Module 2: Statistics review**                                                                |
-|                                                                                                |
-| 7 Question, explore, analyze                                                                   |
-|                                                                                                |
-| 8 Sampling distributions                                                                       |
-|                                                                                                |
-| 9 Correlation                                                                                  |
-|                                                                                                |
-| 10 Simple linear regression                                                                    |
-|                                                                                                |
-| 11 T-test                                                                                      |
-|                                                                                                |
-| 12 1-way ANOVA                                                                                 |
-+------------------------------------------------------------------------------------------------+
-| **Module 3: reproducibility, collaboration**                                                   |
-|                                                                                                |
-| 13 Reproducibility                                                                             |
-|                                                                                                |
-| 14 Automate reports                                                                            |
-|                                                                                                |
-| 15 Git and version control                                                                     |
-+------------------------------------------------------------------------------------------------+
+----
+
+## Topics 
+
+
+### Module 1: R scripting
+
+1 R and RStudio Setup ::: [slides](docs/ppt/RSB01.pptx)
+
+2 R language ::: [slides](docs/ppt/RSB02.pptx)
+
+3 Functions and packages
+
+4 Data objects
+
+5 Data frames
+
+6 Data sub-setting and manipulation
+
+### Module 2: Statistics review
+
+7 Question, explore, analyze
+
+8 Sampling distributions
+
+9 Correlation
+
+10 Simple linear regression
+
+11 T-test
+
+12 1-way ANOVA
+
+### Module 3: reproducibility, collaboration
+
+13 Reproducibility
+
+14 Automate reports
+
+15 Git and version control
 
 <br> <br>
 

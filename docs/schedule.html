@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.280">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./" class="sidebar-logo-link">
+      <a href="./index.html" class="sidebar-logo-link">
       <img src="./img/rstats-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
@@ -208,6 +208,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#bootcamp-resources" id="toc-bootcamp-resources" class="nav-link active" data-scroll-target="#bootcamp-resources">Bootcamp resources</a></li>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a>
+  <ul class="collapse">
+  <li><a href="#module-1-r-scripting" id="toc-module-1-r-scripting" class="nav-link" data-scroll-target="#module-1-r-scripting">Module 1: R scripting</a></li>
+  <li><a href="#module-2-statistics-review" id="toc-module-2-statistics-review" class="nav-link" data-scroll-target="#module-2-statistics-review">Module 2: Statistics review</a></li>
+  <li><a href="#module-3-reproducibility-collaboration" id="toc-module-3-reproducibility-collaboration" class="nav-link" data-scroll-target="#module-3-reproducibility-collaboration">Module 3: reproducibility, collaboration</a></li>
+  </ul></li>
   <li><a href="#harper-adams-data-science" id="toc-harper-adams-data-science" class="nav-link" data-scroll-target="#harper-adams-data-science">Harper Adams Data Science</a></li>
   </ul>
 </nav>
@@ -225,6 +231,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -245,46 +252,35 @@ ul.task-list li input[type="checkbox"] {
 <p>For all of the lab pages it is intended that you type and run 100% of the code in examples and then explicitly answer the exercise questions, which are based on examples for given code on the pages. Thus, to answer the questions it is recommended to adapt code you have already run when completing the pages.</p>
 <p><br></p>
 <p>We also a have a <a href="https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ">friendly community Slack channel</a> - go over and introduce yourself and say hi!</p>
-<table class="table">
-<colgroup>
-<col style="width: 101%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topics</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img src="img/slides.png" width="18" height="20"> <img src="img/youtube.png" class="img-fluid" width="30"> Bootcamp overview</td>
-</tr>
-<tr class="even">
-<td><p><strong>Module 1: R scripting</strong></p>
-<p>1 R and RStudio Setup</p>
-<p>2 R language</p>
+<hr>
+</section>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<section id="module-1-r-scripting" class="level3">
+<h3 class="anchored" data-anchor-id="module-1-r-scripting">Module 1: R scripting</h3>
+<p>1 R and RStudio Setup ::: <a href="docs/ppt/RSB01.pptx">slides</a></p>
+<p>2 R language ::: <a href="docs/ppt/RSB02.pptx">slides</a></p>
 <p>3 Functions and packages</p>
 <p>4 Data objects</p>
 <p>5 Data frames</p>
-<p>6 Data sub-setting and manipulation</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Module 2: Statistics review</strong></p>
+<p>6 Data sub-setting and manipulation</p>
+</section>
+<section id="module-2-statistics-review" class="level3">
+<h3 class="anchored" data-anchor-id="module-2-statistics-review">Module 2: Statistics review</h3>
 <p>7 Question, explore, analyze</p>
 <p>8 Sampling distributions</p>
 <p>9 Correlation</p>
 <p>10 Simple linear regression</p>
 <p>11 T-test</p>
-<p>12 1-way ANOVA</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Module 3: reproducibility, collaboration</strong></p>
+<p>12 1-way ANOVA</p>
+</section>
+<section id="module-3-reproducibility-collaboration" class="level3">
+<h3 class="anchored" data-anchor-id="module-3-reproducibility-collaboration">Module 3: reproducibility, collaboration</h3>
 <p>13 Reproducibility</p>
 <p>14 Automate reports</p>
-<p>15 Git and version control</p></td>
-</tr>
-</tbody>
-</table>
+<p>15 Git and version control</p>
 <p><br> <br></p>
+</section>
 </section>
 <section id="harper-adams-data-science" class="level2">
 <h2 class="anchored" data-anchor-id="harper-adams-data-science">Harper Adams Data Science</h2>
@@ -427,7 +423,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -449,7 +447,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -485,24 +500,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
