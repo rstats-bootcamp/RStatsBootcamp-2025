@@ -6,7 +6,7 @@ website:
   favicon: "img/rstats-logo.png"
   title: "R Stats Bootcamp"
   sidebar:
-    logo: "img/rstats-logo.png"
+    logo: "img/bootcamp_tp.png"
     style: "docked"
     search: true
     contents: 

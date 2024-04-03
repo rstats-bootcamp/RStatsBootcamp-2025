@@ -2,7 +2,11 @@
 title: "About"
 ---
 
-<center>!["Data science"](img/ds_venn_sm.png)</center>
+<center>
+
+!["Data science"](img/ds_venn_sm.png)
+
+</center>
 
 ## R Stats Bootcamp
 
