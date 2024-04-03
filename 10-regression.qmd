@@ -2,7 +2,11 @@
 title: "10 Regression"
 ---
 
-<center>![We should be suspicious if the data points all fall exactly on the straight line of prediction](img/bird-line.png){width="400px"}</center>
+<center>
+
+![We should be suspicious if the data points all fall exactly on the straight line of prediction](img/bird-line.png){width="400px"}
+
+</center>
 
 <br>
 
@@ -355,7 +359,7 @@ The reporting of evidence supporting claims that assumptions underlying statisti
 Despite being challenging to pronounce and spell **heteroscedasticiy**, ([help pronouncing it here](https://www.youtube.com/watch?v=TqvPXvHR9nw); [strong opinion about spelling it here](http://jiayinggu.weebly.com/uploads/3/8/9/3/38937991/mcculloch.pdf)), the concept of heteroscedasticity is simple - the that variance of the residuals should be constant across the predicted values. We usually examine this visually, which is easy to do in R.
 
 ``` r
-## Heteroscadsticity ####
+## Heteroscedsticity ####
 
 # Try this:
 plot(y = residuals(mylm), x = fitted(mylm),

@@ -678,7 +678,7 @@ not a graphical parameter</code></pre>
 <p><br></p>
 <p><strong>Diagnostic plots and heteroscedasticity</strong></p>
 <p>Despite being challenging to pronounce and spell <strong>heteroscedasticiy</strong>, (<a href="https://www.youtube.com/watch?v=TqvPXvHR9nw">help pronouncing it here</a>; <a href="http://jiayinggu.weebly.com/uploads/3/8/9/3/38937991/mcculloch.pdf">strong opinion about spelling it here</a>), the concept of heteroscedasticity is simple - the that variance of the residuals should be constant across the predicted values. We usually examine this visually, which is easy to do in R.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Heteroscadsticity ####</span></span>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Heteroscedsticity ####</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this:</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y =</span> <span class="fu">residuals</span>(mylm), <span class="at">x =</span> <span class="fu">fitted</span>(mylm),</span>
