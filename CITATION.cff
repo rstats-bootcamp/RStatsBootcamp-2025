@@ -11,18 +11,27 @@ version: 2022.1.0
 doi: 10.5281/zenodo.10853602
 date-released: 2022-08-01
 url: "https://rstats-bootcamp.github.io/website/"
+license: MIT
+keywords:
+  - R programming
+  - statistics
+  - data analysis
+  - reproducible research
+  - educational materials
+  - self-paced learning
+  - RStudio
+  - R Markdown
+  - GitHub
 preferred-citation:
-  type: course
+  type: misc
   authors:
   - family-names: "Harris"
     given-names: "W. E."
     orcid: "https://orcid.org/0000-0002-9038-8656"
+    affiliation: "Centre for Agricultural Data Science, Harper Adams University"
+  title: "R Stats Bootcamp: A Self-Paced Course for Learning R Programming and Statistical Analysis"
+  year: 2022  # Update to your publication year
+  url: "https://rstats-bootcamp.github.io/website/"
   doi: "10.5281/zenodo.10853602"
-  journal: "Journal Title"
-  month: 9
-  start: 1 # First page number
-  end: 10 # Last page number
-  title: "My awesome research software"
-  issue: 1
-  volume: 1
-  year: 2021
+  publisher: "Centre for Agricultural Data Science, Harper Adams University"
+  notes: "Open educational resource for learning R programming, statistical analysis, and reproducible research practices"
