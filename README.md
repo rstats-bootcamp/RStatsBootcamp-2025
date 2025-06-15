@@ -21,7 +21,7 @@ A self-paced course for learning R programming, statistical analysis, and reprod
 
 ## 👥 Who This Is For
 
-Designed for students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment. Open to anyone new to R programming.
+Designed for research students and staff interested in using the R Programming language to analyze data. Accessible to anyone new to R programming and statistics.
 
 ## 📋 Prerequisites
 
@@ -40,11 +40,6 @@ Designed for students and staff at Harper Adams University and the MSc in Data S
 
 MIT License - see [LICENSE](LICENSE) for details
 
-## 👨‍🏫 Course Leader
-
-**Ed Harris**  
-Harper Adams University  
-MSc in Data Science for Global Agriculture, Food, and Environment
 
 ---
 
