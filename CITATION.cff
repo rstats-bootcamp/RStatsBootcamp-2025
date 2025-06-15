@@ -1,5 +1,7 @@
 cff-version: 1.0.0
 message: "If you use this software, please cite it as below."
+title: "R Stats Bootcamp"
+abstract: "A self-paced course for learning R programming, statistical analysis, and reproducible research practices. Designed for beginners with modules covering R scripting, RStudio interface, data analysis fundamentals, and reproducible research workflows using R and GitHub."
 authors:
 - family-names: "Harris"
   given-names: "W. E."
