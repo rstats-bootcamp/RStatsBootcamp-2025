@@ -1,5 +1,5 @@
 # R Stats Bootcamp
-
+[![DOI](https://zenodo.org/badge/544170961.svg)](https://doi.org/10.5281/zenodo.15667036)
 A self-paced course for learning R programming, statistical analysis, and reproducible research practices.
 
 ## 🎯 What You'll Learn
