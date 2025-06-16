@@ -31,8 +31,6 @@ By the end of this lesson, you will be able to:
 
 The `R` Stats Bootcamp aims to provide practical, open instructional materials to support learning the `R` programming language, to review simple statistics in `R`, and to introduce reproducibility and collaboration tools. The content is a blend of practical, referenced material with videos and self-assessment.
 
-We also a have a [friendly community Slack channel](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) - go over and introduce yourself and say hi!
-
 <br>
 
 ## 3 `R` motivation

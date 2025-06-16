@@ -940,7 +940,7 @@
     "href": "02-r-lang.html#practice-exercises",
     "title": "02 R language",
     "section": "6 Practice exercises",
-    "text": "6 Practice exercises\n\n\n6.1\nName and describe the purpose of the first 2 sections that should be present in every R script\n\n\n\n6.2\nWhat is the purpose of “subset” argument in the boxplot() function (hint: use help())\n\n\n\n6.3\nWrite an expression using good R spacing syntax that takes the sum of 3, 6, and 12 and divides it by 25\n\n\n\n6.4\nWrite pseudocode steps for calculating the volume of a cylinder (hint, if you do not know it by heart, you may need to research the equation for the volume of a cylinder!). For a cylinder of height = 3.2 cm and end radius of 5.5 cm, report the volume in cm to 2 decimal points of accuracy. Use at least 3 decimal points of accuracy for pi (hint, the quantity named pi is a standard variable in R!).\n\n\n\n6.5\nExecute the code and explain the outcome in comments.\nTRUE & 3 &lt; 5 & 6 &gt; 2 & !FALSE\n\n\n\n6.6\nWrite a plausible practice question involving the use of the not Boolean operator, !.\n\nNote: for this R Stats Bootcamp page, and only for this one, a sample of solutions is offered. For others, we avoid explicit solutions to encourage you to formulate your own unique solutions and to interact in Slack for help if you need support coming to your own solutions.\nSCRIPT 2 Example SOLUTIONS",
+    "text": "6 Practice exercises\n\n\n6.1\nName and describe the purpose of the first 2 sections that should be present in every R script\n\n\n\n6.2\nWhat is the purpose of “subset” argument in the boxplot() function (hint: use help())\n\n\n\n6.3\nWrite an expression using good R spacing syntax that takes the sum of 3, 6, and 12 and divides it by 25\n\n\n\n6.4\nWrite pseudocode steps for calculating the volume of a cylinder (hint, if you do not know it by heart, you may need to research the equation for the volume of a cylinder!). For a cylinder of height = 3.2 cm and end radius of 5.5 cm, report the volume in cm to 2 decimal points of accuracy. Use at least 3 decimal points of accuracy for pi (hint, the quantity named pi is a standard variable in R!).\n\n\n\n6.5\nExecute the code and explain the outcome in comments.\nTRUE & 3 &lt; 5 & 6 &gt; 2 & !FALSE\n\n\n\n6.6\nWrite a plausible practice question involving the use of the not Boolean operator, !.\nSCRIPT 2 Example SOLUTIONS",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
@@ -964,7 +964,7 @@
     "href": "01-setup.html#how-the-r-stats-bootcamp-works",
     "title": "01 Setup & intro",
     "section": "2 How the R Stats Bootcamp works",
-    "text": "2 How the R Stats Bootcamp works\nThe R Stats Bootcamp aims to provide practical, open instructional materials to support learning the R programming language, to review simple statistics in R, and to introduce reproducibility and collaboration tools. The content is a blend of practical, referenced material with videos and self-assessment.\nWe also a have a friendly community Slack channel - go over and introduce yourself and say hi!",
+    "text": "2 How the R Stats Bootcamp works\nThe R Stats Bootcamp aims to provide practical, open instructional materials to support learning the R programming language, to review simple statistics in R, and to introduce reproducibility and collaboration tools. The content is a blend of practical, referenced material with videos and self-assessment.",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",

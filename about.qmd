@@ -66,7 +66,6 @@ This bootcamp is continuously improved based on:
 
 We offer several ways to get help during your learning journey:
 
--   Join our [Slack community](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) for peer support
--   Check the FAQ section for common questions
+-   Discord coming soon
 -   Explore additional resources linked throughout the course
 

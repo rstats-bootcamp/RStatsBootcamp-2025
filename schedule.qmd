@@ -13,7 +13,7 @@ This self-paced bootcamp requires approximately 20-30 hours to complete. The sch
 ::: callout-note
 ## Community Support
 
-Join our [friendly community Slack channel](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) to connect with fellow learners and get help when needed.
+- Discord coming soon
 :::
 
 ## Module 1: R Foundations {.module-header}

@@ -422,10 +422,6 @@ TRUE & 3 < 5 & 6 > 2 & !FALSE
 
 Write a plausible practice question involving the use of the not Boolean operator, `!`.
 
-<br>
-
-Note: for this R Stats Bootcamp page, and only for this one, a sample of solutions is offered. For others, we avoid explicit solutions to encourage you to formulate your own unique solutions and to interact in Slack for help if you need support coming to your own solutions.
-
 [SCRIPT 2 Example SOLUTIONS](/scripts/script-2-solutions.R)
 
 <br>
