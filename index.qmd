@@ -22,7 +22,7 @@ Master R programming, statistical analysis, and reproducible research in one com
 ::::
 
 ::: hero-image
-<img src="img/toolbox2.png" alt="Data Science Toolkit" class="hero-img"/>
+<img src="img/rstats-logo.png" alt="Data Science Toolkit" class="hero-img"/>
 :::
 ::::::
 
