@@ -503,23 +503,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-r-markdown" id="toc-what-is-r-markdown" class="nav-link active" data-scroll-target="#what-is-r-markdown">What is R Markdown?</a></li>
-  <li><a href="#getting-started-with-r-markdown" id="toc-getting-started-with-r-markdown" class="nav-link" data-scroll-target="#getting-started-with-r-markdown">Getting Started with R Markdown</a></li>
-  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">YAML Header</a></li>
-  <li><a href="#markdown-text" id="toc-markdown-text" class="nav-link" data-scroll-target="#markdown-text">Markdown Text</a>
+  <li><a href="#what-is-r-markdown" id="toc-what-is-r-markdown" class="nav-link active" data-scroll-target="#what-is-r-markdown">1 What is R Markdown?</a></li>
+  <li><a href="#getting-started-with-r-markdown" id="toc-getting-started-with-r-markdown" class="nav-link" data-scroll-target="#getting-started-with-r-markdown">2 Getting Started with R Markdown</a></li>
+  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">3 YAML Header</a></li>
+  <li><a href="#markdown-text" id="toc-markdown-text" class="nav-link" data-scroll-target="#markdown-text">4 Markdown Text</a>
   <ul class="collapse">
-  <li><a href="#basic-formatting" id="toc-basic-formatting" class="nav-link" data-scroll-target="#basic-formatting">Basic Formatting</a></li>
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#basic-formatting" id="toc-basic-formatting" class="nav-link" data-scroll-target="#basic-formatting">4.1 Basic Formatting</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">4.2 Lists</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">4.3 Tables</a></li>
   </ul></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">5 Code Chunks</a>
   <ul class="collapse">
-  <li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options">Chunk Options</a></li>
+  <li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options">5.1 Chunk Options</a></li>
   </ul></li>
-  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline Code</a></li>
-  <li><a href="#generating-reports" id="toc-generating-reports" class="nav-link" data-scroll-target="#generating-reports">Generating Reports</a></li>
-  <li><a href="#example-data-analysis-report" id="toc-example-data-analysis-report" class="nav-link" data-scroll-target="#example-data-analysis-report">Example: Data Analysis Report</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">6 Inline Code</a></li>
+  <li><a href="#generating-reports" id="toc-generating-reports" class="nav-link" data-scroll-target="#generating-reports">7 Generating Reports</a></li>
+  <li><a href="#example-data-analysis-report" id="toc-example-data-analysis-report" class="nav-link" data-scroll-target="#example-data-analysis-report">8 Example: Data Analysis Report</a></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">9 Practice Exercises</a></li>
   <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
@@ -569,7 +569,7 @@ Learning Objectives
 </div>
 </div>
 <section id="what-is-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-r-markdown">What is R Markdown?</h2>
+<h2 class="anchored" data-anchor-id="what-is-r-markdown">1 What is R Markdown?</h2>
 <p>R Markdown is a file format that allows you to combine R code, its output, and narrative text in a single document. It’s a powerful tool for creating reproducible reports, presentations, dashboards, and even websites.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -586,7 +586,7 @@ Key Concept
 </div>
 </section>
 <section id="getting-started-with-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started-with-r-markdown">Getting Started with R Markdown</h2>
+<h2 class="anchored" data-anchor-id="getting-started-with-r-markdown">2 Getting Started with R Markdown</h2>
 <p>To create an R Markdown document in RStudio:</p>
 <ol type="1">
 <li>Click <strong>File → New File → R Markdown</strong></li>
@@ -597,7 +597,7 @@ Key Concept
 <p>This will generate a template R Markdown file that you can modify.</p>
 </section>
 <section id="yaml-header" class="level2">
-<h2 class="anchored" data-anchor-id="yaml-header">YAML Header</h2>
+<h2 class="anchored" data-anchor-id="yaml-header">3 YAML Header</h2>
 <p>The YAML header appears at the top of the document between triple dashes (<code>---</code>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Analysis Report"</span></span>
@@ -620,10 +620,10 @@ Key Concept
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="markdown-text" class="level2">
-<h2 class="anchored" data-anchor-id="markdown-text">Markdown Text</h2>
+<h2 class="anchored" data-anchor-id="markdown-text">4 Markdown Text</h2>
 <p>Markdown is a lightweight markup language that allows you to format text using simple syntax:</p>
 <section id="basic-formatting" class="level3">
-<h3 class="anchored" data-anchor-id="basic-formatting">Basic Formatting</h3>
+<h3 class="anchored" data-anchor-id="basic-formatting">4.1 Basic Formatting</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3</span></span>
@@ -636,7 +636,7 @@ Key Concept
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="al">![Image alt text](path/to/image.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="lists" class="level3">
-<h3 class="anchored" data-anchor-id="lists">Lists</h3>
+<h3 class="anchored" data-anchor-id="lists">4.2 Lists</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">Unordered list:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 2</span>
@@ -650,7 +650,7 @@ Key Concept
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>   b. Subitem b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tables" class="level3">
-<h3 class="anchored" data-anchor-id="tables">Tables</h3>
+<h3 class="anchored" data-anchor-id="tables">4.3 Tables</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Column 1 <span class="pp">|</span> Column 2 <span class="pp">|</span> Column 3 <span class="pp">|</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|----------|</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Row 1    <span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span>
@@ -658,7 +658,7 @@ Key Concept
 </section>
 </section>
 <section id="code-chunks" class="level2">
-<h2 class="anchored" data-anchor-id="code-chunks">Code Chunks</h2>
+<h2 class="anchored" data-anchor-id="code-chunks">5 Code Chunks</h2>
 <p>Code chunks in R Markdown allow you to execute R code and display its results:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
@@ -709,7 +709,7 @@ Key Concept
 <span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="chunk-options" class="level3">
-<h3 class="anchored" data-anchor-id="chunk-options">Chunk Options</h3>
+<h3 class="anchored" data-anchor-id="chunk-options">5.1 Chunk Options</h3>
 <p>You can control how code chunks behave using options:</p>
 <table class="caption-top table">
 <thead>
@@ -759,13 +759,13 @@ Key Concept
 </section>
 </section>
 <section id="inline-code" class="level2">
-<h2 class="anchored" data-anchor-id="inline-code">Inline Code</h2>
+<h2 class="anchored" data-anchor-id="inline-code">6 Inline Code</h2>
 <p>You can also include R code directly within text using backticks and <code>r</code>:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>The average miles per gallon is 20.090625.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will calculate the mean and insert the result directly into your text.</p>
 </section>
 <section id="generating-reports" class="level2">
-<h2 class="anchored" data-anchor-id="generating-reports">Generating Reports</h2>
+<h2 class="anchored" data-anchor-id="generating-reports">7 Generating Reports</h2>
 <p>To generate your report:</p>
 <ol type="1">
 <li>Click the <strong>Knit</strong> button in RStudio</li>
@@ -775,7 +775,7 @@ Key Concept
 <p>R Markdown will: - Run all the code chunks - Generate all outputs (tables, plots, etc.) - Format the text according to Markdown syntax - Combine everything into a single document</p>
 </section>
 <section id="example-data-analysis-report" class="level2">
-<h2 class="anchored" data-anchor-id="example-data-analysis-report">Example: Data Analysis Report</h2>
+<h2 class="anchored" data-anchor-id="example-data-analysis-report">8 Example: Data Analysis Report</h2>
 <p>Here’s a simple example of an R Markdown document for data analysis:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Car Performance Analysis"</span></span>
@@ -784,11 +784,11 @@ Key Concept
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction</span></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>This report analyzes the relationship between car characteristics and fuel efficiency.</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Overview</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Overview</span></span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
@@ -838,7 +838,7 @@ Key Concept
 <span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualization</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualization</span></span>
 <span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
@@ -861,7 +861,7 @@ Key Concept
 <span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Statistical Analysis</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### Statistical Analysis</span></span>
 <span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
@@ -903,12 +903,12 @@ Key Concept
 <span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conclusion</span></span>
 <span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>Based on our analysis, there is a significant negative relationship between car weight and fuel efficiency. For every 1,000 lb increase in weight, the miles per gallon decreases by approximately 3.88 units.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="practice-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="practice-exercises">9 Practice Exercises</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1414,14 +1414,14 @@ Exercise 1
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025 R Stats Bootcamp | <a href="mailto:contact@rstatsbootcamp.edu">Contact</a></p>
-</div>   
+      &nbsp;
+    </div>   
     <div class="nav-footer-center">
+<p>© 2025 R Stats Bootcamp :: 📫 <a href="mailto:contact@rstatsbootcamp.edu">Contact</a> :: 🦑 <a href="https://github.com/your-repo/RStatsBootcamp-2025">GitHub</a></p>
+</div>
+    <div class="nav-footer-right">
       &nbsp;
     </div>
-    <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org/">Quarto</a> | <a href="https://github.com/your-repo/RStatsBootcamp-2025">GitHub</a></p>
-</div>
   </div>
 </footer>
 

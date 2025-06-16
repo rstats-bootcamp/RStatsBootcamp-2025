@@ -14,7 +14,7 @@ By the end of this lesson, you will be able to:
 -   Resolve common collaboration challenges
 :::
 
-## Why Collaborative Workflows Matter
+## 1 Why Collaborative Workflows Matter
 
 Data science is increasingly a team effort. Effective collaboration requires more than just technical skills—it demands thoughtful project organization, clear communication, and established workflows. When done right, collaboration can:
 
@@ -29,9 +29,9 @@ Data science is increasingly a team effort. Effective collaboration requires mor
 A **collaborative workflow** is a systematic approach to working together on data science projects that maximizes productivity while maintaining reproducibility and quality.
 :::
 
-## Project Organization for Teams
+## 2 Project Organization for Teams
 
-### Directory Structure
+### 2.1 Directory Structure
 
 A well-organized project structure helps team members navigate the codebase:
 
@@ -55,7 +55,7 @@ project/
 └── reports/            # Final reports and presentations
 ```
 
-### Documentation
+### 2.2 Documentation
 
 Comprehensive documentation is crucial for collaboration:
 
@@ -66,9 +66,9 @@ Comprehensive documentation is crucial for collaboration:
 5.  **Data dictionary**: Describe variables, units, and data sources
 6.  **Analysis log**: Document key decisions and their rationale
 
-## Code Sharing Best Practices
+## 3 Code Sharing Best Practices
 
-### Style Guides
+### 3.1 Style Guides
 
 Consistent coding style makes collaboration easier:
 
@@ -77,7 +77,7 @@ Consistent coding style makes collaboration easier:
 -   Format code for readability
 -   Consider using linters and formatters
 
-### Modular Code
+### 3.2 Modular Code
 
 Write modular code that others can understand and reuse:
 
@@ -105,7 +105,7 @@ results <- analyze_data(clean_data)
 plots <- visualize_results(results)
 ```
 
-### Package Management
+### 3.3 Package Management
 
 Ensure consistent package versions across team members:
 
@@ -116,9 +116,9 @@ renv::init()
 renv::snapshot()
 ```
 
-## Git Workflows for Teams
+## 4 Git Workflows for Teams
 
-### Centralized Workflow
+### 4.1 Centralized Workflow
 
 The simplest approach for small teams:
 
@@ -128,7 +128,7 @@ The simplest approach for small teams:
 4.  Pull again to merge any new changes
 5.  Push to the central repository
 
-### Feature Branch Workflow
+### 4.2 Feature Branch Workflow
 
 Better for larger teams or complex projects:
 
@@ -138,7 +138,7 @@ Better for larger teams or complex projects:
 4.  Create a pull request for code review
 5.  Merge into the main branch after approval
 
-### Forking Workflow
+### 4.3 Forking Workflow
 
 Common for open-source projects:
 
@@ -148,11 +148,11 @@ Common for open-source projects:
 4.  Push to your fork
 5.  Create a pull request to the main repository
 
-## Code Review Process
+## 5 Code Review Process
 
 Code reviews improve quality and share knowledge:
 
-### Guidelines for Reviewers
+### 5.1 Guidelines for Reviewers
 
 -   Be respectful and constructive
 -   Focus on the code, not the person
@@ -160,7 +160,7 @@ Code reviews improve quality and share knowledge:
 -   Ask questions rather than making demands
 -   Acknowledge good practices
 
-### Guidelines for Authors
+### 5.2  Guidelines for Authors
 
 -   Explain the purpose of your changes
 -   Keep pull requests focused and manageable
@@ -168,9 +168,9 @@ Code reviews improve quality and share knowledge:
 -   Be open to suggestions
 -   Thank reviewers for their time
 
-## Maintaining Reproducibility
+## 6 Maintaining Reproducibility
 
-### Environment Management
+### 6.1 Environment Management
 
 Ensure everyone works in the same environment:
 
@@ -178,7 +178,7 @@ Ensure everyone works in the same environment:
 -   Document system requirements
 -   Consider containerization with Docker
 
-### Data Access
+### 6.2 Data Access
 
 Establish protocols for data access and sharing:
 
@@ -187,7 +187,7 @@ Establish protocols for data access and sharing:
 -   Consider data access APIs for large datasets
 -   Implement appropriate security measures
 
-### Continuous Integration
+### 6.3 Continuous Integration
 
 Automate testing to catch issues early:
 
@@ -195,9 +195,9 @@ Automate testing to catch issues early:
 -   Run tests automatically on pull requests
 -   Check code style and documentation
 
-## Common Collaboration Challenges
+## 7 Common Collaboration Challenges
 
-### Challenge: Merge Conflicts
+### 7.1 Challenge: Merge Conflicts
 
 When two people edit the same part of a file:
 
@@ -207,7 +207,7 @@ When two people edit the same part of a file:
 4.  Commit the resolved files
 5.  Push the changes
 
-### Challenge: Large Files
+### 7.2 Challenge: Large Files
 
 Git struggles with large files:
 
@@ -215,7 +215,7 @@ Git struggles with large files:
 -   Store large datasets externally and document access
 -   Consider data subsets for testing
 
-### Challenge: Onboarding New Team Members
+### 7.3 Challenge: Onboarding New Team Members
 
 Help new team members get up to speed:
 
@@ -224,7 +224,7 @@ Help new team members get up to speed:
 -   Assign mentors for new members
 -   Create starter tasks for learning the codebase
 
-## Exercises
+## 8 Practice Exercises
 
 ::: {.callout-note appearance="minimal"}
 ### Exercise 1

@@ -4,9 +4,21 @@ title: "07 Explore data"
 
 <center>![We call sizing up the data "weighing the pig"](img/unsplash-pig.png)</center>
 
-<br>
-
 ## 1 Question, explore, analyze (a workflow for data science)
+
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Formulate statistical questions
+-   Perform hypothesis testing
+-   Summarize what "Weighing the Pig" means
+-   Discuss the use of variables in graphing
+-   Distinguish between "Analysis" versus "EDA"
+-   Explain the concept of a Statistical Analysis Plan
+
+:::
 
 <br>
 
@@ -39,22 +51,6 @@ The order of operation for most analyses should be
 > You choose your data analysis prior to collecting the first data point.
 
 Focus on the question and make sure it is clear in formulation, and choose an analysis approach that can resolve the question , given the data... But the data collection should be DESIGNED to fit the question and chosen analysis prior to collection. Explore the data to examine any assumptions required for the analysis, including the use of graphing and any diagnostic or summary statistics. Finally, perform and summarize the analysis. We will practice this workflow for different basic questions, with an emphasis on simple quantitative data.
-
-<br>
-
-### 1.1 Objectives
-
--   Question formulation and hypothesis testing
-
--   Summarize: Weighing the Pig
-
--   Variables and graphing
-
--   "Analysis" versus "EDA"
-
--   Statistical Analysis Plan: the concept
-
--   Practice exercises
 
 <br>
 

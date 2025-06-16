@@ -4,8 +4,6 @@ title: "05 Data frames"
 
 <center>![Like your room, data should be tidy](img/tidy.png)</center>
 
-<br>
-
 ## 1 Data frames in `R`
 
 ::: callout-note

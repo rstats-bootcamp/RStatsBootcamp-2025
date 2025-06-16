@@ -4,16 +4,24 @@ title: "08 Distributions"
 
 <center>![Can you guess the weight of this bull? What about you and 99 friends?](img/unsplash-bull.png)</center>
 
-<br>
-
 ## 1 Describing the shape of data
 
-<br>
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Create and use a histogram to evaluate data distribution
+-   Identify Gaussian data (that ain't normal)
+-   Identify Poisson data
+-   Identify Binomial data
+-   Diagnose commondata distributions
+
+:::
 
 **Overview**
 
 > I. A curve has been found representing the frequency distribution of standard deviations of samples drawn from a normal population.
-
 > II. A curve has been found representing the frequency distribution of values of the means of such samples, when these values are measured from the mean of the population in terms of the standard deviation of the sample
 
 > \- Gosset. 1908, Biometrika 6:25.
@@ -21,22 +29,6 @@ title: "08 Distributions"
 The idea of sampling underpins traditional statistics and is fundamental to the practice of statistics. The basic idea is usually that there is a population of interest, which we cannot directly measure. We sample the population in order to estimate the real measures of the population. Because we merely take samples, there is error assiociated with our estimates and the error depends on both the real variation in the population, but also on chance to do with which subjects are actually in our sample, as well as the size of our sample. Traditional statistical inference within Null Hypothesis Significance Testing (NHST) exploits our estimates of error associated with our samples. While this is an important concept, it is beyond the scope of this page to review it, but you may wish to refresh your knowledge by consulting a reference, such as [Irizarry 2020 Chs 13-16](https://learningstatisticswithr.com/book/).
 
 In this page, we will briefly look at some diagnostic tools in R for examining the distribution of data, and talk about a few important distributions that are common to encounter.
-
-<br>
-
-### 1.1 Objectives
-
--   Use of the histogram
-
--   Gaussian: that ain't normal
-
--   Poisson
-
--   Binomial
-
--   Diagnosing the distribution
-
--   Practice exercises
 
 <br>
 

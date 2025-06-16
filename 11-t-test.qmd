@@ -4,29 +4,25 @@ title: "11 T-test"
 
 <center>![Measure and compare](img/carrot-measure.png){width="400px"}</center>
 
-<br>
-
 ## 1 Student's T-test
+
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Articulate the question of the t-test
+-   Evaluate data and assumptions for the t-test
+-   Graph t-test data
+-   Perform tests and alternatives for the t-test
+
+:::
 
 > The t-test and t-distribution are widely considered to be at the very foundation of modern statistic science and they form an important foundation for the practice of statistics. Who would believe they were invented to make great beer better?
 
 William Sealy Gosset is credited with inventing and applying the idea of the t-test to assist in scientific quality control while working for the Guinness brewery. The idea was refined and supported by the great statistician R. A. Fisher, and the idea was initially described in a paper anonymously by "Student", in order to protect the commercial interests of Guinness. Today, it is perhaps one of the most prevalent and basic tools in statistics, and [it is a fascinating story](https://priceonomics.com/the-guinness-brewer-who-revolutionized-statistics/).
 
 Here, we will briefly look at the practical basis of the t-test before going on the look at different ways it can be applied to data.
-
-<br>
-
-### 1.1 Objectives
-
--   The question of the t-test
-
--   Data and assumptions
-
--   Graphing
-
--   Test and alternatives
-
--   Practice exercises
 
 <br>
 

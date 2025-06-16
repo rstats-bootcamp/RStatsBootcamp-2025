@@ -532,10 +532,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#describing-the-shape-of-data" id="toc-describing-the-shape-of-data" class="nav-link active" data-scroll-target="#describing-the-shape-of-data">1 Describing the shape of data</a>
-  <ul class="collapse">
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">1.1 Objectives</a></li>
-  </ul></li>
+  <li><a href="#describing-the-shape-of-data" id="toc-describing-the-shape-of-data" class="nav-link active" data-scroll-target="#describing-the-shape-of-data">1 Describing the shape of data</a></li>
   <li><a href="#use-of-the-histogram" id="toc-use-of-the-histogram" class="nav-link" data-scroll-target="#use-of-the-histogram">2 Use of the histogram</a>
   <ul class="collapse">
   <li><a href="#typical-histogram-for-continuous-variable" id="toc-typical-histogram-for-continuous-variable" class="nav-link" data-scroll-target="#typical-histogram-for-continuous-variable">2.1 Typical histogram for continuous variable</a></li>
@@ -604,18 +601,31 @@ window.Quarto = {
 </figure>
 </div>
 </center>
-<p><br></p>
 <section id="describing-the-shape-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="describing-the-shape-of-data">1 Describing the shape of data</h2>
-<p><br></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+<li>Create and use a histogram to evaluate data distribution</li>
+<li>Identify Gaussian data (that ain’t normal)</li>
+<li>Identify Poisson data</li>
+<li>Identify Binomial data</li>
+<li>Diagnose commondata distributions</li>
+</ul>
+</div>
+</div>
 <p><strong>Overview</strong></p>
 <blockquote class="blockquote">
-<p>I. A curve has been found representing the frequency distribution of standard deviations of samples drawn from a normal population.</p>
-</blockquote>
-<blockquote class="blockquote">
-<ol start="2" type="I">
-<li>A curve has been found representing the frequency distribution of values of the means of such samples, when these values are measured from the mean of the population in terms of the standard deviation of the sample</li>
-</ol>
+<p>I. A curve has been found representing the frequency distribution of standard deviations of samples drawn from a normal population. II. A curve has been found representing the frequency distribution of values of the means of such samples, when these values are measured from the mean of the population in terms of the standard deviation of the sample</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>- Gosset. 1908, Biometrika 6:25.</p>
@@ -623,18 +633,6 @@ window.Quarto = {
 <p>The idea of sampling underpins traditional statistics and is fundamental to the practice of statistics. The basic idea is usually that there is a population of interest, which we cannot directly measure. We sample the population in order to estimate the real measures of the population. Because we merely take samples, there is error assiociated with our estimates and the error depends on both the real variation in the population, but also on chance to do with which subjects are actually in our sample, as well as the size of our sample. Traditional statistical inference within Null Hypothesis Significance Testing (NHST) exploits our estimates of error associated with our samples. While this is an important concept, it is beyond the scope of this page to review it, but you may wish to refresh your knowledge by consulting a reference, such as <a href="https://learningstatisticswithr.com/book/">Irizarry 2020 Chs 13-16</a>.</p>
 <p>In this page, we will briefly look at some diagnostic tools in R for examining the distribution of data, and talk about a few important distributions that are common to encounter.</p>
 <p><br></p>
-<section id="objectives" class="level3">
-<h3 class="anchored" data-anchor-id="objectives">1.1 Objectives</h3>
-<ul>
-<li><p>Use of the histogram</p></li>
-<li><p>Gaussian: that ain’t normal</p></li>
-<li><p>Poisson</p></li>
-<li><p>Binomial</p></li>
-<li><p>Diagnosing the distribution</p></li>
-<li><p>Practice exercises</p></li>
-</ul>
-<p><br></p>
-</section>
 </section>
 <section id="use-of-the-histogram" class="level2">
 <h2 class="anchored" data-anchor-id="use-of-the-histogram">2 Use of the histogram</h2>
@@ -1724,14 +1722,14 @@ used</code></pre>
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025 R Stats Bootcamp | <a href="mailto:contact@rstatsbootcamp.edu">Contact</a></p>
-</div>   
+      &nbsp;
+    </div>   
     <div class="nav-footer-center">
+<p>© 2025 R Stats Bootcamp :: 📫 <a href="mailto:contact@rstatsbootcamp.edu">Contact</a> :: 🦑 <a href="https://github.com/your-repo/RStatsBootcamp-2025">GitHub</a></p>
+</div>
+    <div class="nav-footer-right">
       &nbsp;
     </div>
-    <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org/">Quarto</a> | <a href="https://github.com/your-repo/RStatsBootcamp-2025">GitHub</a></p>
-</div>
   </div>
 </footer>
 

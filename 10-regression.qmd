@@ -8,9 +8,19 @@ title: "10 Regression"
 
 </center>
 
-<br>
-
 ## 1 Regression to the mean
+
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Evaluate the question of simple regression
+-   Discuss the data and assumptions of simple regression
+-   Graph simple regression
+-   Perform tests and alternatives for simple regression
+
+:::
 
 > "The general rule is straightforward but has surprising consequences: whenever the correlation between two scores is imperfect, there will be regression to the mean."
 
@@ -23,20 +33,6 @@ Exemplary of one of the greatest traditions in science, a scientist identified a
 -   [Stigler 1989. Francis Galton's Account of the Invention of Correlation](https://projecteuclid.org/download/pdf_1/euclid.ss/1177012580)
 
 -   [Stanton 2017. Galton, Pearson, and the Peas: A Brief History of Linear Regression for Statistics Instructors](https://amstat.tandfonline.com/doi/full/10.1080/10691898.2001.11910537)
-
-<br>
-
-### 1.1 Objectives
-
--   The question of simple regression
-
--   Data and assumptions
-
--   Graphing
-
--   Test and alternatives
-
--   Practice exercises
 
 <br>
 

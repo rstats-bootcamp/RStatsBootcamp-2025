@@ -13,7 +13,7 @@ By the end of this lesson, you will be able to:
 -   Organize project files effectively
 :::
 
-## Why Reproducibility Matters
+## 1 Why Reproducibility Matters
 
 Reproducibility is a cornerstone of scientific research and data analysis. It ensures that your findings can be verified, your methods can be understood, and your work can be built upon by others (including your future self!).
 
@@ -31,11 +31,11 @@ In practice, reproducibility provides several key benefits:
 -   **Impact**: Your research can have greater influence when others can use it
 -   **Trust**: Reproducible research builds credibility in your findings
 
-## Components of Reproducible Workflows
+## 2 Components of Reproducible Workflows
 
 A reproducible data science workflow typically includes the following elements:
 
-### 1. Documented Code
+### 2.1 Documented Code
 
 ``` r
 # Example of well-documented code
@@ -60,11 +60,11 @@ calculate_group_means <- function(data, value_col, group_col) {
 }
 ```
 
-### 2. Version Control
+### 2.2 Version Control
 
 Version control systems like Git help track changes to your code and files over time. We'll cover this in detail in a later lesson.
 
-### 3. Environment Management
+### 2.3 Environment Management
 
 Documenting your software environment ensures others can recreate the same conditions:
 
@@ -78,7 +78,7 @@ sessionInfo()
 # renv::snapshot()
 ```
 
-### 4. Data Management
+### 2.4 Data Management
 
 Proper data management includes:
 
@@ -86,7 +86,7 @@ Proper data management includes:
 -   Data cleaning scripts (document all transformations)
 -   Clear data documentation (metadata)
 
-### 5. Clear Documentation
+### 2.5 Clear Documentation
 
 Documentation should include:
 
@@ -95,7 +95,7 @@ Documentation should include:
 -   Analysis methods and justification
 -   Instructions for reproducing results
 
-## File Organization Strategies
+## 3 File Organization Strategies
 
 An organized file structure makes your project more navigable and reproducible:
 
@@ -123,7 +123,7 @@ project/
 Name your files in a way that indicates their order and purpose, such as `01_data_cleaning.R`, `02_analysis.R`, etc.
 :::
 
-## Documentation Best Practices
+## 4 Documentation Best Practices
 
 Effective documentation should:
 
@@ -141,7 +141,7 @@ A good README file typically includes:
 -   Analysis workflow overview
 -   Dependencies and requirements
 
-## Exercises
+## 5 Practice Exercises
 
 ::: {.callout-note appearance="minimal"}
 ### Exercise 1
@@ -156,10 +156,6 @@ Create a file organization template for your next data analysis project, followi
 
 Write documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.
 :::
-
-## Next Steps
-
-In the next lesson, we'll explore R Markdown as a powerful tool for creating reproducible documents that combine code, results, and narrative.
 
 ## Additional Resources
 

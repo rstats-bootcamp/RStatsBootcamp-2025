@@ -503,18 +503,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-reproducibility-matters" id="toc-why-reproducibility-matters" class="nav-link active" data-scroll-target="#why-reproducibility-matters">Why Reproducibility Matters</a></li>
-  <li><a href="#components-of-reproducible-workflows" id="toc-components-of-reproducible-workflows" class="nav-link" data-scroll-target="#components-of-reproducible-workflows">Components of Reproducible Workflows</a>
+  <li><a href="#why-reproducibility-matters" id="toc-why-reproducibility-matters" class="nav-link active" data-scroll-target="#why-reproducibility-matters">1 Why Reproducibility Matters</a></li>
+  <li><a href="#components-of-reproducible-workflows" id="toc-components-of-reproducible-workflows" class="nav-link" data-scroll-target="#components-of-reproducible-workflows">2 Components of Reproducible Workflows</a>
   <ul class="collapse">
-  <li><a href="#documented-code" id="toc-documented-code" class="nav-link" data-scroll-target="#documented-code">1. Documented Code</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">2. Version Control</a></li>
-  <li><a href="#environment-management" id="toc-environment-management" class="nav-link" data-scroll-target="#environment-management">3. Environment Management</a></li>
-  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">4. Data Management</a></li>
-  <li><a href="#clear-documentation" id="toc-clear-documentation" class="nav-link" data-scroll-target="#clear-documentation">5. Clear Documentation</a></li>
+  <li><a href="#documented-code" id="toc-documented-code" class="nav-link" data-scroll-target="#documented-code">2.1 Documented Code</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">2.2 Version Control</a></li>
+  <li><a href="#environment-management" id="toc-environment-management" class="nav-link" data-scroll-target="#environment-management">2.3 Environment Management</a></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">2.4 Data Management</a></li>
+  <li><a href="#clear-documentation" id="toc-clear-documentation" class="nav-link" data-scroll-target="#clear-documentation">2.5 Clear Documentation</a></li>
   </ul></li>
-  <li><a href="#file-organization-strategies" id="toc-file-organization-strategies" class="nav-link" data-scroll-target="#file-organization-strategies">File Organization Strategies</a></li>
-  <li><a href="#documentation-best-practices" id="toc-documentation-best-practices" class="nav-link" data-scroll-target="#documentation-best-practices">Documentation Best Practices</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#file-organization-strategies" id="toc-file-organization-strategies" class="nav-link" data-scroll-target="#file-organization-strategies">3 File Organization Strategies</a></li>
+  <li><a href="#documentation-best-practices" id="toc-documentation-best-practices" class="nav-link" data-scroll-target="#documentation-best-practices">4 Documentation Best Practices</a></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">5 Practice Exercises</a></li>
   <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
@@ -563,7 +563,7 @@ Learning Objectives
 </div>
 </div>
 <section id="why-reproducibility-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-reproducibility-matters">Why Reproducibility Matters</h2>
+<h2 class="anchored" data-anchor-id="why-reproducibility-matters">1 Why Reproducibility Matters</h2>
 <p>Reproducibility is a cornerstone of scientific research and data analysis. It ensures that your findings can be verified, your methods can be understood, and your work can be built upon by others (including your future self!).</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -588,10 +588,10 @@ Definition
 </ul>
 </section>
 <section id="components-of-reproducible-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="components-of-reproducible-workflows">Components of Reproducible Workflows</h2>
+<h2 class="anchored" data-anchor-id="components-of-reproducible-workflows">2 Components of Reproducible Workflows</h2>
 <p>A reproducible data science workflow typically includes the following elements:</p>
 <section id="documented-code" class="level3">
-<h3 class="anchored" data-anchor-id="documented-code">1. Documented Code</h3>
+<h3 class="anchored" data-anchor-id="documented-code">2.1 Documented Code</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of well-documented code</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Purpose: Calculate mean values by group</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Input: data frame with numeric 'value' column and categorical 'group' column</span></span>
@@ -614,11 +614,11 @@ Definition
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="version-control" class="level3">
-<h3 class="anchored" data-anchor-id="version-control">2. Version Control</h3>
+<h3 class="anchored" data-anchor-id="version-control">2.2 Version Control</h3>
 <p>Version control systems like Git help track changes to your code and files over time. We’ll cover this in detail in a later lesson.</p>
 </section>
 <section id="environment-management" class="level3">
-<h3 class="anchored" data-anchor-id="environment-management">3. Environment Management</h3>
+<h3 class="anchored" data-anchor-id="environment-management">2.3 Environment Management</h3>
 <p>Documenting your software environment ensures others can recreate the same conditions:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of capturing package versions</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
@@ -629,7 +629,7 @@ Definition
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># renv::snapshot()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-management" class="level3">
-<h3 class="anchored" data-anchor-id="data-management">4. Data Management</h3>
+<h3 class="anchored" data-anchor-id="data-management">2.4 Data Management</h3>
 <p>Proper data management includes:</p>
 <ul>
 <li>Raw data preservation (never modify the original data)</li>
@@ -638,7 +638,7 @@ Definition
 </ul>
 </section>
 <section id="clear-documentation" class="level3">
-<h3 class="anchored" data-anchor-id="clear-documentation">5. Clear Documentation</h3>
+<h3 class="anchored" data-anchor-id="clear-documentation">2.5 Clear Documentation</h3>
 <p>Documentation should include:</p>
 <ul>
 <li>Project overview and purpose</li>
@@ -649,7 +649,7 @@ Definition
 </section>
 </section>
 <section id="file-organization-strategies" class="level2">
-<h2 class="anchored" data-anchor-id="file-organization-strategies">File Organization Strategies</h2>
+<h2 class="anchored" data-anchor-id="file-organization-strategies">3 File Organization Strategies</h2>
 <p>An organized file structure makes your project more navigable and reproducible:</p>
 <pre><code>project/
 ├── README.md           # Project overview and instructions
@@ -681,7 +681,7 @@ Best Practice
 </div>
 </section>
 <section id="documentation-best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="documentation-best-practices">Documentation Best Practices</h2>
+<h2 class="anchored" data-anchor-id="documentation-best-practices">4 Documentation Best Practices</h2>
 <p>Effective documentation should:</p>
 <ol type="1">
 <li><strong>Be comprehensive</strong> - Include all necessary information</li>
@@ -699,8 +699,8 @@ Best Practice
 <li>Dependencies and requirements</li>
 </ul>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="practice-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="practice-exercises">5 Practice Exercises</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

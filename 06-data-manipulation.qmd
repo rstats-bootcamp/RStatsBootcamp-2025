@@ -4,8 +4,6 @@ title: "06 Data subsetting"
 
 <center>![Command data and you are powerful](img/sumo.png)</center>
 
-<br>
-
 ## 1 Subsetting and Manipulation (data sumo)
 
 ::: callout-note

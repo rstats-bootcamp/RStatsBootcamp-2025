@@ -8,27 +8,23 @@ title: "12 ANOVA"
 
 </center>
 
-<br>
-
 ## 1 ANalysis Of VAriance (ANOVA)
+
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Articulate the question of 1-way ANOVA
+-   Evaluate data and assumptions for 1-way ANOVA
+-   Graph 1-way ANOVA data
+-   Perform tests and alternatives for 1-way ANOVA
+
+:::
 
 > The analysis of variance is not a mathematical theorem, but rather a convenient method of arranging the arithmetic. R. A. Fisher (via Wishart 1934. Sppl. J. Roy. Soc. 1(1):26-61.)
 
 Perhaps more so than any other tool, the Analysis of Variance (ANOVA) played a role in literally revolutionizing the idea of objectivity in using data to produce evidence to support claims for certain experimental designs. Invented by the famous statistician and biologist R. A. Fisher while he worked at Rothamsted Research, the intention was for ANOVA to be a useful tool to analyze agriculture experiments. Today, despite many innovations and competing approaches, it remains at the foundation of the basic practice of statistics.
-
-<br>
-
-### 1.1 Objectives
-
--   The question of 1-way ANOVA
-
--   Data and assumptions
-
--   Graphing
-
--   Test and alternatives
-
--   Practice exercises
 
 <br>
 

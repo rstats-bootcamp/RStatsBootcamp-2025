@@ -216,11 +216,11 @@
     ]
   },
   {
-    "objectID": "16-collaborative-workflows.html#exercises",
-    "href": "16-collaborative-workflows.html#exercises",
+    "objectID": "16-collaborative-workflows.html#practice-exercises",
+    "href": "16-collaborative-workflows.html#practice-exercises",
     "title": "16 Collaboration",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a CONTRIBUTING.md file for a data science project, outlining guidelines for code style, pull requests, and code review.\n\nExercise 2\nPractice resolving a merge conflict by having two team members edit the same file and then merge their changes.\n\n\nExercise 3\nSet up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.",
+    "section": "Practice Exercises",
+    "text": "Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a CONTRIBUTING.md file for a data science project, outlining guidelines for code style, pull requests, and code review.\n\nExercise 2\nPractice resolving a merge conflict by having two team members edit the same file and then merge their changes.\n\n\nExercise 3\nSet up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -267,8 +267,8 @@
     "objectID": "14-rmarkdown.html#what-is-r-markdown",
     "href": "14-rmarkdown.html#what-is-r-markdown",
     "title": "14 R Markdown",
-    "section": "What is R Markdown?",
-    "text": "What is R Markdown?\nR Markdown is a file format that allows you to combine R code, its output, and narrative text in a single document. It’s a powerful tool for creating reproducible reports, presentations, dashboards, and even websites.\n\n\n\n\n\n\nKey Concept\n\n\n\nR Markdown documents are plain text files that contain three important elements: 1. YAML header - Document metadata and formatting options 2. Markdown text - For narrative content 3. Code chunks - R code that can be executed",
+    "section": "1 What is R Markdown?",
+    "text": "1 What is R Markdown?\nR Markdown is a file format that allows you to combine R code, its output, and narrative text in a single document. It’s a powerful tool for creating reproducible reports, presentations, dashboards, and even websites.\n\n\n\n\n\n\nKey Concept\n\n\n\nR Markdown documents are plain text files that contain three important elements: 1. YAML header - Document metadata and formatting options 2. Markdown text - For narrative content 3. Code chunks - R code that can be executed",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -279,8 +279,8 @@
     "objectID": "14-rmarkdown.html#getting-started-with-r-markdown",
     "href": "14-rmarkdown.html#getting-started-with-r-markdown",
     "title": "14 R Markdown",
-    "section": "Getting Started with R Markdown",
-    "text": "Getting Started with R Markdown\nTo create an R Markdown document in RStudio:\n\nClick File → New File → R Markdown\nChoose a document type (HTML, PDF, or Word)\nGive your document a title and author name\nClick OK\n\nThis will generate a template R Markdown file that you can modify.",
+    "section": "2 Getting Started with R Markdown",
+    "text": "2 Getting Started with R Markdown\nTo create an R Markdown document in RStudio:\n\nClick File → New File → R Markdown\nChoose a document type (HTML, PDF, or Word)\nGive your document a title and author name\nClick OK\n\nThis will generate a template R Markdown file that you can modify.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -291,8 +291,8 @@
     "objectID": "14-rmarkdown.html#yaml-header",
     "href": "14-rmarkdown.html#yaml-header",
     "title": "14 R Markdown",
-    "section": "YAML Header",
-    "text": "YAML Header\nThe YAML header appears at the top of the document between triple dashes (---):\n---\ntitle: \"My Analysis Report\"\nauthor: \"Your Name\"\ndate: \"2023-06-15\"\noutput: html_document\n---\nYou can customize various aspects of your document by adding options to the YAML header:\n---\ntitle: \"My Analysis Report\"\nauthor: \"Your Name\"\ndate: \"2025-06-16\"\noutput:\n  html_document:\n    toc: true\n    toc_float: true\n    theme: flatly\n    highlight: tango\n    code_folding: show\n---",
+    "section": "3 YAML Header",
+    "text": "3 YAML Header\nThe YAML header appears at the top of the document between triple dashes (---):\n---\ntitle: \"My Analysis Report\"\nauthor: \"Your Name\"\ndate: \"2023-06-15\"\noutput: html_document\n---\nYou can customize various aspects of your document by adding options to the YAML header:\n---\ntitle: \"My Analysis Report\"\nauthor: \"Your Name\"\ndate: \"2025-06-16\"\noutput:\n  html_document:\n    toc: true\n    toc_float: true\n    theme: flatly\n    highlight: tango\n    code_folding: show\n---",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -303,8 +303,8 @@
     "objectID": "14-rmarkdown.html#markdown-text",
     "href": "14-rmarkdown.html#markdown-text",
     "title": "14 R Markdown",
-    "section": "Markdown Text",
-    "text": "Markdown Text\nMarkdown is a lightweight markup language that allows you to format text using simple syntax:\n\nBasic Formatting\n# Heading 1\n## Heading 2\n### Heading 3\n\n**Bold text**\n*Italic text*\n~~Strikethrough~~\n\n[Link text](https://example.com)\n![Image alt text](path/to/image.png)\n\n\nLists\nUnordered list:\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n\nOrdered list:\n1. First item\n2. Second item\n   a. Subitem a\n   b. Subitem b\n\n\nTables\n| Column 1 | Column 2 | Column 3 |\n|----------|----------|----------|\n| Row 1    | Data     | Data     |\n| Row 2    | Data     | Data     |",
+    "section": "4 Markdown Text",
+    "text": "4 Markdown Text\nMarkdown is a lightweight markup language that allows you to format text using simple syntax:\n\n4.1 Basic Formatting\n# Heading 1\n## Heading 2\n### Heading 3\n\n**Bold text**\n*Italic text*\n~~Strikethrough~~\n\n[Link text](https://example.com)\n![Image alt text](path/to/image.png)\n\n\n4.2 Lists\nUnordered list:\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n\nOrdered list:\n1. First item\n2. Second item\n   a. Subitem a\n   b. Subitem b\n\n\n4.3 Tables\n| Column 1 | Column 2 | Column 3 |\n|----------|----------|----------|\n| Row 1    | Data     | Data     |\n| Row 2    | Data     | Data     |",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -315,8 +315,8 @@
     "objectID": "14-rmarkdown.html#code-chunks",
     "href": "14-rmarkdown.html#code-chunks",
     "title": "14 R Markdown",
-    "section": "Code Chunks",
-    "text": "Code Chunks\nCode chunks in R Markdown allow you to execute R code and display its results:\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your R code here\n```\n:::\nFor example:\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load data\ndata(mtcars)\n\n# Calculate summary statistics\nsummary(mtcars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n      mpg             cyl             disp             hp       \n Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n      drat             wt             qsec             vs        \n Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n       am              gear            carb      \n Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n Median :0.0000   Median :4.000   Median :2.000  \n Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n Max.   :1.0000   Max.   :5.000   Max.   :8.000  \n```\n\n\n:::\n:::\n\nChunk Options\nYou can control how code chunks behave using options:\n\n\n\nOption\nDescription\n\n\n\n\neval=TRUE/FALSE\nWhether to evaluate the code\n\n\necho=TRUE/FALSE\nWhether to show the code\n\n\ninclude=TRUE/FALSE\nWhether to include the chunk in output\n\n\nmessage=TRUE/FALSE\nWhether to display messages\n\n\nwarning=TRUE/FALSE\nWhether to display warnings\n\n\nfig.width=7\nFigure width in inches\n\n\nfig.height=5\nFigure height in inches\n\n\n\nExample:\n\n::: {.cell}\n::: {.cell-output-display}\n![](14-rmarkdown_files/figure-html/plot-1.png){width=768}\n:::\n:::",
+    "section": "5 Code Chunks",
+    "text": "5 Code Chunks\nCode chunks in R Markdown allow you to execute R code and display its results:\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your R code here\n```\n:::\nFor example:\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load data\ndata(mtcars)\n\n# Calculate summary statistics\nsummary(mtcars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n      mpg             cyl             disp             hp       \n Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n      drat             wt             qsec             vs        \n Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n       am              gear            carb      \n Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n Median :0.0000   Median :4.000   Median :2.000  \n Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n Max.   :1.0000   Max.   :5.000   Max.   :8.000  \n```\n\n\n:::\n:::\n\n5.1 Chunk Options\nYou can control how code chunks behave using options:\n\n\n\nOption\nDescription\n\n\n\n\neval=TRUE/FALSE\nWhether to evaluate the code\n\n\necho=TRUE/FALSE\nWhether to show the code\n\n\ninclude=TRUE/FALSE\nWhether to include the chunk in output\n\n\nmessage=TRUE/FALSE\nWhether to display messages\n\n\nwarning=TRUE/FALSE\nWhether to display warnings\n\n\nfig.width=7\nFigure width in inches\n\n\nfig.height=5\nFigure height in inches\n\n\n\nExample:\n\n::: {.cell}\n::: {.cell-output-display}\n![](14-rmarkdown_files/figure-html/plot-1.png){width=768}\n:::\n:::",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -327,8 +327,8 @@
     "objectID": "14-rmarkdown.html#inline-code",
     "href": "14-rmarkdown.html#inline-code",
     "title": "14 R Markdown",
-    "section": "Inline Code",
-    "text": "Inline Code\nYou can also include R code directly within text using backticks and r:\nThe average miles per gallon is 20.090625.\nThis will calculate the mean and insert the result directly into your text.",
+    "section": "6 Inline Code",
+    "text": "6 Inline Code\nYou can also include R code directly within text using backticks and r:\nThe average miles per gallon is 20.090625.\nThis will calculate the mean and insert the result directly into your text.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -339,8 +339,8 @@
     "objectID": "14-rmarkdown.html#generating-reports",
     "href": "14-rmarkdown.html#generating-reports",
     "title": "14 R Markdown",
-    "section": "Generating Reports",
-    "text": "Generating Reports\nTo generate your report:\n\nClick the Knit button in RStudio\nChoose your desired output format\nView the generated document\n\nR Markdown will: - Run all the code chunks - Generate all outputs (tables, plots, etc.) - Format the text according to Markdown syntax - Combine everything into a single document",
+    "section": "7 Generating Reports",
+    "text": "7 Generating Reports\nTo generate your report:\n\nClick the Knit button in RStudio\nChoose your desired output format\nView the generated document\n\nR Markdown will: - Run all the code chunks - Generate all outputs (tables, plots, etc.) - Format the text according to Markdown syntax - Combine everything into a single document",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -351,8 +351,8 @@
     "objectID": "14-rmarkdown.html#example-data-analysis-report",
     "href": "14-rmarkdown.html#example-data-analysis-report",
     "title": "14 R Markdown",
-    "section": "Example: Data Analysis Report",
-    "text": "Example: Data Analysis Report\nHere’s a simple example of an R Markdown document for data analysis:\n---\ntitle: \"Car Performance Analysis\"\nauthor: \"Data Scientist\"\ndate: \"2025-06-16\"\noutput: html_document\n---\n\n## Introduction\n\nThis report analyzes the relationship between car characteristics and fuel efficiency.\n\n## Data Overview\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load the mtcars dataset\ndata(mtcars)\n\n# Display the first few rows\nhead(mtcars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n```\n\n\n:::\n\n```{.r .cell-code}\n# Summary statistics\nsummary(mtcars[, c(\"mpg\", \"wt\", \"hp\")])\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n      mpg              wt              hp       \n Min.   :10.40   Min.   :1.513   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:2.581   1st Qu.: 96.5  \n Median :19.20   Median :3.325   Median :123.0  \n Mean   :20.09   Mean   :3.217   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:3.610   3rd Qu.:180.0  \n Max.   :33.90   Max.   :5.424   Max.   :335.0  \n```\n\n\n:::\n:::\n\n\n## Visualization\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Create a scatterplot\nplot(mtcars$wt, mtcars$mpg, \n     main=\"Car Weight vs. Mileage\",\n     xlab=\"Weight (1000 lbs)\",\n     ylab=\"Miles Per Gallon\",\n     pch=19, col=\"blue\")\n\n# Add a regression line\nabline(lm(mpg ~ wt, data = mtcars), col = \"red\", lwd = 2)\n```\n\n::: {.cell-output-display}\n![](14-rmarkdown_files/figure-html/visualization-1.png){width=960}\n:::\n:::\n\n\n## Statistical Analysis\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Fit a linear model\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\n\n# Display model summary\nsummary(model)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\nCall:\nlm(formula = mpg ~ wt + hp, data = mtcars)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-3.941 -1.600 -0.182  1.050  5.854 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 37.22727    1.59879  23.285  &lt; 2e-16 ***\nwt          -3.87783    0.63273  -6.129 1.12e-06 ***\nhp          -0.03177    0.00903  -3.519  0.00145 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.593 on 29 degrees of freedom\nMultiple R-squared:  0.8268,    Adjusted R-squared:  0.8148 \nF-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12\n```\n\n\n:::\n:::\n\n\n## Conclusion\n\nBased on our analysis, there is a significant negative relationship between car weight and fuel efficiency. For every 1,000 lb increase in weight, the miles per gallon decreases by approximately 3.88 units.",
+    "section": "8 Example: Data Analysis Report",
+    "text": "8 Example: Data Analysis Report\nHere’s a simple example of an R Markdown document for data analysis:\n---\ntitle: \"Car Performance Analysis\"\nauthor: \"Data Scientist\"\ndate: \"2025-06-16\"\noutput: html_document\n---\n\n### Introduction\n\nThis report analyzes the relationship between car characteristics and fuel efficiency.\n\n### Data Overview\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load the mtcars dataset\ndata(mtcars)\n\n# Display the first few rows\nhead(mtcars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n```\n\n\n:::\n\n```{.r .cell-code}\n# Summary statistics\nsummary(mtcars[, c(\"mpg\", \"wt\", \"hp\")])\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n      mpg              wt              hp       \n Min.   :10.40   Min.   :1.513   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:2.581   1st Qu.: 96.5  \n Median :19.20   Median :3.325   Median :123.0  \n Mean   :20.09   Mean   :3.217   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:3.610   3rd Qu.:180.0  \n Max.   :33.90   Max.   :5.424   Max.   :335.0  \n```\n\n\n:::\n:::\n\n\n### Visualization\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Create a scatterplot\nplot(mtcars$wt, mtcars$mpg, \n     main=\"Car Weight vs. Mileage\",\n     xlab=\"Weight (1000 lbs)\",\n     ylab=\"Miles Per Gallon\",\n     pch=19, col=\"blue\")\n\n# Add a regression line\nabline(lm(mpg ~ wt, data = mtcars), col = \"red\", lwd = 2)\n```\n\n::: {.cell-output-display}\n![](14-rmarkdown_files/figure-html/visualization-1.png){width=960}\n:::\n:::\n\n\n### Statistical Analysis\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Fit a linear model\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\n\n# Display model summary\nsummary(model)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\nCall:\nlm(formula = mpg ~ wt + hp, data = mtcars)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-3.941 -1.600 -0.182  1.050  5.854 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 37.22727    1.59879  23.285  &lt; 2e-16 ***\nwt          -3.87783    0.63273  -6.129 1.12e-06 ***\nhp          -0.03177    0.00903  -3.519  0.00145 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.593 on 29 degrees of freedom\nMultiple R-squared:  0.8268,    Adjusted R-squared:  0.8148 \nF-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12\n```\n\n\n:::\n:::\n\n\n### Conclusion\n\nBased on our analysis, there is a significant negative relationship between car weight and fuel efficiency. For every 1,000 lb increase in weight, the miles per gallon decreases by approximately 3.88 units.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -360,11 +360,11 @@
     ]
   },
   {
-    "objectID": "14-rmarkdown.html#exercises",
-    "href": "14-rmarkdown.html#exercises",
+    "objectID": "14-rmarkdown.html#practice-exercises",
+    "href": "14-rmarkdown.html#practice-exercises",
     "title": "14 R Markdown",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion\n\nExercise 2\nExperiment with different output formats (HTML, PDF, Word) and observe the differences.\n\n\nExercise 3\nCreate an R Markdown document with a table of contents, code folding, and a custom theme.",
+    "section": "9 Practice Exercises",
+    "text": "9 Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion\n\nExercise 2\nExperiment with different output formats (HTML, PDF, Word) and observe the differences.\n\n\nExercise 3\nCreate an R Markdown document with a table of contents, code folding, and a custom theme.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -412,7 +412,7 @@
     "href": "12-1-way-anova.html#analysis-of-variance-anova",
     "title": "12 ANOVA",
     "section": "1 ANalysis Of VAriance (ANOVA)",
-    "text": "1 ANalysis Of VAriance (ANOVA)\n\nThe analysis of variance is not a mathematical theorem, but rather a convenient method of arranging the arithmetic. R. A. Fisher (via Wishart 1934. Sppl. J. Roy. Soc. 1(1):26-61.)\n\nPerhaps more so than any other tool, the Analysis of Variance (ANOVA) played a role in literally revolutionizing the idea of objectivity in using data to produce evidence to support claims for certain experimental designs. Invented by the famous statistician and biologist R. A. Fisher while he worked at Rothamsted Research, the intention was for ANOVA to be a useful tool to analyze agriculture experiments. Today, despite many innovations and competing approaches, it remains at the foundation of the basic practice of statistics.\n\n\n1.1 Objectives\n\nThe question of 1-way ANOVA\nData and assumptions\nGraphing\nTest and alternatives\nPractice exercises",
+    "text": "1 ANalysis Of VAriance (ANOVA)\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nArticulate the question of 1-way ANOVA\nEvaluate data and assumptions for 1-way ANOVA\nGraph 1-way ANOVA data\nPerform tests and alternatives for 1-way ANOVA\n\n\n\n\nThe analysis of variance is not a mathematical theorem, but rather a convenient method of arranging the arithmetic. R. A. Fisher (via Wishart 1934. Sppl. J. Roy. Soc. 1(1):26-61.)\n\nPerhaps more so than any other tool, the Analysis of Variance (ANOVA) played a role in literally revolutionizing the idea of objectivity in using data to produce evidence to support claims for certain experimental designs. Invented by the famous statistician and biologist R. A. Fisher while he worked at Rothamsted Research, the intention was for ANOVA to be a useful tool to analyze agriculture experiments. Today, despite many innovations and competing approaches, it remains at the foundation of the basic practice of statistics.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -508,7 +508,7 @@
     "href": "10-regression.html#regression-to-the-mean",
     "title": "10 Regression",
     "section": "1 Regression to the mean",
-    "text": "1 Regression to the mean\n\n“The general rule is straightforward but has surprising consequences: whenever the correlation between two scores is imperfect, there will be regression to the mean.”\n\n\n- Francis Galton\n\nOne of the most common and powerful tools in the statistical toolbox is linear regression. The concept and basic toolset was created in conjunction with investigating the heritable basis of resemblance between children and their parents (e.g. height) by Francis Galton.\nExemplary of one of the greatest traditions in science, a scientist identified a problem, created a tool to solve the problem, and then immediately shared the tool for the greater good. This is a slight digression from our purposes here, but you can learn more about it here:\n\nStigler 1989. Francis Galton’s Account of the Invention of Correlation\nStanton 2017. Galton, Pearson, and the Peas: A Brief History of Linear Regression for Statistics Instructors\n\n\n\n1.1 Objectives\n\nThe question of simple regression\nData and assumptions\nGraphing\nTest and alternatives\nPractice exercises",
+    "text": "1 Regression to the mean\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nEvaluate the question of simple regression\nDiscuss the data and assumptions of simple regression\nGraph simple regression\nPerform tests and alternatives for simple regression\n\n\n\n\n“The general rule is straightforward but has surprising consequences: whenever the correlation between two scores is imperfect, there will be regression to the mean.”\n\n\n- Francis Galton\n\nOne of the most common and powerful tools in the statistical toolbox is linear regression. The concept and basic toolset was created in conjunction with investigating the heritable basis of resemblance between children and their parents (e.g. height) by Francis Galton.\nExemplary of one of the greatest traditions in science, a scientist identified a problem, created a tool to solve the problem, and then immediately shared the tool for the greater good. This is a slight digression from our purposes here, but you can learn more about it here:\n\nStigler 1989. Francis Galton’s Account of the Invention of Correlation\nStanton 2017. Galton, Pearson, and the Peas: A Brief History of Linear Regression for Statistics Instructors",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -616,7 +616,7 @@
     "href": "08-sampling-dist.html#describing-the-shape-of-data",
     "title": "08 Distributions",
     "section": "1 Describing the shape of data",
-    "text": "1 Describing the shape of data\n\nOverview\n\nI. A curve has been found representing the frequency distribution of standard deviations of samples drawn from a normal population.\n\n\n\nA curve has been found representing the frequency distribution of values of the means of such samples, when these values are measured from the mean of the population in terms of the standard deviation of the sample\n\n\n\n- Gosset. 1908, Biometrika 6:25.\n\nThe idea of sampling underpins traditional statistics and is fundamental to the practice of statistics. The basic idea is usually that there is a population of interest, which we cannot directly measure. We sample the population in order to estimate the real measures of the population. Because we merely take samples, there is error assiociated with our estimates and the error depends on both the real variation in the population, but also on chance to do with which subjects are actually in our sample, as well as the size of our sample. Traditional statistical inference within Null Hypothesis Significance Testing (NHST) exploits our estimates of error associated with our samples. While this is an important concept, it is beyond the scope of this page to review it, but you may wish to refresh your knowledge by consulting a reference, such as Irizarry 2020 Chs 13-16.\nIn this page, we will briefly look at some diagnostic tools in R for examining the distribution of data, and talk about a few important distributions that are common to encounter.\n\n\n1.1 Objectives\n\nUse of the histogram\nGaussian: that ain’t normal\nPoisson\nBinomial\nDiagnosing the distribution\nPractice exercises",
+    "text": "1 Describing the shape of data\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nCreate and use a histogram to evaluate data distribution\nIdentify Gaussian data (that ain’t normal)\nIdentify Poisson data\nIdentify Binomial data\nDiagnose commondata distributions\n\n\n\nOverview\n\nI. A curve has been found representing the frequency distribution of standard deviations of samples drawn from a normal population. II. A curve has been found representing the frequency distribution of values of the means of such samples, when these values are measured from the mean of the population in terms of the standard deviation of the sample\n\n\n- Gosset. 1908, Biometrika 6:25.\n\nThe idea of sampling underpins traditional statistics and is fundamental to the practice of statistics. The basic idea is usually that there is a population of interest, which we cannot directly measure. We sample the population in order to estimate the real measures of the population. Because we merely take samples, there is error assiociated with our estimates and the error depends on both the real variation in the population, but also on chance to do with which subjects are actually in our sample, as well as the size of our sample. Traditional statistical inference within Null Hypothesis Significance Testing (NHST) exploits our estimates of error associated with our samples. While this is an important concept, it is beyond the scope of this page to review it, but you may wish to refresh your knowledge by consulting a reference, such as Irizarry 2020 Chs 13-16.\nIn this page, we will briefly look at some diagnostic tools in R for examining the distribution of data, and talk about a few important distributions that are common to encounter.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1216,7 +1216,7 @@
     "href": "07-question-explore.html#question-explore-analyze-a-workflow-for-data-science",
     "title": "07 Explore data",
     "section": "1 Question, explore, analyze (a workflow for data science)",
-    "text": "1 Question, explore, analyze (a workflow for data science)\n\n\nA dataset often comes to the Data Scientist in an imperfect state, possibly incomplete, containing errors, and with minimal description. Likewise, it may contain wonderful knowledge, there to discover. Either way, your first task is to weigh the pig.\n\n\nThe very first task for any data analysis is to gain an understanding of the data itself. This typically involves examining the variables. Are they as we expect? Do we need to adjust the variable types?\n\nEDA Exploratory Data Analysis\nThis almost always involves graphing the data, and possibly examining numerical summaries and statistical assumptions. Further, it is necessary to look for errors in the data both trivial (e.g. misspelling factor level names like “control” with an extra space “control”), and more serious errors such as numerical typographical errors (e.g. misplacing a decimal point is a classic: height of 5 men in feet: c(5.5, 5.8, 6.1, 5.9, 52.).\nIn total, this part of data analysis is sometimes referred to as Exploratory Data Analysis.\nEDA is part practical and part philosophical in that is requires skill and experience, but is also subjective. Think of it as a step that might take a long while, where the data scientists decides what the analysis is that will be applied to the data, that the analysis is correct and appropriate. Ironically, while EDA is considered very important and can take a large proportion of the total time spent analyzing data, it is usually only reported on very briefly if at all.\nThe order of operation for most analyses should be\n\n1 question\n2 explore\n3 analyse\n\n\n\nYou choose your data analysis prior to collecting the first data point.\n\nFocus on the question and make sure it is clear in formulation, and choose an analysis approach that can resolve the question , given the data… But the data collection should be DESIGNED to fit the question and chosen analysis prior to collection. Explore the data to examine any assumptions required for the analysis, including the use of graphing and any diagnostic or summary statistics. Finally, perform and summarize the analysis. We will practice this workflow for different basic questions, with an emphasis on simple quantitative data.\n\n\n1.1 Objectives\n\nQuestion formulation and hypothesis testing\nSummarize: Weighing the Pig\nVariables and graphing\n“Analysis” versus “EDA”\nStatistical Analysis Plan: the concept\nPractice exercises",
+    "text": "1 Question, explore, analyze (a workflow for data science)\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nFormulate statistical questions\nPerform hypothesis testing\nSummarize what “Weighing the Pig” means\nDiscuss the use of variables in graphing\nDistinguish between “Analysis” versus “EDA”\nExplain the concept of a Statistical Analysis Plan\n\n\n\n\n\nA dataset often comes to the Data Scientist in an imperfect state, possibly incomplete, containing errors, and with minimal description. Likewise, it may contain wonderful knowledge, there to discover. Either way, your first task is to weigh the pig.\n\n\nThe very first task for any data analysis is to gain an understanding of the data itself. This typically involves examining the variables. Are they as we expect? Do we need to adjust the variable types?\n\nEDA Exploratory Data Analysis\nThis almost always involves graphing the data, and possibly examining numerical summaries and statistical assumptions. Further, it is necessary to look for errors in the data both trivial (e.g. misspelling factor level names like “control” with an extra space “control”), and more serious errors such as numerical typographical errors (e.g. misplacing a decimal point is a classic: height of 5 men in feet: c(5.5, 5.8, 6.1, 5.9, 52.).\nIn total, this part of data analysis is sometimes referred to as Exploratory Data Analysis.\nEDA is part practical and part philosophical in that is requires skill and experience, but is also subjective. Think of it as a step that might take a long while, where the data scientists decides what the analysis is that will be applied to the data, that the analysis is correct and appropriate. Ironically, while EDA is considered very important and can take a large proportion of the total time spent analyzing data, it is usually only reported on very briefly if at all.\nThe order of operation for most analyses should be\n\n1 question\n2 explore\n3 analyse\n\n\n\nYou choose your data analysis prior to collecting the first data point.\n\nFocus on the question and make sure it is clear in formulation, and choose an analysis approach that can resolve the question , given the data… But the data collection should be DESIGNED to fit the question and chosen analysis prior to collection. Explore the data to examine any assumptions required for the analysis, including the use of graphing and any diagnostic or summary statistics. Finally, perform and summarize the analysis. We will practice this workflow for different basic questions, with an emphasis on simple quantitative data.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1312,7 +1312,7 @@
     "href": "09-correlation.html#statistical-relationships",
     "title": "09 Correlation",
     "section": "1 Statistical relationships",
-    "text": "1 Statistical relationships\n\nMost of you will have heard the maxim “correlation does not imply causation”. Just because two variables have a statistical relationship with each other does not mean that one is responsible for the other. For instance, ice cream sales and forest fires are correlated because both occur more often in the summer heat. But there is no causation; you don’t light a patch of the Montana brush on fire when you buy a pint of Haagan-Dazs. - Nate Silver\n\nCorrelation is used in many applications and is a basic tool in the data science toolbox. We use it to to describe, and sometimes to test, the relationship between two numeric variables, principally to ask whether there is or is not a relationship between the variables (and if there is, whether they tend to vary positively (both tend to increase in value) or negatively (one tends to decrease as the other increases).\n\n1.1 Objectives\n\nThe question of correlation\nData and assumptions\nGraphing\nTest and alternatives\nPractice exercises",
+    "text": "1 Statistical relationships\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nAnalyze correlation between two variables\nEvaluate correlation data and assumptions\nGraph correlated variables\nPerform correlation statistical test and alternatives\n\n\n\n\nMost of you will have heard the maxim “correlation does not imply causation”. Just because two variables have a statistical relationship with each other does not mean that one is responsible for the other. For instance, ice cream sales and forest fires are correlated because both occur more often in the summer heat. But there is no causation; you don’t light a patch of the Montana brush on fire when you buy a pint of Haagan-Dazs. - Nate Silver\n\nCorrelation is used in many applications and is a basic tool in the data science toolbox. We use it to to describe, and sometimes to test, the relationship between two numeric variables, principally to ask whether there is or is not a relationship between the variables (and if there is, whether they tend to vary positively (both tend to increase in value) or negatively (one tends to decrease as the other increases).",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1408,7 +1408,7 @@
     "href": "11-t-test.html#students-t-test",
     "title": "11 T-test",
     "section": "1 Student’s T-test",
-    "text": "1 Student’s T-test\n\nThe t-test and t-distribution are widely considered to be at the very foundation of modern statistic science and they form an important foundation for the practice of statistics. Who would believe they were invented to make great beer better?\n\nWilliam Sealy Gosset is credited with inventing and applying the idea of the t-test to assist in scientific quality control while working for the Guinness brewery. The idea was refined and supported by the great statistician R. A. Fisher, and the idea was initially described in a paper anonymously by “Student”, in order to protect the commercial interests of Guinness. Today, it is perhaps one of the most prevalent and basic tools in statistics, and it is a fascinating story.\nHere, we will briefly look at the practical basis of the t-test before going on the look at different ways it can be applied to data.\n\n\n1.1 Objectives\n\nThe question of the t-test\nData and assumptions\nGraphing\nTest and alternatives\nPractice exercises",
+    "text": "1 Student’s T-test\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nArticulate the question of the t-test\nEvaluate data and assumptions for the t-test\nGraph t-test data\nPerform tests and alternatives for the t-test\n\n\n\n\nThe t-test and t-distribution are widely considered to be at the very foundation of modern statistic science and they form an important foundation for the practice of statistics. Who would believe they were invented to make great beer better?\n\nWilliam Sealy Gosset is credited with inventing and applying the idea of the t-test to assist in scientific quality control while working for the Guinness brewery. The idea was refined and supported by the great statistician R. A. Fisher, and the idea was initially described in a paper anonymously by “Student”, in order to protect the commercial interests of Guinness. Today, it is perhaps one of the most prevalent and basic tools in statistics, and it is a fascinating story.\nHere, we will briefly look at the practical basis of the t-test before going on the look at different ways it can be applied to data.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1491,8 +1491,8 @@
     "objectID": "13-reproducibility.html#why-reproducibility-matters",
     "href": "13-reproducibility.html#why-reproducibility-matters",
     "title": "13 Reproducibility",
-    "section": "Why Reproducibility Matters",
-    "text": "Why Reproducibility Matters\nReproducibility is a cornerstone of scientific research and data analysis. It ensures that your findings can be verified, your methods can be understood, and your work can be built upon by others (including your future self!).\n\n\n\n\n\n\nDefinition\n\n\n\nReproducibility means that your analysis can be recreated by others using the same data and methods, producing the same results.\n\n\nIn practice, reproducibility provides several key benefits:\n\nVerification: Others can confirm your findings\nCollaboration: Team members can understand and contribute to your work\nEfficiency: You can revisit and build upon your own work more easily\nImpact: Your research can have greater influence when others can use it\nTrust: Reproducible research builds credibility in your findings",
+    "section": "1 Why Reproducibility Matters",
+    "text": "1 Why Reproducibility Matters\nReproducibility is a cornerstone of scientific research and data analysis. It ensures that your findings can be verified, your methods can be understood, and your work can be built upon by others (including your future self!).\n\n\n\n\n\n\nDefinition\n\n\n\nReproducibility means that your analysis can be recreated by others using the same data and methods, producing the same results.\n\n\nIn practice, reproducibility provides several key benefits:\n\nVerification: Others can confirm your findings\nCollaboration: Team members can understand and contribute to your work\nEfficiency: You can revisit and build upon your own work more easily\nImpact: Your research can have greater influence when others can use it\nTrust: Reproducible research builds credibility in your findings",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1503,8 +1503,8 @@
     "objectID": "13-reproducibility.html#components-of-reproducible-workflows",
     "href": "13-reproducibility.html#components-of-reproducible-workflows",
     "title": "13 Reproducibility",
-    "section": "Components of Reproducible Workflows",
-    "text": "Components of Reproducible Workflows\nA reproducible data science workflow typically includes the following elements:\n\n1. Documented Code\n# Example of well-documented code\n# Purpose: Calculate mean values by group\n# Input: data frame with numeric 'value' column and categorical 'group' column\n# Output: data frame of group means\n\ncalculate_group_means &lt;- function(data, value_col, group_col) {\n  # Check inputs\n  if (!is.data.frame(data)) {\n    stop(\"Input must be a data frame\")\n  }\n  \n  # Calculate means by group\n  result &lt;- aggregate(data[[value_col]], by = list(Group = data[[group_col]]), \n                     FUN = mean, na.rm = TRUE)\n  \n  # Rename columns for clarity\n  names(result)[2] &lt;- \"Mean\"\n  \n  return(result)\n}\n\n\n2. Version Control\nVersion control systems like Git help track changes to your code and files over time. We’ll cover this in detail in a later lesson.\n\n\n3. Environment Management\nDocumenting your software environment ensures others can recreate the same conditions:\n# Example of capturing package versions\nsessionInfo()\n\n# Or using the renv package for project-specific environments\n# install.packages(\"renv\")\n# renv::init()\n# renv::snapshot()\n\n\n4. Data Management\nProper data management includes:\n\nRaw data preservation (never modify the original data)\nData cleaning scripts (document all transformations)\nClear data documentation (metadata)\n\n\n\n5. Clear Documentation\nDocumentation should include:\n\nProject overview and purpose\nData sources and descriptions\nAnalysis methods and justification\nInstructions for reproducing results",
+    "section": "2 Components of Reproducible Workflows",
+    "text": "2 Components of Reproducible Workflows\nA reproducible data science workflow typically includes the following elements:\n\n2.1 Documented Code\n# Example of well-documented code\n# Purpose: Calculate mean values by group\n# Input: data frame with numeric 'value' column and categorical 'group' column\n# Output: data frame of group means\n\ncalculate_group_means &lt;- function(data, value_col, group_col) {\n  # Check inputs\n  if (!is.data.frame(data)) {\n    stop(\"Input must be a data frame\")\n  }\n  \n  # Calculate means by group\n  result &lt;- aggregate(data[[value_col]], by = list(Group = data[[group_col]]), \n                     FUN = mean, na.rm = TRUE)\n  \n  # Rename columns for clarity\n  names(result)[2] &lt;- \"Mean\"\n  \n  return(result)\n}\n\n\n2.2 Version Control\nVersion control systems like Git help track changes to your code and files over time. We’ll cover this in detail in a later lesson.\n\n\n2.3 Environment Management\nDocumenting your software environment ensures others can recreate the same conditions:\n# Example of capturing package versions\nsessionInfo()\n\n# Or using the renv package for project-specific environments\n# install.packages(\"renv\")\n# renv::init()\n# renv::snapshot()\n\n\n2.4 Data Management\nProper data management includes:\n\nRaw data preservation (never modify the original data)\nData cleaning scripts (document all transformations)\nClear data documentation (metadata)\n\n\n\n2.5 Clear Documentation\nDocumentation should include:\n\nProject overview and purpose\nData sources and descriptions\nAnalysis methods and justification\nInstructions for reproducing results",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1515,8 +1515,8 @@
     "objectID": "13-reproducibility.html#file-organization-strategies",
     "href": "13-reproducibility.html#file-organization-strategies",
     "title": "13 Reproducibility",
-    "section": "File Organization Strategies",
-    "text": "File Organization Strategies\nAn organized file structure makes your project more navigable and reproducible:\nproject/\n├── README.md           # Project overview and instructions\n├── data/\n│   ├── raw/            # Original, immutable data\n│   └── processed/      # Cleaned, transformed data\n├── code/\n│   ├── 01_clean.R      # Data cleaning script\n│   ├── 02_analyze.R    # Analysis script\n│   └── 03_visualize.R  # Visualization script\n├── results/\n│   ├── figures/        # Generated plots\n│   └── tables/         # Generated tables\n├── docs/\n│   └── report.Rmd      # R Markdown report\n└── renv/               # Package environment information\n\n\n\n\n\n\nBest Practice\n\n\n\nName your files in a way that indicates their order and purpose, such as 01_data_cleaning.R, 02_analysis.R, etc.",
+    "section": "3 File Organization Strategies",
+    "text": "3 File Organization Strategies\nAn organized file structure makes your project more navigable and reproducible:\nproject/\n├── README.md           # Project overview and instructions\n├── data/\n│   ├── raw/            # Original, immutable data\n│   └── processed/      # Cleaned, transformed data\n├── code/\n│   ├── 01_clean.R      # Data cleaning script\n│   ├── 02_analyze.R    # Analysis script\n│   └── 03_visualize.R  # Visualization script\n├── results/\n│   ├── figures/        # Generated plots\n│   └── tables/         # Generated tables\n├── docs/\n│   └── report.Rmd      # R Markdown report\n└── renv/               # Package environment information\n\n\n\n\n\n\nBest Practice\n\n\n\nName your files in a way that indicates their order and purpose, such as 01_data_cleaning.R, 02_analysis.R, etc.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1527,8 +1527,8 @@
     "objectID": "13-reproducibility.html#documentation-best-practices",
     "href": "13-reproducibility.html#documentation-best-practices",
     "title": "13 Reproducibility",
-    "section": "Documentation Best Practices",
-    "text": "Documentation Best Practices\nEffective documentation should:\n\nBe comprehensive - Include all necessary information\nBe clear - Use plain language and avoid jargon\nBe current - Update as your project evolves\nBe accessible - Store documentation with your project\n\nA good README file typically includes:\n\nProject title and description\nInstallation and setup instructions\nUsage examples\nData dictionary\nAnalysis workflow overview\nDependencies and requirements",
+    "section": "4 Documentation Best Practices",
+    "text": "4 Documentation Best Practices\nEffective documentation should:\n\nBe comprehensive - Include all necessary information\nBe clear - Use plain language and avoid jargon\nBe current - Update as your project evolves\nBe accessible - Store documentation with your project\n\nA good README file typically includes:\n\nProject title and description\nInstallation and setup instructions\nUsage examples\nData dictionary\nAnalysis workflow overview\nDependencies and requirements",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1536,11 +1536,11 @@
     ]
   },
   {
-    "objectID": "13-reproducibility.html#exercises",
-    "href": "13-reproducibility.html#exercises",
+    "objectID": "13-reproducibility.html#practice-exercises",
+    "href": "13-reproducibility.html#practice-exercises",
     "title": "13 Reproducibility",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nEvaluate a recent project of yours for reproducibility. Identify three specific improvements you could make to enhance its reproducibility.\n\nExercise 2\nCreate a file organization template for your next data analysis project, following the best practices outlined in this lesson.\n\n\nExercise 3\nWrite documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.",
+    "section": "5 Practice Exercises",
+    "text": "5 Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nEvaluate a recent project of yours for reproducibility. Identify three specific improvements you could make to enhance its reproducibility.\n\nExercise 2\nCreate a file organization template for your next data analysis project, following the best practices outlined in this lesson.\n\n\nExercise 3\nWrite documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1692,11 +1692,11 @@
     ]
   },
   {
-    "objectID": "15-github-basics.html#exercises",
-    "href": "15-github-basics.html#exercises",
+    "objectID": "15-github-basics.html#practice-exercises",
+    "href": "15-github-basics.html#practice-exercises",
     "title": "15 Git and GitHub",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a GitHub account (if you don’t have one) and set up Git on your computer.\n\nExercise 2\nCreate a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.\n\n\nExercise 3\nFork an existing R project on GitHub, make a small improvement, and create a pull request.",
+    "section": "Practice Exercises",
+    "text": "Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a GitHub account (if you don’t have one) and set up Git on your computer.\n\nExercise 2\nCreate a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.\n\n\nExercise 3\nFork an existing R project on GitHub, make a small improvement, and create a pull request.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1817,29 +1817,5 @@
     "title": "R Stats Bootcamp",
     "section": "",
     "text": "MIT License\nCopyright (c) 2025 W. Ed Harris\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-  },
-  {
-    "objectID": "05-data-frames.html#learning-objectives",
-    "href": "05-data-frames.html#learning-objectives",
-    "title": "05 Data frames",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this lesson, you will be able to:\n\nDescribe and use common data file types\nUse Excel for data setup and create a Data Dictionary\nRead data from Excel and CSV files\nManipulate variables in a data frame\n\n:::\nNB for this page we assume you have access to Microsoft Excel. However, similar spreadsheet software (like Libre Office Calc) will work fine.\n\n\nThe first step in using R for data analysis is getting your data into R. The first step for getting your data into R is making your data tidy.\n\nThe commonest question we have experienced for new users of R who want to perform analysis on their data is how to get data into R. There is good news and bad news. The good news is that it is exceedingly easy to get data into R for analysis, in almost any format. The bad news is that a step most new users find challenging is taking responsibility for their own data.\nWhat we mean here is that best practice in data management involves active engagement with your dataset. This includes choosing appropriate variable names, error checking, and documenting information about variables and data collection. We also aim to avoid proliferation of excessive dataset versions, and, worst of all, embedding graphs and data summaries into Excel spreadsheets with data.",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "05 Data frames"
-    ]
-  },
-  {
-    "objectID": "06-data-manipulation.html#learning-objectives",
-    "href": "06-data-manipulation.html#learning-objectives",
-    "title": "06 Data subsetting",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this lesson, you will be able to:\n\nDescribe the indexing concept for vectors and matrices\nUse the which() function to subset data\nSelect parts of a data frame\nUse the aggregate() function to summarize data\n\n:::\n\n\nWith a good basic set of moves for subsetting and manipulating data, you can overpower any dataset no matter how large and powerful they may be. Then, you will have strong data Sumo.\n\nSubsetting and manipulating data is probably the commonest activity for anyone who works with data. This is a core activity for exploratory data analysis, but is also extensively used in simple data acquisition, analysis and graphing, while also being related to more general data manipulating activities, for example database queries. This page is an introduction to the core syntax and some of the tools for manipulating and subsetting data in R.",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "06 Data subsetting"
-    ]
   }
 ]

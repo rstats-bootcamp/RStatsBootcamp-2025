@@ -4,31 +4,27 @@ title: "09 Correlation"
 
 <center> ![The data were formless like a cloud of tiny birds in the sky](img/murmur.png){width="400px"} </center>
 
-<br>
-
 ## 1 Statistical relationships
+
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+- Analyze correlation between two variables
+- Evaluate correlation data and assumptions
+- Graph correlated variables
+- Perform correlation statistical test and alternatives
+
+:::
 
 > Most of you will have heard the maxim "**correlation does not imply causation**". Just because two variables have a statistical relationship with each other does not mean that one is responsible for the other. For instance, ice cream sales and forest fires are correlated because both occur more often in the summer heat. But there is no causation; you don't light a patch of the Montana brush on fire when you buy a pint of Haagan-Dazs. - Nate Silver
 
 Correlation is used in many applications and is a basic tool in the data science toolbox.  We use it to to describe, and sometimes to test, the relationship between two numeric variables, principally to ask whether there is or is not a relationship between the variables (and if there is, whether they tend to vary positively (both tend to increase in value) or negatively (one tends to decrease as the other increases). 
 
-
-### 1.1 Objectives
-
-- The question of correlation
-
-- Data and assumptions
-
-- Graphing
-
-- Test and alternatives
-
-- Practice exercises
-
 <br>
 
 ## 2 The question of correlation
-
 
 **The question** of correlation is simply whether there is a demonstrable **association** between two numeric variables.  For example, we might wonder this for two numeric variables, such as a measure of vegetation biomass and a measure of insect abundance.  Digging a little deeper, we are interested in seeing and quantifying whether and how the variables may **"co-vary"** (i.e, exhibit significant covariance). This covariance may be quantified as being either positive or negative and may vary in strength from zero, to perfect positive or negative correlation (+1, or -1).  We traditionally visualise correlation with a **scatterplot** (`plot()` in `R`).  If there is a relationship, the degree of "scatter" is related to strength of the correlation (more scatter = a weaker correlation).
 

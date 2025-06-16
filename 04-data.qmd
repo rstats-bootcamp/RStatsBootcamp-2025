@@ -4,8 +4,6 @@ title: "04 Data objects"
 
 <center>![Data objects in 'R' space](img/r-space.png)</center>
 
-<br>
-
 ## 1 Data objects in R
 
 ::: callout-note

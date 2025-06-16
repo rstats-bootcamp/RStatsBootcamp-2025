@@ -14,7 +14,7 @@ By the end of this lesson, you will be able to:
 -   Use R Markdown for reproducible data analysis
 :::
 
-## What is R Markdown?
+## 1 What is R Markdown?
 
 R Markdown is a file format that allows you to combine R code, its output, and narrative text in a single document. It's a powerful tool for creating reproducible reports, presentations, dashboards, and even websites.
 
@@ -24,7 +24,7 @@ R Markdown is a file format that allows you to combine R code, its output, and n
 R Markdown documents are plain text files that contain three important elements: 1. **YAML header** - Document metadata and formatting options 2. **Markdown text** - For narrative content 3. **Code chunks** - R code that can be executed
 :::
 
-## Getting Started with R Markdown
+## 2 Getting Started with R Markdown
 
 To create an R Markdown document in RStudio:
 
@@ -35,7 +35,7 @@ To create an R Markdown document in RStudio:
 
 This will generate a template R Markdown file that you can modify.
 
-## YAML Header
+## 3 YAML Header
 
 The YAML header appears at the top of the document between triple dashes (`---`):
 
@@ -65,11 +65,11 @@ output:
 ---
 ```
 
-## Markdown Text
+## 4 Markdown Text
 
 Markdown is a lightweight markup language that allows you to format text using simple syntax:
 
-### Basic Formatting
+### 4.1 Basic Formatting
 
 ``` markdown
 # Heading 1
@@ -84,7 +84,7 @@ Markdown is a lightweight markup language that allows you to format text using s
 ![Image alt text](path/to/image.png)
 ```
 
-### Lists
+### 4.2 Lists
 
 ``` markdown
 Unordered list:
@@ -100,7 +100,7 @@ Ordered list:
    b. Subitem b
 ```
 
-### Tables
+### 4.3 Tables
 
 ``` markdown
 | Column 1 | Column 2 | Column 3 |
@@ -109,7 +109,7 @@ Ordered list:
 | Row 2    | Data     | Data     |
 ```
 
-## Code Chunks
+## 5 Code Chunks
 
 Code chunks in R Markdown allow you to execute R code and display its results:
 
@@ -131,7 +131,7 @@ summary(mtcars)
 ```
 ````
 
-### Chunk Options
+### 5.1 Chunk Options
 
 You can control how code chunks behave using options:
 
@@ -158,7 +158,7 @@ plot(mtcars$wt, mtcars$mpg,
 ```
 ````
 
-## Inline Code
+## 6 Inline Code
 
 You can also include R code directly within text using backticks and `r`:
 
@@ -168,7 +168,7 @@ The average miles per gallon is `r mean(mtcars$mpg)`.
 
 This will calculate the mean and insert the result directly into your text.
 
-## Generating Reports
+## 7 Generating Reports
 
 To generate your report:
 
@@ -178,7 +178,7 @@ To generate your report:
 
 R Markdown will: - Run all the code chunks - Generate all outputs (tables, plots, etc.) - Format the text according to Markdown syntax - Combine everything into a single document
 
-## Example: Data Analysis Report
+## 8 Example: Data Analysis Report
 
 Here's a simple example of an R Markdown document for data analysis:
 
@@ -190,11 +190,11 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-## Introduction
+### Introduction
 
 This report analyzes the relationship between car characteristics and fuel efficiency.
 
-## Data Overview
+### Data Overview
 
 ```{r data-summary}
 # Load the mtcars dataset
@@ -207,7 +207,7 @@ head(mtcars)
 summary(mtcars[, c("mpg", "wt", "hp")])
 ```
 
-## Visualization
+### Visualization
 
 ```{r visualization, fig.width=10, fig.height=5}
 # Create a scatterplot
@@ -221,7 +221,7 @@ plot(mtcars$wt, mtcars$mpg,
 abline(lm(mpg ~ wt, data = mtcars), col = "red", lwd = 2)
 ```
 
-## Statistical Analysis
+### Statistical Analysis
 
 ```{r regression}
 # Fit a linear model
@@ -231,12 +231,12 @@ model <- lm(mpg ~ wt + hp, data = mtcars)
 summary(model)
 ```
 
-## Conclusion
+### Conclusion
 
 Based on our analysis, there is a significant negative relationship between car weight and fuel efficiency. For every 1,000 lb increase in weight, the miles per gallon decreases by approximately `r abs(round(coef(model)[2], 2))` units.
 ````
 
-## Exercises
+## 9 Practice Exercises
 
 ::: {.callout-note appearance="minimal"}
 ### Exercise 1
