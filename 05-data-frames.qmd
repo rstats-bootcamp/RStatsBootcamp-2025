@@ -8,6 +8,20 @@ title: "05 Data frames"
 
 ## 1 Data frames in `R`
 
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Describe and use common data file types
+-   Use Excel for data setup and create a Data Dictionary
+-   Read data from Excel and CSV files
+-   Manipulate variables in a data frame
+
+:::
+
+<br>
+
 NB for this page we assume you have access to Microsoft Excel. However, similar spreadsheet software (like Libre Office Calc) will work fine.
 
 <br>
@@ -17,20 +31,6 @@ NB for this page we assume you have access to Microsoft Excel. However, similar 
 The commonest question we have experienced for new users of `R` who want to perform analysis on their data is how to get data into `R`. There is good news and bad news. The good news is that **it is exceedingly easy to get data into `R` for analysis, in almost any format**. The bad news is that **a step most new users find challenging is taking responsibility for their own data**.
 
 What we mean here is that best practice in data management involves active engagement with your dataset. This includes choosing appropriate variable names, error checking, and documenting information about variables and data collection. We also aim to avoid proliferation of excessive dataset versions, and, worst of all, embedding graphs and data summaries into Excel spreadsheets with data.
-
-<br>
-
-### 1.1 Objectives
-
--   Common data file types
-
--   Excel, data setup, and the Data Dictionary
-
--   Getting data into R
-
--   Manipulating variables in the Data Frame
-
--   Practice exercises
 
 <br>
 

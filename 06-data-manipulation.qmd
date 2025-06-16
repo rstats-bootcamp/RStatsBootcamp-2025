@@ -8,23 +8,23 @@ title: "06 Data subsetting"
 
 ## 1 Subsetting and Manipulation (data sumo)
 
-> With a good basic set of moves for subsetting and manipulating data, you can overpower any dataset no matter how large and powerful they may be. Then, you will have strong data Sumo.
+::: callout-note
+## Learning Objectives
 
-Subsetting and manipulating data is probably the commonest activity for anyone who works with data. This is a core activity for exploratory data analysis, but is also extensively used in simple data acquisition, analysis and graphing, while also being related to more general data manipulating activities, for example database queries. This page is an introduction to the core syntax and some of the tools for manipulating and subsetting data in R.
+By the end of this lesson, you will be able to:
+
+-   Describe the indexing concept for vectors and matrices
+-   Use the `which()` function to subset data
+-   Select parts of a data frame
+-   Use the `aggregate()` function to summarize data
+
+:::
 
 <br>
 
-### 1.1 Objectives
+> With a good basic set of moves for subsetting and manipulating data, you can overpower any dataset no matter how large and powerful they may be. Then, you will have strong data Sumo.
 
--   Indexing concept
-
--   Using `which()` and subsetting
-
--   Selection on data.frame objects
-
--   Using `aggregate()`
-
--   Practice exercises
+Subsetting and manipulating data is probably the commonest activity for anyone who works with data. This is a core activity for exploratory data analysis, but is also extensively used in simple data acquisition, analysis and graphing, while also being related to more general data manipulating activities, for example database queries. This page is an introduction to the core syntax and some of the tools for manipulating and subsetting data in R.
 
 <br>
 

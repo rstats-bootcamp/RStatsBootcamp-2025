@@ -1817,5 +1817,29 @@
     "title": "R Stats Bootcamp",
     "section": "",
     "text": "MIT License\nCopyright (c) 2025 W. Ed Harris\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "05-data-frames.html#learning-objectives",
+    "href": "05-data-frames.html#learning-objectives",
+    "title": "05 Data frames",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lesson, you will be able to:\n\nDescribe and use common data file types\nUse Excel for data setup and create a Data Dictionary\nRead data from Excel and CSV files\nManipulate variables in a data frame\n\n:::\nNB for this page we assume you have access to Microsoft Excel. However, similar spreadsheet software (like Libre Office Calc) will work fine.\n\n\nThe first step in using R for data analysis is getting your data into R. The first step for getting your data into R is making your data tidy.\n\nThe commonest question we have experienced for new users of R who want to perform analysis on their data is how to get data into R. There is good news and bad news. The good news is that it is exceedingly easy to get data into R for analysis, in almost any format. The bad news is that a step most new users find challenging is taking responsibility for their own data.\nWhat we mean here is that best practice in data management involves active engagement with your dataset. This includes choosing appropriate variable names, error checking, and documenting information about variables and data collection. We also aim to avoid proliferation of excessive dataset versions, and, worst of all, embedding graphs and data summaries into Excel spreadsheets with data.",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "05 Data frames"
+    ]
+  },
+  {
+    "objectID": "06-data-manipulation.html#learning-objectives",
+    "href": "06-data-manipulation.html#learning-objectives",
+    "title": "06 Data subsetting",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lesson, you will be able to:\n\nDescribe the indexing concept for vectors and matrices\nUse the which() function to subset data\nSelect parts of a data frame\nUse the aggregate() function to summarize data\n\n:::\n\n\nWith a good basic set of moves for subsetting and manipulating data, you can overpower any dataset no matter how large and powerful they may be. Then, you will have strong data Sumo.\n\nSubsetting and manipulating data is probably the commonest activity for anyone who works with data. This is a core activity for exploratory data analysis, but is also extensively used in simple data acquisition, analysis and graphing, while also being related to more general data manipulating activities, for example database queries. This page is an introduction to the core syntax and some of the tools for manipulating and subsetting data in R.",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "06 Data subsetting"
+    ]
   }
 ]
