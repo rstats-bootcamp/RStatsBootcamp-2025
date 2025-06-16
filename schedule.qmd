@@ -23,7 +23,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 ::: module-content
 ### 1. R and RStudio Setup
 
-*Getting started with the R programming environment*
+**Getting started with the R programming environment**
 
 -   Installing R and RStudio
 -   Navigating the RStudio interface
@@ -34,7 +34,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 
 ### 2. R Language Basics
 
-*Core concepts of the R programming language*
+**Core concepts of the R programming language**
 
 -   R syntax and data types
 -   Variables and assignment
@@ -45,7 +45,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 
 ### 3. Functions and Packages
 
-*Working with functions and extending R's capabilities*
+**Working with functions and extending R's capabilities**
 
 -   Using built-in functions
 -   Creating your own functions
@@ -56,7 +56,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 
 ### 4. Data Objects
 
-*Understanding R's data structures*
+**Understanding R's data structures**
 
 -   Vectors, matrices, and arrays
 -   Lists and factors
@@ -67,7 +67,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 
 ### 5. Data Frames
 
-*Working with tabular data in R*
+**Working with tabular data in R**
 
 -   Creating and manipulating data frames
 -   Accessing data frame elements
@@ -78,7 +78,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 
 ### 6. Data Manipulation
 
-*Techniques for cleaning and transforming data*
+**Techniques for cleaning and transforming data**
 
 -   Filtering and subsetting data
 -   Sorting and arranging data
@@ -95,7 +95,7 @@ Apply R programming to statistical analysis and data visualization.
 ::: module-content
 ### 7. Question, Explore, Analyze
 
-*The data analysis workflow*
+**The data analysis workflow**
 
 -   Formulating research questions
 -   Exploratory data analysis
@@ -106,7 +106,7 @@ Apply R programming to statistical analysis and data visualization.
 
 ### 8. Sampling Distributions
 
-*Understanding probability and sampling*
+**Understanding probability and sampling**
 
 -   Random sampling
 -   Probability distributions
@@ -117,7 +117,7 @@ Apply R programming to statistical analysis and data visualization.
 
 ### 9. Correlation
 
-*Measuring relationships between variables*
+**Measuring relationships between variables**
 
 -   Correlation coefficients
 -   Visualizing correlations
@@ -128,7 +128,7 @@ Apply R programming to statistical analysis and data visualization.
 
 ### 10. Simple Linear Regression
 
-*Modeling relationships between variables*
+**Modeling relationships between variables**
 
 -   Linear regression concepts
 -   Fitting regression models in R
@@ -139,7 +139,7 @@ Apply R programming to statistical analysis and data visualization.
 
 ### 11. T-tests
 
-*Comparing group means*
+**Comparing group means**
 
 -   One-sample t-tests
 -   Independent samples t-tests
@@ -150,7 +150,7 @@ Apply R programming to statistical analysis and data visualization.
 
 ### 12. One-way ANOVA
 
-*Analyzing variance between groups*
+**Analyzing variance between groups**
 
 -   ANOVA concepts and assumptions
 -   Conducting ANOVA in R
@@ -167,7 +167,7 @@ Learn essential tools and practices for reproducible data science.
 ::: module-content
 ### 13. Reproducibility Principles
 
-*Introduction to reproducible research*
+**Introduction to reproducible research**
 
 -   Why reproducibility matters
 -   Components of reproducible workflows
@@ -178,7 +178,7 @@ Learn essential tools and practices for reproducible data science.
 
 ### 14. R Markdown
 
-*Creating dynamic documents*
+**Creating dynamic documents**  
 
 -   R Markdown basics
 -   Combining code, results, and narrative
@@ -189,7 +189,7 @@ Learn essential tools and practices for reproducible data science.
 
 ### 15. Git and GitHub Basics
 
-*Version control for data science*
+**Version control for data science**
 
 -   Understanding version control
 -   Setting up Git and GitHub
@@ -200,7 +200,7 @@ Learn essential tools and practices for reproducible data science.
 
 ### 16. Collaborative Workflows
 
-*Working effectively with others*
+**Working effectively with others**
 
 -   Project organization
 -   Sharing code and data
