@@ -1,5 +1,5 @@
 ---
-title: "15 Git and GitHub Basics"
+title: "15 Git and GitHub"
 ---
 
 ::: callout-note
