@@ -554,277 +554,277 @@
   {
     "objectID": "16-collaborative-workflows.html",
     "href": "16-collaborative-workflows.html",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "",
     "text": "Learning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nOrganize data science projects for effective collaboration\nImplement best practices for code sharing and documentation\nUse Git and GitHub for team-based workflows\nMaintain reproducibility in collaborative environments\nResolve common collaboration challenges",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#why-collaborative-workflows-matter",
     "href": "16-collaborative-workflows.html#why-collaborative-workflows-matter",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Why Collaborative Workflows Matter",
     "text": "Why Collaborative Workflows Matter\nData science is increasingly a team effort. Effective collaboration requires more than just technical skills—it demands thoughtful project organization, clear communication, and established workflows. When done right, collaboration can:\n\nIncrease productivity through division of labor\nImprove quality through peer review\nEnhance creativity through diverse perspectives\nEnsure continuity when team members change\n\n\n\n\n\n\n\nKey Concept\n\n\n\nA collaborative workflow is a systematic approach to working together on data science projects that maximizes productivity while maintaining reproducibility and quality.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#project-organization-for-teams",
     "href": "16-collaborative-workflows.html#project-organization-for-teams",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Project Organization for Teams",
     "text": "Project Organization for Teams\n\nDirectory Structure\nA well-organized project structure helps team members navigate the codebase:\nproject/\n├── README.md           # Overview, setup instructions\n├── CONTRIBUTING.md     # Guidelines for contributors\n├── data/\n│   ├── raw/            # Original, immutable data\n│   └── processed/      # Cleaned, transformed data\n├── code/\n│   ├── data_prep/      # Data preparation scripts\n│   ├── analysis/       # Analysis scripts\n│   └── visualization/  # Visualization scripts\n├── results/\n│   ├── figures/        # Generated plots\n│   └── tables/         # Generated tables\n├── docs/\n│   ├── data_dict.md    # Data dictionary\n│   └── methods.md      # Methodological details\n└── reports/            # Final reports and presentations\n\n\nDocumentation\nComprehensive documentation is crucial for collaboration:\n\nREADME.md: Project overview, setup instructions, and usage examples\nCONTRIBUTING.md: Guidelines for how to contribute to the project\nCode comments: Explain why, not just what, the code does\nFunction documentation: Purpose, parameters, return values, examples\nData dictionary: Describe variables, units, and data sources\nAnalysis log: Document key decisions and their rationale",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#code-sharing-best-practices",
     "href": "16-collaborative-workflows.html#code-sharing-best-practices",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Code Sharing Best Practices",
     "text": "Code Sharing Best Practices\n\nStyle Guides\nConsistent coding style makes collaboration easier:\n\nFollow a style guide (e.g., tidyverse style guide for R)\nUse consistent naming conventions\nFormat code for readability\nConsider using linters and formatters\n\n\n\nModular Code\nWrite modular code that others can understand and reuse:\n# Instead of one long script, break into functions\nclean_data &lt;- function(raw_data) {\n  # Data cleaning steps\n  return(cleaned_data)\n}\n\nanalyze_data &lt;- function(clean_data) {\n  # Analysis steps\n  return(results)\n}\n\nvisualize_results &lt;- function(results) {\n  # Visualization steps\n  return(plots)\n}\n\n# Main workflow\nraw_data &lt;- read_csv(\"data/raw/dataset.csv\")\nclean_data &lt;- clean_data(raw_data)\nresults &lt;- analyze_data(clean_data)\nplots &lt;- visualize_results(results)\n\n\nPackage Management\nEnsure consistent package versions across team members:\n# Use renv for project-specific package management\ninstall.packages(\"renv\")\nrenv::init()\nrenv::snapshot()",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#git-workflows-for-teams",
     "href": "16-collaborative-workflows.html#git-workflows-for-teams",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Git Workflows for Teams",
     "text": "Git Workflows for Teams\n\nCentralized Workflow\nThe simplest approach for small teams:\n\nEveryone clones the central repository\nTeam members pull before starting work\nMake changes and commit locally\nPull again to merge any new changes\nPush to the central repository\n\n\n\nFeature Branch Workflow\nBetter for larger teams or complex projects:\n\nCreate a branch for each feature or task\nWork on the branch until the feature is complete\nPull the latest main branch and merge it into your feature branch\nCreate a pull request for code review\nMerge into the main branch after approval\n\n\n\nForking Workflow\nCommon for open-source projects:\n\nFork the main repository to your account\nClone your fork locally\nCreate a branch for your changes\nPush to your fork\nCreate a pull request to the main repository",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#code-review-process",
     "href": "16-collaborative-workflows.html#code-review-process",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Code Review Process",
     "text": "Code Review Process\nCode reviews improve quality and share knowledge:\n\nGuidelines for Reviewers\n\nBe respectful and constructive\nFocus on the code, not the person\nConsider both functionality and style\nAsk questions rather than making demands\nAcknowledge good practices\n\n\n\nGuidelines for Authors\n\nExplain the purpose of your changes\nKeep pull requests focused and manageable\nRespond to feedback positively\nBe open to suggestions\nThank reviewers for their time",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#maintaining-reproducibility",
     "href": "16-collaborative-workflows.html#maintaining-reproducibility",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Maintaining Reproducibility",
     "text": "Maintaining Reproducibility\n\nEnvironment Management\nEnsure everyone works in the same environment:\n\nUse renv (R) or conda (Python) for package management\nDocument system requirements\nConsider containerization with Docker\n\n\n\nData Access\nEstablish protocols for data access and sharing:\n\nUse version-controlled metadata\nDocument data sources and access methods\nConsider data access APIs for large datasets\nImplement appropriate security measures\n\n\n\nContinuous Integration\nAutomate testing to catch issues early:\n\nSet up GitHub Actions or other CI tools\nRun tests automatically on pull requests\nCheck code style and documentation",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#common-collaboration-challenges",
     "href": "16-collaborative-workflows.html#common-collaboration-challenges",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Common Collaboration Challenges",
     "text": "Common Collaboration Challenges\n\nChallenge: Merge Conflicts\nWhen two people edit the same part of a file:\n\nPull the latest changes\nIdentify the conflicting files\nOpen the files and resolve conflicts\nCommit the resolved files\nPush the changes\n\n\n\nChallenge: Large Files\nGit struggles with large files:\n\nUse Git LFS (Large File Storage) for binary files\nStore large datasets externally and document access\nConsider data subsets for testing\n\n\n\nChallenge: Onboarding New Team Members\nHelp new team members get up to speed:\n\nMaintain clear setup instructions\nDocument project structure and conventions\nAssign mentors for new members\nCreate starter tasks for learning the codebase",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#exercises",
     "href": "16-collaborative-workflows.html#exercises",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Exercises",
     "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a CONTRIBUTING.md file for a data science project, outlining guidelines for code style, pull requests, and code review.\n\nExercise 2\nPractice resolving a merge conflict by having two team members edit the same file and then merge their changes.\n\n\nExercise 3\nSet up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#next-steps",
     "href": "16-collaborative-workflows.html#next-steps",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Next Steps",
     "text": "Next Steps\nCongratulations on completing the R Stats Bootcamp! You now have a solid foundation in:\n\nR programming fundamentals\nStatistical analysis techniques\nReproducible research practices\nCollaborative workflows\n\nContinue building on these skills by:\n\nWorking on your own data analysis projects\nContributing to open-source R packages\nJoining R user groups and communities\nExploring advanced topics in data science",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "16-collaborative-workflows.html#additional-resources",
     "href": "16-collaborative-workflows.html#additional-resources",
-    "title": "Collaborative Workflows",
+    "title": "16 Collaborative Workflows",
     "section": "Additional Resources",
     "text": "Additional Resources\n\nGitHub Flow Guide\nThe Turing Way: Guide to Collaboration\nrOpenSci Packages: Development, Maintenance, and Peer Review\nTeam Data Science Process",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Collaborative Workflows"
+      "16 Collaborative Workflows"
     ]
   },
   {
     "objectID": "14-rmarkdown.html",
     "href": "14-rmarkdown.html",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "",
     "text": "Learning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nUnderstand the basics of R Markdown\nCreate documents that combine code, output, and narrative text\nFormat text using Markdown syntax\nGenerate reports in multiple formats (HTML, PDF, Word)\nUse R Markdown for reproducible data analysis",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#what-is-r-markdown",
     "href": "14-rmarkdown.html#what-is-r-markdown",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "What is R Markdown?",
     "text": "What is R Markdown?\nR Markdown is a file format that allows you to combine R code, its output, and narrative text in a single document. It’s a powerful tool for creating reproducible reports, presentations, dashboards, and even websites.\n\n\n\n\n\n\nKey Concept\n\n\n\nR Markdown documents are plain text files that contain three important elements: 1. YAML header - Document metadata and formatting options 2. Markdown text - For narrative content 3. Code chunks - R code that can be executed",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#getting-started-with-r-markdown",
     "href": "14-rmarkdown.html#getting-started-with-r-markdown",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Getting Started with R Markdown",
     "text": "Getting Started with R Markdown\nTo create an R Markdown document in RStudio:\n\nClick File → New File → R Markdown\nChoose a document type (HTML, PDF, or Word)\nGive your document a title and author name\nClick OK\n\nThis will generate a template R Markdown file that you can modify.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#yaml-header",
     "href": "14-rmarkdown.html#yaml-header",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "YAML Header",
     "text": "YAML Header\nThe YAML header appears at the top of the document between triple dashes (---):\n---\ntitle: \"My Analysis Report\"\nauthor: \"Your Name\"\ndate: \"2023-06-15\"\noutput: html_document\n---\nYou can customize various aspects of your document by adding options to the YAML header:\n---\ntitle: \"My Analysis Report\"\nauthor: \"Your Name\"\ndate: \"2025-06-16\"\noutput:\n  html_document:\n    toc: true\n    toc_float: true\n    theme: flatly\n    highlight: tango\n    code_folding: show\n---",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#markdown-text",
     "href": "14-rmarkdown.html#markdown-text",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Markdown Text",
     "text": "Markdown Text\nMarkdown is a lightweight markup language that allows you to format text using simple syntax:\n\nBasic Formatting\n# Heading 1\n## Heading 2\n### Heading 3\n\n**Bold text**\n*Italic text*\n~~Strikethrough~~\n\n[Link text](https://example.com)\n![Image alt text](path/to/image.png)\n\n\nLists\nUnordered list:\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n\nOrdered list:\n1. First item\n2. Second item\n   a. Subitem a\n   b. Subitem b\n\n\nTables\n| Column 1 | Column 2 | Column 3 |\n|----------|----------|----------|\n| Row 1    | Data     | Data     |\n| Row 2    | Data     | Data     |",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#code-chunks",
     "href": "14-rmarkdown.html#code-chunks",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Code Chunks",
     "text": "Code Chunks\nCode chunks in R Markdown allow you to execute R code and display its results:\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your R code here\n```\n:::\nFor example:\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load data\ndata(mtcars)\n\n# Calculate summary statistics\nsummary(mtcars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n      mpg             cyl             disp             hp       \n Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n      drat             wt             qsec             vs        \n Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n       am              gear            carb      \n Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n Median :0.0000   Median :4.000   Median :2.000  \n Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n Max.   :1.0000   Max.   :5.000   Max.   :8.000  \n```\n\n\n:::\n:::\n\nChunk Options\nYou can control how code chunks behave using options:\n\n\n\nOption\nDescription\n\n\n\n\neval=TRUE/FALSE\nWhether to evaluate the code\n\n\necho=TRUE/FALSE\nWhether to show the code\n\n\ninclude=TRUE/FALSE\nWhether to include the chunk in output\n\n\nmessage=TRUE/FALSE\nWhether to display messages\n\n\nwarning=TRUE/FALSE\nWhether to display warnings\n\n\nfig.width=7\nFigure width in inches\n\n\nfig.height=5\nFigure height in inches\n\n\n\nExample:\n\n::: {.cell}\n::: {.cell-output-display}\n![](14-rmarkdown_files/figure-html/plot-1.png){width=768}\n:::\n:::",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#inline-code",
     "href": "14-rmarkdown.html#inline-code",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Inline Code",
     "text": "Inline Code\nYou can also include R code directly within text using backticks and r:\nThe average miles per gallon is 20.090625.\nThis will calculate the mean and insert the result directly into your text.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#generating-reports",
     "href": "14-rmarkdown.html#generating-reports",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Generating Reports",
     "text": "Generating Reports\nTo generate your report:\n\nClick the Knit button in RStudio\nChoose your desired output format\nView the generated document\n\nR Markdown will: - Run all the code chunks - Generate all outputs (tables, plots, etc.) - Format the text according to Markdown syntax - Combine everything into a single document",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#example-data-analysis-report",
     "href": "14-rmarkdown.html#example-data-analysis-report",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Example: Data Analysis Report",
     "text": "Example: Data Analysis Report\nHere’s a simple example of an R Markdown document for data analysis:\n---\ntitle: \"Car Performance Analysis\"\nauthor: \"Data Scientist\"\ndate: \"2025-06-16\"\noutput: html_document\n---\n\n## Introduction\n\nThis report analyzes the relationship between car characteristics and fuel efficiency.\n\n## Data Overview\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load the mtcars dataset\ndata(mtcars)\n\n# Display the first few rows\nhead(mtcars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n```\n\n\n:::\n\n```{.r .cell-code}\n# Summary statistics\nsummary(mtcars[, c(\"mpg\", \"wt\", \"hp\")])\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n      mpg              wt              hp       \n Min.   :10.40   Min.   :1.513   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:2.581   1st Qu.: 96.5  \n Median :19.20   Median :3.325   Median :123.0  \n Mean   :20.09   Mean   :3.217   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:3.610   3rd Qu.:180.0  \n Max.   :33.90   Max.   :5.424   Max.   :335.0  \n```\n\n\n:::\n:::\n\n\n## Visualization\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Create a scatterplot\nplot(mtcars$wt, mtcars$mpg, \n     main=\"Car Weight vs. Mileage\",\n     xlab=\"Weight (1000 lbs)\",\n     ylab=\"Miles Per Gallon\",\n     pch=19, col=\"blue\")\n\n# Add a regression line\nabline(lm(mpg ~ wt, data = mtcars), col = \"red\", lwd = 2)\n```\n\n::: {.cell-output-display}\n![](14-rmarkdown_files/figure-html/visualization-1.png){width=960}\n:::\n:::\n\n\n## Statistical Analysis\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Fit a linear model\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\n\n# Display model summary\nsummary(model)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\nCall:\nlm(formula = mpg ~ wt + hp, data = mtcars)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-3.941 -1.600 -0.182  1.050  5.854 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 37.22727    1.59879  23.285  &lt; 2e-16 ***\nwt          -3.87783    0.63273  -6.129 1.12e-06 ***\nhp          -0.03177    0.00903  -3.519  0.00145 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.593 on 29 degrees of freedom\nMultiple R-squared:  0.8268,    Adjusted R-squared:  0.8148 \nF-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12\n```\n\n\n:::\n:::\n\n\n## Conclusion\n\nBased on our analysis, there is a significant negative relationship between car weight and fuel efficiency. For every 1,000 lb increase in weight, the miles per gallon decreases by approximately 3.88 units.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#exercises",
     "href": "14-rmarkdown.html#exercises",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Exercises",
     "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion\n\nExercise 2\nExperiment with different output formats (HTML, PDF, Word) and observe the differences.\n\n\nExercise 3\nCreate an R Markdown document with a table of contents, code folding, and a custom theme.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#next-steps",
     "href": "14-rmarkdown.html#next-steps",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Next Steps",
     "text": "Next Steps\nIn the next lesson, we’ll explore Git and GitHub as tools for version control and collaboration in data science projects.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
     "objectID": "14-rmarkdown.html#additional-resources",
     "href": "14-rmarkdown.html#additional-resources",
-    "title": "R Markdown",
+    "title": "14 R Markdown",
     "section": "Additional Resources",
     "text": "Additional Resources\n\nR Markdown: The Definitive Guide\nR Markdown Cheat Sheet\nR Markdown Cookbook",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "R Markdown"
+      "14 R Markdown"
     ]
   },
   {
@@ -928,7 +928,7 @@
     "href": "12-1-way-anova.html#harper-adams-data-science",
     "title": "12 ANOVA",
     "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
+    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.\n\nR Stats Bootcamp R Stats Bootcamp 13 Reproducibility Principles 11 T-test Getting Started R Stats Bootcamp Course Schedule About the Bootcamp Module 1: R Foundations 1 Setup & intro 2 R language 3 R Functions 4 Data objects 5 Data frames 6 Data subsetting Module 2: Statistical Analysis 7 Explore data 8 Distributions 9 Correlation 10 Regression 11 T-test 12 ANOVA Module 3: Reproducible Research 13 Reproducibility Principles 14 R Markdown 15 Git and GitHub Basics 16 Collaborative Workflows Home /index.html Schedule /schedule.html About /about.html Module 2: Statistical Analysis 12 ANOVA\n\n\n12 ANOVA – R Stats Bootcamp 12 ANOVA – R Stats Bootcamp 12 ANOVA – R Stats Bootcamp R Stats Bootcamp",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1250,253 +1250,253 @@
   {
     "objectID": "13-reproducibility.html",
     "href": "13-reproducibility.html",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "",
     "text": "Learning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nExplain why reproducibility matters in data science\nIdentify key components of a reproducible workflow\nImplement best practices for documentation\nOrganize project files effectively",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "13-reproducibility.html#why-reproducibility-matters",
     "href": "13-reproducibility.html#why-reproducibility-matters",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "Why Reproducibility Matters",
     "text": "Why Reproducibility Matters\nReproducibility is a cornerstone of scientific research and data analysis. It ensures that your findings can be verified, your methods can be understood, and your work can be built upon by others (including your future self!).\n\n\n\n\n\n\nDefinition\n\n\n\nReproducibility means that your analysis can be recreated by others using the same data and methods, producing the same results.\n\n\nIn practice, reproducibility provides several key benefits:\n\nVerification: Others can confirm your findings\nCollaboration: Team members can understand and contribute to your work\nEfficiency: You can revisit and build upon your own work more easily\nImpact: Your research can have greater influence when others can use it\nTrust: Reproducible research builds credibility in your findings",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "13-reproducibility.html#components-of-reproducible-workflows",
     "href": "13-reproducibility.html#components-of-reproducible-workflows",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "Components of Reproducible Workflows",
     "text": "Components of Reproducible Workflows\nA reproducible data science workflow typically includes the following elements:\n\n1. Documented Code\n# Example of well-documented code\n# Purpose: Calculate mean values by group\n# Input: data frame with numeric 'value' column and categorical 'group' column\n# Output: data frame of group means\n\ncalculate_group_means &lt;- function(data, value_col, group_col) {\n  # Check inputs\n  if (!is.data.frame(data)) {\n    stop(\"Input must be a data frame\")\n  }\n  \n  # Calculate means by group\n  result &lt;- aggregate(data[[value_col]], by = list(Group = data[[group_col]]), \n                     FUN = mean, na.rm = TRUE)\n  \n  # Rename columns for clarity\n  names(result)[2] &lt;- \"Mean\"\n  \n  return(result)\n}\n\n\n2. Version Control\nVersion control systems like Git help track changes to your code and files over time. We’ll cover this in detail in a later lesson.\n\n\n3. Environment Management\nDocumenting your software environment ensures others can recreate the same conditions:\n# Example of capturing package versions\nsessionInfo()\n\n# Or using the renv package for project-specific environments\n# install.packages(\"renv\")\n# renv::init()\n# renv::snapshot()\n\n\n4. Data Management\nProper data management includes:\n\nRaw data preservation (never modify the original data)\nData cleaning scripts (document all transformations)\nClear data documentation (metadata)\n\n\n\n5. Clear Documentation\nDocumentation should include:\n\nProject overview and purpose\nData sources and descriptions\nAnalysis methods and justification\nInstructions for reproducing results",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "13-reproducibility.html#file-organization-strategies",
     "href": "13-reproducibility.html#file-organization-strategies",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "File Organization Strategies",
     "text": "File Organization Strategies\nAn organized file structure makes your project more navigable and reproducible:\nproject/\n├── README.md           # Project overview and instructions\n├── data/\n│   ├── raw/            # Original, immutable data\n│   └── processed/      # Cleaned, transformed data\n├── code/\n│   ├── 01_clean.R      # Data cleaning script\n│   ├── 02_analyze.R    # Analysis script\n│   └── 03_visualize.R  # Visualization script\n├── results/\n│   ├── figures/        # Generated plots\n│   └── tables/         # Generated tables\n├── docs/\n│   └── report.Rmd      # R Markdown report\n└── renv/               # Package environment information\n\n\n\n\n\n\nBest Practice\n\n\n\nName your files in a way that indicates their order and purpose, such as 01_data_cleaning.R, 02_analysis.R, etc.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "13-reproducibility.html#documentation-best-practices",
     "href": "13-reproducibility.html#documentation-best-practices",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "Documentation Best Practices",
     "text": "Documentation Best Practices\nEffective documentation should:\n\nBe comprehensive - Include all necessary information\nBe clear - Use plain language and avoid jargon\nBe current - Update as your project evolves\nBe accessible - Store documentation with your project\n\nA good README file typically includes:\n\nProject title and description\nInstallation and setup instructions\nUsage examples\nData dictionary\nAnalysis workflow overview\nDependencies and requirements",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "13-reproducibility.html#exercises",
     "href": "13-reproducibility.html#exercises",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "Exercises",
     "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nEvaluate a recent project of yours for reproducibility. Identify three specific improvements you could make to enhance its reproducibility.\n\nExercise 2\nCreate a file organization template for your next data analysis project, following the best practices outlined in this lesson.\n\n\nExercise 3\nWrite documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "13-reproducibility.html#next-steps",
     "href": "13-reproducibility.html#next-steps",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "Next Steps",
     "text": "Next Steps\nIn the next lesson, we’ll explore R Markdown as a powerful tool for creating reproducible documents that combine code, results, and narrative.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "13-reproducibility.html#additional-resources",
     "href": "13-reproducibility.html#additional-resources",
-    "title": "Reproducibility Principles",
+    "title": "13 Reproducibility Principles",
     "section": "Additional Resources",
     "text": "Additional Resources\n\nThe Turing Way: Guide to Reproducible Research\nTen Simple Rules for Reproducible Computational Research\nrOpenSci Reproducibility Guide",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Reproducibility Principles"
+      "13 Reproducibility Principles"
     ]
   },
   {
     "objectID": "15-github-basics.html",
     "href": "15-github-basics.html",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "",
     "text": "Learning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nUnderstand the basics of version control with Git\nSet up Git on your computer\nCreate a GitHub account and repository\nPerform basic Git operations (clone, add, commit, push, pull)\nUnderstand branching and merging concepts",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#what-is-version-control",
     "href": "15-github-basics.html#what-is-version-control",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "What is Version Control?",
     "text": "What is Version Control?\nVersion control is a system that records changes to files over time so that you can recall specific versions later. For data science projects, version control helps you:\n\nTrack changes to your code and documents\nCollaborate with others without overwriting each other’s work\nRevert to previous versions if something goes wrong\nDocument the evolution of your analysis\n\n\n\n\n\n\n\nKey Concept\n\n\n\nGit is a distributed version control system that tracks changes in any set of files. GitHub is a web-based platform that hosts Git repositories and adds collaboration features.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#why-use-git-and-github",
     "href": "15-github-basics.html#why-use-git-and-github",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Why Use Git and GitHub?",
     "text": "Why Use Git and GitHub?\nFor data scientists and researchers, Git and GitHub provide several benefits:\n\nHistory tracking: Document how your analysis evolved\nCollaboration: Work with others seamlessly\nBackup: Store your code securely in the cloud\nReproducibility: Others can access and run your exact code\nOpen science: Share your work with the broader community",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#setting-up-git",
     "href": "15-github-basics.html#setting-up-git",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Setting Up Git",
     "text": "Setting Up Git\n\nInstalling Git\nFirst, you need to install Git on your computer:\n\nWindows: Download and install from git-scm.com\nMac: Install via Homebrew with brew install git or download from git-scm.com\nLinux: Use your package manager, e.g., sudo apt-get install git\n\n\n\nConfiguring Git\nAfter installation, configure Git with your name and email:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#creating-a-github-account",
     "href": "15-github-basics.html#creating-a-github-account",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Creating a GitHub Account",
     "text": "Creating a GitHub Account\n\nGo to github.com\nClick “Sign up” and follow the instructions\nChoose a free plan to start",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#git-basics",
     "href": "15-github-basics.html#git-basics",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Git Basics",
     "text": "Git Basics\n\nKey Concepts\n\nRepository (repo): A directory where Git tracks changes\nCommit: A snapshot of changes at a point in time\nBranch: A parallel version of the repository\nRemote: A version of the repository hosted elsewhere (e.g., on GitHub)\nClone: Creating a local copy of a remote repository\nPush: Sending commits to a remote repository\nPull: Getting changes from a remote repository\n\n\n\nCreating a Repository\n\nOn GitHub:\n\nLog in to GitHub\nClick the “+” icon in the top-right corner\nSelect “New repository”\nEnter a repository name and description\nChoose public or private\nClick “Create repository”\n\n\n\nOn Your Computer:\n# Create a new directory\nmkdir my-project\ncd my-project\n\n# Initialize Git repository\ngit init\n\n# Connect to GitHub repository\ngit remote add origin https://github.com/yourusername/my-project.git\n\n\n\nBasic Git Workflow\nThe typical Git workflow involves these steps:\n\nMake changes to your files\nStage the changes for commit\nCommit the changes with a message\nPush the changes to GitHub\n\n# Check status of your repository\ngit status\n\n# Stage changes\ngit add filename.R\n\n# Stage all changes\ngit add .\n\n# Commit changes\ngit commit -m \"Add data cleaning script\"\n\n# Push to GitHub\ngit push origin main\n\n\nCloning an Existing Repository\nTo work with an existing repository:\n# Clone a repository\ngit clone https://github.com/username/repository.git\n\n# Navigate into the repository\ncd repository\n\n\nPulling Changes\nWhen working with others, you’ll need to get their changes:\n# Get latest changes\ngit pull origin main",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#branching-and-merging",
     "href": "15-github-basics.html#branching-and-merging",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Branching and Merging",
     "text": "Branching and Merging\nBranches allow you to work on different features or experiments without affecting the main codebase.\n\nCreating and Using Branches\n# Create a new branch\ngit branch feature-analysis\n\n# Switch to the branch\ngit checkout feature-analysis\n\n# Create and switch in one command\ngit checkout -b new-feature\n\n# List all branches\ngit branch\n\n\nMerging Branches\nOnce you’re satisfied with your changes:\n# Switch back to main branch\ngit checkout main\n\n# Merge your feature branch\ngit merge feature-analysis\n\n# Push the merged changes\ngit push origin main",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#using-github-for-collaboration",
     "href": "15-github-basics.html#using-github-for-collaboration",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Using GitHub for Collaboration",
     "text": "Using GitHub for Collaboration\nGitHub enhances Git with collaboration features:\n\nPull Requests\nPull requests (PRs) let you propose changes to a repository:\n\nFork a repository to your GitHub account\nClone your fork locally\nCreate a branch and make changes\nPush your branch to your fork\nCreate a pull request to the original repository\n\n\n\nIssues\nGitHub Issues help track tasks, enhancements, and bugs:\n\nCreate detailed issue descriptions\nAssign issues to team members\nLabel issues by type\nReference issues in commits and pull requests",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#git-and-rstudio-integration",
     "href": "15-github-basics.html#git-and-rstudio-integration",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Git and RStudio Integration",
     "text": "Git and RStudio Integration\nRStudio provides a user-friendly interface for Git operations:\n\nCreate a new project with version control\nUse the Git pane to stage, commit, and push changes\nView file differences and history",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#best-practices-for-data-science-projects",
     "href": "15-github-basics.html#best-practices-for-data-science-projects",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Best Practices for Data Science Projects",
     "text": "Best Practices for Data Science Projects\n\nCommit often: Make small, focused commits\nWrite clear commit messages: Explain what and why, not how\nUse .gitignore: Exclude large data files, outputs, and sensitive information\nStructure your repository: Follow a consistent organization pattern\nDocument your workflow: Include a README with setup instructions",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#exercises",
     "href": "15-github-basics.html#exercises",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Exercises",
     "text": "Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a GitHub account (if you don’t have one) and set up Git on your computer.\n\nExercise 2\nCreate a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.\n\n\nExercise 3\nFork an existing R project on GitHub, make a small improvement, and create a pull request.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#next-steps",
     "href": "15-github-basics.html#next-steps",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Next Steps",
     "text": "Next Steps\nIn the next lesson, we’ll explore collaborative workflows and best practices for team-based data science projects.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {
     "objectID": "15-github-basics.html#additional-resources",
     "href": "15-github-basics.html#additional-resources",
-    "title": "Git and GitHub Basics",
+    "title": "15 Git and GitHub Basics",
     "section": "Additional Resources",
     "text": "Additional Resources\n\nHappy Git and GitHub for the useR\nGitHub Guides\nGit Cheat Sheet\nGitHub Learning Lab",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
-      "Git and GitHub Basics"
+      "15 Git and GitHub Basics"
     ]
   },
   {

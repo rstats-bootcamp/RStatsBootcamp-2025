@@ -18,6 +18,11 @@ body {
   line-height: 1.6;
 }
 
+/* Hide page footer */
+.footer {
+  display: none !important;
+}
+
 /* Hero section */
 .hero-banner {
   display: flex;

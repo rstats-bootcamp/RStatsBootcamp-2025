@@ -2,7 +2,11 @@
 title: "12 ANOVA"
 ---
 
-<center>![Arrange the arithmetic to compare more than two groups](img/row.png){width="400px"}</center>
+<center>
+
+![Arrange the arithmetic to compare more than two groups](img/row.png){width="400px"}
+
+</center>
 
 <br>
 
@@ -10,53 +14,53 @@ title: "12 ANOVA"
 
 > The analysis of variance is not a mathematical theorem, but rather a convenient method of arranging the arithmetic. R. A. Fisher (via Wishart 1934. Sppl. J. Roy. Soc. 1(1):26-61.)
 
-Perhaps more so than any other tool, the Analysis of Variance (ANOVA) played a role in literally revolutionizing the idea of objectivity in using data to produce evidence to support claims for certain experimental designs. Invented by the famous statistician and biologist R. A. Fisher while he worked at Rothamsted Research, the intention was for ANOVA to be a useful tool to analyze agriculture experiments.  Today, despite many innovations and competing approaches, it remains at the foundation of the basic practice of statistics.
+Perhaps more so than any other tool, the Analysis of Variance (ANOVA) played a role in literally revolutionizing the idea of objectivity in using data to produce evidence to support claims for certain experimental designs. Invented by the famous statistician and biologist R. A. Fisher while he worked at Rothamsted Research, the intention was for ANOVA to be a useful tool to analyze agriculture experiments. Today, despite many innovations and competing approaches, it remains at the foundation of the basic practice of statistics.
 
 <br>
 
 ### 1.1 Objectives
 
-- The question of 1-way ANOVA
+-   The question of 1-way ANOVA
 
-- Data and assumptions
+-   Data and assumptions
 
-- Graphing
+-   Graphing
 
-- Test and alternatives
+-   Test and alternatives
 
-- Practice exercises
+-   Practice exercises
 
 <br>
 
 ## 2 The question of 1-way ANOVA
 
-There are several reasons to use a "1-way ANOVA" experimental design.  The scenario usually involves:
+There are several reasons to use a "1-way ANOVA" experimental design. The scenario usually involves:
 
-- **one numeric continuous dependent variable** of interest
+-   **one numeric continuous dependent variable** of interest
 
-- **a factor that contains 2 or more levels**, often with a control 
+-   **a factor that contains 2 or more levels**, often with a control
 
-- When there are just two levels, the 1-ANOVA is conceptually equivalent to the t-test
+-   When there are just two levels, the 1-ANOVA is conceptually equivalent to the t-test
 
 An example might be something like a classic field trial, where crop pest damage is measured (the numeric continuous dependent variable) and the factor compares pest treatment with 3 levels: a control level (no pesticide), an organic pesticide, and a chemical pesticide. The basic question is whether there is an overall difference in the numeric dependent variable amongst the factor levels, however several kinds of questions are also possible to answer:
 
-- **overall difference** test of means between the factors
+-   **overall difference** test of means between the factors
 
-- Comparison of difference of each factor level with the control or other reference factor level
+-   Comparison of difference of each factor level with the control or other reference factor level
 
-- ***post hoc*** tests of difference between specific factor levels, e.g. pairwise tests for a factor with levels A, B, and C might test all possible comparisons A:B, A:C, and B:C.
+-   ***post hoc*** tests of difference between specific factor levels, e.g. pairwise tests for a factor with levels A, B, and C might test all possible comparisons A:B, A:C, and B:C.
 
-- Examination of the **"sources of variation"** observed in the dependent variable, e.g. what proportion of total variation can be accounted for by the factor
+-   Examination of the **"sources of variation"** observed in the dependent variable, e.g. what proportion of total variation can be accounted for by the factor
 
 <br>
 
-The test statistic for ANOVA is the **F ratio**, which is proportion of variance in the dependent variable between the groups, relative to that within the categories.  We will (very briefly) look at this calculation with the aim of gaining a practical understanding of what is going. 
+The test statistic for ANOVA is the **F ratio**, which is proportion of variance in the dependent variable between the groups, relative to that within the categories. We will (very briefly) look at this calculation with the aim of gaining a practical understanding of what is going.
 
 <br>
 
 ## 3 Data and assumptions
 
-The data we will look at is an experiment in animal genetics, looking at the weight of male chickens (8-week old weight in grams), where weight is the continuous dependent variable.  The factor is the sire identity, where the measure young male chicks were sired by one of 5 sires, thus sire is a factor with 5 levels A, B, C, D, and E.
+The data we will look at is an experiment in animal genetics, looking at the weight of male chickens (8-week old weight in grams), where weight is the continuous dependent variable. The factor is the sire identity, where the measure young male chicks were sired by one of 5 sires, thus sire is a factor with 5 levels A, B, C, D, and E.
 
 <br>
 
@@ -76,12 +80,11 @@ E <- c(717, 658, 674, 611, 678, 788, 650, 690)
 head(chicken.wide <- data.frame(A, B, C, D, E))
 ```
 
-
 <br>
 
 ### 3.2 Long format data (preferred)
 
-Here, the numeric data is stored in a single vector, with a factor vector for the sire data.  Each row corresponds to a single, independent "case".  This format is preferred and adheres to the "Tidy Data" standard, although it is not hard to move between wide and long formats.
+Here, the numeric data is stored in a single vector, with a factor vector for the sire data. Each row corresponds to a single, independent "case". This format is preferred and adheres to the "Tidy Data" standard, although it is not hard to move between wide and long formats.
 
 ```{r, warnings = F}
 # Try this
@@ -137,7 +140,7 @@ names(new.long)
 
 `R output`
 
-```r
+``` r
 > head(new.long) # Not bad but note the variable names
   variable value
 1        A   687
@@ -147,19 +150,20 @@ names(new.long)
 5        A   700
 6        A   753
 ```
+
 <br>
 
 ##4 Assumptions of ANOVA
 
-The assumptions of ANOVA are similar to those of regression (indeed, both are a specific kind of Linear Model and share the assumptions of the Gaussian Linear Model).  The most important to consider now are:
+The assumptions of ANOVA are similar to those of regression (indeed, both are a specific kind of Linear Model and share the assumptions of the Gaussian Linear Model). The most important to consider now are:
 
-- Gaussian residuals (we test graphically and with NHST for Gaussian residual distribution)
+-   Gaussian residuals (we test graphically and with NHST for Gaussian residual distribution)
 
-- Homoscedasticity (we test graphically with a residuals versus fitted values plot)
+-   Homoscedasticity (we test graphically with a residuals versus fitted values plot)
 
-- Equality of variance (plot of residual versus factor and NHST for == variance)
+-   Equality of variance (plot of residual versus factor and NHST for == variance)
 
-- Independent observations (we assume this for now with the chicken data, but will not test is formally)
+-   Independent observations (we assume this for now with the chicken data, but will not test is formally)
 
 <br>
 
@@ -186,19 +190,17 @@ qqPlot(x = m1,
 par(mfrow=c(1,1))
 ```
 
-
 <br>
 
 ### 4.1 Formal test of Gaussian residuals
 
-At a glance, there are no serious issues with the assumption of Gaussian residual distribution.  We can use NHST to help us decide; we will try the `shapiro.test()`.
+At a glance, there are no serious issues with the assumption of Gaussian residual distribution. We can use NHST to help us decide; we will try the `shapiro.test()`.
 
 <br>
 
 ```{r}
 shapiro.test(rstandard(m1))
 ```
-
 
 <br>
 
@@ -232,9 +234,9 @@ points(x = x1, y = y1,
 
 <br>
 
-### 4.3 Bartlett test 
+### 4.3 Bartlett test
 
-Finally, we can use NHST just to have a final check of whether the variance in weight is equal between factor levels.  There are several ways to do this; we will use the Bartlett test using `bartlett.test()`, which compares the variance for more than 2 groups.
+Finally, we can use NHST just to have a final check of whether the variance in weight is equal between factor levels. There are several ways to do this; we will use the Bartlett test using `bartlett.test()`, which compares the variance for more than 2 groups.
 
 <br>
 
@@ -246,7 +248,6 @@ bartlett.test(formula = weight~sire, data = new.long)
 
 ```
 
-
 <br>
 
 > We find no evidence that variance in offspring weight differs between sires (Bartlett test: K-sqared = 1.69, df = 4, P = 0.79).
@@ -255,7 +256,7 @@ bartlett.test(formula = weight~sire, data = new.long)
 
 ## 5 Graphing ANOVA
 
-The classic way to visualize the 1-way ANOVA is with boxplot, with some way to show the central tendency of the data separately for each factor level.  For continuous variables, boxplots show this perfectly.  For count variables, barplots are sometimes used with the height set to the mean, along with some form of error bar.  Here we will use a boxplot.
+The classic way to visualize the 1-way ANOVA is with boxplot, with some way to show the central tendency of the data separately for each factor level. For continuous variables, boxplots show this perfectly. For count variables, barplots are sometimes used with the height set to the mean, along with some form of error bar. Here we will use a boxplot.
 
 <br>
 
@@ -271,15 +272,15 @@ boxplot(Weight ~ Sire, data = new.long,
 
 <br>
 
-So, it looks like sire identity *could* have an effect on mean male offspring weight.  But, is this graph good enough?  Can we make it better?  Let's critique it:
+So, it looks like sire identity *could* have an effect on mean male offspring weight. But, is this graph good enough? Can we make it better? Let's critique it:
 
-- (important) The y axis does not indicate the unit of measurement
+-   (important) The y axis does not indicate the unit of measurement
 
-- (important) Neither axis title is capitalized
+-   (important) Neither axis title is capitalized
 
-- (optional) Adding on the points might add interesting detail
+-   (optional) Adding on the points might add interesting detail
 
-- (optional) Reference line for control (we do not really have a control here) or of the "grand mean" might be useful
+-   (optional) Reference line for control (we do not really have a control here) or of the "grand mean" might be useful
 
 <br>
 
@@ -305,28 +306,25 @@ points(x = jitter(rep(1:5, each = 8), amount = .1),
        pch = 16, cex = .8, col = "blue") # Mere vanity
 ```
 
-
-
-
 <br>
 
 ## 6 ANOVA F test statistic and alternatives
 
-The basic application of ANOVA in `R` is the `aov()` function.  There are actually a lot of alternative ways to perform the exact same test in `R`.  
+The basic application of ANOVA in `R` is the `aov()` function. There are actually a lot of alternative ways to perform the exact same test in `R`.
 
-To micro-digress, ANOVA is a subset of the Gaussian linear model; the Gaussian linear model is a subset of the General Linear Model; and the General Linear Model is a subset of the GeneralIZED Linear Model.  For now we will forget all of that and go with `aov()`.
+To micro-digress, ANOVA is a subset of the Gaussian linear model; the Gaussian linear model is a subset of the General Linear Model; and the General Linear Model is a subset of the GeneralIZED Linear Model. For now we will forget all of that and go with `aov()`.
 
 <br>
 
-### 6.1 perform the ANOVA**
+### 6.1 perform the ANOVA\*\*
 
 We have a few things to do here:
 
-- Perform 1-way ANOVA and look at the basic output for the **overall effect of sire**
+-   Perform 1-way ANOVA and look at the basic output for the **overall effect of sire**
 
-- Look at how to examine **contrasts** (differences between the control or a reference factor level, and each of the others) and ***post hoc*** testing (e.g. all pairwise comparisons between factor levels)
+-   Look at how to examine **contrasts** (differences between the control or a reference factor level, and each of the others) and ***post hoc*** testing (e.g. all pairwise comparisons between factor levels)
 
-- Examine what happens in the ANOVA in a little more detail
+-   Examine what happens in the ANOVA in a little more detail
 
 <br>
 
@@ -347,7 +345,7 @@ summary(m1)
 
 <br>
 
-The output is formatted in a classic "ANOVA Table" style.  There are 2 rows - one for the "main effect" of the sire factor, one for the residual error.  The test statistic is the F value (1.87), the P-value column is named "Pr(>F)" (0.14), and there are 4 degrees of freedom for this test for the factor (the factor degrees of freedom is the number of factor levels minus 1 = 5 factor levels - 1 = 4; the residual degrees of freedom is the total number of observations minus the number of factor levels = 40 - 5 = 35).
+The output is formatted in a classic "ANOVA Table" style. There are 2 rows - one for the "main effect" of the sire factor, one for the residual error. The test statistic is the F value (1.87), the P-value column is named "Pr(\>F)" (0.14), and there are 4 degrees of freedom for this test for the factor (the factor degrees of freedom is the number of factor levels minus 1 = 5 factor levels - 1 = 4; the residual degrees of freedom is the total number of observations minus the number of factor levels = 40 - 5 = 35).
 
 > Here we can see that the overall effect of sire does not significantly explain variation in weight (1-way ANOVA: F = 1.87, df = 4,35, P = 0.14).
 
@@ -355,7 +353,7 @@ The output is formatted in a classic "ANOVA Table" style.  There are 2 rows - on
 
 ### 6.3 Contrasts and *post hoc* test
 
-An alternative to the ANOVA table format, and possibly different to the question of an overall mean effect of the factor, is the approach for a regular linear model looking at differences for each factor level relative to a reference factor level like a control.  For our experiment, let's say that sire C is our reference level sire, against which we would like to statistically compare offspring weight for other sires.
+An alternative to the ANOVA table format, and possibly different to the question of an overall mean effect of the factor, is the approach for a regular linear model looking at differences for each factor level relative to a reference factor level like a control. For our experiment, let's say that sire C is our reference level sire, against which we would like to statistically compare offspring weight for other sires.
 
 <br>
 
@@ -378,7 +376,7 @@ plot(Weight ~ Sire,
 
 `R output`
 
-```r
+``` r
 > m2 <- lm(formula = Weight ~ Sire, 
 +          data = new.long)
 > summary(m2)
@@ -401,15 +399,15 @@ SireE         -13.38      24.12  -0.555    0.583
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 48.24 on 35 degrees of freedom
-Multiple R-squared:  0.1763,	Adjusted R-squared:  0.08211 
+Multiple R-squared:  0.1763,    Adjusted R-squared:  0.08211 
 F-statistic: 1.872 on 4 and 35 DF,  p-value: 0.1373
 ```
 
 <br>
 
-Notice how the output format has changed.  This is because the summary function (and lots of functions in fact) "behave differently" in response to the specific `class()` of object we pass to it (here an `lm` object; before an `aov` object).  One big difference we see is the table of contrasts. Now, there is are 5 rows: one for the intercept coefficient (testing whether the "grand mean" of Weight is different to zero - NB this is not at all interesting for us), and for rows comparing each factor level to the reference mean for sire "C". 
+Notice how the output format has changed. This is because the summary function (and lots of functions in fact) "behave differently" in response to the specific `class()` of object we pass to it (here an `lm` object; before an `aov` object). One big difference we see is the table of contrasts. Now, there is are 5 rows: one for the intercept coefficient (testing whether the "grand mean" of Weight is different to zero - NB this is not at all interesting for us), and for rows comparing each factor level to the reference mean for sire "C".
 
-Here, the Estimate column is an estimate of the AMOUNT of difference in weight relative to the reference mean weight for that sire.  E.g., sire B offspring weight is estimated at -31.5 grams (the negative indicate less than) compared to offspring weight for sire C.  However, this observed sample difference is not statistically significant (P = 0.20).
+Here, the Estimate column is an estimate of the AMOUNT of difference in weight relative to the reference mean weight for that sire. E.g., sire B offspring weight is estimated at -31.5 grams (the negative indicate less than) compared to offspring weight for sire C. However, this observed sample difference is not statistically significant (P = 0.20).
 
 Notice the overall F value and p-value for the 1-way are also present at the bottom of the output, which is exactly the same as that produced by the `aov()` function.
 
@@ -417,7 +415,7 @@ Notice the overall F value and p-value for the 1-way are also present at the bot
 
 We can make a new boxplot based on our new sire variable and notice how it automatically moves sire C to the leftmost "reference position"
 
-```r
+``` r
 plot(Weight ~ Sire, 
      data = new.long,
      main = "Sire C as reference")
@@ -425,29 +423,29 @@ plot(Weight ~ Sire,
 
 ### 6.4 *Post hoc* tests
 
-> The collection and analysis of data should be driven by the question. We should always be careful to make the distinction between data analysis that **SHOULD be done** versus that which merely **CAN be done**.  The former is driven by prediction and motivated by evidence, expectation and the design of data collection.  The latter is often a waste of time, or worse, a "fishing expedition" in crass pursuit of a P-value, any P-value, which is < 0.05 .
+> The collection and analysis of data should be driven by the question. We should always be careful to make the distinction between data analysis that **SHOULD be done** versus that which merely **CAN be done**. The former is driven by prediction and motivated by evidence, expectation and the design of data collection. The latter is often a waste of time, or worse, a "fishing expedition" in crass pursuit of a P-value, any P-value, which is \< 0.05 .
 
 <br>
 
 <center>
 
-![The meaning of significance](https://imgs.xkcd.com/comics/significant.png) 
+![The meaning of significance](https://imgs.xkcd.com/comics/significant.png)
 
 </center>
 
 <br>
 
-*Post hoc* tests are often interesting in research, and the 1-way ANOVA is a good example, where an overall question of "is there a difference?" can be enhanced by asking whether there are particular or specific differences, say between pairs of means.  The phrase *post hoc* implies that the sometimes these questions can be an afterthought.  Thus, consideration should be given as to whether these specific questions NEED to be asked.
+*Post hoc* tests are often interesting in research, and the 1-way ANOVA is a good example, where an overall question of "is there a difference?" can be enhanced by asking whether there are particular or specific differences, say between pairs of means. The phrase *post hoc* implies that the sometimes these questions can be an afterthought. Thus, consideration should be given as to whether these specific questions NEED to be asked.
 
 <br>
 
 ### 6.5 Type I errors
 
-The alpha ($\alpha$) value, the value to which we compare our P-value, can be interpreted as the (maximum) probability we are willing to accept of being wrong if we conclude there is significance in our data.  Traditionally, this alpha value is accepted to be 0.05, or a 5% chance of making a false positive error.  When multiple tests are made on the same data, it increases the chance of discovering a false positive, by chance alone, to above 5%. Thus, there are methods that are used to avoid doing this, by adjusting the P-value to keep the overall likelihood of false positive error at 5%.
+The alpha ($\alpha$) value, the value to which we compare our P-value, can be interpreted as the (maximum) probability we are willing to accept of being wrong if we conclude there is significance in our data. Traditionally, this alpha value is accepted to be 0.05, or a 5% chance of making a false positive error. When multiple tests are made on the same data, it increases the chance of discovering a false positive, by chance alone, to above 5%. Thus, there are methods that are used to avoid doing this, by adjusting the P-value to keep the overall likelihood of false positive error at 5%.
 
-The **Bonferroni adjustment** [see Bland and Altman 1995](https://www.bmj.com/content/310/6973/170.short) is a baseline, conservative adjustment to the alpha value to avoid false positive errors.  This might be typically applied to a 1-way ANOVA situation where specific, pairwise comparisons between means are required that are not covered by the overall test, or by the contrasts.  E.g. in our chicken data, we know there is not a difference in offspring weight between sire C and all other sire offsring weights: C:A, C:B, C:D, C:E, but what if we really wanted to test the others?  We could use the **Bonferroni adjustment** as implemented in the `pairwise.t.test()` function.  
+The **Bonferroni adjustment** [see Bland and Altman 1995](https://www.bmj.com/content/310/6973/170.short) is a baseline, conservative adjustment to the alpha value to avoid false positive errors. This might be typically applied to a 1-way ANOVA situation where specific, pairwise comparisons between means are required that are not covered by the overall test, or by the contrasts. E.g. in our chicken data, we know there is not a difference in offspring weight between sire C and all other sire offsring weights: C:A, C:B, C:D, C:E, but what if we really wanted to test the others? We could use the **Bonferroni adjustment** as implemented in the `pairwise.t.test()` function.
 
-The **Bonferroni adjustment** simply divides the alpha expected value by the number of *post hoc* pairwise comparisons.  NB the Bonferroni adjustment is conservative, and there are alternatives.  The point here is just to illustrate how these tests function and, like with many things, more study will be required to round out foundational knowledge for *post hoc* testing procedures.  The Bonferroni test is nice to know about and understand because it is easy to use, and manually calculate, and can be applied to any situation.
+The **Bonferroni adjustment** simply divides the alpha expected value by the number of *post hoc* pairwise comparisons. NB the Bonferroni adjustment is conservative, and there are alternatives. The point here is just to illustrate how these tests function and, like with many things, more study will be required to round out foundational knowledge for *post hoc* testing procedures. The Bonferroni test is nice to know about and understand because it is easy to use, and manually calculate, and can be applied to any situation.
 
 <br>
 
@@ -467,8 +465,6 @@ pairwise.t.test(x = new.long$Weight,
                 p.adjust.method = "bonferroni")
 ```
 
-
-
 <br>
 
 NB the output here is a matrix of (Bonferroni adjusted!) p-values for each possible pairwise comparison (none are significant, i.e., less than 0.05). It is also possible to simply calculate uncorrected p-values and compare them to Bonferroni adjust alpha values, as described above!
@@ -477,7 +473,7 @@ NB the output here is a matrix of (Bonferroni adjusted!) p-values for each possi
 
 ### 6.6 Tukey HSD (Honestly Significant Differences)
 
-The Tukey HSD test is ideal for 1-way ANOVA, and is less conservative than the Bonferroni adjustment.  We use the `Tukey.HSD()` function to apply it here.
+The Tukey HSD test is ideal for 1-way ANOVA, and is less conservative than the Bonferroni adjustment. We use the `Tukey.HSD()` function to apply it here.
 
 ```{r}
 ## Tukey Honestly Significant Differences ####
@@ -488,11 +484,9 @@ TukeyHSD(m1) # NB m1 - this function requires an "aov" object
 plot(TukeyHSD(m1))
 ```
 
-
-
 <br>
 
-Notice the table of pairwise comparisons.  The format is slightly different than that for the simple `pairwise.t.test()` function output and there is a bit more information.  Also note that the p-values tend to be smaller for the exact same comparisons, but there are sill no significant comparisons.
+Notice the table of pairwise comparisons. The format is slightly different than that for the simple `pairwise.t.test()` function output and there is a bit more information. Also note that the p-values tend to be smaller for the exact same comparisons, but there are sill no significant comparisons.
 
 <br>
 
@@ -500,15 +494,15 @@ Notice the table of pairwise comparisons.  The format is slightly different than
 
 In case the assumptions of 1-way ANOVA cannot be met by the data, there are a few options:
 
-- Attempt to transform the data (e.g. with `log()`, `sqrt()` or other transformation) to "coerce" the data to conform to the assumptions of 1-way ANOVA
+-   Attempt to transform the data (e.g. with `log()`, `sqrt()` or other transformation) to "coerce" the data to conform to the assumptions of 1-way ANOVA
 
-- Use an alternative test for which assumptions are not violated
+-   Use an alternative test for which assumptions are not violated
 
 <br>
 
-The simplest alternative test to use for a 1-way ANOVA design would be a "non-parameteric" test that simply does not make the assumptions of Gaussian residuals or of homscedasticity.  NB there are other many other methods as well (e.g. the Generalized linear model, randomization, Bayesian modelling), which we will not cover here.  
+The simplest alternative test to use for a 1-way ANOVA design would be a "non-parameteric" test that simply does not make the assumptions of Gaussian residuals or of homscedasticity. NB there are other many other methods as well (e.g. the Generalized linear model, randomization, Bayesian modelling), which we will not cover here.
 
-Non-parametric tests have the advantage of being very easy to use, and being very easy to interpret as they tend to be analogous to tests that require assumptions of the data (so-called "parametric tests" like the t-test, regression and 1-way ANOVA).  
+Non-parametric tests have the advantage of being very easy to use, and being very easy to interpret as they tend to be analogous to tests that require assumptions of the data (so-called "parametric tests" like the t-test, regression and 1-way ANOVA).
 
 A downside to these non-parametric tests is that they tend to have less **statistical power**. That is, they are less likely than their parametric cousins to detect a significant difference even if one does exist!
 
@@ -525,10 +519,9 @@ kruskal.test(formula = Weight ~ Sire,
              data = new.long)
 ```
 
-
 <br>
 
-The result is qualitatively the same as that for our 1-way ANOVA test, which is not surprising.  Reporting the results of this test is similar as well.
+The result is qualitatively the same as that for our 1-way ANOVA test, which is not surprising. Reporting the results of this test is similar as well.
 
 <br>
 
@@ -538,11 +531,11 @@ The result is qualitatively the same as that for our 1-way ANOVA test, which is 
 
 ## 7 ANOVA calculation details
 
-```r
+``` r
 # Our data
 chicken.wide
-
 ```
+
 <br>
 
 ### 7.1 ANOVA Equations
@@ -563,7 +556,7 @@ chicken.wide
 
 <br>
 
-> I like the cocksure argument that you never need to actually "do an ANOVA by hand" because we have computers for that sort of thing these days.  Which, we do.  But, I think I would make a distinction between someone who has never, or fears they cannot, calculate an ANOVA, versus someone who might occasionally do so just to understand better how the world works.  I know which one I would rather be.
+> I like the cocksure argument that you never need to actually "do an ANOVA by hand" because we have computers for that sort of thing these days. Which, we do. But, I think I would make a distinction between someone who has never, or fears they cannot, calculate an ANOVA, versus someone who might occasionally do so just to understand better how the world works. I know which one I would rather be.
 
 > \- Unknown philosopher
 
@@ -612,7 +605,7 @@ anova(m1)$"F value"[1] # Store-bought F
 
 ## 8 Practice exercises
 
-For these exercises, run the code below to recreate the data object `pest`.  There are 40 rows and 2 variables with 2 variables: `damage` and `treatment`.  
+For these exercises, run the code below to recreate the data object `pest`. There are 40 rows and 2 variables with 2 variables: `damage` and `treatment`.
 
 ```{r}
 pest <- structure(list(damage = c(113.7, 94.4, 103.6, 
@@ -650,70 +643,65 @@ pest <- structure(list(damage = c(113.7, 94.4, 103.6,
 
 <br>
 
-Think of this data as the result of an experiment looking at the effectiveness of pesticide treatment on leaf damage.  Let us imagine that this experiment measured leaf damage (variable "damage" measured in  mm squared) and that the plants were treated with one of 4 treatment levels:
+Think of this data as the result of an experiment looking at the effectiveness of pesticide treatment on leaf damage. Let us imagine that this experiment measured leaf damage (variable "damage" measured in mm squared) and that the plants were treated with one of 4 treatment levels:
 
 Variable `treatment` with levels
 
-- `control`
+-   `control`
 
-- `x.half`
+-   `x.half`
 
-- `x.full`
+-   `x.full`
 
-- `organic` 
+-   `organic`
 
-The experiment is of course designed to look at an overall effect the various treatments may have to reduce leaf damage relative to the `control.`  In addition, it is of interest to examine the effect of the `organic` treatment compared to that of the `x.half` to the `x.full.`  
+The experiment is of course designed to look at an overall effect the various treatments may have to reduce leaf damage relative to the `control.` In addition, it is of interest to examine the effect of the `organic` treatment compared to that of the `x.half` to the `x.full.`
 
-The experiment ran using 40 potted plants spaced 1m from each other in a greenhouse setting.  Each treatment was randomly assigned to 10 plants.  Onto each plant was placed 5 red lily beetle (*Lilioceris lilii*) pairs.
+The experiment ran using 40 potted plants spaced 1m from each other in a greenhouse setting. Each treatment was randomly assigned to 10 plants. Onto each plant was placed 5 red lily beetle (*Lilioceris lilii*) pairs.
 
 <br>
 
 <center>
 
 ![Red lily beetle](img/2.6-red-lily-beetle.jpg)
+
 </center>
 
 <br>
 
 ### 8.1
 
-Make a good, appropriate graph representing the overall experiment.  Show your code. Describe any trends in the data that are apparent from the graph, as well as an initial assessment of principle assumptions of 1-way ANOVA based only on your single graph.
-
+Make a good, appropriate graph representing the overall experiment. Show your code. Describe any trends in the data that are apparent from the graph, as well as an initial assessment of principle assumptions of 1-way ANOVA based only on your single graph.
 
 <br>
 
 ### 8.2
 
-Test the assumption of Gaussian residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate.  Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the Gaussian assumption.
-
+Test the assumption of Gaussian residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the Gaussian assumption.
 
 <br>
 
 ### 8.3
 
-Test the assumption of homoscedasticity of residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate.  Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the homoscedasticity assumption.
-
+Test the assumption of homoscedasticity of residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the homoscedasticity assumption.
 
 <br>
 
 ### 8.4
 
-Perform either a 1-way ANOVA or an appropriate alternative based on your findings in the previous answers.  Show your code, state your results in the technical style and briefly interpret your findings.
-
+Perform either a 1-way ANOVA or an appropriate alternative based on your findings in the previous answers. Show your code, state your results in the technical style and briefly interpret your findings.
 
 <br>
 
 ### 8.5
 
-Perform an appropriate set of *post hoc* tests to compare pairwise mean differences in these data.  Focus on the *post hoc* questions of interest: Is the organic pesticide effective?  Does dose matter in the non-organic treatments?
-
+Perform an appropriate set of *post hoc* tests to compare pairwise mean differences in these data. Focus on the *post hoc* questions of interest: Is the organic pesticide effective? Does dose matter in the non-organic treatments?
 
 <br>
 
 ### 8.6
 
 Write a plausible practice question involving any aspect of data handling, graphing or analysis for the 1-way ANOVA framework for the iris data (`data(iris)`; `help(iris)`).
-
 
 <br>
 

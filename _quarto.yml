@@ -46,6 +46,9 @@ website:
           - 14-rmarkdown.qmd
           - 15-github-basics.qmd
           - 16-collaborative-workflows.qmd
+  page-footer: 
+    left: ""
+    right: ""
 
 format:
   html:
