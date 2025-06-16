@@ -1,5 +1,5 @@
 ---
-title: "4 Data objects"
+title: "04 Data objects"
 ---
 
 <center>![Data objects in 'R' space](img/r-space.png)</center>

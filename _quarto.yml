@@ -26,17 +26,17 @@ website:
           - about.qmd
       - section: "Module 1: R Foundations"
         contents:
-          - 1-setup.qmd
-          - 2-r-lang.qmd
-          - 3-functions.qmd
-          - 4-data.qmd
-          - 5-data-frames.qmd
-          - 6-data-manipulation.qmd
+          - 01-setup.qmd
+          - 02-r-lang.qmd
+          - 03-functions.qmd
+          - 04-data.qmd
+          - 05-data-frames.qmd
+          - 06-data-manipulation.qmd
       - section: "Module 2: Statistical Analysis"
         contents:
-          - 7-question-explore.qmd
-          - 8-sampling-dist.qmd
-          - 9-correlation.qmd
+          - 07-question-explore.qmd
+          - 08-sampling-dist.qmd
+          - 09-correlation.qmd
           - 10-regression.qmd
           - 11-t-test.qmd
           - 12-1-way-anova.qmd

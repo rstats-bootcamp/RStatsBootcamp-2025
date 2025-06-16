@@ -1,5 +1,5 @@
 ---
-title: "6 Data subsetting"
+title: "06 Data subsetting"
 ---
 
 <center>![Command data and you are powerful](img/sumo.png)</center>

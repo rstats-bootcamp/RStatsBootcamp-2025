@@ -30,7 +30,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 -   Creating your first R script
 -   Understanding R packages
 
-[Begin Lesson →](1-setup.qmd) \| [Slides](docs/ppt/RSB01.pptx)
+[Begin Lesson →](01-setup.qmd) \| [Slides](docs/ppt/RSB01.pptx)
 
 ### 2. R Language Basics
 
@@ -41,7 +41,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 -   Basic operations and calculations
 -   Control structures (if/else, loops)
 
-[Begin Lesson →](2-r-lang.qmd) \| [Slides](docs/ppt/RSB02.pptx)
+[Begin Lesson →](02-r-lang.qmd) \| [Slides](docs/ppt/RSB02.pptx)
 
 ### 3. Functions and Packages
 
@@ -52,7 +52,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 -   Installing and loading packages
 -   Function documentation and help
 
-[Begin Lesson →](3-functions.qmd)
+[Begin Lesson →](03-functions.qmd)
 
 ### 4. Data Objects
 
@@ -63,7 +63,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 -   Working with dates and times
 -   Type conversion and coercion
 
-[Begin Lesson →](4-data.qmd)
+[Begin Lesson →](04-data.qmd)
 
 ### 5. Data Frames
 
@@ -74,7 +74,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 -   Adding and modifying columns
 -   Merging data frames
 
-[Begin Lesson →](5-data-frames.qmd)
+[Begin Lesson →](05-data-frames.qmd)
 
 ### 6. Data Manipulation
 
@@ -85,7 +85,7 @@ Learn the fundamentals of R programming and the RStudio environment.
 -   Summarizing data
 -   Reshaping data (wide vs. long format)
 
-[Begin Lesson →](6-data-manipulation.qmd)
+[Begin Lesson →](06-data-manipulation.qmd)
 :::
 
 ## Module 2: Statistical Analysis {.module-header}
@@ -102,7 +102,7 @@ Apply R programming to statistical analysis and data visualization.
 -   Data visualization principles
 -   Communicating findings
 
-[Begin Lesson →](7-question-explore.qmd)
+[Begin Lesson →](07-question-explore.qmd)
 
 ### 8. Sampling Distributions
 
@@ -113,7 +113,7 @@ Apply R programming to statistical analysis and data visualization.
 -   The Central Limit Theorem
 -   Confidence intervals
 
-[Begin Lesson →](8-sampling-dist.qmd)
+[Begin Lesson →](08-sampling-dist.qmd)
 
 ### 9. Correlation
 
@@ -124,7 +124,7 @@ Apply R programming to statistical analysis and data visualization.
 -   Testing correlation significance
 -   Correlation vs. causation
 
-[Begin Lesson →](9-correlation.qmd)
+[Begin Lesson →](09-correlation.qmd)
 
 ### 10. Simple Linear Regression
 

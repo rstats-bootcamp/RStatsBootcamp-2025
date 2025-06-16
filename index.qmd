@@ -57,11 +57,11 @@ Create reproducible research that others can understand, verify, and build upon 
 
 :::::: pathway-steps
 ::: pathway-step
-![](img/module1.png){.pathway-icon} \### Module 1: R Foundations Get started with R programming and RStudio. Learn the fundamentals of data structures, functions, and data manipulation. [Begin Module 1 →](1-setup.qmd)
+![](img/module1.png){.pathway-icon} \### Module 1: R Foundations Get started with R programming and RStudio. Learn the fundamentals of data structures, functions, and data manipulation. [Begin Module 1 →](01-setup.qmd)
 :::
 
 ::: pathway-step
-![](img/module2.png){.pathway-icon} \### Module 2: Statistical Analysis Explore your data, understand sampling distributions, and master essential statistical tests for research. [Begin Module 2 →](7-question-explore.qmd)
+![](img/module2.png){.pathway-icon} \### Module 2: Statistical Analysis Explore your data, understand sampling distributions, and master essential statistical tests for research. [Begin Module 2 →](07-question-explore.qmd)
 :::
 
 ::: pathway-step

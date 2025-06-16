@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2 R language – R Stats Bootcamp</title>
+<title>04 Data objects – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -315,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2 R language</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./04-data.html">04 Data objects</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -374,23 +374,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">1-setup.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./01-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1 Setup &amp; intro</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">2-r-lang.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./02-r-lang.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 R language</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">3-functions.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./03-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 R Functions</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">4-data.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./04-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04 Data objects</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">5-data-frames.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./05-data-frames.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 Data frames</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">6-data-manipulation.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./06-data-manipulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6 Data subsetting</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -403,14 +421,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">7-question-explore.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./07-question-explore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7 Explore data</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">8-sampling-dist.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./08-sampling-dist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8 Distributions</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">9-correlation.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./09-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9 Correlation</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-regression.html" class="sidebar-item-text sidebar-link">
@@ -476,32 +503,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r-syntax-basics-r-as-a-passive-aggressive-butler" id="toc-r-syntax-basics-r-as-a-passive-aggressive-butler" class="nav-link active" data-scroll-target="#r-syntax-basics-r-as-a-passive-aggressive-butler">1 <code>R</code> Syntax basics (<code>R</code> as a passive-aggressive butler)</a>
+  <li><a href="#data-objects-in-r" id="toc-data-objects-in-r" class="nav-link active" data-scroll-target="#data-objects-in-r">1 Data objects in R</a>
   <ul class="collapse">
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">1.1 Objectives</a></li>
   </ul></li>
-  <li><a href="#example-script-comments-help-pseudocode" id="toc-example-script-comments-help-pseudocode" class="nav-link" data-scroll-target="#example-script-comments-help-pseudocode">2 Example script, comments, help, pseudocode</a>
+  <li><a href="#basic-data-types-str" id="toc-basic-data-types-str" class="nav-link" data-scroll-target="#basic-data-types-str">2 Basic data types, <code>str()</code></a>
   <ul class="collapse">
-  <li><a href="#example-script" id="toc-example-script" class="nav-link" data-scroll-target="#example-script">2.1 Example script</a></li>
-  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help">2.2 Help</a></li>
-  <li><a href="#deeper-help" id="toc-deeper-help" class="nav-link" data-scroll-target="#deeper-help">2.3 Deeper help</a></li>
-  <li><a href="#pseudocode" id="toc-pseudocode" class="nav-link" data-scroll-target="#pseudocode">2.4 Pseudocode</a></li>
+  <li><a href="#storage-containers-types" id="toc-storage-containers-types" class="nav-link" data-scroll-target="#storage-containers-types">2.1 Storage containers types</a></li>
+  <li><a href="#the-global-environment" id="toc-the-global-environment" class="nav-link" data-scroll-target="#the-global-environment">2.2 The Global Environment</a></li>
+  <li><a href="#naming-conventions-for-variables" id="toc-naming-conventions-for-variables" class="nav-link" data-scroll-target="#naming-conventions-for-variables">2.3 Naming conventions for variables</a></li>
   </ul></li>
-  <li><a href="#math-operators" id="toc-math-operators" class="nav-link" data-scroll-target="#math-operators">3 Math operators</a>
+  <li><a href="#data-with-factor" id="toc-data-with-factor" class="nav-link" data-scroll-target="#data-with-factor">3 Data with <code>factor()</code></a>
   <ul class="collapse">
-  <li><a href="#arithmetic" id="toc-arithmetic" class="nav-link" data-scroll-target="#arithmetic">3.1 Arithmetic</a></li>
-  <li><a href="#use-of-spaces" id="toc-use-of-spaces" class="nav-link" data-scroll-target="#use-of-spaces">3.2 Use of spaces</a></li>
+  <li><a href="#two-types-of-factors-non-ordered-and-ordinal" id="toc-two-types-of-factors-non-ordered-and-ordinal" class="nav-link" data-scroll-target="#two-types-of-factors-non-ordered-and-ordinal">3.1 Two types of factors, non-ordered and ordinal</a></li>
   </ul></li>
-  <li><a href="#logical-boolean-operators" id="toc-logical-boolean-operators" class="nav-link" data-scroll-target="#logical-boolean-operators">4 Logical “Boolean” operators</a>
+  <li><a href="#class-and-converting-variables" id="toc-class-and-converting-variables" class="nav-link" data-scroll-target="#class-and-converting-variables">4 <code>Class()</code> and converting variables</a></li>
+  <li><a href="#vector-and-matrix-fun" id="toc-vector-and-matrix-fun" class="nav-link" data-scroll-target="#vector-and-matrix-fun">5 Vector and Matrix fun</a>
   <ul class="collapse">
-  <li><a href="#boolean-example" id="toc-boolean-example" class="nav-link" data-scroll-target="#boolean-example">4.1 Boolean example</a></li>
-  <li><a href="#selecting-with-booleans" id="toc-selecting-with-booleans" class="nav-link" data-scroll-target="#selecting-with-booleans">4.2 Selecting with Booleans</a></li>
-  <li><a href="#the-not-operator-sorry-sorry" id="toc-the-not-operator-sorry-sorry" class="nav-link" data-scroll-target="#the-not-operator-sorry-sorry">4.3 The “not” operator, <code>!</code> (Sorry !Sorry)**</a></li>
-  </ul></li>
-  <li><a href="#base-r-versus-the-tidyverse" id="toc-base-r-versus-the-tidyverse" class="nav-link" data-scroll-target="#base-r-versus-the-tidyverse">5 “Base <code>R</code>” versus the ‘Tidyverse’</a>
-  <ul class="collapse">
-  <li><a href="#base-r" id="toc-base-r" class="nav-link" data-scroll-target="#base-r">5.1 Base <code>R</code></a></li>
-  <li><a href="#tidyverse-r" id="toc-tidyverse-r" class="nav-link" data-scroll-target="#tidyverse-r">5.2 Tidyverse <code>R</code></a></li>
+  <li><a href="#vector-practice" id="toc-vector-practice" class="nav-link" data-scroll-target="#vector-practice">5.1 Vector practice</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">5.2 Matrices</a></li>
+  <li><a href="#matrix-challenge" id="toc-matrix-challenge" class="nav-link" data-scroll-target="#matrix-challenge">5.3 Matrix challenge</a></li>
   </ul></li>
   <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">6 Practice exercises</a>
   <ul class="collapse">
@@ -519,9 +540,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./04-data.html">04 Data objects</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">2 R language</h1>
+<h1 class="title">04 Data objects</h1>
 </div>
 
 
@@ -541,322 +562,245 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/butler-alfred-sm.png" class="img-fluid figure-img"></p>
-<figcaption>Choose your language carefully</figcaption>
+<p><img src="img/r-space.png" class="img-fluid figure-img"></p>
+<figcaption>Data objects in ‘R’ space</figcaption>
 </figure>
 </div>
 </center>
-<section id="r-syntax-basics-r-as-a-passive-aggressive-butler" class="level2">
-<h2 class="anchored" data-anchor-id="r-syntax-basics-r-as-a-passive-aggressive-butler">1 <code>R</code> Syntax basics (<code>R</code> as a passive-aggressive butler)</h2>
 <p><br></p>
+<section id="data-objects-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="data-objects-in-r">1 Data objects in R</h2>
 <blockquote class="blockquote">
-<p>We love the R language, but sometimes it is a little bit like talking to a passive aggressive butler - if you aren’t careful with your language, the interaction may have unexpected outcomes…</p>
+<p><strong>Imagine you are floating in space in the R Global Environment and any data object you can see, you can call on by name to manipulate with functions. Let’s call it <code>R</code> Space</strong></p>
 </blockquote>
-<p><code>R</code> is a very popular statistical programming language and open source software design to help scientists and other non-programmers perform statistical analyses and to make great graphs. This page is intended to guide people through some of the basics of the <code>R</code> programming language, just enough to get started. We hope that these pages help make learning <code>R</code> simple (though it can <a href="https://bookdown.org/ndphillips/YaRrr/rrelationship.html">difficult at times</a> while you are learning)</p>
+<p>The fundamental way to analyse data in R is to be able to manipulate it with code. In order to do that, we need a system of containers to store the data in. This page is about the rules used for storing data in data objects. We will examine basic data types at the same time as how R stores them. R is actually very flexible in the way it handles data, making it as easy as possible for non-programmers to get going.</p>
 <p><br></p>
 <section id="objectives" class="level3">
 <h3 class="anchored" data-anchor-id="objectives">1.1 Objectives</h3>
-<p>Here is what we will work on:</p>
 <ul>
-<li><p>Example script, comments, help, pseudocode</p></li>
-<li><p>Math operators</p></li>
-<li><p>Logical Boolean operators</p></li>
-<li><p>Regarding “base <code>R</code>” and the Tidyverse</p></li>
+<li><p>Basic data types in <code>R</code>, <code>str()</code></p></li>
+<li><p>Data with factors</p></li>
+<li><p><code>class()</code> and converting variables</p></li>
+<li><p>Vector and Matrix fun</p></li>
 <li><p>Practice exercises</p></li>
 </ul>
 <p><br></p>
 </section>
 </section>
-<section id="example-script-comments-help-pseudocode" class="level2">
-<h2 class="anchored" data-anchor-id="example-script-comments-help-pseudocode">2 Example script, comments, help, pseudocode</h2>
-<p><br></p>
-<p>The most important thing to keep in mind right at the beginning of learning <code>R</code> is to view the script as something you are writing to document a piece of work (e.g.&nbsp;progress in a workshop like this, an analysis, a research project, etc.). Organizing every script you write is extremely important to build “good habits” for reproducibility of your work. A good guideline for best practice in writing scripts is to pretend you are writing the script, comments and contents, for a respected colleague - someone who you respect and want to impress, but might not be able to explain in person about the purpose of the script (even if this is your future self).</p>
-<p>To get the most out of this page, we strongly recommend that you:</p>
-<ul>
-<li><p><strong>Work through the instructions here while using <code>R</code> and RStudio</strong> as you go along.</p></li>
-<li><p><strong>Type you own code rather than using copy and paste</strong></p></li>
-<li><p><strong>Document all the code in your own script and write clear, concise comments</strong></p></li>
-</ul>
-<section id="example-script" class="level3">
-<h3 class="anchored" data-anchor-id="example-script">2.1 Example script</h3>
-<p>Download this <a href="scripts/script-2.R">example script</a>.</p>
-<p>Save it in a logical place on your computer. Open it in RStudio.</p>
-<p><br></p>
-<p>Right at the top you should see the HEADER.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## HEADER ####</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Who: &lt;YOUR NAME&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## What: 2 R language basics</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Last edited: &lt;DATE TODAY in yyyy-mm-dd format)</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">####</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<p>Go ahead and fill in the header with your own information.</p>
-<p>Next you should see the CONTENTS section. The idea here is for you to list the CONTENTS of a script that can act as a roadmap to the user, but that can also help organize a large project into manageable chunks. Each title under the CONTENTS section will become the title in a code chunk below. You should see the contents section in the script you downloaded like this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## CONTENTS ####</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 Example script, help, pseudocode  </span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 Math operators  </span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 Logical Boolean operators  </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 Regarding base R and the Tidyverse   </span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 Practice exercises  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<p>Each item in the CONTENTS section will become the title of individual code chunks. RStudio recognizes code chunks that have a particular syntax:</p>
-<p>Code chunks begin with 2 “##” signs (1 works too, we prefer 2)<br>
-Code chunks end with at least 4 “####” signs</p>
-<p>The first code chunk should already be placed in your script</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 Example script, help, pseudocode  ####</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="basic-data-types-str" class="level2">
+<h2 class="anchored" data-anchor-id="basic-data-types-str">2 Basic data types, <code>str()</code></h2>
+<section id="storage-containers-types" class="level3">
+<h3 class="anchored" data-anchor-id="storage-containers-types">2.1 Storage containers types</h3>
+<p>The first things to examine are the way that <code>R</code> <strong>variables</strong> are named, and the organization system for storing the data. The organization part is particularly important, because it is used to actually access and use data.</p>
+<p>Variable names in <code>R</code> are simple and do not need to be “declared” like in some computing languages, and they can be almost anything, but there are a few rules. The <code>R</code> system has a built-in error message and warning message system (also known as the Passive-Aggressive Butler), which will usually give a hint when some of these rules are violated.</p>
 <p><br></p>
 </section>
-<section id="help" class="level3">
-<h3 class="anchored" data-anchor-id="help">2.2 Help</h3>
-<p>One of the great things about using <code>R</code> is the community and the spirit of helping others. However, there are so many websites, books, blogs and other resources that it can be overwhelming. <strong>Best practice is to learn to use the <code>R</code> Help system first</strong>, then seek help elsewhere.</p>
-<p>The basic way to access the built-in help in <code>R</code>, is to use the <code>help()</code> function, with the name of tool you need help using inside the brackets. For example, to calculate the mean of some numbers, we would use the function <code>mean()</code>, and to display the help for the <code>mean()</code> function we would run. Run the following code in your own script:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display help page for the function mean</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-global-environment" class="level3">
+<h3 class="anchored" data-anchor-id="the-global-environment">2.2 The Global Environment</h3>
+<p>One of the things we notice when people begin using <code>R</code>, even if they are experienced in data analysis, is that they expect to “see” data and data sets, almost as they are physical things. This might be because of experience using Excel and seeing the visual representation of data in spreadsheets (indeed, a graphical representation of physical spreadsheets!).</p>
+<p>The regular <code>R</code> system for interacting with data is a little more abstract which can be disconcerting to new users. Typical use is to create variables in code script files and, usually, the bring data into the Global Environment from external files on the local PC, or from the web. We will practice using the Global Environment is the main way to interact with data.</p>
+<p>You can use the <code>class()</code> function to find out the variable type (using this this is a good idea, since R occasionally guesses the intended data type incorrectly).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>variable_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>) <span class="co"># a numeric vector</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>variable_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>) <span class="co"># a logical vector</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>variable_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Peter Parker"</span>, <span class="st">"Bruce Wayne"</span>, <span class="st">"Groo the Wanderer"</span>) <span class="co"># a character vector</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(variable_1) <span class="co"># "numeric"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(variable_2) <span class="co"># "logical"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(variable_3) <span class="co"># "character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<p>You should see:</p>
+<p>Look at the upper right pane of your RStudio and you should see something like:</p>
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/help-page.png" class="img-fluid figure-img" width="600"></p>
-<figcaption>Mean help page (pun intended)</figcaption>
+<p><img src="img/1.3-global-env.png" class="img-fluid figure-img"></p>
+<figcaption>RStudio Global Environment</figcaption>
 </figure>
 </div>
 </center>
 <p><br></p>
-<p><strong>Does this help look mean enough?</strong></p>
-<p>Let’s orient to the information that is here because the help pages are essential to understand and every help page on every subject is organised in exactly the same way (and we will practice a lot using them).</p>
-<p><br></p>
-<p><strong>1 Function name {Package name}</strong> This field let’s you know what “R package” the function belongs to. We can ignore this for now, but it can be very useful.</p>
-<p><strong>2 Short description</strong> This tells you in a few words what the function does.</p>
-<p><strong>3 (longer) description</strong> This gives a longer description of what the function does</p>
-<p><strong>4 Usage</strong> This usually gives an example of the function in use and lists the “arguments” that you are required to supply to the function for it to work on. Of course, you need to know about the arguments…</p>
-<p><strong>5 Argument definitions</strong> This field tells you what the argument are and do!</p>
+<p>The Environment tab contains the Global Environment (labelled A in the picture above). There are some other tabs, but we will ignore these for now. The Global Environment itself contains information about the variables that are held in memory. If we think of this as “R Space”, a general rule is that if you can see a variable here in the Global Environment, you can manipulate it and work with it.</p>
+<p>Notice that there is quite a lot of information in the Global Environment about the actual variables (B in the picture). There is a column with the variable NAME (variable_1, variable_2, etc.), a column with the variable TYPES (num, logi, etc.), a column with the variable dimensions ([1:14] is an index like a unique “street address” for each of the 14 numeric values contained in “variable_1”)</p>
 <p><br></p>
 </section>
-<section id="deeper-help" class="level3">
-<h3 class="anchored" data-anchor-id="deeper-help">2.3 Deeper help</h3>
-<p>Using the <code>Usage</code> and <code>Argument</code> fields, we can figure out how to make the function do the work we want.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Under Usage:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(x, ...)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The "x" is an argument that is required</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The "..." means there are other optional arguments</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Under Arguments:</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># x </span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># An R object... for numeric/logical vectors ...</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># try this code in your own script</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>my_length <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">101</span>, <span class="dv">122</span>, <span class="dv">97</span>) <span class="co"># 3 numerical measures</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> my_length) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-</section>
-<section id="pseudocode" class="level3">
-<h3 class="anchored" data-anchor-id="pseudocode">2.4 Pseudocode</h3>
-<p>The idea of pseudocode is to break up a big task into a series of smaller tasks. An example of a task might be <strong>ANALYZE YOUR DATA</strong> (in shouty capitals because it is a big task). To accomplish this task, we might have to walk through a series of steps, e.g.,</p>
-<p>Analyze your data:</p>
+<section id="naming-conventions-for-variables" class="level3">
+<h3 class="anchored" data-anchor-id="naming-conventions-for-variables">2.3 Naming conventions for variables</h3>
+<p>Variable names:</p>
 <ul>
-<li><p>Read data into <code>R</code></p></li>
-<li><p>Test assumption for statistical testing</p></li>
-<li><p>Graph the data</p></li>
-<li><p>Perform statistical test</p></li>
-<li><p>Organize outputs to communicate in report</p></li>
+<li><p>Can contain letters, numbers, some symbolic characters</p></li>
+<li><p>Must begin with a letter</p></li>
+<li><p>Must not contain spaces</p></li>
+<li><p>Some forbidden characters like math operators, “@”, and a few others</p></li>
+<li><p>Should be human-readable, consistent, and not too long</p></li>
+<li><p>Case sensitive</p></li>
 </ul>
-<p><br></p>
-<p>It is often a good idea to break down a task into pseudocode both to <strong>organize and document the methods in a logical way</strong>, but also to <strong>conceptually simplify a problem that is difficult to solve</strong>. Practically, the items in a typical table of contents in an <code>R</code> script might be similar to psuedocode. Note that this technique extends very well to any problem, not just R code and programming.</p>
-<p>E.g., what steps would be involved in a problem like: Send a rocket with people in it to Mars such that they survive and return to Earth.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Variable name rules ####</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Can contain letters, numbers, some symbolic characters</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="dv">5</span>  <span class="co"># OK</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="st">"It was a dark and stormy night"</span> <span class="co"># OK</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>my_variable_9283467 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># technically works, but hard to read</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Must begin with a letter </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>varieties <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"red delicious"</span>, <span class="st">"granny smith"</span>) <span class="co"># OK</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>x432 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>) <span class="co"># OK</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span>catch <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)  <span class="co"># nope</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Must not contain spaces</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>my_variable <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># OK</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>my.variable <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># OK</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>myVariable <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># OK</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>my variable <span class="ot">&lt;-</span> <span class="dv">6</span> <span class="co"># nope</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="st">"my variable"</span> <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="co"># nope</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Must not contain forbidden characters like </span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># math operators, "@", and a few others</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>my<span class="sc">@</span>var <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># nope</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>my<span class="sc">-</span>var <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># nope</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>my<span class="ot">=</span>var <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># nope</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co"># etc.</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Should be human-readable, consistent, and not too long</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>Diameter_Breast_Height_cm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">24</span>, <span class="dv">29</span>, <span class="dv">55</span>, <span class="dv">43</span>) <span class="co"># legal but too long</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>DBH_cm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">24</span>, <span class="dv">29</span>, <span class="dv">55</span>, <span class="dv">43</span>) <span class="co"># much better</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">#Case sensitive</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">180</span>, <span class="dv">164</span>, <span class="dv">177</span>) <span class="co"># OK</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Height <span class="co"># Error: object 'Height' not found (notice capital H)</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>height <span class="co"># OK</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
 </section>
-<section id="math-operators" class="level2">
-<h2 class="anchored" data-anchor-id="math-operators">3 Math operators</h2>
-<p>Basic manipulation of numbers in <code>R</code> is very easy to do and is so intuitive that you may be able to guess what they are and what they do. There are just a few specifics that we will practice. This list is not exhaustive; the goal is to get enough to begin practicing.</p>
+<section id="data-with-factor" class="level2">
+<h2 class="anchored" data-anchor-id="data-with-factor">3 Data with <code>factor()</code></h2>
+<p>Sometimes you will need to analyze <strong>data that is a factor, where the different values are categories</strong>. Factors in <code>R</code> can be a cause for confusion, but there needn’t be problems if you understand them. The information here is a starting point, and we skip some complexities, but essentially</p>
+<section id="two-types-of-factors-non-ordered-and-ordinal" class="level3">
+<h3 class="anchored" data-anchor-id="two-types-of-factors-non-ordered-and-ordinal">3.1 Two types of factors, non-ordered and ordinal</h3>
+<p><strong>Non-ordered factors</strong> are simply categories and the levels are simply the names of the categories. By definition, non-ordered factor do not have a specific order! an example here might be plant varieties.</p>
+<p><strong>Ordered factors</strong> have a specific order, which can be important for analysis or for graphing. You usually have to specify the order explicitly to get this right. An example here might be the days of the week, where the order of day is important.</p>
 <p><br></p>
-<section id="arithmetic" class="level3">
-<h3 class="anchored" data-anchor-id="arithmetic">3.1 Arithmetic</h3>
-<p>Try these in your practice script:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There are a few others, but these are the basics</span></span>
+</section>
+</section>
+<section id="class-and-converting-variables" class="level2">
+<h2 class="anchored" data-anchor-id="class-and-converting-variables">4 <code>Class()</code> and converting variables</h2>
+<p>We use the <code>class()</code> function to query what data category a variable is set too. <code>R</code> is pretty good at setting this correctly, but it is a good idea to check sometimes and occasionally you will have to manually set variable characteristics.</p>
+<p><br></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># try this</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># non-ordered factor</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>variety <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"short"</span>, <span class="st">"short"</span>, <span class="st">"short"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>             <span class="st">"early"</span>, <span class="st">"early"</span>, <span class="st">"early"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>             <span class="st">"hybrid"</span>, <span class="st">"hybrid"</span>, <span class="st">"hybrid"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(variety)  <span class="co"># "character", but this is really a factor...</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>variety <span class="co"># Notice the character strings are just printed out</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>variety <span class="ot">&lt;-</span> <span class="fu">factor</span>(variety) <span class="co"># use factor() to convert the character vector to a factor</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(variety)  <span class="co"># now variety is a "factor"</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>variety <span class="co"># notice the output has changed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<p>Now, try some code manipulating ordered factors.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordered factors</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Monday"</span>, <span class="st">"Monday"</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Tuesday"</span>, <span class="st">"Tuesday"</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Wednesday"</span>, <span class="st">"Wednesday"</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Thursday"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(day) <span class="co"># character</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#make day a factor</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="fu">factor</span>(day)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(day)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>day <span class="co"># Notice the Levels: Monday Thursday Tuesday Wednesday</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># To set the order explicitly we need to set them explicitly</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(factor) <span class="co"># notice the levels argument - it sets the order of the level names</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> day, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Monday"</span>, <span class="st">"Tuesday"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"Wednesday"</span>, <span class="st">"Thursday"</span>))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>day <span class="co"># Notice the level order now</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+</section>
+<section id="vector-and-matrix-fun" class="level2">
+<h2 class="anchored" data-anchor-id="vector-and-matrix-fun">5 Vector and Matrix fun</h2>
+<p>Vector and matrix data structures are two fundamental ways to arrange data in <code>R</code>. We have already looked at vectors, which store data in a single dimension.</p>
+<p>There are actually a few different data organisation structures in R.</p>
+<ul>
+<li><p><strong>Vector</strong> - stores data in a single dimension from <code>1</code> to <code>i</code>, <code>my_vec[i]</code></p></li>
+<li><p><strong>Matrix</strong> - stores data in two dimensions <code>1</code> to <code>i</code> rows, <code>1</code> to <code>j</code> columns <code>my_mat[i, j]</code></p></li>
+<li><p><strong>Array</strong> - Three (or more) dimensions from <code>1</code> to to <code>i</code>, <code>j</code>, and <code>k</code>, <code>my_array[i, j, k]</code></p></li>
+</ul>
+<p>Vectors, Matrices and Arrays can only store the same TYPE of data.</p>
+<p><br></p>
+<section id="vector-practice" class="level3">
+<h3 class="anchored" data-anchor-id="vector-practice">5.1 Vector practice</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>myvec1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># numeric vector</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>myvec1</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(myvec1) <span class="co"># see? I told ya!</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>myvec2 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(myvec1) <span class="co">#convert to character</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>myvec2 <span class="co"># notice the quotes</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(myvec2) <span class="co"># now character</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>myvec3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="st">"male"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>myvec3 <span class="co">#notice the numbers now have quotes - forced to character...</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>myvec4 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(myvec3) <span class="co">#notice the warning</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>myvec4 <span class="co"># The vector element that could not be coerced to be a numeric was converted to NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+</section>
+<section id="matrices" class="level3">
+<h3 class="anchored" data-anchor-id="matrices">5.2 Matrices</h3>
+<p>Matrices can be quite useful - you can manipulate data into matrix form with the <code>matrix()</code> function. By default rows and columns are merely numbered, but they can be named as well.</p>
+<p><br></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add with "+"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">16</span> <span class="co"># make a numeric vector with 16 elements</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>vec1 </span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtract with "-"</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">-</span> <span class="dv">15</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiply with "*"</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">*</span> <span class="fl">4.2</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Divide by "/"</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">/</span> <span class="dv">4</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(matrix) <span class="co">#notice the ncol, nrow and byrow arguments</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>mat1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> vec1, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>) <span class="co">#byrow = FALSE is the default</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>mat1 <span class="co"># Notice the numbers filled in by columns</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mat1) <span class="co"># The Columns and Rows have no names</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mat1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>) <span class="co"># Set the column names for mat1</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mat1)</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># raise to the power of x</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span> </span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span><span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="co"># same as sqrt()!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>mat1 <span class="co"># Yep the columns shows names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<p>Your output should look similar to this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There are a few others, but these are the basics</span></span>
+</section>
+<section id="matrix-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-challenge">5.3 Matrix challenge</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 1: Set the Row names for Mat1 using the rownames() function</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add with "+"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtract with "-"</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">-</span> <span class="dv">15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiply with "*"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">*</span> <span class="fl">4.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 25.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Divide by "/"</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">/</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># raise to the power of x</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span><span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="co"># same as sqrt()!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
-</div>
-</div>
-<p><br></p>
-<p><strong>Order of operation</strong></p>
-<p>The “order of operation” refers to the order in which mathematical calculations are carried out. A phrase like 2 + 2 is simple, but we need to consider order for more complicated phrases like 2 + 2 * 8 - 6. In general multiplication and division are carried out before addition and subtraction unless specific order is coded.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Order control - same</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">+</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Order control - different...</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>(<span class="dv">4</span> <span class="sc">+</span> <span class="dv">2</span>) <span class="sc">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-</section>
-<section id="use-of-spaces" class="level3">
-<h3 class="anchored" data-anchor-id="use-of-spaces">3.2 Use of spaces</h3>
-<p>In some cases, the use of spaces does not matter in the <code>R</code> language. Which one of the following ways of writing math operation might be easier to document and read?</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span><span class="sc">+</span><span class="dv">10</span>                                  <span class="co"># no spaces</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>     <span class="sc">-</span><span class="dv">5</span>                              <span class="co"># uneven spaces</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fl">1.6</span>             <span class="sc">/</span>                <span class="fl">2.3</span>  <span class="co"># large spaces</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> <span class="sc">*</span> <span class="dv">3</span>                                <span class="co"># exactly 1 space</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># exactly 1 space is probably easiest to read...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Your output should look like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span><span class="sc">+</span><span class="dv">10</span>                                  <span class="co"># no spaces</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>     <span class="sc">-</span><span class="dv">5</span>                              <span class="co"># uneven spaces</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.6</span>             <span class="sc">/</span>                <span class="fl">2.3</span>  <span class="co"># large spaces</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6956522</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> <span class="sc">*</span> <span class="dv">3</span>                                <span class="co"># exactly 1 space</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 48</code></pre>
-</div>
-</div>
-<p><br></p>
-</section>
-</section>
-<section id="logical-boolean-operators" class="level2">
-<h2 class="anchored" data-anchor-id="logical-boolean-operators">4 Logical “Boolean” operators</h2>
-<p>Boolean operators are expressions that resolve <code>TRUE</code> (treated as <code>1</code> in most computing systems including <code>R</code>) versus <code>FALSE</code> (<code>0</code>). A typical expression might be something like asking if <code>5 &gt; 3</code>, which is <code>TRUE.</code> More sophisticated phrases are possible, and sometimes useful.</p>
-<section id="boolean-example" class="level3">
-<h3 class="anchored" data-anchor-id="boolean-example">4.1 Boolean example</h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># simplest example</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&gt;</span> <span class="dv">5</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 3 is compared to each element</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&lt;</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>) </span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Logic and math</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># &amp; (ampersand) means "and"</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># | (pipe) means "or"</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># This asks if both phrases are true (true AND true)</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co"># notice "TRUE" has a special meaning in R</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span> <span class="co"># both phrases are the same and true, TRUE</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">5</span> <span class="co"># both phrases are true</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Are these phrases true?</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span> <span class="co"># are both true?</span></span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span> <span class="co"># are both true?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<p>Boolean expressions are often used to select groups of data, for example asking whether values in a column of variables are greater than some threshold.</p>
-</section>
-<section id="selecting-with-booleans" class="level3">
-<h3 class="anchored" data-anchor-id="selecting-with-booleans">4.2 Selecting with Booleans</h3>
-<p>We often use Booleans to select particular parts of our data in a powerful way, as an alternative to creating different versions of a particular dataset.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Put some data into a variable and then print the variable</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Note "&lt;-" is the ASSIGNMENT syntax in R, which puts the value on the left "into" x</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">22</span>)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> <span class="dv">20</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># the square brackets act as the index for the data vector</span></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>x[x <span class="sc">&gt;</span> <span class="dv">20</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-</section>
-<section id="the-not-operator-sorry-sorry" class="level3">
-<h3 class="anchored" data-anchor-id="the-not-operator-sorry-sorry">4.3 The “not” operator, <code>!</code> (Sorry !Sorry)**</h3>
-<p>The <code>!</code> operator sets a Boolean value to the opposite. This is sometimes used when an expression can be made simpler by representing it as an opposite. For now we will just demonstrate how it works.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="co"># plain true</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">FALSE</span> <span class="co"># not false is true!</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">&lt;</span> <span class="dv">5</span> <span class="co">#definitely false</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">6</span> <span class="sc">&lt;</span> <span class="dv">5</span>) <span class="co">#not false...</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">44</span>, <span class="dv">16</span>, <span class="dv">51</span>, <span class="dv">12</span>) <span class="sc">&gt;</span> <span class="dv">50</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-</section>
-</section>
-<section id="base-r-versus-the-tidyverse" class="level2">
-<h2 class="anchored" data-anchor-id="base-r-versus-the-tidyverse">5 “Base <code>R</code>” versus the ‘Tidyverse’</h2>
-<section id="base-r" class="level3">
-<h3 class="anchored" data-anchor-id="base-r">5.1 Base <code>R</code></h3>
-<p>The <code>R</code> language as it was invented and continues to be developed is extremely popular, powerful and easy to use, especially for people without formal programming training or experience in different computing languages. In general, we refer to this pure form of R as <strong>Base <code>R</code></strong>.</p>
-<p>Since the late 1990s, the R-user community and Base R resources on have exploded on the web and this form of the language continues to be extremely popular for experts and beginners alike. If interested, you can <a href="https://www.r-project.org/about.html">read more here</a>.</p>
-<p><br></p>
-</section>
-<section id="tidyverse-r" class="level3">
-<h3 class="anchored" data-anchor-id="tidyverse-r">5.2 Tidyverse <code>R</code></h3>
-<p>Relatively recently, a second version of <code>R</code> has evolved that puts forward different conventions in the R lanuage. The differences are practical, but also philosophical. This form of <code>R</code> use is generally referred to as <strong>The Tidyverse</strong>. The Tidyverse is extremely powerful and we love it. However, we feel that it is far more efficient to first learn base <code>R</code> for non-programmers, before learning the Tidyverse, and <strong>we will exclusively use base R for this bootcamp</strong>.</p>
-<p>There is some disagreement over which “version” of R is better or easier to learn and teach with. You will definitely encounter the Tidyverse at some point and eventually you can choose how much or how little you will use it.</p>
-<p><br></p>
-<p><a href="https://github.com/matloff/TidyverseSkeptic">The Argument for Base <code>R</code></a></p>
-<p><a href="http://varianceexplained.org/r/teach-tidyverse/">The Argument for the Tidyverse</a></p>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 2: make a matrix with 3 rows with the following vector, </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># so the the first COLUMN contains the numbers 2, 5, and 9, in the order,</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for rows 1, 2, and 3 respectively:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>vec2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
 </section>
@@ -865,36 +809,54 @@ Code chunks end with at least 4 “####” signs</p>
 <p><br></p>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section">6.1</h3>
-<p>Name and describe the purpose of the first 2 sections that should be present in every <code>R</code> script</p>
+<p>Create a vector named my_var1 that contains the following 6 integers: 3, 6, 12, 7, 5, 1. Create a Second vector called my_var2 that contains the following 2 integers: 2, 3. Evaluate the expression my_var1 + my_var 2. Explain the output in terms of R mechanics in your own words.</p>
 <p><br></p>
 </section>
 <section id="section-1" class="level3">
 <h3 class="anchored" data-anchor-id="section-1">6.2</h3>
-<p>What is the purpose of “subset” argument in the <code>boxplot()</code> function (hint: use <code>help()</code>)</p>
+<p>Create a character vector with the names of the 12 months of the year. Convert the vector to a factor, with the month names in chronological order. Show your code.</p>
 <p><br></p>
 </section>
 <section id="section-2" class="level3">
 <h3 class="anchored" data-anchor-id="section-2">6.3</h3>
-<p>Write an expression using good R spacing syntax that takes the sum of 3, 6, and 12 and divides it by 25</p>
+<p>What is wrong with the following code? Describe, show the code, and justify a fix for the problem in your own words.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mymat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>( <span class="dv">12</span>,   <span class="dv">23</span>,   <span class="dv">45</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"34"</span>, <span class="st">"22"</span>, <span class="st">"31"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
 <section id="section-3" class="level3">
 <h3 class="anchored" data-anchor-id="section-3">6.4</h3>
-<p>Write pseudocode steps for calculating the volume of a cylinder (hint, if you do not know it by heart, you may need to research the equation for the volume of a cylinder!). For a cylinder of height = 3.2 cm and end radius of 5.5 cm, report the volume in cm to 2 decimal points of accuracy. Use at least 3 decimal points of accuracy for <code>pi</code> (hint, the quantity named <code>pi</code> is a standard variable in <code>R</code>!).</p>
+<p>Use the <code>array()</code> function to make a 2 x 2 x 3 array to produce the following output:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>, , <span class="dv">1</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">3</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">4</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>, , <span class="dv">2</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>,]    <span class="dv">5</span>    <span class="dv">7</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>,]    <span class="dv">6</span>    <span class="dv">8</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>, , <span class="dv">3</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>,]    <span class="dv">9</span>   <span class="dv">11</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>,]   <span class="dv">10</span>   <span class="dv">12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
 <section id="section-4" class="level3">
 <h3 class="anchored" data-anchor-id="section-4">6.5</h3>
-<p>Execute the code and explain the outcome in comments.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="dv">3</span> <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">&amp;</span> <span class="dv">6</span> <span class="sc">&gt;</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Show the code to make the following matrix:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>       cat dog</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>male    <span class="dv">22</span>  <span class="dv">88</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>female  <span class="dv">71</span>  <span class="dv">29</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
 <section id="section-5" class="level3">
 <h3 class="anchored" data-anchor-id="section-5">6.6</h3>
-<p>Write a plausible practice question involving the use of the not Boolean operator, <code>!</code>.</p>
-<p><br></p>
-<p>Note: for this R Stats Bootcamp page, and only for this one, a sample of solutions is offered. For others, we avoid explicit solutions to encourage you to formulate your own unique solutions and to interact in Slack for help if you need support coming to your own solutions.</p>
-<p><a href=".\scripts/script-2-solutions.R">SCRIPT 2 Example SOLUTIONS</a></p>
+<p>Write a plausible practice question involving the use of the <code>matrix()</code> and <code>vector()</code> functions.</p>
 <p><br></p>
 
 
