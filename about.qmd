@@ -15,7 +15,7 @@ The R Stats Bootcamp is a comprehensive, self-paced course designed for research
 ::: callout-note
 ## Our Philosophy
 
-We believe that data science should be: - **Accessible** to researchers at all levels - **Practical** with a focus on real-world applications - **Reproducible** to advance scientific integrity - **Collaborative** to encourage knowledge sharing
+We believe that data science should be: - **Accessible** to researchers at all levels - **Practical** with a focus on real-world applications - **Reproducible** to advance scientific integrity - **Collaborative** to encourage knowledge sharing - **Free** to promote open science
 :::
 
 ## Who This Course Is For

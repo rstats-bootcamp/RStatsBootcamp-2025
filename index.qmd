@@ -16,10 +16,8 @@ Master R programming, statistical analysis, and reproducible research in one com
 </p>
 
 ::: hero-buttons
-```         
 <a href="schedule.qmd" class="btn btn-primary">Start Learning</a>
 <a href="about.qmd" class="btn btn-outline">About the Course</a>
-```
 :::
 ::::
 
