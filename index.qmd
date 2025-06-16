@@ -55,23 +55,32 @@ Create reproducible research that others can understand, verify, and build upon 
 
 :::::: pathway-steps
 ::: pathway-step
-![](img/module1.png){.pathway-icon} \### Module 1: R Foundations Get started with R programming and RStudio. Learn the fundamentals of data structures, functions, and data manipulation. [Begin Module 1 →](01-setup.qmd)
+### Module 1
+**R Foundations** 
+
+Get started with R programming and RStudio. Learn the fundamentals of data structures, functions, and data manipulation. [Begin Module 1 →](01-setup.qmd)
 :::
 
 ::: pathway-step
-![](img/module2.png){.pathway-icon} \### Module 2: Statistical Analysis Explore your data, understand sampling distributions, and master essential statistical tests for research. [Begin Module 2 →](07-question-explore.qmd)
+### Module 2
+**Statistical Analysis**
+
+Explore your data, understand sampling distributions, and master essential statistical tests for research. [Begin Module 2 →](07-question-explore.qmd)
 :::
 
 ::: pathway-step
-![](img/module3.png){.pathway-icon} \### Module 3: Reproducible Research Learn tools and practices for reproducible science including R Markdown, version control with Git, and collaborative workflows. [Begin Module 3 →](13-reproducibility.qmd)
+### Module 3
+**Reproducible Research**
+
+Learn tools and practices for reproducible science including R Markdown, version control with Git, and collaborative workflows. [Begin Module 3 →](13-reproducibility.qmd)
 :::
 ::::::
 :::::::
 
 :::: testimonial-section
-## Designed for Research Students
+## Designed for Research Students and other interesting people
 
-> "This bootcamp transformed how I approach data analysis in my research. The step-by-step approach made learning R accessible and enjoyable, even as a complete beginner."
+> "I loved the R Stats Bookcamp even though I was afraid to start. I loved the humorous comments throughout and the step-by-step approach made learning R enjoyable. I even analyzed my own data after taking it!"
 
 ::: testimonial-author
 — Research Student, Harper Adams University
