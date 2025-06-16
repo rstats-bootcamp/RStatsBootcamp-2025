@@ -135,8 +135,8 @@
     "objectID": "16-collaborative-workflows.html#why-collaborative-workflows-matter",
     "href": "16-collaborative-workflows.html#why-collaborative-workflows-matter",
     "title": "16 Collaboration",
-    "section": "Why Collaborative Workflows Matter",
-    "text": "Why Collaborative Workflows Matter\nData science is increasingly a team effort. Effective collaboration requires more than just technical skills—it demands thoughtful project organization, clear communication, and established workflows. When done right, collaboration can:\n\nIncrease productivity through division of labor\nImprove quality through peer review\nEnhance creativity through diverse perspectives\nEnsure continuity when team members change\n\n\n\n\n\n\n\nKey Concept\n\n\n\nA collaborative workflow is a systematic approach to working together on data science projects that maximizes productivity while maintaining reproducibility and quality.",
+    "section": "1 Why Collaborative Workflows Matter",
+    "text": "1 Why Collaborative Workflows Matter\nData science is increasingly a team effort. Effective collaboration requires more than just technical skills—it demands thoughtful project organization, clear communication, and established workflows. When done right, collaboration can:\n\nIncrease productivity through division of labor\nImprove quality through peer review\nEnhance creativity through diverse perspectives\nEnsure continuity when team members change\n\n\n\n\n\n\n\nKey Concept\n\n\n\nA collaborative workflow is a systematic approach to working together on data science projects that maximizes productivity while maintaining reproducibility and quality.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -147,8 +147,8 @@
     "objectID": "16-collaborative-workflows.html#project-organization-for-teams",
     "href": "16-collaborative-workflows.html#project-organization-for-teams",
     "title": "16 Collaboration",
-    "section": "Project Organization for Teams",
-    "text": "Project Organization for Teams\n\nDirectory Structure\nA well-organized project structure helps team members navigate the codebase:\nproject/\n├── README.md           # Overview, setup instructions\n├── CONTRIBUTING.md     # Guidelines for contributors\n├── data/\n│   ├── raw/            # Original, immutable data\n│   └── processed/      # Cleaned, transformed data\n├── code/\n│   ├── data_prep/      # Data preparation scripts\n│   ├── analysis/       # Analysis scripts\n│   └── visualization/  # Visualization scripts\n├── results/\n│   ├── figures/        # Generated plots\n│   └── tables/         # Generated tables\n├── docs/\n│   ├── data_dict.md    # Data dictionary\n│   └── methods.md      # Methodological details\n└── reports/            # Final reports and presentations\n\n\nDocumentation\nComprehensive documentation is crucial for collaboration:\n\nREADME.md: Project overview, setup instructions, and usage examples\nCONTRIBUTING.md: Guidelines for how to contribute to the project\nCode comments: Explain why, not just what, the code does\nFunction documentation: Purpose, parameters, return values, examples\nData dictionary: Describe variables, units, and data sources\nAnalysis log: Document key decisions and their rationale",
+    "section": "2 Project Organization for Teams",
+    "text": "2 Project Organization for Teams\n\n2.1 Directory Structure\nA well-organized project structure helps team members navigate the codebase:\nproject/\n├── README.md           # Overview, setup instructions\n├── CONTRIBUTING.md     # Guidelines for contributors\n├── data/\n│   ├── raw/            # Original, immutable data\n│   └── processed/      # Cleaned, transformed data\n├── code/\n│   ├── data_prep/      # Data preparation scripts\n│   ├── analysis/       # Analysis scripts\n│   └── visualization/  # Visualization scripts\n├── results/\n│   ├── figures/        # Generated plots\n│   └── tables/         # Generated tables\n├── docs/\n│   ├── data_dict.md    # Data dictionary\n│   └── methods.md      # Methodological details\n└── reports/            # Final reports and presentations\n\n\n2.2 Documentation\nComprehensive documentation is crucial for collaboration:\n\nREADME.md: Project overview, setup instructions, and usage examples\nCONTRIBUTING.md: Guidelines for how to contribute to the project\nCode comments: Explain why, not just what, the code does\nFunction documentation: Purpose, parameters, return values, examples\nData dictionary: Describe variables, units, and data sources\nAnalysis log: Document key decisions and their rationale",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -159,8 +159,8 @@
     "objectID": "16-collaborative-workflows.html#code-sharing-best-practices",
     "href": "16-collaborative-workflows.html#code-sharing-best-practices",
     "title": "16 Collaboration",
-    "section": "Code Sharing Best Practices",
-    "text": "Code Sharing Best Practices\n\nStyle Guides\nConsistent coding style makes collaboration easier:\n\nFollow a style guide (e.g., tidyverse style guide for R)\nUse consistent naming conventions\nFormat code for readability\nConsider using linters and formatters\n\n\n\nModular Code\nWrite modular code that others can understand and reuse:\n# Instead of one long script, break into functions\nclean_data &lt;- function(raw_data) {\n  # Data cleaning steps\n  return(cleaned_data)\n}\n\nanalyze_data &lt;- function(clean_data) {\n  # Analysis steps\n  return(results)\n}\n\nvisualize_results &lt;- function(results) {\n  # Visualization steps\n  return(plots)\n}\n\n# Main workflow\nraw_data &lt;- read_csv(\"data/raw/dataset.csv\")\nclean_data &lt;- clean_data(raw_data)\nresults &lt;- analyze_data(clean_data)\nplots &lt;- visualize_results(results)\n\n\nPackage Management\nEnsure consistent package versions across team members:\n# Use renv for project-specific package management\ninstall.packages(\"renv\")\nrenv::init()\nrenv::snapshot()",
+    "section": "3 Code Sharing Best Practices",
+    "text": "3 Code Sharing Best Practices\n\n3.1 Style Guides\nConsistent coding style makes collaboration easier:\n\nFollow a style guide (e.g., tidyverse style guide for R)\nUse consistent naming conventions\nFormat code for readability\nConsider using linters and formatters\n\n\n\n3.2 Modular Code\nWrite modular code that others can understand and reuse:\n# Instead of one long script, break into functions\nclean_data &lt;- function(raw_data) {\n  # Data cleaning steps\n  return(cleaned_data)\n}\n\nanalyze_data &lt;- function(clean_data) {\n  # Analysis steps\n  return(results)\n}\n\nvisualize_results &lt;- function(results) {\n  # Visualization steps\n  return(plots)\n}\n\n# Main workflow\nraw_data &lt;- read_csv(\"data/raw/dataset.csv\")\nclean_data &lt;- clean_data(raw_data)\nresults &lt;- analyze_data(clean_data)\nplots &lt;- visualize_results(results)\n\n\n3.3 Package Management\nEnsure consistent package versions across team members:\n# Use renv for project-specific package management\ninstall.packages(\"renv\")\nrenv::init()\nrenv::snapshot()",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -171,8 +171,8 @@
     "objectID": "16-collaborative-workflows.html#git-workflows-for-teams",
     "href": "16-collaborative-workflows.html#git-workflows-for-teams",
     "title": "16 Collaboration",
-    "section": "Git Workflows for Teams",
-    "text": "Git Workflows for Teams\n\nCentralized Workflow\nThe simplest approach for small teams:\n\nEveryone clones the central repository\nTeam members pull before starting work\nMake changes and commit locally\nPull again to merge any new changes\nPush to the central repository\n\n\n\nFeature Branch Workflow\nBetter for larger teams or complex projects:\n\nCreate a branch for each feature or task\nWork on the branch until the feature is complete\nPull the latest main branch and merge it into your feature branch\nCreate a pull request for code review\nMerge into the main branch after approval\n\n\n\nForking Workflow\nCommon for open-source projects:\n\nFork the main repository to your account\nClone your fork locally\nCreate a branch for your changes\nPush to your fork\nCreate a pull request to the main repository",
+    "section": "4 Git Workflows for Teams",
+    "text": "4 Git Workflows for Teams\n\n4.1 Centralized Workflow\nThe simplest approach for small teams:\n\nEveryone clones the central repository\nTeam members pull before starting work\nMake changes and commit locally\nPull again to merge any new changes\nPush to the central repository\n\n\n\n4.2 Feature Branch Workflow\nBetter for larger teams or complex projects:\n\nCreate a branch for each feature or task\nWork on the branch until the feature is complete\nPull the latest main branch and merge it into your feature branch\nCreate a pull request for code review\nMerge into the main branch after approval\n\n\n\n4.3 Forking Workflow\nCommon for open-source projects:\n\nFork the main repository to your account\nClone your fork locally\nCreate a branch for your changes\nPush to your fork\nCreate a pull request to the main repository",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -183,8 +183,8 @@
     "objectID": "16-collaborative-workflows.html#code-review-process",
     "href": "16-collaborative-workflows.html#code-review-process",
     "title": "16 Collaboration",
-    "section": "Code Review Process",
-    "text": "Code Review Process\nCode reviews improve quality and share knowledge:\n\nGuidelines for Reviewers\n\nBe respectful and constructive\nFocus on the code, not the person\nConsider both functionality and style\nAsk questions rather than making demands\nAcknowledge good practices\n\n\n\nGuidelines for Authors\n\nExplain the purpose of your changes\nKeep pull requests focused and manageable\nRespond to feedback positively\nBe open to suggestions\nThank reviewers for their time",
+    "section": "5 Code Review Process",
+    "text": "5 Code Review Process\nCode reviews improve quality and share knowledge:\n\n5.1 Guidelines for Reviewers\n\nBe respectful and constructive\nFocus on the code, not the person\nConsider both functionality and style\nAsk questions rather than making demands\nAcknowledge good practices\n\n\n\n5.2 Guidelines for Authors\n\nExplain the purpose of your changes\nKeep pull requests focused and manageable\nRespond to feedback positively\nBe open to suggestions\nThank reviewers for their time",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -195,8 +195,8 @@
     "objectID": "16-collaborative-workflows.html#maintaining-reproducibility",
     "href": "16-collaborative-workflows.html#maintaining-reproducibility",
     "title": "16 Collaboration",
-    "section": "Maintaining Reproducibility",
-    "text": "Maintaining Reproducibility\n\nEnvironment Management\nEnsure everyone works in the same environment:\n\nUse renv (R) or conda (Python) for package management\nDocument system requirements\nConsider containerization with Docker\n\n\n\nData Access\nEstablish protocols for data access and sharing:\n\nUse version-controlled metadata\nDocument data sources and access methods\nConsider data access APIs for large datasets\nImplement appropriate security measures\n\n\n\nContinuous Integration\nAutomate testing to catch issues early:\n\nSet up GitHub Actions or other CI tools\nRun tests automatically on pull requests\nCheck code style and documentation",
+    "section": "6 Maintaining Reproducibility",
+    "text": "6 Maintaining Reproducibility\n\n6.1 Environment Management\nEnsure everyone works in the same environment:\n\nUse renv (R) or conda (Python) for package management\nDocument system requirements\nConsider containerization with Docker\n\n\n\n6.2 Data Access\nEstablish protocols for data access and sharing:\n\nUse version-controlled metadata\nDocument data sources and access methods\nConsider data access APIs for large datasets\nImplement appropriate security measures\n\n\n\n6.3 Continuous Integration\nAutomate testing to catch issues early:\n\nSet up GitHub Actions or other CI tools\nRun tests automatically on pull requests\nCheck code style and documentation",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -207,8 +207,8 @@
     "objectID": "16-collaborative-workflows.html#common-collaboration-challenges",
     "href": "16-collaborative-workflows.html#common-collaboration-challenges",
     "title": "16 Collaboration",
-    "section": "Common Collaboration Challenges",
-    "text": "Common Collaboration Challenges\n\nChallenge: Merge Conflicts\nWhen two people edit the same part of a file:\n\nPull the latest changes\nIdentify the conflicting files\nOpen the files and resolve conflicts\nCommit the resolved files\nPush the changes\n\n\n\nChallenge: Large Files\nGit struggles with large files:\n\nUse Git LFS (Large File Storage) for binary files\nStore large datasets externally and document access\nConsider data subsets for testing\n\n\n\nChallenge: Onboarding New Team Members\nHelp new team members get up to speed:\n\nMaintain clear setup instructions\nDocument project structure and conventions\nAssign mentors for new members\nCreate starter tasks for learning the codebase",
+    "section": "7 Common Collaboration Challenges",
+    "text": "7 Common Collaboration Challenges\n\n7.1 Challenge: Merge Conflicts\nWhen two people edit the same part of a file:\n\nPull the latest changes\nIdentify the conflicting files\nOpen the files and resolve conflicts\nCommit the resolved files\nPush the changes\n\n\n\n7.2 Challenge: Large Files\nGit struggles with large files:\n\nUse Git LFS (Large File Storage) for binary files\nStore large datasets externally and document access\nConsider data subsets for testing\n\n\n\n7.3 Challenge: Onboarding New Team Members\nHelp new team members get up to speed:\n\nMaintain clear setup instructions\nDocument project structure and conventions\nAssign mentors for new members\nCreate starter tasks for learning the codebase",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -219,8 +219,8 @@
     "objectID": "16-collaborative-workflows.html#practice-exercises",
     "href": "16-collaborative-workflows.html#practice-exercises",
     "title": "16 Collaboration",
-    "section": "Practice Exercises",
-    "text": "Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a CONTRIBUTING.md file for a data science project, outlining guidelines for code style, pull requests, and code review.\n\nExercise 2\nPractice resolving a merge conflict by having two team members edit the same file and then merge their changes.\n\n\nExercise 3\nSet up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.",
+    "section": "8 Practice Exercises",
+    "text": "8 Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a CONTRIBUTING.md file for a data science project, outlining guidelines for code style, pull requests, and code review.\n\nExercise 2\nPractice resolving a merge conflict by having two team members edit the same file and then merge their changes.\n\n\nExercise 3\nSet up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1548,18 +1548,6 @@
     ]
   },
   {
-    "objectID": "13-reproducibility.html#next-steps",
-    "href": "13-reproducibility.html#next-steps",
-    "title": "13 Reproducibility",
-    "section": "Next Steps",
-    "text": "Next Steps\nIn the next lesson, we’ll explore R Markdown as a powerful tool for creating reproducible documents that combine code, results, and narrative.",
-    "crumbs": [
-      "Home",
-      "Module 3: Reproducible Research",
-      "13 Reproducibility"
-    ]
-  },
-  {
     "objectID": "13-reproducibility.html#additional-resources",
     "href": "13-reproducibility.html#additional-resources",
     "title": "13 Reproducibility",
@@ -1587,8 +1575,8 @@
     "objectID": "15-github-basics.html#what-is-version-control",
     "href": "15-github-basics.html#what-is-version-control",
     "title": "15 Git and GitHub",
-    "section": "What is Version Control?",
-    "text": "What is Version Control?\nVersion control is a system that records changes to files over time so that you can recall specific versions later. For data science projects, version control helps you:\n\nTrack changes to your code and documents\nCollaborate with others without overwriting each other’s work\nRevert to previous versions if something goes wrong\nDocument the evolution of your analysis\n\n\n\n\n\n\n\nKey Concept\n\n\n\nGit is a distributed version control system that tracks changes in any set of files. GitHub is a web-based platform that hosts Git repositories and adds collaboration features.",
+    "section": "1 What is Version Control?",
+    "text": "1 What is Version Control?\nVersion control is a system that records changes to files over time so that you can recall specific versions later. For data science projects, version control helps you:\n\nTrack changes to your code and documents\nCollaborate with others without overwriting each other’s work\nRevert to previous versions if something goes wrong\nDocument the evolution of your analysis\n\n\n\n\n\n\n\nKey Concept\n\n\n\nGit is a distributed version control system that tracks changes in any set of files. GitHub is a web-based platform that hosts Git repositories and adds collaboration features.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1599,8 +1587,8 @@
     "objectID": "15-github-basics.html#why-use-git-and-github",
     "href": "15-github-basics.html#why-use-git-and-github",
     "title": "15 Git and GitHub",
-    "section": "Why Use Git and GitHub?",
-    "text": "Why Use Git and GitHub?\nFor data scientists and researchers, Git and GitHub provide several benefits:\n\nHistory tracking: Document how your analysis evolved\nCollaboration: Work with others seamlessly\nBackup: Store your code securely in the cloud\nReproducibility: Others can access and run your exact code\nOpen science: Share your work with the broader community",
+    "section": "2 Why Use Git and GitHub?",
+    "text": "2 Why Use Git and GitHub?\nFor data scientists and researchers, Git and GitHub provide several benefits:\n\nHistory tracking: Document how your analysis evolved\nCollaboration: Work with others seamlessly\nBackup: Store your code securely in the cloud\nReproducibility: Others can access and run your exact code\nOpen science: Share your work with the broader community",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1611,8 +1599,8 @@
     "objectID": "15-github-basics.html#setting-up-git",
     "href": "15-github-basics.html#setting-up-git",
     "title": "15 Git and GitHub",
-    "section": "Setting Up Git",
-    "text": "Setting Up Git\n\nInstalling Git\nFirst, you need to install Git on your computer:\n\nWindows: Download and install from git-scm.com\nMac: Install via Homebrew with brew install git or download from git-scm.com\nLinux: Use your package manager, e.g., sudo apt-get install git\n\n\n\nConfiguring Git\nAfter installation, configure Git with your name and email:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"",
+    "section": "3 Setting Up Git",
+    "text": "3 Setting Up Git\n\n3.1 Installing Git\nFirst, you need to install Git on your computer:\n\nWindows: Download and install from git-scm.com\nMac: Install via Homebrew with brew install git or download from git-scm.com\nLinux: Use your package manager, e.g., sudo apt-get install git\n\n\n\n3.2 Configuring Git\nAfter installation, configure Git with your name and email:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1623,8 +1611,8 @@
     "objectID": "15-github-basics.html#creating-a-github-account",
     "href": "15-github-basics.html#creating-a-github-account",
     "title": "15 Git and GitHub",
-    "section": "Creating a GitHub Account",
-    "text": "Creating a GitHub Account\n\nGo to github.com\nClick “Sign up” and follow the instructions\nChoose a free plan to start",
+    "section": "4 Creating a GitHub Account",
+    "text": "4 Creating a GitHub Account\n\nGo to github.com\nClick “Sign up” and follow the instructions\nChoose a free plan to start",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1635,8 +1623,8 @@
     "objectID": "15-github-basics.html#git-basics",
     "href": "15-github-basics.html#git-basics",
     "title": "15 Git and GitHub",
-    "section": "Git Basics",
-    "text": "Git Basics\n\nKey Concepts\n\nRepository (repo): A directory where Git tracks changes\nCommit: A snapshot of changes at a point in time\nBranch: A parallel version of the repository\nRemote: A version of the repository hosted elsewhere (e.g., on GitHub)\nClone: Creating a local copy of a remote repository\nPush: Sending commits to a remote repository\nPull: Getting changes from a remote repository\n\n\n\nCreating a Repository\n\nOn GitHub:\n\nLog in to GitHub\nClick the “+” icon in the top-right corner\nSelect “New repository”\nEnter a repository name and description\nChoose public or private\nClick “Create repository”\n\n\n\nOn Your Computer:\n# Create a new directory\nmkdir my-project\ncd my-project\n\n# Initialize Git repository\ngit init\n\n# Connect to GitHub repository\ngit remote add origin https://github.com/yourusername/my-project.git\n\n\n\nBasic Git Workflow\nThe typical Git workflow involves these steps:\n\nMake changes to your files\nStage the changes for commit\nCommit the changes with a message\nPush the changes to GitHub\n\n# Check status of your repository\ngit status\n\n# Stage changes\ngit add filename.R\n\n# Stage all changes\ngit add .\n\n# Commit changes\ngit commit -m \"Add data cleaning script\"\n\n# Push to GitHub\ngit push origin main\n\n\nCloning an Existing Repository\nTo work with an existing repository:\n# Clone a repository\ngit clone https://github.com/username/repository.git\n\n# Navigate into the repository\ncd repository\n\n\nPulling Changes\nWhen working with others, you’ll need to get their changes:\n# Get latest changes\ngit pull origin main",
+    "section": "5 Git Basics",
+    "text": "5 Git Basics\n\n5.1 Key Concepts\n\nRepository (repo): A directory where Git tracks changes\nCommit: A snapshot of changes at a point in time\nBranch: A parallel version of the repository\nRemote: A version of the repository hosted elsewhere (e.g., on GitHub)\nClone: Creating a local copy of a remote repository\nPush: Sending commits to a remote repository\nPull: Getting changes from a remote repository\n\n\n\n5.2 Creating a Repository\n\n5.2.1 On GitHub:\n\nLog in to GitHub\nClick the “+” icon in the top-right corner\nSelect “New repository”\nEnter a repository name and description\nChoose public or private\nClick “Create repository”\n\n\n\n5.2.2 On Your Computer:\n# Create a new directory\nmkdir my-project\ncd my-project\n\n# Initialize Git repository\ngit init\n\n# Connect to GitHub repository\ngit remote add origin https://github.com/yourusername/my-project.git\n\n\n\n5.3 Basic Git Workflow\nThe typical Git workflow involves these steps:\n\nMake changes to your files\nStage the changes for commit\nCommit the changes with a message\nPush the changes to GitHub\n\n# Check status of your repository\ngit status\n\n# Stage changes\ngit add filename.R\n\n# Stage all changes\ngit add .\n\n# Commit changes\ngit commit -m \"Add data cleaning script\"\n\n# Push to GitHub\ngit push origin main\n\n\n5.4 Cloning an Existing Repository\nTo work with an existing repository:\n# Clone a repository\ngit clone https://github.com/username/repository.git\n\n# Navigate into the repository\ncd repository\n\n\n5.5 Pulling Changes\nWhen working with others, you’ll need to get their changes:\n# Get latest changes\ngit pull origin main",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1647,8 +1635,8 @@
     "objectID": "15-github-basics.html#branching-and-merging",
     "href": "15-github-basics.html#branching-and-merging",
     "title": "15 Git and GitHub",
-    "section": "Branching and Merging",
-    "text": "Branching and Merging\nBranches allow you to work on different features or experiments without affecting the main codebase.\n\nCreating and Using Branches\n# Create a new branch\ngit branch feature-analysis\n\n# Switch to the branch\ngit checkout feature-analysis\n\n# Create and switch in one command\ngit checkout -b new-feature\n\n# List all branches\ngit branch\n\n\nMerging Branches\nOnce you’re satisfied with your changes:\n# Switch back to main branch\ngit checkout main\n\n# Merge your feature branch\ngit merge feature-analysis\n\n# Push the merged changes\ngit push origin main",
+    "section": "6 Branching and Merging",
+    "text": "6 Branching and Merging\nBranches allow you to work on different features or experiments without affecting the main codebase.\n\n6.1 Creating and Using Branches\n# Create a new branch\ngit branch feature-analysis\n\n# Switch to the branch\ngit checkout feature-analysis\n\n# Create and switch in one command\ngit checkout -b new-feature\n\n# List all branches\ngit branch\n\n\n6.2 Merging Branches\nOnce you’re satisfied with your changes:\n# Switch back to main branch\ngit checkout main\n\n# Merge your feature branch\ngit merge feature-analysis\n\n# Push the merged changes\ngit push origin main",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1659,8 +1647,8 @@
     "objectID": "15-github-basics.html#using-github-for-collaboration",
     "href": "15-github-basics.html#using-github-for-collaboration",
     "title": "15 Git and GitHub",
-    "section": "Using GitHub for Collaboration",
-    "text": "Using GitHub for Collaboration\nGitHub enhances Git with collaboration features:\n\nPull Requests\nPull requests (PRs) let you propose changes to a repository:\n\nFork a repository to your GitHub account\nClone your fork locally\nCreate a branch and make changes\nPush your branch to your fork\nCreate a pull request to the original repository\n\n\n\nIssues\nGitHub Issues help track tasks, enhancements, and bugs:\n\nCreate detailed issue descriptions\nAssign issues to team members\nLabel issues by type\nReference issues in commits and pull requests",
+    "section": "7 Using GitHub for Collaboration",
+    "text": "7 Using GitHub for Collaboration\nGitHub enhances Git with collaboration features:\n\n7.1 Pull Requests\nPull requests (PRs) let you propose changes to a repository:\n\nFork a repository to your GitHub account\nClone your fork locally\nCreate a branch and make changes\nPush your branch to your fork\nCreate a pull request to the original repository\n\n\n\n7.2 Issues\nGitHub Issues help track tasks, enhancements, and bugs:\n\nCreate detailed issue descriptions\nAssign issues to team members\nLabel issues by type\nReference issues in commits and pull requests",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1671,8 +1659,8 @@
     "objectID": "15-github-basics.html#git-and-rstudio-integration",
     "href": "15-github-basics.html#git-and-rstudio-integration",
     "title": "15 Git and GitHub",
-    "section": "Git and RStudio Integration",
-    "text": "Git and RStudio Integration\nRStudio provides a user-friendly interface for Git operations:\n\nCreate a new project with version control\nUse the Git pane to stage, commit, and push changes\nView file differences and history",
+    "section": "8 Git and RStudio Integration",
+    "text": "8 Git and RStudio Integration\nRStudio provides a user-friendly interface for Git operations:\n\nCreate a new project with version control\nUse the Git pane to stage, commit, and push changes\nView file differences and history",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1683,8 +1671,8 @@
     "objectID": "15-github-basics.html#best-practices-for-data-science-projects",
     "href": "15-github-basics.html#best-practices-for-data-science-projects",
     "title": "15 Git and GitHub",
-    "section": "Best Practices for Data Science Projects",
-    "text": "Best Practices for Data Science Projects\n\nCommit often: Make small, focused commits\nWrite clear commit messages: Explain what and why, not how\nUse .gitignore: Exclude large data files, outputs, and sensitive information\nStructure your repository: Follow a consistent organization pattern\nDocument your workflow: Include a README with setup instructions",
+    "section": "9 Best Practices for Data Science Projects",
+    "text": "9 Best Practices for Data Science Projects\n\nCommit often: Make small, focused commits\nWrite clear commit messages: Explain what and why, not how\nUse .gitignore: Exclude large data files, outputs, and sensitive information\nStructure your repository: Follow a consistent organization pattern\nDocument your workflow: Include a README with setup instructions",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1695,8 +1683,8 @@
     "objectID": "15-github-basics.html#practice-exercises",
     "href": "15-github-basics.html#practice-exercises",
     "title": "15 Git and GitHub",
-    "section": "Practice Exercises",
-    "text": "Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a GitHub account (if you don’t have one) and set up Git on your computer.\n\nExercise 2\nCreate a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.\n\n\nExercise 3\nFork an existing R project on GitHub, make a small improvement, and create a pull request.",
+    "section": "10 Practice Exercises",
+    "text": "10 Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a GitHub account (if you don’t have one) and set up Git on your computer.\n\nExercise 2\nCreate a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.\n\n\nExercise 3\nFork an existing R project on GitHub, make a small improvement, and create a pull request.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
