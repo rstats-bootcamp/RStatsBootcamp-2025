@@ -60,18 +60,6 @@
     ]
   },
   {
-    "objectID": "schedule.html#harper-adams-data-science",
-    "href": "schedule.html#harper-adams-data-science",
-    "title": "Course Schedule",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Getting Started",
-      "Course Schedule"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "R Stats Bootcamp",
@@ -228,18 +216,6 @@
     ]
   },
   {
-    "objectID": "9-correlation.html#harper-adams-data-science",
-    "href": "9-correlation.html#harper-adams-data-science",
-    "title": "9 Correlation",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Module 2: Statistical Analysis",
-      "9 Correlation"
-    ]
-  },
-  {
     "objectID": "7-question-explore.html",
     "href": "7-question-explore.html",
     "title": "7 Explore data",
@@ -329,18 +305,6 @@
     "title": "7 Explore data",
     "section": "7 Practice exercises",
     "text": "7 Practice exercises\nFor the following questions, use the field-trial.xlsx dataset.\nThis is real data in Tidy Data format, but our information for these exercises is limited precisely to the contents of the file, including the data dictionary. In this experiment, seeds were raised under field trial conditions for two weeks to look at the effect of different treatment conditions on mass of gain during germination. There are several measured variables, with the calculated pct variable probably intended to be the dependent variable, with the factor treatment being the main explanatory variable for variation in pct.\n\n\n7.1\nShow code to set up an R analysis file with a header, table of contents, and a setup section that sets your working directory, loads any required libraries and reads in the data. Call the data.frame object you create seed.\n\n\n\n7.2\n\npct, wet and dry should be numeric\nblock and trial should be factors\ntreatment should be a factor with the level “Control” set as the reference.\n\nShow the code to do this.\n\n\n\n7.3\nUse aggregate() to calculate the mean, standard deviation, standard error, and the count (e.g. length()) of pct for each level of treatment. Show the code.\n\n\n\n7.4\nMake a fully labelled boxplot of the pct variable as a function of treatment. Add a horizontal line (red and dashed) for the overall mean of pct, and two horizontal lines (gray, dotted) for the overall mean of pct +/- 1 standard deviation.\n\n\n\n7.5\n(hard: may require tinkering and problem solving)\nExperiment making a boxplot showing pct ~ treatment separated for each trial\n\n\n\n7.6\nWrite a plausible practice question involving aggregate() and boxplot() in-built R dataset iris.",
-    "crumbs": [
-      "Home",
-      "Module 2: Statistical Analysis",
-      "7 Explore data"
-    ]
-  },
-  {
-    "objectID": "7-question-explore.html#harper-adams-data-science",
-    "href": "7-question-explore.html#harper-adams-data-science",
-    "title": "7 Explore data",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -444,18 +408,6 @@
     ]
   },
   {
-    "objectID": "5-data-frames.html#harper-adams-data-science",
-    "href": "5-data-frames.html#harper-adams-data-science",
-    "title": "5 Data frames",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "5 Data frames"
-    ]
-  },
-  {
     "objectID": "3-functions.html",
     "href": "3-functions.html",
     "title": "3 R Functions",
@@ -521,18 +473,6 @@
     "title": "3 R Functions",
     "section": "5 Practice exercises",
     "text": "5 Practice exercises\n\n\n5.1\nExplain in your own words what the freq argument in the hist() function does. It often helps to practice trail and error to understand what is happening with data. Try experimenting with the data vector below with the hist() function to explore the freq argument:\nc(1,2,4,3,5,6,7,8,6,5,5,5,3,4,5,7)\n\n\n\n5.2\nTailor your code from the hist() example in problem 1 so that your histogram has a main title, axis labels, and set the col argument to “blue”. We are just scratching the surface with plot customization - try to incorporate other arguments to make an attractive graph.\n\n\n\n5.3\nUse the mean() function on the following data vector\nc(1,2,4,3,5,6,7,8,6,5,NA,5,3,4,5,7)\nYou will see an error message. The symbol “NA” has a special meaning in R, indicating a missing value. Use help() for the mean function and implement the na.rm argument to fix the problem. Show your code.\n\n\n\n5.4\nIn your own words, what value is required for the “d” argument in the pwr.t.test() function in the {pwr} package? Show the code involved including any appropriate comment code required to answer this question. (hint: you will probably need to install the package, load it, and use help() on the function name)\n\n\n\n5.5\nEvery official R package has a webpage on the Comprehensive R Archive Network (CRAN) and there are often tutorials called “vignettes”. Google the CRAN page for the package {ggplot2} and find the vignette called “Aesthetic specifications”. Read the section right near the top called “Colour and fill”.\nFollow the instructions to list all of the built-in colours in R and list them in the console. Ed’s personal favourite is “goldenrod”, index number [147]. Can you find the index number for “tomato2”?\n\n\n\n5.6\nWrite a plausible practice question involving the use of help() for an R function.",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "3 R Functions"
-    ]
-  },
-  {
-    "objectID": "3-functions.html#harper-adams-data-science",
-    "href": "3-functions.html#harper-adams-data-science",
-    "title": "3 R Functions",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
@@ -912,18 +852,6 @@
     ]
   },
   {
-    "objectID": "12-1-way-anova.html#harper-adams-data-science",
-    "href": "12-1-way-anova.html#harper-adams-data-science",
-    "title": "12 ANOVA",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Module 2: Statistical Analysis",
-      "12 ANOVA"
-    ]
-  },
-  {
     "objectID": "10-regression.html",
     "href": "10-regression.html",
     "title": "10 Regression",
@@ -1025,18 +953,6 @@
     "title": "10 Regression",
     "section": "7 Practice exercises",
     "text": "7 Practice exercises\nFor the following exercises, we continue to use the fish dataset\n\n\n7.1\nTest whether the assumption of Gaussian residuals holds for the R formula Weight ~ Length1 for perch in the fish dataset. Describe the evidence for why or why not; show your code.\n\n\n\n7.2\nPerform the regression for Weight ~ Height for the species Bream. Assess whether the residuals fit the Gaussian assumption. Present any graphical tests or other results and your conclusion in the scientific style.\n\n\n\n7.3\nFor the analysis in #2 above present the results of your linear regression (if the residuals fit the Gaussian assumption) or a Spearman rank correlation (if they did not).\n\n\n\n7.4\nPlot perch$Weight ~ perch$Length2. The relationship is obviously not linear but curved. Devise and execute a solution to enable the use of linear regression, possibly by transforming the data. Show any relevant code and briefly explain your results and conclusions.\n\n\n\n7.5\nExplore the data for perch and describe the covariance of all of the morphological, numeric variables using all relevant means, while being as concise as possible. Show your code.\n\n\n\n7.6\nWrite a plausible practice question involving the the exploration or analysis of regression. Make use of the fish data from any species except for Perch.",
-    "crumbs": [
-      "Home",
-      "Module 2: Statistical Analysis",
-      "10 Regression"
-    ]
-  },
-  {
-    "objectID": "10-regression.html#harper-adams-data-science",
-    "href": "10-regression.html#harper-adams-data-science",
-    "title": "10 Regression",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1205,18 +1121,6 @@
     "title": "11 T-test",
     "section": "6 Practice exercises",
     "text": "6 Practice exercises\nFor the following exercises, use the dataset in the file 11-Davis.xlsx. The dataset is in tidy format; take advantage of this by looking at the terse information present in the data dictionary tab. The data are a result of a survey of some university students, who were asked to report their height and weight, and then their height and weight were measured. There will be some data handling as part of the exercises below, and practical and important part of every real data analysis.\n\n\n6.1\nPick the appropriate form of t-test to ask whether male reported and actual height are the same. Perform the test, make a great graph to illustrate, and report your results in the technical style. Show all required code.\n\n\n\n6.2\nDevise a similar test to the one in the previous question using the weight variables in females. Formally state your hypothesis, perform the test, make a great graph to illustrate, and report your results in the technical style. Show all required code.\n\n\n\n6.3\nCalculate the difference between reported height and reported weight for all study subjects and place the result in a new numeric vector. Use a t-test to discover whether the degree of discrepancy between reported height differs between males and females. Report your results in the technical style. Show all required code.\n\n\n\n6.4\nDevise a way to examine the question whether taller people tend to self report height similarly to whorter people. Discuss your approach and present any evidence, graphical or otherwise, to resolve your question.\n\n\n\n6.5\nThe subjects in this dataset were students at the University of California Davis in the Psychology Department. The average height of adult men in California has been estimated as 176.5 cm. Test whether males in our dataset is different. State your conclusion and results and briefly discuss an explanation for the pattern (i.e., the difference or lack of difference) that you observe. Comment on sampling assumptions when you do so.\n\n\n\n6.6\nWrite a plausible practice question involving any aspect of data handling, graphing or analysis for the t-test framework to ask a novel question for the Davis student height data.",
-    "crumbs": [
-      "Home",
-      "Module 2: Statistical Analysis",
-      "11 T-test"
-    ]
-  },
-  {
-    "objectID": "11-t-test.html#harper-adams-data-science",
-    "href": "11-t-test.html#harper-adams-data-science",
-    "title": "11 T-test",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1560,18 +1464,6 @@
     ]
   },
   {
-    "objectID": "2-r-lang.html#harper-adams-data-science",
-    "href": "2-r-lang.html#harper-adams-data-science",
-    "title": "2 R language",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "2 R language"
-    ]
-  },
-  {
     "objectID": "4-data.html",
     "href": "4-data.html",
     "title": "4 Data objects",
@@ -1656,18 +1548,6 @@
     ]
   },
   {
-    "objectID": "4-data.html#harper-adams-data-science",
-    "href": "4-data.html#harper-adams-data-science",
-    "title": "4 Data objects",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "4 Data objects"
-    ]
-  },
-  {
     "objectID": "6-data-manipulation.html",
     "href": "6-data-manipulation.html",
     "title": "6 Data subsetting",
@@ -1745,18 +1625,6 @@
     "title": "6 Data subsetting",
     "section": "6 Practice exercises",
     "text": "6 Practice exercises\nFor the following exercises, use the trees dataset built into R, which has Girth, Height and Volume variables for 31 Black Cherry trees.\n# Examine the data\nhelp(trees)\ndata(trees)\nstr(trees)\n\n\n6.1\nShow code to calculate the mean Girth of Black Cherry trees with Height less than 75 ft.\n\n\n\n6.2\nUse help(cut) and then use the cut() function to create a new factor variable based on the Height numeric variable in the trees dataset. Try setting the breaks argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.\n\n\n\n6.3\nUsing the new factor from question 2, use aggregate() to calculate the mean and standard deviation of all three variables in the trees data. Show your code and report the results to 2 decimal points of accuracy.\n\n\n\n6.4\nShow the code using which() and boolean phrases as appropriate to find the rows in the trees dataset where Girth is higher than 11 and Height is lower than 75.\n\n\n\n6.5\nRun the following code:\ndata_1 &lt;- data.frame(volume = c(4,5,6,5,6,7,6,5,6,8,7,3,8,7,NA,10),\n           population = c(\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\n           \"B\",\"B\",\"B\",\"B\",\"B\",\"B\",\"B\",\"B\"))\nUse aggregate() to calculate the mean of volume for each population (hint: you may need to use help for the functions involved and pay close attention to your data frame…).\n\n\n\n6.6\nWrite a plausible practice question involving any aspect of using which(), boolean phrases and/or aggregate() involving the in-built R dataset iris.",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "6 Data subsetting"
-    ]
-  },
-  {
-    "objectID": "6-data-manipulation.html#harper-adams-data-science",
-    "href": "6-data-manipulation.html#harper-adams-data-science",
-    "title": "6 Data subsetting",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
@@ -1860,18 +1728,6 @@
     ]
   },
   {
-    "objectID": "8-sampling-dist.html#harper-adams-data-science",
-    "href": "8-sampling-dist.html#harper-adams-data-science",
-    "title": "8 Distributions",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Module 2: Statistical Analysis",
-      "8 Distributions"
-    ]
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About the Bootcamp",
@@ -1949,18 +1805,6 @@
     "title": "About the Bootcamp",
     "section": "Get Support",
     "text": "Get Support\nWe offer several ways to get help during your learning journey:\n\nJoin our Slack community for peer support\nCheck the FAQ section for common questions\nExplore additional resources linked throughout the course",
-    "crumbs": [
-      "Home",
-      "Getting Started",
-      "About the Bootcamp"
-    ]
-  },
-  {
-    "objectID": "about.html#harper-adams-data-science",
-    "href": "about.html#harper-adams-data-science",
-    "title": "About the Bootcamp",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Getting Started",
