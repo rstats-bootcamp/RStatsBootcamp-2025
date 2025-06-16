@@ -1,51 +1,97 @@
 ---
-title: "About"
+title: "R Stats Bootcamp"
+format:
+  html:
+    css: styles.css
 ---
 
-<center>
+:::::: hero-banner
+:::: hero-content
+<h1>Turn Data into Knowledge</h1>
 
-!["Data science"](img/ds_venn_sm.png)
+<p class="hero-text">
 
-</center>
+Master R programming, statistical analysis, and reproducible research in one comprehensive bootcamp
 
-## R Stats Bootcamp
+</p>
 
-This is a self-guided tutorial designed for people new to data science, statistics and R, and for those who would like a review. The materials can help you get going with critical skills in **R programming**, traditional **data analysis** and **open science** tools. The aim is to provide open, foundational training you can build on in the most efficient format possible. This will help prepare you for further training and to get you working with data in R as quickly as possible.
+::: hero-buttons
+```         
+<a href="schedule.qmd" class="btn btn-primary">Start Learning</a>
+<a href="about.qmd" class="btn btn-outline">About the Course</a>
+```
+:::
+::::
 
-The Bootcamp is self-paced and has built-in assessment materials. The material is meant to work through in order as an experience, but is not in any way intended to be a reference to the presented topics.
+::: hero-image
+<img src="img/toolbox2.png" alt="Data Science Toolkit" class="hero-img"/>
+:::
+::::::
 
-## Bootcamp modules
+::::::: features-section
+## Why Learn with R Stats Bootcamp?
 
-**Module 1** Introduction to R scripting and the RStudio interface for beginners
+:::::: feature-grid
+::: feature-card
+### Learn by Doing
 
-**Module 2** Introduction to using R for simple data analysis
+Master R programming through hands-on exercises and real-world data analysis projects. Build skills by writing actual code from day one.
+:::
 
-**Module 3** Introduction to reproducible code, R Markdown, and Github.
+::: feature-card
+### Discover Insights
 
-These pages will help orient you if you are a beginner, and we will also cover our design approach for the materials and the tools you will need to get started right away. If you are already an RStudio user and comfortable managing and storing script files and scripts in R, you may want to jump straight to the exercises on each page.
+Transform raw data into meaningful insights. Learn how to ask the right questions and find answers through statistical analysis.
+:::
 
-<br>
+::: feature-card
+### Share Your Findings
 
-We make a few suggestions about this material:
+Create reproducible research that others can understand, verify, and build upon using modern tools like R Markdown and GitHub.
+:::
+::::::
+:::::::
 
--   Follow along consecutively with the workshop pages
+::::::: pathway-section
+## Your Learning Pathway
 
--   Actually type and run all of the example code yourself
+:::::: pathway-steps
+::: pathway-step
+![](img/module1.png){.pathway-icon} \### Module 1: R Foundations Get started with R programming and RStudio. Learn the fundamentals of data structures, functions, and data manipulation. [Begin Module 1 →](1-setup.qmd)
+:::
 
--   Complete each page before moving on to the next
+::: pathway-step
+![](img/module2.png){.pathway-icon} \### Module 2: Statistical Analysis Explore your data, understand sampling distributions, and master essential statistical tests for research. [Begin Module 2 →](7-question-explore.qmd)
+:::
 
--   Formally attempt all problems at the end of each page
+::: pathway-step
+![](img/module3.png){.pathway-icon} \### Module 3: Reproducible Research Learn tools and practices for reproducible science including R Markdown, version control with Git, and collaborative workflows. [Begin Module 3 →](13-reproducibility.qmd)
+:::
+::::::
+:::::::
 
--   Join us in Slack if you need assistance
+:::: testimonial-section
+## Designed for Research Students
 
-<br>
+> "This bootcamp transformed how I approach data analysis in my research. The step-by-step approach made learning R accessible and enjoyable, even as a complete beginner."
 
-That's it!
+::: testimonial-author
+— Research Student, Harper Adams University
+:::
+::::
 
-<br>
+::: cta-section
+## Ready to Start Your Data Science Journey?
 
+Follow along with the course materials at your own pace. Complete each module sequentially for the best learning experience.
+
+<a href="schedule.qmd" class="btn btn-primary btn-lg">View Full Course Schedule</a>
+:::
+
+::: footer-section
 ## Harper Adams Data Science
 
 ![](img/HDS.png){fig-alt="Harper Data Science" width="125"}
 
 This website supports students and staff at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University") and the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
+:::
