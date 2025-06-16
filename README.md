@@ -1,8 +1,5 @@
 # R Stats Bootcamp
 
-Harris, W. E. (2025). R Stats Bootcamp: A Self-Paced Course for Learning R Programming and Statistical Analysis. URL: https://RStatsBootcamp.com Github: https://github.com/RStatsBootcamp-2025/website [![DOI](https://zenodo.org/badge/544170961.svg)](https://doi.org/10.5281/zenodo.15667036)
-
-
 A self-paced course for learning R programming, statistical analysis, and reproducible research practices.
 
 ## 🎯 What You'll Learn
@@ -13,10 +10,9 @@ A self-paced course for learning R programming, statistical analysis, and reprod
 
 ## 🚀 Quick Start
 
-1. **Visit the course**: [rstats-bootcamp.github.io](https://rstats-bootcamp.github.io/website/)
-2. **Install R & RStudio** (see Module 1 for setup instructions)
-3. **Start with Module 1** and work through sequentially
-4. **Join our Slack community** for support and discussion
+1. **Install R & RStudio** (see Module 1 for setup instructions)
+2. **Start with Module 1** and work through sequentially
+3. **Follow the course structure** to build your skills progressively
 
 ## 👥 Who This Is For
 
@@ -33,7 +29,6 @@ Designed for research students and staff interested in using the R Programming l
 - **Self-paced** with built-in assessments
 - **Practical focus** - learning by doing, not reference material
 - **Sequential design** - each module builds on the previous
-- **Community support** available through Slack
 
 ## 📄 License
 
