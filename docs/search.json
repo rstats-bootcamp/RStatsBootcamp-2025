@@ -88,7 +88,7 @@
     "href": "index.html#your-learning-pathway",
     "title": "R Stats Bootcamp",
     "section": "Your Learning Pathway",
-    "text": "Your Learning Pathway\n\n\nModule 1\nR Foundations\nGet started with R programming and RStudio. Learn the fundamentals of data structures, functions, and data manipulation. Begin Module 1 →\n\n\nModule 2\nStatistical Analysis\nExplore your data, understand sampling distributions, and master essential statistical tests for research. Begin Module 2 →\n\n\nModule 3\nReproducible Research\nLearn tools and practices for reproducible science including R Markdown, version control with Git, and collaborative workflows. Begin Module 3 →",
+    "text": "Your Learning Pathway\n\n\nModule 1\nR Foundations\nGet started with R programming and RStudio. Learn the fundamentals of data structures, functions, and data manipulation. Begin Module 1 →\n\n\nModule 2\nStatistical Analysis\nExplore your data, understand sampling distributions, and master essential statistical tests for research. Begin Module 2 →\n\n\nModule 3\nReproducible Research\nLearn tools and practices for reproducible science including R Markdown, version control with Git, and collaborative workflows Begin Module 3 →",
     "crumbs": [
       "Home",
       "Getting Started",

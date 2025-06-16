@@ -72,7 +72,7 @@ Explore your data, understand sampling distributions, and master essential stati
 ### Module 3
 **Reproducible Research**
 
-Learn tools and practices for reproducible science including R Markdown, version control with Git, and collaborative workflows. [Begin Module 3 →](13-reproducibility.qmd)
+Learn tools and practices for reproducible science including R Markdown, version control with Git, and collaborative workflows [Begin Module 3 →](13-reproducibility.qmd)
 :::
 ::::::
 :::::::
