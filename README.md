@@ -1,6 +1,6 @@
 # R Stats Bootcamp
 
-Harris, W. E. (2022). R Stats Bootcamp: A Self-Paced Course for Learning R Programming and Statistical Analysis. URL: https://rstats-bootcamp.github.io/website/ Github: https://github.com/rstats-bootcamp/website [![DOI](https://zenodo.org/badge/544170961.svg)](https://doi.org/10.5281/zenodo.15667036)
+Harris, W. E. (2025). R Stats Bootcamp: A Self-Paced Course for Learning R Programming and Statistical Analysis. URL: https://RStatsBootcamp.com Github: https://github.com/RStatsBootcamp-2025/website [![DOI](https://zenodo.org/badge/544170961.svg)](https://doi.org/10.5281/zenodo.15667036)
 
 
 A self-paced course for learning R programming, statistical analysis, and reproducible research practices.
