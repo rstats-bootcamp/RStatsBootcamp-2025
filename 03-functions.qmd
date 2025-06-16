@@ -11,10 +11,10 @@ title: "03 R Functions"
 
 By the end of this lesson, you will be able to:
 
--   Describe what `R` Functions do
--   Use`R` functions and help
--   Describe the function of `R` packages
--   Find, download and use `R` packages
+-   Describe what functions do
+-   Use functions and use the help system
+-   Describe what packages are
+-   Find, download and use packages
 
 :::
 

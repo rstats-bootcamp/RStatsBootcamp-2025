@@ -21,7 +21,7 @@ By the end of this lesson, you will be able to:
 -   Describe the motivation for using `R`       
 -   Install `R` and `RStudio` **or** set up `RStudio Cloud`
 -   Describe the components of `RStudio`
--   Perform the workflow for scripts in `R`
+-   Describe script structure
 
 :::
 

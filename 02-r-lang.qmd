@@ -12,8 +12,8 @@ title: "02 R language"
 By the end of this lesson, you will be able to:
 
 -   Navigate an example script, comments, help, pseudocode
--   Use math operators in `R`
--   Use logical Boolean operators in `R`
+-   Use math operators
+-   Use logical Boolean operators
 -   Discuss differences between "base `R`" and the Tidyverse
 
 :::

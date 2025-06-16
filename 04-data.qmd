@@ -8,23 +8,23 @@ title: "04 Data objects"
 
 ## 1 Data objects in R
 
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Describe basic data types
+-   Use `str()` to inspect data objects
+-   Describe data with factors
+-   Use `class()` and convert variable types
+-   Use vector and matrix functions to manipulate data
+
+:::
+
+
 > **Imagine you are floating in space in the R Global Environment and any data object you can see, you can call on by name to manipulate with functions. Let's call it `R` Space**
 
 The fundamental way to analyse data in R is to be able to manipulate it with code. In order to do that, we need a system of containers to store the data in. This page is about the rules used for storing data in data objects. We will examine basic data types at the same time as how R stores them. R is actually very flexible in the way it handles data, making it as easy as possible for non-programmers to get going.
-
-<br>
-
-### 1.1 Objectives
-
--   Basic data types in `R`, `str()`
-
--   Data with factors
-
--   `class()` and converting variables
-
--   Vector and Matrix fun
-
--   Practice exercises
 
 <br>
 
