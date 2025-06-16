@@ -47,7 +47,7 @@ website:
           - 15-github-basics.qmd
           - 16-collaborative-workflows.qmd
   page-footer: 
-    center: "© 2025 R Stats Bootcamp :: 📫 [Contact](mailto:contact@rstatsbootcamp.edu) :: 🦑 [GitHub](https://github.com/your-repo/RStatsBootcamp-2025)"
+    center: "© 2025 R Stats Bootcamp :: 🦑 [GitHub](https://github.com/your-repo/RStatsBootcamp-2025)"
 
 format:
   html:
