@@ -23,6 +23,11 @@ body {
   display: none !important;
 }
 
+/* Hide custom footer section */
+.footer-section {
+  display: none !important;
+}
+
 /* Hero section */
 .hero-banner {
   display: flex;
@@ -223,12 +228,6 @@ body {
   background-color: var(--light-bg);
   border-radius: var(--border-radius);
   margin-bottom: 2rem;
-}
-
-/* Footer section */
-.footer-section {
-  padding-top: 2rem;
-  border-top: 1px solid #eee;
 }
 
 /* Schedule page styles */

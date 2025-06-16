@@ -4,7 +4,11 @@ title: "1 Setup & intro"
 
 <br>
 
-<center>![R.A. Fisher the father of statistics](img/pop-fisher-sm.png)</center>
+<center>
+
+![R.A. Fisher the father of statistics](img/pop-fisher-sm.png)
+
+</center>
 
 ## 1 Bootcamp Introduction (first day with `R`)
 
