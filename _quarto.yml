@@ -5,16 +5,26 @@ project:
 website:
   favicon: "img/rstats-logo.png"
   title: "R Stats Bootcamp"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Schedule"
+        file: schedule.qmd
+      - text: "About"
+        file: about.qmd
   sidebar:
-    logo: "img/bootcamp_tp.png"
     style: "docked"
     search: true
     contents: 
-      - section: "Information"
+      - section: "Getting Started"
         contents:
           - index.qmd
           - schedule.qmd
-      - section: "Module 1: R"
+          - about.qmd
+      - section: "Module 1: R Foundations"
         contents:
           - 1-setup.qmd
           - 2-r-lang.qmd
@@ -22,7 +32,7 @@ website:
           - 4-data.qmd
           - 5-data-frames.qmd
           - 6-data-manipulation.qmd
-      - section: "Module 2: Stats"
+      - section: "Module 2: Statistical Analysis"
         contents:
           - 7-question-explore.qmd
           - 8-sampling-dist.qmd
@@ -30,6 +40,12 @@ website:
           - 10-regression.qmd
           - 11-t-test.qmd
           - 12-1-way-anova.qmd
+      - section: "Module 3: Reproducible Research"
+        contents:
+          - 13-reproducibility.qmd
+          - 14-rmarkdown.qmd
+          - 15-github-basics.qmd
+          - 16-collaborative-workflows.qmd
 
 format:
   html:
@@ -39,6 +55,12 @@ format:
       dark: darkly
     css: styles.css
     toc: true
+    code-link: true
+    code-copy: true
+    code-tools:
+      source: false
+      toggle: true
+      caption: none
 
 editor: visual
 
