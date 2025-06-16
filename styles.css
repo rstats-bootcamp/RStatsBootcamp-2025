@@ -20,7 +20,21 @@ body {
 
 /* Hide page footer */
 .footer {
-  display: none !important;
+  padding: 1rem 0;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 2rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 /* Hide custom footer section */
