@@ -6,6 +6,18 @@ title: "02 R language"
 
 ## 1 `R` Syntax basics (`R` as a passive-aggressive butler)
 
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Navigate an example script, comments, help, pseudocode
+-   Use math operators in `R`
+-   Use logical Boolean operators in `R`
+-   Discuss differences between "base `R`" and the Tidyverse
+
+:::
+
 <br>
 
 > We love the R language, but sometimes it is a little bit like talking to a passive aggressive butler - if you aren't careful with your language, the interaction may have unexpected outcomes...
@@ -14,21 +26,8 @@ title: "02 R language"
 
 <br>
 
-### 1.1 Objectives
 
-Here is what we will work on:
 
--   Example script, comments, help, pseudocode
-
--   Math operators
-
--   Logical Boolean operators
-
--   Regarding "base `R`" and the Tidyverse
-
--   Practice exercises
-
-<br>
 
 ## 2 Example script, comments, help, pseudocode
 

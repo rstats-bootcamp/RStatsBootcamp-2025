@@ -12,27 +12,18 @@ title: "01 Setup & intro"
 
 ## 1 Bootcamp Introduction (first day with `R`)
 
-<br>
+::: callout-note
+## Learning Objectives
 
-This page is intended to guide people during their first installation and use of R and RStudio.
+By the end of this lesson, you will be able to:
 
-<br>
-
-### 1.1 Objectives
-
-Here is what we will work on:
-
--   How the `R` Stats Bootcamp works
-
--   R motivation
-
+-   Explain how the `R` Stats Bootcamp works
+-   Describe the motivation for using `R`       
 -   Install `R` and `RStudio` **or** set up `RStudio Cloud`
+-   Describe the components of `RStudio`
+-   Perform the workflow for scripts in `R`
 
--   `RStudio` components and setup
-
--   Workflow for scripts in `R`
-
--   Practice exercises
+:::
 
 <br>
 

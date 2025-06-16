@@ -880,7 +880,7 @@
     "href": "02-r-lang.html#r-syntax-basics-r-as-a-passive-aggressive-butler",
     "title": "02 R language",
     "section": "1 R Syntax basics (R as a passive-aggressive butler)",
-    "text": "1 R Syntax basics (R as a passive-aggressive butler)\n\n\nWe love the R language, but sometimes it is a little bit like talking to a passive aggressive butler - if you aren’t careful with your language, the interaction may have unexpected outcomes…\n\nR is a very popular statistical programming language and open source software design to help scientists and other non-programmers perform statistical analyses and to make great graphs. This page is intended to guide people through some of the basics of the R programming language, just enough to get started. We hope that these pages help make learning R simple (though it can difficult at times while you are learning)\n\n\n1.1 Objectives\nHere is what we will work on:\n\nExample script, comments, help, pseudocode\nMath operators\nLogical Boolean operators\nRegarding “base R” and the Tidyverse\nPractice exercises",
+    "text": "1 R Syntax basics (R as a passive-aggressive butler)\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nNavigate an example script, comments, help, pseudocode\nUse math operators in R\nUse logical Boolean operators in R\nDiscuss differences between “base R” and the Tidyverse\n\n\n\n\n\nWe love the R language, but sometimes it is a little bit like talking to a passive aggressive butler - if you aren’t careful with your language, the interaction may have unexpected outcomes…\n\nR is a very popular statistical programming language and open source software design to help scientists and other non-programmers perform statistical analyses and to make great graphs. This page is intended to guide people through some of the basics of the R programming language, just enough to get started. We hope that these pages help make learning R simple (though it can difficult at times while you are learning)",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
@@ -952,7 +952,7 @@
     "href": "01-setup.html#bootcamp-introduction-first-day-with-r",
     "title": "01 Setup & intro",
     "section": "1 Bootcamp Introduction (first day with R)",
-    "text": "1 Bootcamp Introduction (first day with R)\n\nThis page is intended to guide people during their first installation and use of R and RStudio.\n\n\n1.1 Objectives\nHere is what we will work on:\n\nHow the R Stats Bootcamp works\nR motivation\nInstall R and RStudio or set up RStudio Cloud\nRStudio components and setup\nWorkflow for scripts in R\nPractice exercises",
+    "text": "1 Bootcamp Introduction (first day with R)\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nExplain how the R Stats Bootcamp works\nDescribe the motivation for using R\n\nInstall R and RStudio or set up RStudio Cloud\nDescribe the components of RStudio\nPerform the workflow for scripts in R",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
