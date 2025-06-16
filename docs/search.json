@@ -228,18 +228,6 @@
     ]
   },
   {
-    "objectID": "16-collaborative-workflows.html#next-steps",
-    "href": "16-collaborative-workflows.html#next-steps",
-    "title": "16 Collaboration",
-    "section": "Next Steps",
-    "text": "Next Steps\nCongratulations on completing the R Stats Bootcamp! You now have a solid foundation in:\n\nR programming fundamentals\nStatistical analysis techniques\nReproducible research practices\nCollaborative workflows\n\nContinue building on these skills by:\n\nWorking on your own data analysis projects\nContributing to open-source R packages\nJoining R user groups and communities\nExploring advanced topics in data science",
-    "crumbs": [
-      "Home",
-      "Module 3: Reproducible Research",
-      "16 Collaboration"
-    ]
-  },
-  {
     "objectID": "16-collaborative-workflows.html#additional-resources",
     "href": "16-collaborative-workflows.html#additional-resources",
     "title": "16 Collaboration",
@@ -365,18 +353,6 @@
     "title": "14 R Markdown",
     "section": "9 Practice Exercises",
     "text": "9 Practice Exercises\n\n\n\n\n\n\nExercise 1\n\n\n\nCreate a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion\n\nExercise 2\nExperiment with different output formats (HTML, PDF, Word) and observe the differences.\n\n\nExercise 3\nCreate an R Markdown document with a table of contents, code folding, and a custom theme.",
-    "crumbs": [
-      "Home",
-      "Module 3: Reproducible Research",
-      "14 R Markdown"
-    ]
-  },
-  {
-    "objectID": "14-rmarkdown.html#next-steps",
-    "href": "14-rmarkdown.html#next-steps",
-    "title": "14 R Markdown",
-    "section": "Next Steps",
-    "text": "Next Steps\nIn the next lesson, we’ll explore Git and GitHub as tools for version control and collaboration in data science projects.",
     "crumbs": [
       "Home",
       "Module 3: Reproducible Research",
@@ -1692,18 +1668,6 @@
     ]
   },
   {
-    "objectID": "15-github-basics.html#next-steps",
-    "href": "15-github-basics.html#next-steps",
-    "title": "15 Git and GitHub",
-    "section": "Next Steps",
-    "text": "Next Steps\nIn the next lesson, we’ll explore collaborative workflows and best practices for team-based data science projects.",
-    "crumbs": [
-      "Home",
-      "Module 3: Reproducible Research",
-      "15 Git and GitHub"
-    ]
-  },
-  {
     "objectID": "15-github-basics.html#additional-resources",
     "href": "15-github-basics.html#additional-resources",
     "title": "15 Git and GitHub",
@@ -1792,7 +1756,7 @@
     "href": "about.html#get-support",
     "title": "About the Bootcamp",
     "section": "Get Support",
-    "text": "Get Support\nWe offer several ways to get help during your learning journey:\n\nJoin our Slack community for peer support\nCheck the FAQ section for common questions\nExplore additional resources linked throughout the course",
+    "text": "Get Support\nWe offer several ways to get help during your learning journey:\n\nDiscord coming soon\nExplore additional resources linked throughout the course",
     "crumbs": [
       "Home",
       "Getting Started",
