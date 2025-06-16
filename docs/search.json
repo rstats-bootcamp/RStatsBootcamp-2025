@@ -96,11 +96,11 @@
     ]
   },
   {
-    "objectID": "index.html#designed-for-research-students",
-    "href": "index.html#designed-for-research-students",
+    "objectID": "index.html#designed-for-research-students-and-other-interesting-people",
+    "href": "index.html#designed-for-research-students-and-other-interesting-people",
     "title": "R Stats Bootcamp",
-    "section": "Designed for Research Students",
-    "text": "Designed for Research Students\n\n“This bootcamp transformed how I approach data analysis in my research. The step-by-step approach made learning R accessible and enjoyable, even as a complete beginner.”\n\n\n— Research Student, Harper Adams University",
+    "section": "Designed for Research Students and other interesting people",
+    "text": "Designed for Research Students and other interesting people\n\n“I loved the R Stats Bookcamp even though I was afraid to start. I loved the humorous comments throughout and the step-by-step approach made learning R enjoyable. I even analyzed my own data after taking it!”\n\n\n— Research Student, Harper Adams University",
     "crumbs": [
       "Home",
       "Getting Started",
@@ -1817,17 +1817,5 @@
     "title": "R Stats Bootcamp",
     "section": "",
     "text": "MIT License\nCopyright (c) 2025 W. Ed Harris\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-  },
-  {
-    "objectID": "index.html#designed-for-research-students-and-other-interesting-people",
-    "href": "index.html#designed-for-research-students-and-other-interesting-people",
-    "title": "R Stats Bootcamp",
-    "section": "Designed for Research Students and other interesting people",
-    "text": "Designed for Research Students and other interesting people\n\n“I loved the R Stats Bookcamp even though I was afraid to start. I loved the humorous comments throughout and the step-by-step approach made learning R enjoyable. I even analyzed my own data after taking it!”\n\n\n— Research Student, Harper Adams University",
-    "crumbs": [
-      "Home",
-      "Getting Started",
-      "R Stats Bootcamp"
-    ]
   }
 ]
