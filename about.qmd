@@ -1,17 +1,77 @@
 ---
-title: "About"
+title: "About the Bootcamp"
 ---
 
-!["Data science"](img/ds_venn_sm.png)
+::: about-banner
+![Data science skills for research](img/ds_venn_sm.png){.about-img}
 
-## R Stats Bootcamp
+## Empowering Research Through Data Science
+:::
 
-This is a website created to help people get started in statistical analysis and data science: to explore, visualize and analyze data, and to share and communicate results with others. The goal is to use a practical approach to scientific question formulation and evidence, through curating a range of high quality and open resources. The philosophy is practical with more emphasis on asking meaningful questions and statistical reasoning (and less on programming and engineering).
+## What is the R Stats Bootcamp?
 
-<br> <br> <br>
+The R Stats Bootcamp is a comprehensive, self-paced course designed for researchers and students who want to develop practical data science skills. Our mission is to provide accessible, high-quality training in R programming, statistical analysis, and reproducible research practices.
+
+::: callout-note
+## Our Philosophy
+
+We believe that data science should be: - **Accessible** to researchers at all levels - **Practical** with a focus on real-world applications - **Reproducible** to advance scientific integrity - **Collaborative** to encourage knowledge sharing
+:::
+
+## Who This Course Is For
+
+This bootcamp is ideal for:
+
+-   **Research students** beginning their data analysis journey
+-   **Academic staff** looking to update their quantitative skills
+-   **Professionals** transitioning to data-driven roles
+-   **Self-learners** interested in R programming and statistics
+
+No prior programming experience is required—we'll guide you from the basics to more advanced concepts at a comfortable pace.
+
+## What You'll Learn
+
+### Module 1: R Foundations
+
+Master the fundamentals of R programming and the RStudio environment. Learn to manipulate data, create functions, and work with different data structures.
+
+### Module 2: Statistical Analysis
+
+Apply your R skills to statistical analysis. Explore data visualization, hypothesis testing, correlation, regression, and more.
+
+### Module 3: Reproducible Research
+
+Discover tools and practices for reproducible science. Learn R Markdown for dynamic documents, Git for version control, and collaborative workflows.
+
+## Learning Approach
+
+The R Stats Bootcamp follows a learning-by-doing approach:
+
+-   **Self-paced** lessons that fit your schedule
+-   **Hands-on exercises** to reinforce concepts
+-   **Real-world examples** relevant to research contexts
+-   **Progressive difficulty** that builds on previous knowledge
+-   **Multiple learning modalities** to accommodate different learning styles
+
+## Course Development
+
+This bootcamp is continuously improved based on:
+
+-   Current best practices in data science education
+-   Feedback from learners and instructors
+-   Advances in R packages and statistical methods
+-   Research on effective teaching and learning
+
+## Get Support
+
+We offer several ways to get help during your learning journey:
+
+-   Join our [Slack community](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) for peer support
+-   Check the FAQ section for common questions
+-   Explore additional resources linked throughout the course
 
 ## Harper Adams Data Science
 
 ![](img/HDS.png){fig-alt="Harper Data Science" width="125"}
 
-This module supports the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") and other MSc programmes at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University"), led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
+This website supports students and staff at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University") and the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").

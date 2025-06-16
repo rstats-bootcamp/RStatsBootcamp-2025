@@ -1,0 +1,264 @@
+---
+title: "Collaborative Workflows"
+---
+
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Organize data science projects for effective collaboration
+-   Implement best practices for code sharing and documentation
+-   Use Git and GitHub for team-based workflows
+-   Maintain reproducibility in collaborative environments
+-   Resolve common collaboration challenges
+:::
+
+## Why Collaborative Workflows Matter
+
+Data science is increasingly a team effort. Effective collaboration requires more than just technical skills—it demands thoughtful project organization, clear communication, and established workflows. When done right, collaboration can:
+
+-   Increase productivity through division of labor
+-   Improve quality through peer review
+-   Enhance creativity through diverse perspectives
+-   Ensure continuity when team members change
+
+::: callout-important
+## Key Concept
+
+A **collaborative workflow** is a systematic approach to working together on data science projects that maximizes productivity while maintaining reproducibility and quality.
+:::
+
+## Project Organization for Teams
+
+### Directory Structure
+
+A well-organized project structure helps team members navigate the codebase:
+
+```         
+project/
+├── README.md           # Overview, setup instructions
+├── CONTRIBUTING.md     # Guidelines for contributors
+├── data/
+│   ├── raw/            # Original, immutable data
+│   └── processed/      # Cleaned, transformed data
+├── code/
+│   ├── data_prep/      # Data preparation scripts
+│   ├── analysis/       # Analysis scripts
+│   └── visualization/  # Visualization scripts
+├── results/
+│   ├── figures/        # Generated plots
+│   └── tables/         # Generated tables
+├── docs/
+│   ├── data_dict.md    # Data dictionary
+│   └── methods.md      # Methodological details
+└── reports/            # Final reports and presentations
+```
+
+### Documentation
+
+Comprehensive documentation is crucial for collaboration:
+
+1.  **README.md**: Project overview, setup instructions, and usage examples
+2.  **CONTRIBUTING.md**: Guidelines for how to contribute to the project
+3.  **Code comments**: Explain why, not just what, the code does
+4.  **Function documentation**: Purpose, parameters, return values, examples
+5.  **Data dictionary**: Describe variables, units, and data sources
+6.  **Analysis log**: Document key decisions and their rationale
+
+## Code Sharing Best Practices
+
+### Style Guides
+
+Consistent coding style makes collaboration easier:
+
+-   Follow a style guide (e.g., [tidyverse style guide](https://style.tidyverse.org/) for R)
+-   Use consistent naming conventions
+-   Format code for readability
+-   Consider using linters and formatters
+
+### Modular Code
+
+Write modular code that others can understand and reuse:
+
+``` r
+# Instead of one long script, break into functions
+clean_data <- function(raw_data) {
+  # Data cleaning steps
+  return(cleaned_data)
+}
+
+analyze_data <- function(clean_data) {
+  # Analysis steps
+  return(results)
+}
+
+visualize_results <- function(results) {
+  # Visualization steps
+  return(plots)
+}
+
+# Main workflow
+raw_data <- read_csv("data/raw/dataset.csv")
+clean_data <- clean_data(raw_data)
+results <- analyze_data(clean_data)
+plots <- visualize_results(results)
+```
+
+### Package Management
+
+Ensure consistent package versions across team members:
+
+``` r
+# Use renv for project-specific package management
+install.packages("renv")
+renv::init()
+renv::snapshot()
+```
+
+## Git Workflows for Teams
+
+### Centralized Workflow
+
+The simplest approach for small teams:
+
+1.  Everyone clones the central repository
+2.  Team members pull before starting work
+3.  Make changes and commit locally
+4.  Pull again to merge any new changes
+5.  Push to the central repository
+
+### Feature Branch Workflow
+
+Better for larger teams or complex projects:
+
+1.  Create a branch for each feature or task
+2.  Work on the branch until the feature is complete
+3.  Pull the latest main branch and merge it into your feature branch
+4.  Create a pull request for code review
+5.  Merge into the main branch after approval
+
+### Forking Workflow
+
+Common for open-source projects:
+
+1.  Fork the main repository to your account
+2.  Clone your fork locally
+3.  Create a branch for your changes
+4.  Push to your fork
+5.  Create a pull request to the main repository
+
+## Code Review Process
+
+Code reviews improve quality and share knowledge:
+
+### Guidelines for Reviewers
+
+-   Be respectful and constructive
+-   Focus on the code, not the person
+-   Consider both functionality and style
+-   Ask questions rather than making demands
+-   Acknowledge good practices
+
+### Guidelines for Authors
+
+-   Explain the purpose of your changes
+-   Keep pull requests focused and manageable
+-   Respond to feedback positively
+-   Be open to suggestions
+-   Thank reviewers for their time
+
+## Maintaining Reproducibility
+
+### Environment Management
+
+Ensure everyone works in the same environment:
+
+-   Use `renv` (R) or `conda` (Python) for package management
+-   Document system requirements
+-   Consider containerization with Docker
+
+### Data Access
+
+Establish protocols for data access and sharing:
+
+-   Use version-controlled metadata
+-   Document data sources and access methods
+-   Consider data access APIs for large datasets
+-   Implement appropriate security measures
+
+### Continuous Integration
+
+Automate testing to catch issues early:
+
+-   Set up GitHub Actions or other CI tools
+-   Run tests automatically on pull requests
+-   Check code style and documentation
+
+## Common Collaboration Challenges
+
+### Challenge: Merge Conflicts
+
+When two people edit the same part of a file:
+
+1.  Pull the latest changes
+2.  Identify the conflicting files
+3.  Open the files and resolve conflicts
+4.  Commit the resolved files
+5.  Push the changes
+
+### Challenge: Large Files
+
+Git struggles with large files:
+
+-   Use Git LFS (Large File Storage) for binary files
+-   Store large datasets externally and document access
+-   Consider data subsets for testing
+
+### Challenge: Onboarding New Team Members
+
+Help new team members get up to speed:
+
+-   Maintain clear setup instructions
+-   Document project structure and conventions
+-   Assign mentors for new members
+-   Create starter tasks for learning the codebase
+
+## Exercises
+
+::: {.callout-note appearance="minimal"}
+### Exercise 1
+
+Create a `CONTRIBUTING.md` file for a data science project, outlining guidelines for code style, pull requests, and code review.
+
+### Exercise 2
+
+Practice resolving a merge conflict by having two team members edit the same file and then merge their changes.
+
+### Exercise 3
+
+Set up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.
+:::
+
+## Next Steps
+
+Congratulations on completing the R Stats Bootcamp! You now have a solid foundation in:
+
+-   R programming fundamentals
+-   Statistical analysis techniques
+-   Reproducible research practices
+-   Collaborative workflows
+
+Continue building on these skills by:
+
+-   Working on your own data analysis projects
+-   Contributing to open-source R packages
+-   Joining R user groups and communities
+-   Exploring advanced topics in data science
+
+## Additional Resources
+
+-   [GitHub Flow Guide](https://guides.github.com/introduction/flow/)
+-   [The Turing Way: Guide to Collaboration](https://the-turing-way.netlify.app/collaboration/collaboration.html)
+-   [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/)
+-   [Team Data Science Process](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/)

@@ -1,0 +1,250 @@
+---
+title: "Git and GitHub Basics"
+---
+
+::: callout-note
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+-   Understand the basics of version control with Git
+-   Set up Git on your computer
+-   Create a GitHub account and repository
+-   Perform basic Git operations (clone, add, commit, push, pull)
+-   Understand branching and merging concepts
+:::
+
+## What is Version Control?
+
+Version control is a system that records changes to files over time so that you can recall specific versions later. For data science projects, version control helps you:
+
+-   Track changes to your code and documents
+-   Collaborate with others without overwriting each other's work
+-   Revert to previous versions if something goes wrong
+-   Document the evolution of your analysis
+
+::: callout-important
+## Key Concept
+
+**Git** is a distributed version control system that tracks changes in any set of files. **GitHub** is a web-based platform that hosts Git repositories and adds collaboration features.
+:::
+
+## Why Use Git and GitHub?
+
+For data scientists and researchers, Git and GitHub provide several benefits:
+
+-   **History tracking**: Document how your analysis evolved
+-   **Collaboration**: Work with others seamlessly
+-   **Backup**: Store your code securely in the cloud
+-   **Reproducibility**: Others can access and run your exact code
+-   **Open science**: Share your work with the broader community
+
+## Setting Up Git
+
+### Installing Git
+
+First, you need to install Git on your computer:
+
+-   **Windows**: Download and install from [git-scm.com](https://git-scm.com/)
+-   **Mac**: Install via Homebrew with `brew install git` or download from [git-scm.com](https://git-scm.com/)
+-   **Linux**: Use your package manager, e.g., `sudo apt-get install git`
+
+### Configuring Git
+
+After installation, configure Git with your name and email:
+
+``` bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+## Creating a GitHub Account
+
+1.  Go to [github.com](https://github.com/)
+2.  Click "Sign up" and follow the instructions
+3.  Choose a free plan to start
+
+## Git Basics
+
+### Key Concepts
+
+-   **Repository (repo)**: A directory where Git tracks changes
+-   **Commit**: A snapshot of changes at a point in time
+-   **Branch**: A parallel version of the repository
+-   **Remote**: A version of the repository hosted elsewhere (e.g., on GitHub)
+-   **Clone**: Creating a local copy of a remote repository
+-   **Push**: Sending commits to a remote repository
+-   **Pull**: Getting changes from a remote repository
+
+### Creating a Repository
+
+#### On GitHub:
+
+1.  Log in to GitHub
+2.  Click the "+" icon in the top-right corner
+3.  Select "New repository"
+4.  Enter a repository name and description
+5.  Choose public or private
+6.  Click "Create repository"
+
+#### On Your Computer:
+
+``` bash
+# Create a new directory
+mkdir my-project
+cd my-project
+
+# Initialize Git repository
+git init
+
+# Connect to GitHub repository
+git remote add origin https://github.com/yourusername/my-project.git
+```
+
+### Basic Git Workflow
+
+The typical Git workflow involves these steps:
+
+1.  Make changes to your files
+2.  Stage the changes for commit
+3.  Commit the changes with a message
+4.  Push the changes to GitHub
+
+``` bash
+# Check status of your repository
+git status
+
+# Stage changes
+git add filename.R
+
+# Stage all changes
+git add .
+
+# Commit changes
+git commit -m "Add data cleaning script"
+
+# Push to GitHub
+git push origin main
+```
+
+### Cloning an Existing Repository
+
+To work with an existing repository:
+
+``` bash
+# Clone a repository
+git clone https://github.com/username/repository.git
+
+# Navigate into the repository
+cd repository
+```
+
+### Pulling Changes
+
+When working with others, you'll need to get their changes:
+
+``` bash
+# Get latest changes
+git pull origin main
+```
+
+## Branching and Merging
+
+Branches allow you to work on different features or experiments without affecting the main codebase.
+
+### Creating and Using Branches
+
+``` bash
+# Create a new branch
+git branch feature-analysis
+
+# Switch to the branch
+git checkout feature-analysis
+
+# Create and switch in one command
+git checkout -b new-feature
+
+# List all branches
+git branch
+```
+
+### Merging Branches
+
+Once you're satisfied with your changes:
+
+``` bash
+# Switch back to main branch
+git checkout main
+
+# Merge your feature branch
+git merge feature-analysis
+
+# Push the merged changes
+git push origin main
+```
+
+## Using GitHub for Collaboration
+
+GitHub enhances Git with collaboration features:
+
+### Pull Requests
+
+Pull requests (PRs) let you propose changes to a repository:
+
+1.  Fork a repository to your GitHub account
+2.  Clone your fork locally
+3.  Create a branch and make changes
+4.  Push your branch to your fork
+5.  Create a pull request to the original repository
+
+### Issues
+
+GitHub Issues help track tasks, enhancements, and bugs:
+
+-   Create detailed issue descriptions
+-   Assign issues to team members
+-   Label issues by type
+-   Reference issues in commits and pull requests
+
+## Git and RStudio Integration
+
+RStudio provides a user-friendly interface for Git operations:
+
+1.  Create a new project with version control
+2.  Use the Git pane to stage, commit, and push changes
+3.  View file differences and history
+
+## Best Practices for Data Science Projects
+
+-   **Commit often**: Make small, focused commits
+-   **Write clear commit messages**: Explain what and why, not how
+-   **Use .gitignore**: Exclude large data files, outputs, and sensitive information
+-   **Structure your repository**: Follow a consistent organization pattern
+-   **Document your workflow**: Include a README with setup instructions
+
+## Exercises
+
+::: {.callout-note appearance="minimal"}
+### Exercise 1
+
+Create a GitHub account (if you don't have one) and set up Git on your computer.
+
+### Exercise 2
+
+Create a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.
+
+### Exercise 3
+
+Fork an existing R project on GitHub, make a small improvement, and create a pull request.
+:::
+
+## Next Steps
+
+In the next lesson, we'll explore collaborative workflows and best practices for team-based data science projects.
+
+## Additional Resources
+
+-   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+-   [GitHub Guides](https://guides.github.com/)
+-   [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+-   [GitHub Learning Lab](https://lab.github.com/)

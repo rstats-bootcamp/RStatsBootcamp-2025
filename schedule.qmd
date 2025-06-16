@@ -1,68 +1,219 @@
 ---
-title: "Schedule"
+title: "Course Schedule"
 ---
 
-<center>
+::: schedule-banner
+![Data science learning pathway](img/robot-farmer.jpeg){.schedule-img}
 
-![I call this "Robot farmer with calendar"](img/robot-farmer.jpeg){height="200px"}
+## R Stats Bootcamp Learning Path
 
-</center>
+This self-paced bootcamp requires approximately 20-30 hours to complete. The schedule below provides an overview of all course modules and resources. Work through the materials sequentially for the best learning experience.
+:::
 
-## Bootcamp resources
+::: callout-note
+## Community Support
 
-This material is intended to require a significant time commitment to complete (most students report about 20 hours at minimum). The schedule below is intended to be a concise overview of the different resources for the Bootcamp. Some pages have associated slides and videos linked here.
+Join our [friendly community Slack channel](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) to connect with fellow learners and get help when needed.
+:::
 
-For all of the lab pages it is intended that you type and run 100% of the code in examples and then explicitly answer the exercise questions, which are based on examples for given code on the pages. Thus, to answer the questions it is recommended to adapt code you have already run when completing the pages.
+## Module 1: R Foundations {.module-header}
 
-<br>
+Learn the fundamentals of R programming and the RStudio environment.
 
-We also a have a [friendly community Slack channel](https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ) - go over and introduce yourself and say hi!
+::: module-content
+### 1. R and RStudio Setup
 
-----
+*Getting started with the R programming environment*
 
-## Topics 
+-   Installing R and RStudio
+-   Navigating the RStudio interface
+-   Creating your first R script
+-   Understanding R packages
 
+[Begin Lesson →](1-setup.qmd) \| [Slides](docs/ppt/RSB01.pptx)
 
-### Module 1: R scripting
+### 2. R Language Basics
 
-1 R and RStudio Setup ::: [slides](docs/ppt/RSB01.pptx)
+*Core concepts of the R programming language*
 
-2 R language ::: [slides](docs/ppt/RSB02.pptx)
+-   R syntax and data types
+-   Variables and assignment
+-   Basic operations and calculations
+-   Control structures (if/else, loops)
 
-3 Functions and packages
+[Begin Lesson →](2-r-lang.qmd) \| [Slides](docs/ppt/RSB02.pptx)
 
-4 Data objects
+### 3. Functions and Packages
 
-5 Data frames
+*Working with functions and extending R's capabilities*
 
-6 Data sub-setting and manipulation
+-   Using built-in functions
+-   Creating your own functions
+-   Installing and loading packages
+-   Function documentation and help
 
-### Module 2: Statistics review
+[Begin Lesson →](3-functions.qmd)
 
-7 Question, explore, analyze
+### 4. Data Objects
 
-8 Sampling distributions
+*Understanding R's data structures*
 
-9 Correlation
+-   Vectors, matrices, and arrays
+-   Lists and factors
+-   Working with dates and times
+-   Type conversion and coercion
 
-10 Simple linear regression
+[Begin Lesson →](4-data.qmd)
 
-11 T-test
+### 5. Data Frames
 
-12 1-way ANOVA
+*Working with tabular data in R*
 
-### Module 3: reproducibility, collaboration
+-   Creating and manipulating data frames
+-   Accessing data frame elements
+-   Adding and modifying columns
+-   Merging data frames
 
-13 Reproducibility
+[Begin Lesson →](5-data-frames.qmd)
 
-14 Automate reports
+### 6. Data Manipulation
 
-15 Git and version control
+*Techniques for cleaning and transforming data*
 
-<br> <br>
+-   Filtering and subsetting data
+-   Sorting and arranging data
+-   Summarizing data
+-   Reshaping data (wide vs. long format)
 
+[Begin Lesson →](6-data-manipulation.qmd)
+:::
+
+## Module 2: Statistical Analysis {.module-header}
+
+Apply R programming to statistical analysis and data visualization.
+
+::: module-content
+### 7. Question, Explore, Analyze
+
+*The data analysis workflow*
+
+-   Formulating research questions
+-   Exploratory data analysis
+-   Data visualization principles
+-   Communicating findings
+
+[Begin Lesson →](7-question-explore.qmd)
+
+### 8. Sampling Distributions
+
+*Understanding probability and sampling*
+
+-   Random sampling
+-   Probability distributions
+-   The Central Limit Theorem
+-   Confidence intervals
+
+[Begin Lesson →](8-sampling-dist.qmd)
+
+### 9. Correlation
+
+*Measuring relationships between variables*
+
+-   Correlation coefficients
+-   Visualizing correlations
+-   Testing correlation significance
+-   Correlation vs. causation
+
+[Begin Lesson →](9-correlation.qmd)
+
+### 10. Simple Linear Regression
+
+*Modeling relationships between variables*
+
+-   Linear regression concepts
+-   Fitting regression models in R
+-   Interpreting regression output
+-   Assessing model fit
+
+[Begin Lesson →](10-regression.qmd)
+
+### 11. T-tests
+
+*Comparing group means*
+
+-   One-sample t-tests
+-   Independent samples t-tests
+-   Paired samples t-tests
+-   Effect sizes and power
+
+[Begin Lesson →](11-t-test.qmd)
+
+### 12. One-way ANOVA
+
+*Analyzing variance between groups*
+
+-   ANOVA concepts and assumptions
+-   Conducting ANOVA in R
+-   Post-hoc tests
+-   Reporting ANOVA results
+
+[Begin Lesson →](12-1-way-anova.qmd)
+:::
+
+## Module 3: Reproducible Research {.module-header}
+
+Learn essential tools and practices for reproducible data science.
+
+::: module-content
+### 13. Reproducibility Principles
+
+*Introduction to reproducible research*
+
+-   Why reproducibility matters
+-   Components of reproducible workflows
+-   Documentation best practices
+-   File organization strategies
+
+[Begin Lesson →](13-reproducibility.qmd)
+
+### 14. R Markdown
+
+*Creating dynamic documents*
+
+-   R Markdown basics
+-   Combining code, results, and narrative
+-   Document formatting options
+-   Generating reports in multiple formats
+
+[Begin Lesson →](14-rmarkdown.qmd)
+
+### 15. Git and GitHub Basics
+
+*Version control for data science*
+
+-   Understanding version control
+-   Setting up Git and GitHub
+-   Basic Git workflow
+-   Tracking changes to your code
+
+[Begin Lesson →](15-github-basics.qmd)
+
+### 16. Collaborative Workflows
+
+*Working effectively with others*
+
+-   Project organization
+-   Sharing code and data
+-   Collaboration best practices
+-   Maintaining reproducibility in teams
+
+[Begin Lesson →](16-collaborative-workflows.qmd)
+:::
+
+::: footer-section
 ## Harper Adams Data Science
 
 ![](img/HDS.png){fig-alt="Harper Data Science" width="125"}
 
 This website supports students and staff at [Harper Adams University](https://www.harper-adams.ac.uk/ "Harper Adams University") and the [MSc in Data Science for Global Agriculture, Food, and Environment](https://www.harper-adams.ac.uk/courses/postgraduate/201194/data-science-for-global-agriculture-food-and-environment "MSc in Data Science") led by [Ed Harris](https://www.harper-adams.ac.uk/general/staff/profile/201620/Edwin-Harris/ "Ed's Faculty page").
+:::

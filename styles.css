@@ -226,6 +226,83 @@ body {
   border-top: 1px solid #eee;
 }
 
+/* Schedule page styles */
+.schedule-banner {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.schedule-img {
+  max-height: 200px;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.module-header {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.module-content {
+  padding: 0 1rem;
+}
+
+.module-content h3 {
+  color: var(--primary-color);
+  margin-top: 2rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+.module-content em {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.module-content ul {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.module-content a {
+  display: inline-block;
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+.module-content a:hover {
+  text-decoration: underline;
+}
+
+/* About page styles */
+.about-banner {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-img {
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.about-banner h2 {
+  color: var(--primary-color);
+  margin-top: 1rem;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-content h1 {
