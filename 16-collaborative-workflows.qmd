@@ -240,22 +240,6 @@ Practice resolving a merge conflict by having two team members edit the same fil
 Set up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.
 :::
 
-## Next Steps
-
-Congratulations on completing the R Stats Bootcamp! You now have a solid foundation in:
-
--   R programming fundamentals
--   Statistical analysis techniques
--   Reproducible research practices
--   Collaborative workflows
-
-Continue building on these skills by:
-
--   Working on your own data analysis projects
--   Contributing to open-source R packages
--   Joining R user groups and communities
--   Exploring advanced topics in data science
-
 ## Additional Resources
 
 -   [GitHub Flow Guide](https://guides.github.com/introduction/flow/)

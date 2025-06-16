@@ -238,10 +238,6 @@ Create a new repository on GitHub and clone it to your computer. Add a simple R 
 Fork an existing R project on GitHub, make a small improvement, and create a pull request.
 :::
 
-## Next Steps
-
-In the next lesson, we'll explore collaborative workflows and best practices for team-based data science projects.
-
 ## Additional Resources
 
 -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)

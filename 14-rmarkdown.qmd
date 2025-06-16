@@ -252,10 +252,6 @@ Experiment with different output formats (HTML, PDF, Word) and observe the diffe
 Create an R Markdown document with a table of contents, code folding, and a custom theme.
 :::
 
-## Next Steps
-
-In the next lesson, we'll explore Git and GitHub as tools for version control and collaboration in data science projects.
-
 ## Additional Resources
 
 -   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
