@@ -132,18 +132,6 @@
     ]
   },
   {
-    "objectID": "index.html#harper-adams-data-science",
-    "href": "index.html#harper-adams-data-science",
-    "title": "R Stats Bootcamp",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
-    "crumbs": [
-      "Home",
-      "Getting Started",
-      "R Stats Bootcamp"
-    ]
-  },
-  {
     "objectID": "9-correlation.html",
     "href": "9-correlation.html",
     "title": "9 Correlation",
@@ -928,7 +916,7 @@
     "href": "12-1-way-anova.html#harper-adams-data-science",
     "title": "12 ANOVA",
     "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.\n\nR Stats Bootcamp R Stats Bootcamp 13 Reproducibility Principles 11 T-test Getting Started R Stats Bootcamp Course Schedule About the Bootcamp Module 1: R Foundations 1 Setup & intro 2 R language 3 R Functions 4 Data objects 5 Data frames 6 Data subsetting Module 2: Statistical Analysis 7 Explore data 8 Distributions 9 Correlation 10 Regression 11 T-test 12 ANOVA Module 3: Reproducible Research 13 Reproducibility Principles 14 R Markdown 15 Git and GitHub Basics 16 Collaborative Workflows Home /index.html Schedule /schedule.html About /about.html Module 2: Statistical Analysis 12 ANOVA\n\n\n12 ANOVA – R Stats Bootcamp 12 ANOVA – R Stats Bootcamp 12 ANOVA – R Stats Bootcamp R Stats Bootcamp",
+    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Module 2: Statistical Analysis",
@@ -1133,18 +1121,6 @@
     "title": "1 Setup & intro",
     "section": "7 Practice exercises",
     "text": "7 Practice exercises\n\n7.1\nDownload this script and open it with RStudio. Save the script in a specific folder on your computer that you can find again and where you will save other scripts for the Bootcamp.\nRead the script comments and examine the structure of the code chunks. Run the code in the script using one of the methods above, and examine the output in the Console window.\n\n\n\n7.2\nAdd a code chunk title to your CONTENTS section and to your script. Make sure to write brief comments for your code. Add the following code to your chunk run it and examine the output:\nDon’t worry about understanding the code for now. We are just working on interfacing with R and submitting commands.\n# Create a new variable\nmy_variable &lt;- c(6.5, 1.35, 3.5)\n\n# Calculate the mean of my_variable\nmean(my_variable)\n\n# Calculate the standard deviation of my_variable\nsd(my_variable)",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "1 Setup & intro"
-    ]
-  },
-  {
-    "objectID": "1-setup.html#harper-adams-data-science",
-    "href": "1-setup.html#harper-adams-data-science",
-    "title": "1 Setup & intro",
-    "section": "Harper Adams Data Science",
-    "text": "Harper Adams Data Science\n\nThis website supports students and staff at Harper Adams University and the MSc in Data Science for Global Agriculture, Food, and Environment led by Ed Harris.",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
