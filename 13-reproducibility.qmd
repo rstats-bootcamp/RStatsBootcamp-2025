@@ -1,5 +1,5 @@
 ---
-title: "13 Reproducibility Principles"
+title: "13 Reproducibility"
 ---
 
 ::: callout-note

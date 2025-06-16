@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1 Setup &amp; intro – R Stats Bootcamp</title>
+<title>5 Data frames – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,6 +108,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -315,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./1-setup.html">1 Setup &amp; intro</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">5 Data frames</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -374,41 +403,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./1-setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">1 Setup &amp; intro</span></a>
-  </div>
-</li>
+ <span class="menu-text">1-setup.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./2-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2 R language</span></a>
-  </div>
-</li>
+ <span class="menu-text">2-r-lang.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3 R Functions</span></a>
-  </div>
-</li>
+ <span class="menu-text">3-functions.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./4-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4 Data objects</span></a>
-  </div>
-</li>
+ <span class="menu-text">4-data.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./5-data-frames.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Data frames</span></a>
-  </div>
-</li>
+ <span class="menu-text">5-data-frames.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./6-data-manipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6 Data subsetting</span></a>
-  </div>
-</li>
+ <span class="menu-text">6-data-manipulation.qmd</span>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -421,23 +432,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./7-question-explore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7 Explore data</span></a>
-  </div>
-</li>
+ <span class="menu-text">7-question-explore.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./8-sampling-dist.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8 Distributions</span></a>
-  </div>
-</li>
+ <span class="menu-text">8-sampling-dist.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./9-correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9 Correlation</span></a>
-  </div>
-</li>
+ <span class="menu-text">9-correlation.qmd</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-regression.html" class="sidebar-item-text sidebar-link">
@@ -503,25 +505,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bootcamp-introduction-first-day-with-r" id="toc-bootcamp-introduction-first-day-with-r" class="nav-link active" data-scroll-target="#bootcamp-introduction-first-day-with-r">1 Bootcamp Introduction (first day with <code>R</code>)</a>
+  <li><a href="#data-frames-in-r" id="toc-data-frames-in-r" class="nav-link active" data-scroll-target="#data-frames-in-r">1 Data frames in <code>R</code></a>
   <ul class="collapse">
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">1.1 Objectives</a></li>
   </ul></li>
-  <li><a href="#how-the-r-stats-bootcamp-works" id="toc-how-the-r-stats-bootcamp-works" class="nav-link" data-scroll-target="#how-the-r-stats-bootcamp-works">2 How the <code>R</code> Stats Bootcamp works</a></li>
-  <li><a href="#r-motivation" id="toc-r-motivation" class="nav-link" data-scroll-target="#r-motivation">3 <code>R</code> motivation</a></li>
-  <li><a href="#install-r-and-rstudio-or-set-up-rstudio-cloud" id="toc-install-r-and-rstudio-or-set-up-rstudio-cloud" class="nav-link" data-scroll-target="#install-r-and-rstudio-or-set-up-rstudio-cloud">4 Install <code>R</code> and <code>RStudio</code> <strong>or</strong> set up <code>RStudio Cloud</code></a></li>
-  <li><a href="#rstudio-components-and-setup" id="toc-rstudio-components-and-setup" class="nav-link" data-scroll-target="#rstudio-components-and-setup">5 <code>RStudio</code> components and setup</a></li>
-  <li><a href="#workflow-for-r-scripts" id="toc-workflow-for-r-scripts" class="nav-link" data-scroll-target="#workflow-for-r-scripts">6 Workflow for R scripts</a>
+  <li><a href="#tidy-data-concept" id="toc-tidy-data-concept" class="nav-link" data-scroll-target="#tidy-data-concept">2 Tidy data concept</a>
   <ul class="collapse">
-  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">6.1 Contents</a></li>
-  <li><a href="#section-for-each-item-of-contents" id="toc-section-for-each-item-of-contents" class="nav-link" data-scroll-target="#section-for-each-item-of-contents">6.2 Section for each item of contents</a></li>
-  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">6.3 Comments</a></li>
-  <li><a href="#submitting-commands" id="toc-submitting-commands" class="nav-link" data-scroll-target="#submitting-commands">6.4 Submitting commands</a></li>
+  <li><a href="#the-tidy-data-concept" id="toc-the-tidy-data-concept" class="nav-link" data-scroll-target="#the-tidy-data-concept">2.1 The Tidy Data concept</a></li>
+  </ul></li>
+  <li><a href="#common-data-file-types" id="toc-common-data-file-types" class="nav-link" data-scroll-target="#common-data-file-types">3 Common data file types</a></li>
+  <li><a href="#excel-data-setup-and-the-data-dictionary" id="toc-excel-data-setup-and-the-data-dictionary" class="nav-link" data-scroll-target="#excel-data-setup-and-the-data-dictionary">4 Excel, data setup, and the Data Dictionary</a>
+  <ul class="collapse">
+  <li><a href="#tidy-data-and-excel" id="toc-tidy-data-and-excel" class="nav-link" data-scroll-target="#tidy-data-and-excel">4.1 Tidy Data and Excel</a></li>
+  <li><a href="#untidy-data" id="toc-untidy-data" class="nav-link" data-scroll-target="#untidy-data">4.2 Untidy data</a></li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">4.3 CSV files</a></li>
+  </ul></li>
+  <li><a href="#getting-data-into-r" id="toc-getting-data-into-r" class="nav-link" data-scroll-target="#getting-data-into-r">5 Getting data into R</a>
+  <ul class="collapse">
+  <li><a href="#working-directory" id="toc-working-directory" class="nav-link" data-scroll-target="#working-directory">5.1 Working directory</a></li>
+  <li><a href="#read-in-your-first-file" id="toc-read-in-your-first-file" class="nav-link" data-scroll-target="#read-in-your-first-file">5.2 Read in your first file</a></li>
+  </ul></li>
+  <li><a href="#manipulating-variables-in-the-data-frame" id="toc-manipulating-variables-in-the-data-frame" class="nav-link" data-scroll-target="#manipulating-variables-in-the-data-frame">6 Manipulating variables in the Data Frame</a>
+  <ul class="collapse">
+  <li><a href="#data-manipulation-in-r" id="toc-data-manipulation-in-r" class="nav-link" data-scroll-target="#data-manipulation-in-r">6.1 Data manipulation in <code>R</code></a></li>
+  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class">6.2 <code>class()</code></a></li>
+  <li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names">6.3 <code>names()</code></a></li>
+  <li><a href="#operator-for-data-frames" id="toc-operator-for-data-frames" class="nav-link" data-scroll-target="#operator-for-data-frames">6.4 <code>$</code> operator for data frames</a></li>
+  <li><a href="#str" id="toc-str" class="nav-link" data-scroll-target="#str">6.5 <code>str()</code></a></li>
+  <li><a href="#the-index-operator" id="toc-the-index-operator" class="nav-link" data-scroll-target="#the-index-operator">6.6 <code>[ , ]</code> the index operator</a></li>
+  <li><a href="#attach" id="toc-attach" class="nav-link" data-scroll-target="#attach">6.7 <code>attach()</code></a></li>
   </ul></li>
   <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">7 Practice exercises</a>
   <ul class="collapse">
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">7.1</a></li>
   <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">7.2</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">7.3</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">7.4</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">7.5</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">7.6</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -530,9 +551,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./1-setup.html">1 Setup &amp; intro</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">1 Setup &amp; intro</h1>
+<h1 class="title">5 Data frames</h1>
 </div>
 
 
@@ -549,190 +570,374 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><br></p>
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/pop-fisher-sm.png" class="img-fluid figure-img"></p>
-<figcaption>R.A. Fisher the father of statistics</figcaption>
+<p><img src="img/tidy.png" class="img-fluid figure-img"></p>
+<figcaption>Like your room, data should be tidy</figcaption>
 </figure>
 </div>
 </center>
-<section id="bootcamp-introduction-first-day-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="bootcamp-introduction-first-day-with-r">1 Bootcamp Introduction (first day with <code>R</code>)</h2>
 <p><br></p>
-<p>This page is intended to guide people during their first installation and use of R and RStudio.</p>
+<section id="data-frames-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="data-frames-in-r">1 Data frames in <code>R</code></h2>
+<p>NB for this page we assume you have access to Microsoft Excel. However, similar spreadsheet software (like Libre Office Calc) will work fine.</p>
+<p><br></p>
+<blockquote class="blockquote">
+<p>The first step in using R for data analysis is getting your data into <code>R</code>. The first step for getting your data into <code>R</code> is making your data tidy.</p>
+</blockquote>
+<p>The commonest question we have experienced for new users of <code>R</code> who want to perform analysis on their data is how to get data into <code>R</code>. There is good news and bad news. The good news is that <strong>it is exceedingly easy to get data into <code>R</code> for analysis, in almost any format</strong>. The bad news is that <strong>a step most new users find challenging is taking responsibility for their own data</strong>.</p>
+<p>What we mean here is that best practice in data management involves active engagement with your dataset. This includes choosing appropriate variable names, error checking, and documenting information about variables and data collection. We also aim to avoid proliferation of excessive dataset versions, and, worst of all, embedding graphs and data summaries into Excel spreadsheets with data.</p>
 <p><br></p>
 <section id="objectives" class="level3">
 <h3 class="anchored" data-anchor-id="objectives">1.1 Objectives</h3>
-<p>Here is what we will work on:</p>
 <ul>
-<li><p>How the <code>R</code> Stats Bootcamp works</p></li>
-<li><p>R motivation</p></li>
-<li><p>Install <code>R</code> and <code>RStudio</code> <strong>or</strong> set up <code>RStudio Cloud</code></p></li>
-<li><p><code>RStudio</code> components and setup</p></li>
-<li><p>Workflow for scripts in <code>R</code></p></li>
+<li><p>Common data file types</p></li>
+<li><p>Excel, data setup, and the Data Dictionary</p></li>
+<li><p>Getting data into R</p></li>
+<li><p>Manipulating variables in the Data Frame</p></li>
 <li><p>Practice exercises</p></li>
 </ul>
 <p><br></p>
 </section>
 </section>
-<section id="how-the-r-stats-bootcamp-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-the-r-stats-bootcamp-works">2 How the <code>R</code> Stats Bootcamp works</h2>
-<p>The <code>R</code> Stats Bootcamp aims to provide practical, open instructional materials to support learning the <code>R</code> programming language, to review simple statistics in <code>R</code>, and to introduce reproducibility and collaboration tools. The content is a blend of practical, referenced material with videos and self-assessment.</p>
-<p>We also a have a <a href="https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ">friendly community Slack channel</a> - go over and introduce yourself and say hi!</p>
+<section id="tidy-data-concept" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-concept">2 Tidy data concept</h2>
+<section id="the-tidy-data-concept" class="level3">
+<h3 class="anchored" data-anchor-id="the-tidy-data-concept">2.1 The Tidy Data concept</h3>
+<p>A concept to streamline data preparation for analysis is Tidy Data. The basic idea is to format data for analysis in a way that</p>
+<ul>
+<li><p>Archives data for reproducibility of results, and</p></li>
+<li><p>Makes the data transparent to colleagues or researchers by documenting a data dictionary.</p></li>
+</ul>
+<p><br></p>
+<p>This page is all about the tidy data concept and a simple recipe for best practice to prepare data for analysis and to get data into R.</p>
+<p>The <a href="https://www.jstatsoft.org/article/view/v059i10">definition of Tidy Data is generally attributed to Wickham (2014)</a>, and is based on the idea that with a few simple rules, data can be archived for complete reproducibility of results. This practice benefits any user because it facilitates collaboration at the same time as documenting both data and analysis methods for value to future use.</p>
+<p>The essentials of Tidy Data are:</p>
+<ul>
+<li><p>Each variable should be in a column</p></li>
+<li><p>Each independent observation should be in a row</p></li>
+<li><p>A Data Dictionary should be associatied with the dataset, such that completely reproducible analysis is possible</p></li>
+</ul>
 <p><br></p>
 </section>
-<section id="r-motivation" class="level2">
-<h2 class="anchored" data-anchor-id="r-motivation">3 <code>R</code> motivation</h2>
-<p>The motivation for using <code>R</code> is that it is designed to help people with no programming experience to perform sophisticated statistical analysis with minimum effort. <code>R</code> has grown in popularity recently and is used extensively by universities, companies, and researchers everywhere. Because of this, there is a very large community of users and a demand in business and academia for skills using <code>R</code>.</p>
-<p><code>R</code> is free and open source. <code>R</code> is easy to learn and works the same for folks with fast and slow computers, no matter what kind of operating system or computer they like to use, and it is easy to use via the web on any device.</p>
+</section>
+<section id="common-data-file-types" class="level2">
+<h2 class="anchored" data-anchor-id="common-data-file-types">3 Common data file types</h2>
+<p>The best file type for the majority of people to archive data for analysis is in a plain text <strong>Comma Separated Values (CSV or .csv) file</strong>, or just an <strong>Excel Spreadsheet</strong>. Best practice in contemporary scientific data analysis dictates that proprietary data formats should be avoided, like those produced by SPSS, Genstat, Minitab or other programs.</p>
+<p>The reason for this is that data stored in those formats is not necessarily useful to people who do not have access to the software, and that for archiving purposes, such software file formats tend to change over time. While Excel is a proprietary format, we find that it is is easy to use, (almost completely) ubiquitous, and relatively resilient to backwards compatibility issues. Thus, sticking to CSV or Excel is a rule you should have a very good reason if you choose to break from it.</p>
+<p>We recommend using Excel to store data with the goal (for simple datasets and analyses) of having one table for the actual data, in Tidy Data format, and a second tab consisting of a Data Dictionary where each variable is described in enough detail to completely reproduce any analysis. Generally, no formatting or results should ever be embedded in an Excel spreadsheet that is used to store data.</p>
 <p><br></p>
 </section>
-<section id="install-r-and-rstudio-or-set-up-rstudio-cloud" class="level2">
-<h2 class="anchored" data-anchor-id="install-r-and-rstudio-or-set-up-rstudio-cloud">4 Install <code>R</code> and <code>RStudio</code> <strong>or</strong> set up <code>RStudio Cloud</code></h2>
-<p>You have two options for following along with these materials as they are intended.</p>
+<section id="excel-data-setup-and-the-data-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="excel-data-setup-and-the-data-dictionary">4 Excel, data setup, and the Data Dictionary</h2>
+<section id="tidy-data-and-excel" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-data-and-excel">4.1 Tidy Data and Excel</h3>
+<p>For this section, you should download the following files in Excel (.xlsx) format:</p>
+<ul>
+<li><p><a href="data/5-tidy.xlsx">Tidy Data example Excel file</a></p></li>
+<li><p><a href="data/5-untidy.xlsx">The exact same information as un-Tidy Data</a></p></li>
+</ul>
 <p><br></p>
-<p><strong>Option 1</strong> <a href="https://cloud.r-project.org/">Download and install R from CRAN</a> and then <a href="https://rstudio.com/products/rstudio/download/#download">download and install RStudio desktop</a>.</p>
-<p>Install <code>R</code> first, then <code>RStudio</code>. It is probably a good idea to go ahead and install the latest version of each if you have older versions installed. If you have a PC or laptop you regularly use, this option is probably best and will work for almost all hardware and operating systems.</p>
-<p><a href="https://www.google.com/search?q=how+do+I+install+R+for+windows">Help for Windows</a></p>
-<p><a href="https://www.google.com/search?q=how+do+I+install+R+for+mac">Help for Macs</a></p>
-<p><a href="https://www.google.com/search?q=how+do+I+install+R+for+linux">Help for Linux</a></p>
-<p><br></p>
-<p><strong>Option 2</strong> If you can’t install <code>R</code> or do not wish to, or if you prefer to work in “the cloud” from a web browser, you may wish to start a <a href="https://rstudio.cloud">free account at RStudio Cloud</a> and follow along that way.</p>
+<p><strong>The aphid experiment</strong></p>
+<blockquote class="blockquote">
+<p>You are contacted by someone who wants help with data analysis and they give you some information about their experiment. They are interested in how diet affects the production of an important metabolite in pest aphids. They designed an experiment with a control treatment where aphids were allowed to feed on plain plants, another treatment where their diet was supplemented with one additive, “AD”, and a third treatment where their diet was supplemented with two additives, “AD” and “SA”. Another factor was aphid Genus, where individuals from the genera <em>Brevicoryne</em> and <em>Myzus</em> were tested. Three replicates of each treatment combination were performed:</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>aphid genus [2 levels] <span class="math inline">\(\times\)</span> food treatment [3 levels].</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The metabolite of interest was measured with a spectrometer using three individual aphids from each replicate. The spectrometer peak area (an arbitrary scale) represents the total amount of the metabolite, which was converted to a real scale of metabolite total concentration. Finally, this total concentration was divided by 3 to estimate the concentration of the metabolite in each individual aphid.</p>
+</blockquote>
 <p><br></p>
 </section>
-<section id="rstudio-components-and-setup" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio-components-and-setup">5 <code>RStudio</code> components and setup</h2>
-<p>RStudio desktop is an environment to write <code>R</code> code, perform statistical analysis, organize big or small projects with multiple files, and view and organize outputs. There are many features of <code>RStudio</code>, but we are only going to point out a few. One of the most useful features is <code>syntax highlighting</code>, that gives visual cues to help you write computer code.</p>
+<section id="untidy-data" class="level3">
+<h3 class="anchored" data-anchor-id="untidy-data">4.2 Untidy data</h3>
+<p>Have a look at the file <code>5-untidy.xlsx</code> in Excel.</p>
 <p><br></p>
+<p>The aphid dataset is fairly small and it is readable by humans, but in its current form it is not usable for analysis in <code>R</code> or other statistical software and there are a few ambiguous aspects which we will explore and try to improve.</p>
+<p><br></p>
+<p><strong>Untidy</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/0.1-rstudio.png" class="img-fluid figure-img"></p>
-<figcaption>RStudio layout</figcaption>
+<p><img src="img/1.4-untidy.png" class="img-fluid figure-img"></p>
+<figcaption>Untidy data</figcaption>
 </figure>
 </div>
 <p><br></p>
-<p>Be aware (beware?) of:</p>
-<p><strong>The Script window</strong></p>
-<p>The script window is located in the upper left of the <code>RStudio</code> console by default. You may need to open a script or start a new one: File &gt; New File &gt; R Script (hotkey <code>Ctrl+Shift+N</code>).</p>
-<p>The script window is where you are likely to spend most of your time building scripts and executing commands you write. You can have many scripts open at the same time (in “tabs”), and you can have different kinds of scripts, e.g., for different parts of a project or even for programming languages.</p>
+<ul>
+<li><p>The file contains embedded figures and summary tables</p></li>
+<li><p>There is empty white space in the file (Row 1 and Column A)</p></li>
+<li><p>The variable names violate several naming conventions (spaces, special characters)</p></li>
+<li><p>Missing data is coded incorrectly (Row 13 was a failed data reading, but records zeros for the actual measurements)</p></li>
+<li><p>Conversion information accessory to the data is present (Row 3)</p></li>
+<li><p>There is no Data Dictionary (i.e.&nbsp;explanation of the variables)</p></li>
+<li><p>The Aphid and Diet treatments are “confounded” in their coding</p></li>
+<li><p>What the heck is the “RT” column (most of the values are identical)</p></li>
+</ul>
 <p><br></p>
-<p><strong>The Console window</strong></p>
-<p>The Console window is in the lower left by default. Notice there are several other tabs visible, but we will only mention the Console for now. The Console is the place where text outputs will be printed (e.g.&nbsp;the results of statistical tests), and also is a place where R will print Warning and Error messages.</p>
+<p><strong>Now, have a look at the Tidy Data version of the data file.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/1.4-tidy.png" class="img-fluid figure-img"></p>
+<figcaption>Tidy version of the data</figcaption>
+</figure>
+</div>
 <p><br></p>
-<p><strong>The Global Environment</strong></p>
-<p>The Global Environment is in the Environment tab in the upper right of RStudio by default. This pane is useful in displaying data objects that you have loaded and available.</p>
+<ul>
+<li><p>The embedded figures have been removed</p></li>
+<li><p>The white space rows and columns have been removed</p></li>
+<li><p>The variable names have been edited but still are equally informative</p></li>
+<li><p>Missing data is coded correctly with “NA”</p></li>
+<li><p>The conversion info has been removed and placed in the Data Dictionary</p></li>
+<li><p>A complete Data Dictionary on a new tab (“dictionary”) was added, explaining each variable</p></li>
+<li><p>The aphid and food treatment variables were made separate</p></li>
+</ul>
 <p><br></p>
-<p><strong>The Plots window</strong></p>
-<p>The Plots window is a tab in the lower right by default. This is the place where graphics output is displayed and where plots can be named, resized, copied and saved. There are some other important tabs here as well, which you can also explore. When a new plot is produced, the Plots tab will become active.</p>
+<p><strong>Tidy Data version Data Dictionary tab</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/1.4-tidy-dictionary.png" class="img-fluid figure-img"></p>
+<figcaption>Tidy data dictionary</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>Notice in the Data Dictionary how there is a row for each variable with the name of the variable and an explanation for each variable.</p>
 <p><br></p>
 </section>
-<section id="workflow-for-r-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="workflow-for-r-scripts">6 Workflow for R scripts</h2>
-<p><strong>Script setup</strong></p>
-<p>An <code>R</code> script is a plain text file where the file name ends in “dot R” (<code>.R</code>) by default.</p>
-<p>An <code>R</code> script serves several purposes:</p>
-<p>First, it <strong>documents your analysis</strong> allowing it to be reproduced exactly by yourself (your future self!) or by others like <em>collaborators</em>, <em>friends</em>, <em>colleagues</em>, <em>your professor</em>, <em>your student</em>, etc.</p>
-<p>Second, it is the <strong>interface between your commands and R software</strong>.</p>
-<p>A goal is that your scripts should contain only important <code>R</code> commands and information, in an organized and logical way that has meaning for other people, maybe for people you have never spoken to. A typical way to achieve this is to organize every script according to the same plan.</p>
+<section id="csv-files" class="level3">
+<h3 class="anchored" data-anchor-id="csv-files">4.3 CSV files</h3>
+<p>Once your data is tidy, it is very easy to read in Excel data files, or they can be exported into a text file format like CSV (comma separated values) to read straight into <code>R</code> or other programs.</p>
+<p>Have a look at the <a href="data/5-tidy.csv">Tidy Data dataset in .csv file format</a>.</p>
+<p>Open it with a plain text editor (e.g.&nbsp;Notepad in Windows, or similar). You will notice that each column entry is separated from others with a comma <code>,</code>, hence the name Comma Separated Values!</p>
 <p><br></p>
+<p><strong>Tidy csv</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/1.4-tidy.csv.png" class="img-fluid figure-img"></p>
+<figcaption>Tidy csv</figcaption>
+</figure>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="getting-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="getting-data-into-r">5 Getting data into R</h2>
+<p>We still need to actually “read data into <code>R</code>” from external files. There are a very large number of ways to do this and most people eventually find their own workflow. We think it is best for most people to use Excel or CSV files in Tidy Data format.</p>
+<p>The basics of reading external files from a script is to to use the <code>read.xlsx()</code> function in the <code>{openxlsx}</code> package (you will probably need to install this with the <code>install.packages()</code> function), or else to use <code>read.csv()</code> that comes standard in base <code>R</code>. We will briefly try both.</p>
+<p><br></p>
+<section id="working-directory" class="level3">
+<h3 class="anchored" data-anchor-id="working-directory">5.1 Working directory</h3>
 <blockquote class="blockquote">
-<p>Your <code>R</code> script should be a file good enough to show to a person in the future (like a supervisor, or even your future self). Someone who can help you, but also someone who you may not be able to explain the contents to. The script should be documented and complete. Think of this future person as a friend you respect.</p>
+<p>Best practice when working with files is to formally set your “working directory”. Basically, this tells R where your input (i.e.&nbsp;data) and output (like scripts or figures) files should be.</p>
 </blockquote>
 <p><br></p>
-<p>Although there are many ways to achieve this, for the purposes of the Bootcamp we strongly encourage you to organize you scripts like this:</p>
-<ul>
-<li><p>Header</p></li>
-<li><p>Contents</p></li>
-<li><p>One separate section for each item of contents</p></li>
-</ul>
+<p>There are several viable ways to set your working directory in R, e.g.&nbsp;via the Session menu:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/1.4-working-directory.png" class="img-fluid figure-img"></p>
+<figcaption>Working directory</figcaption>
+</figure>
+</div>
 <p><br></p>
-<p><strong>Header</strong></p>
-<p>Start every script with a <strong>Header</strong>, that contains your name, the date of the most recent edit, and a short description of the PURPOSE of the script.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A typical script Header</span></span>
+<p>However, the best way to do this this is to set your working directory using code with the <code>setwd()</code> function. Here we should a workflow for Windows, which is similar on other computer systems. <strong>We consider the step of setting a working directory essential for best practice.</strong></p>
+<p>If you are unfamiliar with how to obtain the path to your working directory, open windows explorer, navigate to the folder you wish to save your script, data files and other inputs and outputs. You can think of this folder as one that contains all related files for e.g.&nbsp;a data analysis project, or perhaps this bootcamp module!</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/1.4-explorer.png" class="img-fluid figure-img"></p>
+<figcaption>Your directory window might look similar to this</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>Notice the folder “view” is set to “Details”, and also notice that the folder options are set to “Show file extensions”. We recommend setting your own settings like this (if using Windows Explorer).</p>
+<p>The pointer is indicated in the circle marked A in the picture above.</p>
+<p>Left click the area to the right of the folder text once (where the pointer is in the picture above) and you should see something similar to the figure below, where the folder path is displayed and the text is automatically selected.</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/1.4-path.png" class="img-fluid figure-img"></p>
+<figcaption>Your selected file path might look similar to this</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>Assuming you have opened the File Explorer in your working directory or navigated there, the selected <code>PATH</code> is the working directory path which you can copy (<code>Ctrl + c</code> in Windows). In your script, you can now use <code>getwd()</code> to get and print your working directory path, and <code>setwd()</code>, which takes a single character string of the path for your working directory for the argument <code>dir</code> , to set it.</p>
+<p><br></p>
+<blockquote class="blockquote">
+<p>R file paths use the forward slash symbol “/” to separate file names. A very important step for Windows users when setting the working directory in R is to change the Windows default “” for forward slashes…</p>
+</blockquote>
+<p><br></p>
+</section>
+<section id="read-in-your-first-file" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-your-first-file">5.2 Read in your first file</h3>
+<p><strong>You need this for the following code if you did not already download it above:</strong> <a href="data/5-tidy.xlsx">.xlsx data file</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## HEADER ####</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Who: &lt;your name&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## What: My first script</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Last edited: yyyy-mm-dd (ISO 8601 date format... Google it!)</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">####</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># Prints working directory in Console</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"D:/Dropbox/git-rstats-bootcamp/website/data"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># NB the quotes</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># NB the use of "/"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># NB this is MY directory - change the PATH to YOUR directory :)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># Check that change worked</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Read in Excel data file</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(openxlsx, <span class="at">dep =</span> T) <span class="co"># Run if needed</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx) <span class="co"># Load package needed to read Excel files</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure the data file "5-tidy.xlsx" is in your working directory</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"5-tidy.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<section id="contents" class="level3">
-<h3 class="anchored" data-anchor-id="contents">6.1 Contents</h3>
-<p>A <strong>Contents</strong> section should also be present near the top, to provide a road map for the analysis.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A typical script Contents section</span></span>
+<p>All being well, you should see the following data object in your Global Environement. Note the small blue button (A, circled below) you can press to espand the view of the variables in your data frame.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/1.4-tidy-global-env.png" class="img-fluid figure-img"></p>
+<figcaption>Data in your Global Environment</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>Note that the same procedure works with Comma Separated Values data files, and other kinds of files that you want to read into R, except that the R function used will be specific to the file type. E.g., <code>read.csv()</code> for CSV files, <code>read.delim</code> for TAB delimited files, or <code>read.table()</code> as a generic function to tailor to many types of plain text data files (there are many others, but this is enough for now).</p>
+<p><br></p>
+</section>
+</section>
+<section id="manipulating-variables-in-the-data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="manipulating-variables-in-the-data-frame">6 Manipulating variables in the Data Frame</h2>
+<blockquote class="blockquote">
+<p>Now that there is a data frame in your working environment, we can start working with the variables. This is a good time to think about the “<code>R</code> Space” metaphor. You are floating in <code>R</code> Space and you can see a data frame called <code>my_data</code>. You cannot see inside the container, so we will look at methods of accessing the data inside by name…</p>
+</blockquote>
+<p><br></p>
+<section id="data-manipulation-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="data-manipulation-in-r">6.1 Data manipulation in <code>R</code></h3>
+<ul>
+<li><p>The <code>names()</code> function</p></li>
+<li><p>The use of the <code>$</code> operator for data frames</p></li>
+<li><p>The use of the <code>str()</code> function for data frames</p></li>
+<li><p>The use of the index operator <code>[ , ]</code></p></li>
+<li><p>The use of the <code>attach()</code> function</p></li>
+</ul>
+<p><br></p>
+<p>Carefully use the follow code and try some data manipulation on your own.</p>
+</section>
+<section id="class" class="level3">
+<h3 class="anchored" data-anchor-id="class">6.2 <code>class()</code></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## CONTENTS ####</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 00 Setup</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 01 Graphs</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 02 Analysis</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 03 Etc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my_data) <span class="co"># data.frame, a generic class for holding data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="names" class="level3">
+<h3 class="anchored" data-anchor-id="names">6.3 <code>names()</code></h3>
+<p>The <code>names()</code> function returns the name of attributes in R objects. When used on a data frame it returns the names of the variables.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(my_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="operator-for-data-frames" class="level3">
+<h3 class="anchored" data-anchor-id="operator-for-data-frames">6.4 <code>$</code> operator for data frames</h3>
+<p>The <code>$</code> operator allows us to access variable names inside <code>R</code> objects. Use it like this:</p>
+<p><code>data_object$variable_name</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>conc.ind <span class="co"># Error because the variable conc.ind is INSIDE my_data</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>my_data<span class="sc">$</span>conc.ind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="str" class="level3">
+<h3 class="anchored" data-anchor-id="str">6.5 <code>str()</code></h3>
+<p>The <code>str()</code> function returns the STRUCTURE of a data frame. This includes variable names, classes, and the first few values</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(my_data) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The output similar to the graphical Global Environment view in RStudio. Note the <code>conc.ind</code> variable is classed numeric</p>
+<p>Note the <code>treatment</code> variable is classed as character (not a factor)</p>
 <p><br></p>
 </section>
-<section id="section-for-each-item-of-contents" class="level3">
-<h3 class="anchored" data-anchor-id="section-for-each-item-of-contents">6.2 Section for each item of contents</h3>
-<p>Finally, <strong>code chunk</strong> breaks should be used to aid the readability of the script and to provide a section for each item in your table of contents. A code chunk is just a section of code set off from other sections.</p>
-<p>Below is the beginning of a typical code chunk in an R script.</p>
-<ul>
-<li><p>Code chunks must start with at least one hash sign “#”,</p></li>
-<li><p>should have a title descriptive of code chunk contents,</p></li>
-<li><p>and end with (at least) four hash signs “####”</p></li>
-<li><p>consecutively numbered titles makes things very tidy</p></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 01 This here is the first line of MY CODE CHUNK ####</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<p>We will practice each of these components.</p>
-<p><br></p>
+<section id="the-index-operator" class="level3">
+<h3 class="anchored" data-anchor-id="the-index-operator">6.6 <code>[ , ]</code> the index operator</h3>
+<p>The index operator allows us to access specified rows and columns in data frames (this works exactly the same in matrices and other indexed objects).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_data<span class="sc">$</span>conc.tot <span class="co"># The conc.tot variable with $</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>my_data<span class="sc">$</span>conc.tot[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="co"># each variable is a vector - 1st to 6th values</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(dim)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(my_data) <span class="co"># my_data has 18 rows, 6 columns</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>my_data[ , ] <span class="co"># Leaving blanks means return all rows and columns</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(my_data) <span class="co"># Note conc.tot is the 6th variable</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(my_data)[<span class="dv">6</span>] <span class="co"># Returns the name of the 6th variable</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>my_data[ , <span class="dv">6</span>] <span class="co"># Returns all rows of the 6th variable in my_data</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># We can explicitly specify all rows (there are 18 remember)</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>my_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">18</span> , <span class="dv">6</span>] <span class="co"># ALSO returns all rows of the 6th variable in my_data</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># We can specify the variable names with a character</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>my_data[ , <span class="st">"conc.tot"</span>]</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>my_data[ , <span class="st">"conc.ind"</span>]</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify more than 1 by name with c() in the column slot of [ , ]</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>my_data[ , <span class="fu">c</span>(<span class="st">"conc.tot"</span>, <span class="st">"conc.ind"</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="comments" class="level3">
-<h3 class="anchored" data-anchor-id="comments">6.3 Comments</h3>
-<p>Comments are messages that explain code in your script, and they should be used throughout every script. You can think of comments like the methods section of a scientific paper - there should be enough detail to exactly replicate and understand the script, but it should also be concise.</p>
-<p>Comment lines begin with the <code>#</code> character and are not treated as “code” by <code>R</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a vector of numbers &lt;--- a comment</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_variable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of my_variable &lt;--- another comment</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.285714</code></pre>
-</div>
-</div>
-<p><br></p>
-</section>
-<section id="submitting-commands" class="level3">
-<h3 class="anchored" data-anchor-id="submitting-commands">6.4 Submitting commands</h3>
-<p>A final thing that must be mentioned here is how to actually submit commands in your R script for R to execute. There are a few ways to do this.</p>
-<ul>
-<li><p><strong>run the whole line of code your cursor rests on (no selection)</strong> <code>Ctrl+Enter</code> (Cmd+Return in Macs)</p></li>
-<li><p><strong>run code you have selected with your cursor</strong> <code>Ctrl+Enter</code> (Cmd+Return in Macs).</p></li>
-<li><p>Use the “Run” button along the top of the Script window</p></li>
-<li><p>Run code from the menu <code>Code &gt; Run Selected Line(s)</code>.</p></li>
-</ul>
+<section id="attach" class="level3">
+<h3 class="anchored" data-anchor-id="attach">6.7 <code>attach()</code></h3>
+<p>The <code>attach()</code> function makes variable names available for a data frame in <code>R</code> space</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try this</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>conc.ind <span class="co"># Error; the Passive-Aggressive Butler doesn't understand...</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(my_data)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>conc.ind <span class="co"># Now that my_data is "attached", the Butler can find variables inside</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(detach) <span class="co"># Undo attach()</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(my_data)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>conc.ind <span class="co"># Is Sir feeling well, Sir?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
 </section>
 <section id="practice-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="practice-exercises">7 Practice exercises</h2>
+<p><br></p>
+<p><a href="data/5-butterfly.xlsx">Butterfly data in xlsx format</a></p>
+<p>The data are from a small experiment measuring antenna length in butterflies manipulating diet in both sexes.</p>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section">7.1</h3>
-<p>Download <a href="scripts/script-1.R">this script</a> and open it with RStudio. Save the script in a specific folder on your computer that you can find again and where you will save other scripts for the Bootcamp.</p>
-<p>Read the script comments and examine the structure of the code chunks. Run the code in the script using one of the methods above, and examine the output in the Console window.</p>
+<p>Download the data file above and place it in a working directory. Set your working directory. Read in the data file and place it in a data frame object named <code>data1.</code> After examining the data, use <code>mean()</code> to calculate the mean of the variable <code>length</code> and report the results in a comment to two decimal points accuracy. Show your <code>R</code> code.</p>
 <p><br></p>
 </section>
 <section id="section-1" class="level3">
 <h3 class="anchored" data-anchor-id="section-1">7.2</h3>
-<p>Add a code chunk title to your CONTENTS section and to your script. Make sure to write brief comments for your code. Add the following code to your chunk run it and examine the output:</p>
-<p>Don’t worry about understanding the code for now. We are just working on interfacing with <code>R</code> and submitting commands.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new variable</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_variable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.5</span>, <span class="fl">1.35</span>, <span class="fl">3.5</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of my_variable</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_variable)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the standard deviation of my_variable</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(my_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Show the code to convert the <code>diet</code> variable to an ordinal factor with the order “control” &gt; “enhanced”, and the <code>sex</code> variable to a plain categorical factor.</p>
+<p><br></p>
+</section>
+<section id="section-2" class="level3">
+<h3 class="anchored" data-anchor-id="section-2">7.3</h3>
+<p>Show code for two different variations of using only the <code>[ , ]</code> operator with your data frame to show the following output:</p>
+<pre><code>       diet length
+8   control      6
+9   control      7
+10  control      6
+11 enhanced      8
+12 enhanced      7
+13 enhanced      9</code></pre>
+<p><br></p>
+</section>
+<section id="section-3" class="level3">
+<h3 class="anchored" data-anchor-id="section-3">7.4</h3>
+<p>Show code to read in a comma separated values data file that does not have a header (first row containing variable names).</p>
+<p><br></p>
+</section>
+<section id="section-4" class="level3">
+<h3 class="anchored" data-anchor-id="section-4">7.5</h3>
+<p>Describe in your own words what the <code>attach()</code> function does.</p>
+<p><br></p>
+</section>
+<section id="section-5" class="level3">
+<h3 class="anchored" data-anchor-id="section-5">7.6</h3>
+<p>Write a plausible practice question involving any aspect of manipulation of a data frame.</p>
+<p><br></p>
 
 
 </section>

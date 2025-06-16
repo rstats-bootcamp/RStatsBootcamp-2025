@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1 Setup &amp; intro – R Stats Bootcamp</title>
+<title>3 R Functions – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -315,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./1-setup.html">1 Setup &amp; intro</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">3 R Functions</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -374,41 +374,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./1-setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">1 Setup &amp; intro</span></a>
-  </div>
-</li>
+ <span class="menu-text">1-setup.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./2-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2 R language</span></a>
-  </div>
-</li>
+ <span class="menu-text">2-r-lang.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3 R Functions</span></a>
-  </div>
-</li>
+ <span class="menu-text">3-functions.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./4-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4 Data objects</span></a>
-  </div>
-</li>
+ <span class="menu-text">4-data.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./5-data-frames.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Data frames</span></a>
-  </div>
-</li>
+ <span class="menu-text">5-data-frames.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./6-data-manipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6 Data subsetting</span></a>
-  </div>
-</li>
+ <span class="menu-text">6-data-manipulation.qmd</span>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -421,23 +403,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./7-question-explore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7 Explore data</span></a>
-  </div>
-</li>
+ <span class="menu-text">7-question-explore.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./8-sampling-dist.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8 Distributions</span></a>
-  </div>
-</li>
+ <span class="menu-text">8-sampling-dist.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./9-correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9 Correlation</span></a>
-  </div>
-</li>
+ <span class="menu-text">9-correlation.qmd</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-regression.html" class="sidebar-item-text sidebar-link">
@@ -503,25 +476,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bootcamp-introduction-first-day-with-r" id="toc-bootcamp-introduction-first-day-with-r" class="nav-link active" data-scroll-target="#bootcamp-introduction-first-day-with-r">1 Bootcamp Introduction (first day with <code>R</code>)</a>
+  <li><a href="#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" id="toc-functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" class="nav-link active" data-scroll-target="#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools">1 Functions and Packages Toolboxes (R as a garage full of tools)</a>
   <ul class="collapse">
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">1.1 Objectives</a></li>
   </ul></li>
-  <li><a href="#how-the-r-stats-bootcamp-works" id="toc-how-the-r-stats-bootcamp-works" class="nav-link" data-scroll-target="#how-the-r-stats-bootcamp-works">2 How the <code>R</code> Stats Bootcamp works</a></li>
-  <li><a href="#r-motivation" id="toc-r-motivation" class="nav-link" data-scroll-target="#r-motivation">3 <code>R</code> motivation</a></li>
-  <li><a href="#install-r-and-rstudio-or-set-up-rstudio-cloud" id="toc-install-r-and-rstudio-or-set-up-rstudio-cloud" class="nav-link" data-scroll-target="#install-r-and-rstudio-or-set-up-rstudio-cloud">4 Install <code>R</code> and <code>RStudio</code> <strong>or</strong> set up <code>RStudio Cloud</code></a></li>
-  <li><a href="#rstudio-components-and-setup" id="toc-rstudio-components-and-setup" class="nav-link" data-scroll-target="#rstudio-components-and-setup">5 <code>RStudio</code> components and setup</a></li>
-  <li><a href="#workflow-for-r-scripts" id="toc-workflow-for-r-scripts" class="nav-link" data-scroll-target="#workflow-for-r-scripts">6 Workflow for R scripts</a>
+  <li><a href="#function-tour" id="toc-function-tour" class="nav-link" data-scroll-target="#function-tour">2 Function tour</a>
   <ul class="collapse">
-  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">6.1 Contents</a></li>
-  <li><a href="#section-for-each-item-of-contents" id="toc-section-for-each-item-of-contents" class="nav-link" data-scroll-target="#section-for-each-item-of-contents">6.2 Section for each item of contents</a></li>
-  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">6.3 Comments</a></li>
-  <li><a href="#submitting-commands" id="toc-submitting-commands" class="nav-link" data-scroll-target="#submitting-commands">6.4 Submitting commands</a></li>
+  <li><a href="#using-functions" id="toc-using-functions" class="nav-link" data-scroll-target="#using-functions">2.1 Using functions</a></li>
+  <li><a href="#function-names" id="toc-function-names" class="nav-link" data-scroll-target="#function-names">2.2 Function names</a></li>
   </ul></li>
-  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">7 Practice exercises</a>
+  <li><a href="#using-functions-and-getting-help" id="toc-using-functions-and-getting-help" class="nav-link" data-scroll-target="#using-functions-and-getting-help">3 Using functions and getting help</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">4 R packages</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">7.1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">7.2</a></li>
+  <li><a href="#finding-downloading-and-using-packages" id="toc-finding-downloading-and-using-packages" class="nav-link" data-scroll-target="#finding-downloading-and-using-packages">4.1 Finding, downloading and using packages</a></li>
+  <li><a href="#installing-and-loading-packages-with-the-rstudio-packages-tab" id="toc-installing-and-loading-packages-with-the-rstudio-packages-tab" class="nav-link" data-scroll-target="#installing-and-loading-packages-with-the-rstudio-packages-tab">4.2 Installing and loading packages with the RStudio Packages tab</a></li>
+  </ul></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">5 Practice exercises</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">5.1</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">5.2</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">5.3</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">5.4</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">5.5</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">5.6</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -530,9 +507,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./1-setup.html">1 Setup &amp; intro</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">1 Setup &amp; intro</h1>
+<h1 class="title">3 R Functions</h1>
 </div>
 
 
@@ -549,190 +526,213 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><br></p>
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/pop-fisher-sm.png" class="img-fluid figure-img"></p>
-<figcaption>R.A. Fisher the father of statistics</figcaption>
+<p><img src=".\img/toolbox2.png" class="img-fluid figure-img"></p>
+<figcaption>R as a garage full of tools</figcaption>
 </figure>
 </div>
 </center>
-<section id="bootcamp-introduction-first-day-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="bootcamp-introduction-first-day-with-r">1 Bootcamp Introduction (first day with <code>R</code>)</h2>
+<section id="functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" class="level2">
+<h2 class="anchored" data-anchor-id="functions-and-packages-toolboxes-r-as-a-garage-full-of-tools">1 Functions and Packages Toolboxes (R as a garage full of tools)</h2>
 <p><br></p>
-<p>This page is intended to guide people during their first installation and use of R and RStudio.</p>
+<p>The garage and toolbox metaphors</p>
+<p>One of the best things about <code>R</code> is that it can be customized to accomplish a huge variety of kinds of tasks: perform all sorts of statistical analyses from simple to bleeding edge, produce professional graphs, format analyses into presentations, manuscripts and web pages, collaboration, GIS and mapping, and a lot more. The tools themselves are contained in toolboxes and in a given toolbox, the tools are related to each other, usually in a focus to the kind of tasks they are suited for.</p>
+<blockquote class="blockquote">
+<p>The tools in <code>R</code> are <strong>functions</strong>, and the toolboxes are <strong>packages</strong>.</p>
+</blockquote>
+<p>While <code>R</code> comes with a lot of packages, there is an enormous amount available for instant download at any time you want or need them (over 18,000 different packages at the moment…). Making use of all these resources is usually a case of identifying a problem to solve, finding the package that can help you, and then learning how to use the functions in the package This page is all about introducing functions, packages and the <code>R</code> help system.</p>
 <p><br></p>
 <section id="objectives" class="level3">
 <h3 class="anchored" data-anchor-id="objectives">1.1 Objectives</h3>
-<p>Here is what we will work on:</p>
 <ul>
-<li><p>How the <code>R</code> Stats Bootcamp works</p></li>
-<li><p>R motivation</p></li>
-<li><p>Install <code>R</code> and <code>RStudio</code> <strong>or</strong> set up <code>RStudio Cloud</code></p></li>
-<li><p><code>RStudio</code> components and setup</p></li>
-<li><p>Workflow for scripts in <code>R</code></p></li>
+<li><p>Function tour</p></li>
+<li><p>Using functions and getting help</p></li>
+<li><p><code>R</code> packages</p></li>
+<li><p>Finding, downloading and using packages</p></li>
 <li><p>Practice exercises</p></li>
 </ul>
 <p><br></p>
 </section>
 </section>
-<section id="how-the-r-stats-bootcamp-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-the-r-stats-bootcamp-works">2 How the <code>R</code> Stats Bootcamp works</h2>
-<p>The <code>R</code> Stats Bootcamp aims to provide practical, open instructional materials to support learning the <code>R</code> programming language, to review simple statistics in <code>R</code>, and to introduce reproducibility and collaboration tools. The content is a blend of practical, referenced material with videos and self-assessment.</p>
-<p>We also a have a <a href="https://join.slack.com/t/ha-eda-party/shared_invite/zt-w19od3dz-6bjo~dTC_GQeSUUv3B8XzQ">friendly community Slack channel</a> - go over and introduce yourself and say hi!</p>
+<section id="function-tour" class="level2">
+<h2 class="anchored" data-anchor-id="function-tour">2 Function tour</h2>
+<blockquote class="blockquote">
+<p>Think of functions in <code>R</code> as tools that do work for you.</p>
+</blockquote>
+<p>Code for functions is is simple once you get the idea, but you have to understand how they work to use them in the most powerful way. Also, to make the most of functions, you must get to know which ones perform common tasks, and how to use them. We will practice that in this section. We consider the USE of functions (for a given problem) as a separate issue from discovering a function, and here we focus on USE.</p>
+<p>A generic might look like this: <code>function_name()</code>. The <strong>function name</strong> is (obviously) the <code>function_name</code> part and all functions must have the bracket notation <code>()</code>. There are some rules for function names and for naming R objects in general, but for now the most important thing to keep in mind is that details like capitalization are important, that is, R is case sensitive.</p>
+<p>Thus, <code>function_name()</code> is not the same as <code>Function_name()</code> or <code>function_Name()</code> (see what I did there?).</p>
+<section id="using-functions" class="level3">
+<h3 class="anchored" data-anchor-id="using-functions">2.1 Using functions</h3>
+<p>Functions are typically used by providing some information inside the brackets, usually data for the function to do work on or settings for the function. <strong>Function values and settings are assigned to function arguments</strong> and most functions have several arguments.</p>
+<p><br></p>
+<p><code>function_name(argument_1 = value_1, argument_2 = value_2, ...)</code></p>
+<p>A general rule is that <strong>you INPUT information or data into function brackets</strong> that you want the function to do work and <strong>function OUTPUT is the work being done</strong>, sometimes including information output (like the results of a statistical test, or a plot).</p>
+<ul>
+<li><p>Each argument has a unique name</p></li>
+<li><p>Argument values are assigned using the equals sign <code>=</code>, the assignment operator</p></li>
+<li><p>Each argument is separated by a comma <code>,</code></p></li>
+<li><p>The <code>...</code> means there are additional arguments that can be used optionally (for now we can ignore those)</p></li>
+</ul>
 <p><br></p>
 </section>
-<section id="r-motivation" class="level2">
-<h2 class="anchored" data-anchor-id="r-motivation">3 <code>R</code> motivation</h2>
-<p>The motivation for using <code>R</code> is that it is designed to help people with no programming experience to perform sophisticated statistical analysis with minimum effort. <code>R</code> has grown in popularity recently and is used extensively by universities, companies, and researchers everywhere. Because of this, there is a very large community of users and a demand in business and academia for skills using <code>R</code>.</p>
-<p><code>R</code> is free and open source. <code>R</code> is easy to learn and works the same for folks with fast and slow computers, no matter what kind of operating system or computer they like to use, and it is easy to use via the web on any device.</p>
+<section id="function-names" class="level3">
+<h3 class="anchored" data-anchor-id="function-names">2.2 Function names</h3>
+<p>Finding functions by their names is often easy for very simple and common tasks. For example:</p>
+<p><code>mean()</code> Calculates the arithmetic mean</p>
+<p><code>log()</code> Calculates the log</p>
+<p><code>sd()</code> Calculates the standard deviation</p>
+<p><code>plot()</code> Draws plots</p>
+<p><code>boxplot()</code> Draws boxplots</p>
+<p><code>help()</code> Used to access help pages</p>
+<p>You get the idea…</p>
+<p><br></p>
+<p>The most important thing here is that <strong>you would generally get the help page up as a reference to what arguments are required and how to customize your function use</strong>. This is the key to learning <code>R</code> in the easiest way. That is, until you memorize the use and arguments for common functions.</p>
 <p><br></p>
 </section>
-<section id="install-r-and-rstudio-or-set-up-rstudio-cloud" class="level2">
-<h2 class="anchored" data-anchor-id="install-r-and-rstudio-or-set-up-rstudio-cloud">4 Install <code>R</code> and <code>RStudio</code> <strong>or</strong> set up <code>RStudio Cloud</code></h2>
-<p>You have two options for following along with these materials as they are intended.</p>
+</section>
+<section id="using-functions-and-getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="using-functions-and-getting-help">3 Using functions and getting help</h2>
+<p>For now, let’s assume that you know:</p>
+<ul>
+<li><p>What tasks you want to do (maybe outlined with pseudocode), and</p></li>
+<li><p>What function(s) can perform those tasks.</p></li>
+</ul>
 <p><br></p>
-<p><strong>Option 1</strong> <a href="https://cloud.r-project.org/">Download and install R from CRAN</a> and then <a href="https://rstudio.com/products/rstudio/download/#download">download and install RStudio desktop</a>.</p>
-<p>Install <code>R</code> first, then <code>RStudio</code>. It is probably a good idea to go ahead and install the latest version of each if you have older versions installed. If you have a PC or laptop you regularly use, this option is probably best and will work for almost all hardware and operating systems.</p>
-<p><a href="https://www.google.com/search?q=how+do+I+install+R+for+windows">Help for Windows</a></p>
-<p><a href="https://www.google.com/search?q=how+do+I+install+R+for+mac">Help for Macs</a></p>
-<p><a href="https://www.google.com/search?q=how+do+I+install+R+for+linux">Help for Linux</a></p>
+<p>Try this out in your own script:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## A workflow for using functions ####</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## (make pseudocode of steps in comments)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Overall task: calculate the mean for a vector of numbers</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Code the vector of data - c() function</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Calculate the mean - mean() function</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Plot the data - boxplot()</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Code the vector of data - c() function</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(c) <span class="co"># We use this a lot - it "combines" numbers</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>) </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Calculate the mean - mean() function</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(mean) </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice under Usage, the "x" argument</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice under Arguments, x is a numeric vector</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>)) <span class="co"># Easy</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Plot the data - boxplot()</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(boxplot) <span class="co"># x again!</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>))</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge: Add an axis label to the y-axis - can you find the name of the argument?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<p><strong>Option 2</strong> If you can’t install <code>R</code> or do not wish to, or if you prefer to work in “the cloud” from a web browser, you may wish to start a <a href="https://rstudio.cloud">free account at RStudio Cloud</a> and follow along that way.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># without a y-axis label this is not a good graph</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03-functions_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><br></p>
 </section>
-<section id="rstudio-components-and-setup" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio-components-and-setup">5 <code>RStudio</code> components and setup</h2>
-<p>RStudio desktop is an environment to write <code>R</code> code, perform statistical analysis, organize big or small projects with multiple files, and view and organize outputs. There are many features of <code>RStudio</code>, but we are only going to point out a few. One of the most useful features is <code>syntax highlighting</code>, that gives visual cues to help you write computer code.</p>
+<section id="r-packages" class="level2">
+<h2 class="anchored" data-anchor-id="r-packages">4 R packages</h2>
+<p>There are a lot of <code>R</code> packages. These are “toolboxes” often built in the spirit of identifying a problem, literally making a tools that solves the problem, and then sharing the tool for other to use as well. In fact, all official R packages are “open source”, meaning that you may use them freely, but also you can improve them and add functionality. <strong>This section is about the basics of R packages</strong> that are additional to the base R installation.</p>
+<p>Typically, you only download a package once you identify you need to use functions in it. There are are several ways to accomplish this. We are going to practice 2 different ways, one with R code that is simple and will work no matter how you use R, and one that uses menus in RStudio.</p>
 <p><br></p>
+<section id="finding-downloading-and-using-packages" class="level3">
+<h3 class="anchored" data-anchor-id="finding-downloading-and-using-packages">4.1 Finding, downloading and using packages</h3>
+<p>Finding packages happens a variety of ways in practice. A package may be recommended to you, you might be told to use a particular package for a task or assignment, or you may discover it on the web.</p>
+<p><strong>Installing and loading packages with code</strong></p>
+<p>There are 2 steps here - installing, then loading. Installing is very easy to do using the <code>install.packages()</code> function. Loading a package making the functions in it available for use is done using the <code>library()</code> package. Basic usage of these functions is:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: install a package</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(install.packages) <span class="co"># just have a look</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="at">pkgs =</span> <span class="st">"package_name"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># The package is downloaded from a remote repository, often</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># with additional packages that are required for use.</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: load a package</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"package_name"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge: Install and load the "ggplot2" package, and then use help() to look at the help page for the function ggplot().  What kind of R object is required by the "data" argument?</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+</section>
+<section id="installing-and-loading-packages-with-the-rstudio-packages-tab" class="level3">
+<h3 class="anchored" data-anchor-id="installing-and-loading-packages-with-the-rstudio-packages-tab">4.2 Installing and loading packages with the RStudio Packages tab</h3>
+<p>You can find the packages tab in RStudio in the lower left pane by default.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/0.1-rstudio.png" class="img-fluid figure-img"></p>
-<figcaption>RStudio layout</figcaption>
+<p><img src=".\img/1.2-packages-tab.png" class="img-fluid figure-img"></p>
+<figcaption>Packages tab</figcaption>
 </figure>
 </div>
 <p><br></p>
-<p>Be aware (beware?) of:</p>
-<p><strong>The Script window</strong></p>
-<p>The script window is located in the upper left of the <code>RStudio</code> console by default. You may need to open a script or start a new one: File &gt; New File &gt; R Script (hotkey <code>Ctrl+Shift+N</code>).</p>
-<p>The script window is where you are likely to spend most of your time building scripts and executing commands you write. You can have many scripts open at the same time (in “tabs”), and you can have different kinds of scripts, e.g., for different parts of a project or even for programming languages.</p>
+<p>When you click on the <strong>Packages tab (A in the picture above)</strong>, you can see a list of packages that are available to you (i.e., in RStudio desktop these have already been downloaded locally).</p>
+<p>In order to <strong>load a package</strong>, you can find the package name in the list and click the <strong>radio button (B in the picture)</strong>.</p>
+<p>To <strong>install a package</strong>, you can <strong>click on the Install button (C in the image)</strong>.</p>
+<p>You should see the Install Packages window, where you can enter the name of a package for installation, searching the official Comprehensive R Archive Network (Repository (CRAN)) by default:</p>
 <p><br></p>
-<p><strong>The Console window</strong></p>
-<p>The Console window is in the lower left by default. Notice there are several other tabs visible, but we will only mention the Console for now. The Console is the place where text outputs will be printed (e.g.&nbsp;the results of statistical tests), and also is a place where R will print Warning and Error messages.</p>
-<p><br></p>
-<p><strong>The Global Environment</strong></p>
-<p>The Global Environment is in the Environment tab in the upper right of RStudio by default. This pane is useful in displaying data objects that you have loaded and available.</p>
-<p><br></p>
-<p><strong>The Plots window</strong></p>
-<p>The Plots window is a tab in the lower right by default. This is the place where graphics output is displayed and where plots can be named, resized, copied and saved. There are some other important tabs here as well, which you can also explore. When a new plot is produced, the Plots tab will become active.</p>
-<p><br></p>
-</section>
-<section id="workflow-for-r-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="workflow-for-r-scripts">6 Workflow for R scripts</h2>
-<p><strong>Script setup</strong></p>
-<p>An <code>R</code> script is a plain text file where the file name ends in “dot R” (<code>.R</code>) by default.</p>
-<p>An <code>R</code> script serves several purposes:</p>
-<p>First, it <strong>documents your analysis</strong> allowing it to be reproduced exactly by yourself (your future self!) or by others like <em>collaborators</em>, <em>friends</em>, <em>colleagues</em>, <em>your professor</em>, <em>your student</em>, etc.</p>
-<p>Second, it is the <strong>interface between your commands and R software</strong>.</p>
-<p>A goal is that your scripts should contain only important <code>R</code> commands and information, in an organized and logical way that has meaning for other people, maybe for people you have never spoken to. A typical way to achieve this is to organize every script according to the same plan.</p>
-<p><br></p>
-<blockquote class="blockquote">
-<p>Your <code>R</code> script should be a file good enough to show to a person in the future (like a supervisor, or even your future self). Someone who can help you, but also someone who you may not be able to explain the contents to. The script should be documented and complete. Think of this future person as a friend you respect.</p>
-</blockquote>
-<p><br></p>
-<p>Although there are many ways to achieve this, for the purposes of the Bootcamp we strongly encourage you to organize you scripts like this:</p>
-<ul>
-<li><p>Header</p></li>
-<li><p>Contents</p></li>
-<li><p>One separate section for each item of contents</p></li>
-</ul>
-<p><br></p>
-<p><strong>Header</strong></p>
-<p>Start every script with a <strong>Header</strong>, that contains your name, the date of the most recent edit, and a short description of the PURPOSE of the script.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A typical script Header</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## HEADER ####</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Who: &lt;your name&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## What: My first script</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Last edited: yyyy-mm-dd (ISO 8601 date format... Google it!)</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">####</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<section id="contents" class="level3">
-<h3 class="anchored" data-anchor-id="contents">6.1 Contents</h3>
-<p>A <strong>Contents</strong> section should also be present near the top, to provide a road map for the analysis.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A typical script Contents section</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## CONTENTS ####</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 00 Setup</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 01 Graphs</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 02 Analysis</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 03 Etc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-</section>
-<section id="section-for-each-item-of-contents" class="level3">
-<h3 class="anchored" data-anchor-id="section-for-each-item-of-contents">6.2 Section for each item of contents</h3>
-<p>Finally, <strong>code chunk</strong> breaks should be used to aid the readability of the script and to provide a section for each item in your table of contents. A code chunk is just a section of code set off from other sections.</p>
-<p>Below is the beginning of a typical code chunk in an R script.</p>
-<ul>
-<li><p>Code chunks must start with at least one hash sign “#”,</p></li>
-<li><p>should have a title descriptive of code chunk contents,</p></li>
-<li><p>and end with (at least) four hash signs “####”</p></li>
-<li><p>consecutively numbered titles makes things very tidy</p></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 01 This here is the first line of MY CODE CHUNK ####</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<p>We will practice each of these components.</p>
-<p><br></p>
-</section>
-<section id="comments" class="level3">
-<h3 class="anchored" data-anchor-id="comments">6.3 Comments</h3>
-<p>Comments are messages that explain code in your script, and they should be used throughout every script. You can think of comments like the methods section of a scientific paper - there should be enough detail to exactly replicate and understand the script, but it should also be concise.</p>
-<p>Comment lines begin with the <code>#</code> character and are not treated as “code” by <code>R</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a vector of numbers &lt;--- a comment</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_variable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of my_variable &lt;--- another comment</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.285714</code></pre>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/1.2-install-packages.png" class="img-fluid figure-img"></p>
+<figcaption>Install packages in RStudio</figcaption>
+</figure>
 </div>
-</div>
-<p><br></p>
-</section>
-<section id="submitting-commands" class="level3">
-<h3 class="anchored" data-anchor-id="submitting-commands">6.4 Submitting commands</h3>
-<p>A final thing that must be mentioned here is how to actually submit commands in your R script for R to execute. There are a few ways to do this.</p>
-<ul>
-<li><p><strong>run the whole line of code your cursor rests on (no selection)</strong> <code>Ctrl+Enter</code> (Cmd+Return in Macs)</p></li>
-<li><p><strong>run code you have selected with your cursor</strong> <code>Ctrl+Enter</code> (Cmd+Return in Macs).</p></li>
-<li><p>Use the “Run” button along the top of the Script window</p></li>
-<li><p>Run code from the menu <code>Code &gt; Run Selected Line(s)</code>.</p></li>
-</ul>
+</center>
 <p><br></p>
 </section>
 </section>
 <section id="practice-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="practice-exercises">7 Practice exercises</h2>
+<h2 class="anchored" data-anchor-id="practice-exercises">5 Practice exercises</h2>
+<p><br></p>
 <section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">7.1</h3>
-<p>Download <a href="scripts/script-1.R">this script</a> and open it with RStudio. Save the script in a specific folder on your computer that you can find again and where you will save other scripts for the Bootcamp.</p>
-<p>Read the script comments and examine the structure of the code chunks. Run the code in the script using one of the methods above, and examine the output in the Console window.</p>
+<h3 class="anchored" data-anchor-id="section">5.1</h3>
+<p>Explain in your own words what the freq argument in the <code>hist()</code> function does. It often helps to practice trail and error to understand what is happening with data. Try experimenting with the data vector below with the <code>hist()</code> function to explore the freq argument:</p>
+<p><code>c(1,2,4,3,5,6,7,8,6,5,5,5,3,4,5,7)</code></p>
 <p><br></p>
 </section>
 <section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">7.2</h3>
-<p>Add a code chunk title to your CONTENTS section and to your script. Make sure to write brief comments for your code. Add the following code to your chunk run it and examine the output:</p>
-<p>Don’t worry about understanding the code for now. We are just working on interfacing with <code>R</code> and submitting commands.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new variable</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_variable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.5</span>, <span class="fl">1.35</span>, <span class="fl">3.5</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of my_variable</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_variable)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the standard deviation of my_variable</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(my_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored" data-anchor-id="section-1">5.2</h3>
+<p>Tailor your code from the <code>hist()</code> example in problem 1 so that your histogram has a main title, axis labels, and set the <code>col</code> argument to “blue”. We are just scratching the surface with plot customization - try to incorporate other arguments to make an attractive graph.</p>
+<p><br></p>
+</section>
+<section id="section-2" class="level3">
+<h3 class="anchored" data-anchor-id="section-2">5.3</h3>
+<p>Use the <code>mean()</code> function on the following data vector</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will see an error message. The symbol “NA” has a special meaning in R, indicating a missing value. Use <code>help()</code> for the mean function and implement the na.rm argument to fix the problem. Show your code.</p>
+<p><br></p>
+</section>
+<section id="section-3" class="level3">
+<h3 class="anchored" data-anchor-id="section-3">5.4</h3>
+<p>In your own words, what value is required for the “d” argument in the <code>pwr.t.test()</code> function in the <code>{pwr}</code> package? Show the code involved including any appropriate comment code required to answer this question. (hint: you will probably need to install the package, load it, and use <code>help()</code> on the function name)</p>
+<p><br></p>
+</section>
+<section id="section-4" class="level3">
+<h3 class="anchored" data-anchor-id="section-4">5.5</h3>
+<p>Every official <code>R</code> package has a webpage on the Comprehensive <code>R</code> Archive Network (CRAN) and there are often tutorials called “vignettes”. Google the CRAN page for the package <code>{ggplot2}</code> and find the vignette called “Aesthetic specifications”. Read the section right near the top called “Colour and fill”.</p>
+<p>Follow the instructions to list all of the built-in colours in <code>R</code> and list them in the console. Ed’s personal favourite is “goldenrod”, index number [147]. Can you find the index number for “tomato2”?</p>
+<p><br></p>
+</section>
+<section id="section-5" class="level3">
+<h3 class="anchored" data-anchor-id="section-5">5.6</h3>
+<p>Write a plausible practice question involving the use of <code>help()</code> for an R function.</p>
+<p><br></p>
 
 
 </section>
