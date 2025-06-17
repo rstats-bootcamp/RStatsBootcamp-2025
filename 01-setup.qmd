@@ -227,6 +227,30 @@ Read the script comments and examine the structure of the code chunks. Run the c
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution
+```{r}
+#| echo: true
+#| eval: false
+
+# Example of running the script-1.R file
+# First, set your working directory to where you saved the file
+# setwd("path/to/your/directory")  # Uncomment and modify this line
+
+# Then you can open the file in RStudio and run it line by line
+# Or select all code (Ctrl+A) and run it (Ctrl+Enter)
+
+# When you run the script, you should see:
+# 1. The first few rows of the iris dataset displayed in the console
+# 2. A help page for the iris dataset will open
+# 3. A boxplot showing Sepal.Length by Species will be created in the Plots tab
+```
+
+When you run the script, you should see the iris dataset displayed in the console, a help page will open, and a boxplot will be created showing the Sepal.Length for each iris Species.
+:::
+
+<br>
+
 ### 7.2 Add a code chunk title and corresponding code section
 
 Add a code chunk title to your CONTENTS section and to your script. Make sure to write brief comments for your code. Add the following code to your chunk run it and examine the output:
@@ -243,3 +267,39 @@ mean(my_variable)
 # Calculate the standard deviation of my_variable
 sd(my_variable)
 ```
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution
+```{r}
+#| echo: true
+#| eval: true
+
+# Here's how you would add this to your script:
+
+## CONTENTS ####
+## 00 Setup
+## 01 Graphs
+## 02 Analysis
+## 03 Statistical calculations  # New content section added
+
+# And then later in your script:
+
+## 03 Statistical calculations ####
+# Create a new variable
+my_variable <- c(6.5, 1.35, 3.5)
+
+# Calculate the mean of my_variable
+mean(my_variable)
+
+# Calculate the standard deviation of my_variable
+sd(my_variable)
+```
+
+The output in the console should show:
+- Mean: 3.783333
+- Standard deviation: 2.599358
+:::
+
+<br>
