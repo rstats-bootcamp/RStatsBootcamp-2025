@@ -547,12 +547,12 @@ window.Quarto = {
   <li>
 <a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">8 Practice exercises</a>
   <ul class="collapse">
-<li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">8.1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">8.2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">8.3</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">8.4</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">8.5</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">8.6</a></li>
+<li><a href="#loading-and-exploring-the-pesticide-dataset" id="toc-loading-and-exploring-the-pesticide-dataset" class="nav-link" data-scroll-target="#loading-and-exploring-the-pesticide-dataset">8.1 Loading and Exploring the Pesticide Dataset</a></li>
+  <li><a href="#testing-normality-of-residuals" id="toc-testing-normality-of-residuals" class="nav-link" data-scroll-target="#testing-normality-of-residuals">8.2 Testing Normality of Residuals</a></li>
+  <li><a href="#testing-homoscedasticity" id="toc-testing-homoscedasticity" class="nav-link" data-scroll-target="#testing-homoscedasticity">8.3 Testing Homoscedasticity</a></li>
+  <li><a href="#performing-one-way-anova" id="toc-performing-one-way-anova" class="nav-link" data-scroll-target="#performing-one-way-anova">8.4 Performing One-way ANOVA</a></li>
+  <li><a href="#post-hoc-analysis-of-treatment-effects" id="toc-post-hoc-analysis-of-treatment-effects" class="nav-link" data-scroll-target="#post-hoc-analysis-of-treatment-effects">8.5 Post-hoc Analysis of Treatment Effects</a></li>
+  <li><a href="#create-your-own-anova-question" id="toc-create-your-own-anova-question" class="nav-link" data-scroll-target="#create-your-own-anova-question">8.6 Create Your Own ANOVA Question</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -1240,136 +1240,25 @@ Kruskal-Wallis chi-squared = 7.648, df = 4, p-value = 0.1054</code></pre>
 </div>
 <p><br></p>
 </section></section><section id="practice-exercises" class="level2"><h2 class="anchored" data-anchor-id="practice-exercises">8 Practice exercises</h2>
-<p>For these exercises, run the code below to recreate the data object <code>pest</code>. There are 40 rows and two variables: <code>damage</code> and <code>treatment</code>.</p>
+<p>For the following exercises, use the dataset in the file 1.5-OrchardSprays.csv. The dataset is in tidy format. Take advantage of this by looking at the terse information present in the data dictionary tab. The data are from an experiment testing the effectiveness of different pesticide treatments on red lily beetle damage to lily leaves. There will be some data handling as part of the exercises below, a practical and important part of every real data analysis.</p>
+<p><br></p>
+<section id="loading-and-exploring-the-pesticide-dataset" class="level3"><h3 class="anchored" data-anchor-id="loading-and-exploring-the-pesticide-dataset">8.1 Loading and Exploring the Pesticide Dataset</h3>
+<p>Read in the data from the file 1.5-OrchardSprays.csv. Use the <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> function. Print the first few rows of the data, and check the structure of the data. Show your code.</p>
 <div class="cell">
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/structure.html">structure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>damage <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">113.7</span>, <span class="fl">94.4</span>, <span class="fl">103.6</span>, </span>
-<span>                                  <span class="fl">106.3</span>, <span class="fl">104</span>, <span class="fl">98.9</span>, </span>
-<span>                          <span class="fl">115.1</span>, <span class="fl">99.1</span>, <span class="fl">120.2</span>, <span class="fl">99.4</span>, </span>
-<span>                          <span class="fl">88</span>, <span class="fl">97.9</span>, <span class="fl">61.1</span>, <span class="fl">72.2</span>, <span class="fl">73.7</span>, </span>
-<span>                          <span class="fl">81.4</span>, <span class="fl">72.2</span>, <span class="fl">48.4</span>, <span class="fl">50.6</span>, <span class="fl">88.2</span>, </span>
-<span>                          <span class="fl">46.9</span>, <span class="fl">32.2</span>, <span class="fl">48.3</span>, <span class="fl">62.1</span>, <span class="fl">69</span>, </span>
-<span>                          <span class="fl">45.7</span>, <span class="fl">47.4</span>, <span class="fl">32.4</span>, <span class="fl">54.6</span>, <span class="fl">43.6</span>, </span>
-<span>                          <span class="fl">104.6</span>, <span class="fl">107</span>, <span class="fl">110.4</span>, <span class="fl">93.9</span>, <span class="fl">105</span>, </span>
-<span>                          <span class="fl">82.8</span>, <span class="fl">92.2</span>, <span class="fl">91.5</span>, <span class="fl">75.9</span>, <span class="fl">100.4</span><span class="op">)</span>, </span>
-<span>                       treatment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"control"</span>, <span class="st">"control"</span>, </span>
-<span>                                     <span class="st">"control"</span>, <span class="st">"control"</span>,</span>
-<span>                                     <span class="st">"control"</span>, <span class="st">"control"</span>, </span>
-<span>                                     <span class="st">"control"</span>, <span class="st">"control"</span>, </span>
-<span>                                     <span class="st">"control"</span>, <span class="st">"control"</span>,</span>
-<span>                                     <span class="st">"x.half"</span>, <span class="st">"x.half"</span>, </span>
-<span>                                     <span class="st">"x.half"</span>, <span class="st">"x.half"</span>, </span>
-<span>                                     <span class="st">"x.half"</span>, <span class="st">"x.half"</span>, </span>
-<span>                                     <span class="st">"x.half"</span>, <span class="st">"x.half"</span>, </span>
-<span>                                     <span class="st">"x.half"</span>, <span class="st">"x.half"</span>, </span>
-<span>                                     <span class="st">"x.full"</span>, <span class="st">"x.full"</span>, </span>
-<span>                                     <span class="st">"x.full"</span>, <span class="st">"x.full"</span>,</span>
-<span>                                     <span class="st">"x.full"</span>, <span class="st">"x.full"</span>, </span>
-<span>                                     <span class="st">"x.full"</span>, <span class="st">"x.full"</span>, </span>
-<span>                                     <span class="st">"x.full"</span>, <span class="st">"x.full"</span>, </span>
-<span>                                     <span class="st">"organic"</span>, <span class="st">"organic"</span>, </span>
-<span>                                     <span class="st">"organic"</span>, <span class="st">"organic"</span>, </span>
-<span>                                     <span class="st">"organic"</span>, <span class="st">"organic"</span>, </span>
-<span>                                     <span class="st">"organic"</span>, <span class="st">"organic"</span>, </span>
-<span>                                     <span class="st">"organic"</span>, <span class="st">"organic"</span><span class="op">)</span><span class="op">)</span>, </span>
-<span>                  class <span class="op">=</span> <span class="st">"data.frame"</span>, </span>
-<span>                  row.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="op">-</span><span class="fl">40L</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
-<p>Think of this data as the result of an experiment looking at the effectiveness of pesticide treatment on leaf damage. Let us imagine that this experiment measured leaf damage (variable “damage” measured in mm squared) and that the plants were treated with one of 4 treatment levels:</p>
-<p>Variable <code>treatment</code> with levels</p>
-<ul>
-<li><p><code>control</code></p></li>
-<li><p><code>x.half</code></p></li>
-<li><p><code>x.full</code></p></li>
-<li><p><code>organic</code></p></li>
-</ul>
-<p>The experiment is of course designed to look at an overall effect the various treatments may have to reduce leaf damage relative to the <code>control.</code> In addition, it is of interest to examine the effect of the <code>organic</code> treatment compared to that of the <code>x.half</code> to the <code>x.full.</code></p>
-<p>The experiment ran using 40 potted plants spaced 1m from each other in a greenhouse setting. Each treatment was randomly assigned to 10 plants. Onto each plant was placed 5 red lily beetle (<em>Lilioceris lilii</em>) pairs.</p>
-<p><br></p>
-<center>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="img/2.6-red-lily-beetle.jpg" class="img-fluid figure-img"></p>
-<figcaption>Red lily beetle</figcaption></figure>
-</div>
-</center>
-<p><br></p>
-<section id="section" class="level3"><h3 class="anchored" data-anchor-id="section">8.1</h3>
-<p>Make a good, appropriate graph representing the overall experiment. Show your code. Describe any trends in the data that are apparent from the graph, as well as an initial assessment of principle assumptions of 1-way ANOVA based only on your single graph.</p>
-<p><br></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution: Visualizing Treatment Effects on Leaf Damage
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a boxplot showing damage by treatment</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span>,</span>
-<span>        main <span class="op">=</span> <span class="st">"Effect of Treatments on Leaf Damage"</span>,</span>
-<span>        xlab <span class="op">=</span> <span class="st">"Treatment Type"</span>,</span>
-<span>        ylab <span class="op">=</span> <span class="st">"Leaf Damage (mm²)"</span>,</span>
-<span>        col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"lightgray"</span>, <span class="st">"lightgreen"</span>, <span class="st">"lightblue"</span>, <span class="st">"lightyellow"</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Read in the data from the file 1.5-OrchardSprays.csv</span></span>
+<span><span class="va">pest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"1.5-OrchardSprays.csv"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Add horizontal line for grand mean</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">pest</span><span class="op">$</span><span class="va">damage</span><span class="op">)</span>, </span>
-<span>       lty <span class="op">=</span> <span class="fl">2</span>, lwd <span class="op">=</span> <span class="fl">2</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
+<span><span class="co"># Print the first few rows of the data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">pest</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Add raw data points</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>  <span class="co"># For reproducible jitter</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/jitter.html">jitter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">pest</span><span class="op">$</span><span class="va">treatment</span><span class="op">)</span><span class="op">)</span>, amount <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>,</span>
-<span>       y <span class="op">=</span> <span class="va">pest</span><span class="op">$</span><span class="va">damage</span>,</span>
-<span>       pch <span class="op">=</span> <span class="fl">19</span>, col <span class="op">=</span> <span class="st">"blue"</span>, cex <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Add mean points for each group</span></span>
-<span><span class="va">means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tapply.html">tapply</a></span><span class="op">(</span><span class="va">pest</span><span class="op">$</span><span class="va">damage</span>, <span class="va">pest</span><span class="op">$</span><span class="va">treatment</span>, <span class="va">mean</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, y <span class="op">=</span> <span class="va">means</span>, </span>
-<span>       pch <span class="op">=</span> <span class="fl">18</span>, col <span class="op">=</span> <span class="st">"red"</span>, cex <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Add legend</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, </span>
-<span>       legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Individual observations"</span>, <span class="st">"Group mean"</span>, <span class="st">"Grand mean"</span><span class="op">)</span>,</span>
-<span>       pch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">19</span>, <span class="fl">18</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
-<span>       lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">2</span><span class="op">)</span>,</span>
-<span>       col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"red"</span><span class="op">)</span>,</span>
-<span>       pt.cex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.8</span>, <span class="fl">2</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
-<span>       lwd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The boxplot reveals clear trends in the data:</p>
-<ol type="1">
-<li>The control group shows the highest leaf damage, with a median around 100 mm².</li>
-<li>The x.full treatment appears most effective at reducing damage, with values clustering around 50 mm².</li>
-<li>The x.half treatment shows intermediate effectiveness.</li>
-<li>The organic treatment shows damage levels closer to the control.</li>
-</ol>
-<p>Initial assessment of ANOVA assumptions: - The spread (variance) appears roughly similar across treatments, suggesting homoscedasticity. - The distributions within each treatment look approximately symmetric, with no extreme outliers. - Each box contains 10 observations, providing adequate sample size per group. - There’s clear separation between some groups, suggesting potential significant differences.</p>
-<p>The visualization supports proceeding with formal assumption testing for ANOVA.</p>
-</div>
-</div>
+<span><span class="co"># Check the structure of the data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">pest</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
-</section><section id="section-1" class="level3"><h3 class="anchored" data-anchor-id="section-1">8.2</h3>
+</section><section id="testing-normality-of-residuals" class="level3"><h3 class="anchored" data-anchor-id="testing-normality-of-residuals">8.2 Testing Normality of Residuals</h3>
 <p>Test the assumption of Gaussian residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the Gaussian assumption.</p>
-<p><br></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution: Testing Gaussian Residuals Assumption
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create the ANOVA model</span></span>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create the ANOVA model</span></span>
 <span><span class="va">pest_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extract residuals</span></span>
@@ -1396,34 +1285,11 @@ Solution: Testing Gaussian Residuals Assumption
 <span><span class="va">shapiro_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">pest_residuals</span><span class="op">)</span></span>
 <span><span class="va">shapiro_test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The graphical assessment of residuals shows:</p>
-<ol type="1">
-<li><p>The histogram of residuals appears roughly bell-shaped, with a slight right skew but no extreme departures from normality.</p></li>
-<li><p>The Q-Q plot shows that most points fall along the reference line, with minor deviations at the tails. This suggests the residuals are approximately normally distributed.</p></li>
-<li><p>The Shapiro-Wilk test (W = 0.97, p = 0.38) indicates no significant departure from normality, as the p-value is well above the conventional threshold of 0.05.</p></li>
-</ol>
-<p>Based on both visual inspection and formal testing, we can conclude that the residuals adequately meet the Gaussian assumption required for ANOVA. The slight deviations observed are not severe enough to invalidate the use of parametric ANOVA for this dataset.</p>
-</div>
-</div>
-</div>
 <p><br></p>
-</section><section id="section-2" class="level3"><h3 class="anchored" data-anchor-id="section-2">8.3</h3>
+</section><section id="testing-homoscedasticity" class="level3"><h3 class="anchored" data-anchor-id="testing-homoscedasticity">8.3 Testing Homoscedasticity</h3>
 <p>Test the assumption of homoscedasticity of residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the homoscedasticity assumption.</p>
-<p><br></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution: Testing Homoscedasticity Assumption
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create the ANOVA model</span></span>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create the ANOVA model</span></span>
 <span><span class="va">pest_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Graphical assessment of homoscedasticity</span></span>
@@ -1446,34 +1312,11 @@ Solution: Testing Homoscedasticity Assumption
 <span><span class="va">bartlett_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/bartlett.test.html">bartlett.test</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
 <span><span class="va">bartlett_test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The assessment of homoscedasticity shows:</p>
-<ol type="1">
-<li><p>The plot of residuals versus fitted values shows no clear pattern or funnel shape, suggesting consistent variance across the range of fitted values.</p></li>
-<li><p>The boxplot of residuals by treatment group shows similar spread (box width and whisker length) across all four treatments, indicating similar variances.</p></li>
-<li><p>The Bartlett test (K-squared = 1.89, df = 3, p = 0.60) confirms that there is no significant difference in variances between the treatment groups, as the p-value is well above 0.05.</p></li>
-</ol>
-<p>Based on both visual inspection and formal testing, we can conclude that the data meet the homoscedasticity assumption required for ANOVA. The variances appear to be sufficiently homogeneous across treatment groups to proceed with parametric analysis.</p>
-</div>
-</div>
-</div>
 <p><br></p>
-</section><section id="section-3" class="level3"><h3 class="anchored" data-anchor-id="section-3">8.4</h3>
+</section><section id="performing-one-way-anova" class="level3"><h3 class="anchored" data-anchor-id="performing-one-way-anova">8.4 Performing One-way ANOVA</h3>
 <p>Perform either a 1-way ANOVA or an appropriate alternative based on your findings in the previous answers. Show your code, state your results in the technical style and briefly interpret your findings.</p>
-<p><br></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution: One-way ANOVA Analysis
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform one-way ANOVA</span></span>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform one-way ANOVA</span></span>
 <span><span class="va">pest_anova</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">pest_anova</span><span class="op">)</span></span>
 <span></span>
@@ -1488,31 +1331,11 @@ Solution: One-way ANOVA Analysis
 <span><span class="va">eta_squared</span> <span class="op">&lt;-</span> <span class="va">SS_treatment</span> <span class="op">/</span> <span class="va">SS_total</span></span>
 <span><span class="va">eta_squared</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The one-way ANOVA reveals a significant effect of treatment type on leaf damage (F(3, 36) = 32.82, p &lt; 0.001). This indicates that at least one treatment differs significantly from the others in its effect on leaf damage.</p>
-<p>The mean damage values for each treatment were: - Control: 104.0 mm² - X.half: 71.3 mm² - X.full: 48.2 mm² - Organic: 97.3 mm²</p>
-<p>The eta-squared value of 0.73 indicates that approximately 73% of the total variance in leaf damage is explained by the treatment factor, representing a large effect size.</p>
-<p>These results strongly suggest that the pesticide treatments have differential effects on reducing leaf damage from red lily beetles. The x.full treatment appears most effective at reducing damage, followed by x.half, while the organic treatment shows damage levels closer to the control. Further post-hoc testing is needed to determine which specific treatments differ significantly from each other.</p>
-</div>
-</div>
-</div>
 <p><br></p>
-</section><section id="section-4" class="level3"><h3 class="anchored" data-anchor-id="section-4">8.5</h3>
+</section><section id="post-hoc-analysis-of-treatment-effects" class="level3"><h3 class="anchored" data-anchor-id="post-hoc-analysis-of-treatment-effects">8.5 Post-hoc Analysis of Treatment Effects</h3>
 <p>Perform an appropriate set of <em>post hoc</em> tests to compare pairwise mean differences in these data. Focus on the <em>post hoc</em> questions of interest: Is the organic pesticide effective? Does dose matter in the non-organic treatments?</p>
-<p><br></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution: Post-hoc Analysis of Treatment Effects
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform Tukey HSD test for all pairwise comparisons</span></span>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform Tukey HSD test for all pairwise comparisons</span></span>
 <span><span class="va">tukey_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">tukey_result</span></span>
 <span></span>
@@ -1549,92 +1372,9 @@ Solution: Post-hoc Analysis of Treatment Effects
 <span>       legend <span class="op">=</span> <span class="st">"Groups with different letters are significantly different (p &lt; 0.05)"</span>,</span>
 <span>       cex <span class="op">=</span> <span class="fl">0.8</span>, bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The Tukey HSD post-hoc test reveals:</p>
-<ol type="1">
-<li><p><strong>Organic pesticide effectiveness</strong>: The comparison between organic and control treatments shows no significant difference (diff = -6.7 mm², p = 0.56). This indicates that the organic pesticide is not effective at reducing leaf damage compared to no treatment.</p></li>
-<li><p><strong>Dose effect</strong>: The comparison between x.half and x.full treatments shows a significant difference (diff = 23.1 mm², p &lt; 0.001). This indicates that dose does matter, with the full-strength non-organic pesticide being significantly more effective than the half-strength version.</p></li>
-</ol>
-<p>Other significant findings: - Both x.half and x.full treatments resulted in significantly less damage than the control (p &lt; 0.001). - Both x.half and x.full treatments resulted in significantly less damage than the organic treatment (p &lt; 0.001).</p>
-<p>The results can be summarized with significance groups: - Group A: Control and Organic (not significantly different from each other) - Group B: X.half (significantly different from all other treatments) - Group C: X.full (significantly different from all other treatments)</p>
-<p>These findings suggest that while conventional pesticides are effective at reducing leaf damage from red lily beetles, with higher doses providing better protection, the organic alternative tested here does not provide significant benefits compared to using no treatment at all.</p>
-</div>
-</div>
-</div>
 <p><br></p>
-</section><section id="section-5" class="level3"><h3 class="anchored" data-anchor-id="section-5">8.6</h3>
+</section><section id="create-your-own-anova-question" class="level3"><h3 class="anchored" data-anchor-id="create-your-own-anova-question">8.6 Create Your Own ANOVA Question</h3>
 <p>Write a plausible practice question involving any aspect of data handling, graphing or analysis for the 1-way ANOVA framework for the iris data (<code>data(iris)</code>; <code><a href="https://rdrr.io/r/datasets/iris.html">help(iris)</a></code>).</p>
-<p><br></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution: Iris Dataset ANOVA Question
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A plausible practice question would be:</p>
-<p>“Using the built-in iris dataset in R, investigate whether there are significant differences in sepal width among the three iris species (setosa, versicolor, and virginica). Follow these steps:</p>
-<ol type="1">
-<li>Create an appropriate visualization that shows the distribution of sepal width for each species.</li>
-<li>Test the assumptions of ANOVA (normality of residuals and homoscedasticity).</li>
-<li>Perform a one-way ANOVA to determine if there are significant differences in sepal width among species.</li>
-<li>If significant differences are found, conduct appropriate post-hoc tests to determine which specific species differ from each other.</li>
-<li>Calculate and interpret an appropriate effect size measure.</li>
-<li>Report your findings in the technical style, including a clear interpretation of the biological significance of your results.</li>
-</ol>
-<p>Your answer should include all necessary code, appropriate visualizations, and thorough interpretation of the statistical results.”</p>
-<div class="cell">
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the iris dataset</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Example solution code:</span></span>
-<span><span class="co"># 1. Visualization</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">Sepal.Width</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span>,</span>
-<span>        main <span class="op">=</span> <span class="st">"Sepal Width by Iris Species"</span>,</span>
-<span>        xlab <span class="op">=</span> <span class="st">"Species"</span>,</span>
-<span>        ylab <span class="op">=</span> <span class="st">"Sepal Width (cm)"</span>,</span>
-<span>        col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"lightpink"</span>, <span class="st">"lightblue"</span>, <span class="st">"lightgreen"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Add raw data points</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/jitter.html">jitter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span>, amount <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>,</span>
-<span>       y <span class="op">=</span> <span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Width</span>,</span>
-<span>       pch <span class="op">=</span> <span class="fl">19</span>, col <span class="op">=</span> <span class="st">"darkgray"</span>, cex <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Add mean points</span></span>
-<span><span class="va">species_means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tapply.html">tapply</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Width</span>, <span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="va">mean</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="va">species_means</span>, pch <span class="op">=</span> <span class="fl">18</span>, col <span class="op">=</span> <span class="st">"red"</span>, cex <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 2. Test assumptions</span></span>
-<span><span class="va">iris_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">Sepal.Width</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Normality of residuals</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">iris_model</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Homoscedasticity</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/bartlett.test.html">bartlett.test</a></span><span class="op">(</span><span class="va">Sepal.Width</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 3. Perform ANOVA</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">iris_model</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 4. Post-hoc tests</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">iris_model</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 5. Effect size (eta-squared)</span></span>
-<span><span class="va">anova_summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">iris_model</span><span class="op">)</span></span>
-<span><span class="va">SS_species</span> <span class="op">&lt;-</span> <span class="va">anova_summary</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span>, <span class="st">"Sum Sq"</span><span class="op">]</span></span>
-<span><span class="va">SS_total</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">anova_summary</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>, <span class="st">"Sum Sq"</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">eta_squared</span> <span class="op">&lt;-</span> <span class="va">SS_species</span> <span class="op">/</span> <span class="va">SS_total</span></span>
-<span><span class="va">eta_squared</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This question tests students’ ability to: 1. Apply ANOVA in a biological context 2. Create informative visualizations 3. Test and interpret statistical assumptions 4. Perform and interpret post-hoc tests 5. Calculate and interpret effect sizes 6. Communicate statistical results in scientific format</p>
-</div>
-</div>
-</div>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
