@@ -521,6 +521,12 @@ img {
   color: #ffffff !important;
 }
 
+/* Extra specificity for feature card paragraphs */
+[data-bs-theme="dark"] section.feature-card > p,
+[data-bs-theme="dark"] section.pathway-step > p {
+  color: #ffffff !important;
+}
+
 [data-bs-theme="dark"] .feature-card h3,
 [data-bs-theme="dark"] .pathway-step h3 {
   color: #3498db !important;
@@ -582,4 +588,10 @@ img {
 
 [data-bs-theme="dark"] .footer-content a {
   color: #3498db;
+}
+
+/* Override any conflicting styles with highest specificity */
+html[data-bs-theme="dark"] body .feature-card p,
+html[data-bs-theme="dark"] body .pathway-step p {
+  color: #ffffff !important;
 }
