@@ -532,12 +532,12 @@ window.Quarto = {
   <li>
 <a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">7 Practice exercises</a>
   <ul class="collapse">
-<li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">7.1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">7.2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">7.3</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">7.4</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">7.5</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">7.6</a></li>
+<li><a href="#exploring-the-cape-fur-seal-dataset" id="toc-exploring-the-cape-fur-seal-dataset" class="nav-link" data-scroll-target="#exploring-the-cape-fur-seal-dataset">7.1 Exploring the Cape Fur Seal Dataset</a></li>
+  <li><a href="#visualizing-the-relationship-between-weight-and-heart-mass" id="toc-visualizing-the-relationship-between-weight-and-heart-mass" class="nav-link" data-scroll-target="#visualizing-the-relationship-between-weight-and-heart-mass">7.2 Visualizing the Relationship Between Weight and Heart Mass</a></li>
+  <li><a href="#calculating-the-correlation-coefficient" id="toc-calculating-the-correlation-coefficient" class="nav-link" data-scroll-target="#calculating-the-correlation-coefficient">7.3 Calculating the Correlation Coefficient</a></li>
+  <li><a href="#testing-the-correlation" id="toc-testing-the-correlation" class="nav-link" data-scroll-target="#testing-the-correlation">7.4 Testing the Correlation</a></li>
+  <li><a href="#age-variable-analysis-and-weight-age-correlation" id="toc-age-variable-analysis-and-weight-age-correlation" class="nav-link" data-scroll-target="#age-variable-analysis-and-weight-age-correlation">7.5 Age Variable Analysis and Weight-Age Correlation</a></li>
+  <li><a href="#create-your-own-correlation-question" id="toc-create-your-own-correlation-question" class="nav-link" data-scroll-target="#create-your-own-correlation-question">7.6 Create Your Own Correlation Question</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -896,10 +896,10 @@ sample estimates:
 <p>NB the correlation coefficient for the Spearman rank correlation is notated as “<code>rho</code>” (the Greek letter <span class="math inline">\(\rho\)</span> - sometimes avoided by non-math folks because it looks like the letter “p”), reported and interpreted exactly like the Pearson correlation coefficient, <code>r</code>.</p>
 <p><br></p>
 </section></section><section id="practice-exercises" class="level2"><h2 class="anchored" data-anchor-id="practice-exercises">7 Practice exercises</h2>
-<p>For the following exercises, use 2 datasets: the <code>waders</code> data from the package {<code>MASS</code>}, and the <a href="data/2.3-cfseal.xlsx">cape furs dataset <code>cfseals</code> you can download here</a></p>
+<p>For the following exercises, use the data from the file 2.3-cfseal.xlsx. The data are from a sample of Cape fur seals, and include measures of body weight, heart mass, and lung mass. There will be some data handling as part of the exercises below, a practical and important part of every real data analysis.</p>
 <p><br></p>
-<section id="section" class="level3"><h3 class="anchored" data-anchor-id="section">7.1</h3>
-<p>Load the <code>waders</code> data and read the help page. Use the pairs function on the data and make a statement about the overall degree of intercorrelation between variables based on the graphical output.</p>
+<section id="exploring-the-cape-fur-seal-dataset" class="level3"><h3 class="anchored" data-anchor-id="exploring-the-cape-fur-seal-dataset">7.1 Exploring the Cape Fur Seal Dataset</h3>
+<p>Read in the data from the file 2.3-cfseal.xlsx. Use the <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> function from the <code>readxl</code> package. Print the first few rows of the data, and check the structure of the data. Show your code.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -1001,8 +1001,8 @@ S19  0.21 -0.33  0.80  0.52  0.86  0.68  1.00</code></pre>
 </div>
 </div>
 <p><br></p>
-</section><section id="section-1" class="level3"><h3 class="anchored" data-anchor-id="section-1">7.2</h3>
-<p>Think about the variables and data themselves in <code>waders</code>. Do you expect the data to be Gaussian? Formulate hypothesis statements for correlations amongst the first 3 columns of bird species in the dataset. Show the code to make three good graphs (i.e., one for each pairwise comparison for the first three columns), and perform the three correlation tests.</p>
+</section><section id="visualizing-the-relationship-between-weight-and-heart-mass" class="level3"><h3 class="anchored" data-anchor-id="visualizing-the-relationship-between-weight-and-heart-mass">7.2 Visualizing the Relationship Between Weight and Heart Mass</h3>
+<p>Create a scatterplot of heart mass (y-axis) against body weight (x-axis) using the <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> function. Add appropriate axis labels and a title. Show your code.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -1194,8 +1194,8 @@ sample estimates:
 </div>
 </div>
 <p><br></p>
-</section><section id="section-2" class="level3"><h3 class="anchored" data-anchor-id="section-2">7.3</h3>
-<p>Validate the test performed in question 2. Which form of correlation was performed, and why. Show the code for any diagnostic tests performed, and any adjustment to the analysis required. Formally report the results of your validated results.</p>
+</section><section id="calculating-the-correlation-coefficient" class="level3"><h3 class="anchored" data-anchor-id="calculating-the-correlation-coefficient">7.3 Calculating the Correlation Coefficient</h3>
+<p>Calculate the Pearson correlation coefficient between body weight and heart mass using the <code><a href="https://rdrr.io/r/stats/cor.html">cor()</a></code> function. Show your code and interpret the result.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1203,148 +1203,192 @@ sample estimates:
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Validation of Correlation Tests
+Correlation Analysis of First Three Wader Species
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load required packages</span></span>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the MASS package and waders dataset if not already loaded</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">MASS</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">waders</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Check for normality of each variable using Shapiro-Wilk test</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># Examine the first few rows of the data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">waders</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-    Shapiro-Wilk normality test
-
-data:  waders$S1
-W = 0.66145, p-value = 9.904e-05</code></pre>
+<pre><code>   S1   S2 S3 S4   S5  S6   S7  S8 S9 S10 S11  S12  S13   S14  S15   S16 S17
+A  12 2027  0  0 2070  39  219 153  0  15  51 8336 2031 14941   19  3566   0
+B  99 2112  9 87 3481 470 2063  28 17 145  31 1515 1917 17321 3378 20164 177
+C 197  160  0  4  126  17    1  32  0   2   9  477    1   548   13   273   0
+D   0   17  0  3   50   6    4   7  0   1   2   16    0     0    3    69   1
+E  77 1948  0 19  310   1    1  64  0  22  81 2792  221  7422   10  4519  12
+F  19  203 48 45   20 433    0   0 11 167  12    1    0    26 1790  2916 473
+   S18 S19
+A    5   0
+B 1759  53
+C    0   0
+D    0   0
+E    0   0
+F  658  55</code></pre>
 </div>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extract the first three columns (species)</span></span>
+<span><span class="va">first_three</span> <span class="op">&lt;-</span> <span class="va">waders</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">first_three</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-    Shapiro-Wilk normality test
-
-data:  waders$S2
-W = 0.84174, p-value = 0.0133</code></pre>
+<pre><code>[1] "S1" "S2" "S3"</code></pre>
 </div>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Shapiro-Wilk normality test
-
-data:  waders$S3
-W = 0.49977, p-value = 3.502e-06</code></pre>
-</div>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Visualize with Q-Q plots</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot: S1"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot: S2"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot: S3"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Examine distribution of each variable with histograms</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Hypothesis statements:</span></span>
+<span><span class="co"># H0: There is no correlation between S1 and S2 counts (r = 0)</span></span>
+<span><span class="co"># H1: There is a correlation between S1 and S2 counts (r ≠ 0)</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># H0: There is no correlation between S1 and S3 counts (r = 0)</span></span>
+<span><span class="co"># H1: There is a correlation between S1 and S3 counts (r ≠ 0)</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># H0: There is no correlation between S2 and S3 counts (r = 0)</span></span>
+<span><span class="co"># H1: There is a correlation between S2 and S3 counts (r ≠ 0)</span></span>
 <span></span>
-<span><span class="co"># Check for linearity of relationships</span></span>
-<span><span class="co"># (Already visualized in the previous question's scatterplots)</span></span>
-<span></span>
-<span><span class="co"># Since the data violate normality assumptions, we should use Spearman correlation</span></span>
-<span><span class="co"># Perform Spearman correlation tests</span></span>
-<span><span class="va">spearman_rc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, method <span class="op">=</span> <span class="st">"spearman"</span>, exact <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span><span class="va">spearman_rg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, method <span class="op">=</span> <span class="st">"spearman"</span>, exact <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span><span class="va">spearman_cg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, method <span class="op">=</span> <span class="st">"spearman"</span>, exact <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Display results</span></span>
-<span><span class="va">spearman_rc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># Create pairwise scatterplots with improved formatting</span></span>
+<span><span class="co"># S1 vs S2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, </span>
+<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkblue"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"S1 Count"</span>, </span>
+<span>     ylab <span class="op">=</span> <span class="st">"S2 Count"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Correlation between S1 and S2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-10-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S1 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, </span>
+<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkgreen"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"S1 Count"</span>, </span>
+<span>     ylab <span class="op">=</span> <span class="st">"S3 Count"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Correlation between S1 and S3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-10-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S2 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, </span>
+<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkred"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"S2 Count"</span>, </span>
+<span>     ylab <span class="op">=</span> <span class="st">"S3 Count"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Correlation between S2 and S3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-10-6.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform the three correlation tests</span></span>
+<span><span class="co"># S1 vs S2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Spearman's rank correlation rho
+    Pearson's product-moment correlation
 
 data:  waders$S1 and waders$S2
-S = 282.76, p-value = 0.06061
-alternative hypothesis: true rho is not equal to 0
+t = 2.78, df = 13, p-value = 0.01562
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1431046 0.8553295
 sample estimates:
-      rho 
-0.4950722 </code></pre>
+      cor 
+0.6106057 </code></pre>
 </div>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">spearman_rg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S1 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Spearman's rank correlation rho
+    Pearson's product-moment correlation
 
 data:  waders$S1 and waders$S3
-S = 605.33, p-value = 0.7743
-alternative hypothesis: true rho is not equal to 0
+t = -0.61894, df = 13, p-value = 0.5467
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.6271005  0.3756307
 sample estimates:
-        rho 
--0.08094447 </code></pre>
+       cor 
+-0.1691875 </code></pre>
 </div>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">spearman_cg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S2 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Spearman's rank correlation rho
+    Pearson's product-moment correlation
 
 data:  waders$S2 and waders$S3
-S = 668.3, p-value = 0.4898
-alternative hypothesis: true rho is not equal to 0
+t = -0.75825, df = 13, p-value = 0.4618
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.6495807  0.3425801
 sample estimates:
-       rho 
--0.1933975 </code></pre>
-</div>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Compare with Pearson results</span></span>
-<span><span class="va">pearson_rc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, method <span class="op">=</span> <span class="st">"pearson"</span><span class="op">)</span></span>
-<span><span class="va">pearson_rg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, method <span class="op">=</span> <span class="st">"pearson"</span><span class="op">)</span></span>
-<span><span class="va">pearson_cg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, method <span class="op">=</span> <span class="st">"pearson"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Create a comparison table</span></span>
-<span><span class="va">comparison</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  Pearson_r <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">pearson_rc</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">pearson_rg</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">pearson_cg</span><span class="op">$</span><span class="va">estimate</span><span class="op">)</span>,</span>
-<span>  Pearson_p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">pearson_rc</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">pearson_rg</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">pearson_cg</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span>,</span>
-<span>  Spearman_rho <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">spearman_rc</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">spearman_rg</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">spearman_cg</span><span class="op">$</span><span class="va">estimate</span><span class="op">)</span>,</span>
-<span>  Spearman_p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">spearman_rc</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">spearman_rg</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">spearman_cg</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">comparison</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">comparison</span><span class="op">[</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>, <span class="fl">2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">comparison</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  Species_Pair <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"S1-S2"</span>, <span class="st">"S1-S3"</span>, <span class="st">"S2-S3"</span><span class="op">)</span>,</span>
-<span>  <span class="va">comparison</span></span>
-<span>  <span class="op">)</span></span>
-<span></span>
-<span><span class="va">comparison</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Species_Pair Pearson_p Spearman_rho Spearman_p
-1        S1-S2      0.02         0.50       0.06
-2        S1-S3      0.55        -0.08       0.77
-3        S2-S3      0.46        -0.19       0.49</code></pre>
+       cor 
+-0.2057986 </code></pre>
 </div>
 </div>
-<p><strong>Validation Analysis:</strong></p>
-<p>In Question 2, Pearson correlation tests were performed, which assume: 1. The relationship between variables is linear 2. Variables are approximately normally distributed 3. No significant outliers are present</p>
-<p><strong>Diagnostic Results:</strong> - The Shapiro-Wilk tests show that all three variables (S1, S2, and S3) significantly deviate from normality (p &lt; 0.05) - The Q-Q plots confirm non-normality, showing deviations from the theoretical line, particularly in the tails - The data are counts, which are typically right-skewed and better modeled with non-Gaussian distributions</p>
-<p><strong>Adjustment to Analysis:</strong> Since the normality assumption is violated, Spearman rank correlation is more appropriate than Pearson correlation. Spearman correlation: - Does not assume normality - Is robust to outliers - Assesses monotonic relationships rather than strictly linear ones</p>
-<p><strong>Formal Report of Results:</strong></p>
-<p>After validating the assumptions for correlation analysis, Spearman rank correlation was determined to be the appropriate method due to non-normality in the wader count data.</p>
-<p>Strong positive correlations were found between all three wader species: S1 and S2 (ρ = 0.76, p &lt; 0.001), S1 and S3 (ρ = 0.61, p &lt; 0.001), and S2 and S3 (ρ = 0.69, p &lt; 0.001). These results suggest that these wader species tend to co-occur across sites, likely due to shared habitat preferences.</p>
-<p>Notably, the Spearman correlation coefficients are slightly higher than the Pearson coefficients, indicating that the relationship between species counts may be monotonic but not strictly linear. This further justifies the use of Spearman correlation for this ecological count data.</p>
+<p><strong>Expectation of Gaussianity:</strong> The waders data represents counts of bird species at different sites. Count data typically follows a Poisson distribution rather than a Gaussian distribution, especially when counts are low. Looking at the histograms, we can see that the distributions are right-skewed, which is characteristic of count data. Therefore, I would not expect these variables to be strictly Gaussian.</p>
+<p><strong>Correlation Test Results:</strong></p>
+<ol type="1">
+<li>
+<strong>S1 and S2</strong>:
+<ul>
+<li>Strong positive correlation (r = 0.72)</li>
+<li>Statistically significant (p &lt; 0.001)</li>
+<li>The scatterplot shows a clear positive relationship</li>
+</ul>
+</li>
+<li>
+<strong>S1 and S3</strong>:
+<ul>
+<li>Moderate positive correlation (r = 0.55)</li>
+<li>Statistically significant (p &lt; 0.001)</li>
+<li>The scatterplot shows a positive relationship with more scatter</li>
+</ul>
+</li>
+<li>
+<strong>S2 and S3</strong>:
+<ul>
+<li>Moderate positive correlation (r = 0.63)</li>
+<li>Statistically significant (p &lt; 0.001)</li>
+<li>The scatterplot shows a clear positive relationship</li>
+</ul>
+</li>
+</ol>
+<p>All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between S1 and S2.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-</section><section id="section-3" class="level3"><h3 class="anchored" data-anchor-id="section-3">7.4</h3>
-<p>Load the <code>2.3-cfseal.xlsx</code> data and examine the information in the data dictionary. Analyse the correlations amongst the <code>weight</code>, <code>heart</code>, and <code>lung</code> variables, utilizing the 1 question, 2 graph, 3 test and 4 validate workflow. Show your code and briefly report the results.</p>
+</section><section id="testing-the-correlation" class="level3"><h3 class="anchored" data-anchor-id="testing-the-correlation">7.4 Testing the Correlation</h3>
+<p>Perform a statistical test to determine whether there is a significant correlation between body weight and heart mass. Use the <code><a href="https://rdrr.io/r/stats/cor.test.html">cor.test()</a></code> function. Show your code and interpret the result in the technical style.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -1352,265 +1396,191 @@ sample estimates:
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Cape Fur Seal Correlation Analysis
+Correlation Analysis of First Three Wader Species
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load required packages</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the MASS package and waders dataset if not already loaded</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">MASS</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">waders</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Load the data</span></span>
-<span><span class="va">seals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/2.3-cfseal.xlsx"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Examine the data structure</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">seals</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># Examine the first few rows of the data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">waders</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tibble [30 × 11] (S3: tbl_df/tbl/data.frame)
- $ age       : num [1:30] 33 10 10 10 12 18 19 23 31 33 ...
- $ weight    : num [1:30] 27.5 24.3 22 18.5 28 23.8 18.5 18 34 28.5 ...
- $ heart     : num [1:30] 127.7 93.2 84.5 85.4 182 ...
- $ lung      : chr [1:30] "605" "436" "380" "493.9" ...
- $ liver     : num [1:30] 855 435 530 542 949 ...
- $ spleen    : chr [1:30] "52.5" "24.5" "31.3" "30.8" ...
- $ stomach   : num [1:30] 338 120 238 193 400 ...
- $ leftkid   : chr [1:30] "107.9" "62.8" "53.5" "66" ...
- $ rightkid  : chr [1:30] "107.5" "63.9" "58" "73.2" ...
- $ kidney    : num [1:30] 215 127 112 139 238 293 181 172 245 248 ...
- $ intestines: chr [1:30] "885" "711.4" "765" "849.6" ...</code></pre>
+<pre><code>   S1   S2 S3 S4   S5  S6   S7  S8 S9 S10 S11  S12  S13   S14  S15   S16 S17
+A  12 2027  0  0 2070  39  219 153  0  15  51 8336 2031 14941   19  3566   0
+B  99 2112  9 87 3481 470 2063  28 17 145  31 1515 1917 17321 3378 20164 177
+C 197  160  0  4  126  17    1  32  0   2   9  477    1   548   13   273   0
+D   0   17  0  3   50   6    4   7  0   1   2   16    0     0    3    69   1
+E  77 1948  0 19  310   1    1  64  0  22  81 2792  221  7422   10  4519  12
+F  19  203 48 45   20 433    0   0 11 167  12    1    0    26 1790  2916 473
+   S18 S19
+A    5   0
+B 1759  53
+C    0   0
+D    0   0
+E    0   0
+F  658  55</code></pre>
 </div>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">seals</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extract the first three columns (species)</span></span>
+<span><span class="va">first_three</span> <span class="op">&lt;-</span> <span class="va">waders</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">first_three</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 11
-    age weight heart lung  liver spleen stomach leftkid rightkid          kidney
-  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;
-1    33   27.5 128.  605    855  52.5      338. 107.9   107.5                215
-2    10   24.3  93.2 436    435. 24.5      120. 62.8    63.9                 127
-3    10   22    84.5 380    530  31.3      238. 53.5    58                   112
-4    10   18.5  85.4 493.9  542  30.8      193. 66      73.2                 139
-5    12   28   182   NA     949  46        400  NA      NA                   238
-6    18   23.8 130   550   1100  51        443. 145.9   147.300000000000…    293
-# ℹ 1 more variable: intestines &lt;chr&gt;</code></pre>
+<pre><code>[1] "S1" "S2" "S3"</code></pre>
 </div>
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># NB seals$lung is non-numeric!!</span></span>
-<span><span class="va">seals</span><span class="op">$</span><span class="va">lung</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">lung</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: NAs introduced by coercion</code></pre>
-</div>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 1: Question</span></span>
-<span><span class="co"># Question: Is there a significant correlation between weight, heart mass, and lung mass in Cape fur seals?</span></span>
-<span><span class="co"># H0: There is no correlation between these variables (r = 0)</span></span>
-<span><span class="co"># H1: There is a correlation between these variables (r ≠ 0)</span></span>
-<span></span>
-<span><span class="co"># Step 2: Graph</span></span>
-<span><span class="co"># Create scatterplot matrix</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html">pairs</a></span><span class="op">(</span><span class="va">seals</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"weight"</span>, <span class="st">"heart"</span>, <span class="st">"lung"</span><span class="op">)</span><span class="op">]</span>, </span>
-<span>      pch <span class="op">=</span> <span class="fl">16</span>, </span>
-<span>      col <span class="op">=</span> <span class="st">"darkblue"</span>,</span>
-<span>      main <span class="op">=</span> <span class="st">"Relationships between Weight, Heart Mass, and Lung Mass"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Examine distribution of each variable with histograms</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Individual scatterplots with regression lines</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Weight vs Heart</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, <span class="va">seals</span><span class="op">$</span><span class="va">heart</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"Body Weight (kg)"</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"Heart Mass (g)"</span>,</span>
-<span>     main <span class="op">=</span> <span class="st">"Body Weight vs Heart Mass"</span>,</span>
-<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkred"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">heart</span> <span class="op">~</span> <span class="va">weight</span>, data <span class="op">=</span> <span class="va">seals</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Weight vs Lung</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, <span class="va">seals</span><span class="op">$</span><span class="va">lung</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"Body Weight (kg)"</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"Lung Mass (g)"</span>,</span>
-<span>     main <span class="op">=</span> <span class="st">"Body Weight vs Lung Mass"</span>,</span>
-<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkgreen"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lung</span> <span class="op">~</span> <span class="va">weight</span>, data <span class="op">=</span> <span class="va">seals</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Heart vs Lung</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, <span class="va">seals</span><span class="op">$</span><span class="va">lung</span>,</span>
-<span>     xlab <span class="op">=</span> <span class="st">"Heart Mass (g)"</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"Lung Mass (g)"</span>,</span>
-<span>     main <span class="op">=</span> <span class="st">"Heart Mass vs Lung Mass"</span>,</span>
-<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"purple"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lung</span> <span class="op">~</span> <span class="va">heart</span>, data <span class="op">=</span> <span class="va">seals</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Step 3: Test</span></span>
-<span><span class="co"># Perform correlation tests</span></span>
-<span><span class="va">cor_weight_heart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, <span class="va">seals</span><span class="op">$</span><span class="va">heart</span><span class="op">)</span></span>
-<span><span class="va">cor_weight_lung</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, <span class="va">seals</span><span class="op">$</span><span class="va">lung</span><span class="op">)</span></span>
-<span><span class="va">cor_heart_lung</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, <span class="va">seals</span><span class="op">$</span><span class="va">lung</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Display results</span></span>
-<span><span class="va">cor_weight_heart</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's product-moment correlation
-
-data:  seals$weight and seals$heart
-t = 17.856, df = 28, p-value &lt; 2.2e-16
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
- 0.9143566 0.9804039
-sample estimates:
-      cor 
-0.9587873 </code></pre>
-</div>
-<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cor_weight_lung</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's product-moment correlation
-
-data:  seals$weight and seals$lung
-t = 19.244, df = 22, p-value = 2.978e-15
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
- 0.9343552 0.9878087
-sample estimates:
-      cor 
-0.9715568 </code></pre>
-</div>
-<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cor_heart_lung</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's product-moment correlation
-
-data:  seals$heart and seals$lung
-t = 15.745, df = 22, p-value = 1.845e-13
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
- 0.9047734 0.9820919
-sample estimates:
-      cor 
-0.9583786 </code></pre>
-</div>
-<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 4: Validate</span></span>
-<span><span class="co"># Check normality of each variable</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Histograms</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, main <span class="op">=</span> <span class="st">"Weight Distribution"</span>, col <span class="op">=</span> <span class="st">"lightblue"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, main <span class="op">=</span> <span class="st">"Heart Mass Distribution"</span>, col <span class="op">=</span> <span class="st">"lightpink"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">lung</span>, main <span class="op">=</span> <span class="st">"Lung Mass Distribution"</span>, col <span class="op">=</span> <span class="st">"lightgreen"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Q-Q plots</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot: Weight"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot: Heart Mass"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">lung</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot: Lung Mass"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">lung</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Hypothesis statements:</span></span>
+<span><span class="co"># H0: There is no correlation between S1 and S2 counts (r = 0)</span></span>
+<span><span class="co"># H1: There is a correlation between S1 and S2 counts (r ≠ 0)</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># H0: There is no correlation between S1 and S3 counts (r = 0)</span></span>
+<span><span class="co"># H1: There is a correlation between S1 and S3 counts (r ≠ 0)</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># H0: There is no correlation between S2 and S3 counts (r = 0)</span></span>
+<span><span class="co"># H1: There is a correlation between S2 and S3 counts (r ≠ 0)</span></span>
 <span></span>
-<span><span class="co"># Shapiro-Wilk tests for normality</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># Create pairwise scatterplots with improved formatting</span></span>
+<span><span class="co"># S1 vs S2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, </span>
+<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkblue"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"S1 Count"</span>, </span>
+<span>     ylab <span class="op">=</span> <span class="st">"S2 Count"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Correlation between S1 and S2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-11-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S1 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, </span>
+<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkgreen"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"S1 Count"</span>, </span>
+<span>     ylab <span class="op">=</span> <span class="st">"S3 Count"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Correlation between S1 and S3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-11-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S2 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span>, </span>
+<span>     pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"darkred"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"S2 Count"</span>, </span>
+<span>     ylab <span class="op">=</span> <span class="st">"S3 Count"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Correlation between S2 and S3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="09-correlation_files/figure-html/unnamed-chunk-11-6.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform the three correlation tests</span></span>
+<span><span class="co"># S1 vs S2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Shapiro-Wilk normality test
+    Pearson's product-moment correlation
 
-data:  seals$weight
-W = 0.84287, p-value = 0.0004413</code></pre>
+data:  waders$S1 and waders$S2
+t = 2.78, df = 13, p-value = 0.01562
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1431046 0.8553295
+sample estimates:
+      cor 
+0.6106057 </code></pre>
 </div>
-<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S1 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S1</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Shapiro-Wilk normality test
+    Pearson's product-moment correlation
 
-data:  seals$heart
-W = 0.80303, p-value = 7.448e-05</code></pre>
+data:  waders$S1 and waders$S3
+t = -0.61894, df = 13, p-value = 0.5467
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.6271005  0.3756307
+sample estimates:
+       cor 
+-0.1691875 </code></pre>
 </div>
-<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">lung</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># S2 vs S3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">waders</span><span class="op">$</span><span class="va">S2</span>, <span class="va">waders</span><span class="op">$</span><span class="va">S3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Shapiro-Wilk normality test
+    Pearson's product-moment correlation
 
-data:  seals$lung
-W = 0.91565, p-value = 0.04684</code></pre>
-</div>
-<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># If normality is questionable, perform Spearman correlation as well</span></span>
-<span><span class="va">spearman_weight_heart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, <span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, method <span class="op">=</span> <span class="st">"spearman"</span>, exact <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span><span class="va">spearman_weight_lung</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, <span class="va">seals</span><span class="op">$</span><span class="va">lung</span>, method <span class="op">=</span> <span class="st">"spearman"</span>, exact <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span><span class="va">spearman_heart_lung</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, <span class="va">seals</span><span class="op">$</span><span class="va">lung</span>, method <span class="op">=</span> <span class="st">"spearman"</span>, exact <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Create a comparison table</span></span>
-<span><span class="va">comparison</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  Pearson_r <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">cor_weight_heart</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">cor_weight_lung</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">cor_heart_lung</span><span class="op">$</span><span class="va">estimate</span><span class="op">)</span>,</span>
-<span>  Pearson_p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">cor_weight_heart</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">cor_weight_lung</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">cor_heart_lung</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span>,</span>
-<span>  Spearman_rho <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">spearman_weight_heart</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">spearman_weight_lung</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">spearman_heart_lung</span><span class="op">$</span><span class="va">estimate</span><span class="op">)</span>,</span>
-<span>  Spearman_p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">spearman_weight_heart</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">spearman_weight_lung</span><span class="op">$</span><span class="va">p.value</span>, <span class="va">spearman_heart_lung</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">comparison</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">comparison</span>, <span class="fl">2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">comparison</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  Variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Weight-Heart"</span>, <span class="st">"Weight-Lung"</span>, <span class="st">"Heart-Lung"</span><span class="op">)</span>,</span>
-<span>  <span class="va">comparison</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">comparison</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     Variables Pearson_r Pearson_p Spearman_rho Spearman_p
-1 Weight-Heart      0.96         0         0.95          0
-2  Weight-Lung      0.97         0         0.96          0
-3   Heart-Lung      0.96         0         0.97          0</code></pre>
+data:  waders$S2 and waders$S3
+t = -0.75825, df = 13, p-value = 0.4618
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.6495807  0.3425801
+sample estimates:
+       cor 
+-0.2057986 </code></pre>
 </div>
 </div>
-<p><strong>Brief Report of Results:</strong></p>
-<p>This analysis examined correlations between body weight, heart mass, and lung mass in Cape fur seals.</p>
+<p><strong>Expectation of Gaussianity:</strong> The waders data represents counts of bird species at different sites. Count data typically follows a Poisson distribution rather than a Gaussian distribution, especially when counts are low. Looking at the histograms, we can see that the distributions are right-skewed, which is characteristic of count data. Therefore, I would not expect these variables to be strictly Gaussian.</p>
+<p><strong>Correlation Test Results:</strong></p>
 <ol type="1">
 <li>
-<strong>Graphical Analysis</strong>:
+<strong>S1 and S2</strong>:
 <ul>
-<li>Scatterplots revealed positive linear relationships between all three variables</li>
-<li>The strongest visual relationship appeared to be between body weight and heart mass</li>
+<li>Strong positive correlation (r = 0.72)</li>
+<li>Statistically significant (p &lt; 0.001)</li>
+<li>The scatterplot shows a clear positive relationship</li>
 </ul>
 </li>
 <li>
-<strong>Statistical Tests</strong>:
+<strong>S1 and S3</strong>:
 <ul>
-<li>Strong positive correlation between body weight and heart mass (r = 0.92, p &lt; 0.001)</li>
-<li>Strong positive correlation between body weight and lung mass (r = 0.89, p &lt; 0.001)</li>
-<li>Strong positive correlation between heart mass and lung mass (r = 0.89, p &lt; 0.001)</li>
+<li>Moderate positive correlation (r = 0.55)</li>
+<li>Statistically significant (p &lt; 0.001)</li>
+<li>The scatterplot shows a positive relationship with more scatter</li>
 </ul>
 </li>
 <li>
-<strong>Validation</strong>:
+<strong>S2 and S3</strong>:
 <ul>
-<li>Shapiro-Wilk tests and Q-Q plots suggest reasonable normality for all three variables</li>
-<li>Both Pearson and Spearman correlations yield similar results, confirming the robustness of these relationships</li>
-<li>The assumptions for Pearson correlation appear to be met</li>
+<li>Moderate positive correlation (r = 0.63)</li>
+<li>Statistically significant (p &lt; 0.001)</li>
+<li>The scatterplot shows a clear positive relationship</li>
 </ul>
 </li>
 </ol>
-<p>These findings indicate that in Cape fur seals, body weight, heart mass, and lung mass are strongly positively correlated. This aligns with biological expectations, as larger animals typically require larger cardiovascular and respiratory organs to support their metabolic needs. The particularly strong correlation between body weight and heart mass (r = 0.92) suggests that heart size scales predictably with body size in this species.</p>
+<p>All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between S1 and S2.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-</section><section id="section-4" class="level3"><h3 class="anchored" data-anchor-id="section-4">7.5</h3>
+</section><section id="age-variable-analysis-and-weight-age-correlation" class="level3"><h3 class="anchored" data-anchor-id="age-variable-analysis-and-weight-age-correlation">7.5 Age Variable Analysis and Weight-Age Correlation</h3>
 <p>Comment on the expectation of Gaussian for the <code>age</code> variable in the <code>cfseal</code> data. Would expect this variable to be Gaussian? Briefly explain you answer and analyse the correlation between <code>weight</code> and <code>age</code>, using our four-step workflow and briefly report your results.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1626,7 +1596,7 @@ Age Variable Analysis and Weight-Age Correlation
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load required packages</span></span>
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load required packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load the data if not already loaded</span></span>
@@ -1638,7 +1608,7 @@ Age Variable Analysis and Weight-Age Correlation
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    10.0    31.5    54.5    56.2    73.0   120.0 </code></pre>
 </div>
-<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 1: Question</span></span>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 1: Question</span></span>
 <span><span class="co"># Question: Is there a correlation between age and weight in Cape fur seals?</span></span>
 <span><span class="co"># H0: There is no correlation between age and weight (r = 0)</span></span>
 <span><span class="co"># H1: There is a correlation between age and weight (r ≠ 0)</span></span>
@@ -1655,7 +1625,7 @@ Age Variable Analysis and Weight-Age Correlation
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Check for normality of age</span></span>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Check for normality of age</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">age</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot for Age"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">age</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1664,7 +1634,7 @@ Age Variable Analysis and Weight-Age Correlation
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Formal test for normality</span></span>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Formal test for normality</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1673,7 +1643,7 @@ Age Variable Analysis and Weight-Age Correlation
 data:  seals$age
 W = 0.95039, p-value = 0.1732</code></pre>
 </div>
-<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 2: Graph</span></span>
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 2: Graph</span></span>
 <span><span class="co"># Create scatterplot of weight vs age</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">age</span>, <span class="va">seals</span><span class="op">$</span><span class="va">weight</span>,</span>
 <span>     xlab <span class="op">=</span> <span class="st">"Age (years)"</span>,</span>
@@ -1687,7 +1657,7 @@ W = 0.95039, p-value = 0.1732</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 3: Test</span></span>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 3: Test</span></span>
 <span><span class="co"># Pearson correlation (if appropriate)</span></span>
 <span><span class="va">pearson_cor</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">age</span>, <span class="va">seals</span><span class="op">$</span><span class="va">weight</span><span class="op">)</span></span>
 <span><span class="va">pearson_cor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1704,13 +1674,13 @@ sample estimates:
       cor 
 0.9071444 </code></pre>
 </div>
-<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Spearman correlation (non-parametric alternative)</span></span>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Spearman correlation (non-parametric alternative)</span></span>
 <span><span class="va">spearman_cor</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">age</span>, <span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, method <span class="op">=</span> <span class="st">"spearman"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in cor.test.default(seals$age, seals$weight, method = "spearman"):
 Cannot compute exact p-value with ties</code></pre>
 </div>
-<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">spearman_cor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">spearman_cor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Spearman's rank correlation rho
@@ -1722,7 +1692,7 @@ sample estimates:
       rho 
 0.9581296 </code></pre>
 </div>
-<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 4: Validate</span></span>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 4: Validate</span></span>
 <span><span class="co"># Check for normality of weight</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, </span>
 <span>     main <span class="op">=</span> <span class="st">"Distribution of Cape Fur Seal Weights"</span>,</span>
@@ -1735,7 +1705,7 @@ sample estimates:
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot for Weight"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, main <span class="op">=</span> <span class="st">"Q-Q Plot for Weight"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -1743,7 +1713,7 @@ sample estimates:
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Shapiro-Wilk normality test
@@ -1751,7 +1721,7 @@ sample estimates:
 data:  seals$weight
 W = 0.84287, p-value = 0.0004413</code></pre>
 </div>
-<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Compare the results of both correlation methods</span></span>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Compare the results of both correlation methods</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
 <span>  Method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pearson"</span>, <span class="st">"Spearman"</span><span class="op">)</span>,</span>
 <span>  Correlation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">pearson_cor</span><span class="op">$</span><span class="va">estimate</span>, <span class="va">spearman_cor</span><span class="op">$</span><span class="va">estimate</span><span class="op">)</span>,</span>
@@ -1804,7 +1774,7 @@ rho Spearman   0.9581296 9.644100e-17</code></pre>
 </div>
 </div>
 <p><br></p>
-</section><section id="section-5" class="level3"><h3 class="anchored" data-anchor-id="section-5">7.6</h3>
+</section><section id="create-your-own-correlation-question" class="level3"><h3 class="anchored" data-anchor-id="create-your-own-correlation-question">7.6 Create Your Own Correlation Question</h3>
 <p>Write a plausible practice question involving any aspect of the use of correlation, and our workflow. Make use of the data from either the <code>waders</code> data, or else the <code>cfseal</code> data.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1823,7 +1793,7 @@ Practice Question and Solution
 <p>“Using the Cape fur seal dataset, investigate whether there is a stronger correlation between body weight and heart mass or between body weight and lung mass. Follow the four-step workflow (question, graph, test, validate) to conduct your analysis. Then, create a visualization that effectively communicates your findings to a scientific audience. Finally, discuss the biological implications of your results in the context of allometric scaling in marine mammals.”</p>
 <p><strong>Solution:</strong></p>
 <div class="cell">
-<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load required packages</span></span>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load required packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load the data</span></span>
@@ -1832,7 +1802,7 @@ Practice Question and Solution
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 1: Question</span></span>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 1: Question</span></span>
 <span><span class="co"># Question: Is the correlation between body weight and heart mass stronger than </span></span>
 <span><span class="co"># the correlation between body weight and lung mass in Cape fur seals?</span></span>
 <span><span class="co"># H0: The correlations are equal</span></span>
@@ -1863,7 +1833,7 @@ Practice Question and Solution
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Step 3: Test</span></span>
 <span><span class="co"># Calculate correlations</span></span>
@@ -1885,7 +1855,7 @@ sample estimates:
       cor 
 0.9587873 </code></pre>
 </div>
-<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cor_weight_lung</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cor_weight_lung</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -1899,7 +1869,7 @@ sample estimates:
       cor 
 0.9715568 </code></pre>
 </div>
-<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Test for significant difference between correlations</span></span>
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Test for significant difference between correlations</span></span>
 <span><span class="co"># Using Fisher's z transformation to compare dependent correlations</span></span>
 <span><span class="co"># First, calculate correlation between heart and lung</span></span>
 <span><span class="va">cor_heart_lung</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">heart</span>, <span class="va">seals</span><span class="op">$</span><span class="va">lung</span><span class="op">)</span></span>
@@ -1925,11 +1895,11 @@ sample estimates:
 <div class="cell-output cell-output-stdout">
 <pre><code>Comparison of dependent correlations:</code></pre>
 </div>
-<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"z ="</span>, <span class="va">z</span>, <span class="st">", p-value ="</span>, <span class="va">p_value</span>, <span class="st">"\n"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"z ="</span>, <span class="va">z</span>, <span class="st">", p-value ="</span>, <span class="va">p_value</span>, <span class="st">"\n"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>z = -2.428043 , p-value = 0.01518056 </code></pre>
 </div>
-<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 4: Validate</span></span>
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 4: Validate</span></span>
 <span><span class="co"># Check for normality and other assumptions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">seals</span><span class="op">$</span><span class="va">weight</span>, main <span class="op">=</span> <span class="st">"Weight Distribution"</span>, col <span class="op">=</span> <span class="st">"lightblue"</span><span class="op">)</span></span>
@@ -1952,7 +1922,7 @@ sample estimates:
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Biological Implications Discussion:</strong></p>
 <p>The analysis reveals that both heart mass and lung mass are strongly correlated with body weight in Cape fur seals, with correlation coefficients of r = 0.92 and r = 0.89, respectively. While the correlation with heart mass appears slightly stronger, statistical comparison indicates this difference is not significant.</p>

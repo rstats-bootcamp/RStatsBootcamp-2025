@@ -238,20 +238,6 @@ Based on our analysis, there is a significant negative relationship between car 
 
 ## 9 Practice Exercises
 
-::: {.callout-note appearance="minimal"}
-### Exercise 1: Basic R Markdown
-
-Create a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion
-
-### Exercise 2: Output Formats
-
-Experiment with different output formats (HTML, PDF, Word) and observe the differences.
-
-### Exercise 3: Advanced Features
-
-Create an R Markdown document with a table of contents, code folding, and a custom theme.
-:::
-
 ### Exercise 1: Basic R Markdown
 
 Create a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion
