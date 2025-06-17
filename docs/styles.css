@@ -504,14 +504,16 @@ img {
 /* Feature cards in dark mode - ensure high contrast */
 [data-bs-theme="dark"] .feature-card,
 [data-bs-theme="dark"] .pathway-step {
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: #1a2530;
+  color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #34495e;
 }
 
 [data-bs-theme="dark"] .feature-card:hover,
 [data-bs-theme="dark"] .pathway-step:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-color: #3498db;
 }
 
 /* Main content text in dark mode */
