@@ -289,7 +289,7 @@ vec2 <- c(2,3,5,4,5,6,7,8,9,5,3,1)
 
 <br>
 
-### 6.1
+### 6.1 Vector Recycling
 
 Create a vector named my_var1 that contains the following 6 integers: 3, 6, 12, 7, 5, 1. Create a Second vector called my_var2 that contains the following 2 integers: 2, 3. Evaluate the expression my_var1 + my_var 2. Explain the output in terms of R mechanics in your own words.
 
@@ -323,7 +323,7 @@ This recycling behavior is a fundamental aspect of R's vector operations, allowi
 
 <br>
 
-### 6.2
+### 6.2 Ordered Factor
 
 Create a character vector with the names of the 12 months of the year. Convert the vector to a factor, with the month names in chronological order. Show your code.
 
@@ -357,14 +357,11 @@ Without specifying the levels, R would arrange the factor levels alphabetically 
 
 <br>
 
-### 6.3
+### 6.3 Matrix Data Types
 
 What is wrong with the following code? Describe, show the code, and justify a fix for the problem in your own words.
-
-``` r
 mymat <- matrix(data = c( 12,   23,   45,
                          "34", "22", "31"))
-```
 
 <br>
 
@@ -408,11 +405,9 @@ The appropriate fix depends on how you intend to use the matrix data.
 
 <br>
 
-### 6.4
+### 6.4 3D Array
 
-Use the `array()` function to make a 2 x 2 x 3 array to produce the following output:
-
-``` r
+Use the array() function to make a 2 x 2 x 3 array to produce the following output:
 , , 1
 
      [,1] [,2]
@@ -430,7 +425,6 @@ Use the `array()` function to make a 2 x 2 x 3 array to produce the following ou
      [,1] [,2]
 [1,]    9   11
 [2,]   10   12
-```
 
 <br>
 
@@ -465,15 +459,12 @@ The array fills by columns first, then rows, then layers. This creates the exact
 
 <br>
 
-### 6.5
+### 6.5 Named Matrix
 
 Show the code to make the following matrix:
-
-``` r
        cat dog
 male    22  88
 female  71  29
-```
 
 <br>
 
@@ -509,9 +500,9 @@ The resulting matrix matches the requested format, showing counts for male/femal
 
 <br>
 
-### 6.6
+### 6.6 Matrix Question
 
-Write a plausible practice question involving the use of the `matrix()` and `vector()` functions.
+Write a plausible practice question involving the use of the matrix() and vector() functions.
 
 <br>
 

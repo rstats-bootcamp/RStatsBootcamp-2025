@@ -198,7 +198,7 @@ You should see the Install Packages window, where you can enter the name of a pa
 
 <br>
 
-### 5.1
+### 5.1 Histogram Frequency
 
 Explain in your own words what the freq argument in the `hist()` function does. It often helps to practice trail and error to understand what is happening with data. Try experimenting with the data vector below with the `hist()` function to explore the freq argument:
 
@@ -231,7 +231,7 @@ This is useful when comparing distributions of different sample sizes or when wo
 
 <br>
 
-### 5.2
+### 5.2 Custom Histogram
 
 Tailor your code from the `hist()` example in problem 1 so that your histogram has a main title, axis labels, and set the `col` argument to "blue". We are just scratching the surface with plot customization - try to incorporate other arguments to make an attractive graph.
 
@@ -270,7 +270,7 @@ This customized histogram includes:
 
 <br>
 
-### 5.3
+### 5.3 NA Values
 
 Use the `mean()` function on the following data vector
 
@@ -307,7 +307,7 @@ When calculating the mean of data containing NA values:
 
 <br>
 
-### 5.4
+### 5.4 Power Test Parameter
 
 In your own words, what value is required for the "d" argument in the `pwr.t.test()` function in the `{pwr}` package? Show the code involved including any appropriate comment code required to answer this question. (hint: you will probably need to install the package, load it, and use `help()` on the function name)
 
@@ -338,7 +338,7 @@ For example, d = 0.5 would represent a medium effect size according to Cohen's c
 
 <br>
 
-### 5.5
+### 5.5 R Colors
 
 Every official `R` package has a webpage on the Comprehensive `R` Archive Network (CRAN) and there are often tutorials called "vignettes". Google the CRAN page for the package `{ggplot2}` and find the vignette called "Aesthetic specifications". Read the section right near the top called "Colour and fill".
 
@@ -372,7 +372,7 @@ The instructions from the ggplot2 vignette explain that R has many built-in colo
 
 <br>
 
-### 5.6
+### 5.6 Help Function
 
 Write a plausible practice question involving the use of `help()` for an R function.
 

@@ -384,7 +384,7 @@ There is some disagreement over which "version" of R is better or easier to lear
 
 <br>
 
-### 6.1
+### 6.1 Script Sections
 
 Name and describe the purpose of the first 2 sections that should be present in every `R` script
 
@@ -410,7 +410,7 @@ These sections help make your scripts more organized, reproducible, and easier f
 
 <br>
 
-### 6.2
+### 6.2 Boxplot Subset
 
 What is the purpose of "subset" argument in the `boxplot()` function (hint: use `help()`)
 
@@ -437,7 +437,7 @@ The subset parameter lets you create boxplots using only specific observations t
 
 <br>
 
-### 6.3
+### 6.3 R Expression
 
 Write an expression using good R spacing syntax that takes the sum of 3, 6, and 12 and divides it by 25
 
@@ -458,7 +458,7 @@ The expression adds 3, 6, and 12 (total 21) and then divides by 25, resulting in
 
 <br>
 
-### 6.4
+### 6.4 Cylinder Volume
 
 Write pseudocode steps for calculating the volume of a cylinder (hint, if you do not know it by heart, you may need to research the equation for the volume of a cylinder!). For a cylinder of height = 3.2 cm and end radius of 5.5 cm, report the volume in cm to 2 decimal points of accuracy. Use at least 3 decimal points of accuracy for `pi` (hint, the quantity named `pi` is a standard variable in `R`!).
 
@@ -493,7 +493,7 @@ The volume of a cylinder with radius 5.5 cm and height 3.2 cm is 304.34 cm³ (ro
 
 <br>
 
-### 6.5
+### 6.5 Boolean Evaluation
 
 Execute the code and explain the outcome in comments.
 
@@ -527,7 +527,7 @@ The expression evaluates to TRUE because all individual conditions are TRUE, and
 
 <br>
 
-### 6.6
+### 6.6 Not Operator
 
 Write a plausible practice question involving the use of the not Boolean operator, `!`.
 

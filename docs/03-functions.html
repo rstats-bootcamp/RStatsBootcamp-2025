@@ -517,12 +517,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">5 Practice exercises</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">5.1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">5.2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">5.3</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">5.4</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">5.5</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">5.6</a></li>
+  <li><a href="#histogram-frequency" id="toc-histogram-frequency" class="nav-link" data-scroll-target="#histogram-frequency">5.1 Histogram Frequency</a></li>
+  <li><a href="#custom-histogram" id="toc-custom-histogram" class="nav-link" data-scroll-target="#custom-histogram">5.2 Custom Histogram</a></li>
+  <li><a href="#na-values" id="toc-na-values" class="nav-link" data-scroll-target="#na-values">5.3 NA Values</a></li>
+  <li><a href="#power-test-parameter" id="toc-power-test-parameter" class="nav-link" data-scroll-target="#power-test-parameter">5.4 Power Test Parameter</a></li>
+  <li><a href="#r-colors" id="toc-r-colors" class="nav-link" data-scroll-target="#r-colors">5.5 R Colors</a></li>
+  <li><a href="#help-function" id="toc-help-function" class="nav-link" data-scroll-target="#help-function">5.6 Help Function</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -732,8 +732,8 @@ Learning Objectives
 <section id="practice-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="practice-exercises">5 Practice exercises</h2>
 <p><br></p>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">5.1</h3>
+<section id="histogram-frequency" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-frequency">5.1 Histogram Frequency</h3>
 <p>Explain in your own words what the freq argument in the <code>hist()</code> function does. It often helps to practice trail and error to understand what is happening with data. Try experimenting with the data vector below with the <code>hist()</code> function to explore the freq argument:</p>
 <p><code>c(1,2,4,3,5,6,7,8,6,5,5,5,3,4,5,7)</code></p>
 <p><br></p>
@@ -779,8 +779,8 @@ Histogram Frequency Parameter
 </div>
 <p><br></p>
 </section>
-<section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">5.2</h3>
+<section id="custom-histogram" class="level3">
+<h3 class="anchored" data-anchor-id="custom-histogram">5.2 Custom Histogram</h3>
 <p>Tailor your code from the <code>hist()</code> example in problem 1 so that your histogram has a main title, axis labels, and set the <code>col</code> argument to “blue”. We are just scratching the surface with plot customization - try to incorporate other arguments to make an attractive graph.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -823,8 +823,8 @@ Customized Histogram
 </div>
 <p><br></p>
 </section>
-<section id="section-2" class="level3">
-<h3 class="anchored" data-anchor-id="section-2">5.3</h3>
+<section id="na-values" class="level3">
+<h3 class="anchored" data-anchor-id="na-values">5.3 NA Values</h3>
 <p>Use the <code>mean()</code> function on the following data vector</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will see an error message. The symbol “NA” has a special meaning in R, indicating a missing value. Use <code>help()</code> for the mean function and implement the na.rm argument to fix the problem. Show your code.</p>
@@ -863,8 +863,8 @@ Handling NA Values
 </div>
 <p><br></p>
 </section>
-<section id="section-3" class="level3">
-<h3 class="anchored" data-anchor-id="section-3">5.4</h3>
+<section id="power-test-parameter" class="level3">
+<h3 class="anchored" data-anchor-id="power-test-parameter">5.4 Power Test Parameter</h3>
 <p>In your own words, what value is required for the “d” argument in the <code>pwr.t.test()</code> function in the <code>{pwr}</code> package? Show the code involved including any appropriate comment code required to answer this question. (hint: you will probably need to install the package, load it, and use <code>help()</code> on the function name)</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -897,8 +897,8 @@ Power Test d Parameter
 </div>
 <p><br></p>
 </section>
-<section id="section-4" class="level3">
-<h3 class="anchored" data-anchor-id="section-4">5.5</h3>
+<section id="r-colors" class="level3">
+<h3 class="anchored" data-anchor-id="r-colors">5.5 R Colors</h3>
 <p>Every official <code>R</code> package has a webpage on the Comprehensive <code>R</code> Archive Network (CRAN) and there are often tutorials called “vignettes”. Google the CRAN page for the package <code>{ggplot2}</code> and find the vignette called “Aesthetic specifications”. Read the section right near the top called “Colour and fill”.</p>
 <p>Follow the instructions to list all of the built-in colours in <code>R</code> and list them in the console. Ed’s personal favourite is “goldenrod”, index number [147]. Can you find the index number for “tomato2”?</p>
 <p><br></p>
@@ -943,8 +943,8 @@ R Color Names
 </div>
 <p><br></p>
 </section>
-<section id="section-5" class="level3">
-<h3 class="anchored" data-anchor-id="section-5">5.6</h3>
+<section id="help-function" class="level3">
+<h3 class="anchored" data-anchor-id="help-function">5.6 Help Function</h3>
 <p>Write a plausible practice question involving the use of <code>help()</code> for an R function.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
