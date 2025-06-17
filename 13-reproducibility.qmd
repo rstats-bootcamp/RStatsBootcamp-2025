@@ -143,21 +143,9 @@ A good README file typically includes:
 
 ## 5 Practice Exercises
 
-::: {.callout-note appearance="minimal"}
-### Exercise 1
+<br>
 
-Evaluate a recent project of yours for reproducibility. Identify three specific improvements you could make to enhance its reproducibility.
-
-### Exercise 2
-
-Create a file organization template for your next data analysis project, following the best practices outlined in this lesson.
-
-### Exercise 3
-
-Write documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.
-:::
-
-### Exercise 1
+### Exercise 1: Project Evaluation
 
 Evaluate a recent project of yours for reproducibility. Identify three specific improvements you could make to enhance its reproducibility.
 
@@ -225,7 +213,7 @@ renv::snapshot()
 
 <br>
 
-### Exercise 2
+### Exercise 2: File Organization
 
 Create a file organization template for your next data analysis project, following the best practices outlined in this lesson.
 
@@ -284,7 +272,7 @@ Key features of this template:
 
 <br>
 
-### Exercise 3
+### Exercise 3: Function Documentation
 
 Write documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.
 

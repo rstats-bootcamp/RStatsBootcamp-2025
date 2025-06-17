@@ -381,15 +381,12 @@ conc.ind # Is Sir feeling well, Sir?
 
 ## 7 Practice exercises
 
-<br>
-
-[Butterfly data in xlsx format](data/5-butterfly.xlsx)
-
+Butterfly data in xlsx format
 The data are from a small experiment measuring antenna length in butterflies manipulating diet in both sexes.
 
-### 7.1
+### 7.1 Butterfly Data
 
-Download the data file above and place it in a working directory. Set your working directory. Read in the data file and place it in a data frame object named `data1.` After examining the data, use `mean()` to calculate the mean of the variable `length` and report the results in a comment to two decimal points accuracy. Show your `R` code.
+Download the data file above and place it in a working directory. Set your working directory. Read in the data file and place it in a data frame object named data1. After examining the data, use mean() to calculate the mean of the variable length and report the results in a comment to two decimal points accuracy. Show your R code.
 
 <br>
 
@@ -425,9 +422,9 @@ The code first loads the openxlsx package, reads the Excel file into a data fram
 
 <br>
 
-### 7.2
+### 7.2 Factor Conversion
 
-Show the code to convert the `diet` variable to an ordinal factor with the order "control" \> "enhanced", and the `sex` variable to a plain categorical factor.
+Show the code to convert the diet variable to an ordinal factor with the order "control" > "enhanced", and the sex variable to a plain categorical factor.
 
 <br>
 
@@ -460,17 +457,16 @@ Using `ordered = TRUE` for the diet variable creates an ordinal factor where the
 
 <br>
 
-### 7.3
+### 7.3 Data Frame Subsetting
 
-Show code for two different variations of using only the `[ , ]` operator with your data frame to show the following output:
-
-           diet length
-    8   control      6
-    9   control      7
-    10  control      6
-    11 enhanced      8
-    12 enhanced      7
-    13 enhanced      9
+Show code for two different variations of using only the [ , ] operator with your data frame to show the following output:
+       diet length
+8   control      6
+9   control      7
+10  control      6
+11 enhanced      8
+12 enhanced      7
+13 enhanced      9
 
 <br>
 
@@ -503,7 +499,7 @@ Both produce the same output showing diet and length values for rows 8-13, which
 
 <br>
 
-### 7.4
+### 7.4 CSV Without Headers
 
 Show code to read in a comma separated values data file that does not have a header (first row containing variable names).
 
@@ -540,9 +536,9 @@ This approach is useful when working with data files that contain only values wi
 
 <br>
 
-### 7.5
+### 7.5 Attach Function
 
-Describe in your own words what the `attach()` function does.
+Describe in your own words what the attach() function does.
 
 <br>
 
@@ -582,7 +578,7 @@ Best practice is to use the explicit data frame$variable notation instead, or to
 
 <br>
 
-### 7.6
+### 7.6 Data Frame Question
 
 Write a plausible practice question involving any aspect of manipulation of a data frame.
 

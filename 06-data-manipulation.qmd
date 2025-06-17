@@ -467,7 +467,7 @@ str(trees)
 
 <br>
 
-### 6.1
+### 6.1 Mean for Subset
 
 Show code to calculate the mean `Girth` of Black Cherry trees with `Height` less than 75 ft.
 
@@ -499,7 +499,7 @@ The code demonstrates two equivalent approaches:
 
 <br>
 
-### 6.2
+### 6.2 Height Categories
 
 Use `help(cut)` and then use the `cut()` function to create a new factor variable based on the `Height` numeric variable in the `trees` dataset. Try setting the `breaks` argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.
 
@@ -544,7 +544,7 @@ The table output shows how many trees fall into each category. This type of cate
 
 <br>
 
-### 6.3
+### 6.3 Aggregate by Group
 
 Using the new factor from question 2, use `aggregate()` to calculate the mean and standard deviation of all three variables in the `trees` data. Show your code and report the results to 2 decimal points of accuracy.
 
@@ -594,7 +594,7 @@ This analysis shows that taller trees tend to have greater girth and volume, wit
 
 <br>
 
-### 6.4
+### 6.4 Boolean Selection
 
 Show the code using `which()` and boolean phrases as appropriate to find the rows in the `trees` dataset where `Girth` is higher than 11 and `Height` is lower than 75.
 
@@ -631,7 +631,7 @@ The results show 5 trees that meet both criteria - these are trees with substant
 
 <br>
 
-### 6.5
+### 6.5 NA in Aggregation
 
 Run the following code:
 
@@ -682,9 +682,9 @@ Without handling the NA value, the mean for population B would be NA, as shown i
 
 <br>
 
-### 6.6
+### 6.6 Iris Dataset Question
 
-Write a plausible practice question involving any aspect of using `which()`, boolean phrases and/or `aggregate()` involving the in-built `R` dataset `iris`.
+Write a plausible practice question involving any aspect of using `which()`, boolean phrases and/or `aggregate()` involving the in-built R dataset iris.
 
 <br>
 

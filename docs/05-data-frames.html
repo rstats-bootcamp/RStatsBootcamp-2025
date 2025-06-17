@@ -561,12 +561,12 @@ window.Quarto = {
   </ul></li>
   <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">7 Practice exercises</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">7.1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">7.2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">7.3</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">7.4</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">7.5</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">7.6</a></li>
+  <li><a href="#butterfly-data" id="toc-butterfly-data" class="nav-link" data-scroll-target="#butterfly-data">7.1 Butterfly Data</a></li>
+  <li><a href="#factor-conversion" id="toc-factor-conversion" class="nav-link" data-scroll-target="#factor-conversion">7.2 Factor Conversion</a></li>
+  <li><a href="#data-frame-subsetting" id="toc-data-frame-subsetting" class="nav-link" data-scroll-target="#data-frame-subsetting">7.3 Data Frame Subsetting</a></li>
+  <li><a href="#csv-without-headers" id="toc-csv-without-headers" class="nav-link" data-scroll-target="#csv-without-headers">7.4 CSV Without Headers</a></li>
+  <li><a href="#attach-function" id="toc-attach-function" class="nav-link" data-scroll-target="#attach-function">7.5 Attach Function</a></li>
+  <li><a href="#data-frame-question" id="toc-data-frame-question" class="nav-link" data-scroll-target="#data-frame-question">7.6 Data Frame Question</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -931,12 +931,10 @@ Learning Objectives
 </section>
 <section id="practice-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="practice-exercises">7 Practice exercises</h2>
-<p><br></p>
-<p><a href="data/5-butterfly.xlsx">Butterfly data in xlsx format</a></p>
-<p>The data are from a small experiment measuring antenna length in butterflies manipulating diet in both sexes.</p>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">7.1</h3>
-<p>Download the data file above and place it in a working directory. Set your working directory. Read in the data file and place it in a data frame object named <code>data1.</code> After examining the data, use <code>mean()</code> to calculate the mean of the variable <code>length</code> and report the results in a comment to two decimal points accuracy. Show your <code>R</code> code.</p>
+<p>Butterfly data in xlsx format The data are from a small experiment measuring antenna length in butterflies manipulating diet in both sexes.</p>
+<section id="butterfly-data" class="level3">
+<h3 class="anchored" data-anchor-id="butterfly-data">7.1 Butterfly Data</h3>
+<p>Download the data file above and place it in a working directory. Set your working directory. Read in the data file and place it in a data frame object named data1. After examining the data, use mean() to calculate the mean of the variable length and report the results in a comment to two decimal points accuracy. Show your R code.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -976,9 +974,9 @@ Reading and Analyzing Butterfly Data
 </div>
 <p><br></p>
 </section>
-<section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">7.2</h3>
-<p>Show the code to convert the <code>diet</code> variable to an ordinal factor with the order “control” &gt; “enhanced”, and the <code>sex</code> variable to a plain categorical factor.</p>
+<section id="factor-conversion" class="level3">
+<h3 class="anchored" data-anchor-id="factor-conversion">7.2 Factor Conversion</h3>
+<p>Show the code to convert the diet variable to an ordinal factor with the order “control” &gt; “enhanced”, and the sex variable to a plain categorical factor.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -1013,16 +1011,9 @@ Converting Variables to Factors
 </div>
 <p><br></p>
 </section>
-<section id="section-2" class="level3">
-<h3 class="anchored" data-anchor-id="section-2">7.3</h3>
-<p>Show code for two different variations of using only the <code>[ , ]</code> operator with your data frame to show the following output:</p>
-<pre><code>       diet length
-8   control      6
-9   control      7
-10  control      6
-11 enhanced      8
-12 enhanced      7
-13 enhanced      9</code></pre>
+<section id="data-frame-subsetting" class="level3">
+<h3 class="anchored" data-anchor-id="data-frame-subsetting">7.3 Data Frame Subsetting</h3>
+<p>Show code for two different variations of using only the [ , ] operator with your data frame to show the following output: diet length 8 control 6 9 control 7 10 control 6 11 enhanced 8 12 enhanced 7 13 enhanced 9</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1037,17 +1028,17 @@ Data Frame Subsetting
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the openxlsx package and read the data</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"data/5-butterfly.xlsx"</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Using row numbers and column names</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>data1[<span class="dv">8</span><span class="sc">:</span><span class="dv">13</span>, <span class="fu">c</span>(<span class="st">"diet"</span>, <span class="st">"length"</span>)]</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Using row numbers and column indices</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># First, find which columns are diet and length</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data1)  <span class="co"># Check column positions</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>data1[<span class="dv">8</span><span class="sc">:</span><span class="dv">13</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]  <span class="co"># Assuming diet is column 1 and length is column 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the openxlsx package and read the data</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"data/5-butterfly.xlsx"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Using row numbers and column names</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>data1[<span class="dv">8</span><span class="sc">:</span><span class="dv">13</span>, <span class="fu">c</span>(<span class="st">"diet"</span>, <span class="st">"length"</span>)]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Using row numbers and column indices</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># First, find which columns are diet and length</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data1)  <span class="co"># Check column positions</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>data1[<span class="dv">8</span><span class="sc">:</span><span class="dv">13</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]  <span class="co"># Assuming diet is column 1 and length is column 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These two methods demonstrate different ways to subset a data frame using the <code>[ , ]</code> operator:</p>
 <ol type="1">
@@ -1060,8 +1051,8 @@ Data Frame Subsetting
 </div>
 <p><br></p>
 </section>
-<section id="section-3" class="level3">
-<h3 class="anchored" data-anchor-id="section-3">7.4</h3>
+<section id="csv-without-headers" class="level3">
+<h3 class="anchored" data-anchor-id="csv-without-headers">7.4 CSV Without Headers</h3>
 <p>Show code to read in a comma separated values data file that does not have a header (first row containing variable names).</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1077,18 +1068,18 @@ Reading CSV Without Headers
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method to read a CSV file without headers</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>data_no_header <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/5-butterfly.csv"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the structure</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_no_header)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># When reading a CSV without headers, R assigns default names V1, V2, etc.</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We can assign our own column names if needed:</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data_no_header) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"diet"</span>, <span class="st">"sex"</span>, <span class="st">"length"</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify the new column names</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_no_header)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method to read a CSV file without headers</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data_no_header <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/5-butterfly.csv"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the structure</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_no_header)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># When reading a CSV without headers, R assigns default names V1, V2, etc.</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We can assign our own column names if needed:</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data_no_header) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"diet"</span>, <span class="st">"sex"</span>, <span class="st">"length"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify the new column names</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_no_header)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When reading a CSV file without headers (column names in the first row):</p>
 <ol type="1">
@@ -1102,9 +1093,9 @@ Reading CSV Without Headers
 </div>
 <p><br></p>
 </section>
-<section id="section-4" class="level3">
-<h3 class="anchored" data-anchor-id="section-4">7.5</h3>
-<p>Describe in your own words what the <code>attach()</code> function does.</p>
+<section id="attach-function" class="level3">
+<h3 class="anchored" data-anchor-id="attach-function">7.5 Attach Function</h3>
+<p>Describe in your own words what the attach() function does.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -1119,19 +1110,19 @@ Attach Function Explanation
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of attach() functionality</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"data/5-butterfly.xlsx"</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Without attach, we need to use the $ operator</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data1<span class="sc">$</span>length)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># With attach, we can access variables directly</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(data1)</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(length)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Always detach when finished to avoid conflicts</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of attach() functionality</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"data/5-butterfly.xlsx"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Without attach, we need to use the $ operator</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data1<span class="sc">$</span>length)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># With attach, we can access variables directly</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(data1)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(length)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Always detach when finished to avoid conflicts</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>attach()</code> function makes the variables (columns) in a data frame directly accessible in the R environment without having to specify the data frame name and $ operator each time.</p>
 <p>When you attach a data frame, R adds its variables to the search path, allowing you to refer to them by name alone. This can make code more concise and readable, especially when working extensively with a single data frame.</p>
@@ -1142,8 +1133,8 @@ Attach Function Explanation
 </div>
 <p><br></p>
 </section>
-<section id="section-5" class="level3">
-<h3 class="anchored" data-anchor-id="section-5">7.6</h3>
+<section id="data-frame-question" class="level3">
+<h3 class="anchored" data-anchor-id="data-frame-question">7.6 Data Frame Question</h3>
 <p>Write a plausible practice question involving any aspect of manipulation of a data frame.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1159,29 +1150,29 @@ Data Frame Manipulation Question
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A plausible practice question could be:</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "Using the butterfly dataset, create a new data frame that contains only female </span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># butterflies. Then add a new column called 'length_category' that categorizes </span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># antenna length as 'short' if less than 7 mm, and 'long' if 7 mm or greater. </span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally, calculate the mean antenna length for each diet type within this </span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># female-only dataset."</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution:</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"data/5-butterfly.xlsx"</span>)</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a subset with only females</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>females <span class="ot">&lt;-</span> data1[data1<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"female"</span>, ]</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column for length category</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>females<span class="sc">$</span>length_category <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(females<span class="sc">$</span>length <span class="sc">&lt;</span> <span class="dv">7</span>, <span class="st">"short"</span>, <span class="st">"long"</span>)</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean length by diet type</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(females<span class="sc">$</span>length, females<span class="sc">$</span>diet, mean)</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative using aggregate function</span></span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(length <span class="sc">~</span> diet, <span class="at">data =</span> females, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A plausible practice question could be:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "Using the butterfly dataset, create a new data frame that contains only female </span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># butterflies. Then add a new column called 'length_category' that categorizes </span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># antenna length as 'short' if less than 7 mm, and 'long' if 7 mm or greater. </span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally, calculate the mean antenna length for each diet type within this </span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># female-only dataset."</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution:</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"data/5-butterfly.xlsx"</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a subset with only females</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>females <span class="ot">&lt;-</span> data1[data1<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"female"</span>, ]</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column for length category</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>females<span class="sc">$</span>length_category <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(females<span class="sc">$</span>length <span class="sc">&lt;</span> <span class="dv">7</span>, <span class="st">"short"</span>, <span class="st">"long"</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean length by diet type</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(females<span class="sc">$</span>length, females<span class="sc">$</span>diet, mean)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative using aggregate function</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(length <span class="sc">~</span> diet, <span class="at">data =</span> females, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This practice question tests understanding of: - Subsetting data frames using logical conditions - Adding new calculated columns - Using functions like <code>tapply()</code> or <code>aggregate()</code> to calculate statistics by group - Working with categorical data</p>
 <p>The solution demonstrates multiple data frame manipulation techniques commonly used in data analysis workflows.</p>

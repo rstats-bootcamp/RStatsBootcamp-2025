@@ -224,8 +224,9 @@ RStudio provides a user-friendly interface for Git operations:
 
 ## 10 Practice Exercises
 
-::: {.callout-note appearance="minimal"}
-### Exercise 1
+<br>
+
+### Exercise 1: Git Setup
 
 Create a GitHub account (if you don't have one) and set up Git on your computer.
 
@@ -308,7 +309,7 @@ Once you've completed these steps, you'll have a GitHub account and Git configur
 
 <br>
 
-### Exercise 2
+### Exercise 2: Repository Creation
 
 Create a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.
 
@@ -402,7 +403,7 @@ You can now view your repository on GitHub and see the R script you added.
 
 <br>
 
-### Exercise 3
+### Exercise 3: Open Source Contribution
 
 Fork an existing R project on GitHub, make a small improvement, and create a pull request.
 

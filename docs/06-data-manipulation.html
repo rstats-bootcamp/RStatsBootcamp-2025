@@ -521,12 +521,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#aggregate-function" id="toc-aggregate-function" class="nav-link" data-scroll-target="#aggregate-function">5 <code>aggregate()</code> function</a></li>
   <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">6 Practice exercises</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">6.1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">6.2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">6.3</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">6.4</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">6.5</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">6.6</a></li>
+  <li><a href="#mean-for-subset" id="toc-mean-for-subset" class="nav-link" data-scroll-target="#mean-for-subset">6.1 Mean for Subset</a></li>
+  <li><a href="#height-categories" id="toc-height-categories" class="nav-link" data-scroll-target="#height-categories">6.2 Height Categories</a></li>
+  <li><a href="#aggregate-by-group" id="toc-aggregate-by-group" class="nav-link" data-scroll-target="#aggregate-by-group">6.3 Aggregate by Group</a></li>
+  <li><a href="#boolean-selection" id="toc-boolean-selection" class="nav-link" data-scroll-target="#boolean-selection">6.4 Boolean Selection</a></li>
+  <li><a href="#na-in-aggregation" id="toc-na-in-aggregation" class="nav-link" data-scroll-target="#na-in-aggregation">6.5 NA in Aggregation</a></li>
+  <li><a href="#iris-dataset-question" id="toc-iris-dataset-question" class="nav-link" data-scroll-target="#iris-dataset-question">6.6 Iris Dataset Question</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -973,8 +973,8 @@ Learning Objectives
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(trees)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(trees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">6.1</h3>
+<section id="mean-for-subset" class="level3">
+<h3 class="anchored" data-anchor-id="mean-for-subset">6.1 Mean for Subset</h3>
 <p>Show code to calculate the mean <code>Girth</code> of Black Cherry trees with <code>Height</code> less than 75 ft.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1012,8 +1012,8 @@ Mean Girth for Shorter Trees
 </div>
 <p><br></p>
 </section>
-<section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">6.2</h3>
+<section id="height-categories" class="level3">
+<h3 class="anchored" data-anchor-id="height-categories">6.2 Height Categories</h3>
 <p>Use <code>help(cut)</code> and then use the <code>cut()</code> function to create a new factor variable based on the <code>Height</code> numeric variable in the <code>trees</code> dataset. Try setting the <code>breaks</code> argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1073,8 +1073,8 @@ Short (&lt;75 ft)  Tall (≥75 ft)
 </div>
 <p><br></p>
 </section>
-<section id="section-2" class="level3">
-<h3 class="anchored" data-anchor-id="section-2">6.3</h3>
+<section id="aggregate-by-group" class="level3">
+<h3 class="anchored" data-anchor-id="aggregate-by-group">6.3 Aggregate by Group</h3>
 <p>Using the new factor from question 2, use <code>aggregate()</code> to calculate the mean and standard deviation of all three variables in the <code>trees</code> data. Show your code and report the results to 2 decimal points of accuracy.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1125,8 +1125,8 @@ Aggregating Tree Data by Height Category
 </div>
 <p><br></p>
 </section>
-<section id="section-3" class="level3">
-<h3 class="anchored" data-anchor-id="section-3">6.4</h3>
+<section id="boolean-selection" class="level3">
+<h3 class="anchored" data-anchor-id="boolean-selection">6.4 Boolean Selection</h3>
 <p>Show the code using <code>which()</code> and boolean phrases as appropriate to find the rows in the <code>trees</code> dataset where <code>Girth</code> is higher than 11 and <code>Height</code> is lower than 75.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1183,8 +1183,8 @@ Finding Trees with Specific Criteria
 </div>
 <p><br></p>
 </section>
-<section id="section-4" class="level3">
-<h3 class="anchored" data-anchor-id="section-4">6.5</h3>
+<section id="na-in-aggregation" class="level3">
+<h3 class="anchored" data-anchor-id="na-in-aggregation">6.5 NA in Aggregation</h3>
 <p>Run the following code:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">volume =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="cn">NA</span>,<span class="dv">10</span>),</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">population =</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,</span>
@@ -1241,9 +1241,9 @@ Handling NA Values in Aggregation
 </div>
 <p><br></p>
 </section>
-<section id="section-5" class="level3">
-<h3 class="anchored" data-anchor-id="section-5">6.6</h3>
-<p>Write a plausible practice question involving any aspect of using <code>which()</code>, boolean phrases and/or <code>aggregate()</code> involving the in-built <code>R</code> dataset <code>iris</code>.</p>
+<section id="iris-dataset-question" class="level3">
+<h3 class="anchored" data-anchor-id="iris-dataset-question">6.6 Iris Dataset Question</h3>
+<p>Write a plausible practice question involving any aspect of using <code>which()</code>, boolean phrases and/or <code>aggregate()</code> involving the in-built R dataset iris.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">

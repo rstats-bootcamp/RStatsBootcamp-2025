@@ -464,9 +464,9 @@ This is real data in Tidy Data format, but our information for these exercises i
 
 <br>
 
-### 7.1
+### 7.1 Sampling Distribution
 
-Show code to set up an `R` analysis file with a header, table of contents, and a setup section that sets your working directory, loads any required libraries and reads in the data. Call the `data.frame` object you create `seed`.
+Create a simulation of a sampling distribution. Use the `rnorm()` function to create a "population" of 10,000 values with a mean of 100 and a standard deviation of 15. Then take 100 samples of size 30 from this population and calculate the mean of each sample. Plot a histogram of the sample means and calculate the mean and standard deviation of the sample means. How does the standard deviation of the sample means compare to the standard error of the mean (standard deviation of the population divided by the square root of the sample size)?
 
 <br>
 
@@ -520,15 +520,9 @@ This structure follows best practices for reproducible research by clearly docum
 
 <br>
 
-### 7.2
+### 7.2 Seed Data Analysis
 
--   `pct`, `wet` and `dry` should be numeric
-
--   `block` and `trial` should be factors
-
--   `treatment` should be a factor with the level "Control" set as the reference.
-
-Show the code to do this.
+Using the field-trial.xlsx data file, perform an appropriate statistical analysis to determine if there are differences in germination rates between treatments. Include appropriate data visualization and report your results in the technical style.
 
 <br>
 
@@ -571,9 +565,9 @@ Setting "Control" as the reference level is particularly important for statistic
 
 <br>
 
-### 7.3
+### 7.3 Comprehensive Boxplot
 
-Use `aggregate()` to calculate the mean, standard deviation, standard error, and the count (e.g. `length()`) of `pct` for each level of `treatment`. Show the code.
+Create a boxplot of the seed germination data by treatment, adding horizontal reference lines for the overall mean and ±1 standard deviation. Include a legend explaining these reference lines.
 
 <br>
 
@@ -617,68 +611,7 @@ This summary provides a comprehensive overview of how the treatments affect the 
 
 <br>
 
-### 7.4
-
-Make a fully labelled boxplot of the `pct` variable as a function of `treatment`. Add a horizontal line (red and dashed) for the overall mean of `pct`, and two horizontal lines (gray, dotted) for the overall mean of `pct` +/- 1 standard deviation.
-
-<br>
-
-::: {.callout-tip collapse="true"}
-## Boxplot with Reference Lines
-```{r}
-#| echo: true
-#| eval: false
-
-# Load required libraries and read data
-library(openxlsx)
-seed <- read.xlsx("data/field-trial.xlsx")
-
-# Convert treatment to factor and pct to numeric
-seed$treatment <- factor(seed$treatment)
-seed$pct <- as.numeric(seed$pct)
-
-# Calculate overall mean and standard deviation
-overall_mean <- mean(seed$pct)
-overall_sd <- sd(seed$pct)
-
-# Create boxplot
-boxplot(pct ~ treatment, data = seed,
-        main = "Percentage Growth by Treatment",
-        xlab = "Treatment Type",
-        ylab = "Growth Percentage (%)",
-        col = "lightblue",
-        border = "darkblue")
-
-# Add horizontal line for overall mean
-abline(h = overall_mean, col = "red", lty = 2, lwd = 2)
-
-# Add horizontal lines for mean +/- 1 SD
-abline(h = overall_mean + overall_sd, col = "gray", lty = 3, lwd = 1)
-abline(h = overall_mean - overall_sd, col = "gray", lty = 3, lwd = 1)
-
-# Add legend
-legend("topright", 
-       legend = c("Overall Mean", "Mean ± 1 SD"),
-       col = c("red", "gray"),
-       lty = c(2, 3),
-       lwd = c(2, 1))
-```
-
-This code creates a comprehensive boxplot visualization that:
-1. Shows the distribution of growth percentages across different treatments
-2. Includes a red dashed line representing the overall mean across all treatments
-3. Adds gray dotted lines showing ±1 standard deviation from the overall mean
-4. Provides a legend explaining the reference lines
-5. Features clear labels for the title, x-axis, and y-axis
-
-The boxplots themselves show the median (center line), interquartile range (box), and potential outliers (points) for each treatment, allowing for easy visual comparison between treatment effects.
-
-The reference lines provide context about how each treatment compares to the overall distribution of the data, helping to identify treatments that produce above-average or below-average results.
-:::
-
-<br>
-
-### 7.5
+### 7.4 Multi-Panel Boxplot
 
 (hard: may require tinkering and problem solving)
 
@@ -762,7 +695,7 @@ The choice between these approaches depends on the number of trials and treatmen
 
 <br>
 
-### 7.6
+### 7.5 Iris Aggregation
 
 Write a plausible practice question involving `aggregate()` and `boxplot()` in-built R dataset `iris`.
 

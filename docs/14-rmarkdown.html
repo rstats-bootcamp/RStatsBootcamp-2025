@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.30">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>14 R Markdown – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -79,8 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-4848551f56e22cb80adcac86ad2b91da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,12 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="styles.css">
+}</script><link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -277,9 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R Stats Bootcamp</span>
@@ -291,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -304,14 +293,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -322,20 +309,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Getting Started</span></a>
@@ -343,8 +326,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Stats Bootcamp</span></a>
@@ -363,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -372,8 +355,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Setup &amp; intro</span></a>
@@ -410,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -419,8 +402,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-question-explore.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 Explore data</span></a>
@@ -457,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -466,8 +449,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13-reproducibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 Reproducibility</span></a>
@@ -492,49 +475,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-r-markdown" id="toc-what-is-r-markdown" class="nav-link active" data-scroll-target="#what-is-r-markdown">1 What is R Markdown?</a></li>
+<li><a href="#what-is-r-markdown" id="toc-what-is-r-markdown" class="nav-link active" data-scroll-target="#what-is-r-markdown">1 What is R Markdown?</a></li>
   <li><a href="#getting-started-with-r-markdown" id="toc-getting-started-with-r-markdown" class="nav-link" data-scroll-target="#getting-started-with-r-markdown">2 Getting Started with R Markdown</a></li>
   <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">3 YAML Header</a></li>
-  <li><a href="#markdown-text" id="toc-markdown-text" class="nav-link" data-scroll-target="#markdown-text">4 Markdown Text</a>
+  <li>
+<a href="#markdown-text" id="toc-markdown-text" class="nav-link" data-scroll-target="#markdown-text">4 Markdown Text</a>
   <ul class="collapse">
-  <li><a href="#basic-formatting" id="toc-basic-formatting" class="nav-link" data-scroll-target="#basic-formatting">4.1 Basic Formatting</a></li>
+<li><a href="#basic-formatting" id="toc-basic-formatting" class="nav-link" data-scroll-target="#basic-formatting">4.1 Basic Formatting</a></li>
   <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">4.2 Lists</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">4.3 Tables</a></li>
-  </ul></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">5 Code Chunks</a>
+  </ul>
+</li>
+  <li>
+<a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">5 Code Chunks</a>
   <ul class="collapse">
-  <li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options">5.1 Chunk Options</a></li>
-  </ul></li>
+<li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options">5.1 Chunk Options</a></li>
+  </ul>
+</li>
   <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">6 Inline Code</a></li>
   <li><a href="#generating-reports" id="toc-generating-reports" class="nav-link" data-scroll-target="#generating-reports">7 Generating Reports</a></li>
   <li><a href="#example-data-analysis-report" id="toc-example-data-analysis-report" class="nav-link" data-scroll-target="#example-data-analysis-report">8 Example: Data Analysis Report</a></li>
-  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">9 Practice Exercises</a>
+  <li>
+<a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">9 Practice Exercises</a>
   <ul class="collapse">
-  <li><a href="#exercise-1-1" id="toc-exercise-1-1" class="nav-link" data-scroll-target="#exercise-1-1">Exercise 1</a></li>
-  <li><a href="#exercise-2-1" id="toc-exercise-2-1" class="nav-link" data-scroll-target="#exercise-2-1">Exercise 2</a></li>
-  <li><a href="#exercise-3-1" id="toc-exercise-3-1" class="nav-link" data-scroll-target="#exercise-3-1">Exercise 3</a></li>
-  </ul></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+<li><a href="#exercise-1-basic-r-markdown-1" id="toc-exercise-1-basic-r-markdown-1" class="nav-link" data-scroll-target="#exercise-1-basic-r-markdown-1">Exercise 1: Basic R Markdown</a></li>
+  <li><a href="#exercise-2-output-formats-1" id="toc-exercise-2-output-formats-1" class="nav-link" data-scroll-target="#exercise-2-output-formats-1">Exercise 2: Output Formats</a></li>
+  <li><a href="#exercise-3-advanced-features-1" id="toc-exercise-3-advanced-features-1" class="nav-link" data-scroll-target="#exercise-3-advanced-features-1">Exercise 3: Advanced Features</a></li>
   </ul>
-</nav>
+</li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-reproducibility.html">Module 3: Reproducible Research</a></li><li class="breadcrumb-item"><a href="./14-rmarkdown.html">14 R Markdown</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-reproducibility.html">Module 3: Reproducible Research</a></li><li class="breadcrumb-item"><a href="./14-rmarkdown.html">14 R Markdown</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">14 R Markdown</h1>
 </div>
 
@@ -549,10 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-default callout-note callout-titled">
+</header><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -572,8 +551,7 @@ Learning Objectives
 </ul>
 </div>
 </div>
-<section id="what-is-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-r-markdown">1 What is R Markdown?</h2>
+<section id="what-is-r-markdown" class="level2"><h2 class="anchored" data-anchor-id="what-is-r-markdown">1 What is R Markdown?</h2>
 <p>R Markdown is a file format that allows you to combine R code, its output, and narrative text in a single document. It’s a powerful tool for creating reproducible reports, presentations, dashboards, and even websites.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -588,20 +566,18 @@ Key Concept
 <p>R Markdown documents are plain text files that contain three important elements: 1. <strong>YAML header</strong> - Document metadata and formatting options 2. <strong>Markdown text</strong> - For narrative content 3. <strong>Code chunks</strong> - R code that can be executed</p>
 </div>
 </div>
-</section>
-<section id="getting-started-with-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started-with-r-markdown">2 Getting Started with R Markdown</h2>
+</section><section id="getting-started-with-r-markdown" class="level2"><h2 class="anchored" data-anchor-id="getting-started-with-r-markdown">2 Getting Started with R Markdown</h2>
 <p>To create an R Markdown document in RStudio:</p>
 <ol type="1">
-<li>Click <strong>File → New File → R Markdown</strong></li>
+<li>Click <strong>File → New File → R Markdown</strong>
+</li>
 <li>Choose a document type (HTML, PDF, or Word)</li>
 <li>Give your document a title and author name</li>
-<li>Click <strong>OK</strong></li>
+<li>Click <strong>OK</strong>
+</li>
 </ol>
 <p>This will generate a template R Markdown file that you can modify.</p>
-</section>
-<section id="yaml-header" class="level2">
-<h2 class="anchored" data-anchor-id="yaml-header">3 YAML Header</h2>
+</section><section id="yaml-header" class="level2"><h2 class="anchored" data-anchor-id="yaml-header">3 YAML Header</h2>
 <p>The YAML header appears at the top of the document between triple dashes (<code>---</code>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Analysis Report"</span></span>
@@ -622,12 +598,9 @@ Key Concept
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> tango</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> show</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="markdown-text" class="level2">
-<h2 class="anchored" data-anchor-id="markdown-text">4 Markdown Text</h2>
+</section><section id="markdown-text" class="level2"><h2 class="anchored" data-anchor-id="markdown-text">4 Markdown Text</h2>
 <p>Markdown is a lightweight markup language that allows you to format text using simple syntax:</p>
-<section id="basic-formatting" class="level3">
-<h3 class="anchored" data-anchor-id="basic-formatting">4.1 Basic Formatting</h3>
+<section id="basic-formatting" class="level3"><h3 class="anchored" data-anchor-id="basic-formatting">4.1 Basic Formatting</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3</span></span>
@@ -638,9 +611,7 @@ Key Concept
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link text</span><span class="co">](https://example.com)</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="al">![Image alt text](path/to/image.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="lists" class="level3">
-<h3 class="anchored" data-anchor-id="lists">4.2 Lists</h3>
+</section><section id="lists" class="level3"><h3 class="anchored" data-anchor-id="lists">4.2 Lists</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">Unordered list:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 2</span>
@@ -652,17 +623,12 @@ Key Concept
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Second item</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>   a. Subitem a</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>   b. Subitem b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="tables" class="level3">
-<h3 class="anchored" data-anchor-id="tables">4.3 Tables</h3>
+</section><section id="tables" class="level3"><h3 class="anchored" data-anchor-id="tables">4.3 Tables</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Column 1 <span class="pp">|</span> Column 2 <span class="pp">|</span> Column 3 <span class="pp">|</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|----------|</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Row 1    <span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Row 2    <span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="code-chunks" class="level2">
-<h2 class="anchored" data-anchor-id="code-chunks">5 Code Chunks</h2>
+</section></section><section id="code-chunks" class="level2"><h2 class="anchored" data-anchor-id="code-chunks">5 Code Chunks</h2>
 <p>Code chunks in R Markdown allow you to execute R code and display its results:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
@@ -712,16 +678,13 @@ Key Concept
 <span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="chunk-options" class="level3">
-<h3 class="anchored" data-anchor-id="chunk-options">5.1 Chunk Options</h3>
+<section id="chunk-options" class="level3"><h3 class="anchored" data-anchor-id="chunk-options">5.1 Chunk Options</h3>
 <p>You can control how code chunks behave using options:</p>
 <table class="caption-top table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Option</th>
 <th>Description</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><code>eval=TRUE/FALSE</code></td>
@@ -760,16 +723,11 @@ Key Concept
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="al">![](14-rmarkdown_files/figure-html/plot-1.png)</span>{width=768}</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="inline-code" class="level2">
-<h2 class="anchored" data-anchor-id="inline-code">6 Inline Code</h2>
+</section></section><section id="inline-code" class="level2"><h2 class="anchored" data-anchor-id="inline-code">6 Inline Code</h2>
 <p>You can also include R code directly within text using backticks and <code>r</code>:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>The average miles per gallon is 20.090625.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will calculate the mean and insert the result directly into your text.</p>
-</section>
-<section id="generating-reports" class="level2">
-<h2 class="anchored" data-anchor-id="generating-reports">7 Generating Reports</h2>
+</section><section id="generating-reports" class="level2"><h2 class="anchored" data-anchor-id="generating-reports">7 Generating Reports</h2>
 <p>To generate your report:</p>
 <ol type="1">
 <li>Click the <strong>Knit</strong> button in RStudio</li>
@@ -777,9 +735,7 @@ Key Concept
 <li>View the generated document</li>
 </ol>
 <p>R Markdown will: - Run all the code chunks - Generate all outputs (tables, plots, etc.) - Format the text according to Markdown syntax - Combine everything into a single document</p>
-</section>
-<section id="example-data-analysis-report" class="level2">
-<h2 class="anchored" data-anchor-id="example-data-analysis-report">8 Example: Data Analysis Report</h2>
+</section><section id="example-data-analysis-report" class="level2"><h2 class="anchored" data-anchor-id="example-data-analysis-report">8 Example: Data Analysis Report</h2>
 <p>Here’s a simple example of an R Markdown document for data analysis:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Car Performance Analysis"</span></span>
@@ -910,32 +866,26 @@ Key Concept
 <span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conclusion</span></span>
 <span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>Based on our analysis, there is a significant negative relationship between car weight and fuel efficiency. For every 1,000 lb increase in weight, the miles per gallon decreases by approximately 3.88 units.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="practice-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="practice-exercises">9 Practice Exercises</h2>
+</section><section id="practice-exercises" class="level2"><h2 class="anchored" data-anchor-id="practice-exercises">9 Practice Exercises</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise 1
+Exercise 1: Basic R Markdown
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Create a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion</p>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<section id="exercise-2-output-formats" class="level3"><h3 class="anchored" data-anchor-id="exercise-2-output-formats">Exercise 2: Output Formats</h3>
 <p>Experiment with different output formats (HTML, PDF, Word) and observe the differences.</p>
-</section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+</section><section id="exercise-3-advanced-features" class="level3"><h3 class="anchored" data-anchor-id="exercise-3-advanced-features">Exercise 3: Advanced Features</h3>
 <p>Create an R Markdown document with a table of contents, code folding, and a custom theme.</p>
 </section>
 </div>
 </div>
-<section id="exercise-1-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1-1">Exercise 1</h3>
+<section id="exercise-1-basic-r-markdown-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-1-basic-r-markdown-1">Exercise 1: Basic R Markdown</h3>
 <p>Create a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1054,9 +1004,7 @@ Solution: Basic R Markdown Document
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="exercise-2-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2-1">Exercise 2</h3>
+</section><section id="exercise-2-output-formats-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-2-output-formats-1">Exercise 2: Output Formats</h3>
 <p>Experiment with different output formats (HTML, PDF, Word) and observe the differences.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1109,39 +1057,43 @@ Solution: Output Format Comparison
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Key differences between formats:</strong></p>
 <ol type="1">
-<li><strong>HTML</strong>:
+<li>
+<strong>HTML</strong>:
 <ul>
 <li>Most interactive and customizable</li>
 <li>Supports interactive elements (e.g., plotly plots, shiny apps)</li>
 <li>Easy to share online</li>
 <li>Supports custom CSS styling</li>
 <li>Includes features like floating table of contents and code folding</li>
-</ul></li>
-<li><strong>PDF</strong>:
+</ul>
+</li>
+<li>
+<strong>PDF</strong>:
 <ul>
 <li>More formal appearance, suitable for printing</li>
 <li>Requires LaTeX installation (TinyTeX recommended)</li>
 <li>Better for precise layout control</li>
 <li>Good for academic papers and reports</li>
 <li>May have issues with very large tables or complex plots</li>
-</ul></li>
-<li><strong>Word</strong>:
+</ul>
+</li>
+<li>
+<strong>Word</strong>:
 <ul>
 <li>Familiar format for non-technical collaborators</li>
 <li>Easy for others to edit and add comments</li>
 <li>Good for documents that need further editing</li>
 <li>Limited in terms of formatting control compared to HTML/PDF</li>
 <li>May have inconsistent rendering of complex elements</li>
-</ul></li>
+</ul>
+</li>
 </ol>
 <p>To fully experience these differences, you would need to knit the same document to each format and compare the results.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="exercise-3-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3-1">Exercise 3</h3>
+</section><section id="exercise-3-advanced-features-1" class="level3"><h3 class="anchored" data-anchor-id="exercise-3-advanced-features-1">Exercise 3: Advanced Features</h3>
 <p>Create an R Markdown document with a table of contents, code folding, and a custom theme.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1376,36 +1328,49 @@ Solution: Advanced R Markdown Features
 <span id="cb16-217"><a href="#cb16-217" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Multi-level headings that appear in the TOC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Key features implemented:</strong></p>
 <ol type="1">
-<li><strong>Table of Contents</strong>:
+<li>
+<strong>Table of Contents</strong>:
 <ul>
-<li><code>toc: true</code> enables the table of contents</li>
-<li><code>toc_float: collapsed: false, smooth_scroll: true</code> creates a floating TOC</li>
-<li><code>toc_depth: 3</code> includes headings up to level 3</li>
-<li><code>number_sections: true</code> adds numbering to sections</li>
-</ul></li>
-<li><strong>Code Folding</strong>:
+<li>
+<code>toc: true</code> enables the table of contents</li>
+<li>
+<code>toc_float: collapsed: false, smooth_scroll: true</code> creates a floating TOC</li>
+<li>
+<code>toc_depth: 3</code> includes headings up to level 3</li>
+<li>
+<code>number_sections: true</code> adds numbering to sections</li>
+</ul>
+</li>
+<li>
+<strong>Code Folding</strong>:
 <ul>
-<li><code>code_folding: show</code> makes code chunks expandable/collapsible</li>
+<li>
+<code>code_folding: show</code> makes code chunks expandable/collapsible</li>
 <li>Default is to show code, but readers can hide it</li>
-</ul></li>
-<li><strong>Custom Theme</strong>:
+</ul>
+</li>
+<li>
+<strong>Custom Theme</strong>:
 <ul>
-<li><code>theme: flatly</code> sets the document theme (other options include “default”, “cerulean”, “journal”, “lumen”, etc.)</li>
-<li><code>highlight: tango</code> sets the code highlighting style</li>
-</ul></li>
-<li><strong>Additional Features</strong>:
+<li>
+<code>theme: flatly</code> sets the document theme (other options include “default”, “cerulean”, “journal”, “lumen”, etc.)</li>
+<li>
+<code>highlight: tango</code> sets the code highlighting style</li>
+</ul>
+</li>
+<li>
+<strong>Additional Features</strong>:
 <ul>
-<li><code>df_print: paged</code> creates interactive tables for data frames</li>
+<li>
+<code>df_print: paged</code> creates interactive tables for data frames</li>
 <li>The setup chunk configures global options for all code chunks</li>
-</ul></li>
+</ul>
+</li>
 </ol>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="additional-resources" class="level2">
-<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+</section></section><section id="additional-resources" class="level2"><h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
 <ul>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
 <li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown Cheat Sheet</a></li>
@@ -1413,10 +1378,7 @@ Solution: Advanced R Markdown Features
 </ul>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1880,8 +1842,7 @@ Solution: Advanced R Markdown Features
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -1893,8 +1854,6 @@ Solution: Advanced R Markdown Features
     </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

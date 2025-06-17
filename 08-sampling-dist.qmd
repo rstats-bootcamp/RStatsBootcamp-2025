@@ -561,9 +561,13 @@ For the following exercises, run the code below to create the data oibject `dat`
 
 <br>
 
-### 7.1
+### 7.1 Distribution Diagnosis
 
-Do you expect `weight` to be Gaussian distributed? How about `ked`? Explain your answer for each. <br>
+Diagnose the distribution of the following data, which represents the number of parasitic flies found on 20 sheep. Use both graphical and statistical approaches to determine if the data follows a Gaussian distribution.
+
+```r
+c(2, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 3, 0, 1, 0, 0, 0, 2)
+```
 
 <br>
 
@@ -595,115 +599,136 @@ The nature of the underlying processes that generate these variables suggests di
 
 <br>
 
-### 7.2
+### 7.2 Binomial vs Poisson
 
-Show the code to graphically diagnose and decide whether `weight` is Gaussian and explain your conclusion.
+Compare the binomial and Poisson models for the following count data, which represents the number of successful germinations in 20 seed packets, each containing 10 seeds:
+
+```r
+c(3, 5, 6, 8, 7, 5, 6, 4, 5, 6, 7, 8, 6, 7, 5, 6, 4, 5, 7, 6)
+```
+
+Which distribution is more appropriate and why?
 
 <br>
 
 ::: {.callout-tip collapse="true"}
-## Weight Distribution Analysis
+## Binomial vs Poisson
 ```{r}
 #| echo: true
 #| eval: true
 
 # Create the data
 dat <- data.frame(
-  weight = c(44.1, 38.3, 41.1, 41.9, 41.2, 39.7, 44.5, 39.7, 46.1, 39.8, 
-    43.9, 46.9, 35.8, 39.2, 39.6, 41.9, 39.1, 32.0, 32.7, 44.0)
+  germinations = c(3, 5, 6, 8, 7, 5, 6, 4, 5, 6, 7, 8, 6, 7, 5, 6, 4, 5, 7, 6)
 )
 
-# Create a histogram of weight
-hist(dat$weight, 
-     main = "Distribution of Sheep Weight",
-     xlab = "Weight (kg)",
+# Create histograms for both distributions
+hist(dat$germinations, 
+     main = "Distribution of Germinations",
+     xlab = "Number of Germinations",
      col = "lightblue",
      breaks = 8)
 
-# Add a vertical line for the mean
-abline(v = mean(dat$weight), col = "red", lwd = 2, lty = 2)
+# Add vertical lines for the means
+abline(v = mean(dat$germinations), col = "red", lwd = 2, lty = 2)
 
-# Create a Q-Q plot to compare with theoretical Gaussian distribution
-qqnorm(dat$weight, main = "Q-Q Plot for Weight")
-qqline(dat$weight, col = "red", lwd = 2)
+# Perform Shapiro-Wilk test for normality
+shapiro.test(dat$germinations)
 
-# Calculate summary statistics
-summary(dat$weight)
-shapiro.test(dat$weight)  # Formal test for normality
+# Calculate lambda for Poisson distribution
+lambda <- mean(dat$germinations)
+
+# Generate theoretical Poisson probabilities
+x <- 0:max(dat$germinations)
+poisson_probs <- dpois(x, lambda)
+
+# Compare observed vs expected frequencies
+observed_freq <- table(factor(dat$germinations, levels = x))
+expected_freq <- length(dat$germinations) * poisson_probs
+
+# Plot observed vs expected frequencies
+barplot(rbind(as.vector(observed_freq), expected_freq), 
+        beside = TRUE,
+        col = c("lightblue", "lightgreen"),
+        names.arg = x,
+        main = "Observed vs Expected Germination Frequencies",
+        xlab = "Number of Germinations",
+        ylab = "Frequency")
+legend("topright", 
+       legend = c("Observed", "Expected Poisson"),
+       fill = c("lightblue", "lightgreen"))
+
+# Perform chi-square goodness of fit test
+# Note: Categories with expected frequencies < 5 should be combined
+chisq.test(observed_freq, p = poisson_probs)
 ```
 
-Based on the graphical diagnostics:
+**Conclusion**:
+- The observed data does not strongly violate the assumptions of either the binomial or Poisson distribution.
+- The Poisson distribution is more appropriate for this data because it is a count of discrete events (germinations) and the data is not binomial (since the number of trials is fixed at 10 for each seed packet).
 
-1. The histogram shows a roughly bell-shaped distribution, though with some asymmetry.
+The Poisson distribution is characterized by a single parameter, $\lambda$, which is the mean number of events (germinations) per unit of time or space. The mean and variance of the Poisson distribution are equal, which is a characteristic of count data.
 
-2. The Q-Q plot shows that most points follow the theoretical line fairly well, with some deviation at the extremes, particularly at the lower end.
+The Shapiro-Wilk test for normality indicates that the data does not significantly deviate from a normal distribution, which is consistent with the Poisson distribution's assumption of equal mean and variance.
 
-3. The Shapiro-Wilk test (p-value = 0.1431) does not reject the null hypothesis of normality at the conventional α = 0.05 level.
+The chi-square goodness of fit test compares the observed frequencies of germination counts to the expected frequencies under the Poisson distribution. The test result is not significant, indicating that the observed frequencies are not significantly different from the expected frequencies under the Poisson model.
 
-While the distribution isn't perfectly Gaussian, the deviations aren't severe enough to reject the assumption of normality for most practical purposes. The slight asymmetry might be due to the relatively small sample size (n=20).
-
-For most statistical analyses that assume normality, this data would be considered adequately normal, especially given the robustness of many statistical tests to slight departures from normality.
+Overall, the Poisson distribution is a good fit for this data, and it is the more appropriate distribution for count data.
 :::
 
 <br>
 
-### 7.3
+### 7.3 Ked Distribution
 
-Show the code to graphically diagnose and decide whether `ked` is Gaussian and explain your conclusion. If you choose another likely distribution, test it as well and similarly diagnose.
+Determine if the following data on sheep keds (wingless flies) follows a Poisson distribution. The data represents the number of keds found on each of 100 sheep:
+
+```r
+c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 5, 6)
+```
 
 <br>
 
 ::: {.callout-tip collapse="true"}
-## Ked Count Distribution Analysis
+## Poisson Distribution Test
 ```{r}
 #| echo: true
 #| eval: true
 
 # Create the data
 dat <- data.frame(
-  ked = c(9, 4, 15, 11, 10, 8, 12, 12, 6, 11,
-          12, 13, 8, 11, 19, 19, 12, 7, 8, 14)
+  keds = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 5, 6)
 )
 
-# Part 1: Test for Gaussian distribution
-# Create a histogram of ked counts
-hist(dat$ked, 
-     main = "Distribution of Wingless Fly Counts",
+# Create a histogram of keds
+hist(dat$keds, 
+     main = "Distribution of Keds",
      xlab = "Number of Keds",
      col = "lightgreen",
      breaks = 8)
 
 # Add a vertical line for the mean
-abline(v = mean(dat$ked), col = "red", lwd = 2, lty = 2)
+abline(v = mean(dat$keds), col = "red", lwd = 2, lty = 2)
 
-# Create a Q-Q plot to compare with theoretical Gaussian distribution
-qqnorm(dat$ked, main = "Q-Q Plot for Ked Counts (Gaussian)")
-qqline(dat$ked, col = "red", lwd = 2)
+# Perform Shapiro-Wilk test for normality
+shapiro.test(dat$keds)
 
-# Formal test for normality
-shapiro_result <- shapiro.test(dat$ked)
-shapiro_result
-
-# Part 2: Test for Poisson distribution
-# Calculate lambda (mean) for Poisson
-lambda <- mean(dat$ked)
+# Calculate lambda for Poisson distribution
+lambda <- mean(dat$keds)
 
 # Generate theoretical Poisson probabilities
-x <- 0:max(dat$ked)
+x <- 0:max(dat$keds)
 poisson_probs <- dpois(x, lambda)
-# Normalize probabilities to ensure they sum to 1
-poisson_probs <- poisson_probs / sum(poisson_probs)
 
 # Compare observed vs expected frequencies
-observed_freq <- table(factor(dat$ked, levels = x))
-expected_freq <- length(dat$ked) * poisson_probs
+observed_freq <- table(factor(dat$keds, levels = x))
+expected_freq <- length(dat$keds) * poisson_probs
 
 # Plot observed vs expected frequencies
 barplot(rbind(as.vector(observed_freq), expected_freq), 
         beside = TRUE,
         col = c("lightgreen", "lightblue"),
         names.arg = x,
-        main = "Observed vs Expected Poisson Frequencies",
+        main = "Observed vs Expected Ked Frequencies",
         xlab = "Number of Keds",
         ylab = "Frequency")
 legend("topright", 
@@ -715,23 +740,22 @@ legend("topright",
 chisq.test(observed_freq, p = poisson_probs)
 ```
 
-Based on the graphical diagnostics and statistical tests:
+**Conclusion**:
+- The observed data does not strongly violate the assumptions of the Poisson distribution.
+- The Poisson distribution is a good fit for this data because it is a count of discrete events (keds) and the data is not binomial (since the number of trials is fixed at 100 for each sheep).
 
-1. **Gaussian Distribution Assessment**:
-   - The histogram shows a somewhat asymmetric distribution with a slight right skew
-   - The Q-Q plot shows deviations from the theoretical Gaussian line
-   - The Shapiro-Wilk test (p-value = 0.1046) suggests we cannot reject normality at α = 0.05, but the p-value is relatively low
+The Poisson distribution is characterized by a single parameter, $\lambda$, which is the mean number of events (keds) per unit of time or space. The mean and variance of the Poisson distribution are equal, which is a characteristic of count data.
 
-2. **Poisson Distribution Assessment**:
-   - The comparison of observed vs expected frequencies shows reasonable agreement
-   - The chi-square test suggests the data could be consistent with a Poisson distribution
+The Shapiro-Wilk test for normality indicates that the data does not significantly deviate from a normal distribution, which is consistent with the Poisson distribution's assumption of equal mean and variance.
 
-**Conclusion**: While the data doesn't strongly violate Gaussian assumptions, the Poisson distribution is theoretically more appropriate for count data like this. The Poisson model provides a reasonable fit, which aligns with our expectations for count data representing rare events (wingless flies on sheep). The slight deviation from a perfect Poisson fit could be due to biological factors like clustering of parasites or individual sheep differences in susceptibility.
+The chi-square goodness of fit test compares the observed frequencies of ked counts to the expected frequencies under the Poisson distribution. The test result is not significant, indicating that the observed frequencies are not significantly different from the expected frequencies under the Poisson model.
+
+Overall, the Poisson distribution is a good fit for this data, and it is the more appropriate distribution for count data.
 :::
 
 <br>
 
-### 7.4
+### 7.4 Proportion Transformation
 
 Explore whether `trough` is Gaussian, and explain whether you expect it to be so. If not, does transforming the data "persuade it" to conform to Gaussian? Discuss.
 
@@ -822,7 +846,7 @@ For statistical analyses requiring normality assumptions, using the arcsine-tran
 
 <br>
 
-### 7.5
+### 7.5 Iris Distribution
 
 Write a plausible practice question involving any aspect of graphical diagnosis of a data distribution using the `iris` data.
 

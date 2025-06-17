@@ -226,23 +226,11 @@ Help new team members get up to speed:
 
 ## 8 Practice Exercises
 
-::: {.callout-note appearance="minimal"}
-### Exercise 1
+<br>
 
-Create a `CONTRIBUTING.md` file for a data science project, outlining guidelines for code style, pull requests, and code review.
+### Exercise 1: Contributing Guidelines
 
-### Exercise 2
-
-Practice resolving a merge conflict by having two team members edit the same file and then merge their changes.
-
-### Exercise 3
-
-Set up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.
-:::
-
-### Exercise 1
-
-Create a `CONTRIBUTING.md` file for a data science project, outlining guidelines for code style, pull requests, and code review.
+Create a CONTRIBUTING.md file for a data science project, outlining guidelines for code style, pull requests, and code review.
 
 <br>
 
@@ -379,7 +367,7 @@ This CONTRIBUTING.md file:
 
 <br>
 
-### Exercise 2
+### Exercise 2: Merge Conflicts
 
 Practice resolving a merge conflict by having two team members edit the same file and then merge their changes.
 
@@ -541,7 +529,7 @@ This exercise demonstrates a typical workflow for resolving merge conflicts that
 
 <br>
 
-### Exercise 3
+### Exercise 3: Feature Branch Workflow
 
 Set up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.
 
