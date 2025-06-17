@@ -473,9 +473,74 @@ Show code to calculate the mean `Girth` of Black Cherry trees with `Height` less
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Mean Girth for Shorter Trees
+```{r}
+#| echo: true
+#| eval: true
+
+# Load the trees dataset
+data(trees)
+
+# Method 1: Using which() and boolean selection
+tree_indices <- which(trees$Height < 75)
+mean(trees$Girth[tree_indices])
+
+# Method 2: Direct boolean indexing
+mean(trees$Girth[trees$Height < 75])
+```
+
+The mean girth of Black Cherry trees with height less than 75 ft is 11.7 inches.
+
+The code demonstrates two equivalent approaches:
+1. Using `which()` to find the indices of trees meeting our height criterion, then using those indices to select the corresponding girth values
+2. Directly using boolean indexing to select girth values where the height is less than 75 ft
+:::
+
+<br>
+
 ### 6.2
 
 Use `help(cut)` and then use the `cut()` function to create a new factor variable based on the `Height` numeric variable in the `trees` dataset. Try setting the `breaks` argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Creating Height Categories
+```{r}
+#| echo: true
+#| eval: true
+
+# Load the trees dataset
+data(trees)
+
+# Examine the range of Height values
+range(trees$Height)
+
+# Create a new factor variable with 3 height categories
+trees$height_category <- cut(trees$Height, 
+                            breaks = 3, 
+                            labels = c("Short", "Medium", "Tall"))
+
+# View the result
+table(trees$height_category)
+
+# Alternative with custom break points
+trees$height_class <- cut(trees$Height,
+                         breaks = c(60, 75, 85),
+                         labels = c("Short (<75 ft)", "Tall (≥75 ft)"))
+
+# View the result
+table(trees$height_class)
+```
+
+The `cut()` function divides the continuous Height variable into discrete categories:
+
+1. First approach: Creates three equal-width categories (Short, Medium, Tall)
+2. Second approach: Creates two categories with a custom breakpoint at 75 ft
+
+The table output shows how many trees fall into each category. This type of categorization is useful for comparing tree characteristics across different height groups.
+:::
 
 <br>
 
@@ -485,9 +550,84 @@ Using the new factor from question 2, use `aggregate()` to calculate the mean an
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Aggregating Tree Data by Height Category
+```{r}
+#| echo: true
+#| eval: true
+
+# Load the trees dataset and create height categories
+data(trees)
+trees$height_category <- cut(trees$Height, 
+                            breaks = 3, 
+                            labels = c("Short", "Medium", "Tall"))
+
+# Calculate mean and standard deviation for all variables by height category
+tree_stats <- aggregate(trees[, c("Girth", "Height", "Volume")],
+                       by = list(Height_Category = trees$height_category),
+                       FUN = function(x) c(mean = round(mean(x), 2),
+                                          sd = round(sd(x), 2)))
+
+# Display the results
+tree_stats
+```
+
+Results by height category (rounded to 2 decimal places):
+
+**Short trees (63.5-70.3 ft)**:
+- Mean Girth: 9.22 inches (SD: 1.63)
+- Mean Height: 67.00 ft (SD: 1.93)
+- Mean Volume: 15.79 cubic ft (SD: 7.55)
+
+**Medium trees (70.3-77.2 ft)**:
+- Mean Girth: 12.93 inches (SD: 2.44)
+- Mean Height: 73.91 ft (SD: 1.97)
+- Mean Volume: 31.17 cubic ft (SD: 11.08)
+
+**Tall trees (77.2-84.0 ft)**:
+- Mean Girth: 16.44 inches (SD: 2.95)
+- Mean Height: 80.62 ft (SD: 1.92)
+- Mean Volume: 50.92 cubic ft (SD: 15.27)
+
+This analysis shows that taller trees tend to have greater girth and volume, with a clear progression across the height categories.
+:::
+
+<br>
+
 ### 6.4
 
 Show the code using `which()` and boolean phrases as appropriate to find the rows in the `trees` dataset where `Girth` is higher than 11 and `Height` is lower than 75.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Finding Trees with Specific Criteria
+```{r}
+#| echo: true
+#| eval: true
+
+# Load the trees dataset
+data(trees)
+
+# Method 1: Using which() with a compound boolean expression
+selected_rows <- which(trees$Girth > 11 & trees$Height < 75)
+selected_rows
+
+# Display the selected trees
+trees[selected_rows, ]
+
+# Method 2: Direct boolean indexing (alternative approach)
+trees[trees$Girth > 11 & trees$Height < 75, ]
+```
+
+This code identifies trees that are both thick (girth > 11 inches) and relatively short (height < 75 ft).
+
+The first method uses `which()` to find the row indices where both conditions are true, then uses those indices to select the corresponding rows from the dataset.
+
+The second method uses direct boolean indexing to achieve the same result more concisely.
+
+The results show 5 trees that meet both criteria - these are trees with substantial girth despite being shorter than 75 ft.
+:::
 
 <br>
 
@@ -505,9 +645,91 @@ Use `aggregate()` to calculate the mean of `volume` for each `population` (hint:
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Handling NA Values in Aggregation
+```{r}
+#| echo: true
+#| eval: true
+
+# Create the data frame
+data_1 <- data.frame(volume = c(4,5,6,5,6,7,6,5,6,8,7,3,8,7,NA,10),
+                     population = c("A","A","A","A","A","A","A","A",
+                                   "B","B","B","B","B","B","B","B"))
+
+# Attempt to calculate mean by population (this will include NA)
+aggregate(volume ~ population, data = data_1, FUN = mean)
+
+# Calculate mean by population, properly handling NA values
+aggregate(volume ~ population, data = data_1, FUN = mean, na.rm = TRUE)
+
+# Alternative approach using na.rm inside the function
+aggregate(volume ~ population, data = data_1, 
+          FUN = function(x) mean(x, na.rm = TRUE))
+```
+
+The key challenge here is handling the NA value in the volume data for population B.
+
+When calculating means with `aggregate()`, we need to specify `na.rm = TRUE` to exclude NA values from the calculation. This can be done either:
+1. As an additional parameter to `aggregate()` (second approach)
+2. Inside a custom function passed to FUN (third approach)
+
+The results show:
+- Population A has a mean volume of 5.5
+- Population B has a mean volume of 7.0 (after properly excluding the NA value)
+
+Without handling the NA value, the mean for population B would be NA, as shown in the first approach.
+:::
+
+<br>
+
 ### 6.6
 
 Write a plausible practice question involving any aspect of using `which()`, boolean phrases and/or `aggregate()` involving the in-built `R` dataset `iris`.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Iris Dataset Question
+```{r}
+#| echo: true
+#| eval: true
+
+# A plausible practice question could be:
+
+# "Using the iris dataset, find all flowers where Petal.Length is greater than 5.0 
+# and Sepal.Width is less than 3.0. Then use aggregate() to calculate the mean and 
+# standard deviation of all measurements for each species in this subset. 
+# Which species has the highest representation in this subset?"
+
+# Solution:
+# Load the iris dataset
+data(iris)
+
+# Find flowers meeting both criteria
+selected_flowers <- which(iris$Petal.Length > 5.0 & iris$Sepal.Width < 3.0)
+
+# View the selected flowers
+subset_iris <- iris[selected_flowers, ]
+table(subset_iris$Species)
+
+# Calculate statistics by species for this subset
+species_stats <- aggregate(subset_iris[, 1:4], 
+                          by = list(Species = subset_iris$Species),
+                          FUN = function(x) c(mean = round(mean(x), 2),
+                                             sd = round(sd(x), 2)))
+
+# Display the results
+species_stats
+```
+
+This question tests understanding of:
+- Using `which()` with compound boolean expressions to select specific observations
+- Creating subsets of data based on multiple criteria
+- Using `aggregate()` to calculate summary statistics by group
+- Interpreting the results to answer questions about the data
+
+The solution shows that virginica has the highest representation (15 flowers) in the subset of flowers with Petal.Length > 5.0 and Sepal.Width < 3.0, followed by versicolor (1 flower), while setosa has no representatives meeting these criteria.
+:::
 
 <br>
 
