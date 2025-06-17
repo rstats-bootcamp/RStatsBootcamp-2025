@@ -691,6 +691,8 @@ lambda <- mean(dat$ked)
 # Generate theoretical Poisson probabilities
 x <- 0:max(dat$ked)
 poisson_probs <- dpois(x, lambda)
+# Normalize probabilities to ensure they sum to 1
+poisson_probs <- poisson_probs / sum(poisson_probs)
 
 # Compare observed vs expected frequencies
 observed_freq <- table(factor(dat$ked, levels = x))
