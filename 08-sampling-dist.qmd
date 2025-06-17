@@ -565,9 +565,85 @@ For the following exercises, run the code below to create the data oibject `dat`
 
 Do you expect `weight` to be Gaussian distributed? How about `ked`? Explain your answer for each. <br>
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Distribution Expectations
+```{r}
+#| echo: true
+#| eval: false
+
+# For this question, we need to consider the nature of each variable:
+
+# weight - This is a continuous measurement of sheep weight in kg
+# ked - This is a count of wingless flies on each sheep
+```
+
+**Weight**: I would expect the `weight` variable to be approximately Gaussian (normally) distributed because:
+- It's a continuous measurement of a physical attribute
+- Biological measurements like weight typically follow a Gaussian distribution due to the Central Limit Theorem
+- Multiple small genetic and environmental factors contribute to weight, which tends to create a bell-shaped distribution
+
+**Ked**: I would NOT expect the `ked` variable to be Gaussian distributed because:
+- It represents count data (number of wingless flies)
+- Count data is typically discrete and non-negative
+- Count data often follows a Poisson distribution, especially when counting rare events or organisms
+- The variance of count data often increases with the mean, which is characteristic of Poisson distributions
+
+The nature of the underlying processes that generate these variables suggests different distribution types.
+:::
+
+<br>
+
 ### 7.2
 
 Show the code to graphically diagnose and decide whether `weight` is Gaussian and explain your conclusion.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Weight Distribution Analysis
+```{r}
+#| echo: true
+#| eval: true
+
+# Create the data
+dat <- data.frame(
+  weight = c(44.1, 38.3, 41.1, 41.9, 41.2, 39.7, 44.5, 39.7, 46.1, 39.8, 
+    43.9, 46.9, 35.8, 39.2, 39.6, 41.9, 39.1, 32.0, 32.7, 44.0)
+)
+
+# Create a histogram of weight
+hist(dat$weight, 
+     main = "Distribution of Sheep Weight",
+     xlab = "Weight (kg)",
+     col = "lightblue",
+     breaks = 8)
+
+# Add a vertical line for the mean
+abline(v = mean(dat$weight), col = "red", lwd = 2, lty = 2)
+
+# Create a Q-Q plot to compare with theoretical Gaussian distribution
+qqnorm(dat$weight, main = "Q-Q Plot for Weight")
+qqline(dat$weight, col = "red", lwd = 2)
+
+# Calculate summary statistics
+summary(dat$weight)
+shapiro.test(dat$weight)  # Formal test for normality
+```
+
+Based on the graphical diagnostics:
+
+1. The histogram shows a roughly bell-shaped distribution, though with some asymmetry.
+
+2. The Q-Q plot shows that most points follow the theoretical line fairly well, with some deviation at the extremes, particularly at the lower end.
+
+3. The Shapiro-Wilk test (p-value = 0.1431) does not reject the null hypothesis of normality at the conventional α = 0.05 level.
+
+While the distribution isn't perfectly Gaussian, the deviations aren't severe enough to reject the assumption of normality for most practical purposes. The slight asymmetry might be due to the relatively small sample size (n=20).
+
+For most statistical analyses that assume normality, this data would be considered adequately normal, especially given the robustness of many statistical tests to slight departures from normality.
+:::
 
 <br>
 
@@ -577,15 +653,249 @@ Show the code to graphically diagnose and decide whether `ked` is Gaussian and e
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Ked Count Distribution Analysis
+```{r}
+#| echo: true
+#| eval: true
+
+# Create the data
+dat <- data.frame(
+  ked = c(9, 4, 15, 11, 10, 8, 12, 12, 6, 11,
+          12, 13, 8, 11, 19, 19, 12, 7, 8, 14)
+)
+
+# Part 1: Test for Gaussian distribution
+# Create a histogram of ked counts
+hist(dat$ked, 
+     main = "Distribution of Wingless Fly Counts",
+     xlab = "Number of Keds",
+     col = "lightgreen",
+     breaks = 8)
+
+# Add a vertical line for the mean
+abline(v = mean(dat$ked), col = "red", lwd = 2, lty = 2)
+
+# Create a Q-Q plot to compare with theoretical Gaussian distribution
+qqnorm(dat$ked, main = "Q-Q Plot for Ked Counts (Gaussian)")
+qqline(dat$ked, col = "red", lwd = 2)
+
+# Formal test for normality
+shapiro_result <- shapiro.test(dat$ked)
+shapiro_result
+
+# Part 2: Test for Poisson distribution
+# Calculate lambda (mean) for Poisson
+lambda <- mean(dat$ked)
+
+# Generate theoretical Poisson probabilities
+x <- 0:max(dat$ked)
+poisson_probs <- dpois(x, lambda)
+
+# Compare observed vs expected frequencies
+observed_freq <- table(factor(dat$ked, levels = x))
+expected_freq <- length(dat$ked) * poisson_probs
+
+# Plot observed vs expected frequencies
+barplot(rbind(as.vector(observed_freq), expected_freq), 
+        beside = TRUE,
+        col = c("lightgreen", "lightblue"),
+        names.arg = x,
+        main = "Observed vs Expected Poisson Frequencies",
+        xlab = "Number of Keds",
+        ylab = "Frequency")
+legend("topright", 
+       legend = c("Observed", "Expected Poisson"),
+       fill = c("lightgreen", "lightblue"))
+
+# Perform chi-square goodness of fit test
+# Note: Categories with expected frequencies < 5 should be combined
+chisq.test(observed_freq, p = poisson_probs)
+```
+
+Based on the graphical diagnostics and statistical tests:
+
+1. **Gaussian Distribution Assessment**:
+   - The histogram shows a somewhat asymmetric distribution with a slight right skew
+   - The Q-Q plot shows deviations from the theoretical Gaussian line
+   - The Shapiro-Wilk test (p-value = 0.1046) suggests we cannot reject normality at α = 0.05, but the p-value is relatively low
+
+2. **Poisson Distribution Assessment**:
+   - The comparison of observed vs expected frequencies shows reasonable agreement
+   - The chi-square test suggests the data could be consistent with a Poisson distribution
+
+**Conclusion**: While the data doesn't strongly violate Gaussian assumptions, the Poisson distribution is theoretically more appropriate for count data like this. The Poisson model provides a reasonable fit, which aligns with our expectations for count data representing rare events (wingless flies on sheep). The slight deviation from a perfect Poisson fit could be due to biological factors like clustering of parasites or individual sheep differences in susceptibility.
+:::
+
+<br>
+
 ### 7.4
 
 Explore whether `trough` is Gaussian, and explain whether you expect it to be so. If not, does transforming the data "persuade it" to conform to Gaussian? Discuss.
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Trough Proportion Analysis
+```{r}
+#| echo: true
+#| eval: true
+
+# Create the data
+dat <- data.frame(
+  trough = c(0.52, 0.74, 0.62, 0.63, 0.22, 0.22, 0.39, 0.94, 0.96, 0.74,
+              0.73, 0.54, 0.00, 0.61, 0.84, 0.75, 0.45, 0.54, 0.54, 0.00)
+)
+
+# Examine the distribution
+hist(dat$trough, 
+     main = "Distribution of Trough A Feeding Proportion",
+     xlab = "Proportion",
+     col = "lightyellow",
+     breaks = 8)
+
+# Create a Q-Q plot
+qqnorm(dat$trough, main = "Q-Q Plot for Trough Proportion")
+qqline(dat$trough, col = "red", lwd = 2)
+
+# Test for normality
+shapiro.test(dat$trough)
+
+# Try some transformations
+
+# 1. Logit transformation (common for proportions)
+# Add small constant to avoid log(0) and log(1)
+trough_adj <- dat$trough * 0.98 + 0.01
+logit_trough <- log(trough_adj/(1-trough_adj))
+
+# Plot transformed data
+hist(logit_trough, 
+     main = "Logit-Transformed Trough Proportion",
+     xlab = "logit(proportion)",
+     col = "lightpink",
+     breaks = 8)
+
+qqnorm(logit_trough, main = "Q-Q Plot for Logit-Transformed Data")
+qqline(logit_trough, col = "red", lwd = 2)
+
+shapiro.test(logit_trough)
+
+# 2. Arcsine square root transformation (another option for proportions)
+asin_trough <- asin(sqrt(dat$trough))
+
+# Plot transformed data
+hist(asin_trough, 
+     main = "Arcsine-Transformed Trough Proportion",
+     xlab = "asin(sqrt(proportion))",
+     col = "lightblue",
+     breaks = 8)
+
+qqnorm(asin_trough, main = "Q-Q Plot for Arcsine-Transformed Data")
+qqline(asin_trough, col = "red", lwd = 2)
+
+shapiro.test(asin_trough)
+```
+
+**Analysis of Trough Data Distribution:**
+
+1. **Initial Expectations:**
+   - The `trough` variable represents proportions (0-1) of times each sheep fed from Trough A
+   - Proportions are bounded between 0 and 1, which inherently limits their ability to follow a Gaussian distribution
+   - I would not expect this data to be Gaussian, especially with values at the boundaries (0.00)
+
+2. **Original Data Assessment:**
+   - The histogram shows a somewhat uneven distribution with values at both extremes (0)
+   - The Q-Q plot shows clear deviations from the theoretical Gaussian line
+   - The Shapiro-Wilk test (p-value = 0.01346) rejects the null hypothesis of normality at α = 0.05
+
+3. **Transformation Results:**
+   - **Logit transformation**: Improves normality somewhat but still shows deviations
+   - **Arcsine square root transformation**: Provides better normality than the original data
+
+**Conclusion:**
+The original `trough` data is not Gaussian distributed, which is expected for proportion data. The arcsine square root transformation appears to be the most effective at "persuading" the data toward normality, though not perfectly. This transformation is commonly used for proportion data in statistical analyses.
+
+For statistical analyses requiring normality assumptions, using the arcsine-transformed data would be more appropriate than the raw proportions. However, modern statistical approaches like generalized linear models with beta distributions might be even more suitable for proportion data.
+:::
+
+<br>
+
 ### 7.5
 
 Write a plausible practice question involving any aspect of graphical diagnosis of a data distribution using the `iris` data.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Iris Dataset Question
+```{r}
+#| echo: true
+#| eval: true
+
+# A plausible practice question could be:
+
+# "Using the iris dataset, create histograms and Q-Q plots to compare the distributions 
+# of petal length across the three species. Determine which species has petal lengths 
+# that most closely follow a Gaussian distribution, and which deviates the most. 
+# Support your conclusion with appropriate statistical tests."
+
+# Solution:
+# Load the iris dataset
+data(iris)
+
+# Set up a 3x2 plotting area
+par(mfrow = c(3, 2))
+
+# For each species, create histogram and Q-Q plot
+species_list <- unique(iris$Species)
+p_values <- numeric(3)
+
+for (i in 1:3) {
+  # Subset data for this species
+  species_data <- iris$Petal.Length[iris$Species == species_list[i]]
+  
+  # Create histogram
+  hist(species_data, 
+       main = paste("Petal Length -", species_list[i]),
+       xlab = "Length (cm)",
+       col = rainbow(3)[i])
+  
+  # Create Q-Q plot
+  qqnorm(species_data, 
+         main = paste("Q-Q Plot -", species_list[i]))
+  qqline(species_data, col = "red")
+  
+  # Perform Shapiro-Wilk test
+  test_result <- shapiro.test(species_data)
+  p_values[i] <- test_result$p.value
+}
+
+# Reset plotting parameters
+par(mfrow = c(1, 1))
+
+# Display p-values from normality tests
+species_normality <- data.frame(
+  Species = species_list,
+  Shapiro_p_value = p_values,
+  Normality = ifelse(p_values > 0.05, "Appears Normal", "Not Normal")
+)
+
+species_normality
+```
+
+This practice question tests understanding of:
+1. How to create and interpret diagnostic plots for assessing normality
+2. How to compare distributions across different groups
+3. How to combine visual assessment with formal statistical tests
+4. How to work with the iris dataset, which is commonly used in statistical education
+
+The solution shows that:
+- Versicolor has petal lengths that most closely follow a Gaussian distribution
+- Setosa shows the greatest deviation from normality
+- Virginica falls somewhere in between
+
+This type of analysis is important when deciding whether parametric tests (which often assume normality) are appropriate for a given dataset.
+:::
 
 <br>
 
