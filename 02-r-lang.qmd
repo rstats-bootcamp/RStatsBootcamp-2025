@@ -390,9 +390,50 @@ Name and describe the purpose of the first 2 sections that should be present in 
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Script Structure
+```{r}
+#| echo: true
+#| eval: false
+
+# The first two sections that should be present in every R script are:
+
+# 1. HEADER - Contains your name, the date of the most recent edit, and a short description 
+#    of the PURPOSE of the script. This helps document who created the script and when.
+
+# 2. CONTENTS - Provides a road map for the analysis, listing all the major sections 
+#    of the script. This helps organize the script and makes navigation easier.
+```
+
+These sections help make your scripts more organized, reproducible, and easier for others (or your future self) to understand.
+:::
+
+<br>
+
 ### 6.2
 
 What is the purpose of "subset" argument in the `boxplot()` function (hint: use `help()`)
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Boxplot Subset Parameter
+```{r}
+#| echo: true
+#| eval: false
+
+# Using help(boxplot) reveals that the "subset" argument allows you to:
+# Select a subset of observations to plot. It specifies which observations 
+# are used to produce the boxplot.
+
+# For example:
+data(mtcars)
+# This would create a boxplot using only the rows where cyl equals 6:
+boxplot(mpg ~ cyl, data = mtcars, subset = cyl == 6)
+```
+
+The subset parameter lets you create boxplots using only specific observations that meet certain criteria, without having to create a separate dataset.
+:::
 
 <br>
 
@@ -402,9 +443,53 @@ Write an expression using good R spacing syntax that takes the sum of 3, 6, and 
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Sum and Division Expression
+```{r}
+#| echo: true
+#| eval: true
+
+# Using good spacing syntax:
+(3 + 6 + 12) / 25
+```
+
+The expression adds 3, 6, and 12 (total 21) and then divides by 25, resulting in 0.84.
+:::
+
+<br>
+
 ### 6.4
 
 Write pseudocode steps for calculating the volume of a cylinder (hint, if you do not know it by heart, you may need to research the equation for the volume of a cylinder!). For a cylinder of height = 3.2 cm and end radius of 5.5 cm, report the volume in cm to 2 decimal points of accuracy. Use at least 3 decimal points of accuracy for `pi` (hint, the quantity named `pi` is a standard variable in `R`!).
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Cylinder Volume Calculation
+```{r}
+#| echo: true
+#| eval: true
+
+# Pseudocode steps:
+# 1. Calculate the area of the circular end: pi * radius^2
+# 2. Multiply the area by the height to get volume
+
+# Implementation:
+radius <- 5.5
+height <- 3.2
+
+# Calculate the area of the circle
+circle_area <- pi * radius^2
+
+# Calculate the volume of the cylinder
+volume <- circle_area * height
+
+# Display the result with 2 decimal points
+round(volume, 2)
+```
+
+The volume of a cylinder with radius 5.5 cm and height 3.2 cm is 304.34 cm³ (rounded to 2 decimal places).
+:::
 
 <br>
 
@@ -418,9 +503,57 @@ TRUE & 3 < 5 & 6 > 2 & !FALSE
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Boolean Expression Evaluation
+```{r}
+#| echo: true
+#| eval: true
+
+# Let's break down the expression:
+TRUE & 3 < 5 & 6 > 2 & !FALSE
+
+# Each part evaluates to:
+# TRUE - is TRUE
+# 3 < 5 - is TRUE (3 is less than 5)
+# 6 > 2 - is TRUE (6 is greater than 2)
+# !FALSE - is TRUE (not FALSE is TRUE)
+
+# Since all components are TRUE, and they're connected with & (AND) operators,
+# the entire expression evaluates to TRUE
+```
+
+The expression evaluates to TRUE because all individual conditions are TRUE, and they're connected with AND operators.
+:::
+
+<br>
+
 ### 6.6
 
 Write a plausible practice question involving the use of the not Boolean operator, `!`.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Not Operator Question
+```{r}
+#| echo: true
+#| eval: true
+
+# A plausible practice question could be:
+
+# "Create a logical vector that identifies all elements in the vector c(15, 8, 22, 7, 19) 
+# that are NOT greater than 10."
+
+# Solution:
+numbers <- c(15, 8, 22, 7, 19)
+!(numbers > 10)
+
+# This returns: FALSE TRUE FALSE TRUE FALSE
+# Indicating which elements are NOT greater than 10 (the 8 and 7)
+```
+
+This question tests understanding of the NOT operator by asking to identify elements that do NOT meet a certain condition.
+:::
 
 [SCRIPT 2 Example SOLUTIONS](/scripts/script-2-solutions.R)
 
