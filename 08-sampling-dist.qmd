@@ -660,7 +660,8 @@ legend("topright",
 
 # Perform chi-square goodness of fit test
 # Note: Categories with expected frequencies < 5 should be combined
-chisq.test(observed_freq, p = poisson_probs)
+chisq.test(observed_freq, expected_freq)
+
 ```
 
 **Conclusion**:
@@ -737,7 +738,7 @@ legend("topright",
 
 # Perform chi-square goodness of fit test
 # Note: Categories with expected frequencies < 5 should be combined
-chisq.test(observed_freq, p = poisson_probs)
+chisq.test(observed_freq, expected_freq)
 ```
 
 **Conclusion**:
