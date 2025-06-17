@@ -263,7 +263,7 @@ Create a new R Markdown document that includes: - A title and your name - A brie
 
 Here's an example of a basic R Markdown document:
 
-```markdown
+````markdown
 ---
 title: "Analysis of Iris Dataset"
 author: "Your Name"
@@ -290,7 +290,7 @@ summary(iris)
 
 ## Data Visualization
 
-```{r visualization, fig.height=6, fig.width=8}
+```{r visualization-md, fig.height=6, fig.width=8}
 # Create a scatterplot of sepal dimensions by species
 plot(iris$Sepal.Length, iris$Sepal.Width,
      main = "Sepal Dimensions by Iris Species",
@@ -310,7 +310,7 @@ legend("topright",
 ## Conclusion
 
 The visualization reveals clear clustering of iris species based on sepal dimensions. Setosa irises (shown in black) have shorter sepals that are wider, while versicolor (red) and virginica (green) have longer, narrower sepals. This simple analysis demonstrates how morphological measurements can be used to distinguish between iris species.
-```
+````
 
 This R Markdown document includes:
 1. A YAML header with title, author, and date
@@ -318,6 +318,7 @@ This R Markdown document includes:
 3. A code chunk that loads and summarizes the iris dataset
 4. A visualization showing the relationship between sepal dimensions by species
 5. A brief conclusion interpreting the visualization
+
 :::
 
 <br>
@@ -328,43 +329,44 @@ Experiment with different output formats (HTML, PDF, Word) and observe the diffe
 
 <br>
 
+
 ::: {.callout-tip collapse="true"}
 ## Solution: Output Format Comparison
 
 To experiment with different output formats, you would modify the YAML header of your R Markdown document as follows:
 
 **For HTML output:**
-```yaml
+````yaml
 ---
 title: "My Analysis"
 author: "Your Name"
 date: "`r Sys.Date()`"
 output: html_document
 ---
-```
+````
 
 **For PDF output:**
-```yaml
+````yaml
 ---
 title: "My Analysis"
 author: "Your Name"
 date: "`r Sys.Date()`"
 output: pdf_document
 ---
-```
+````
 
 **For Word output:**
-```yaml
+````yaml
 ---
 title: "My Analysis"
 author: "Your Name"
 date: "`r Sys.Date()`"
 output: word_document
 ---
-```
+````
 
 **For multiple output formats:**
-```yaml
+````yaml
 ---
 title: "My Analysis"
 author: "Your Name"
@@ -378,7 +380,7 @@ output:
   word_document:
     toc: true
 ---
-```
+````
 
 **Key differences between formats:**
 
@@ -419,7 +421,7 @@ Create an R Markdown document with a table of contents, code folding, and a cust
 
 Here's an example of an R Markdown document with a table of contents, code folding, and a custom theme:
 
-```markdown
+````markdown
 ---
 title: "Advanced R Markdown Features"
 author: "Your Name"
@@ -502,7 +504,7 @@ boxplot(mpg ~ cyl_factor, data = mtcars,
 
 ## Linear Regression
 
-```{r regression}
+```{r regression-md}
 # Fit a linear model
 model <- lm(mpg ~ wt + hp, data = mtcars)
 
@@ -526,7 +528,7 @@ This document has demonstrated several advanced R Markdown features:
 3. The Flatly theme with Tango syntax highlighting
 4. Customized chunk options
 5. Multi-level headings that appear in the TOC
-```
+````
 
 **Key features implemented:**
 
@@ -554,3 +556,4 @@ This document has demonstrated several advanced R Markdown features:
 -   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 -   [R Markdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 -   [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
