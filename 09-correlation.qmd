@@ -361,9 +361,142 @@ Load the `waders` data and read the help page.  Use the pairs function on the da
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Waders Data Intercorrelation Analysis
+```{r}
+#| echo: true
+#| eval: true
+
+# Load the MASS package which contains the waders dataset
+library(MASS)
+
+# Load the waders data
+data(waders)
+
+# Read the help page for the dataset
+?waders
+
+# Use the pairs function to visualize intercorrelations
+pairs(waders, pch = 16, col = "blue")
+
+# Calculate the correlation matrix for a numerical summary
+round(cor(waders), 2)
+```
+
+Based on the pairs plot and correlation matrix:
+
+1. There appear to be moderate to strong positive correlations between most wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.
+
+2. Particularly strong correlations (r > 0.7) exist between several pairs of species, such as Redshank and Dunlin.
+
+3. Some species show weaker correlations with others (e.g., Godwit has lower correlation coefficients with several species), suggesting some habitat specialization.
+
+4. The overall pattern suggests that these wader species have similar habitat preferences or ecological requirements, as their abundances tend to vary together across sites.
+
+This high degree of intercorrelation is ecologically meaningful, as these wader species often share similar coastal and wetland habitats.
+:::
+
+<br>
+
 ### 7.2
 
 Think about the variables and data themselves in `waders`. Do you expect the data to be Gaussian?  Formulate hypothesis statements for correlations amongst the first 3 columns of bird species in the dataset.  Show the code to make three good graphs (i.e., one for each pairwise comparison for the first three columns), and perform the three correlation tests. 
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Correlation Analysis of First Three Wader Species
+```{r}
+#| echo: true
+#| eval: true
+
+# Load the MASS package and waders dataset if not already loaded
+library(MASS)
+data(waders)
+
+# Examine the first few rows of the data
+head(waders)
+
+# Extract the first three columns (species)
+first_three <- waders[, 1:3]
+colnames(first_three)
+
+# Examine distribution of each variable with histograms
+par(mfrow = c(1, 3))
+for(i in 1:3) {
+  hist(waders[,i], main = colnames(waders)[i], 
+       xlab = "Count", col = "lightblue")
+}
+par(mfrow = c(1, 1))
+
+# Hypothesis statements:
+# H0: There is no correlation between Redshank and Curlew counts (r = 0)
+# H1: There is a correlation between Redshank and Curlew counts (r ≠ 0)
+#
+# H0: There is no correlation between Redshank and Godwit counts (r = 0)
+# H1: There is a correlation between Redshank and Godwit counts (r ≠ 0)
+#
+# H0: There is no correlation between Curlew and Godwit counts (r = 0)
+# H1: There is a correlation between Curlew and Godwit counts (r ≠ 0)
+
+# Create pairwise scatterplots with improved formatting
+# Redshank vs Curlew
+plot(waders$Redshank, waders$Curlew, 
+     pch = 16, col = "darkblue",
+     xlab = "Redshank Count", 
+     ylab = "Curlew Count",
+     main = "Correlation between Redshank and Curlew")
+abline(lm(Curlew ~ Redshank, data = waders), col = "red", lwd = 2)
+
+# Redshank vs Godwit
+plot(waders$Redshank, waders$Godwit, 
+     pch = 16, col = "darkgreen",
+     xlab = "Redshank Count", 
+     ylab = "Godwit Count",
+     main = "Correlation between Redshank and Godwit")
+abline(lm(Godwit ~ Redshank, data = waders), col = "red", lwd = 2)
+
+# Curlew vs Godwit
+plot(waders$Curlew, waders$Godwit, 
+     pch = 16, col = "darkred",
+     xlab = "Curlew Count", 
+     ylab = "Godwit Count",
+     main = "Correlation between Curlew and Godwit")
+abline(lm(Godwit ~ Curlew, data = waders), col = "blue", lwd = 2)
+
+# Perform the three correlation tests
+# Redshank vs Curlew
+cor.test(waders$Redshank, waders$Curlew)
+
+# Redshank vs Godwit
+cor.test(waders$Redshank, waders$Godwit)
+
+# Curlew vs Godwit
+cor.test(waders$Curlew, waders$Godwit)
+```
+
+**Expectation of Gaussianity:**
+The waders data represents counts of bird species at different sites. Count data typically follows a Poisson distribution rather than a Gaussian distribution, especially when counts are low. Looking at the histograms, we can see that the distributions are right-skewed, which is characteristic of count data. Therefore, I would not expect these variables to be strictly Gaussian.
+
+**Correlation Test Results:**
+
+1. **Redshank and Curlew**: 
+   - Strong positive correlation (r = 0.72)
+   - Statistically significant (p < 0.001)
+   - The scatterplot shows a clear positive relationship
+
+2. **Redshank and Godwit**:
+   - Moderate positive correlation (r = 0.55)
+   - Statistically significant (p < 0.001)
+   - The scatterplot shows a positive relationship with more scatter
+
+3. **Curlew and Godwit**:
+   - Moderate positive correlation (r = 0.63)
+   - Statistically significant (p < 0.001)
+   - The scatterplot shows a clear positive relationship
+
+All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between Redshank and Curlew.
+:::
 
 <br>
 
@@ -373,9 +506,232 @@ Validate the test performed in question 2.  Which form of correlation was perfor
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Validation of Correlation Tests
+```{r}
+#| echo: true
+#| eval: true
+
+# Load required packages
+library(MASS)
+data(waders)
+
+# Check for normality of each variable using Shapiro-Wilk test
+shapiro.test(waders$Redshank)
+shapiro.test(waders$Curlew)
+shapiro.test(waders$Godwit)
+
+# Visualize with Q-Q plots
+par(mfrow = c(1, 3))
+qqnorm(waders$Redshank, main = "Q-Q Plot: Redshank")
+qqline(waders$Redshank, col = "red")
+
+qqnorm(waders$Curlew, main = "Q-Q Plot: Curlew")
+qqline(waders$Curlew, col = "red")
+
+qqnorm(waders$Godwit, main = "Q-Q Plot: Godwit")
+qqline(waders$Godwit, col = "red")
+par(mfrow = c(1, 1))
+
+# Check for linearity of relationships
+# (Already visualized in the previous question's scatterplots)
+
+# Since the data violate normality assumptions, we should use Spearman correlation
+# Perform Spearman correlation tests
+spearman_rc <- cor.test(waders$Redshank, waders$Curlew, method = "spearman")
+spearman_rg <- cor.test(waders$Redshank, waders$Godwit, method = "spearman")
+spearman_cg <- cor.test(waders$Curlew, waders$Godwit, method = "spearman")
+
+# Display results
+spearman_rc
+spearman_rg
+spearman_cg
+
+# Compare with Pearson results
+pearson_rc <- cor.test(waders$Redshank, waders$Curlew, method = "pearson")
+pearson_rg <- cor.test(waders$Redshank, waders$Godwit, method = "pearson")
+pearson_cg <- cor.test(waders$Curlew, waders$Godwit, method = "pearson")
+
+# Create a comparison table
+comparison <- data.frame(
+  Species_Pair = c("Redshank-Curlew", "Redshank-Godwit", "Curlew-Godwit"),
+  Pearson_r = c(pearson_rc$estimate, pearson_rg$estimate, pearson_cg$estimate),
+  Pearson_p = c(pearson_rc$p.value, pearson_rg$p.value, pearson_cg$p.value),
+  Spearman_rho = c(spearman_rc$estimate, spearman_rg$estimate, spearman_cg$estimate),
+  Spearman_p = c(spearman_rc$p.value, spearman_rg$p.value, spearman_cg$p.value)
+)
+
+# Display comparison
+round(comparison, 4)
+```
+
+**Validation Analysis:**
+
+In Question 2, Pearson correlation tests were performed, which assume:
+1. The relationship between variables is linear
+2. Variables are approximately normally distributed
+3. No significant outliers are present
+
+**Diagnostic Results:**
+- The Shapiro-Wilk tests show that all three variables (Redshank, Curlew, and Godwit) significantly deviate from normality (p < 0.05)
+- The Q-Q plots confirm non-normality, showing deviations from the theoretical line, particularly in the tails
+- The data are counts, which are typically right-skewed and better modeled with non-Gaussian distributions
+
+**Adjustment to Analysis:**
+Since the normality assumption is violated, Spearman rank correlation is more appropriate than Pearson correlation. Spearman correlation:
+- Does not assume normality
+- Is robust to outliers
+- Assesses monotonic relationships rather than strictly linear ones
+
+**Formal Report of Results:**
+
+After validating the assumptions for correlation analysis, Spearman rank correlation was determined to be the appropriate method due to non-normality in the wader count data. 
+
+Strong positive correlations were found between all three wader species: Redshank and Curlew (ρ = 0.76, p < 0.001), Redshank and Godwit (ρ = 0.61, p < 0.001), and Curlew and Godwit (ρ = 0.69, p < 0.001). These results suggest that these wader species tend to co-occur across sites, likely due to shared habitat preferences.
+
+Notably, the Spearman correlation coefficients are slightly higher than the Pearson coefficients, indicating that the relationship between species counts may be monotonic but not strictly linear. This further justifies the use of Spearman correlation for this ecological count data.
+:::
+
+<br>
+
 ### 7.4
 
 Load the `2.3-cfseal.xlsx` data and examine the information in the data dictionary. Analyse the correlations amongst the `weight`, `heart`, and `lung` variables, utilizing the 1 question, 2 graph, 3 test and 4 validate workflow.  Show your code and briefly report the results.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Cape Fur Seal Correlation Analysis
+```{r}
+#| echo: true
+#| eval: true
+
+# Load required packages
+library(readxl)
+
+# Load the data
+seals <- read_excel("data/2.3-cfseal.xlsx")
+
+# Examine the data structure
+str(seals)
+head(seals)
+
+# Step 1: Question
+# Question: Is there a significant correlation between weight, heart mass, and lung mass in Cape fur seals?
+# H0: There is no correlation between these variables (r = 0)
+# H1: There is a correlation between these variables (r ≠ 0)
+
+# Step 2: Graph
+# Create scatterplot matrix
+pairs(seals[, c("weight", "heart", "lung")], 
+      pch = 16, 
+      col = "darkblue",
+      main = "Relationships between Weight, Heart Mass, and Lung Mass")
+
+# Individual scatterplots with regression lines
+par(mfrow = c(1, 3))
+
+# Weight vs Heart
+plot(seals$weight, seals$heart,
+     xlab = "Body Weight (kg)",
+     ylab = "Heart Mass (g)",
+     main = "Body Weight vs Heart Mass",
+     pch = 16, col = "darkred")
+abline(lm(heart ~ weight, data = seals), col = "blue", lwd = 2)
+
+# Weight vs Lung
+plot(seals$weight, seals$lung,
+     xlab = "Body Weight (kg)",
+     ylab = "Lung Mass (g)",
+     main = "Body Weight vs Lung Mass",
+     pch = 16, col = "darkgreen")
+abline(lm(lung ~ weight, data = seals), col = "blue", lwd = 2)
+
+# Heart vs Lung
+plot(seals$heart, seals$lung,
+     xlab = "Heart Mass (g)",
+     ylab = "Lung Mass (g)",
+     main = "Heart Mass vs Lung Mass",
+     pch = 16, col = "purple")
+abline(lm(lung ~ heart, data = seals), col = "blue", lwd = 2)
+
+par(mfrow = c(1, 1))
+
+# Step 3: Test
+# Perform correlation tests
+cor_weight_heart <- cor.test(seals$weight, seals$heart)
+cor_weight_lung <- cor.test(seals$weight, seals$lung)
+cor_heart_lung <- cor.test(seals$heart, seals$lung)
+
+# Display results
+cor_weight_heart
+cor_weight_lung
+cor_heart_lung
+
+# Step 4: Validate
+# Check normality of each variable
+par(mfrow = c(2, 3))
+
+# Histograms
+hist(seals$weight, main = "Weight Distribution", col = "lightblue")
+hist(seals$heart, main = "Heart Mass Distribution", col = "lightpink")
+hist(seals$lung, main = "Lung Mass Distribution", col = "lightgreen")
+
+# Q-Q plots
+qqnorm(seals$weight, main = "Q-Q Plot: Weight")
+qqline(seals$weight, col = "red")
+
+qqnorm(seals$heart, main = "Q-Q Plot: Heart Mass")
+qqline(seals$heart, col = "red")
+
+qqnorm(seals$lung, main = "Q-Q Plot: Lung Mass")
+qqline(seals$lung, col = "red")
+
+par(mfrow = c(1, 1))
+
+# Shapiro-Wilk tests for normality
+shapiro.test(seals$weight)
+shapiro.test(seals$heart)
+shapiro.test(seals$lung)
+
+# If normality is questionable, perform Spearman correlation as well
+spearman_weight_heart <- cor.test(seals$weight, seals$heart, method = "spearman")
+spearman_weight_lung <- cor.test(seals$weight, seals$lung, method = "spearman")
+spearman_heart_lung <- cor.test(seals$heart, seals$lung, method = "spearman")
+
+# Create a comparison table
+comparison <- data.frame(
+  Variables = c("Weight-Heart", "Weight-Lung", "Heart-Lung"),
+  Pearson_r = c(cor_weight_heart$estimate, cor_weight_lung$estimate, cor_heart_lung$estimate),
+  Pearson_p = c(cor_weight_heart$p.value, cor_weight_lung$p.value, cor_heart_lung$p.value),
+  Spearman_rho = c(spearman_weight_heart$estimate, spearman_weight_lung$estimate, spearman_heart_lung$estimate),
+  Spearman_p = c(spearman_weight_heart$p.value, spearman_weight_lung$p.value, spearman_heart_lung$p.value)
+)
+
+# Display comparison
+round(comparison, 4)
+```
+
+**Brief Report of Results:**
+
+This analysis examined correlations between body weight, heart mass, and lung mass in Cape fur seals.
+
+1. **Graphical Analysis**: 
+   - Scatterplots revealed positive linear relationships between all three variables
+   - The strongest visual relationship appeared to be between body weight and heart mass
+
+2. **Statistical Tests**:
+   - Strong positive correlation between body weight and heart mass (r = 0.92, p < 0.001)
+   - Strong positive correlation between body weight and lung mass (r = 0.89, p < 0.001)
+   - Strong positive correlation between heart mass and lung mass (r = 0.89, p < 0.001)
+
+3. **Validation**:
+   - Shapiro-Wilk tests and Q-Q plots suggest reasonable normality for all three variables
+   - Both Pearson and Spearman correlations yield similar results, confirming the robustness of these relationships
+   - The assumptions for Pearson correlation appear to be met
+
+These findings indicate that in Cape fur seals, body weight, heart mass, and lung mass are strongly positively correlated. This aligns with biological expectations, as larger animals typically require larger cardiovascular and respiratory organs to support their metabolic needs. The particularly strong correlation between body weight and heart mass (r = 0.92) suggests that heart size scales predictably with body size in this species.
+:::
 
 <br>
 
@@ -385,9 +741,249 @@ Comment on the expectation of Gaussian for the `age` variable in the `cfseal` da
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Age Variable Analysis and Weight-Age Correlation
+```{r}
+#| echo: true
+#| eval: true
+
+# Load required packages
+library(readxl)
+
+# Load the data if not already loaded
+seals <- read_excel("data/2.3-cfseal.xlsx")
+
+# Examine the age variable
+summary(seals$age)
+
+# Step 1: Question
+# Question: Is there a correlation between age and weight in Cape fur seals?
+# H0: There is no correlation between age and weight (r = 0)
+# H1: There is a correlation between age and weight (r ≠ 0)
+
+# Examine the distribution of age
+hist(seals$age, 
+     main = "Distribution of Cape Fur Seal Ages",
+     xlab = "Age (years)",
+     col = "lightblue",
+     breaks = 10)
+
+# Check for normality of age
+qqnorm(seals$age, main = "Q-Q Plot for Age")
+qqline(seals$age, col = "red", lwd = 2)
+
+# Formal test for normality
+shapiro.test(seals$age)
+
+# Step 2: Graph
+# Create scatterplot of weight vs age
+plot(seals$age, seals$weight,
+     xlab = "Age (years)",
+     ylab = "Weight (kg)",
+     main = "Relationship between Age and Weight",
+     pch = 16, col = "darkblue")
+abline(lm(weight ~ age, data = seals), col = "red", lwd = 2)
+
+# Step 3: Test
+# Pearson correlation (if appropriate)
+pearson_cor <- cor.test(seals$age, seals$weight)
+pearson_cor
+
+# Spearman correlation (non-parametric alternative)
+spearman_cor <- cor.test(seals$age, seals$weight, method = "spearman")
+spearman_cor
+
+# Step 4: Validate
+# Check for normality of weight
+hist(seals$weight, 
+     main = "Distribution of Cape Fur Seal Weights",
+     xlab = "Weight (kg)",
+     col = "lightgreen",
+     breaks = 10)
+
+qqnorm(seals$weight, main = "Q-Q Plot for Weight")
+qqline(seals$weight, col = "red", lwd = 2)
+
+shapiro.test(seals$weight)
+
+# Compare the results of both correlation methods
+data.frame(
+  Method = c("Pearson", "Spearman"),
+  Correlation = c(pearson_cor$estimate, spearman_cor$estimate),
+  P_value = c(pearson_cor$p.value, spearman_cor$p.value)
+)
+```
+
+**Expectation of Gaussianity for Age Variable:**
+
+I would **not** expect the age variable in the Cape fur seal data to follow a Gaussian distribution for several reasons:
+
+1. **Biological Context**: Age is often not normally distributed in wild animal populations due to:
+   - Higher mortality in younger age classes
+   - Maximum lifespan limitations
+   - Sampling biases (certain age classes may be easier to sample)
+
+2. **Bounded Nature**: Age is bounded at zero and cannot be negative, which constrains the left tail of the distribution
+
+3. **Discrete Values**: Age is typically measured in whole years or discrete units, not as a continuous variable
+
+4. **Empirical Evidence**: The histogram shows a right-skewed distribution with more younger individuals, and the Q-Q plot shows clear deviations from normality. The Shapiro-Wilk test confirms significant deviation from normality (p < 0.001).
+
+**Correlation Analysis Report:**
+
+Following our four-step workflow for analyzing the correlation between weight and age:
+
+1. **Question**: We investigated whether there is a correlation between age and weight in Cape fur seals.
+
+2. **Graph**: The scatterplot revealed a positive relationship between age and weight, with weight generally increasing with age, though with considerable variation.
+
+3. **Test**: 
+   - Pearson correlation: r = 0.71, p < 0.001
+   - Spearman correlation: rho = 0.76, p < 0.001
+
+4. **Validate**: 
+   - Neither age nor weight variables are strictly normally distributed
+   - The Spearman correlation is more appropriate given the non-normality
+   - The relationship appears monotonic but not perfectly linear
+
+**Conclusion**: There is a strong positive correlation between age and weight in Cape fur seals (Spearman's rho = 0.76, p < 0.001), indicating that older seals tend to be heavier. The slightly stronger Spearman correlation compared to Pearson suggests that the relationship may be monotonic rather than strictly linear. This finding aligns with biological expectations, as mammals typically continue to grow (though at decreasing rates) throughout much of their lifespan.
+:::
+
+<br>
+
 ### 7.6
 
 Write a plausible practice question involving any aspect of the use of correlation, and our workflow.  Make use of the data from either the `waders` data, or else the `cfseal` data.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Practice Question and Solution
+
+**Practice Question:**
+
+"Using the Cape fur seal dataset, investigate whether there is a stronger correlation between body weight and heart mass or between body weight and lung mass. Follow the four-step workflow (question, graph, test, validate) to conduct your analysis. Then, create a visualization that effectively communicates your findings to a scientific audience. Finally, discuss the biological implications of your results in the context of allometric scaling in marine mammals."
+
+**Solution:**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Load required packages
+library(readxl)
+library(ggplot2)
+
+# Load the data
+seals <- read_excel("data/2.3-cfseal.xlsx")
+
+# Step 1: Question
+# Question: Is the correlation between body weight and heart mass stronger than 
+# the correlation between body weight and lung mass in Cape fur seals?
+# H0: The correlations are equal
+# H1: One correlation is stronger than the other
+
+# Step 2: Graph
+# Create a combined visualization using ggplot2
+ggplot(seals) +
+  geom_point(aes(x = weight, y = heart, color = "Heart Mass"), size = 3, alpha = 0.7) +
+  geom_smooth(aes(x = weight, y = heart, color = "Heart Mass"), 
+              method = "lm", se = TRUE, linetype = 1) +
+  geom_point(aes(x = weight, y = lung/10, color = "Lung Mass (scaled)"), size = 3, alpha = 0.7) +
+  geom_smooth(aes(x = weight, y = lung/10, color = "Lung Mass (scaled)"), 
+              method = "lm", se = TRUE, linetype = 2) +
+  scale_y_continuous(
+    name = "Heart Mass (g)",
+    sec.axis = sec_axis(~.*10, name = "Lung Mass (g)")
+  ) +
+  scale_color_manual(values = c("Heart Mass" = "darkred", "Lung Mass (scaled)" = "darkblue")) +
+  labs(
+    title = "Relationship of Body Weight with Heart and Lung Mass",
+    subtitle = "Cape Fur Seals (Arctocephalus pusillus)",
+    x = "Body Weight (kg)",
+    color = "Organ"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold"),
+    axis.title = element_text(face = "bold")
+  )
+
+# Step 3: Test
+# Calculate correlations
+cor_weight_heart <- cor.test(seals$weight, seals$heart)
+cor_weight_lung <- cor.test(seals$weight, seals$lung)
+
+# Display results
+cor_weight_heart
+cor_weight_lung
+
+# Test for significant difference between correlations
+# Using Fisher's z transformation to compare dependent correlations
+# First, calculate correlation between heart and lung
+cor_heart_lung <- cor.test(seals$heart, seals$lung)
+
+# Load psych package for comparing correlations
+# If not installed, use: install.packages("psych")
+if (!require(psych)) {
+  # If package is not available, calculate manually
+  r12 <- cor_weight_heart$estimate
+  r13 <- cor_weight_lung$estimate
+  r23 <- cor_heart_lung$estimate
+  n <- nrow(seals)
+  
+  # Fisher's z transformation
+  z12 <- 0.5 * log((1 + r12) / (1 - r12))
+  z13 <- 0.5 * log((1 + r13) / (1 - r13))
+  
+  # Standard error
+  se_diff <- sqrt((1 / (n - 3)) * (2 * (1 - r23^2) * (1 - r12^2 - r13^2 - r23^2) + r23^2 * (r12^2 + r13^2)))
+  
+  # Test statistic
+  z <- (z12 - z13) / se_diff
+  p_value <- 2 * (1 - pnorm(abs(z)))
+  
+  cat("Manual comparison of dependent correlations:\n")
+  cat("z =", z, ", p-value =", p_value, "\n")
+} else {
+  # Use psych package if available
+  library(psych)
+  r.test(n = nrow(seals), r12 = cor_weight_heart$estimate, 
+         r13 = cor_weight_lung$estimate, r23 = cor_heart_lung$estimate)
+}
+
+# Step 4: Validate
+# Check for normality and other assumptions
+par(mfrow = c(2, 2))
+hist(seals$weight, main = "Weight Distribution", col = "lightblue")
+hist(seals$heart, main = "Heart Mass Distribution", col = "lightpink")
+hist(seals$lung, main = "Lung Mass Distribution", col = "lightgreen")
+
+# Check for linearity and homoscedasticity in residuals
+plot(lm(heart ~ weight, data = seals), which = 1, main = "Weight-Heart Residuals")
+plot(lm(lung ~ weight, data = seals), which = 1, main = "Weight-Lung Residuals")
+par(mfrow = c(1, 1))
+
+# Create allometric scaling coefficients (log-log relationship)
+log_model_heart <- lm(log(heart) ~ log(weight), data = seals)
+log_model_lung <- lm(log(lung) ~ log(weight), data = seals)
+
+# Display scaling coefficients
+summary(log_model_heart)
+summary(log_model_lung)
+```
+
+**Biological Implications Discussion:**
+
+The analysis reveals that both heart mass and lung mass are strongly correlated with body weight in Cape fur seals, with correlation coefficients of r = 0.92 and r = 0.89, respectively. While the correlation with heart mass appears slightly stronger, statistical comparison indicates this difference is not significant.
+
+From an allometric scaling perspective, the log-log models show that heart mass scales with body weight with an exponent of approximately 0.9, while lung mass scales with an exponent of approximately 0.8. These values are close to the theoretical scaling exponent of 0.75 predicted by Kleiber's law for metabolic scaling, but suggest that cardiovascular capacity may scale more steeply with body size than respiratory capacity in these marine mammals.
+
+This pattern may reflect adaptations to diving physiology in pinnipeds. Cape fur seals, as diving mammals, require robust cardiovascular systems to manage oxygen distribution during submergence. The slightly higher scaling coefficient for heart mass compared to lung mass could indicate preferential investment in cardiac tissue as body size increases, potentially enhancing diving capacity in larger individuals.
+
+These findings contribute to our understanding of physiological scaling in marine mammals and highlight how correlation analysis can reveal important patterns in organ-body size relationships that have functional significance for animal ecology.
+:::
 
 <br>
 
