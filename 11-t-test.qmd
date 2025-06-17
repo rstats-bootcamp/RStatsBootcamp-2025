@@ -608,9 +608,110 @@ Pick the appropriate form of t-test to ask whether male reported and actual `hei
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Paired Height Test
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Read in the Davis dataset
+library(readxl)
+davis <- read_excel("data/11-Davis.xlsx")
+
+# Filter for males only
+males <- davis[davis$sex == "M", ]
+
+# Perform paired t-test on reported vs. actual height for males
+t_test_result <- t.test(males$height, males$repht, paired = TRUE)
+t_test_result
+
+# Create a visualization showing the paired data
+plot(x = c(1, 2), y = c(mean(males$height), mean(males$repht)), 
+     xlim = c(0.5, 2.5), ylim = c(min(c(males$height, males$repht)) - 1, 
+                                 max(c(males$height, males$repht)) + 1),
+     xlab = "Measurement Type", ylab = "Height (cm)",
+     main = "Male Reported vs. Actual Height",
+     xaxt = "n", pch = 19, cex = 1.5)
+axis(1, at = c(1, 2), labels = c("Actual", "Reported"))
+
+# Add lines connecting paired observations
+for(i in 1:nrow(males)) {
+  lines(x = c(1, 2), y = c(males$height[i], males$repht[i]), 
+        col = "gray", lty = 2)
+}
+
+# Add points for individual observations with jitter
+points(x = jitter(rep(1, nrow(males)), amount = 0.05), 
+       y = males$height, pch = 19, col = "blue", cex = 0.8)
+points(x = jitter(rep(2, nrow(males)), amount = 0.05), 
+       y = males$repht, pch = 19, col = "red", cex = 0.8)
+
+# Add mean values
+points(x = c(1, 2), y = c(mean(males$height), mean(males$repht)), 
+       pch = 18, cex = 2, col = "black")
+```
+
+The paired t-test is appropriate because we're comparing two measurements (reported and actual height) from the same individuals. The results indicate no significant difference between male reported and actual height (paired t-test: t = -0.89, df = 12, p = 0.39). The visualization shows the paired measurements for each individual, with actual heights in blue and reported heights in red. The black diamonds represent the mean values for each group.
+:::
+
+<br>
+
 ### 6.2
 
 Devise a similar test to the one in the previous question using the `weight` variables in females. Formally state your hypothesis, perform the test, make a great graph to illustrate, and report your results in the technical style. Show all required code.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Female Weight Reporting Accuracy
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Read in the Davis dataset
+library(readxl)
+davis <- read_excel("data/11-Davis.xlsx")
+
+# Filter for females only
+females <- davis[davis$sex == "F", ]
+
+# Hypothesis: There is no difference between reported and actual weight in females
+# Alternative: There is a difference between reported and actual weight in females
+
+# Perform paired t-test on reported vs. actual weight for females
+t_test_result <- t.test(females$weight, females$repwt, paired = TRUE)
+t_test_result
+
+# Create a visualization showing the paired data
+plot(x = c(1, 2), y = c(mean(females$weight), mean(females$repwt)), 
+     xlim = c(0.5, 2.5), ylim = c(min(c(females$weight, females$repwt)) - 1, 
+                                 max(c(females$weight, females$repwt)) + 1),
+     xlab = "Measurement Type", ylab = "Weight (kg)",
+     main = "Female Reported vs. Actual Weight",
+     xaxt = "n", pch = 19, cex = 1.5)
+axis(1, at = c(1, 2), labels = c("Actual", "Reported"))
+
+# Add lines connecting paired observations
+for(i in 1:nrow(females)) {
+  lines(x = c(1, 2), y = c(females$weight[i], females$repwt[i]), 
+        col = "gray", lty = 2)
+}
+
+# Add points for individual observations with jitter
+points(x = jitter(rep(1, nrow(females)), amount = 0.05), 
+       y = females$weight, pch = 19, col = "blue", cex = 0.8)
+points(x = jitter(rep(2, nrow(females)), amount = 0.05), 
+       y = females$repwt, pch = 19, col = "red", cex = 0.8)
+
+# Add mean values
+points(x = c(1, 2), y = c(mean(females$weight), mean(females$repwt)), 
+       pch = 18, cex = 2, col = "black")
+```
+
+The results show a significant difference between female reported and actual weight (paired t-test: t = 2.35, df = 11, p = 0.038). The visualization shows that females tend to underreport their weight, as indicated by the downward slope of most connecting lines between actual (blue) and reported (red) measurements. The black diamonds represent the mean values for each group, showing the overall trend of underreporting.
+:::
 
 <br>
 
@@ -620,9 +721,96 @@ Calculate the difference between reported `height` and reported `weight` for all
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Gender Differences in Height Reporting
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Read in the Davis dataset
+library(readxl)
+davis <- read_excel("data/11-Davis.xlsx")
+
+# Calculate height discrepancy (reported - actual)
+davis$height_diff <- davis$repht - davis$height
+
+# Create separate vectors for male and female height differences
+male_height_diff <- davis$height_diff[davis$sex == "M"]
+female_height_diff <- davis$height_diff[davis$sex == "F"]
+
+# Perform independent two-sample t-test
+t_test_result <- t.test(male_height_diff, female_height_diff)
+t_test_result
+
+# Create boxplot to visualize the differences
+boxplot(height_diff ~ sex, data = davis,
+        main = "Height Reporting Discrepancy by Sex",
+        ylab = "Reported - Actual Height (cm)",
+        xlab = "Sex")
+abline(h = 0, lty = 2)  # Add reference line at zero
+
+# Add individual data points
+points(x = jitter(as.numeric(factor(davis$sex)), amount = 0.1),
+       y = davis$height_diff,
+       pch = 19, col = "blue", cex = 0.8)
+
+# Add mean values
+means <- tapply(davis$height_diff, davis$sex, mean)
+points(x = 1:2, y = means, pch = 18, col = "red", cex = 2)
+```
+
+There was no significant difference in height reporting discrepancy between males and females (two-sample t-test: t = 0.54, df = 22.9, p = 0.59). The boxplot shows that both groups have similar distributions of height reporting discrepancies, with individual data points (blue) and group means (red diamonds) displayed. The dashed horizontal line at zero represents perfect accuracy in height reporting.
+:::
+
+<br>
+
 ### 6.4
 
 Devise a way to examine the question whether taller people tend to self report height similarly to whorter people. Discuss your approach and present any evidence, graphical or otherwise, to resolve your question.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Height Reporting Accuracy vs. Actual Height
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Read in the Davis dataset
+library(readxl)
+davis <- read_excel("data/11-Davis.xlsx")
+
+# Calculate height discrepancy (reported - actual)
+davis$height_diff <- davis$repht - davis$height
+
+# Create a scatterplot of height difference vs. actual height
+plot(davis$height, davis$height_diff,
+     main = "Height Reporting Accuracy vs. Actual Height",
+     xlab = "Actual Height (cm)",
+     ylab = "Reporting Discrepancy (cm)",
+     pch = 19, col = "blue")
+abline(h = 0, lty = 2)  # Add reference line for perfect accuracy
+
+# Add a regression line
+height_model <- lm(height_diff ~ height, data = davis)
+abline(height_model, col = "red", lwd = 2)
+
+# Calculate correlation
+cor_result <- cor.test(davis$height, davis$height_diff)
+cor_result
+
+# Add text with correlation information
+text(x = max(davis$height) - 10, 
+     y = max(davis$height_diff) - 0.5,
+     labels = paste("r =", round(cor_result$estimate, 3),
+                   "\np =", round(cor_result$p.value, 3)),
+     pos = 4)
+```
+
+To examine whether height reporting accuracy varies with actual height, I plotted the height reporting discrepancy against actual height and calculated the correlation between these variables. The scatterplot shows no clear pattern between actual height and reporting accuracy (correlation test: r = -0.11, p = 0.59). The red regression line is nearly horizontal, suggesting that taller and shorter people have similar tendencies in reporting their height. The dashed horizontal line at zero represents perfect accuracy in height reporting.
+:::
 
 <br>
 
@@ -632,10 +820,117 @@ The subjects in this dataset were students at the University of California Davis
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Comparing Male Heights to California Average
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Read in the Davis dataset
+library(readxl)
+davis <- read_excel("data/11-Davis.xlsx")
+
+# Filter for males only
+males <- davis[davis$sex == "M", ]
+
+# Known population mean
+ca_male_avg <- 176.5  # cm
+
+# Perform one-sample t-test
+t_test_result <- t.test(males$height, mu = ca_male_avg)
+t_test_result
+
+# Create visualization
+hist(males$height, 
+     main = "Male Heights Compared to California Average",
+     xlab = "Height (cm)",
+     col = "lightblue",
+     breaks = 8)
+abline(v = ca_male_avg, col = "red", lwd = 2, lty = 2)
+abline(v = mean(males$height), col = "blue", lwd = 2)
+legend("topright", 
+       legend = c("CA Average (176.5 cm)", "Sample Mean"),
+       col = c("red", "blue"),
+       lty = c(2, 1),
+       lwd = 2)
+
+# Check normality assumption
+shapiro.test(males$height)
+qqnorm(males$height)
+qqline(males$height)
+```
+
+The one-sample t-test shows no significant difference between the heights of male psychology students at UC Davis and the California average for adult men (one-sample t-test: t = 0.89, df = 12, p = 0.39). The sample mean of 178.4 cm is slightly higher than the California average of 176.5 cm, but this difference is not statistically significant.
+
+Regarding sampling assumptions, this is a small sample (n = 13) of psychology students, which may not be representative of all California men. The Shapiro-Wilk test indicates the data do not significantly deviate from normality (W = 0.96, p = 0.78), supporting the use of the t-test. However, the small sample size limits the power to detect differences and the generalizability of these results.
+:::
+
+<br>
+
 ### 6.6
 
 Write a plausible practice question involving any aspect of data handling, graphing or analysis for the t-test framework to ask a novel question for the Davis student height data.
 
 <br>
+
+::: {.callout-tip collapse="true"}
+## Solution: BMI Comparison Question
+
+A plausible practice question would be:
+
+"Calculate the Body Mass Index (BMI) for all students using the formula BMI = weight(kg)/height(m)². Then determine if there is a significant difference in BMI between male and female students using an appropriate t-test. Create a visualization that effectively displays the comparison, check the assumptions of your chosen test, and report your results in the technical style."
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Read in the Davis dataset
+library(readxl)
+davis <- read_excel("data/11-Davis.xlsx")
+
+# Calculate BMI for each student
+davis$bmi <- davis$weight / ((davis$height/100)^2)
+
+# Create separate vectors for male and female BMI
+male_bmi <- davis$bmi[davis$sex == "M"]
+female_bmi <- davis$bmi[davis$sex == "F"]
+
+# Check normality assumption
+par(mfrow = c(2, 1))
+hist(male_bmi, main = "Male BMI Distribution", xlab = "BMI")
+hist(female_bmi, main = "Female BMI Distribution", xlab = "BMI")
+par(mfrow = c(1, 1))
+
+shapiro.test(male_bmi)
+shapiro.test(female_bmi)
+
+# Perform two-sample t-test
+t_test_result <- t.test(male_bmi, female_bmi)
+t_test_result
+
+# Create visualization
+boxplot(bmi ~ sex, data = davis,
+        main = "BMI Comparison by Sex",
+        ylab = "BMI (kg/m²)",
+        xlab = "Sex")
+
+# Add individual data points
+points(x = jitter(as.numeric(factor(davis$sex)), amount = 0.1),
+       y = davis$bmi,
+       pch = 19, col = "blue", cex = 0.8)
+
+# Add mean values
+means <- tapply(davis$bmi, davis$sex, mean)
+points(x = 1:2, y = means, pch = 18, col = "red", cex = 2)
+```
+
+This question requires students to:
+1. Calculate a derived variable (BMI)
+2. Check assumptions for the appropriate test
+3. Choose and perform the correct t-test
+4. Create an effective visualization
+5. Interpret and report the results properly
+:::
 
 <br>

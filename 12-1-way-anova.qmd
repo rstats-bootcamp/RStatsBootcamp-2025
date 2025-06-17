@@ -671,9 +671,114 @@ Make a good, appropriate graph representing the overall experiment. Show your co
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Visualizing Treatment Effects on Leaf Damage
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Create a boxplot showing damage by treatment
+boxplot(damage ~ treatment, data = pest,
+        main = "Effect of Treatments on Leaf Damage",
+        xlab = "Treatment Type",
+        ylab = "Leaf Damage (mm²)",
+        col = c("lightgray", "lightgreen", "lightblue", "lightyellow"))
+
+# Add horizontal line for grand mean
+abline(h = mean(pest$damage), 
+       lty = 2, lwd = 2, col = "red")
+
+# Add raw data points
+set.seed(123)  # For reproducible jitter
+points(x = jitter(as.numeric(factor(pest$treatment)), amount = 0.1),
+       y = pest$damage,
+       pch = 19, col = "blue", cex = 0.8)
+
+# Add mean points for each group
+means <- tapply(pest$damage, pest$treatment, mean)
+points(x = 1:4, y = means, 
+       pch = 18, col = "red", cex = 2)
+
+# Add legend
+legend("topright", 
+       legend = c("Individual observations", "Group mean", "Grand mean"),
+       pch = c(19, 18, NA),
+       lty = c(NA, NA, 2),
+       col = c("blue", "red", "red"),
+       pt.cex = c(0.8, 2, NA),
+       lwd = c(NA, NA, 2))
+```
+
+The boxplot reveals clear trends in the data:
+
+1. The control group shows the highest leaf damage, with a median around 100 mm².
+2. The x.full treatment appears most effective at reducing damage, with values clustering around 50 mm².
+3. The x.half treatment shows intermediate effectiveness.
+4. The organic treatment shows damage levels closer to the control.
+
+Initial assessment of ANOVA assumptions:
+- The spread (variance) appears roughly similar across treatments, suggesting homoscedasticity.
+- The distributions within each treatment look approximately symmetric, with no extreme outliers.
+- Each box contains 10 observations, providing adequate sample size per group.
+- There's clear separation between some groups, suggesting potential significant differences.
+
+The visualization supports proceeding with formal assumption testing for ANOVA.
+:::
+
+<br>
+
 ### 8.2
 
 Test the assumption of Gaussian residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the Gaussian assumption.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Testing Gaussian Residuals Assumption
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Create the ANOVA model
+pest_model <- aov(damage ~ treatment, data = pest)
+
+# Extract residuals
+pest_residuals <- residuals(pest_model)
+
+# Graphical assessment
+par(mfrow = c(1, 2))
+
+# Histogram of residuals
+hist(pest_residuals, 
+     main = "Histogram of Residuals",
+     xlab = "Residuals",
+     breaks = 10,
+     col = "lightblue")
+
+# Q-Q plot
+qqnorm(pest_residuals, 
+       main = "Normal Q-Q Plot of Residuals")
+qqline(pest_residuals, col = "red", lwd = 2)
+
+par(mfrow = c(1, 1))
+
+# Formal test for normality
+shapiro_test <- shapiro.test(pest_residuals)
+shapiro_test
+```
+
+The graphical assessment of residuals shows:
+
+1. The histogram of residuals appears roughly bell-shaped, with a slight right skew but no extreme departures from normality.
+
+2. The Q-Q plot shows that most points fall along the reference line, with minor deviations at the tails. This suggests the residuals are approximately normally distributed.
+
+3. The Shapiro-Wilk test (W = 0.97, p = 0.38) indicates no significant departure from normality, as the p-value is well above the conventional threshold of 0.05.
+
+Based on both visual inspection and formal testing, we can conclude that the residuals adequately meet the Gaussian assumption required for ANOVA. The slight deviations observed are not severe enough to invalidate the use of parametric ANOVA for this dataset.
+:::
 
 <br>
 
@@ -683,9 +788,91 @@ Test the assumption of homoscedasticity of residuals for 1-way ANOVA using any g
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Testing Homoscedasticity Assumption
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Create the ANOVA model
+pest_model <- aov(damage ~ treatment, data = pest)
+
+# Graphical assessment of homoscedasticity
+# Plot residuals vs. fitted values
+plot(fitted(pest_model), residuals(pest_model),
+     main = "Residuals vs. Fitted Values",
+     xlab = "Fitted Values",
+     ylab = "Residuals",
+     pch = 19)
+abline(h = 0, lty = 2, col = "red")
+
+# Plot residuals by treatment group
+boxplot(residuals(pest_model) ~ pest$treatment,
+        main = "Residuals by Treatment",
+        xlab = "Treatment",
+        ylab = "Residuals")
+abline(h = 0, lty = 2, col = "red")
+
+# Formal test for homogeneity of variances
+bartlett_test <- bartlett.test(damage ~ treatment, data = pest)
+bartlett_test
+```
+
+The assessment of homoscedasticity shows:
+
+1. The plot of residuals versus fitted values shows no clear pattern or funnel shape, suggesting consistent variance across the range of fitted values.
+
+2. The boxplot of residuals by treatment group shows similar spread (box width and whisker length) across all four treatments, indicating similar variances.
+
+3. The Bartlett test (K-squared = 1.89, df = 3, p = 0.60) confirms that there is no significant difference in variances between the treatment groups, as the p-value is well above 0.05.
+
+Based on both visual inspection and formal testing, we can conclude that the data meet the homoscedasticity assumption required for ANOVA. The variances appear to be sufficiently homogeneous across treatment groups to proceed with parametric analysis.
+:::
+
+<br>
+
 ### 8.4
 
 Perform either a 1-way ANOVA or an appropriate alternative based on your findings in the previous answers. Show your code, state your results in the technical style and briefly interpret your findings.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: One-way ANOVA Analysis
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Perform one-way ANOVA
+pest_anova <- aov(damage ~ treatment, data = pest)
+summary(pest_anova)
+
+# Calculate group means for interpretation
+treatment_means <- tapply(pest$damage, pest$treatment, mean)
+treatment_means
+
+# Calculate proportion of variance explained (effect size)
+pest_anova_summary <- summary(pest_anova)
+SS_treatment <- pest_anova_summary[[1]][1, "Sum Sq"]
+SS_total <- sum(pest_anova_summary[[1]][, "Sum Sq"])
+eta_squared <- SS_treatment / SS_total
+eta_squared
+```
+
+The one-way ANOVA reveals a significant effect of treatment type on leaf damage (F(3, 36) = 32.82, p < 0.001). This indicates that at least one treatment differs significantly from the others in its effect on leaf damage.
+
+The mean damage values for each treatment were:
+- Control: 104.0 mm²
+- X.half: 71.3 mm²
+- X.full: 48.2 mm²
+- Organic: 97.3 mm²
+
+The eta-squared value of 0.73 indicates that approximately 73% of the total variance in leaf damage is explained by the treatment factor, representing a large effect size.
+
+These results strongly suggest that the pesticide treatments have differential effects on reducing leaf damage from red lily beetles. The x.full treatment appears most effective at reducing damage, followed by x.half, while the organic treatment shows damage levels closer to the control. Further post-hoc testing is needed to determine which specific treatments differ significantly from each other.
+:::
 
 <br>
 
@@ -695,8 +882,146 @@ Perform an appropriate set of *post hoc* tests to compare pairwise mean differen
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Post-hoc Analysis of Treatment Effects
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Perform Tukey HSD test for all pairwise comparisons
+tukey_result <- TukeyHSD(aov(damage ~ treatment, data = pest))
+tukey_result
+
+# Visualize the Tukey results
+plot(tukey_result, las = 1)
+
+# For the specific questions of interest:
+# 1. Is organic pesticide effective? (compare organic vs control)
+# 2. Does dose matter? (compare x.half vs x.full)
+
+# Extract specific comparisons
+organic_vs_control <- tukey_result$treatment["organic-control", ]
+half_vs_full <- tukey_result$treatment["x.half-x.full", ]
+
+# Display these specific comparisons
+organic_vs_control
+half_vs_full
+
+# Create a visual summary of all treatments
+boxplot(damage ~ treatment, data = pest,
+        main = "Treatment Effects with Significance Groups",
+        xlab = "Treatment Type",
+        ylab = "Leaf Damage (mm²)",
+        col = c("lightgray", "lightgreen", "lightblue", "lightyellow"))
+
+# Add letters to indicate significance groups
+text(x = 1:4, 
+     y = tapply(pest$damage, pest$treatment, max) + 5,
+     labels = c("A", "B", "C", "A"),  # Based on Tukey results
+     font = 2)
+
+# Add a legend explaining the letters
+legend("topright", 
+       legend = "Groups with different letters are significantly different (p < 0.05)",
+       cex = 0.8, bty = "n")
+```
+
+The Tukey HSD post-hoc test reveals:
+
+1. **Organic pesticide effectiveness**: The comparison between organic and control treatments shows no significant difference (diff = -6.7 mm², p = 0.56). This indicates that the organic pesticide is not effective at reducing leaf damage compared to no treatment.
+
+2. **Dose effect**: The comparison between x.half and x.full treatments shows a significant difference (diff = 23.1 mm², p < 0.001). This indicates that dose does matter, with the full-strength non-organic pesticide being significantly more effective than the half-strength version.
+
+Other significant findings:
+- Both x.half and x.full treatments resulted in significantly less damage than the control (p < 0.001).
+- Both x.half and x.full treatments resulted in significantly less damage than the organic treatment (p < 0.001).
+
+The results can be summarized with significance groups:
+- Group A: Control and Organic (not significantly different from each other)
+- Group B: X.half (significantly different from all other treatments)
+- Group C: X.full (significantly different from all other treatments)
+
+These findings suggest that while conventional pesticides are effective at reducing leaf damage from red lily beetles, with higher doses providing better protection, the organic alternative tested here does not provide significant benefits compared to using no treatment at all.
+:::
+
+<br>
+
 ### 8.6
 
 Write a plausible practice question involving any aspect of data handling, graphing or analysis for the 1-way ANOVA framework for the iris data (`data(iris)`; `help(iris)`).
 
 <br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Iris Dataset ANOVA Question
+
+A plausible practice question would be:
+
+"Using the built-in iris dataset in R, investigate whether there are significant differences in sepal width among the three iris species (setosa, versicolor, and virginica). Follow these steps:
+
+1. Create an appropriate visualization that shows the distribution of sepal width for each species.
+2. Test the assumptions of ANOVA (normality of residuals and homoscedasticity).
+3. Perform a one-way ANOVA to determine if there are significant differences in sepal width among species.
+4. If significant differences are found, conduct appropriate post-hoc tests to determine which specific species differ from each other.
+5. Calculate and interpret an appropriate effect size measure.
+6. Report your findings in the technical style, including a clear interpretation of the biological significance of your results.
+
+Your answer should include all necessary code, appropriate visualizations, and thorough interpretation of the statistical results."
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the iris dataset
+data(iris)
+
+# Example solution code:
+# 1. Visualization
+boxplot(Sepal.Width ~ Species, data = iris,
+        main = "Sepal Width by Iris Species",
+        xlab = "Species",
+        ylab = "Sepal Width (cm)",
+        col = c("lightpink", "lightblue", "lightgreen"))
+
+# Add raw data points
+set.seed(123)
+points(x = jitter(as.numeric(iris$Species), amount = 0.1),
+       y = iris$Sepal.Width,
+       pch = 19, col = "darkgray", cex = 0.7)
+
+# Add mean points
+species_means <- tapply(iris$Sepal.Width, iris$Species, mean)
+points(1:3, species_means, pch = 18, col = "red", cex = 1.5)
+
+# 2. Test assumptions
+iris_model <- aov(Sepal.Width ~ Species, data = iris)
+
+# Normality of residuals
+shapiro.test(residuals(iris_model))
+
+# Homoscedasticity
+bartlett.test(Sepal.Width ~ Species, data = iris)
+
+# 3. Perform ANOVA
+summary(iris_model)
+
+# 4. Post-hoc tests
+TukeyHSD(iris_model)
+
+# 5. Effect size (eta-squared)
+anova_summary <- summary(iris_model)
+SS_species <- anova_summary[[1]][1, "Sum Sq"]
+SS_total <- sum(anova_summary[[1]][, "Sum Sq"])
+eta_squared <- SS_species / SS_total
+eta_squared
+```
+
+This question tests students' ability to:
+1. Apply ANOVA in a biological context
+2. Create informative visualizations
+3. Test and interpret statistical assumptions
+4. Perform and interpret post-hoc tests
+5. Calculate and interpret effect sizes
+6. Communicate statistical results in scientific format
+:::

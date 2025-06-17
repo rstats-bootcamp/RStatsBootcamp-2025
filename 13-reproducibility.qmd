@@ -157,6 +157,280 @@ Create a file organization template for your next data analysis project, followi
 Write documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.
 :::
 
+### Exercise 1
+
+Evaluate a recent project of yours for reproducibility. Identify three specific improvements you could make to enhance its reproducibility.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Reproducibility Evaluation
+
+Three specific improvements to enhance reproducibility in a data analysis project:
+
+1. **Version Control Implementation**: Set up a Git repository for the project to track changes to code and documentation. This would allow for better tracking of modifications, collaboration with others, and the ability to revert to previous versions if needed.
+
+```r
+# Example Git setup commands
+# Initialize a Git repository
+git init
+
+# Add all files to the repository
+git add .
+
+# Make an initial commit
+git commit -m "Initial commit of project files"
+
+# Create a remote repository on GitHub and link it
+git remote add origin https://github.com/username/project-name.git
+git push -u origin main
+```
+
+2. **Environment Documentation**: Create a reproducible environment using the `renv` package to track and manage package dependencies. This ensures that others can recreate the exact same package versions used in the analysis.
+
+```r
+# Install and initialize renv
+install.packages("renv")
+renv::init()
+
+# After installing all required packages, create a snapshot
+renv::snapshot()
+
+# Include instructions in README.md for others to restore the environment
+# renv::restore()
+```
+
+3. **Data Pipeline Documentation**: Create a clear data processing pipeline with numbered script files and documentation of each transformation step. This would make it easier to understand how raw data was processed into the final analysis dataset.
+
+```r
+# Example file structure
+# 01_data_import.R - Import raw data
+# 02_data_cleaning.R - Clean and preprocess data
+# 03_analysis.R - Perform main analysis
+# 04_visualization.R - Create visualizations
+
+# Example documentation in scripts
+#' Data Cleaning Script
+#' 
+#' This script performs the following operations:
+#' 1. Removes duplicate records
+#' 2. Handles missing values
+#' 3. Transforms variables to appropriate types
+#' 4. Creates derived variables needed for analysis
+#' 
+#' Input: raw_data.csv
+#' Output: clean_data.csv
+```
+:::
+
+<br>
+
+### Exercise 2
+
+Create a file organization template for your next data analysis project, following the best practices outlined in this lesson.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Project Organization Template
+
+Here's a file organization template for a data analysis project following best practices:
+
+```
+project_name/
+├── README.md                 # Project overview, setup instructions, and usage
+├── CONTRIBUTING.md           # Guidelines for contributors (if collaborative)
+├── LICENSE                   # Project license information
+├── .gitignore                # Specifies files to exclude from version control
+├── renv/                     # R environment information (created by renv)
+├── renv.lock                 # Package dependency snapshot
+├── data/
+│   ├── raw/                  # Original, immutable data
+│   │   ├── dataset1.csv      # Original data files
+│   │   └── dataset2.xlsx
+│   ├── processed/            # Cleaned, transformed data
+│   │   ├── clean_dataset1.csv
+│   │   └── analysis_ready.rds
+│   └── README.md             # Data dictionary and source information
+├── code/
+│   ├── 00_setup.R            # Project setup, load packages, set global options
+│   ├── 01_import_data.R      # Data import scripts
+│   ├── 02_clean_data.R       # Data cleaning and preprocessing
+│   ├── 03_explore_data.R     # Exploratory data analysis
+│   ├── 04_analyze_data.R     # Main analysis scripts
+│   └── 05_visualize_data.R   # Visualization scripts
+├── results/
+│   ├── figures/              # Generated plots and visualizations
+│   │   ├── exploratory/      # Exploratory visualizations
+│   │   └── final/            # Publication-ready figures
+│   └── tables/               # Generated tables and summaries
+├── docs/
+│   ├── data_dictionary.md    # Detailed variable descriptions
+│   ├── analysis_plan.md      # Pre-specified analysis plan
+│   └── methods.md            # Detailed methodological notes
+└── reports/
+    ├── exploratory_report.Rmd # R Markdown for exploratory analysis
+    └── final_report.Rmd       # Final analysis report
+```
+
+Key features of this template:
+- Clear separation of raw and processed data
+- Numbered scripts to indicate workflow order
+- Comprehensive documentation
+- Version control readiness
+- Environment management with renv
+- Separate locations for code, data, results, and documentation
+:::
+
+<br>
+
+### Exercise 3
+
+Write documentation for a simple R function that you commonly use, following the guidelines for effective code documentation.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Function Documentation
+
+Here's an example of well-documented R function for summarizing data:
+
+```r
+#' Summarize Numeric Variables by Group
+#' 
+#' This function calculates summary statistics for numeric variables
+#' grouped by one or more categorical variables.
+#' 
+#' @param data A data frame containing the variables to summarize
+#' @param num_vars Character vector of numeric variable names to summarize
+#' @param group_vars Character vector of grouping variable names
+#' @param stats Character vector of statistics to calculate.
+#'        Options include: "mean", "median", "sd", "min", "max", "n", "se"
+#' @param na.rm Logical indicating whether to remove NA values (default: TRUE)
+#' 
+#' @return A data frame with summary statistics for each numeric variable by group
+#' 
+#' @examples
+#' # Create example data
+#' example_data <- data.frame(
+#'   group1 = rep(c("A", "B"), each = 10),
+#'   group2 = rep(c("X", "Y"), times = 10),
+#'   value1 = rnorm(20, mean = 10, sd = 2),
+#'   value2 = runif(20, min = 0, max = 100)
+#' )
+#' 
+#' # Summarize one numeric variable by one group
+#' summarize_by_group(
+#'   data = example_data,
+#'   num_vars = "value1",
+#'   group_vars = "group1",
+#'   stats = c("mean", "sd", "n")
+#' )
+#' 
+#' # Summarize multiple numeric variables by multiple groups
+#' summarize_by_group(
+#'   data = example_data,
+#'   num_vars = c("value1", "value2"),
+#'   group_vars = c("group1", "group2"),
+#'   stats = c("median", "min", "max")
+#' )
+#' 
+#' @export
+summarize_by_group <- function(data, num_vars, group_vars, 
+                               stats = c("mean", "sd", "median", "min", "max", "n"),
+                               na.rm = TRUE) {
+  # Input validation
+  if (!is.data.frame(data)) {
+    stop("'data' must be a data frame")
+  }
+  if (!all(num_vars %in% names(data))) {
+    stop("Not all numeric variables found in data")
+  }
+  if (!all(group_vars %in% names(data))) {
+    stop("Not all grouping variables found in data")
+  }
+  
+  # Create grouping formula for aggregate
+  group_formula <- as.formula(paste("~", paste(group_vars, collapse = "+")))
+  
+  # Initialize results list
+  results_list <- list()
+  
+  # Calculate standard error function
+  se <- function(x, na.rm = TRUE) {
+    if (na.rm) x <- x[!is.na(x)]
+    sqrt(var(x) / length(x))
+  }
+  
+  # Process each numeric variable
+  for (var in num_vars) {
+    # Initialize stats list for this variable
+    var_stats <- list()
+    
+    # Calculate requested statistics
+    if ("mean" %in% stats) {
+      var_stats$mean <- aggregate(data[[var]], by = eval(group_formula, data), 
+                                 FUN = mean, na.rm = na.rm)
+    }
+    if ("median" %in% stats) {
+      var_stats$median <- aggregate(data[[var]], by = eval(group_formula, data), 
+                                   FUN = median, na.rm = na.rm)
+    }
+    if ("sd" %in% stats) {
+      var_stats$sd <- aggregate(data[[var]], by = eval(group_formula, data), 
+                               FUN = sd, na.rm = na.rm)
+    }
+    if ("min" %in% stats) {
+      var_stats$min <- aggregate(data[[var]], by = eval(group_formula, data), 
+                                FUN = min, na.rm = na.rm)
+    }
+    if ("max" %in% stats) {
+      var_stats$max <- aggregate(data[[var]], by = eval(group_formula, data), 
+                                FUN = max, na.rm = na.rm)
+    }
+    if ("n" %in% stats) {
+      var_stats$n <- aggregate(data[[var]], by = eval(group_formula, data), 
+                              FUN = function(x) sum(!is.na(x)))
+    }
+    if ("se" %in% stats) {
+      var_stats$se <- aggregate(data[[var]], by = eval(group_formula, data), 
+                               FUN = se, na.rm = na.rm)
+    }
+    
+    # Combine all stats for this variable
+    var_result <- var_stats[[1]]
+    names(var_result)[ncol(var_result)] <- paste0(var, "_", names(var_stats)[1])
+    
+    for (i in 2:length(var_stats)) {
+      stat_name <- names(var_stats)[i]
+      var_result[[paste0(var, "_", stat_name)]] <- var_stats[[i]][, ncol(var_stats[[i]])]
+    }
+    
+    results_list[[var]] <- var_result
+  }
+  
+  # Merge results for all variables
+  final_result <- results_list[[1]]
+  if (length(results_list) > 1) {
+    for (i in 2:length(results_list)) {
+      final_result <- merge(final_result, results_list[[i]], by = group_vars)
+    }
+  }
+  
+  return(final_result)
+}
+```
+
+This documentation follows best practices by including:
+1. A clear title and description
+2. Detailed parameter descriptions
+3. Information about the return value
+4. Multiple examples showing different use cases
+5. Export tag for package development
+6. Input validation within the function
+7. Comprehensive comments explaining the code logic
+:::
+
 ## Additional Resources
 
 -   [The Turing Way: Guide to Reproducible Research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html)
