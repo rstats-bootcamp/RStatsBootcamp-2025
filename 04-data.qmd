@@ -295,9 +295,65 @@ Create a vector named my_var1 that contains the following 6 integers: 3, 6, 12, 
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Vector Addition with Recycling
+```{r}
+#| echo: true
+#| eval: true
+
+# Create the first vector with 6 integers
+my_var1 <- c(3, 6, 12, 7, 5, 1)
+
+# Create the second vector with 2 integers
+my_var2 <- c(2, 3)
+
+# Evaluate the expression
+my_var1 + my_var2
+```
+
+When adding vectors of different lengths in R, the shorter vector is "recycled" (repeated) to match the length of the longer vector. In this case:
+
+- `my_var1` has 6 elements: 3, 6, 12, 7, 5, 1
+- `my_var2` has 2 elements: 2, 3
+- When adding them, `my_var2` is recycled to become effectively: 2, 3, 2, 3, 2, 3
+- The addition is then performed element-wise: 3+2=5, 6+3=9, 12+2=14, 7+3=10, 5+2=7, 1+3=4
+
+This recycling behavior is a fundamental aspect of R's vector operations, allowing operations between vectors of different lengths.
+:::
+
+<br>
+
 ### 6.2
 
 Create a character vector with the names of the 12 months of the year. Convert the vector to a factor, with the month names in chronological order. Show your code.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Months as Ordered Factor
+```{r}
+#| echo: true
+#| eval: true
+
+# Create a character vector with month names
+months_vec <- c("January", "February", "March", "April", "May", "June", 
+                "July", "August", "September", "October", "November", "December")
+
+# Check the class
+class(months_vec)
+
+# Convert to factor with correct chronological order
+months_factor <- factor(months_vec, levels = months_vec)
+
+# Verify the result
+class(months_factor)
+months_factor
+```
+
+This code creates a character vector containing the 12 month names, then converts it to a factor with the levels explicitly set to maintain the chronological order. 
+
+Without specifying the levels, R would arrange the factor levels alphabetically (April, August, December, etc.), which wouldn't represent the natural chronological order of months.
+:::
 
 <br>
 
@@ -309,6 +365,46 @@ What is wrong with the following code? Describe, show the code, and justify a fi
 mymat <- matrix(data = c( 12,   23,   45,
                          "34", "22", "31"))
 ```
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Matrix Data Type Issue
+```{r}
+#| echo: true
+#| eval: true
+
+# The problematic code
+mymat <- matrix(data = c(12, 23, 45, "34", "22", "31"))
+mymat
+
+# Check the class of the matrix elements
+class(mymat[1,1])
+```
+
+The problem with this code is that matrices in R can only contain one data type. When mixing numeric values (12, 23, 45) with character values ("34", "22", "31"), R coerces all elements to the most flexible type - character.
+
+This means all numbers are converted to character strings, which prevents numerical operations on the matrix.
+
+To fix this, we need to decide what type the data should be:
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Fix 1: If all values should be numeric
+numeric_mat <- matrix(data = c(12, 23, 45, 34, 22, 31), ncol = 3)
+numeric_mat
+class(numeric_mat[1,1])
+
+# Fix 2: If all values should be character (for non-numeric purposes)
+char_mat <- matrix(data = c("12", "23", "45", "34", "22", "31"), ncol = 3)
+char_mat
+class(char_mat[1,1])
+```
+
+The appropriate fix depends on how you intend to use the matrix data.
+:::
 
 <br>
 
@@ -338,6 +434,37 @@ Use the `array()` function to make a 2 x 2 x 3 array to produce the following ou
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## 3D Array Creation
+```{r}
+#| echo: true
+#| eval: true
+
+# Create a vector with all the values
+data_vec <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+
+# Create the 2x2x3 array
+my_array <- array(data = data_vec, dim = c(2, 2, 3))
+
+# Display the array
+my_array
+```
+
+To create this 3D array:
+
+1. First, we create a vector with all 12 values in the correct order
+2. Then we use the `array()` function with:
+   - `data` parameter set to our vector
+   - `dim` parameter set to c(2, 2, 3), which specifies:
+     - 2 rows
+     - 2 columns
+     - 3 "layers" or "slices"
+
+The array fills by columns first, then rows, then layers. This creates the exact structure shown in the expected output.
+:::
+
+<br>
+
 ### 6.5
 
 Show the code to make the following matrix:
@@ -350,9 +477,89 @@ female  71  29
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Named Matrix Creation
+```{r}
+#| echo: true
+#| eval: true
+
+# Create the data vector
+data_vec <- c(22, 71, 88, 29)
+
+# Create the matrix, filling by column
+pet_matrix <- matrix(data = data_vec, nrow = 2, ncol = 2, byrow = FALSE)
+
+# Add row and column names
+rownames(pet_matrix) <- c("male", "female")
+colnames(pet_matrix) <- c("cat", "dog")
+
+# Display the matrix
+pet_matrix
+```
+
+To create this matrix:
+
+1. We create a vector with the four values in the correct order for column-wise filling
+2. We create a 2x2 matrix using `matrix()` with `byrow = FALSE` (the default)
+3. We assign row names "male" and "female"
+4. We assign column names "cat" and "dog"
+
+The resulting matrix matches the requested format, showing counts for male/female cats/dogs.
+:::
+
+<br>
+
 ### 6.6
 
 Write a plausible practice question involving the use of the `matrix()` and `vector()` functions.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Matrix and Vector Question
+```{r}
+#| echo: true
+#| eval: false
+
+# A plausible practice question could be:
+
+# "Create a 3x3 matrix containing the numbers 1 through 9, filled by row. 
+# Then extract the diagonal elements of this matrix into a vector. 
+# Finally, calculate the mean of these diagonal elements."
+
+# Solution:
+# Create the matrix filled by row
+my_matrix <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
+my_matrix
+
+# Extract the diagonal elements
+diag_elements <- diag(my_matrix)
+diag_elements
+
+# Calculate the mean of the diagonal elements
+mean(diag_elements)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+
+# Actual solution execution
+my_matrix <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
+my_matrix
+diag_elements <- diag(my_matrix)
+diag_elements
+mean(diag_elements)
+```
+
+This question tests understanding of:
+- Creating matrices with specific filling patterns
+- Extracting specific elements from matrices
+- Using the diagonal function
+- Performing calculations on vectors extracted from matrices
+
+The diagonal elements are 1, 5, and 9, and their mean is 5.
+:::
 
 <br>
 

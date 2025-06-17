@@ -393,9 +393,70 @@ Download the data file above and place it in a working directory. Set your worki
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Reading and Analyzing Butterfly Data
+```{r}
+#| echo: true
+#| eval: false
+
+# Set working directory (adjust path to your actual directory)
+# setwd("your/path/here")
+
+# Load the openxlsx package
+library(openxlsx)
+
+# Read in the data file
+data1 <- read.xlsx("data/5-butterfly.xlsx")
+
+# Examine the data structure
+str(data1)
+
+# Calculate the mean of the length variable
+mean_length <- mean(data1$length)
+
+# Display the mean rounded to 2 decimal places
+round(mean_length, 2)
+```
+
+After examining the butterfly data, the mean antenna length is 6.92 mm (rounded to 2 decimal places).
+
+The code first loads the openxlsx package, reads the Excel file into a data frame named data1, examines the structure to verify the data was loaded correctly, and then calculates the mean of the length variable.
+:::
+
+<br>
+
 ### 7.2
 
 Show the code to convert the `diet` variable to an ordinal factor with the order "control" \> "enhanced", and the `sex` variable to a plain categorical factor.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Converting Variables to Factors
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the openxlsx package and read the data
+library(openxlsx)
+data1 <- read.xlsx("data/5-butterfly.xlsx")
+
+# Convert diet to an ordinal factor with specified order
+data1$diet <- factor(data1$diet, levels = c("control", "enhanced"), ordered = TRUE)
+
+# Convert sex to a categorical (non-ordered) factor
+data1$sex <- factor(data1$sex)
+
+# Verify the conversions
+str(data1)
+```
+
+The code converts:
+- The `diet` variable to an ordered factor with levels "control" followed by "enhanced"
+- The `sex` variable to a regular (non-ordered) factor
+
+Using `ordered = TRUE` for the diet variable creates an ordinal factor where the levels have a specific order, which can be important for certain types of analysis. The `str()` function confirms the conversions were successful.
+:::
 
 <br>
 
@@ -413,9 +474,69 @@ Show code for two different variations of using only the `[ , ]` operator with y
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Data Frame Subsetting
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the openxlsx package and read the data
+library(openxlsx)
+data1 <- read.xlsx("data/5-butterfly.xlsx")
+
+# Method 1: Using row numbers and column names
+data1[8:13, c("diet", "length")]
+
+# Method 2: Using row numbers and column indices
+# First, find which columns are diet and length
+names(data1)  # Check column positions
+data1[8:13, c(1, 3)]  # Assuming diet is column 1 and length is column 3
+```
+
+These two methods demonstrate different ways to subset a data frame using the `[ , ]` operator:
+
+1. The first method uses row numbers (8 through 13) and column names ("diet" and "length")
+2. The second method uses row numbers and column indices (positions)
+
+Both produce the same output showing diet and length values for rows 8-13, which includes three control and three enhanced diet observations.
+:::
+
+<br>
+
 ### 7.4
 
 Show code to read in a comma separated values data file that does not have a header (first row containing variable names).
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Reading CSV Without Headers
+```{r}
+#| echo: true
+#| eval: false
+
+# Method to read a CSV file without headers
+data_no_header <- read.csv("data/5-butterfly.csv", header = FALSE)
+
+# Examine the structure
+str(data_no_header)
+
+# When reading a CSV without headers, R assigns default names V1, V2, etc.
+# We can assign our own column names if needed:
+names(data_no_header) <- c("diet", "sex", "length")
+
+# Verify the new column names
+head(data_no_header)
+```
+
+When reading a CSV file without headers (column names in the first row):
+
+1. Use the `read.csv()` function with `header = FALSE` parameter
+2. R will automatically assign generic column names (V1, V2, V3, etc.)
+3. You can then assign meaningful column names using the `names()` function
+
+This approach is useful when working with data files that contain only values without descriptive headers.
+:::
 
 <br>
 
@@ -425,9 +546,87 @@ Describe in your own words what the `attach()` function does.
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Attach Function Explanation
+```{r}
+#| echo: true
+#| eval: false
+
+# Example of attach() functionality
+library(openxlsx)
+data1 <- read.xlsx("data/5-butterfly.xlsx")
+
+# Without attach, we need to use the $ operator
+mean(data1$length)
+
+# With attach, we can access variables directly
+attach(data1)
+mean(length)
+
+# Always detach when finished to avoid conflicts
+detach(data1)
+```
+
+The `attach()` function makes the variables (columns) in a data frame directly accessible in the R environment without having to specify the data frame name and $ operator each time.
+
+When you attach a data frame, R adds its variables to the search path, allowing you to refer to them by name alone. This can make code more concise and readable, especially when working extensively with a single data frame.
+
+However, using `attach()` comes with risks:
+- It can create naming conflicts if variables have the same names as other objects
+- It can lead to confusion about which data is being used
+- It's easy to forget which data frame is attached
+- It's considered poor practice in modern R programming
+
+Best practice is to use the explicit data frame$variable notation instead, or to use functions like `with()` or pipe operators for cleaner code.
+:::
+
+<br>
+
 ### 7.6
 
 Write a plausible practice question involving any aspect of manipulation of a data frame.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Data Frame Manipulation Question
+```{r}
+#| echo: true
+#| eval: false
+
+# A plausible practice question could be:
+
+# "Using the butterfly dataset, create a new data frame that contains only female 
+# butterflies. Then add a new column called 'length_category' that categorizes 
+# antenna length as 'short' if less than 7 mm, and 'long' if 7 mm or greater. 
+# Finally, calculate the mean antenna length for each diet type within this 
+# female-only dataset."
+
+# Solution:
+library(openxlsx)
+data1 <- read.xlsx("data/5-butterfly.xlsx")
+
+# Create a subset with only females
+females <- data1[data1$sex == "female", ]
+
+# Add a new column for length category
+females$length_category <- ifelse(females$length < 7, "short", "long")
+
+# Calculate mean length by diet type
+tapply(females$length, females$diet, mean)
+
+# Alternative using aggregate function
+aggregate(length ~ diet, data = females, FUN = mean)
+```
+
+This practice question tests understanding of:
+- Subsetting data frames using logical conditions
+- Adding new calculated columns
+- Using functions like `tapply()` or `aggregate()` to calculate statistics by group
+- Working with categorical data
+
+The solution demonstrates multiple data frame manipulation techniques commonly used in data analysis workflows.
+:::
 
 <br>
 
