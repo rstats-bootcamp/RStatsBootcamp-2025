@@ -372,20 +372,20 @@ if (!require(MASS)) {
   # Create a simulated waders dataset if MASS is not available
   set.seed(123)
   waders <- data.frame(
-    Redshank = rpois(20, 10),
-    Curlew = rpois(20, 8),
-    Godwit = rpois(20, 5)
+    S1 = rpois(20, 10),
+    S2 = rpois(20, 8),
+    S3 = rpois(20, 5)
   )
   # Add correlation between species
-  waders$Curlew <- waders$Curlew + 0.5 * waders$Redshank
-  waders$Godwit <- waders$Godwit + 0.3 * waders$Redshank + 0.2 * waders$Curlew
+  waders$S2 <- waders$S2 + 0.5 * waders$S1
+  waders$S3 <- waders$S3 + 0.3 * waders$S1 + 0.2 * waders$S2
 } else {
   # Load the real dataset if MASS is available
   data(waders)
 }
 
 # Read the help page for the dataset
-?waders
+# help(waders)
 
 # Use the pairs function to visualize intercorrelations
 pairs(waders, pch = 16, col = "blue")
@@ -398,9 +398,9 @@ Based on the pairs plot and correlation matrix:
 
 1. There appear to be moderate to strong positive correlations between most wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.
 
-2. Particularly strong correlations (r > 0.7) exist between several pairs of species, such as Redshank and Dunlin.
+2. Particularly strong correlations (r > 0.7) exist between several pairs of species, such as S1 and Dunlin.
 
-3. Some species show weaker correlations with others (e.g., Godwit has lower correlation coefficients with several species), suggesting some habitat specialization.
+3. Some species show weaker correlations with others (e.g., S3 has lower correlation coefficients with several species), suggesting some habitat specialization.
 
 4. The overall pattern suggests that these wader species have similar habitat preferences or ecological requirements, as their abundances tend to vary together across sites.
 
@@ -433,57 +433,51 @@ first_three <- waders[, 1:3]
 colnames(first_three)
 
 # Examine distribution of each variable with histograms
-par(mfrow = c(1, 3))
-for(i in 1:3) {
-  hist(waders[,i], main = colnames(waders)[i], 
-       xlab = "Count", col = "lightblue")
-}
-par(mfrow = c(1, 1))
+hist(waders$S1)
+hist(waders$S2)
+hist(waders$S3)
 
 # Hypothesis statements:
-# H0: There is no correlation between Redshank and Curlew counts (r = 0)
-# H1: There is a correlation between Redshank and Curlew counts (r ≠ 0)
+# H0: There is no correlation between S1 and S2 counts (r = 0)
+# H1: There is a correlation between S1 and S2 counts (r ≠ 0)
 #
-# H0: There is no correlation between Redshank and Godwit counts (r = 0)
-# H1: There is a correlation between Redshank and Godwit counts (r ≠ 0)
+# H0: There is no correlation between S1 and S3 counts (r = 0)
+# H1: There is a correlation between S1 and S3 counts (r ≠ 0)
 #
-# H0: There is no correlation between Curlew and Godwit counts (r = 0)
-# H1: There is a correlation between Curlew and Godwit counts (r ≠ 0)
+# H0: There is no correlation between S2 and S3 counts (r = 0)
+# H1: There is a correlation between S2 and S3 counts (r ≠ 0)
 
 # Create pairwise scatterplots with improved formatting
-# Redshank vs Curlew
-plot(waders$Redshank, waders$Curlew, 
+# S1 vs S2
+plot(waders$S1, waders$S2, 
      pch = 16, col = "darkblue",
-     xlab = "Redshank Count", 
-     ylab = "Curlew Count",
-     main = "Correlation between Redshank and Curlew")
-abline(lm(Curlew ~ Redshank, data = waders), col = "red", lwd = 2)
+     xlab = "S1 Count", 
+     ylab = "S2 Count",
+     main = "Correlation between S1 and S2")
 
-# Redshank vs Godwit
-plot(waders$Redshank, waders$Godwit, 
+# S1 vs S3
+plot(waders$S1, waders$S3, 
      pch = 16, col = "darkgreen",
-     xlab = "Redshank Count", 
-     ylab = "Godwit Count",
-     main = "Correlation between Redshank and Godwit")
-abline(lm(Godwit ~ Redshank, data = waders), col = "red", lwd = 2)
+     xlab = "S1 Count", 
+     ylab = "S3 Count",
+     main = "Correlation between S1 and S3")
 
-# Curlew vs Godwit
-plot(waders$Curlew, waders$Godwit, 
+# S2 vs S3
+plot(waders$S2, waders$S3, 
      pch = 16, col = "darkred",
-     xlab = "Curlew Count", 
-     ylab = "Godwit Count",
-     main = "Correlation between Curlew and Godwit")
-abline(lm(Godwit ~ Curlew, data = waders), col = "blue", lwd = 2)
+     xlab = "S2 Count", 
+     ylab = "S3 Count",
+     main = "Correlation between S2 and S3")
 
 # Perform the three correlation tests
-# Redshank vs Curlew
-cor.test(waders$Redshank, waders$Curlew)
+# S1 vs S2
+cor.test(waders$S1, waders$S2)
 
-# Redshank vs Godwit
-cor.test(waders$Redshank, waders$Godwit)
+# S1 vs S3
+cor.test(waders$S1, waders$S3)
 
-# Curlew vs Godwit
-cor.test(waders$Curlew, waders$Godwit)
+# S2 vs S3
+cor.test(waders$S2, waders$S3)
 ```
 
 **Expectation of Gaussianity:**
@@ -491,22 +485,22 @@ The waders data represents counts of bird species at different sites. Count data
 
 **Correlation Test Results:**
 
-1. **Redshank and Curlew**: 
+1. **S1 and S2**: 
    - Strong positive correlation (r = 0.72)
    - Statistically significant (p < 0.001)
    - The scatterplot shows a clear positive relationship
 
-2. **Redshank and Godwit**:
+2. **S1 and S3**:
    - Moderate positive correlation (r = 0.55)
    - Statistically significant (p < 0.001)
    - The scatterplot shows a positive relationship with more scatter
 
-3. **Curlew and Godwit**:
+3. **S2 and S3**:
    - Moderate positive correlation (r = 0.63)
    - Statistically significant (p < 0.001)
    - The scatterplot shows a clear positive relationship
 
-All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between Redshank and Curlew.
+All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between S1 and S2.
 :::
 
 <br>
@@ -528,20 +522,20 @@ library(MASS)
 data(waders)
 
 # Check for normality of each variable using Shapiro-Wilk test
-shapiro.test(waders$Redshank)
-shapiro.test(waders$Curlew)
-shapiro.test(waders$Godwit)
+shapiro.test(waders$S1)
+shapiro.test(waders$S2)
+shapiro.test(waders$S3)
 
 # Visualize with Q-Q plots
 par(mfrow = c(1, 3))
-qqnorm(waders$Redshank, main = "Q-Q Plot: Redshank")
-qqline(waders$Redshank, col = "red")
+qqnorm(waders$S1, main = "Q-Q Plot: S1")
+qqline(waders$S1, col = "red")
 
-qqnorm(waders$Curlew, main = "Q-Q Plot: Curlew")
-qqline(waders$Curlew, col = "red")
+qqnorm(waders$S2, main = "Q-Q Plot: S2")
+qqline(waders$S2, col = "red")
 
-qqnorm(waders$Godwit, main = "Q-Q Plot: Godwit")
-qqline(waders$Godwit, col = "red")
+qqnorm(waders$S3, main = "Q-Q Plot: S3")
+qqline(waders$S3, col = "red")
 par(mfrow = c(1, 1))
 
 # Check for linearity of relationships
@@ -549,9 +543,9 @@ par(mfrow = c(1, 1))
 
 # Since the data violate normality assumptions, we should use Spearman correlation
 # Perform Spearman correlation tests
-spearman_rc <- cor.test(waders$Redshank, waders$Curlew, method = "spearman")
-spearman_rg <- cor.test(waders$Redshank, waders$Godwit, method = "spearman")
-spearman_cg <- cor.test(waders$Curlew, waders$Godwit, method = "spearman")
+spearman_rc <- cor.test(waders$S1, waders$S2, method = "spearman", exact = F)
+spearman_rg <- cor.test(waders$S1, waders$S3, method = "spearman", exact = F)
+spearman_cg <- cor.test(waders$S2, waders$S3, method = "spearman", exact = F)
 
 # Display results
 spearman_rc
@@ -559,21 +553,26 @@ spearman_rg
 spearman_cg
 
 # Compare with Pearson results
-pearson_rc <- cor.test(waders$Redshank, waders$Curlew, method = "pearson")
-pearson_rg <- cor.test(waders$Redshank, waders$Godwit, method = "pearson")
-pearson_cg <- cor.test(waders$Curlew, waders$Godwit, method = "pearson")
+pearson_rc <- cor.test(waders$S1, waders$S2, method = "pearson")
+pearson_rg <- cor.test(waders$S1, waders$S3, method = "pearson")
+pearson_cg <- cor.test(waders$S2, waders$S3, method = "pearson")
 
 # Create a comparison table
 comparison <- data.frame(
-  Species_Pair = c("Redshank-Curlew", "Redshank-Godwit", "Curlew-Godwit"),
   Pearson_r = c(pearson_rc$estimate, pearson_rg$estimate, pearson_cg$estimate),
   Pearson_p = c(pearson_rc$p.value, pearson_rg$p.value, pearson_cg$p.value),
   Spearman_rho = c(spearman_rc$estimate, spearman_rg$estimate, spearman_cg$estimate),
   Spearman_p = c(spearman_rc$p.value, spearman_rg$p.value, spearman_cg$p.value)
 )
 
-# Display comparison
-round(comparison, 4)
+comparison <- round(comparison[,2:4], 2)
+
+comparison <- data.frame(
+  Species_Pair = c("S1-S2", "S1-S3", "S2-S3"),
+  comparison
+  )
+
+comparison
 ```
 
 **Validation Analysis:**
@@ -584,7 +583,7 @@ In Question 2, Pearson correlation tests were performed, which assume:
 3. No significant outliers are present
 
 **Diagnostic Results:**
-- The Shapiro-Wilk tests show that all three variables (Redshank, Curlew, and Godwit) significantly deviate from normality (p < 0.05)
+- The Shapiro-Wilk tests show that all three variables (S1, S2, and S3) significantly deviate from normality (p < 0.05)
 - The Q-Q plots confirm non-normality, showing deviations from the theoretical line, particularly in the tails
 - The data are counts, which are typically right-skewed and better modeled with non-Gaussian distributions
 
@@ -598,7 +597,7 @@ Since the normality assumption is violated, Spearman rank correlation is more ap
 
 After validating the assumptions for correlation analysis, Spearman rank correlation was determined to be the appropriate method due to non-normality in the wader count data. 
 
-Strong positive correlations were found between all three wader species: Redshank and Curlew (ρ = 0.76, p < 0.001), Redshank and Godwit (ρ = 0.61, p < 0.001), and Curlew and Godwit (ρ = 0.69, p < 0.001). These results suggest that these wader species tend to co-occur across sites, likely due to shared habitat preferences.
+Strong positive correlations were found between all three wader species: S1 and S2 (ρ = 0.76, p < 0.001), S1 and S3 (ρ = 0.61, p < 0.001), and S2 and S3 (ρ = 0.69, p < 0.001). These results suggest that these wader species tend to co-occur across sites, likely due to shared habitat preferences.
 
 Notably, the Spearman correlation coefficients are slightly higher than the Pearson coefficients, indicating that the relationship between species counts may be monotonic but not strictly linear. This further justifies the use of Spearman correlation for this ecological count data.
 :::
@@ -626,6 +625,9 @@ seals <- read_excel("data/2.3-cfseal.xlsx")
 # Examine the data structure
 str(seals)
 head(seals)
+
+# NB seals$lung is non-numeric!!
+seals$lung <- as.numeric(seals$lung)
 
 # Step 1: Question
 # Question: Is there a significant correlation between weight, heart mass, and lung mass in Cape fur seals?
@@ -706,21 +708,27 @@ shapiro.test(seals$heart)
 shapiro.test(seals$lung)
 
 # If normality is questionable, perform Spearman correlation as well
-spearman_weight_heart <- cor.test(seals$weight, seals$heart, method = "spearman")
-spearman_weight_lung <- cor.test(seals$weight, seals$lung, method = "spearman")
-spearman_heart_lung <- cor.test(seals$heart, seals$lung, method = "spearman")
+spearman_weight_heart <- cor.test(seals$weight, seals$heart, method = "spearman", exact = F)
+spearman_weight_lung <- cor.test(seals$weight, seals$lung, method = "spearman", exact = F)
+spearman_heart_lung <- cor.test(seals$heart, seals$lung, method = "spearman", exact = F)
 
 # Create a comparison table
 comparison <- data.frame(
-  Variables = c("Weight-Heart", "Weight-Lung", "Heart-Lung"),
   Pearson_r = c(cor_weight_heart$estimate, cor_weight_lung$estimate, cor_heart_lung$estimate),
   Pearson_p = c(cor_weight_heart$p.value, cor_weight_lung$p.value, cor_heart_lung$p.value),
   Spearman_rho = c(spearman_weight_heart$estimate, spearman_weight_lung$estimate, spearman_heart_lung$estimate),
   Spearman_p = c(spearman_weight_heart$p.value, spearman_weight_lung$p.value, spearman_heart_lung$p.value)
 )
 
-# Display comparison
-round(comparison, 4)
+comparison <- round(comparison, 2)
+
+comparison <- data.frame(
+  Variables = c("Weight-Heart", "Weight-Lung", "Heart-Lung"),
+  comparison
+)
+
+comparison
+
 ```
 
 **Brief Report of Results:**
@@ -886,6 +894,8 @@ library(readxl)
 
 # Load the data
 seals <- read_excel("data/2.3-cfseal.xlsx")
+seals$lung <- as.numeric(seals$lung)
+
 
 # Step 1: Question
 # Question: Is the correlation between body weight and heart mass stronger than 
