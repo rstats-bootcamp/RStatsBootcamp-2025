@@ -2,6 +2,12 @@
 title: "14 R Markdown"
 ---
 
+<center>
+
+![Use markdown to make great reports](img/markdown.png){width="350px"}
+
+</center>
+
 ::: callout-note
 ## Learning Objectives
 
@@ -238,7 +244,7 @@ Based on our analysis, there is a significant negative relationship between car 
 
 ## 9 Practice Exercises
 
-### Exercise 1: Basic R Markdown
+### 9.1 Basic R Markdown
 
 Create a new R Markdown document that includes: - A title and your name - A brief introduction - A code chunk that loads and summarizes a dataset of your choice - A visualization of the data - A brief conclusion
 
@@ -309,7 +315,7 @@ This R Markdown document includes:
 
 <br>
 
-### Exercise 2: Output Formats
+### 9.2 Output Formats
 
 Experiment with different output formats (HTML, PDF, Word) and observe the differences.
 
@@ -395,7 +401,7 @@ To fully experience these differences, you would need to knit the same document 
 
 <br>
 
-### Exercise 3: Advanced Features
+### 9.3 Advanced Features
 
 Create an R Markdown document with a table of contents, code folding, and a custom theme.
 

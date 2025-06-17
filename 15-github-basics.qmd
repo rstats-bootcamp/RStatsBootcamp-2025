@@ -2,6 +2,12 @@
 title: "15 Git and GitHub"
 ---
 
+<center>
+
+![Github is a scientific stable for best practice](img/github.png){width="350px"}
+
+</center>
+
 ::: callout-note
 ## Learning Objectives
 
@@ -226,7 +232,7 @@ RStudio provides a user-friendly interface for Git operations:
 
 <br>
 
-### Exercise 1: Git Setup
+### 10.1 Git Setup
 
 Create a GitHub account (if you don't have one) and set up Git on your computer.
 
@@ -309,7 +315,7 @@ Once you've completed these steps, you'll have a GitHub account and Git configur
 
 <br>
 
-### Exercise 2: Repository Creation
+### 10.2 Repository Creation
 
 Create a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.
 
@@ -403,7 +409,7 @@ You can now view your repository on GitHub and see the R script you added.
 
 <br>
 
-### Exercise 3: Open Source Contribution
+### 10.3 Open Source Contribution
 
 Fork an existing R project on GitHub, make a small improvement, and create a pull request.
 

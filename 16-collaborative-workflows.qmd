@@ -2,6 +2,12 @@
 title: "16 Collaboration"
 ---
 
+<center>
+
+![Collaboration is the basis for great work](img/collaboration.png){width="350px"}
+
+</center>
+
 ::: callout-note
 ## Learning Objectives
 
@@ -228,7 +234,7 @@ Help new team members get up to speed:
 
 <br>
 
-### Exercise 1: Contributing Guidelines
+### 8.1 Contributing Guidelines
 
 Create a CONTRIBUTING.md file for a data science project, outlining guidelines for code style, pull requests, and code review.
 
@@ -529,7 +535,7 @@ This exercise demonstrates a typical workflow for resolving merge conflicts that
 
 <br>
 
-### Exercise 3: Feature Branch Workflow
+### 8.2 Feature Branch Workflow
 
 Set up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.
 
