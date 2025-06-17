@@ -514,6 +514,34 @@ img {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* Main content text in dark mode */
+[data-bs-theme="dark"] p,
+[data-bs-theme="dark"] li,
+[data-bs-theme="dark"] div {
+  color: #ecf0f1;
+}
+
+/* Code blocks in dark mode */
+[data-bs-theme="dark"] pre {
+  background-color: #1a2530;
+  border: 1px solid #34495e;
+}
+
+[data-bs-theme="dark"] code {
+  color: #3498db;
+}
+
+/* Ensure tables are visible in dark mode */
+[data-bs-theme="dark"] table {
+  color: #ecf0f1;
+}
+
+/* Ensure blockquotes are visible */
+[data-bs-theme="dark"] blockquote {
+  color: #bdc3c7;
+  border-left-color: #3498db;
+}
+
 /* Sidebar navigation in dark mode */
 [data-bs-theme="dark"] .sidebar-navigation {
   color: #ecf0f1;
