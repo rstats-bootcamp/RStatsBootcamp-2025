@@ -154,6 +154,11 @@ body {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+  color: #2c3e50;
+}
+
+.feature-card p {
+  color: #2c3e50;
 }
 
 .feature-card:hover {
