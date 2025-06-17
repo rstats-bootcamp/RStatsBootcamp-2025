@@ -240,6 +240,623 @@ Practice resolving a merge conflict by having two team members edit the same fil
 Set up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.
 :::
 
+### Exercise 1
+
+Create a `CONTRIBUTING.md` file for a data science project, outlining guidelines for code style, pull requests, and code review.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: CONTRIBUTING.md File
+
+Here's a well-structured CONTRIBUTING.md file for a data science project:
+
+```markdown
+# Contributing to [Project Name]
+
+Thank you for your interest in contributing to our project! This document outlines the guidelines for contributing code, documentation, and other improvements.
+
+## Table of Contents
+- [Code of Conduct](#code-of-conduct)
+- [Getting Started](#getting-started)
+- [Workflow](#workflow)
+- [Code Style](#code-style)
+- [Pull Requests](#pull-requests)
+- [Code Review](#code-review)
+- [Documentation](#documentation)
+- [Testing](#testing)
+
+## Code of Conduct
+
+Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md). We are committed to providing a welcoming and inclusive environment for all contributors.
+
+## Getting Started
+
+1. **Fork the repository** to your GitHub account
+2. **Clone your fork** to your local machine
+   ```bash
+   git clone https://github.com/your-username/project-name.git
+   cd project-name
+   ```
+3. **Add the upstream repository** as a remote
+   ```bash
+   git remote add upstream https://github.com/original-owner/project-name.git
+   ```
+4. **Create a new branch** for your work
+   ```bash
+   git checkout -b feature-or-fix-name
+   ```
+
+## Workflow
+
+We follow the [GitHub Flow](https://guides.github.com/introduction/flow/) model:
+
+1. Create a branch from `main`
+2. Make your changes and commit them
+3. Push your branch to your fork
+4. Open a pull request
+5. Address review feedback
+6. Your contribution is merged
+
+## Code Style
+
+We follow the [tidyverse style guide](https://style.tidyverse.org/) for R code. Key points:
+
+- Use 2 spaces for indentation (no tabs)
+- Limit lines to 80 characters
+- Use snake_case for variable and function names
+- Add spaces around operators (e.g., `x + y`, not `x+y`)
+- Use explicit returns for clarity in complex functions
+- Document all functions using roxygen2 style comments
+
+For code formatting, we recommend using the `styler` package:
+
+```r
+# Install styler if needed
+if (!requireNamespace("styler", quietly = TRUE)) {
+  install.packages("styler")
+}
+
+# Format your R script
+styler::style_file("path/to/your/file.R")
+```
+
+## Pull Requests
+
+When submitting a pull request:
+
+1. **Reference related issues** using GitHub's #issue-number syntax
+2. **Describe your changes** clearly and concisely
+3. **Explain the motivation** for the changes
+4. **Include screenshots** for UI changes
+5. **Update documentation** as needed
+6. **Ensure all tests pass**
+7. **Keep PRs focused** on a single issue or feature
+
+## Code Review
+
+Our code review process:
+
+- All code changes require at least one reviewer's approval
+- Reviewers should respond within 2 business days
+- Focus on:
+  - Code correctness
+  - Test coverage
+  - Documentation completeness
+  - Style guide adherence
+  - Performance considerations
+- Be respectful and constructive in all comments
+
+## Documentation
+
+Documentation is crucial for our project:
+
+- Update the README.md when changing user-facing features
+- Document all functions with roxygen2 comments
+- Include examples in function documentation
+- Update vignettes when changing major functionality
+- Use proper spelling and grammar
+
+## Testing
+
+We use the `testthat` package for testing:
+
+- Write tests for all new functions
+- Ensure existing tests pass with your changes
+- Aim for at least 80% code coverage
+- Include edge cases in your tests
+
+Thank you for contributing to our project! Your efforts help make this project better for everyone.
+```
+
+This CONTRIBUTING.md file:
+1. Provides clear instructions for new contributors
+2. Establishes consistent code style guidelines
+3. Outlines the pull request and review process
+4. Emphasizes the importance of documentation and testing
+5. Creates a welcoming environment for contributors
+:::
+
+<br>
+
+### Exercise 2
+
+Practice resolving a merge conflict by having two team members edit the same file and then merge their changes.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Resolving Merge Conflicts
+
+Here's a step-by-step guide to practice resolving merge conflicts:
+
+**Setup (Person 1):**
+
+```bash
+# Create a new repository
+mkdir merge-conflict-practice
+cd merge-conflict-practice
+git init
+
+# Create an initial file
+echo "# Data Analysis Project
+
+## Introduction
+This project analyzes the iris dataset.
+
+## Methods
+We use descriptive statistics and visualization.
+
+## Results
+Our analysis shows three distinct clusters.
+" > README.md
+
+# Initial commit
+git add README.md
+git commit -m "Initial commit with README"
+
+# Create a remote repository on GitHub and push
+# (Create the repo on GitHub first, then:)
+git remote add origin https://github.com/username/merge-conflict-practice.git
+git push -u origin main
+
+# Share the repository with Person 2
+```
+
+**Person 1's Changes:**
+
+```bash
+# Make sure you're on the main branch and up to date
+git checkout main
+git pull
+
+# Create a branch for your changes
+git checkout -b person1-updates
+
+# Edit the README.md file
+# (Open in your editor and modify the Methods section)
+# Change to:
+# ## Methods
+# We use descriptive statistics, visualization, and clustering algorithms.
+
+# Commit your changes
+git add README.md
+git commit -m "Update methods section with clustering info"
+
+# Push your branch
+git push -u origin person1-updates
+```
+
+**Person 2's Changes (simultaneously):**
+
+```bash
+# Clone the repository
+git clone https://github.com/username/merge-conflict-practice.git
+cd merge-conflict-practice
+
+# Create a branch for your changes
+git checkout -b person2-updates
+
+# Edit the README.md file
+# (Open in your editor and modify the Methods section)
+# Change to:
+# ## Methods
+# We use descriptive statistics, visualization, and machine learning techniques.
+
+# Commit your changes
+git add README.md
+git commit -m "Update methods section with ML info"
+
+# Push your branch
+git push -u origin person2-updates
+```
+
+**Creating the Merge Conflict:**
+
+```bash
+# Person 1: Create a pull request from person1-updates to main
+# (Do this on GitHub)
+
+# Person 1: Merge the pull request
+# (Do this on GitHub)
+
+# Person 2: Try to create and merge a pull request from person2-updates to main
+# This will show a conflict
+```
+
+**Resolving the Conflict (Person 2):**
+
+```bash
+# Update your main branch
+git checkout main
+git pull
+
+# Merge main into your branch
+git checkout person2-updates
+git merge main
+
+# You'll see a conflict message like:
+# Auto-merging README.md
+# CONFLICT (content): Merge conflict in README.md
+# Automatic merge failed; fix conflicts and then commit the result.
+
+# Open README.md in your editor, and you'll see something like:
+# ## Methods
+# <<<<<<< HEAD
+# We use descriptive statistics, visualization, and machine learning techniques.
+# =======
+# We use descriptive statistics, visualization, and clustering algorithms.
+# >>>>>>> main
+
+# Manually edit the file to resolve the conflict:
+# ## Methods
+# We use descriptive statistics, visualization, clustering algorithms, and machine learning techniques.
+
+# Mark the conflict as resolved
+git add README.md
+
+# Complete the merge
+git commit -m "Merge main into person2-updates and resolve conflicts"
+
+# Push the updated branch
+git push origin person2-updates
+
+# Now create a pull request on GitHub and it should be mergeable
+```
+
+**Key Steps in Conflict Resolution:**
+
+1. **Identify the conflict**: Look for the `<<<<<<<`, `=======`, and `>>>>>>>` markers
+2. **Understand both changes**: Review what each person was trying to accomplish
+3. **Make an informed decision**: Either:
+   - Choose one version
+   - Combine both changes
+   - Create something entirely new that preserves both intents
+4. **Remove conflict markers**: Delete the `<<<<<<<`, `=======`, and `>>>>>>>` lines
+5. **Test the result**: Ensure the file still makes sense and works as expected
+6. **Commit the resolution**: Add the file and commit to finalize the merge
+
+This exercise demonstrates a typical workflow for resolving merge conflicts that occur during collaborative development.
+:::
+
+<br>
+
+### Exercise 3
+
+Set up a feature branch workflow for a small project and practice the complete process from branch creation to pull request and merge.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Feature Branch Workflow
+
+Here's a complete walkthrough of setting up and using a feature branch workflow for a small R data analysis project:
+
+**1. Initial Repository Setup:**
+
+```bash
+# Create a new repository
+mkdir feature-workflow-demo
+cd feature-workflow-demo
+
+# Initialize git
+git init
+
+# Create initial project structure
+mkdir -p data/raw data/processed R results/figures results/tables
+
+# Create a README file
+echo "# Feature Branch Workflow Demo
+
+A small R data analysis project demonstrating the feature branch workflow.
+
+## Structure
+- `data/` - Raw and processed data files
+- `R/` - R scripts for analysis
+- `results/` - Output figures and tables
+
+## Getting Started
+See CONTRIBUTING.md for workflow guidelines.
+" > README.md
+
+# Create a .gitignore file
+echo "# R specific
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Data files (if large)
+# data/raw/*.csv
+
+# Output files
+results/figures/*.pdf
+results/tables/*.csv
+
+# OS specific
+.DS_Store
+Thumbs.db
+" > .gitignore
+
+# Initial commit
+git add .
+git commit -m "Initial project setup"
+
+# Create repository on GitHub and push
+# (Create repo on GitHub first, then:)
+git remote add origin https://github.com/username/feature-workflow-demo.git
+git push -u origin main
+```
+
+**2. Create a Development Branch:**
+
+```bash
+# Create and switch to a development branch
+git checkout -b develop
+git push -u origin develop
+```
+
+**3. Feature 1: Data Import Script**
+
+```bash
+# Create a feature branch from develop
+git checkout -b feature/data-import develop
+
+# Create a data import script
+echo "# Data Import Script
+
+#' Import and clean the iris dataset
+#'
+#' @return A clean data frame ready for analysis
+#' @export
+import_data <- function() {
+  # Load built-in iris dataset
+  data(iris)
+  
+  # Basic cleaning
+  clean_data <- iris
+  
+  # Save processed data
+  write.csv(clean_data, 'data/processed/clean_iris.csv', row.names = FALSE)
+  
+  return(clean_data)
+}
+" > R/01_import_data.R
+
+# Commit changes
+git add R/01_import_data.R
+git commit -m "Add data import function for iris dataset"
+
+# Push feature branch
+git push -u origin feature/data-import
+
+# Create a pull request on GitHub from feature/data-import to develop
+# Review and merge the PR on GitHub
+```
+
+**4. Feature 2: Exploratory Analysis**
+
+```bash
+# Update local develop branch
+git checkout develop
+git pull
+
+# Create a new feature branch
+git checkout -b feature/exploratory-analysis
+
+# Create an exploratory analysis script
+echo "# Exploratory Analysis
+
+#' Perform exploratory analysis on iris dataset
+#'
+#' @param data Clean iris dataset
+#' @return List of summary statistics and basic plots
+#' @export
+explore_data <- function(data) {
+  # Summary statistics
+  summary_stats <- summary(data)
+  
+  # Create a basic scatterplot
+  pdf('results/figures/sepal_dimensions.pdf')
+  plot(data$Sepal.Length, data$Sepal.Width,
+       col = as.numeric(data$Species),
+       pch = 19,
+       main = 'Sepal Dimensions by Species',
+       xlab = 'Sepal Length (cm)',
+       ylab = 'Sepal Width (cm)')
+  legend('topright', legend = levels(data$Species),
+         col = 1:3, pch = 19)
+  dev.off()
+  
+  # Return results
+  return(list(summary = summary_stats))
+}
+" > R/02_exploratory_analysis.R
+
+# Commit changes
+git add R/02_exploratory_analysis.R
+git commit -m "Add exploratory analysis function"
+
+# Push feature branch
+git push -u origin feature/exploratory-analysis
+
+# Create a pull request on GitHub from feature/exploratory-analysis to develop
+# Review and merge the PR on GitHub
+```
+
+**5. Feature 3: Statistical Analysis**
+
+```bash
+# Update local develop branch
+git checkout develop
+git pull
+
+# Create a new feature branch
+git checkout -b feature/statistical-analysis
+
+# Create a statistical analysis script
+echo "# Statistical Analysis
+
+#' Perform statistical analysis on iris dataset
+#'
+#' @param data Clean iris dataset
+#' @return List of statistical test results
+#' @export
+analyze_data <- function(data) {
+  # ANOVA to test for differences in sepal length between species
+  anova_result <- aov(Sepal.Length ~ Species, data = data)
+  
+  # Save ANOVA summary to a text file
+  sink('results/tables/anova_results.txt')
+  print(summary(anova_result))
+  sink()
+  
+  # Return results
+  return(list(anova = anova_result))
+}
+" > R/03_statistical_analysis.R
+
+# Commit changes
+git add R/03_statistical_analysis.R
+git commit -m "Add statistical analysis function"
+
+# Push feature branch
+git push -u origin feature/statistical-analysis
+
+# Create a pull request on GitHub from feature/statistical-analysis to develop
+# Review and merge the PR on GitHub
+```
+
+**6. Create Main Script to Integrate Features**
+
+```bash
+# Update local develop branch
+git checkout develop
+git pull
+
+# Create a new feature branch
+git checkout -b feature/main-script
+
+# Create a main script that uses all the functions
+echo "# Main Analysis Script
+
+# Source all function files
+source('R/01_import_data.R')
+source('R/02_exploratory_analysis.R')
+source('R/03_statistical_analysis.R')
+
+# Execute the full analysis pipeline
+main <- function() {
+  # Import data
+  cat('Importing and cleaning data...\n')
+  iris_data <- import_data()
+  
+  # Exploratory analysis
+  cat('Performing exploratory analysis...\n')
+  explore_results <- explore_data(iris_data)
+  
+  # Statistical analysis
+  cat('Performing statistical analysis...\n')
+  analysis_results <- analyze_data(iris_data)
+  
+  cat('Analysis complete. Results available in the results/ directory.\n')
+}
+
+# Run the analysis
+main()
+" > main.R
+
+# Commit changes
+git add main.R
+git commit -m "Add main script to integrate all analysis steps"
+
+# Push feature branch
+git push -u origin feature/main-script
+
+# Create a pull request on GitHub from feature/main-script to develop
+# Review and merge the PR on GitHub
+```
+
+**7. Prepare a Release**
+
+```bash
+# Update local develop branch
+git checkout develop
+git pull
+
+# Create a release branch
+git checkout -b release/v1.0.0
+
+# Update version information
+echo "# Version History
+
+## v1.0.0 - $(date +%Y-%m-%d)
+- Initial release
+- Data import functionality
+- Exploratory analysis
+- Statistical analysis
+" > VERSION.md
+
+# Commit changes
+git add VERSION.md
+git commit -m "Prepare for v1.0.0 release"
+
+# Push release branch
+git push -u origin release/v1.0.0
+
+# Create a pull request on GitHub from release/v1.0.0 to main
+# Review and merge the PR on GitHub
+
+# Also merge release changes back to develop
+git checkout develop
+git merge release/v1.0.0
+git push origin develop
+```
+
+**8. Tag the Release**
+
+```bash
+# Update local main branch
+git checkout main
+git pull
+
+# Create a tag for the release
+git tag -a v1.0.0 -m "Version 1.0.0"
+git push origin v1.0.0
+```
+
+This workflow demonstrates:
+1. Creating a structured project repository
+2. Using a development branch for ongoing work
+3. Creating feature branches for specific tasks
+4. Using pull requests for code review
+5. Merging completed features into the development branch
+6. Creating release branches for version preparation
+7. Merging releases to main and tagging versions
+
+The feature branch workflow helps maintain a clean main branch while allowing multiple developers to work on different features simultaneously without interference.
+:::
+
 ## Additional Resources
 
 -   [GitHub Flow Guide](https://guides.github.com/introduction/flow/)

@@ -229,13 +229,294 @@ RStudio provides a user-friendly interface for Git operations:
 
 Create a GitHub account (if you don't have one) and set up Git on your computer.
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Setting Up Git and GitHub
+
+**Creating a GitHub Account:**
+
+1. Go to [github.com](https://github.com)
+2. Click "Sign up" in the top-right corner
+3. Follow the prompts to create your account:
+   - Enter your email address
+   - Create a password
+   - Choose a username (this will be your GitHub identity)
+   - Verify your account (usually by solving a puzzle)
+   - Choose your plan (the free plan is sufficient for most users)
+
+**Setting Up Git on Your Computer:**
+
+For Windows:
+```bash
+# After installing Git from git-scm.com
+
+# Open Git Bash or Command Prompt and configure your identity
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Verify the configuration
+git config --list
+```
+
+For Mac:
+```bash
+# Install Git via Homebrew if not already installed
+brew install git
+
+# Configure your identity
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Verify the configuration
+git config --list
+```
+
+For Linux:
+```bash
+# Install Git via package manager
+sudo apt-get update
+sudo apt-get install git  # For Debian/Ubuntu
+# OR
+sudo yum install git      # For RHEL/CentOS
+
+# Configure your identity
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Verify the configuration
+git config --list
+```
+
+**Optional: Set Up SSH Key for Secure Authentication:**
+```bash
+# Generate SSH key
+ssh-keygen -t ed25519 -C "your.email@example.com"
+
+# Start the SSH agent
+eval "$(ssh-agent -s)"
+
+# Add your SSH key to the agent
+ssh-add ~/.ssh/id_ed25519
+
+# Copy the public key to clipboard (use appropriate command for your OS)
+# Then add it to your GitHub account in Settings > SSH and GPG keys
+```
+
+Once you've completed these steps, you'll have a GitHub account and Git configured on your computer, ready for version control.
+:::
+
+<br>
+
 ### Exercise 2
 
 Create a new repository on GitHub and clone it to your computer. Add a simple R script, commit it, and push it to GitHub.
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Creating and Populating a Repository
+
+**Creating a New Repository on GitHub:**
+
+1. Log in to GitHub
+2. Click the "+" icon in the top-right corner
+3. Select "New repository"
+4. Fill in the repository details:
+   - Repository name: "my-first-r-project"
+   - Description: "A repository for learning Git with R"
+   - Make it public or private
+   - Initialize with a README
+   - Click "Create repository"
+
+**Cloning the Repository to Your Computer:**
+
+```bash
+# Navigate to the directory where you want to store your project
+cd ~/Documents/Projects
+
+# Clone the repository
+git clone https://github.com/your-username/my-first-r-project.git
+
+# Navigate into the repository
+cd my-first-r-project
+```
+
+**Creating a Simple R Script:**
+
+Create a file named `simple_analysis.R` with the following content:
+
+```r
+# A simple R script for demonstration
+
+# Load a built-in dataset
+data(iris)
+
+# Display summary statistics
+summary(iris)
+
+# Create a simple plot
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     main = "Sepal Dimensions in Iris Dataset",
+     xlab = "Sepal Length (cm)",
+     ylab = "Sepal Width (cm)",
+     col = as.numeric(iris$Species),
+     pch = 19)
+
+# Add a legend
+legend("topright", 
+       legend = levels(iris$Species),
+       col = 1:3,
+       pch = 19,
+       title = "Species")
+
+# Calculate mean values by species
+aggregate(iris[, 1:4], by = list(Species = iris$Species), FUN = mean)
+```
+
+**Committing and Pushing the Script:**
+
+```bash
+# Check the status of your repository
+git status
+
+# Add the R script to the staging area
+git add simple_analysis.R
+
+# Commit the changes with a descriptive message
+git commit -m "Add simple iris dataset analysis script"
+
+# Push the changes to GitHub
+git push origin main
+```
+
+After completing these steps:
+1. You've created a new repository on GitHub
+2. Cloned it to your local machine
+3. Added a simple R script that analyzes the iris dataset
+4. Committed the changes with a descriptive message
+5. Pushed the changes back to GitHub
+
+You can now view your repository on GitHub and see the R script you added.
+:::
+
+<br>
+
 ### Exercise 3
 
 Fork an existing R project on GitHub, make a small improvement, and create a pull request.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Contributing to an Open Source Project
+
+**Forking an Existing R Project:**
+
+1. Find an R project on GitHub that interests you. For this example, let's use a hypothetical project called "simple-r-examples" at `https://github.com/original-owner/simple-r-examples`
+
+2. Click the "Fork" button in the top-right corner of the repository page
+
+3. This creates a copy of the repository in your GitHub account
+
+**Cloning Your Fork to Your Computer:**
+
+```bash
+# Clone your fork to your local machine
+git clone https://github.com/your-username/simple-r-examples.git
+
+# Navigate into the repository
+cd simple-r-examples
+
+# Add the original repository as a remote called "upstream"
+git remote add upstream https://github.com/original-owner/simple-r-examples.git
+```
+
+**Making a Small Improvement:**
+
+Let's say you found a script called `data_cleaning.R` with a function that could use better documentation:
+
+```r
+# Original function
+clean_data <- function(df) {
+  # Remove NA values
+  df <- na.omit(df)
+  # Remove duplicates
+  df <- unique(df)
+  return(df)
+}
+```
+
+You could improve it like this:
+
+```r
+#' Clean a data frame by removing missing values and duplicates
+#' 
+#' This function takes a data frame and performs basic cleaning operations
+#' including removal of NA values and duplicate rows.
+#' 
+#' @param df A data frame to be cleaned
+#' @return A cleaned data frame with no NA values or duplicate rows
+#' @examples
+#' df <- data.frame(x = c(1, 2, 2, NA, 3), y = c("a", "b", "b", "c", "d"))
+#' clean_data(df)
+clean_data <- function(df) {
+  # Check input
+  if (!is.data.frame(df)) {
+    stop("Input must be a data frame")
+  }
+  
+  # Remove NA values
+  df <- na.omit(df)
+  
+  # Remove duplicates
+  df <- unique(df)
+  
+  return(df)
+}
+```
+
+**Creating a Branch for Your Changes:**
+
+```bash
+# Create a new branch for your changes
+git checkout -b improve-documentation
+
+# Edit the file with your improvements
+# (Use your favorite text editor or IDE)
+
+# Check what you've changed
+git diff
+
+# Add the modified file to staging
+git add data_cleaning.R
+
+# Commit your changes
+git commit -m "Improve documentation for clean_data function"
+
+# Push your branch to your fork
+git push origin improve-documentation
+```
+
+**Creating a Pull Request:**
+
+1. Go to your fork on GitHub
+2. You should see a prompt to "Compare & pull request" for your recently pushed branch
+3. Click the button
+4. Fill in the pull request details:
+   - Title: "Improve documentation for clean_data function"
+   - Description: "Added roxygen-style documentation to the clean_data function, including parameter descriptions and an example. Also added input validation to check that the input is a data frame."
+5. Click "Create pull request"
+
+The maintainers of the original repository will now be notified of your pull request. They can review your changes, request modifications if needed, and eventually merge your improvements into the main project.
+
+**Best Practices for Pull Requests:**
+- Keep changes focused and small
+- Follow the project's coding style and conventions
+- Include tests if appropriate
+- Be responsive to feedback from maintainers
+- Be patient, as maintainers may be busy
+:::
 :::
 
 ## Additional Resources
