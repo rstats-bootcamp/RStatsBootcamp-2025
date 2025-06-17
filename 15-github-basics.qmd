@@ -518,7 +518,6 @@ The maintainers of the original repository will now be notified of your pull req
 - Be responsive to feedback from maintainers
 - Be patient, as maintainers may be busy
 :::
-:::
 
 ## Additional Resources
 
