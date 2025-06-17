@@ -505,9 +505,20 @@ img {
 [data-bs-theme="dark"] .feature-card,
 [data-bs-theme="dark"] .pathway-step {
   background-color: #1a2530;
-  color: #ffffff;
+  color: #ffffff !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border: 1px solid #34495e;
+}
+
+/* Ensure text inside feature cards and pathway steps is visible */
+[data-bs-theme="dark"] .feature-card *,
+[data-bs-theme="dark"] .pathway-step * {
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .feature-card h3,
+[data-bs-theme="dark"] .pathway-step h3 {
+  color: #3498db !important;
 }
 
 [data-bs-theme="dark"] .feature-card:hover,
@@ -519,8 +530,10 @@ img {
 /* Main content text in dark mode */
 [data-bs-theme="dark"] p,
 [data-bs-theme="dark"] li,
-[data-bs-theme="dark"] div {
-  color: #ecf0f1;
+[data-bs-theme="dark"] div,
+[data-bs-theme="dark"] .feature-card p,
+[data-bs-theme="dark"] .pathway-step p {
+  color: #ecf0f1 !important;
 }
 
 /* Code blocks in dark mode */
