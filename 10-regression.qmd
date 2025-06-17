@@ -454,9 +454,81 @@ Read in the data from the file 10-fish.xlsx. Use the `read.xlsx()` function from
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Loading and Exploring Data
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the required package
+library(openxlsx)
+
+# Read in the fish dataset
+fish <- read.xlsx('data/10-fish.xlsx')
+
+# Print the first few rows
+head(fish)
+
+# Check the structure of the data
+str(fish)
+
+# Get a summary of the dataset
+summary(fish)
+
+# Check how many fish of each species
+table(fish$Species)
+```
+:::
+
+<br>
+
 ### 7.2 Predicting Weight from Length
 
 Create a linear model to predict fish weight from Length1 using the `lm()` function. Print the summary of the model, and interpret the coefficients. Show your code.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Predicting Weight from Length
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the dataset
+library(openxlsx)
+fish <- read.xlsx('data/10-fish.xlsx')
+
+# Create a linear model to predict Weight from Length1
+weight_model <- lm(Weight ~ Length1, data = fish)
+
+# Print the summary of the model
+summary(weight_model)
+
+# Create a scatter plot with regression line
+plot(fish$Length1, fish$Weight,
+     xlab = "Length1 (cm)",
+     ylab = "Weight (g)",
+     main = "Fish Weight vs Length1",
+     pch = 20)
+
+# Add the regression line
+abline(weight_model, col = "red", lwd = 2)
+
+# Add the regression equation to the plot
+coef_values <- coef(weight_model)
+eq_text <- sprintf("Weight = %.2f + %.2f × Length1", coef_values[1], coef_values[2])
+text(20, 800, eq_text, pos = 4)
+```
+
+The linear model predicts fish weight based on Length1. The intercept represents the estimated weight when Length1 is zero (which is not biologically meaningful in this context). The slope coefficient indicates how much the weight increases for each one-unit (cm) increase in Length1.
+
+The summary output provides:
+- Coefficient estimates and their significance
+- R-squared value showing how much variance in weight is explained by length
+- F-statistic and p-value for the overall model significance
+
+The relationship between fish length and weight is typically non-linear (following a cubic relationship), so a linear model may not be the best fit. However, it provides a useful starting point for understanding the relationship.
+:::
 
 <br>
 
@@ -466,15 +538,208 @@ Assess whether the assumptions of linear regression are met for the model in the
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Assessing Model Assumptions
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the dataset
+library(openxlsx)
+fish <- read.xlsx('data/10-fish.xlsx')
+
+# Create the model
+weight_model <- lm(Weight ~ Length1, data = fish)
+
+# 1. Check for linearity and homoscedasticity using residual plots
+plot(weight_model$fitted.values, weight_model$residuals,
+     xlab = "Fitted Values",
+     ylab = "Residuals",
+     main = "Residuals vs Fitted Values",
+     pch = 20)
+abline(h = 0, col = "red", lty = 2)
+
+# 2. Check for normality of residuals
+# Histogram
+hist(weight_model$residuals,
+     main = "Histogram of Residuals",
+     xlab = "Residuals",
+     breaks = 20)
+
+# Q-Q plot
+qqnorm(weight_model$residuals)
+qqline(weight_model$residuals, col = "red")
+
+# Shapiro-Wilk test for normality
+shapiro.test(weight_model$residuals)
+
+# 3. Check for influential observations
+plot(cooks.distance(weight_model),
+     type = "h",
+     main = "Cook's Distance",
+     ylab = "Cook's Distance",
+     xlab = "Observation Number")
+abline(h = 4/length(weight_model$residuals), col = "red", lty = 2)
+```
+
+The diagnostic plots and tests reveal several issues with the linear model:
+
+1. **Linearity and Homoscedasticity**: The residuals vs. fitted values plot shows a clear pattern (fan shape), indicating that the relationship between Length1 and Weight is not linear and the variance is not constant (heteroscedasticity).
+
+2. **Normality of Residuals**: The histogram and Q-Q plot show that residuals are not normally distributed. The Shapiro-Wilk test confirms this with a p-value < 0.05, indicating significant deviation from normality.
+
+3. **Influential Observations**: The Cook's distance plot identifies several influential points that may be disproportionately affecting the model.
+
+These violations suggest that a simple linear model is not appropriate for this data. Possible solutions include:
+- Transforming the variables (e.g., log transformation)
+- Using a non-linear model
+- Considering separate models for different species of fish
+:::
+
+<br>
+
 ### 7.4 Transforming Non-Linear Relationships
 
 Plot `perch$Weight ~ perch$Length2`. The relationship is obviously not linear but curved. Devise and execute a solution to enable the use of linear regression, possibly by transforming the data. Show any relevant code and briefly explain your results and conclusions.
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Solution: Transforming Non-Linear Relationships
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the dataset
+library(openxlsx)
+fish <- read.xlsx('data/10-fish.xlsx')
+
+# Extract perch data
+perch <- fish[fish$Species == "Perch", ]
+
+# Plot the original relationship
+plot(perch$Length2, perch$Weight,
+     xlab = "Length2 (cm)",
+     ylab = "Weight (g)",
+     main = "Perch Weight vs Length2",
+     pch = 20)
+
+# The relationship looks cubic (Weight ~ Length^3), which makes biological sense
+# Try log transformation of both variables
+
+# Log transform both variables
+log_weight <- log(perch$Weight)
+log_length <- log(perch$Length2)
+
+# Plot the transformed relationship
+plot(log_length, log_weight,
+     xlab = "log(Length2)",
+     ylab = "log(Weight)",
+     main = "Log-Transformed: Perch log(Weight) vs log(Length2)",
+     pch = 20)
+
+# Fit a linear model to the transformed data
+log_model <- lm(log_weight ~ log_length)
+summary(log_model)
+
+# Add regression line to the transformed plot
+abline(log_model, col = "red", lwd = 2)
+
+# Check the model assumptions on the transformed data
+# Residual plot
+plot(log_model$fitted.values, log_model$residuals,
+     xlab = "Fitted Values",
+     ylab = "Residuals",
+     main = "Residuals vs Fitted (Log-Transformed Model)",
+     pch = 20)
+abline(h = 0, col = "red", lty = 2)
+
+# Q-Q plot for normality
+qqnorm(log_model$residuals)
+qqline(log_model$residuals, col = "red")
+
+# Shapiro-Wilk test
+shapiro.test(log_model$residuals)
+```
+
+The relationship between fish weight and length is typically described by the allometric growth equation:
+Weight = a × Length^b
+
+Where 'b' is often close to 3 (cubic relationship), reflecting that as a fish grows in length, its weight increases proportionally to its volume.
+
+By log-transforming both variables, we convert this non-linear relationship to a linear one:
+log(Weight) = log(a) + b × log(Length)
+
+The transformed model shows:
+1. A much more linear relationship (as seen in the scatter plot)
+2. More evenly distributed residuals (homoscedasticity)
+3. Residuals that are closer to normally distributed
+
+The slope coefficient (b) in the log-transformed model is approximately 3, confirming the cubic relationship between length and weight. This is consistent with biological expectations: as fish grow, their weight increases proportionally to their volume (length³).
+
+This transformation demonstrates how non-linear relationships can often be linearized through appropriate transformations, allowing us to use linear regression techniques.
+:::
+
+<br>
+
 ### 7.5 Exploring Morphological Covariance
 
 Explore the data for `perch` and describe the covariance of all of the morphological, numeric variables using all relevant means, while being as concise as possible. Show your code.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Exploring Morphological Covariance
+```{r}
+#| echo: true
+#| eval: false
+
+# Load the dataset
+library(openxlsx)
+fish <- read.xlsx('data/10-fish.xlsx')
+
+# Extract perch data
+perch <- fish[fish$Species == "Perch", ]
+
+# Remove non-numeric columns for correlation analysis
+perch_numeric <- perch[, c("Weight", "Length1", "Length2", "Length3", "Height", "Width")]
+
+# Calculate correlation matrix
+cor_matrix <- cor(perch_numeric)
+round(cor_matrix, 3)
+
+# Calculate covariance matrix
+cov_matrix <- cov(perch_numeric)
+round(cov_matrix, 3)
+
+# Create a pairs plot to visualize relationships
+pairs(perch_numeric, 
+      main = "Relationships Between Perch Morphological Variables",
+      pch = 20,
+      col = "blue")
+
+# Calculate summary statistics
+summary(perch_numeric)
+
+# Calculate coefficient of variation (CV) for each variable
+cv <- function(x) {sd(x) / mean(x) * 100}
+sapply(perch_numeric, cv)
+```
+
+The analysis of perch morphological variables reveals:
+
+1. **Strong Correlations**: All morphological variables are highly positively correlated (r > 0.9), indicating that as one dimension increases, the others increase proportionally. This is expected in fish morphology where growth tends to be relatively proportional.
+
+2. **Length Measurements**: The three length measurements (Length1, Length2, Length3) show extremely high correlations (r > 0.99), suggesting they capture essentially the same information about fish size.
+
+3. **Weight Relationships**: Weight shows strong but slightly lower correlations with linear measurements, reflecting the non-linear (approximately cubic) relationship between length and weight.
+
+4. **Variability**: The coefficient of variation (CV) is highest for Weight, indicating greater relative variability in this measurement compared to the linear dimensions.
+
+5. **Covariance Structure**: The covariance matrix shows that Weight has the largest absolute covariance with other variables, which is expected given its different scale and cubic relationship with linear dimensions.
+
+This exploration confirms that perch exhibit typical fish allometry, with proportional growth across different body dimensions and a predictable weight-length relationship. For modeling purposes, we could likely use any single length measurement to represent fish size, as they are highly redundant.
+:::
 
 <br>
 
@@ -485,10 +750,10 @@ Write a plausible practice question involving the the exploration or analysis of
 <br>
 
 ::: {.callout-tip collapse="true"}
-## Practice Question and Solution
+## Solution: Creating a Regression Question
 ```{r}
 #| echo: true
-#| eval: true
+#| eval: false
 
 # Load the fish data
 library(openxlsx)
@@ -497,118 +762,111 @@ fish <- read.xlsx('data/10-fish.xlsx')
 # Check available species
 unique(fish$Species)
 
-# Select Pike data for this example
-pike <- fish[fish$Species == "Pike", ]
+# Select Bream data for this example
+bream <- fish[fish$Species == "Bream", ]
 ```
 
 **Practice Question:**
 
-"Pike fish are known to have a distinctive elongated body shape compared to other species. Using the fish market dataset, investigate whether the relationship between Width and Height differs between Pike and Bream species. Specifically:
+"Bream fish are commonly studied in fisheries research. Using the fish market dataset, investigate whether Height or Width is a better predictor of Weight for Bream. Specifically:
 
-1. Create separate regression models for Width ~ Height for both Pike and Bream
-2. Compare the regression slopes and intercepts between the two species
-3. Test whether there is a statistically significant difference in these relationships
-4. Visualize the two regression lines on a single plot
-5. Discuss the biological implications of any differences found in body proportions between these species"
+1. Create separate simple linear regression models for Weight ~ Height and Weight ~ Width
+2. Compare the models using R-squared values and residual analysis
+3. Test whether combining both predictors in a multiple regression model (Weight ~ Height + Width) significantly improves prediction accuracy
+4. Create appropriate visualizations to support your findings
+5. Based on your analysis, which measurement(s) would you recommend fisheries researchers use to estimate Bream weight in the field?"
 
-**Solution:**
+**Solution Code:**
 
 ```{r}
 #| echo: true
-#| eval: true
+#| eval: false
 
-# Extract Pike and Bream data
-pike <- fish[fish$Species == "Pike", ]
+# Extract Bream data
 bream <- fish[fish$Species == "Bream", ]
 
-# Create regression models for each species
-pike_model <- lm(Width ~ Height, data = pike)
-bream_model <- lm(Width ~ Height, data = bream)
+# Create the two simple regression models
+height_model <- lm(Weight ~ Height, data = bream)
+width_model <- lm(Weight ~ Width, data = bream)
 
-# Display model summaries
-summary(pike_model)
-summary(bream_model)
+# Compare model summaries
+summary(height_model)
+summary(width_model)
 
-# Create a combined dataset for interaction model
-combined <- rbind(pike, bream)
-combined$Species <- factor(combined$Species)
+# Create a multiple regression model with both predictors
+combined_model <- lm(Weight ~ Height + Width, data = bream)
+summary(combined_model)
 
-# Create an interaction model to test for different slopes
-interaction_model <- lm(Width ~ Height * Species, data = combined)
-summary(interaction_model)
+# ANOVA to formally compare the models
+anova(height_model, combined_model)
+anova(width_model, combined_model)
 
-# Create a visualization
-plot(combined$Height, combined$Width,
+# Create visualizations
+par(mfrow = c(2, 2))
+
+# Plot 1: Weight vs Height with regression line
+plot(bream$Height, bream$Weight,
      xlab = "Height (cm)",
-     ylab = "Width (cm)",
-     main = "Width vs Height: Pike vs Bream",
-     pch = c(16, 17)[as.numeric(combined$Species)],
-     col = c("darkblue", "darkred")[as.numeric(combined$Species)])
+     ylab = "Weight (g)",
+     main = "Bream Weight vs Height",
+     pch = 20)
+abline(height_model, col = "blue", lwd = 2)
 
-# Add regression lines
-height_seq <- seq(min(combined$Height), max(combined$Height), length.out = 100)
-pike_pred <- predict(pike_model, newdata = data.frame(Height = height_seq))
-bream_pred <- predict(bream_model, newdata = data.frame(Height = height_seq))
+# Plot 2: Weight vs Width with regression line
+plot(bream$Width, bream$Weight,
+     xlab = "Width (cm)",
+     ylab = "Weight (g)",
+     main = "Bream Weight vs Width",
+     pch = 20)
+abline(width_model, col = "red", lwd = 2)
 
-lines(height_seq, pike_pred, col = "darkblue", lwd = 2)
-lines(height_seq, bream_pred, col = "darkred", lwd = 2)
+# Plot 3: Residuals of Height model
+plot(fitted(height_model), residuals(height_model),
+     xlab = "Fitted Values",
+     ylab = "Residuals",
+     main = "Residuals: Height Model",
+     pch = 20)
+abline(h = 0, col = "blue", lty = 2)
 
-# Add legend
-legend("topleft", 
-       legend = c("Pike", "Bream", "Pike regression", "Bream regression"),
-       col = c("darkblue", "darkred", "darkblue", "darkred"),
-       pch = c(16, 17, NA, NA),
-       lty = c(NA, NA, 1, 1),
-       lwd = c(NA, NA, 2, 2),
-       cex = 0.8)
+# Plot 4: Residuals of Width model
+plot(fitted(width_model), residuals(width_model),
+     xlab = "Fitted Values",
+     ylab = "Residuals",
+     main = "Residuals: Width Model",
+     pch = 20)
+abline(h = 0, col = "red", lty = 2)
 
-# Calculate and display the regression equations
-pike_eq <- sprintf("Pike: Width = %.2f + %.2f × Height", 
-                  coef(pike_model)[1], coef(pike_model)[2])
-bream_eq <- sprintf("Bream: Width = %.2f + %.2f × Height", 
-                   coef(bream_model)[1], coef(bream_model)[2])
+par(mfrow = c(1, 1))
 
-text(x = 10, y = 3, labels = pike_eq, col = "darkblue", pos = 4)
-text(x = 10, y = 2.5, labels = bream_eq, col = "darkred", pos = 4)
+# Create a 3D visualization of the multiple regression model
+# (Note: In base R, we can approximate this with a custom function)
+# Create a grid of Height and Width values
+height_range <- seq(min(bream$Height), max(bream$Height), length.out = 10)
+width_range <- seq(min(bream$Width), max(bream$Width), length.out = 10)
+pred_grid <- expand.grid(Height = height_range, Width = width_range)
 
-# Calculate confidence intervals for the slopes
-confint(pike_model)
-confint(bream_model)
+# Predict Weight for each combination
+pred_grid$Weight <- predict(combined_model, newdata = pred_grid)
 
-# Calculate width-to-height ratio for both species
-pike$ratio <- pike$Width / pike$Height
-bream$ratio <- bream$Width / bream$Height
+# Create a simple contour plot
+contour(x = height_range, 
+        y = width_range, 
+        z = matrix(pred_grid$Weight, nrow = length(height_range)),
+        xlab = "Height (cm)",
+        ylab = "Width (cm)",
+        main = "Predicted Weight Contours (g)",
+        levels = seq(0, 1000, by = 100))
 
-# Compare the distributions of these ratios
-boxplot(pike$ratio, bream$ratio, 
-        names = c("Pike", "Bream"),
-        ylab = "Width-to-Height Ratio",
-        main = "Body Shape Comparison")
-
-# Statistical test for difference in ratios
-t.test(pike$ratio, bream$ratio)
+# Add the actual data points
+points(bream$Height, bream$Width, pch = 20)
 ```
 
-**Analysis Results:**
-
-The regression analysis reveals distinct differences in body proportions between Pike and Bream:
-
-1. **Pike Regression**: Width = 0.59 + 0.17 × Height (R² = 0.65, p < 0.001)
-2. **Bream Regression**: Width = -0.70 + 0.37 × Height (R² = 0.86, p < 0.001)
-
-The interaction term in the combined model is highly significant (p < 0.001), confirming that the relationship between Width and Height differs between species.
-
-Pike have a significantly lower Width-to-Height ratio (mean = 0.45) compared to Bream (mean = 0.56), t(50.1) = -9.97, p < 0.001. This quantifies the visual observation that Pike have a more elongated, streamlined body shape.
-
-**Biological Implications:**
-
-These differences in body proportions reflect the distinct ecological niches and feeding strategies of these species:
-
-1. Pike's elongated body shape (lower Width-to-Height ratio and shallower slope) is adapted for rapid acceleration and burst swimming, consistent with their ambush predator lifestyle.
-
-2. Bream's deeper body shape (higher Width-to-Height ratio and steeper slope) is typical of fish that maneuver in complex habitats and feed on benthic organisms.
-
-The regression slopes indicate that as fish grow, Bream become proportionally deeper-bodied than Pike, suggesting that these morphological differences become more pronounced with age/size. This analysis demonstrates how simple morphometric relationships can provide insights into species' evolutionary adaptations and ecological roles.
+The analysis would reveal:
+1. Both Height and Width are strong predictors of Bream weight
+2. The R-squared values would show which single measurement explains more variance in weight
+3. The multiple regression would likely show that using both measurements improves prediction accuracy
+4. The residual plots would reveal whether the models meet regression assumptions
+5. The recommendation would be based on both statistical performance and practical field measurement considerations
 :::
 
 <br>

@@ -1000,238 +1000,406 @@ F-statistic:  1543 on 1 and 54 DF,  p-value: &lt; 2.2e-16</code></pre>
 <section id="loading-and-exploring-the-fish-dataset" class="level3"><h3 class="anchored" data-anchor-id="loading-and-exploring-the-fish-dataset">7.1 Loading and Exploring the Fish Dataset</h3>
 <p>Read in the data from the file 10-fish.xlsx. Use the <code><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx()</a></code> function from the <code>openxlsx</code> package. Print the first few rows of the data, and check the structure of the data. Show your code.</p>
 <p><br></p>
-</section><section id="predicting-weight-from-length" class="level3"><h3 class="anchored" data-anchor-id="predicting-weight-from-length">7.2 Predicting Weight from Length</h3>
-<p>Create a linear model to predict fish weight from Length1 using the <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> function. Print the summary of the model, and interpret the coefficients. Show your code.</p>
-<p><br></p>
-</section><section id="assessing-model-assumptions" class="level3"><h3 class="anchored" data-anchor-id="assessing-model-assumptions">7.3 Assessing Model Assumptions</h3>
-<p>Assess whether the assumptions of linear regression are met for the model in the previous question. Use diagnostic plots and formal tests. Show your code and interpret the results.</p>
-<p><br></p>
-</section><section id="transforming-non-linear-relationships" class="level3"><h3 class="anchored" data-anchor-id="transforming-non-linear-relationships">7.4 Transforming Non-Linear Relationships</h3>
-<p>Plot <code>perch$Weight ~ perch$Length2</code>. The relationship is obviously not linear but curved. Devise and execute a solution to enable the use of linear regression, possibly by transforming the data. Show any relevant code and briefly explain your results and conclusions.</p>
-<p><br></p>
-</section><section id="exploring-morphological-covariance" class="level3"><h3 class="anchored" data-anchor-id="exploring-morphological-covariance">7.5 Exploring Morphological Covariance</h3>
-<p>Explore the data for <code>perch</code> and describe the covariance of all of the morphological, numeric variables using all relevant means, while being as concise as possible. Show your code.</p>
-<p><br></p>
-</section><section id="create-your-own-regression-question" class="level3"><h3 class="anchored" data-anchor-id="create-your-own-regression-question">7.6 Create Your Own Regression Question</h3>
-<p>Write a plausible practice question involving the the exploration or analysis of regression. Make use of the fish data from any species except for <code>Perch</code>.</p>
-<p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Practice Question and Solution
+Solution: Loading and Exploring Data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the fish data</span></span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the required package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Read in the fish dataset</span></span>
+<span><span class="va">fish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">'data/10-fish.xlsx'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Print the first few rows</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">fish</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Check the structure of the data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">fish</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Get a summary of the dataset</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">fish</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Check how many fish of each species</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="predicting-weight-from-length" class="level3"><h3 class="anchored" data-anchor-id="predicting-weight-from-length">7.2 Predicting Weight from Length</h3>
+<p>Create a linear model to predict fish weight from Length1 using the <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> function. Print the summary of the model, and interpret the coefficients. Show your code.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Predicting Weight from Length
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the dataset</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">fish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">'data/10-fish.xlsx'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create a linear model to predict Weight from Length1</span></span>
+<span><span class="va">weight_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Weight</span> <span class="op">~</span> <span class="va">Length1</span>, data <span class="op">=</span> <span class="va">fish</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Print the summary of the model</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create a scatter plot with regression line</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">fish</span><span class="op">$</span><span class="va">Length1</span>, <span class="va">fish</span><span class="op">$</span><span class="va">Weight</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Length1 (cm)"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Weight (g)"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Fish Weight vs Length1"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Add the regression line</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">weight_model</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Add the regression equation to the plot</span></span>
+<span><span class="va">coef_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">)</span></span>
+<span><span class="va">eq_text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">"Weight = %.2f + %.2f × Length1"</span>, <span class="va">coef_values</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">coef_values</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">800</span>, <span class="va">eq_text</span>, pos <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The linear model predicts fish weight based on Length1. The intercept represents the estimated weight when Length1 is zero (which is not biologically meaningful in this context). The slope coefficient indicates how much the weight increases for each one-unit (cm) increase in Length1.</p>
+<p>The summary output provides: - Coefficient estimates and their significance - R-squared value showing how much variance in weight is explained by length - F-statistic and p-value for the overall model significance</p>
+<p>The relationship between fish length and weight is typically non-linear (following a cubic relationship), so a linear model may not be the best fit. However, it provides a useful starting point for understanding the relationship.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="assessing-model-assumptions" class="level3"><h3 class="anchored" data-anchor-id="assessing-model-assumptions">7.3 Assessing Model Assumptions</h3>
+<p>Assess whether the assumptions of linear regression are met for the model in the previous question. Use diagnostic plots and formal tests. Show your code and interpret the results.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Assessing Model Assumptions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the dataset</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">fish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">'data/10-fish.xlsx'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create the model</span></span>
+<span><span class="va">weight_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Weight</span> <span class="op">~</span> <span class="va">Length1</span>, data <span class="op">=</span> <span class="va">fish</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 1. Check for linearity and homoscedasticity using residual plots</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">$</span><span class="va">fitted.values</span>, <span class="va">weight_model</span><span class="op">$</span><span class="va">residuals</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Fitted Values"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Residuals"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Residuals vs Fitted Values"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fl">0</span>, col <span class="op">=</span> <span class="st">"red"</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 2. Check for normality of residuals</span></span>
+<span><span class="co"># Histogram</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">$</span><span class="va">residuals</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Histogram of Residuals"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Residuals"</span>,</span>
+<span>     breaks <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Q-Q plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">$</span><span class="va">residuals</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">$</span><span class="va">residuals</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Shapiro-Wilk test for normality</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">$</span><span class="va">residuals</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 3. Check for influential observations</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">cooks.distance</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">)</span>,</span>
+<span>     type <span class="op">=</span> <span class="st">"h"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Cook's Distance"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Cook's Distance"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Observation Number"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fl">4</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">weight_model</span><span class="op">$</span><span class="va">residuals</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"red"</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The diagnostic plots and tests reveal several issues with the linear model:</p>
+<ol type="1">
+<li><p><strong>Linearity and Homoscedasticity</strong>: The residuals vs.&nbsp;fitted values plot shows a clear pattern (fan shape), indicating that the relationship between Length1 and Weight is not linear and the variance is not constant (heteroscedasticity).</p></li>
+<li><p><strong>Normality of Residuals</strong>: The histogram and Q-Q plot show that residuals are not normally distributed. The Shapiro-Wilk test confirms this with a p-value &lt; 0.05, indicating significant deviation from normality.</p></li>
+<li><p><strong>Influential Observations</strong>: The Cook’s distance plot identifies several influential points that may be disproportionately affecting the model.</p></li>
+</ol>
+<p>These violations suggest that a simple linear model is not appropriate for this data. Possible solutions include: - Transforming the variables (e.g., log transformation) - Using a non-linear model - Considering separate models for different species of fish</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="transforming-non-linear-relationships" class="level3"><h3 class="anchored" data-anchor-id="transforming-non-linear-relationships">7.4 Transforming Non-Linear Relationships</h3>
+<p>Plot <code>perch$Weight ~ perch$Length2</code>. The relationship is obviously not linear but curved. Devise and execute a solution to enable the use of linear regression, possibly by transforming the data. Show any relevant code and briefly explain your results and conclusions.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Transforming Non-Linear Relationships
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the dataset</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">fish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">'data/10-fish.xlsx'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Extract perch data</span></span>
+<span><span class="va">perch</span> <span class="op">&lt;-</span> <span class="va">fish</span><span class="op">[</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"Perch"</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Plot the original relationship</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">perch</span><span class="op">$</span><span class="va">Length2</span>, <span class="va">perch</span><span class="op">$</span><span class="va">Weight</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Length2 (cm)"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Weight (g)"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Perch Weight vs Length2"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># The relationship looks cubic (Weight ~ Length^3), which makes biological sense</span></span>
+<span><span class="co"># Try log transformation of both variables</span></span>
+<span></span>
+<span><span class="co"># Log transform both variables</span></span>
+<span><span class="va">log_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">perch</span><span class="op">$</span><span class="va">Weight</span><span class="op">)</span></span>
+<span><span class="va">log_length</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">perch</span><span class="op">$</span><span class="va">Length2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Plot the transformed relationship</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">log_length</span>, <span class="va">log_weight</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"log(Length2)"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"log(Weight)"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Log-Transformed: Perch log(Weight) vs log(Length2)"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Fit a linear model to the transformed data</span></span>
+<span><span class="va">log_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">log_weight</span> <span class="op">~</span> <span class="va">log_length</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">log_model</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Add regression line to the transformed plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">log_model</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Check the model assumptions on the transformed data</span></span>
+<span><span class="co"># Residual plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">log_model</span><span class="op">$</span><span class="va">fitted.values</span>, <span class="va">log_model</span><span class="op">$</span><span class="va">residuals</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Fitted Values"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Residuals"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Residuals vs Fitted (Log-Transformed Model)"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fl">0</span>, col <span class="op">=</span> <span class="st">"red"</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Q-Q plot for normality</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqnorm</a></span><span class="op">(</span><span class="va">log_model</span><span class="op">$</span><span class="va">residuals</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html">qqline</a></span><span class="op">(</span><span class="va">log_model</span><span class="op">$</span><span class="va">residuals</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Shapiro-Wilk test</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">log_model</span><span class="op">$</span><span class="va">residuals</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The relationship between fish weight and length is typically described by the allometric growth equation: Weight = a × Length^b</p>
+<p>Where ‘b’ is often close to 3 (cubic relationship), reflecting that as a fish grows in length, its weight increases proportionally to its volume.</p>
+<p>By log-transforming both variables, we convert this non-linear relationship to a linear one: log(Weight) = log(a) + b × log(Length)</p>
+<p>The transformed model shows: 1. A much more linear relationship (as seen in the scatter plot) 2. More evenly distributed residuals (homoscedasticity) 3. Residuals that are closer to normally distributed</p>
+<p>The slope coefficient (b) in the log-transformed model is approximately 3, confirming the cubic relationship between length and weight. This is consistent with biological expectations: as fish grow, their weight increases proportionally to their volume (length³).</p>
+<p>This transformation demonstrates how non-linear relationships can often be linearized through appropriate transformations, allowing us to use linear regression techniques.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="exploring-morphological-covariance" class="level3"><h3 class="anchored" data-anchor-id="exploring-morphological-covariance">7.5 Exploring Morphological Covariance</h3>
+<p>Explore the data for <code>perch</code> and describe the covariance of all of the morphological, numeric variables using all relevant means, while being as concise as possible. Show your code.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Exploring Morphological Covariance
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the dataset</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">fish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">'data/10-fish.xlsx'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Extract perch data</span></span>
+<span><span class="va">perch</span> <span class="op">&lt;-</span> <span class="va">fish</span><span class="op">[</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"Perch"</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Remove non-numeric columns for correlation analysis</span></span>
+<span><span class="va">perch_numeric</span> <span class="op">&lt;-</span> <span class="va">perch</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Weight"</span>, <span class="st">"Length1"</span>, <span class="st">"Length2"</span>, <span class="st">"Length3"</span>, <span class="st">"Height"</span>, <span class="st">"Width"</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Calculate correlation matrix</span></span>
+<span><span class="va">cor_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">perch_numeric</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">cor_matrix</span>, <span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate covariance matrix</span></span>
+<span><span class="va">cov_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cov</a></span><span class="op">(</span><span class="va">perch_numeric</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">cov_matrix</span>, <span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create a pairs plot to visualize relationships</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html">pairs</a></span><span class="op">(</span><span class="va">perch_numeric</span>, </span>
+<span>      main <span class="op">=</span> <span class="st">"Relationships Between Perch Morphological Variables"</span>,</span>
+<span>      pch <span class="op">=</span> <span class="fl">20</span>,</span>
+<span>      col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate summary statistics</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">perch_numeric</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate coefficient of variation (CV) for each variable</span></span>
+<span><span class="va">cv</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">perch_numeric</span>, <span class="va">cv</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The analysis of perch morphological variables reveals:</p>
+<ol type="1">
+<li><p><strong>Strong Correlations</strong>: All morphological variables are highly positively correlated (r &gt; 0.9), indicating that as one dimension increases, the others increase proportionally. This is expected in fish morphology where growth tends to be relatively proportional.</p></li>
+<li><p><strong>Length Measurements</strong>: The three length measurements (Length1, Length2, Length3) show extremely high correlations (r &gt; 0.99), suggesting they capture essentially the same information about fish size.</p></li>
+<li><p><strong>Weight Relationships</strong>: Weight shows strong but slightly lower correlations with linear measurements, reflecting the non-linear (approximately cubic) relationship between length and weight.</p></li>
+<li><p><strong>Variability</strong>: The coefficient of variation (CV) is highest for Weight, indicating greater relative variability in this measurement compared to the linear dimensions.</p></li>
+<li><p><strong>Covariance Structure</strong>: The covariance matrix shows that Weight has the largest absolute covariance with other variables, which is expected given its different scale and cubic relationship with linear dimensions.</p></li>
+</ol>
+<p>This exploration confirms that perch exhibit typical fish allometry, with proportional growth across different body dimensions and a predictable weight-length relationship. For modeling purposes, we could likely use any single length measurement to represent fish size, as they are highly redundant.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="create-your-own-regression-question" class="level3"><h3 class="anchored" data-anchor-id="create-your-own-regression-question">7.6 Create Your Own Regression Question</h3>
+<p>Write a plausible practice question involving the the exploration or analysis of regression. Make use of the fish data from any species except for <code>Perch</code>.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Creating a Regression Question
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the fish data</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
 <span><span class="va">fish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">'data/10-fish.xlsx'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Check available species</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Bream"     "Roach"     "Whitefish" "Parkki"    "Perch"     "Pike"     
-[7] "Smelt"    </code></pre>
-</div>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Select Pike data for this example</span></span>
-<span><span class="va">pike</span> <span class="op">&lt;-</span> <span class="va">fish</span><span class="op">[</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"Pike"</span>, <span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Select Bream data for this example</span></span>
+<span><span class="va">bream</span> <span class="op">&lt;-</span> <span class="va">fish</span><span class="op">[</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"Bream"</span>, <span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Practice Question:</strong></p>
-<p>“Pike fish are known to have a distinctive elongated body shape compared to other species. Using the fish market dataset, investigate whether the relationship between Width and Height differs between Pike and Bream species. Specifically:</p>
+<p>“Bream fish are commonly studied in fisheries research. Using the fish market dataset, investigate whether Height or Width is a better predictor of Weight for Bream. Specifically:</p>
 <ol type="1">
-<li>Create separate regression models for Width ~ Height for both Pike and Bream</li>
-<li>Compare the regression slopes and intercepts between the two species</li>
-<li>Test whether there is a statistically significant difference in these relationships</li>
-<li>Visualize the two regression lines on a single plot</li>
-<li>Discuss the biological implications of any differences found in body proportions between these species”</li>
+<li>Create separate simple linear regression models for Weight ~ Height and Weight ~ Width</li>
+<li>Compare the models using R-squared values and residual analysis</li>
+<li>Test whether combining both predictors in a multiple regression model (Weight ~ Height + Width) significantly improves prediction accuracy</li>
+<li>Create appropriate visualizations to support your findings</li>
+<li>Based on your analysis, which measurement(s) would you recommend fisheries researchers use to estimate Bream weight in the field?”</li>
 </ol>
-<p><strong>Solution:</strong></p>
+<p><strong>Solution Code:</strong></p>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extract Pike and Bream data</span></span>
-<span><span class="va">pike</span> <span class="op">&lt;-</span> <span class="va">fish</span><span class="op">[</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"Pike"</span>, <span class="op">]</span></span>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extract Bream data</span></span>
 <span><span class="va">bream</span> <span class="op">&lt;-</span> <span class="va">fish</span><span class="op">[</span><span class="va">fish</span><span class="op">$</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"Bream"</span>, <span class="op">]</span></span>
 <span></span>
-<span><span class="co"># Create regression models for each species</span></span>
-<span><span class="va">pike_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Width</span> <span class="op">~</span> <span class="va">Height</span>, data <span class="op">=</span> <span class="va">pike</span><span class="op">)</span></span>
-<span><span class="va">bream_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Width</span> <span class="op">~</span> <span class="va">Height</span>, data <span class="op">=</span> <span class="va">bream</span><span class="op">)</span></span>
+<span><span class="co"># Create the two simple regression models</span></span>
+<span><span class="va">height_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Weight</span> <span class="op">~</span> <span class="va">Height</span>, data <span class="op">=</span> <span class="va">bream</span><span class="op">)</span></span>
+<span><span class="va">width_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Weight</span> <span class="op">~</span> <span class="va">Width</span>, data <span class="op">=</span> <span class="va">bream</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Display model summaries</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">pike_model</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = Width ~ Height, data = pike)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.47657 -0.22919 -0.07039  0.30889  0.47529 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -0.02298    0.35663  -0.064    0.949    
-Height       0.66237    0.04525  14.637 2.74e-10 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.3012 on 15 degrees of freedom
-Multiple R-squared:  0.9346,    Adjusted R-squared:  0.9302 
-F-statistic: 214.2 on 1 and 15 DF,  p-value: 2.742e-10</code></pre>
-</div>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">bream_model</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = Width ~ Height, data = bream)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.57500 -0.16996 -0.03002  0.15268  0.63858 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.26056    0.36774   0.709    0.484    
-Height       0.34031    0.02403  14.165  1.4e-15 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.2752 on 33 degrees of freedom
-Multiple R-squared:  0.8588,    Adjusted R-squared:  0.8545 
-F-statistic: 200.6 on 1 and 33 DF,  p-value: 1.396e-15</code></pre>
-</div>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a combined dataset for interaction model</span></span>
-<span><span class="va">combined</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">pike</span>, <span class="va">bream</span><span class="op">)</span></span>
-<span><span class="va">combined</span><span class="op">$</span><span class="va">Species</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">combined</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span>
+<span><span class="co"># Compare model summaries</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">height_model</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">width_model</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Create an interaction model to test for different slopes</span></span>
-<span><span class="va">interaction_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Width</span> <span class="op">~</span> <span class="va">Height</span> <span class="op">*</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">combined</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">interaction_model</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = Width ~ Height * Species, data = combined)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.57500 -0.19176 -0.03552  0.19067  0.63858 
-
-Coefficients:
-                   Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)         0.26056    0.37894   0.688    0.495    
-Height              0.34031    0.02476  13.746  &lt; 2e-16 ***
-SpeciesPike        -0.28354    0.50629  -0.560    0.578    
-Height:SpeciesPike  0.32206    0.04928   6.536 3.79e-08 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.2836 on 48 degrees of freedom
-Multiple R-squared:  0.9031,    Adjusted R-squared:  0.897 
-F-statistic: 149.1 on 3 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a visualization</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">combined</span><span class="op">$</span><span class="va">Height</span>, <span class="va">combined</span><span class="op">$</span><span class="va">Width</span>,</span>
+<span><span class="co"># Create a multiple regression model with both predictors</span></span>
+<span><span class="va">combined_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Weight</span> <span class="op">~</span> <span class="va">Height</span> <span class="op">+</span> <span class="va">Width</span>, data <span class="op">=</span> <span class="va">bream</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">combined_model</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># ANOVA to formally compare the models</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">height_model</span>, <span class="va">combined_model</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">width_model</span>, <span class="va">combined_model</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create visualizations</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Plot 1: Weight vs Height with regression line</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">bream</span><span class="op">$</span><span class="va">Height</span>, <span class="va">bream</span><span class="op">$</span><span class="va">Weight</span>,</span>
 <span>     xlab <span class="op">=</span> <span class="st">"Height (cm)"</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"Width (cm)"</span>,</span>
-<span>     main <span class="op">=</span> <span class="st">"Width vs Height: Pike vs Bream"</span>,</span>
-<span>     pch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">17</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">combined</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span><span class="op">]</span>,</span>
-<span>     col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"darkblue"</span>, <span class="st">"darkred"</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">combined</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
+<span>     ylab <span class="op">=</span> <span class="st">"Weight (g)"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Bream Weight vs Height"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">height_model</span>, col <span class="op">=</span> <span class="st">"blue"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Add regression lines</span></span>
-<span><span class="va">height_seq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">combined</span><span class="op">$</span><span class="va">Height</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">combined</span><span class="op">$</span><span class="va">Height</span><span class="op">)</span>, length.out <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
-<span><span class="va">pike_pred</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">pike_model</span>, newdata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>Height <span class="op">=</span> <span class="va">height_seq</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">bream_pred</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">bream_model</span>, newdata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>Height <span class="op">=</span> <span class="va">height_seq</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># Plot 2: Weight vs Width with regression line</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">bream</span><span class="op">$</span><span class="va">Width</span>, <span class="va">bream</span><span class="op">$</span><span class="va">Weight</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Width (cm)"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Weight (g)"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Bream Weight vs Width"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">width_model</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">height_seq</span>, <span class="va">pike_pred</span>, col <span class="op">=</span> <span class="st">"darkblue"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">height_seq</span>, <span class="va">bream_pred</span>, col <span class="op">=</span> <span class="st">"darkred"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co"># Plot 3: Residuals of Height model</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/fitted.values.html">fitted</a></span><span class="op">(</span><span class="va">height_model</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">height_model</span><span class="op">)</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Fitted Values"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Residuals"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Residuals: Height Model"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fl">0</span>, col <span class="op">=</span> <span class="st">"blue"</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Add legend</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topleft"</span>, </span>
-<span>       legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pike"</span>, <span class="st">"Bream"</span>, <span class="st">"Pike regression"</span>, <span class="st">"Bream regression"</span><span class="op">)</span>,</span>
-<span>       col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"darkblue"</span>, <span class="st">"darkred"</span>, <span class="st">"darkblue"</span>, <span class="st">"darkred"</span><span class="op">)</span>,</span>
-<span>       pch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">17</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
-<span>       lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span>
-<span>       lwd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>,</span>
-<span>       cex <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span></span>
+<span><span class="co"># Plot 4: Residuals of Width model</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/fitted.values.html">fitted</a></span><span class="op">(</span><span class="va">width_model</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">width_model</span><span class="op">)</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Fitted Values"</span>,</span>
+<span>     ylab <span class="op">=</span> <span class="st">"Residuals"</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Residuals: Width Model"</span>,</span>
+<span>     pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fl">0</span>, col <span class="op">=</span> <span class="st">"red"</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Calculate and display the regression equations</span></span>
-<span><span class="va">pike_eq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">"Pike: Width = %.2f + %.2f × Height"</span>, </span>
-<span>                  <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">pike_model</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">pike_model</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">bream_eq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">"Bream: Width = %.2f + %.2f × Height"</span>, </span>
-<span>                   <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">bream_model</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">bream_model</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span>, y <span class="op">=</span> <span class="fl">3</span>, labels <span class="op">=</span> <span class="va">pike_eq</span>, col <span class="op">=</span> <span class="st">"darkblue"</span>, pos <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span>, y <span class="op">=</span> <span class="fl">2.5</span>, labels <span class="op">=</span> <span class="va">bream_eq</span>, col <span class="op">=</span> <span class="st">"darkred"</span>, pos <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="10-regression_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculate confidence intervals for the slopes</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/confint.html">confint</a></span><span class="op">(</span><span class="va">pike_model</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                 2.5 %    97.5 %
-(Intercept) -0.7831244 0.7371644
-Height       0.5659153 0.7588227</code></pre>
-</div>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/confint.html">confint</a></span><span class="op">(</span><span class="va">bream_model</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                 2.5 %    97.5 %
-(Intercept) -0.4876021 1.0087265
-Height       0.2914337 0.3891933</code></pre>
-</div>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculate width-to-height ratio for both species</span></span>
-<span><span class="va">pike</span><span class="op">$</span><span class="va">ratio</span> <span class="op">&lt;-</span> <span class="va">pike</span><span class="op">$</span><span class="va">Width</span> <span class="op">/</span> <span class="va">pike</span><span class="op">$</span><span class="va">Height</span></span>
-<span><span class="va">bream</span><span class="op">$</span><span class="va">ratio</span> <span class="op">&lt;-</span> <span class="va">bream</span><span class="op">$</span><span class="va">Width</span> <span class="op">/</span> <span class="va">bream</span><span class="op">$</span><span class="va">Height</span></span>
+<span><span class="co"># Create a 3D visualization of the multiple regression model</span></span>
+<span><span class="co"># (Note: In base R, we can approximate this with a custom function)</span></span>
+<span><span class="co"># Create a grid of Height and Width values</span></span>
+<span><span class="va">height_range</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">bream</span><span class="op">$</span><span class="va">Height</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">bream</span><span class="op">$</span><span class="va">Height</span><span class="op">)</span>, length.out <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">width_range</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">bream</span><span class="op">$</span><span class="va">Width</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">bream</span><span class="op">$</span><span class="va">Width</span><span class="op">)</span>, length.out <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">pred_grid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span>Height <span class="op">=</span> <span class="va">height_range</span>, Width <span class="op">=</span> <span class="va">width_range</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Compare the distributions of these ratios</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">pike</span><span class="op">$</span><span class="va">ratio</span>, <span class="va">bream</span><span class="op">$</span><span class="va">ratio</span>, </span>
-<span>        names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pike"</span>, <span class="st">"Bream"</span><span class="op">)</span>,</span>
-<span>        ylab <span class="op">=</span> <span class="st">"Width-to-Height Ratio"</span>,</span>
-<span>        main <span class="op">=</span> <span class="st">"Body Shape Comparison"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="10-regression_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<span><span class="co"># Predict Weight for each combination</span></span>
+<span><span class="va">pred_grid</span><span class="op">$</span><span class="va">Weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">combined_model</span>, newdata <span class="op">=</span> <span class="va">pred_grid</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create a simple contour plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/contour.html">contour</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">height_range</span>, </span>
+<span>        y <span class="op">=</span> <span class="va">width_range</span>, </span>
+<span>        z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">pred_grid</span><span class="op">$</span><span class="va">Weight</span>, nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">height_range</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>        xlab <span class="op">=</span> <span class="st">"Height (cm)"</span>,</span>
+<span>        ylab <span class="op">=</span> <span class="st">"Width (cm)"</span>,</span>
+<span>        main <span class="op">=</span> <span class="st">"Predicted Weight Contours (g)"</span>,</span>
+<span>        levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1000</span>, by <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Add the actual data points</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">bream</span><span class="op">$</span><span class="va">Height</span>, <span class="va">bream</span><span class="op">$</span><span class="va">Width</span>, pch <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Statistical test for difference in ratios</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">pike</span><span class="op">$</span><span class="va">ratio</span>, <span class="va">bream</span><span class="op">$</span><span class="va">ratio</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Welch Two Sample t-test
-
-data:  pike$ratio and bream$ratio
-t = 28.044, df = 19.246, p-value &lt; 2.2e-16
-alternative hypothesis: true difference in means is not equal to 0
-95 percent confidence interval:
- 0.2793170 0.3243307
-sample estimates:
-mean of x mean of y 
-0.6596041 0.3577803 </code></pre>
-</div>
-</div>
-<p><strong>Analysis Results:</strong></p>
-<p>The regression analysis reveals distinct differences in body proportions between Pike and Bream:</p>
-<ol type="1">
-<li>
-<strong>Pike Regression</strong>: Width = 0.59 + 0.17 × Height (R² = 0.65, p &lt; 0.001)</li>
-<li>
-<strong>Bream Regression</strong>: Width = -0.70 + 0.37 × Height (R² = 0.86, p &lt; 0.001)</li>
-</ol>
-<p>The interaction term in the combined model is highly significant (p &lt; 0.001), confirming that the relationship between Width and Height differs between species.</p>
-<p>Pike have a significantly lower Width-to-Height ratio (mean = 0.45) compared to Bream (mean = 0.56), t(50.1) = -9.97, p &lt; 0.001. This quantifies the visual observation that Pike have a more elongated, streamlined body shape.</p>
-<p><strong>Biological Implications:</strong></p>
-<p>These differences in body proportions reflect the distinct ecological niches and feeding strategies of these species:</p>
-<ol type="1">
-<li><p>Pike’s elongated body shape (lower Width-to-Height ratio and shallower slope) is adapted for rapid acceleration and burst swimming, consistent with their ambush predator lifestyle.</p></li>
-<li><p>Bream’s deeper body shape (higher Width-to-Height ratio and steeper slope) is typical of fish that maneuver in complex habitats and feed on benthic organisms.</p></li>
-</ol>
-<p>The regression slopes indicate that as fish grow, Bream become proportionally deeper-bodied than Pike, suggesting that these morphological differences become more pronounced with age/size. This analysis demonstrates how simple morphometric relationships can provide insights into species’ evolutionary adaptations and ecological roles.</p>
+<p>The analysis would reveal: 1. Both Height and Width are strong predictors of Bream weight 2. The R-squared values would show which single measurement explains more variance in weight 3. The multiple regression would likely show that using both measurements improves prediction accuracy 4. The residual plots would reveal whether the models meet regression assumptions 5. The recommendation would be based on both statistical performance and practical field measurement considerations</p>
 </div>
 </div>
 </div>
