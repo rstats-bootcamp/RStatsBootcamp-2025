@@ -219,7 +219,7 @@ A final thing that must be mentioned here is how to actually submit commands in 
 
 ## 7 Practice exercises
 
-### 7.1
+### 7.1 Successfully run a script
 
 Download [this script](scripts/script-1.R) and open it with RStudio. Save the script in a specific folder on your computer that you can find again and where you will save other scripts for the Bootcamp.
 
@@ -227,7 +227,7 @@ Read the script comments and examine the structure of the code chunks. Run the c
 
 <br>
 
-### 7.2
+### 7.2 Add a code chunk title and corresponding code section
 
 Add a code chunk title to your CONTENTS section and to your script. Make sure to write brief comments for your code. Add the following code to your chunk run it and examine the output:
 
