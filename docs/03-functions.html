@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.30">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>03 R Functions – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -79,8 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-4848551f56e22cb80adcac86ad2b91da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,12 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="styles.css">
+}</script><link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -277,9 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R Stats Bootcamp</span>
@@ -291,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -304,14 +293,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -322,20 +309,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Getting Started</span></a>
@@ -343,8 +326,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Stats Bootcamp</span></a>
@@ -363,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -372,8 +355,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Setup &amp; intro</span></a>
@@ -410,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -419,8 +402,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-question-explore.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 Explore data</span></a>
@@ -457,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -466,8 +449,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13-reproducibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 Reproducibility</span></a>
@@ -492,47 +475,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" id="toc-functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" class="nav-link active" data-scroll-target="#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools">1 Functions and Packages Toolboxes (R as a garage full of tools)</a></li>
-  <li><a href="#function-tour" id="toc-function-tour" class="nav-link" data-scroll-target="#function-tour">2 Function tour</a>
+<li><a href="#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" id="toc-functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" class="nav-link active" data-scroll-target="#functions-and-packages-toolboxes-r-as-a-garage-full-of-tools">1 Functions and Packages Toolboxes (R as a garage full of tools)</a></li>
+  <li>
+<a href="#function-tour" id="toc-function-tour" class="nav-link" data-scroll-target="#function-tour">2 Function tour</a>
   <ul class="collapse">
-  <li><a href="#using-functions" id="toc-using-functions" class="nav-link" data-scroll-target="#using-functions">2.1 Using functions</a></li>
+<li><a href="#using-functions" id="toc-using-functions" class="nav-link" data-scroll-target="#using-functions">2.1 Using functions</a></li>
   <li><a href="#function-names" id="toc-function-names" class="nav-link" data-scroll-target="#function-names">2.2 Function names</a></li>
-  </ul></li>
+  </ul>
+</li>
   <li><a href="#using-functions-and-getting-help" id="toc-using-functions-and-getting-help" class="nav-link" data-scroll-target="#using-functions-and-getting-help">3 Using functions and getting help</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">4 R packages</a>
+  <li>
+<a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">4 R packages</a>
   <ul class="collapse">
-  <li><a href="#finding-downloading-and-using-packages" id="toc-finding-downloading-and-using-packages" class="nav-link" data-scroll-target="#finding-downloading-and-using-packages">4.1 Finding, downloading and using packages</a></li>
+<li><a href="#finding-downloading-and-using-packages" id="toc-finding-downloading-and-using-packages" class="nav-link" data-scroll-target="#finding-downloading-and-using-packages">4.1 Finding, downloading and using packages</a></li>
   <li><a href="#installing-and-loading-packages-with-the-rstudio-packages-tab" id="toc-installing-and-loading-packages-with-the-rstudio-packages-tab" class="nav-link" data-scroll-target="#installing-and-loading-packages-with-the-rstudio-packages-tab">4.2 Installing and loading packages with the RStudio Packages tab</a></li>
-  </ul></li>
-  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">5 Practice exercises</a>
+  </ul>
+</li>
+  <li>
+<a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">5 Practice exercises</a>
   <ul class="collapse">
-  <li><a href="#histogram-frequency" id="toc-histogram-frequency" class="nav-link" data-scroll-target="#histogram-frequency">5.1 Histogram Frequency</a></li>
+<li><a href="#histogram-frequency" id="toc-histogram-frequency" class="nav-link" data-scroll-target="#histogram-frequency">5.1 Histogram Frequency</a></li>
   <li><a href="#custom-histogram" id="toc-custom-histogram" class="nav-link" data-scroll-target="#custom-histogram">5.2 Custom Histogram</a></li>
   <li><a href="#na-values" id="toc-na-values" class="nav-link" data-scroll-target="#na-values">5.3 NA Values</a></li>
   <li><a href="#power-test-parameter" id="toc-power-test-parameter" class="nav-link" data-scroll-target="#power-test-parameter">5.4 Power Test Parameter</a></li>
   <li><a href="#r-colors" id="toc-r-colors" class="nav-link" data-scroll-target="#r-colors">5.5 R Colors</a></li>
   <li><a href="#help-function" id="toc-help-function" class="nav-link" data-scroll-target="#help-function">5.6 Help Function</a></li>
-  </ul></li>
   </ul>
-</nav>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./03-functions.html">03 R Functions</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./03-functions.html">03 R Functions</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">03 R Functions</h1>
 </div>
 
@@ -547,19 +529,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<center>
+</header><center>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src=".\img/toolbox2.png" class="img-fluid figure-img"></p>
-<figcaption>R as a garage full of tools</figcaption>
-</figure>
+<figure class="figure"><p><img src=".\img/toolbox2.png" class="img-fluid figure-img"></p>
+<figcaption>R as a garage full of tools</figcaption></figure>
 </div>
 </center>
-<section id="functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" class="level2">
-<h2 class="anchored" data-anchor-id="functions-and-packages-toolboxes-r-as-a-garage-full-of-tools">1 Functions and Packages Toolboxes (R as a garage full of tools)</h2>
+<section id="functions-and-packages-toolboxes-r-as-a-garage-full-of-tools" class="level2"><h2 class="anchored" data-anchor-id="functions-and-packages-toolboxes-r-as-a-garage-full-of-tools">1 Functions and Packages Toolboxes (R as a garage full of tools)</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -587,17 +563,14 @@ Learning Objectives
 </blockquote>
 <p>While <code>R</code> comes with a lot of packages, there is an enormous amount available for instant download at any time you want or need them (over 18,000 different packages at the moment…). Making use of all these resources is usually a case of identifying a problem to solve, finding the package that can help you, and then learning how to use the functions in the package This page is all about introducing functions, packages and the <code>R</code> help system.</p>
 <p><br></p>
-</section>
-<section id="function-tour" class="level2">
-<h2 class="anchored" data-anchor-id="function-tour">2 Function tour</h2>
+</section><section id="function-tour" class="level2"><h2 class="anchored" data-anchor-id="function-tour">2 Function tour</h2>
 <blockquote class="blockquote">
 <p>Think of functions in <code>R</code> as tools that do work for you.</p>
 </blockquote>
 <p>Code for functions is is simple once you get the idea, but you have to understand how they work to use them in the most powerful way. Also, to make the most of functions, you must get to know which ones perform common tasks, and how to use them. We will practice that in this section. We consider the USE of functions (for a given problem) as a separate issue from discovering a function, and here we focus on USE.</p>
 <p>A generic might look like this: <code>function_name()</code>. The <strong>function name</strong> is (obviously) the <code>function_name</code> part and all functions must have the bracket notation <code>()</code>. There are some rules for function names and for naming R objects in general, but for now the most important thing to keep in mind is that details like capitalization are important, that is, R is case sensitive.</p>
 <p>Thus, <code>function_name()</code> is not the same as <code>Function_name()</code> or <code>function_Name()</code> (see what I did there?).</p>
-<section id="using-functions" class="level3">
-<h3 class="anchored" data-anchor-id="using-functions">2.1 Using functions</h3>
+<section id="using-functions" class="level3"><h3 class="anchored" data-anchor-id="using-functions">2.1 Using functions</h3>
 <p>Functions are typically used by providing some information inside the brackets, usually data for the function to do work on or settings for the function. <strong>Function values and settings are assigned to function arguments</strong> and most functions have several arguments.</p>
 <p><br></p>
 <p><code>function_name(argument_1 = value_1, argument_2 = value_2, ...)</code></p>
@@ -609,24 +582,19 @@ Learning Objectives
 <li><p>The <code>...</code> means there are additional arguments that can be used optionally (for now we can ignore those)</p></li>
 </ul>
 <p><br></p>
-</section>
-<section id="function-names" class="level3">
-<h3 class="anchored" data-anchor-id="function-names">2.2 Function names</h3>
+</section><section id="function-names" class="level3"><h3 class="anchored" data-anchor-id="function-names">2.2 Function names</h3>
 <p>Finding functions by their names is often easy for very simple and common tasks. For example:</p>
-<p><code>mean()</code> Calculates the arithmetic mean</p>
-<p><code>log()</code> Calculates the log</p>
-<p><code>sd()</code> Calculates the standard deviation</p>
-<p><code>plot()</code> Draws plots</p>
-<p><code>boxplot()</code> Draws boxplots</p>
-<p><code>help()</code> Used to access help pages</p>
+<p><code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> Calculates the arithmetic mean</p>
+<p><code><a href="https://rdrr.io/r/base/Log.html">log()</a></code> Calculates the log</p>
+<p><code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> Calculates the standard deviation</p>
+<p><code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> Draws plots</p>
+<p><code><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot()</a></code> Draws boxplots</p>
+<p><code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> Used to access help pages</p>
 <p>You get the idea…</p>
 <p><br></p>
 <p>The most important thing here is that <strong>you would generally get the help page up as a reference to what arguments are required and how to customize your function use</strong>. This is the key to learning <code>R</code> in the easiest way. That is, until you memorize the use and arguments for common functions.</p>
 <p><br></p>
-</section>
-</section>
-<section id="using-functions-and-getting-help" class="level2">
-<h2 class="anchored" data-anchor-id="using-functions-and-getting-help">3 Using functions and getting help</h2>
+</section></section><section id="using-functions-and-getting-help" class="level2"><h2 class="anchored" data-anchor-id="using-functions-and-getting-help">3 Using functions and getting help</h2>
 <p>For now, let’s assume that you know:</p>
 <ul>
 <li><p>What tasks you want to do (maybe outlined with pseudocode), and</p></li>
@@ -634,83 +602,75 @@ Learning Objectives
 </ul>
 <p><br></p>
 <p>Try this out in your own script:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## A workflow for using functions ####</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## (make pseudocode of steps in comments)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Overall task: calculate the mean for a vector of numbers</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Code the vector of data - c() function</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Calculate the mean - mean() function</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Plot the data - boxplot()</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Code the vector of data - c() function</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(c) <span class="co"># We use this a lot - it "combines" numbers</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>) </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Calculate the mean - mean() function</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(mean) </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice under Usage, the "x" argument</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice under Arguments, x is a numeric vector</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>)) <span class="co"># Easy</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Plot the data - boxplot()</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(boxplot) <span class="co"># x again!</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>))</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge: Add an axis label to the y-axis - can you find the name of the argument?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## A workflow for using functions ####</span></span>
+<span></span>
+<span><span class="co">## (make pseudocode of steps in comments)</span></span>
+<span></span>
+<span><span class="co"># Overall task: calculate the mean for a vector of numbers</span></span>
+<span><span class="co"># Step 1: Code the vector of data - c() function</span></span>
+<span><span class="co"># Step 2: Calculate the mean - mean() function</span></span>
+<span><span class="co"># Step 3: Plot the data - boxplot()</span></span>
+<span></span>
+<span><span class="co"># Step 1: Code the vector of data - c() function</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">c</span><span class="op">)</span> <span class="co"># We use this a lot - it "combines" numbers</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8.1</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="co"># Step 2: Calculate the mean - mean() function</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">mean</span><span class="op">)</span> </span>
+<span><span class="co"># Notice under Usage, the "x" argument</span></span>
+<span><span class="co"># Notice under Arguments, x is a numeric vector</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8.1</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span> <span class="co"># Easy</span></span>
+<span></span>
+<span><span class="co"># Step 3: Plot the data - boxplot()</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">boxplot</span><span class="op">)</span> <span class="co"># x again!</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8.1</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Challenge: Add an axis label to the y-axis - can you find the name of the argument?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># without a y-axis label this is not a good graph</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="fl">8.1</span>, <span class="dv">5</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># without a y-axis label this is not a good graph</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8.1</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="03-functions_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="03-functions_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="r-packages" class="level2">
-<h2 class="anchored" data-anchor-id="r-packages">4 R packages</h2>
+</section><section id="r-packages" class="level2"><h2 class="anchored" data-anchor-id="r-packages">4 R packages</h2>
 <p>There are a lot of <code>R</code> packages. These are “toolboxes” often built in the spirit of identifying a problem, literally making a tools that solves the problem, and then sharing the tool for other to use as well. In fact, all official R packages are “open source”, meaning that you may use them freely, but also you can improve them and add functionality. <strong>This section is about the basics of R packages</strong> that are additional to the base R installation.</p>
 <p>Typically, you only download a package once you identify you need to use functions in it. There are are several ways to accomplish this. We are going to practice 2 different ways, one with R code that is simple and will work no matter how you use R, and one that uses menus in RStudio.</p>
 <p><br></p>
-<section id="finding-downloading-and-using-packages" class="level3">
-<h3 class="anchored" data-anchor-id="finding-downloading-and-using-packages">4.1 Finding, downloading and using packages</h3>
+<section id="finding-downloading-and-using-packages" class="level3"><h3 class="anchored" data-anchor-id="finding-downloading-and-using-packages">4.1 Finding, downloading and using packages</h3>
 <p>Finding packages happens a variety of ways in practice. A package may be recommended to you, you might be told to use a particular package for a task or assignment, or you may discover it on the web.</p>
 <p><strong>Installing and loading packages with code</strong></p>
-<p>There are 2 steps here - installing, then loading. Installing is very easy to do using the <code>install.packages()</code> function. Loading a package making the functions in it available for use is done using the <code>library()</code> package. Basic usage of these functions is:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: install a package</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(install.packages) <span class="co"># just have a look</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="at">pkgs =</span> <span class="st">"package_name"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># The package is downloaded from a remote repository, often</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># with additional packages that are required for use.</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: load a package</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"package_name"</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge: Install and load the "ggplot2" package, and then use help() to look at the help page for the function ggplot().  What kind of R object is required by the "data" argument?</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are 2 steps here - installing, then loading. Installing is very easy to do using the <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> function. Loading a package making the functions in it available for use is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> package. Basic usage of these functions is:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Step 1: install a package</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">install.packages</span><span class="op">)</span> <span class="co"># just have a look</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"package_name"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># The package is downloaded from a remote repository, often</span></span>
+<span><span class="co"># with additional packages that are required for use.</span></span>
+<span></span>
+<span><span class="co"># Step 2: load a package</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"package_name"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Challenge: Install and load the "ggplot2" package, and then use help() to look at the help page for the function ggplot().  What kind of R object is required by the "data" argument?</span></span>
+<span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-</section>
-<section id="installing-and-loading-packages-with-the-rstudio-packages-tab" class="level3">
-<h3 class="anchored" data-anchor-id="installing-and-loading-packages-with-the-rstudio-packages-tab">4.2 Installing and loading packages with the RStudio Packages tab</h3>
+</section><section id="installing-and-loading-packages-with-the-rstudio-packages-tab" class="level3"><h3 class="anchored" data-anchor-id="installing-and-loading-packages-with-the-rstudio-packages-tab">4.2 Installing and loading packages with the RStudio Packages tab</h3>
 <p>You can find the packages tab in RStudio in the lower left pane by default.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src=".\img/1.2-packages-tab.png" class="img-fluid figure-img"></p>
-<figcaption>Packages tab</figcaption>
-</figure>
+<figure class="figure"><p><img src=".\img/1.2-packages-tab.png" class="img-fluid figure-img"></p>
+<figcaption>Packages tab</figcaption></figure>
 </div>
 <p><br></p>
 <p>When you click on the <strong>Packages tab (A in the picture above)</strong>, you can see a list of packages that are available to you (i.e., in RStudio desktop these have already been downloaded locally).</p>
@@ -720,21 +680,15 @@ Learning Objectives
 <p><br></p>
 <center>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src=".\img/1.2-install-packages.png" class="img-fluid figure-img"></p>
-<figcaption>Install packages in RStudio</figcaption>
-</figure>
+<figure class="figure"><p><img src=".\img/1.2-install-packages.png" class="img-fluid figure-img"></p>
+<figcaption>Install packages in RStudio</figcaption></figure>
 </div>
 </center>
 <p><br></p>
-</section>
-</section>
-<section id="practice-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="practice-exercises">5 Practice exercises</h2>
+</section></section><section id="practice-exercises" class="level2"><h2 class="anchored" data-anchor-id="practice-exercises">5 Practice exercises</h2>
 <p><br></p>
-<section id="histogram-frequency" class="level3">
-<h3 class="anchored" data-anchor-id="histogram-frequency">5.1 Histogram Frequency</h3>
-<p>Explain in your own words what the freq argument in the <code>hist()</code> function does. It often helps to practice trail and error to understand what is happening with data. Try experimenting with the data vector below with the <code>hist()</code> function to explore the freq argument:</p>
+<section id="histogram-frequency" class="level3"><h3 class="anchored" data-anchor-id="histogram-frequency">5.1 Histogram Frequency</h3>
+<p>Explain in your own words what the freq argument in the <code><a href="https://rdrr.io/r/graphics/hist.html">hist()</a></code> function does. It often helps to practice trail and error to understand what is happening with data. Try experimenting with the data vector below with the <code><a href="https://rdrr.io/r/graphics/hist.html">hist()</a></code> function to explore the freq argument:</p>
 <p><code>c(1,2,4,3,5,6,7,8,6,5,5,5,3,4,5,7)</code></p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -750,38 +704,34 @@ Histogram Frequency Parameter
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create our data vector</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Default behavior (freq = TRUE) - shows counts on y-axis</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">main =</span> <span class="st">"Frequency Histogram (freq = TRUE)"</span>, <span class="at">xlab =</span> <span class="st">"Values"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create our data vector</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">6</span>,<span class="fl">5</span>,<span class="fl">5</span>,<span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">7</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Default behavior (freq = TRUE) - shows counts on y-axis</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">data</span>, main <span class="op">=</span> <span class="st">"Frequency Histogram (freq = TRUE)"</span>, xlab <span class="op">=</span> <span class="st">"Values"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="03-functions_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="03-functions_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting freq = FALSE - shows probability density on y-axis</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">main =</span> <span class="st">"Density Histogram (freq = FALSE)"</span>, <span class="at">xlab =</span> <span class="st">"Values"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Setting freq = FALSE - shows probability density on y-axis</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">data</span>, freq <span class="op">=</span> <span class="cn">FALSE</span>, main <span class="op">=</span> <span class="st">"Density Histogram (freq = FALSE)"</span>, xlab <span class="op">=</span> <span class="st">"Values"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="03-functions_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="03-functions_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The <code>freq</code> argument in the <code>hist()</code> function determines what is shown on the y-axis: - When <code>freq = TRUE</code> (default), the y-axis shows the frequency counts (number of observations in each bin) - When <code>freq = FALSE</code>, the y-axis shows probability densities (area under the histogram equals 1)</p>
+<p>The <code>freq</code> argument in the <code><a href="https://rdrr.io/r/graphics/hist.html">hist()</a></code> function determines what is shown on the y-axis: - When <code>freq = TRUE</code> (default), the y-axis shows the frequency counts (number of observations in each bin) - When <code>freq = FALSE</code>, the y-axis shows probability densities (area under the histogram equals 1)</p>
 <p>This is useful when comparing distributions of different sample sizes or when working with probability distributions.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="custom-histogram" class="level3">
-<h3 class="anchored" data-anchor-id="custom-histogram">5.2 Custom Histogram</h3>
-<p>Tailor your code from the <code>hist()</code> example in problem 1 so that your histogram has a main title, axis labels, and set the <code>col</code> argument to “blue”. We are just scratching the surface with plot customization - try to incorporate other arguments to make an attractive graph.</p>
+</section><section id="custom-histogram" class="level3"><h3 class="anchored" data-anchor-id="custom-histogram">5.2 Custom Histogram</h3>
+<p>Tailor your code from the <code><a href="https://rdrr.io/r/graphics/hist.html">hist()</a></code> example in problem 1 so that your histogram has a main title, axis labels, and set the <code>col</code> argument to “blue”. We are just scratching the surface with plot customization - try to incorporate other arguments to make an attractive graph.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -796,23 +746,22 @@ Customized Histogram
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create our data vector</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Customized histogram with main title, axis labels, and blue color</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data, </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribution of Values"</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Values"</span>, </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Frequency"</span>,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">border =</span> <span class="st">"white"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">8</span>,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">9</span>),</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">las =</span> <span class="dv">1</span>)  <span class="co"># Makes y-axis labels horizontal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create our data vector</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">6</span>,<span class="fl">5</span>,<span class="fl">5</span>,<span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">7</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Customized histogram with main title, axis labels, and blue color</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">data</span>, </span>
+<span>     main <span class="op">=</span> <span class="st">"Distribution of Values"</span>,</span>
+<span>     xlab <span class="op">=</span> <span class="st">"Values"</span>, </span>
+<span>     ylab <span class="op">=</span> <span class="st">"Frequency"</span>,</span>
+<span>     col <span class="op">=</span> <span class="st">"blue"</span>,</span>
+<span>     border <span class="op">=</span> <span class="st">"white"</span>,</span>
+<span>     breaks <span class="op">=</span> <span class="fl">8</span>,</span>
+<span>     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">9</span><span class="op">)</span>,</span>
+<span>     las <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>  <span class="co"># Makes y-axis labels horizontal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="03-functions_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="03-functions_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -822,12 +771,10 @@ Customized Histogram
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="na-values" class="level3">
-<h3 class="anchored" data-anchor-id="na-values">5.3 NA Values</h3>
-<p>Use the <code>mean()</code> function on the following data vector</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will see an error message. The symbol “NA” has a special meaning in R, indicating a missing value. Use <code>help()</code> for the mean function and implement the na.rm argument to fix the problem. Show your code.</p>
+</section><section id="na-values" class="level3"><h3 class="anchored" data-anchor-id="na-values">5.3 NA Values</h3>
+<p>Use the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function on the following data vector</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">6</span>,<span class="fl">5</span>,<span class="cn">NA</span>,<span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">7</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will see an error message. The symbol “NA” has a special meaning in R, indicating a missing value. Use <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> for the mean function and implement the na.rm argument to fix the problem. Show your code.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -842,30 +789,28 @@ Handling NA Values
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data vector with NA value</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>data_with_na <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Try to calculate mean without handling NA</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This will produce NA as the result</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data_with_na)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create data vector with NA value</span></span>
+<span><span class="va">data_with_na</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">6</span>,<span class="fl">5</span>,<span class="cn">NA</span>,<span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">7</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Try to calculate mean without handling NA</span></span>
+<span><span class="co"># This will produce NA as the result</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data_with_na</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use na.rm = TRUE to remove NA values before calculating the mean</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data_with_na, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Use na.rm = TRUE to remove NA values before calculating the mean</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data_with_na</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.733333</code></pre>
 </div>
 </div>
-<p>When calculating the mean of data containing NA values: - Without specifying <code>na.rm = TRUE</code>, the result will be NA because R doesn’t know how to handle missing values by default - With <code>na.rm = TRUE</code>, R removes all NA values before calculating the mean - The help page (<code>help(mean)</code>) explains that <code>na.rm</code> is a logical value indicating whether NA values should be stripped before computation</p>
+<p>When calculating the mean of data containing NA values: - Without specifying <code>na.rm = TRUE</code>, the result will be NA because R doesn’t know how to handle missing values by default - With <code>na.rm = TRUE</code>, R removes all NA values before calculating the mean - The help page (<code><a href="https://rdrr.io/r/base/mean.html">help(mean)</a></code>) explains that <code>na.rm</code> is a logical value indicating whether NA values should be stripped before computation</p>
 </div>
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="power-test-parameter" class="level3">
-<h3 class="anchored" data-anchor-id="power-test-parameter">5.4 Power Test Parameter</h3>
-<p>In your own words, what value is required for the “d” argument in the <code>pwr.t.test()</code> function in the <code>{pwr}</code> package? Show the code involved including any appropriate comment code required to answer this question. (hint: you will probably need to install the package, load it, and use <code>help()</code> on the function name)</p>
+</section><section id="power-test-parameter" class="level3"><h3 class="anchored" data-anchor-id="power-test-parameter">5.4 Power Test Parameter</h3>
+<p>In your own words, what value is required for the “d” argument in the <code>pwr.t.test()</code> function in the <a href="https://github.com/heliosdrm/pwr">pwr</a> package? Show the code involved including any appropriate comment code required to answer this question. (hint: you will probably need to install the package, load it, and use <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> on the function name)</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -880,14 +825,14 @@ Power Test d Parameter
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the pwr package if not already installed</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pwr")</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the pwr package</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Get help on the pwr.t.test function</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(pwr.t.test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Install the pwr package if not already installed</span></span>
+<span><span class="co"># install.packages("pwr")</span></span>
+<span></span>
+<span><span class="co"># Load the pwr package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/heliosdrm/pwr">pwr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Get help on the pwr.t.test function</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">pwr.t.test</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The “d” argument in the <code>pwr.t.test()</code> function requires the effect size, which is the standardized difference between means (Cohen’s d).</p>
 <p>According to the help documentation, this is the difference between the two means divided by the standard deviation. It represents how large the effect is expected to be in standardized units, which is essential for power calculations.</p>
@@ -896,10 +841,8 @@ Power Test d Parameter
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="r-colors" class="level3">
-<h3 class="anchored" data-anchor-id="r-colors">5.5 R Colors</h3>
-<p>Every official <code>R</code> package has a webpage on the Comprehensive <code>R</code> Archive Network (CRAN) and there are often tutorials called “vignettes”. Google the CRAN page for the package <code>{ggplot2}</code> and find the vignette called “Aesthetic specifications”. Read the section right near the top called “Colour and fill”.</p>
+</section><section id="r-colors" class="level3"><h3 class="anchored" data-anchor-id="r-colors">5.5 R Colors</h3>
+<p>Every official <code>R</code> package has a webpage on the Comprehensive <code>R</code> Archive Network (CRAN) and there are often tutorials called “vignettes”. Google the CRAN page for the package <a href="https://ggplot2.tidyverse.org">ggplot2</a> and find the vignette called “Aesthetic specifications”. Read the section right near the top called “Colour and fill”.</p>
 <p>Follow the instructions to list all of the built-in colours in <code>R</code> and list them in the console. Ed’s personal favourite is “goldenrod”, index number [147]. Can you find the index number for “tomato2”?</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -915,21 +858,21 @@ R Color Names
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all built-in colors in R</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">colors</span>()</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the index of "goldenrod"</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(colors <span class="sc">==</span> <span class="st">"goldenrod"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># List all built-in colors in R</span></span>
+<span><span class="va">colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/colors.html">colors</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Find the index of "goldenrod"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">colors</span> <span class="op">==</span> <span class="st">"goldenrod"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 147</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the index of "tomato2"</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(colors <span class="sc">==</span> <span class="st">"tomato2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Find the index of "tomato2"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">colors</span> <span class="op">==</span> <span class="st">"tomato2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 632</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display a sample of colors around tomato2</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>colors[<span class="dv">600</span><span class="sc">:</span><span class="dv">610</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Display a sample of colors around tomato2</span></span>
+<span><span class="va">colors</span><span class="op">[</span><span class="fl">600</span><span class="op">:</span><span class="fl">610</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "slategray1"  "slategray2"  "slategray3"  "slategray4"  "slategrey"  
  [6] "snow"        "snow1"       "snow2"       "snow3"       "snow4"      
@@ -937,15 +880,13 @@ R Color Names
 </div>
 </div>
 <p>The index number for “tomato2” is 605 in the built-in R colors list.</p>
-<p>The instructions from the ggplot2 vignette explain that R has many built-in color names that can be listed using the <code>colors()</code> function. These named colors can be used directly in plotting functions, including ggplot2’s color and fill aesthetics.</p>
+<p>The instructions from the ggplot2 vignette explain that R has many built-in color names that can be listed using the <code><a href="https://rdrr.io/r/grDevices/colors.html">colors()</a></code> function. These named colors can be used directly in plotting functions, including ggplot2’s color and fill aesthetics.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-</section>
-<section id="help-function" class="level3">
-<h3 class="anchored" data-anchor-id="help-function">5.6 Help Function</h3>
-<p>Write a plausible practice question involving the use of <code>help()</code> for an R function.</p>
+</section><section id="help-function" class="level3"><h3 class="anchored" data-anchor-id="help-function">5.6 Help Function</h3>
+<p>Write a plausible practice question involving the use of <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> for an R function.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -960,25 +901,25 @@ Help Function Question
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A plausible practice question could be:</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "Use the help() function to explore the t.test() function. What does the 'paired' </span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># argument do, and when would you set it to TRUE? Give an example of when you would </span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># use a paired t-test in a research context."</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution:</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(t.test)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># The 'paired' argument is a logical value indicating whether to perform a paired t-test.</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># When paired = TRUE, the test becomes a paired t-test, which is used when observations</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># are paired or matched in some way (e.g., before-after measurements on the same subjects).</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Example research context:</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># You would use a paired t-test when measuring the same variable on the same subjects</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co"># under two different conditions, such as:</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># - Blood pressure before and after taking medication</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># - Test scores before and after an educational intervention</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co"># - Plant growth with and without fertilizer (when plants are matched/paired)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># A plausible practice question could be:</span></span>
+<span></span>
+<span><span class="co"># "Use the help() function to explore the t.test() function. What does the 'paired' </span></span>
+<span><span class="co"># argument do, and when would you set it to TRUE? Give an example of when you would </span></span>
+<span><span class="co"># use a paired t-test in a research context."</span></span>
+<span></span>
+<span><span class="co"># Solution:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">t.test</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># The 'paired' argument is a logical value indicating whether to perform a paired t-test.</span></span>
+<span><span class="co"># When paired = TRUE, the test becomes a paired t-test, which is used when observations</span></span>
+<span><span class="co"># are paired or matched in some way (e.g., before-after measurements on the same subjects).</span></span>
+<span></span>
+<span><span class="co"># Example research context:</span></span>
+<span><span class="co"># You would use a paired t-test when measuring the same variable on the same subjects</span></span>
+<span><span class="co"># under two different conditions, such as:</span></span>
+<span><span class="co"># - Blood pressure before and after taking medication</span></span>
+<span><span class="co"># - Test scores before and after an educational intervention</span></span>
+<span><span class="co"># - Plant growth with and without fertilizer (when plants are matched/paired)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This question tests understanding of how to use the help system to learn about function arguments and their practical applications in statistical analysis.</p>
 </div>
@@ -987,11 +928,7 @@ Help Function Question
 <p><br></p>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1455,8 +1392,7 @@ Help Function Question
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -1468,8 +1404,6 @@ Help Function Question
     </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
