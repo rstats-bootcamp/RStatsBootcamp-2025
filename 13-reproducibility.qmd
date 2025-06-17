@@ -2,6 +2,13 @@
 title: "13 Reproducibility"
 ---
 
+<center>
+
+![Arrange the arithmetic to compare more than two groups](img/row.png){width="500px"}
+
+</center>
+
+
 ::: callout-note
 ## Learning Objectives
 

@@ -4,7 +4,7 @@ title: "12 ANOVA"
 
 <center>
 
-![Arrange the arithmetic to compare more than two groups](img/row.png){width="400px"}
+![Arrange the arithmetic to compare more than two groups](img/row.png){width="500px"}
 
 </center>
 
