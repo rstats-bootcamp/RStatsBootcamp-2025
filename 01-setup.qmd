@@ -235,7 +235,6 @@ Read the script comments and examine the structure of the code chunks. Run the c
 
 # Example of running the script-1.R file
 # First, set your working directory to where you saved the file
-# setwd("path/to/your/directory")  # Uncomment and modify this line
 
 # Then you can open the file in RStudio and run it line by line
 # Or select all code (Ctrl+A) and run it (Ctrl+Enter)
