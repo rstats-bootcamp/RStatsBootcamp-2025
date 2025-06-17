@@ -589,3 +589,9 @@ img {
 [data-bs-theme="dark"] .footer-content a {
   color: #3498db;
 }
+
+/* Override any conflicting styles with highest specificity */
+html[data-bs-theme="dark"] body .feature-card p,
+html[data-bs-theme="dark"] body .pathway-step p {
+  color: #ffffff !important;
+}
