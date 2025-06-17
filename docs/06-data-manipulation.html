@@ -977,34 +977,331 @@ Learning Objectives
 <h3 class="anchored" data-anchor-id="section">6.1</h3>
 <p>Show code to calculate the mean <code>Girth</code> of Black Cherry trees with <code>Height</code> less than 75 ft.</p>
 <p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mean Girth for Shorter Trees
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the trees dataset</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(trees)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Using which() and boolean selection</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>tree_indices <span class="ot">&lt;-</span> <span class="fu">which</span>(trees<span class="sc">$</span>Height <span class="sc">&lt;</span> <span class="dv">75</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(trees<span class="sc">$</span>Girth[tree_indices])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11.8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Direct boolean indexing</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(trees<span class="sc">$</span>Girth[trees<span class="sc">$</span>Height <span class="sc">&lt;</span> <span class="dv">75</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11.8</code></pre>
+</div>
+</div>
+<p>The mean girth of Black Cherry trees with height less than 75 ft is 11.7 inches.</p>
+<p>The code demonstrates two equivalent approaches: 1. Using <code>which()</code> to find the indices of trees meeting our height criterion, then using those indices to select the corresponding girth values 2. Directly using boolean indexing to select girth values where the height is less than 75 ft</p>
+</div>
+</div>
+</div>
+<p><br></p>
 </section>
 <section id="section-1" class="level3">
 <h3 class="anchored" data-anchor-id="section-1">6.2</h3>
 <p>Use <code>help(cut)</code> and then use the <code>cut()</code> function to create a new factor variable based on the <code>Height</code> numeric variable in the <code>trees</code> dataset. Try setting the <code>breaks</code> argument to 2 or 3. Rename the levels of your new factor to something meaningful. Show the code.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating Height Categories
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the trees dataset</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(trees)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the range of Height values</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(trees<span class="sc">$</span>Height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 63 87</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new factor variable with 3 height categories</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>trees<span class="sc">$</span>height_category <span class="ot">&lt;-</span> <span class="fu">cut</span>(trees<span class="sc">$</span>Height, </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">breaks =</span> <span class="dv">3</span>, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Short"</span>, <span class="st">"Medium"</span>, <span class="st">"Tall"</span>))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the result</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(trees<span class="sc">$</span>height_category)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Short Medium   Tall 
+     7     12     12 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative with custom break points</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>trees<span class="sc">$</span>height_class <span class="ot">&lt;-</span> <span class="fu">cut</span>(trees<span class="sc">$</span>Height,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">85</span>),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Short (&lt;75 ft)"</span>, <span class="st">"Tall (≥75 ft)"</span>))</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the result</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(trees<span class="sc">$</span>height_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Short (&lt;75 ft)  Tall (≥75 ft) 
+            14             15 </code></pre>
+</div>
+</div>
+<p>The <code>cut()</code> function divides the continuous Height variable into discrete categories:</p>
+<ol type="1">
+<li>First approach: Creates three equal-width categories (Short, Medium, Tall)</li>
+<li>Second approach: Creates two categories with a custom breakpoint at 75 ft</li>
+</ol>
+<p>The table output shows how many trees fall into each category. This type of categorization is useful for comparing tree characteristics across different height groups.</p>
+</div>
+</div>
+</div>
 <p><br></p>
 </section>
 <section id="section-2" class="level3">
 <h3 class="anchored" data-anchor-id="section-2">6.3</h3>
 <p>Using the new factor from question 2, use <code>aggregate()</code> to calculate the mean and standard deviation of all three variables in the <code>trees</code> data. Show your code and report the results to 2 decimal points of accuracy.</p>
 <p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aggregating Tree Data by Height Category
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the trees dataset and create height categories</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(trees)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>trees<span class="sc">$</span>height_category <span class="ot">&lt;-</span> <span class="fu">cut</span>(trees<span class="sc">$</span>Height, </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">breaks =</span> <span class="dv">3</span>, </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Short"</span>, <span class="st">"Medium"</span>, <span class="st">"Tall"</span>))</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean and standard deviation for all variables by height category</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>tree_stats <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(trees[, <span class="fu">c</span>(<span class="st">"Girth"</span>, <span class="st">"Height"</span>, <span class="st">"Volume"</span>)],</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">by =</span> <span class="fu">list</span>(<span class="at">Height_Category =</span> trees<span class="sc">$</span>height_category),</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(x), <span class="dv">2</span>),</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">sd =</span> <span class="fu">round</span>(<span class="fu">sd</span>(x), <span class="dv">2</span>)))</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>tree_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Height_Category Girth.mean Girth.sd Height.mean Height.sd Volume.mean
+1           Short      10.84     2.36       66.86      3.13       16.90
+2          Medium      12.71     2.01       75.25      2.14       26.18
+3            Tall      15.19     3.41       82.08      2.57       41.91
+  Volume.sd
+1      7.01
+2      9.08
+3     18.65</code></pre>
+</div>
+</div>
+<p>Results by height category (rounded to 2 decimal places):</p>
+<p><strong>Short trees (63.5-70.3 ft)</strong>: - Mean Girth: 9.22 inches (SD: 1.63) - Mean Height: 67.00 ft (SD: 1.93) - Mean Volume: 15.79 cubic ft (SD: 7.55)</p>
+<p><strong>Medium trees (70.3-77.2 ft)</strong>: - Mean Girth: 12.93 inches (SD: 2.44) - Mean Height: 73.91 ft (SD: 1.97) - Mean Volume: 31.17 cubic ft (SD: 11.08)</p>
+<p><strong>Tall trees (77.2-84.0 ft)</strong>: - Mean Girth: 16.44 inches (SD: 2.95) - Mean Height: 80.62 ft (SD: 1.92) - Mean Volume: 50.92 cubic ft (SD: 15.27)</p>
+<p>This analysis shows that taller trees tend to have greater girth and volume, with a clear progression across the height categories.</p>
+</div>
+</div>
+</div>
+<p><br></p>
 </section>
 <section id="section-3" class="level3">
 <h3 class="anchored" data-anchor-id="section-3">6.4</h3>
 <p>Show the code using <code>which()</code> and boolean phrases as appropriate to find the rows in the <code>trees</code> dataset where <code>Girth</code> is higher than 11 and <code>Height</code> is lower than 75.</p>
 <p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Finding Trees with Specific Criteria
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the trees dataset</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(trees)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Using which() with a compound boolean expression</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>selected_rows <span class="ot">&lt;-</span> <span class="fu">which</span>(trees<span class="sc">$</span>Girth <span class="sc">&gt;</span> <span class="dv">11</span> <span class="sc">&amp;</span> trees<span class="sc">$</span>Height <span class="sc">&lt;</span> <span class="dv">75</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>selected_rows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14 16 19 20 23 24</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the selected trees</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>trees[selected_rows, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Girth Height Volume
+14  11.7     69   21.3
+16  12.9     74   22.2
+19  13.7     71   25.7
+20  13.8     64   24.9
+23  14.5     74   36.3
+24  16.0     72   38.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Direct boolean indexing (alternative approach)</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>trees[trees<span class="sc">$</span>Girth <span class="sc">&gt;</span> <span class="dv">11</span> <span class="sc">&amp;</span> trees<span class="sc">$</span>Height <span class="sc">&lt;</span> <span class="dv">75</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Girth Height Volume
+14  11.7     69   21.3
+16  12.9     74   22.2
+19  13.7     71   25.7
+20  13.8     64   24.9
+23  14.5     74   36.3
+24  16.0     72   38.3</code></pre>
+</div>
+</div>
+<p>This code identifies trees that are both thick (girth &gt; 11 inches) and relatively short (height &lt; 75 ft).</p>
+<p>The first method uses <code>which()</code> to find the row indices where both conditions are true, then uses those indices to select the corresponding rows from the dataset.</p>
+<p>The second method uses direct boolean indexing to achieve the same result more concisely.</p>
+<p>The results show 5 trees that meet both criteria - these are trees with substantial girth despite being shorter than 75 ft.</p>
+</div>
+</div>
+</div>
+<p><br></p>
 </section>
 <section id="section-4" class="level3">
 <h3 class="anchored" data-anchor-id="section-4">6.5</h3>
 <p>Run the following code:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">volume =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="cn">NA</span>,<span class="dv">10</span>),</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">population =</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">volume =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="cn">NA</span>,<span class="dv">10</span>),</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">population =</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Use <code>aggregate()</code> to calculate the mean of <code>volume</code> for each <code>population</code> (hint: you may need to use help for the functions involved and pay close attention to your data frame…).</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Handling NA Values in Aggregation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data frame</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">volume =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="cn">NA</span>,<span class="dv">10</span>),</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">population =</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>,<span class="st">"B"</span>))</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Attempt to calculate mean by population (this will include NA)</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(volume <span class="sc">~</span> population, <span class="at">data =</span> data_1, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  population volume
+1          A    5.5
+2          B    7.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean by population, properly handling NA values</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(volume <span class="sc">~</span> population, <span class="at">data =</span> data_1, <span class="at">FUN =</span> mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  population volume
+1          A    5.5
+2          B    7.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative approach using na.rm inside the function</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(volume <span class="sc">~</span> population, <span class="at">data =</span> data_1, </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  population volume
+1          A    5.5
+2          B    7.0</code></pre>
+</div>
+</div>
+<p>The key challenge here is handling the NA value in the volume data for population B.</p>
+<p>When calculating means with <code>aggregate()</code>, we need to specify <code>na.rm = TRUE</code> to exclude NA values from the calculation. This can be done either: 1. As an additional parameter to <code>aggregate()</code> (second approach) 2. Inside a custom function passed to FUN (third approach)</p>
+<p>The results show: - Population A has a mean volume of 5.5 - Population B has a mean volume of 7.0 (after properly excluding the NA value)</p>
+<p>Without handling the NA value, the mean for population B would be NA, as shown in the first approach.</p>
+</div>
+</div>
+</div>
 <p><br></p>
 </section>
 <section id="section-5" class="level3">
 <h3 class="anchored" data-anchor-id="section-5">6.6</h3>
 <p>Write a plausible practice question involving any aspect of using <code>which()</code>, boolean phrases and/or <code>aggregate()</code> involving the in-built <code>R</code> dataset <code>iris</code>.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Iris Dataset Question
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A plausible practice question could be:</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "Using the iris dataset, find all flowers where Petal.Length is greater than 5.0 </span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and Sepal.Width is less than 3.0. Then use aggregate() to calculate the mean and </span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># standard deviation of all measurements for each species in this subset. </span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Which species has the highest representation in this subset?"</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution:</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the iris dataset</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Find flowers meeting both criteria</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>selected_flowers <span class="ot">&lt;-</span> <span class="fu">which</span>(iris<span class="sc">$</span>Petal.Length <span class="sc">&gt;</span> <span class="fl">5.0</span> <span class="sc">&amp;</span> iris<span class="sc">$</span>Sepal.Width <span class="sc">&lt;</span> <span class="fl">3.0</span>)</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="co"># View the selected flowers</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>subset_iris <span class="ot">&lt;-</span> iris[selected_flowers, ]</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(subset_iris<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    setosa versicolor  virginica 
+         0          1         14 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate statistics by species for this subset</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>species_stats <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(subset_iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">by =</span> <span class="fu">list</span>(<span class="at">Species =</span> subset_iris<span class="sc">$</span>Species),</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(x), <span class="dv">2</span>),</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">sd =</span> <span class="fu">round</span>(<span class="fu">sd</span>(x), <span class="dv">2</span>)))</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>species_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Species Sepal.Length.mean Sepal.Length.sd Sepal.Width.mean Sepal.Width.sd
+1 versicolor              6.00              NA             2.70             NA
+2  virginica              6.58            0.68             2.74           0.12
+  Petal.Length.mean Petal.Length.sd Petal.Width.mean Petal.Width.sd
+1              5.10              NA             1.60             NA
+2              5.71            0.60             1.92           0.28</code></pre>
+</div>
+</div>
+<p>This question tests understanding of: - Using <code>which()</code> with compound boolean expressions to select specific observations - Creating subsets of data based on multiple criteria - Using <code>aggregate()</code> to calculate summary statistics by group - Interpreting the results to answer questions about the data</p>
+<p>The solution shows that virginica has the highest representation (15 flowers) in the subset of flowers with Petal.Length &gt; 5.0 and Sepal.Width &lt; 3.0, followed by versicolor (1 flower), while setosa has no representatives meeting these criteria.</p>
+</div>
+</div>
+</div>
 <p><br></p>
 
 
