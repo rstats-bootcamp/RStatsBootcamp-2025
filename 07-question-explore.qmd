@@ -470,6 +470,56 @@ Show code to set up an `R` analysis file with a header, table of contents, and a
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## R Analysis File Setup
+```{r}
+#| echo: true
+#| eval: false
+
+## HEADER ####
+## Who: Your Name
+## What: Field trial data analysis
+## Last edited: 2023-05-15
+####
+
+## CONTENTS ####
+## 00 Setup
+## 01 Data Exploration
+## 02 Statistical Analysis
+## 03 Visualization
+####
+
+## 00 Setup ####
+# Set working directory (adjust path to your actual directory)
+# setwd("path/to/your/directory")
+
+# Load required libraries
+library(openxlsx)
+
+# Read in the field trial data
+seed <- read.xlsx("data/field-trial.xlsx")
+
+# Check the structure of the data
+str(seed)
+
+# View the first few rows
+head(seed)
+```
+
+This code sets up a properly structured R analysis file with:
+- A header containing author information and purpose
+- A table of contents outlining the major sections
+- A setup section that:
+  - Sets the working directory
+  - Loads the necessary library for reading Excel files
+  - Reads in the data and assigns it to an object called "seed"
+  - Includes basic commands to examine the data structure
+
+This structure follows best practices for reproducible research by clearly documenting each step of the analysis process.
+:::
+
+<br>
+
 ### 7.2
 
 -   `pct`, `wet` and `dry` should be numeric
@@ -482,15 +532,149 @@ Show the code to do this.
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Data Type Conversion
+```{r}
+#| echo: true
+#| eval: false
+
+# Load required libraries and read data
+library(openxlsx)
+seed <- read.xlsx("data/field-trial.xlsx")
+
+# Check current data types
+str(seed)
+
+# Convert pct, wet, and dry to numeric
+seed$pct <- as.numeric(seed$pct)
+seed$wet <- as.numeric(seed$wet)
+seed$dry <- as.numeric(seed$dry)
+
+# Convert block and trial to factors
+seed$block <- factor(seed$block)
+seed$trial <- factor(seed$trial)
+
+# Convert treatment to factor with "Control" as reference level
+seed$treatment <- factor(seed$treatment, levels = c("Control", "Treatment1", "Treatment2", "Treatment3"))
+
+# Verify the conversions
+str(seed)
+```
+
+This code ensures that all variables have the appropriate data types:
+- Numeric variables (`pct`, `wet`, `dry`) are converted using `as.numeric()`
+- Categorical variables (`block`, `trial`) are converted to factors
+- The `treatment` variable is converted to a factor with "Control" explicitly set as the first level, making it the reference level for statistical analyses
+
+Setting "Control" as the reference level is particularly important for statistical tests that compare treatments against a control condition, as it affects how contrasts are calculated in models.
+:::
+
+<br>
+
 ### 7.3
 
 Use `aggregate()` to calculate the mean, standard deviation, standard error, and the count (e.g. `length()`) of `pct` for each level of `treatment`. Show the code.
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Aggregating Data by Treatment
+```{r}
+#| echo: true
+#| eval: false
+
+# Load required libraries and read data
+library(openxlsx)
+seed <- read.xlsx("data/field-trial.xlsx")
+
+# Convert treatment to factor and pct to numeric
+seed$treatment <- factor(seed$treatment)
+seed$pct <- as.numeric(seed$pct)
+
+# Calculate mean, SD, SE, and count of pct for each treatment level
+treatment_stats <- aggregate(pct ~ treatment, data = seed, 
+                            FUN = function(x) {
+                              c(mean = mean(x),
+                                sd = sd(x),
+                                se = sd(x)/sqrt(length(x)),
+                                count = length(x))
+                            })
+
+# Display the results
+treatment_stats
+```
+
+This code calculates four key statistics for the `pct` variable grouped by treatment:
+- Mean: The average percentage value for each treatment
+- Standard Deviation (SD): Measures the amount of variation in the data
+- Standard Error (SE): Estimates the standard deviation of the sampling distribution of the mean
+- Count: The number of observations in each treatment group
+
+The `aggregate()` function is used with a custom function that calculates all these statistics at once. The formula notation `pct ~ treatment` specifies that we want to aggregate the `pct` variable by the `treatment` factor.
+
+This summary provides a comprehensive overview of how the treatments affect the percentage values, including both the central tendency (mean) and the variability (SD, SE).
+:::
+
+<br>
+
 ### 7.4
 
 Make a fully labelled boxplot of the `pct` variable as a function of `treatment`. Add a horizontal line (red and dashed) for the overall mean of `pct`, and two horizontal lines (gray, dotted) for the overall mean of `pct` +/- 1 standard deviation.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Boxplot with Reference Lines
+```{r}
+#| echo: true
+#| eval: false
+
+# Load required libraries and read data
+library(openxlsx)
+seed <- read.xlsx("data/field-trial.xlsx")
+
+# Convert treatment to factor and pct to numeric
+seed$treatment <- factor(seed$treatment)
+seed$pct <- as.numeric(seed$pct)
+
+# Calculate overall mean and standard deviation
+overall_mean <- mean(seed$pct)
+overall_sd <- sd(seed$pct)
+
+# Create boxplot
+boxplot(pct ~ treatment, data = seed,
+        main = "Percentage Growth by Treatment",
+        xlab = "Treatment Type",
+        ylab = "Growth Percentage (%)",
+        col = "lightblue",
+        border = "darkblue")
+
+# Add horizontal line for overall mean
+abline(h = overall_mean, col = "red", lty = 2, lwd = 2)
+
+# Add horizontal lines for mean +/- 1 SD
+abline(h = overall_mean + overall_sd, col = "gray", lty = 3, lwd = 1)
+abline(h = overall_mean - overall_sd, col = "gray", lty = 3, lwd = 1)
+
+# Add legend
+legend("topright", 
+       legend = c("Overall Mean", "Mean ± 1 SD"),
+       col = c("red", "gray"),
+       lty = c(2, 3),
+       lwd = c(2, 1))
+```
+
+This code creates a comprehensive boxplot visualization that:
+1. Shows the distribution of growth percentages across different treatments
+2. Includes a red dashed line representing the overall mean across all treatments
+3. Adds gray dotted lines showing ±1 standard deviation from the overall mean
+4. Provides a legend explaining the reference lines
+5. Features clear labels for the title, x-axis, and y-axis
+
+The boxplots themselves show the median (center line), interquartile range (box), and potential outliers (points) for each treatment, allowing for easy visual comparison between treatment effects.
+
+The reference lines provide context about how each treatment compares to the overall distribution of the data, helping to identify treatments that produce above-average or below-average results.
+:::
 
 <br>
 
@@ -502,9 +686,151 @@ Experiment making a boxplot showing `pct ~ treatment` separated for each trial
 
 <br>
 
+::: {.callout-tip collapse="true"}
+## Multi-Panel Boxplot by Trial
+```{r}
+#| echo: true
+#| eval: false
+
+# Load required libraries and read data
+library(openxlsx)
+seed <- read.xlsx("data/field-trial.xlsx")
+
+# Convert variables to appropriate types
+seed$treatment <- factor(seed$treatment)
+seed$trial <- factor(seed$trial)
+seed$pct <- as.numeric(seed$pct)
+
+# Method 1: Using par() to create multiple panels
+# First, determine how many trials we have
+trials <- unique(seed$trial)
+n_trials <- length(trials)
+
+# Set up the plotting area with one row and multiple columns
+par(mfrow = c(1, n_trials))
+
+# Create a boxplot for each trial
+for (t in trials) {
+  # Subset data for this trial
+  trial_data <- seed[seed$trial == t, ]
+  
+  # Create boxplot
+  boxplot(pct ~ treatment, data = trial_data,
+          main = paste("Trial", t),
+          xlab = "Treatment",
+          ylab = "Growth Percentage (%)",
+          col = "lightblue")
+}
+
+# Reset the plotting parameters
+par(mfrow = c(1, 1))
+
+# Method 2: Using a single plot with interaction
+# Create a new factor that combines treatment and trial
+seed$treat_trial <- interaction(seed$treatment, seed$trial)
+
+# Create the boxplot with all combinations
+boxplot(pct ~ treat_trial, data = seed,
+        main = "Growth Percentage by Treatment and Trial",
+        xlab = "",
+        ylab = "Growth Percentage (%)",
+        col = rainbow(n_trials)[as.numeric(seed$trial)],
+        las = 2)  # Rotate x-axis labels
+
+# Add a more informative x-axis
+axis(1, at = 1:length(levels(seed$treat_trial)), 
+     labels = levels(seed$treat_trial), 
+     las = 2, cex.axis = 0.7)
+
+# Add a legend
+legend("topright", 
+       legend = paste("Trial", trials),
+       fill = rainbow(n_trials),
+       title = "Trial")
+```
+
+This solution presents two different approaches to creating boxplots separated by trial:
+
+1. **Multiple Panel Approach**: Creates a separate boxplot for each trial using `par(mfrow)` to arrange them side by side. This makes it easy to compare treatments within each trial.
+
+2. **Single Plot Approach**: Creates one boxplot with all treatment-trial combinations using the `interaction()` function to create a new factor that represents all possible combinations. This approach uses color coding to distinguish between trials.
+
+Both methods allow you to see how treatment effects might vary across different trials, which is important for assessing the consistency and reproducibility of the results.
+
+The choice between these approaches depends on the number of trials and treatments, and what aspects of the data you want to emphasize in your visualization.
+:::
+
+<br>
+
 ### 7.6
 
 Write a plausible practice question involving `aggregate()` and `boxplot()` in-built R dataset `iris`.
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Iris Dataset Question
+```{r}
+#| echo: true
+#| eval: true
+
+# A plausible practice question could be:
+
+# "Using the iris dataset, create a boxplot showing petal length by species. 
+# Then use aggregate() to calculate the mean, median, and standard deviation 
+# of petal length for each species. Add horizontal lines to your boxplot 
+# representing the mean petal length for each species using different colors. 
+# Include a legend identifying each species mean."
+
+# Solution:
+# Load the iris dataset
+data(iris)
+
+# Calculate statistics by species
+petal_stats <- aggregate(Petal.Length ~ Species, data = iris, 
+                        FUN = function(x) {
+                          c(mean = mean(x),
+                            median = median(x),
+                            sd = sd(x))
+                        })
+
+# Display the statistics
+petal_stats
+
+# Create a boxplot
+boxplot(Petal.Length ~ Species, data = iris,
+        main = "Petal Length by Species",
+        xlab = "Species",
+        ylab = "Petal Length (cm)",
+        col = c("lightpink", "lightblue", "lightgreen"))
+
+# Define colors for mean lines
+species_colors <- c("red", "blue", "darkgreen")
+
+# Add horizontal lines for means of each species
+for (i in 1:3) {
+  species_data <- iris[iris$Species == levels(iris$Species)[i], ]
+  species_mean <- mean(species_data$Petal.Length)
+  segments(i-0.4, species_mean, i+0.4, species_mean, 
+           col = species_colors[i], lwd = 2)
+}
+
+# Add legend
+legend("topleft", 
+       legend = paste(levels(iris$Species), "mean"),
+       col = species_colors,
+       lwd = 2,
+       title = "Species Means")
+```
+
+This practice question tests understanding of:
+1. Using `aggregate()` to calculate multiple statistics grouped by a factor
+2. Creating informative boxplots with appropriate labels
+3. Adding custom elements to enhance a plot's information content
+4. Working with the iris dataset, which is commonly used for teaching data visualization
+
+The solution demonstrates how to create a comprehensive visualization that combines boxplots (showing distribution) with horizontal lines (showing means), providing a rich view of how petal length varies across iris species.
+:::
 
 <br>
 
