@@ -1244,6 +1244,19 @@ Kruskal-Wallis chi-squared = 7.648, df = 4, p-value = 0.1054</code></pre>
 <p><br></p>
 <section id="loading-and-exploring-the-pesticide-dataset" class="level3"><h3 class="anchored" data-anchor-id="loading-and-exploring-the-pesticide-dataset">8.1 Loading and Exploring the Pesticide Dataset</h3>
 <p>Read in the data from the file 1.5-OrchardSprays.csv. Use the <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> function. Print the first few rows of the data, and check the structure of the data. Show your code.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Loading and Exploring Data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Read in the data from the file 1.5-OrchardSprays.csv</span></span>
 <span><span class="va">pest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"1.5-OrchardSprays.csv"</span><span class="op">)</span></span>
@@ -1254,9 +1267,25 @@ Kruskal-Wallis chi-squared = 7.648, df = 4, p-value = 0.1054</code></pre>
 <span><span class="co"># Check the structure of the data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">pest</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <p><br></p>
 </section><section id="testing-normality-of-residuals" class="level3"><h3 class="anchored" data-anchor-id="testing-normality-of-residuals">8.2 Testing Normality of Residuals</h3>
 <p>Test the assumption of Gaussian residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the Gaussian assumption.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Testing Normality of Residuals
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create the ANOVA model</span></span>
 <span><span class="va">pest_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
@@ -1285,9 +1314,25 @@ Kruskal-Wallis chi-squared = 7.648, df = 4, p-value = 0.1054</code></pre>
 <span><span class="va">shapiro_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">pest_residuals</span><span class="op">)</span></span>
 <span><span class="va">shapiro_test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <p><br></p>
 </section><section id="testing-homoscedasticity" class="level3"><h3 class="anchored" data-anchor-id="testing-homoscedasticity">8.3 Testing Homoscedasticity</h3>
 <p>Test the assumption of homoscedasticity of residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the homoscedasticity assumption.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Testing Homoscedasticity
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create the ANOVA model</span></span>
 <span><span class="va">pest_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
@@ -1312,9 +1357,25 @@ Kruskal-Wallis chi-squared = 7.648, df = 4, p-value = 0.1054</code></pre>
 <span><span class="va">bartlett_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/bartlett.test.html">bartlett.test</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
 <span><span class="va">bartlett_test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <p><br></p>
 </section><section id="performing-one-way-anova" class="level3"><h3 class="anchored" data-anchor-id="performing-one-way-anova">8.4 Performing One-way ANOVA</h3>
 <p>Perform either a 1-way ANOVA or an appropriate alternative based on your findings in the previous answers. Show your code, state your results in the technical style and briefly interpret your findings.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Performing One-way ANOVA
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform one-way ANOVA</span></span>
 <span><span class="va">pest_anova</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span></span>
@@ -1331,9 +1392,25 @@ Kruskal-Wallis chi-squared = 7.648, df = 4, p-value = 0.1054</code></pre>
 <span><span class="va">eta_squared</span> <span class="op">&lt;-</span> <span class="va">SS_treatment</span> <span class="op">/</span> <span class="va">SS_total</span></span>
 <span><span class="va">eta_squared</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <p><br></p>
 </section><section id="post-hoc-analysis-of-treatment-effects" class="level3"><h3 class="anchored" data-anchor-id="post-hoc-analysis-of-treatment-effects">8.5 Post-hoc Analysis of Treatment Effects</h3>
 <p>Perform an appropriate set of <em>post hoc</em> tests to compare pairwise mean differences in these data. Focus on the <em>post hoc</em> questions of interest: Is the organic pesticide effective? Does dose matter in the non-organic treatments?</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Post-hoc Analysis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Perform Tukey HSD test for all pairwise comparisons</span></span>
 <span><span class="va">tukey_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">damage</span> <span class="op">~</span> <span class="va">treatment</span>, data <span class="op">=</span> <span class="va">pest</span><span class="op">)</span><span class="op">)</span></span>
@@ -1372,9 +1449,81 @@ Kruskal-Wallis chi-squared = 7.648, df = 4, p-value = 0.1054</code></pre>
 <span>       legend <span class="op">=</span> <span class="st">"Groups with different letters are significantly different (p &lt; 0.05)"</span>,</span>
 <span>       cex <span class="op">=</span> <span class="fl">0.8</span>, bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <p><br></p>
 </section><section id="create-your-own-anova-question" class="level3"><h3 class="anchored" data-anchor-id="create-your-own-anova-question">8.6 Create Your Own ANOVA Question</h3>
 <p>Write a plausible practice question involving any aspect of data handling, graphing or analysis for the 1-way ANOVA framework for the iris data (<code>data(iris)</code>; <code><a href="https://rdrr.io/r/datasets/iris.html">help(iris)</a></code>).</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Creating an ANOVA Question
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># A plausible practice question could be:</span></span>
+<span><span class="co"># "Using the iris dataset, perform a one-way ANOVA to determine if there are </span></span>
+<span><span class="co"># significant differences in petal length among the three species. If significant </span></span>
+<span><span class="co"># differences exist, conduct post-hoc tests to identify which species differ from </span></span>
+<span><span class="co"># each other. Create an appropriate visualization to display these differences."</span></span>
+<span></span>
+<span><span class="co"># Solution:</span></span>
+<span><span class="co"># Load the iris dataset</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Examine the data structure</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create a boxplot to visualize the differences</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span>,</span>
+<span>        main <span class="op">=</span> <span class="st">"Petal Length Comparison Across Iris Species"</span>,</span>
+<span>        xlab <span class="op">=</span> <span class="st">"Species"</span>,</span>
+<span>        ylab <span class="op">=</span> <span class="st">"Petal Length (cm)"</span>,</span>
+<span>        col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"lightpink"</span>, <span class="st">"lightblue"</span>, <span class="st">"lightgreen"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Perform one-way ANOVA</span></span>
+<span><span class="va">iris_anova</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">iris_anova</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Check assumptions</span></span>
+<span><span class="co"># Normality of residuals</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">iris_anova</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Homogeneity of variances</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/bartlett.test.html">bartlett.test</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Perform post-hoc test (Tukey's HSD)</span></span>
+<span><span class="va">tukey_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">iris_anova</span><span class="op">)</span></span>
+<span><span class="va">tukey_result</span></span>
+<span></span>
+<span><span class="co"># Visualize the Tukey results</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">tukey_result</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Add mean values to the boxplot</span></span>
+<span><span class="va">species_means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tapply.html">tapply</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span>, <span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="va">mean</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, </span>
+<span>     y <span class="op">=</span> <span class="va">species_means</span> <span class="op">-</span> <span class="fl">0.3</span>, </span>
+<span>     labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">species_means</span>, <span class="fl">2</span><span class="op">)</span>,</span>
+<span>     col <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span>     font <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Add significance indicators</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, </span>
+<span>     y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tapply.html">tapply</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span>, <span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, <span class="va">max</span><span class="op">)</span> <span class="op">+</span> <span class="fl">0.2</span>,</span>
+<span>     labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>,  <span class="co"># All species differ significantly</span></span>
+<span>     font <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

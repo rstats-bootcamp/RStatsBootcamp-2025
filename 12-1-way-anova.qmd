@@ -609,6 +609,10 @@ For the following exercises, use the dataset in the file 1.5-OrchardSprays.csv. 
 
 Read in the data from the file 1.5-OrchardSprays.csv. Use the `read.csv()` function. Print the first few rows of the data, and check the structure of the data. Show your code.
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Loading and Exploring Data
 ```{r}
 #| echo: true
 #| eval: false
@@ -622,6 +626,7 @@ head(pest)
 # Check the structure of the data
 str(pest)
 ```
+:::
 
 <br>
 
@@ -629,6 +634,10 @@ str(pest)
 
 Test the assumption of Gaussian residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the Gaussian assumption.
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Testing Normality of Residuals
 ```{r}
 #| echo: true
 #| eval: false
@@ -660,6 +669,7 @@ par(mfrow = c(1, 1))
 shapiro_test <- shapiro.test(pest_residuals)
 shapiro_test
 ```
+:::
 
 <br>
 
@@ -667,6 +677,10 @@ shapiro_test
 
 Test the assumption of homoscedasticity of residuals for 1-way ANOVA using any graphs or NHST approach that you deem appropriate. Show your code and briefly describe your EDA findings and conclusion as to whether these data adhere to the homoscedasticity assumption.
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Testing Homoscedasticity
 ```{r}
 #| echo: true
 #| eval: false
@@ -694,6 +708,7 @@ abline(h = 0, lty = 2, col = "red")
 bartlett_test <- bartlett.test(damage ~ treatment, data = pest)
 bartlett_test
 ```
+:::
 
 <br>
 
@@ -701,6 +716,10 @@ bartlett_test
 
 Perform either a 1-way ANOVA or an appropriate alternative based on your findings in the previous answers. Show your code, state your results in the technical style and briefly interpret your findings.
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Performing One-way ANOVA
 ```{r}
 #| echo: true
 #| eval: false
@@ -720,6 +739,7 @@ SS_total <- sum(pest_anova_summary[[1]][, "Sum Sq"])
 eta_squared <- SS_treatment / SS_total
 eta_squared
 ```
+:::
 
 <br>
 
@@ -727,6 +747,10 @@ eta_squared
 
 Perform an appropriate set of *post hoc* tests to compare pairwise mean differences in these data. Focus on the *post hoc* questions of interest: Is the organic pesticide effective? Does dose matter in the non-organic treatments?
 
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Post-hoc Analysis
 ```{r}
 #| echo: true
 #| eval: false
@@ -768,9 +792,72 @@ legend("topright",
        legend = "Groups with different letters are significantly different (p < 0.05)",
        cex = 0.8, bty = "n")
 ```
+:::
 
 <br>
 
 ### 8.6 Create Your Own ANOVA Question
 
 Write a plausible practice question involving any aspect of data handling, graphing or analysis for the 1-way ANOVA framework for the iris data (`data(iris)`; `help(iris)`).
+
+<br>
+
+::: {.callout-tip collapse="true"}
+## Solution: Creating an ANOVA Question
+```{r}
+#| echo: true
+#| eval: false
+
+# A plausible practice question could be:
+# "Using the iris dataset, perform a one-way ANOVA to determine if there are 
+# significant differences in petal length among the three species. If significant 
+# differences exist, conduct post-hoc tests to identify which species differ from 
+# each other. Create an appropriate visualization to display these differences."
+
+# Solution:
+# Load the iris dataset
+data(iris)
+
+# Examine the data structure
+str(iris)
+
+# Create a boxplot to visualize the differences
+boxplot(Petal.Length ~ Species, data = iris,
+        main = "Petal Length Comparison Across Iris Species",
+        xlab = "Species",
+        ylab = "Petal Length (cm)",
+        col = c("lightpink", "lightblue", "lightgreen"))
+
+# Perform one-way ANOVA
+iris_anova <- aov(Petal.Length ~ Species, data = iris)
+summary(iris_anova)
+
+# Check assumptions
+# Normality of residuals
+shapiro.test(residuals(iris_anova))
+
+# Homogeneity of variances
+bartlett.test(Petal.Length ~ Species, data = iris)
+
+# Perform post-hoc test (Tukey's HSD)
+tukey_result <- TukeyHSD(iris_anova)
+tukey_result
+
+# Visualize the Tukey results
+plot(tukey_result)
+
+# Add mean values to the boxplot
+species_means <- tapply(iris$Petal.Length, iris$Species, mean)
+text(x = 1:3, 
+     y = species_means - 0.3, 
+     labels = round(species_means, 2),
+     col = "red",
+     font = 2)
+
+# Add significance indicators
+text(x = 1:3, 
+     y = tapply(iris$Petal.Length, iris$Species, max) + 0.2,
+     labels = c("a", "b", "c"),  # All species differ significantly
+     font = 2)
+```
+:::
