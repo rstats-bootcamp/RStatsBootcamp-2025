@@ -48,7 +48,7 @@ website:
           - 15-github-basics.qmd
           - 16-collaborative-workflows.qmd
   page-footer: 
-    center: "© 2025 R Stats Bootcamp :: 🦑 [GitHub](https://github.com/your-repo/RStatsBootcamp-2025) :: [![](https://img.shields.io/badge/license-MIT-green)](https://github.com/rstats-bootcamp/RStatsBootcamp-2025/blob/main/LICENSE.md) "
+    center: "© 2025 W. Edwin Harris :: 🦑 [GitHub](https://github.com/your-repo/RStatsBootcamp-2025) :: [![](https://img.shields.io/badge/license-MIT-green)](https://github.com/rstats-bootcamp/RStatsBootcamp-2025/blob/main/LICENSE.md) "
 
 format:
   html:
