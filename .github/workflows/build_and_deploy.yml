@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up R
@@ -23,7 +23,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("quarto", "rmarkdown", "tidyverse", "reshape2", "xml2", "downlit"))'
+          Rscript -e 'pkgs <- c("quarto", "rmarkdown", "tidyverse", "reshape2", "xml2", "downlit", "car", "MASS", "readxl", "openxlsx", "knitr", "datasets", "faux", "dplyr", "ggplot2", "readr", "tidyr"); new <- pkgs[!pkgs %in% rownames(installed.packages())]; if (length(new)) install.packages(new)'
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
