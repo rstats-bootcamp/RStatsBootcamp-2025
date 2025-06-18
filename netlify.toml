@@ -1,6 +1,6 @@
 [build]
   publish = "_site"
-  command = "bash install_quarto_and_render.sh"
+  # No build command at all — Netlify just hosts the static output
 
 [[redirects]]
   from = "/*"

@@ -1,16 +1,16 @@
-name: Build Quarto site for Netlify
+name: Build and Deploy Quarto Site with R
 
 on:
   push:
     branches:
-      - main  # Or whatever your main branch is called
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up R
@@ -23,19 +23,18 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("tidyverse", "quarto", "rmarkdown"))'
+          Rscript -e 'install.packages(c("quarto", "rmarkdown", "tidyverse"))'
 
-      - name: Install Quarto CLI
+      - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.7.30
 
-      - name: Render site
+      - name: Render the site
         run: quarto render
 
-      - name: Push built site to netlify-build branch
+      - name: Deploy to Netlify branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: netlify-build
           folder: _site
-          clean: true
