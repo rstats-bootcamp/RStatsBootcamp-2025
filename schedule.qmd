@@ -3,7 +3,7 @@ title: "Course Schedule"
 ---
 
 ::: schedule-banner
-![Data science learning pathway](img/robot-farmer.jpeg){.schedule-img}
+![Data science learning pathway](img/robot-farmer.jpeg){width="400px"}
 
 ## R Stats Bootcamp Learning Path
 

@@ -3,7 +3,7 @@ title: "About the Bootcamp"
 ---
 
 ::: about-banner
-![Data science skills for research](img/ds_venn_sm.png){.about-img}
+![Data science skills for research](img/ds_venn_sm.png){width="400px"}
 
 ## Empowering Research Through Data Science
 :::
