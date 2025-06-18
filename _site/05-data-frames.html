@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>05 Data frames – R Stats Bootcamp</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./img/rstats-logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dee922831e13d8617d658465dd4567ee.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-927edb3cde42616945691bbf0360b549.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dee922831e13d8617d658465dd4567ee.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4848551f56e22cb80adcac86ad2b91da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ec3125e1e7a9c380590c6781d1052461.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script><link rel="stylesheet" href="styles.css">
+</head>
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./img/rstats-logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">R Stats Bootcamp</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./05-data-frames.html">05 Data frames</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting Started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Stats Bootcamp</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About the Bootcamp</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 1: R Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Setup &amp; intro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-r-lang.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 R language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 R Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Data objects</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-data-frames.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">05 Data frames</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-data-manipulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Data subsetting</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 2: Statistical Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-question-explore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Explore data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-sampling-dist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Distributions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-t-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 T-test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-1-way-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 ANOVA</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 3: Reproducible Research</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13 Reproducibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14 R Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-github-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15 Git and GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-collaborative-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16 Collaboration</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#data-frames-in-r" id="toc-data-frames-in-r" class="nav-link active" data-scroll-target="#data-frames-in-r">1 Data frames in <code>R</code></a></li>
+  <li>
+<a href="#tidy-data-concept" id="toc-tidy-data-concept" class="nav-link" data-scroll-target="#tidy-data-concept">2 Tidy data concept</a>
+  <ul class="collapse">
+<li><a href="#the-tidy-data-concept" id="toc-the-tidy-data-concept" class="nav-link" data-scroll-target="#the-tidy-data-concept">2.1 The Tidy Data concept</a></li>
+  </ul>
+</li>
+  <li><a href="#common-data-file-types" id="toc-common-data-file-types" class="nav-link" data-scroll-target="#common-data-file-types">3 Common data file types</a></li>
+  <li>
+<a href="#excel-data-setup-and-the-data-dictionary" id="toc-excel-data-setup-and-the-data-dictionary" class="nav-link" data-scroll-target="#excel-data-setup-and-the-data-dictionary">4 Excel, data setup, and the Data Dictionary</a>
+  <ul class="collapse">
+<li><a href="#tidy-data-and-excel" id="toc-tidy-data-and-excel" class="nav-link" data-scroll-target="#tidy-data-and-excel">4.1 Tidy Data and Excel</a></li>
+  <li><a href="#untidy-data" id="toc-untidy-data" class="nav-link" data-scroll-target="#untidy-data">4.2 Untidy data</a></li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">4.3 CSV files</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#getting-data-into-r" id="toc-getting-data-into-r" class="nav-link" data-scroll-target="#getting-data-into-r">5 Getting data into R</a>
+  <ul class="collapse">
+<li><a href="#working-directory" id="toc-working-directory" class="nav-link" data-scroll-target="#working-directory">5.1 Working directory</a></li>
+  <li><a href="#read-in-your-first-file" id="toc-read-in-your-first-file" class="nav-link" data-scroll-target="#read-in-your-first-file">5.2 Read in your first file</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#manipulating-variables-in-the-data-frame" id="toc-manipulating-variables-in-the-data-frame" class="nav-link" data-scroll-target="#manipulating-variables-in-the-data-frame">6 Manipulating variables in the Data Frame</a>
+  <ul class="collapse">
+<li><a href="#data-manipulation-in-r" id="toc-data-manipulation-in-r" class="nav-link" data-scroll-target="#data-manipulation-in-r">6.1 Data manipulation in <code>R</code></a></li>
+  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class">6.2 <code>class()</code></a></li>
+  <li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names">6.3 <code>names()</code></a></li>
+  <li><a href="#operator-for-data-frames" id="toc-operator-for-data-frames" class="nav-link" data-scroll-target="#operator-for-data-frames">6.4 <code>$</code> operator for data frames</a></li>
+  <li><a href="#str" id="toc-str" class="nav-link" data-scroll-target="#str">6.5 <code>str()</code></a></li>
+  <li><a href="#the-index-operator" id="toc-the-index-operator" class="nav-link" data-scroll-target="#the-index-operator">6.6 <code>[ , ]</code> the index operator</a></li>
+  <li><a href="#attach" id="toc-attach" class="nav-link" data-scroll-target="#attach">6.7 <code>attach()</code></a></li>
+  </ul>
+</li>
+  <li>
+<a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">7 Practice exercises</a>
+  <ul class="collapse">
+<li><a href="#butterfly-data" id="toc-butterfly-data" class="nav-link" data-scroll-target="#butterfly-data">7.1 Butterfly Data</a></li>
+  <li><a href="#factor-conversion" id="toc-factor-conversion" class="nav-link" data-scroll-target="#factor-conversion">7.2 Factor Conversion</a></li>
+  <li><a href="#data-frame-subsetting" id="toc-data-frame-subsetting" class="nav-link" data-scroll-target="#data-frame-subsetting">7.3 Data Frame Subsetting</a></li>
+  <li><a href="#csv-without-headers" id="toc-csv-without-headers" class="nav-link" data-scroll-target="#csv-without-headers">7.4 CSV Without Headers</a></li>
+  <li><a href="#attach-function" id="toc-attach-function" class="nav-link" data-scroll-target="#attach-function">7.5 Attach Function</a></li>
+  <li><a href="#data-frame-question" id="toc-data-frame-question" class="nav-link" data-scroll-target="#data-frame-question">7.6 Data Frame Question</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setup.html">Module 1: R Foundations</a></li><li class="breadcrumb-item"><a href="./05-data-frames.html">05 Data frames</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">05 Data frames</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/tidy.png" class="img-fluid figure-img"></p>
+<figcaption>Like your room, data should be tidy</figcaption></figure>
+</div>
+</center>
+<section id="data-frames-in-r" class="level2"><h2 class="anchored" data-anchor-id="data-frames-in-r">1 Data frames in <code>R</code>
+</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+<li>Describe and use common data file types</li>
+<li>Use Excel for data setup and create a Data Dictionary</li>
+<li>Read data from Excel and CSV files</li>
+<li>Manipulate variables in a data frame</li>
+</ul>
+</div>
+</div>
+<p><br></p>
+<p>NB for this page we assume you have access to Microsoft Excel. However, similar spreadsheet software (like Libre Office Calc) will work fine.</p>
+<p><br></p>
+<blockquote class="blockquote">
+<p>The first step in using R for data analysis is getting your data into <code>R</code>. The first step for getting your data into <code>R</code> is making your data tidy.</p>
+</blockquote>
+<p>The commonest question we have experienced for new users of <code>R</code> who want to perform analysis on their data is how to get data into <code>R</code>. There is good news and bad news. The good news is that <strong>it is exceedingly easy to get data into <code>R</code> for analysis, in almost any format</strong>. The bad news is that <strong>a step most new users find challenging is taking responsibility for their own data</strong>.</p>
+<p>What we mean here is that best practice in data management involves active engagement with your dataset. This includes choosing appropriate variable names, error checking, and documenting information about variables and data collection. We also aim to avoid proliferation of excessive dataset versions, and, worst of all, embedding graphs and data summaries into Excel spreadsheets with data.</p>
+<p><br></p>
+</section><section id="tidy-data-concept" class="level2"><h2 class="anchored" data-anchor-id="tidy-data-concept">2 Tidy data concept</h2>
+<section id="the-tidy-data-concept" class="level3"><h3 class="anchored" data-anchor-id="the-tidy-data-concept">2.1 The Tidy Data concept</h3>
+<p>A concept to streamline data preparation for analysis is Tidy Data. The basic idea is to format data for analysis in a way that</p>
+<ul>
+<li><p>Archives data for reproducibility of results, and</p></li>
+<li><p>Makes the data transparent to colleagues or researchers by documenting a data dictionary.</p></li>
+</ul>
+<p><br></p>
+<p>This page is all about the tidy data concept and a simple recipe for best practice to prepare data for analysis and to get data into R.</p>
+<p>The <a href="https://www.jstatsoft.org/article/view/v059i10">definition of Tidy Data is generally attributed to Wickham (2014)</a>, and is based on the idea that with a few simple rules, data can be archived for complete reproducibility of results. This practice benefits any user because it facilitates collaboration at the same time as documenting both data and analysis methods for value to future use.</p>
+<p>The essentials of Tidy Data are:</p>
+<ul>
+<li><p>Each variable should be in a column</p></li>
+<li><p>Each independent observation should be in a row</p></li>
+<li><p>A Data Dictionary should be associatied with the dataset, such that completely reproducible analysis is possible</p></li>
+</ul>
+<p><br></p>
+</section></section><section id="common-data-file-types" class="level2"><h2 class="anchored" data-anchor-id="common-data-file-types">3 Common data file types</h2>
+<p>The best file type for the majority of people to archive data for analysis is in a plain text <strong>Comma Separated Values (CSV or .csv) file</strong>, or just an <strong>Excel Spreadsheet</strong>. Best practice in contemporary scientific data analysis dictates that proprietary data formats should be avoided, like those produced by SPSS, Genstat, Minitab or other programs.</p>
+<p>The reason for this is that data stored in those formats is not necessarily useful to people who do not have access to the software, and that for archiving purposes, such software file formats tend to change over time. While Excel is a proprietary format, we find that it is is easy to use, (almost completely) ubiquitous, and relatively resilient to backwards compatibility issues. Thus, sticking to CSV or Excel is a rule you should have a very good reason if you choose to break from it.</p>
+<p>We recommend using Excel to store data with the goal (for simple datasets and analyses) of having one table for the actual data, in Tidy Data format, and a second tab consisting of a Data Dictionary where each variable is described in enough detail to completely reproduce any analysis. Generally, no formatting or results should ever be embedded in an Excel spreadsheet that is used to store data.</p>
+<p><br></p>
+</section><section id="excel-data-setup-and-the-data-dictionary" class="level2"><h2 class="anchored" data-anchor-id="excel-data-setup-and-the-data-dictionary">4 Excel, data setup, and the Data Dictionary</h2>
+<section id="tidy-data-and-excel" class="level3"><h3 class="anchored" data-anchor-id="tidy-data-and-excel">4.1 Tidy Data and Excel</h3>
+<p>For this section, you should download the following files in Excel (.xlsx) format:</p>
+<ul>
+<li><p><a href="data/5-tidy.xlsx">Tidy Data example Excel file</a></p></li>
+<li><p><a href="data/5-untidy.xlsx">The exact same information as un-Tidy Data</a></p></li>
+</ul>
+<p><br></p>
+<p><strong>The aphid experiment</strong></p>
+<blockquote class="blockquote">
+<p>You are contacted by someone who wants help with data analysis and they give you some information about their experiment. They are interested in how diet affects the production of an important metabolite in pest aphids. They designed an experiment with a control treatment where aphids were allowed to feed on plain plants, another treatment where their diet was supplemented with one additive, “AD”, and a third treatment where their diet was supplemented with two additives, “AD” and “SA”. Another factor was aphid Genus, where individuals from the genera <em>Brevicoryne</em> and <em>Myzus</em> were tested. Three replicates of each treatment combination were performed:</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>aphid genus [2 levels] <span class="math inline">\(\times\)</span> food treatment [3 levels].</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The metabolite of interest was measured with a spectrometer using three individual aphids from each replicate. The spectrometer peak area (an arbitrary scale) represents the total amount of the metabolite, which was converted to a real scale of metabolite total concentration. Finally, this total concentration was divided by 3 to estimate the concentration of the metabolite in each individual aphid.</p>
+</blockquote>
+<p><br></p>
+</section><section id="untidy-data" class="level3"><h3 class="anchored" data-anchor-id="untidy-data">4.2 Untidy data</h3>
+<p>Have a look at the file <code>5-untidy.xlsx</code> in Excel.</p>
+<p><br></p>
+<p>The aphid dataset is fairly small and it is readable by humans, but in its current form it is not usable for analysis in <code>R</code> or other statistical software and there are a few ambiguous aspects which we will explore and try to improve.</p>
+<p><br></p>
+<p><strong>Untidy</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-untidy.png" class="img-fluid figure-img"></p>
+<figcaption>Untidy data</figcaption></figure>
+</div>
+<p><br></p>
+<ul>
+<li><p>The file contains embedded figures and summary tables</p></li>
+<li><p>There is empty white space in the file (Row 1 and Column A)</p></li>
+<li><p>The variable names violate several naming conventions (spaces, special characters)</p></li>
+<li><p>Missing data is coded incorrectly (Row 13 was a failed data reading, but records zeros for the actual measurements)</p></li>
+<li><p>Conversion information accessory to the data is present (Row 3)</p></li>
+<li><p>There is no Data Dictionary (i.e.&nbsp;explanation of the variables)</p></li>
+<li><p>The Aphid and Diet treatments are “confounded” in their coding</p></li>
+<li><p>What the heck is the “RT” column (most of the values are identical)</p></li>
+</ul>
+<p><br></p>
+<p><strong>Now, have a look at the Tidy Data version of the data file.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-tidy.png" class="img-fluid figure-img"></p>
+<figcaption>Tidy version of the data</figcaption></figure>
+</div>
+<p><br></p>
+<ul>
+<li><p>The embedded figures have been removed</p></li>
+<li><p>The white space rows and columns have been removed</p></li>
+<li><p>The variable names have been edited but still are equally informative</p></li>
+<li><p>Missing data is coded correctly with “NA”</p></li>
+<li><p>The conversion info has been removed and placed in the Data Dictionary</p></li>
+<li><p>A complete Data Dictionary on a new tab (“dictionary”) was added, explaining each variable</p></li>
+<li><p>The aphid and food treatment variables were made separate</p></li>
+</ul>
+<p><br></p>
+<p><strong>Tidy Data version Data Dictionary tab</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-tidy-dictionary.png" class="img-fluid figure-img"></p>
+<figcaption>Tidy data dictionary</figcaption></figure>
+</div>
+<p><br></p>
+<p>Notice in the Data Dictionary how there is a row for each variable with the name of the variable and an explanation for each variable.</p>
+<p><br></p>
+</section><section id="csv-files" class="level3"><h3 class="anchored" data-anchor-id="csv-files">4.3 CSV files</h3>
+<p>Once your data is tidy, it is very easy to read in Excel data files, or they can be exported into a text file format like CSV (comma separated values) to read straight into <code>R</code> or other programs.</p>
+<p>Have a look at the <a href="data/5-tidy.csv">Tidy Data dataset in .csv file format</a>.</p>
+<p>Open it with a plain text editor (e.g.&nbsp;Notepad in Windows, or similar). You will notice that each column entry is separated from others with a comma <code>,</code>, hence the name Comma Separated Values!</p>
+<p><br></p>
+<p><strong>Tidy csv</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-tidy.csv.png" class="img-fluid figure-img"></p>
+<figcaption>Tidy csv</figcaption></figure>
+</div>
+<p><br></p>
+</section></section><section id="getting-data-into-r" class="level2"><h2 class="anchored" data-anchor-id="getting-data-into-r">5 Getting data into R</h2>
+<p>We still need to actually “read data into <code>R</code>” from external files. There are a very large number of ways to do this and most people eventually find their own workflow. We think it is best for most people to use Excel or CSV files in Tidy Data format.</p>
+<p>The basics of reading external files from a script is to to use the <code><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx()</a></code> function in the <a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a> package (you will probably need to install this with the <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> function), or else to use <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> that comes standard in base <code>R</code>. We will briefly try both.</p>
+<p><br></p>
+<section id="working-directory" class="level3"><h3 class="anchored" data-anchor-id="working-directory">5.1 Working directory</h3>
+<blockquote class="blockquote">
+<p>Best practice when working with files is to formally set your “working directory”. Basically, this tells R where your input (i.e.&nbsp;data) and output (like scripts or figures) files should be.</p>
+</blockquote>
+<p><br></p>
+<p>There are several viable ways to set your working directory in R, e.g.&nbsp;via the Session menu:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-working-directory.png" class="img-fluid figure-img"></p>
+<figcaption>Working directory</figcaption></figure>
+</div>
+<p><br></p>
+<p>However, the best way to do this this is to set your working directory using code with the <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> function. Here we should a workflow for Windows, which is similar on other computer systems. <strong>We consider the step of setting a working directory essential for best practice.</strong></p>
+<p>If you are unfamiliar with how to obtain the path to your working directory, open windows explorer, navigate to the folder you wish to save your script, data files and other inputs and outputs. You can think of this folder as one that contains all related files for e.g.&nbsp;a data analysis project, or perhaps this bootcamp module!</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-explorer.png" class="img-fluid figure-img"></p>
+<figcaption>Your directory window might look similar to this</figcaption></figure>
+</div>
+<p><br></p>
+<p>Notice the folder “view” is set to “Details”, and also notice that the folder options are set to “Show file extensions”. We recommend setting your own settings like this (if using Windows Explorer).</p>
+<p>The pointer is indicated in the circle marked A in the picture above.</p>
+<p>Left click the area to the right of the folder text once (where the pointer is in the picture above) and you should see something similar to the figure below, where the folder path is displayed and the text is automatically selected.</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-path.png" class="img-fluid figure-img"></p>
+<figcaption>Your selected file path might look similar to this</figcaption></figure>
+</div>
+<p><br></p>
+<p>Assuming you have opened the File Explorer in your working directory or navigated there, the selected <code>PATH</code> is the working directory path which you can copy (<code>Ctrl + c</code> in Windows). In your script, you can now use <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> to get and print your working directory path, and <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code>, which takes a single character string of the path for your working directory for the argument <code>dir</code> , to set it.</p>
+<p><br></p>
+<blockquote class="blockquote">
+<p>R file paths use the forward slash symbol “/” to separate file names. A very important step for Windows users when setting the working directory in R is to change the Windows default “” for forward slashes…</p>
+</blockquote>
+<p><br></p>
+</section><section id="read-in-your-first-file" class="level3"><h3 class="anchored" data-anchor-id="read-in-your-first-file">5.2 Read in your first file</h3>
+<p><strong>You need this for the following code if you did not already download it above:</strong> <a href="data/5-tidy.xlsx">.xlsx data file</a></p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Try this</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># Prints working directory in Console</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"D:/Dropbox/git-rstats-bootcamp/website/data"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># NB the quotes</span></span>
+<span><span class="co"># NB the use of "/"</span></span>
+<span><span class="co"># NB this is MY directory - change the PATH to YOUR directory :)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># Check that change worked</span></span>
+<span></span>
+<span><span class="co">## Read in Excel data file</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">openxlsx</span>, dep <span class="op">=</span> <span class="cn">T</span><span class="op">)</span> <span class="co"># Run if needed</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span> <span class="co"># Load package needed to read Excel files</span></span>
+<span></span>
+<span><span class="co"># Make sure the data file "5-tidy.xlsx" is in your working directory</span></span>
+<span><span class="va">my_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"5-tidy.xlsx"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<p>All being well, you should see the following data object in your Global Environement. Note the small blue button (A, circled below) you can press to espand the view of the variables in your data frame.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/1.4-tidy-global-env.png" class="img-fluid figure-img"></p>
+<figcaption>Data in your Global Environment</figcaption></figure>
+</div>
+<p><br></p>
+<p>Note that the same procedure works with Comma Separated Values data files, and other kinds of files that you want to read into R, except that the R function used will be specific to the file type. E.g., <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> for CSV files, <code>read.delim</code> for TAB delimited files, or <code><a href="https://rdrr.io/r/utils/read.table.html">read.table()</a></code> as a generic function to tailor to many types of plain text data files (there are many others, but this is enough for now).</p>
+<p><br></p>
+</section></section><section id="manipulating-variables-in-the-data-frame" class="level2"><h2 class="anchored" data-anchor-id="manipulating-variables-in-the-data-frame">6 Manipulating variables in the Data Frame</h2>
+<blockquote class="blockquote">
+<p>Now that there is a data frame in your working environment, we can start working with the variables. This is a good time to think about the “<code>R</code> Space” metaphor. You are floating in <code>R</code> Space and you can see a data frame called <code>my_data</code>. You cannot see inside the container, so we will look at methods of accessing the data inside by name…</p>
+</blockquote>
+<p><br></p>
+<section id="data-manipulation-in-r" class="level3"><h3 class="anchored" data-anchor-id="data-manipulation-in-r">6.1 Data manipulation in <code>R</code>
+</h3>
+<ul>
+<li><p>The <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> function</p></li>
+<li><p>The use of the <code>$</code> operator for data frames</p></li>
+<li><p>The use of the <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> function for data frames</p></li>
+<li><p>The use of the index operator <code>[ , ]</code></p></li>
+<li><p>The use of the <code><a href="https://rdrr.io/r/base/attach.html">attach()</a></code> function</p></li>
+</ul>
+<p><br></p>
+<p>Carefully use the follow code and try some data manipulation on your own.</p>
+</section><section id="class" class="level3"><h3 class="anchored" data-anchor-id="class">6.2 <code>class()</code>
+</h3>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Try this</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span> <span class="co"># data.frame, a generic class for holding data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="names" class="level3"><h3 class="anchored" data-anchor-id="names">6.3 <code>names()</code>
+</h3>
+<p>The <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> function returns the name of attributes in R objects. When used on a data frame it returns the names of the variables.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Try this</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="operator-for-data-frames" class="level3"><h3 class="anchored" data-anchor-id="operator-for-data-frames">6.4 <code>$</code> operator for data frames</h3>
+<p>The <code>$</code> operator allows us to access variable names inside <code>R</code> objects. Use it like this:</p>
+<p><code>data_object$variable_name</code></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Try this</span></span>
+<span></span>
+<span><span class="va">conc.ind</span> <span class="co"># Error because the variable conc.ind is INSIDE my_data</span></span>
+<span></span>
+<span><span class="va">my_data</span><span class="op">$</span><span class="va">conc.ind</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="str" class="level3"><h3 class="anchored" data-anchor-id="str">6.5 <code>str()</code>
+</h3>
+<p>The <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> function returns the STRUCTURE of a data frame. This includes variable names, classes, and the first few values</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Try this</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The output similar to the graphical Global Environment view in RStudio. Note the <code>conc.ind</code> variable is classed numeric</p>
+<p>Note the <code>treatment</code> variable is classed as character (not a factor)</p>
+<p><br></p>
+</section><section id="the-index-operator" class="level3"><h3 class="anchored" data-anchor-id="the-index-operator">6.6 <code>[ , ]</code> the index operator</h3>
+<p>The index operator allows us to access specified rows and columns in data frames (this works exactly the same in matrices and other indexed objects).</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Try this</span></span>
+<span><span class="va">my_data</span><span class="op">$</span><span class="va">conc.tot</span> <span class="co"># The conc.tot variable with $</span></span>
+<span><span class="va">my_data</span><span class="op">$</span><span class="va">conc.tot</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span> <span class="co"># each variable is a vector - 1st to 6th values</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">dim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span> <span class="co"># my_data has 18 rows, 6 columns</span></span>
+<span></span>
+<span><span class="va">my_data</span><span class="op">[</span> , <span class="op">]</span> <span class="co"># Leaving blanks means return all rows and columns</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span> <span class="co"># Note conc.tot is the 6th variable</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span><span class="op">[</span><span class="fl">6</span><span class="op">]</span> <span class="co"># Returns the name of the 6th variable</span></span>
+<span></span>
+<span><span class="va">my_data</span><span class="op">[</span> , <span class="fl">6</span><span class="op">]</span> <span class="co"># Returns all rows of the 6th variable in my_data</span></span>
+<span></span>
+<span><span class="co"># We can explicitly specify all rows (there are 18 remember)</span></span>
+<span><span class="va">my_data</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">18</span> , <span class="fl">6</span><span class="op">]</span> <span class="co"># ALSO returns all rows of the 6th variable in my_data</span></span>
+<span></span>
+<span><span class="co"># We can specify the variable names with a character</span></span>
+<span><span class="va">my_data</span><span class="op">[</span> , <span class="st">"conc.tot"</span><span class="op">]</span></span>
+<span><span class="va">my_data</span><span class="op">[</span> , <span class="st">"conc.ind"</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Specify more than 1 by name with c() in the column slot of [ , ]</span></span>
+<span><span class="va">my_data</span><span class="op">[</span> , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"conc.tot"</span>, <span class="st">"conc.ind"</span><span class="op">)</span><span class="op">]</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="attach" class="level3"><h3 class="anchored" data-anchor-id="attach">6.7 <code>attach()</code>
+</h3>
+<p>The <code><a href="https://rdrr.io/r/base/attach.html">attach()</a></code> function makes variable names available for a data frame in <code>R</code> space</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Try this</span></span>
+<span><span class="va">conc.ind</span> <span class="co"># Error; the Passive-Aggressive Butler doesn't understand...</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span></span>
+<span><span class="va">conc.ind</span> <span class="co"># Now that my_data is "attached", the Butler can find variables inside</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">detach</span><span class="op">)</span> <span class="co"># Undo attach()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span></span>
+<span><span class="va">conc.ind</span> <span class="co"># Is Sir feeling well, Sir?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+</section></section><section id="practice-exercises" class="level2"><h2 class="anchored" data-anchor-id="practice-exercises">7 Practice exercises</h2>
+<p>Butterfly data in xlsx format The data are from a small experiment measuring antenna length in butterflies manipulating diet in both sexes.</p>
+<section id="butterfly-data" class="level3"><h3 class="anchored" data-anchor-id="butterfly-data">7.1 Butterfly Data</h3>
+<p>Download the data file above and place it in a working directory. Set your working directory. Read in the data file and place it in a data frame object named data1. After examining the data, use mean() to calculate the mean of the variable length and report the results in a comment to two decimal points accuracy. Show your R code.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reading and Analyzing Butterfly Data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Set working directory (adjust path to your actual directory)</span></span>
+<span><span class="co"># setwd("your/path/here")</span></span>
+<span></span>
+<span><span class="co"># Load the openxlsx package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Read in the data file</span></span>
+<span><span class="va">data1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"data/5-butterfly.xlsx"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Examine the data structure</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">data1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate the mean of the length variable</span></span>
+<span><span class="va">mean_length</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">length</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Display the mean rounded to 2 decimal places</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">mean_length</span>, <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>After examining the butterfly data, the mean antenna length is 6.92 mm (rounded to 2 decimal places).</p>
+<p>The code first loads the openxlsx package, reads the Excel file into a data frame named data1, examines the structure to verify the data was loaded correctly, and then calculates the mean of the length variable.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="factor-conversion" class="level3"><h3 class="anchored" data-anchor-id="factor-conversion">7.2 Factor Conversion</h3>
+<p>Show the code to convert the diet variable to an ordinal factor with the order “control” &gt; “enhanced”, and the sex variable to a plain categorical factor.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Converting Variables to Factors
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the openxlsx package and read the data</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">data1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"data/5-butterfly.xlsx"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Convert diet to an ordinal factor with specified order</span></span>
+<span><span class="va">data1</span><span class="op">$</span><span class="va">diet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">diet</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"control"</span>, <span class="st">"enhanced"</span><span class="op">)</span>, ordered <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Convert sex to a categorical (non-ordered) factor</span></span>
+<span><span class="va">data1</span><span class="op">$</span><span class="va">sex</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Verify the conversions</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">data1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The code converts: - The <code>diet</code> variable to an ordered factor with levels “control” followed by “enhanced” - The <code>sex</code> variable to a regular (non-ordered) factor</p>
+<p>Using <code>ordered = TRUE</code> for the diet variable creates an ordinal factor where the levels have a specific order, which can be important for certain types of analysis. The <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> function confirms the conversions were successful.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="data-frame-subsetting" class="level3"><h3 class="anchored" data-anchor-id="data-frame-subsetting">7.3 Data Frame Subsetting</h3>
+<p>Show code for two different variations of using only the [ , ] operator with your data frame to show the following output: diet length 8 control 6 9 control 7 10 control 6 11 enhanced 8 12 enhanced 7 13 enhanced 9</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Frame Subsetting
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load the openxlsx package and read the data</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">data1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"data/5-butterfly.xlsx"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Method 1: Using row numbers and column names</span></span>
+<span><span class="va">data1</span><span class="op">[</span><span class="fl">8</span><span class="op">:</span><span class="fl">13</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"diet"</span>, <span class="st">"length"</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Method 2: Using row numbers and column indices</span></span>
+<span><span class="co"># First, find which columns are diet and length</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data1</span><span class="op">)</span>  <span class="co"># Check column positions</span></span>
+<span><span class="va">data1</span><span class="op">[</span><span class="fl">8</span><span class="op">:</span><span class="fl">13</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span><span class="op">)</span><span class="op">]</span>  <span class="co"># Assuming diet is column 1 and length is column 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>These two methods demonstrate different ways to subset a data frame using the <code>[ , ]</code> operator:</p>
+<ol type="1">
+<li>The first method uses row numbers (8 through 13) and column names (“diet” and “length”)</li>
+<li>The second method uses row numbers and column indices (positions)</li>
+</ol>
+<p>Both produce the same output showing diet and length values for rows 8-13, which includes three control and three enhanced diet observations.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="csv-without-headers" class="level3"><h3 class="anchored" data-anchor-id="csv-without-headers">7.4 CSV Without Headers</h3>
+<p>Show code to read in a comma separated values data file that does not have a header (first row containing variable names).</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reading CSV Without Headers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Method to read a CSV file without headers</span></span>
+<span><span class="va">data_no_header</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/5-butterfly.csv"</span>, header <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Examine the structure</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">data_no_header</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># When reading a CSV without headers, R assigns default names V1, V2, etc.</span></span>
+<span><span class="co"># We can assign our own column names if needed:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data_no_header</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"diet"</span>, <span class="st">"sex"</span>, <span class="st">"length"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Verify the new column names</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data_no_header</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When reading a CSV file without headers (column names in the first row):</p>
+<ol type="1">
+<li>Use the <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> function with <code>header = FALSE</code> parameter</li>
+<li>R will automatically assign generic column names (V1, V2, V3, etc.)</li>
+<li>You can then assign meaningful column names using the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> function</li>
+</ol>
+<p>This approach is useful when working with data files that contain only values without descriptive headers.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="attach-function" class="level3"><h3 class="anchored" data-anchor-id="attach-function">7.5 Attach Function</h3>
+<p>Describe in your own words what the attach() function does.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Attach Function Explanation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Example of attach() functionality</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">data1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"data/5-butterfly.xlsx"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Without attach, we need to use the $ operator</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">length</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># With attach, we can access variables directly</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">data1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">length</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Always detach when finished to avoid conflicts</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="va">data1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code><a href="https://rdrr.io/r/base/attach.html">attach()</a></code> function makes the variables (columns) in a data frame directly accessible in the R environment without having to specify the data frame name and $ operator each time.</p>
+<p>When you attach a data frame, R adds its variables to the search path, allowing you to refer to them by name alone. This can make code more concise and readable, especially when working extensively with a single data frame.</p>
+<p>However, using <code><a href="https://rdrr.io/r/base/attach.html">attach()</a></code> comes with risks: - It can create naming conflicts if variables have the same names as other objects - It can lead to confusion about which data is being used - It’s easy to forget which data frame is attached - It’s considered poor practice in modern R programming</p>
+<p>Best practice is to use the explicit data frame$variable notation instead, or to use functions like <code><a href="https://rdrr.io/r/base/with.html">with()</a></code> or pipe operators for cleaner code.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</section><section id="data-frame-question" class="level3"><h3 class="anchored" data-anchor-id="data-frame-question">7.6 Data Frame Question</h3>
+<p>Write a plausible practice question involving any aspect of manipulation of a data frame.</p>
+<p><br></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Frame Manipulation Question
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># A plausible practice question could be:</span></span>
+<span></span>
+<span><span class="co"># "Using the butterfly dataset, create a new data frame that contains only female </span></span>
+<span><span class="co"># butterflies. Then add a new column called 'length_category' that categorizes </span></span>
+<span><span class="co"># antenna length as 'short' if less than 7 mm, and 'long' if 7 mm or greater. </span></span>
+<span><span class="co"># Finally, calculate the mean antenna length for each diet type within this </span></span>
+<span><span class="co"># female-only dataset."</span></span>
+<span></span>
+<span><span class="co"># Solution:</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
+<span><span class="va">data1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"data/5-butterfly.xlsx"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create a subset with only females</span></span>
+<span><span class="va">females</span> <span class="op">&lt;-</span> <span class="va">data1</span><span class="op">[</span><span class="va">data1</span><span class="op">$</span><span class="va">sex</span> <span class="op">==</span> <span class="st">"female"</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Add a new column for length category</span></span>
+<span><span class="va">females</span><span class="op">$</span><span class="va">length_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">females</span><span class="op">$</span><span class="va">length</span> <span class="op">&lt;</span> <span class="fl">7</span>, <span class="st">"short"</span>, <span class="st">"long"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate mean length by diet type</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/tapply.html">tapply</a></span><span class="op">(</span><span class="va">females</span><span class="op">$</span><span class="va">length</span>, <span class="va">females</span><span class="op">$</span><span class="va">diet</span>, <span class="va">mean</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Alternative using aggregate function</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">length</span> <span class="op">~</span> <span class="va">diet</span>, data <span class="op">=</span> <span class="va">females</span>, FUN <span class="op">=</span> <span class="va">mean</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This practice question tests understanding of: - Subsetting data frames using logical conditions - Adding new calculated columns - Using functions like <code><a href="https://rdrr.io/r/base/tapply.html">tapply()</a></code> or <code><a href="https://rdrr.io/r/stats/aggregate.html">aggregate()</a></code> to calculate statistics by group - Working with categorical data</p>
+<p>The solution demonstrates multiple data frame manipulation techniques commonly used in data analysis workflows.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+
+
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 R Stats Bootcamp :: 🦑 <a href="https://github.com/your-repo/RStatsBootcamp-2025">GitHub</a> :: <a href="https://github.com/rstats-bootcamp/RStatsBootcamp-2025/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-green.png" class="img-fluid"></a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+</body></html>
