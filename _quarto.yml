@@ -5,6 +5,10 @@ project:
 website:
   favicon: "img/rstats-logo.png"
   title: "R Stats Bootcamp"
+  site-url: https://rstatsbootcamp.com
+  image: "img/social-preview.png"
+  open-graph: true
+  twitter-card: true
   navbar:
     logo: "img/rstats-logo.png"
     background: primary
