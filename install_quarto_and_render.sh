@@ -1,14 +1,19 @@
 #!/bin/bash
 set -e
 
-# Download and extract Quarto
+# Make a folder to isolate the install
+mkdir tools
+cd tools
+
+# Download and extract Quarto in tools/
 curl -L https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.30/quarto-1.7.30-linux-amd64.tar.gz | tar -xz
 
-# Add Quarto to PATH
-export PATH="$PWD/quarto-1.7.30/bin:$PATH"
+# Move back to project root and prepend to PATH
+cd ..
+export PATH="$PWD/tools/quarto-1.7.30/bin:$PATH"
 
-# Confirm it's installed
+# Confirm install
 quarto --version
 
-# Build the site
+# Render the project
 quarto render
