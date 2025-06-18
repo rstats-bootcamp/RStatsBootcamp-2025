@@ -4,6 +4,7 @@
 
 [build.environment]
   PATH = "./quarto-1.7.30/bin:$PATH"
+  NETLIFY_BUILD_IMAGE = "jammy"
 
 [[redirects]]
   from = "/*"
