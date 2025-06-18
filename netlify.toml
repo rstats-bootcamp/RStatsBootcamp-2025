@@ -1,9 +1,6 @@
 [build]
   publish = "_site"
-  command = "quarto render"
-
-[build.environment]
-  QUARTO_VERSION = "1.7.30"
+  command = "bash install_quarto_and_render.sh"
 
 [[redirects]]
   from = "/*"
