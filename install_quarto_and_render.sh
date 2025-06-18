@@ -1,19 +1,21 @@
 #!/bin/bash
 set -e
 
-# Make a folder to isolate the install
-mkdir tools
-cd tools
+# Create a temporary directory outside the repo to install Quarto
+mkdir -p /tmp/quarto-install
+cd /tmp/quarto-install
 
-# Download and extract Quarto in tools/
+# Download and extract Quarto
 curl -L https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.30/quarto-1.7.30-linux-amd64.tar.gz | tar -xz
 
-# Move back to project root and prepend to PATH
-cd ..
-export PATH="$PWD/tools/quarto-1.7.30/bin:$PATH"
+# Add Quarto to PATH
+export PATH="/tmp/quarto-install/quarto-1.7.30/bin:$PATH"
 
-# Confirm install
+# Back to project root
+cd "$NETLIFY_BUILD_BASE"
+
+# Confirm version
 quarto --version
 
-# Render the project
+# Render the site
 quarto render
