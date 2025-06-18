@@ -1,10 +1,12 @@
 [build]
   publish = "_site"
-  command = "curl -L https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.30/quarto-1.7.30-linux-amd64.tar.gz | tar -xz && ./quarto-1.7.30/bin/quarto render"
+  command = "quarto render"
 
 [build.environment]
-  PATH = "./quarto-1.7.30/bin:$PATH"
-  NETLIFY_BUILD_IMAGE = "jammy"
+  QUARTO_VERSION = "1.7.30"
+
+[[plugins]]
+  package = "@netlify/plugin-quarto"
 
 [[redirects]]
   from = "/*"
