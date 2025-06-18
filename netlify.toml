@@ -1,9 +1,9 @@
 [build]
   publish = "_site"
-  command = "quarto render"
+  command = "curl -fsSL https://quarto.org/download/latest/quarto-linux-amd64.deb -o quarto.deb && sudo dpkg -i quarto.deb && quarto render"
 
 [build.environment]
-  QUARTO_VERSION = "1.7.30"
+  DEBIAN_FRONTEND = "noninteractive"
 
 [[redirects]]
   from = "/*"
