@@ -7,7 +7,7 @@ title: "Course Schedule"
 
 ## R Stats Bootcamp Learning Path
 
-This self-paced bootcamp about 40-60 hours to complete. The schedule below provides an overview of all course modules and resources. Work through the materials sequentially for the best learning experience.
+This self-paced bootcamp will take most people about 40-60 hours to complete. The schedule below provides an overview of all course modules and resources. Work through the materials sequentially for the best learning experience.
 :::
 
 ::: callout-note
