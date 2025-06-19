@@ -8,9 +8,9 @@ authors:
   orcid: "https://orcid.org/0000-0002-9038-8656"
 title: "R Stats Bootcamp"
 version: 2025.1.0
-doi: ""  # TODO: add doi
-date-released: 2025-08-01
-url: ""  # TODO: add url
+doi: "10.5281/zenodo.15695137"  
+date-released: 2025-06-20
+url: "https:www.rstatsbootcamp.com" 
 license: MIT
 keywords:
   - R programming
@@ -31,7 +31,7 @@ preferred-citation:
     affiliation: "Centre for Agricultural Data Science, Harper Adams University"
   title: "R Stats Bootcamp: A Self-Paced Course for Learning R Programming and Statistical Analysis"
   year: 2025  # Update to your publication year
-  url:  ""  # TODO: add url
-  doi: ""  # TODO: add doi
+  url:  "https:www.rstatsbootcamp.com"  
+  doi: "10.5281/zenodo.15695137"  
   publisher: "Centre for Agricultural Data Science, Harper Adams University"
   notes: "Open educational resource for learning R programming, statistical analysis, and reproducible research practices"
