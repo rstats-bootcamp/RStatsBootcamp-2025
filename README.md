@@ -1,3 +1,6 @@
+If you cite this course, please cite it as:
+Harris, W. E. (2025). R Stats Bootcamp: A Self-Paced Course for Learning R Programming and Statistical Analysis. https://doi.org/10.5281/zenodo.15695137
+
 # R Stats Bootcamp
 
 A self-paced course for learning R programming, statistical analysis, and reproducible research practices.
