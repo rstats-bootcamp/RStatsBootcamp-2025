@@ -225,13 +225,17 @@ boxplot(iris$Petal.Length, iris$Petal.Width)
 # Because there are several observations per species - not really
 
 # Conclusion: We might violate some assumption for the Pearson correlation, so consider Spearman correlation
+
+# For the sake of this example we will run a Pearson correlation test anyway
+cor.test(iris$Petal.Length, iris$Petal.Width)
+
 ```
 
 <br>
 
 ## 6 Note about results and reporting
 
-When we do report or document the results of an analysis we may do it in different ways depending on the intended audience.  We will briefly look at two common ways to report results.
+When we report or document the results of an analysis we may do it in different ways depending on the intended audience.  We will briefly look at two common ways to report results.
 
 <br>
 
@@ -269,7 +273,7 @@ Most statistical tests under NHST will have exactly three quantities reported fo
 
 - the sample size or degrees of freedom
 
-- the p-value.  
+- the p-value 
 
 <br>
 
@@ -281,27 +285,13 @@ For our results above, it might be something like:
 
 NB:
 
-- the rounding of decimal accuracy (usually 2 decimals accuracy, if not be consistent)
+- the rounding of decimal accuracy is typically reported to two decimals accuracy (if not then be consistent)
 
-- the formatting of the p-value (if smaller than 0.0001 ALWAYS use P < 0.0001; also never report the P value in scientific notation).  
+- reporting a p-value smaller than 0.0001 should ALWAYS use P < 0.0001 (never report the P value in scientific notation)  
 
 <br>
 
 The 95% confidence interval of the estimate of `r` is also produced (remember, we are making an inference on the greater population from which our sample was drawn), and we might also report that in our descriptive summary of results, if it is deemed important.
-
-<br>
-
-```{r}
-# 4 Validate
-hist(iris$Petal.Length) # Ummm..
-hist(iris$Petal.Width) # Yuck
-
-# We violate the assumption of Gaussian
-
-# ... Relatedly, we also violate the assumption of independence 
-# due to similarities within and differences between species!
-
-```
 
 <br>
 
@@ -321,7 +311,7 @@ There are several alternative correlation estimate frameworks to the Pearson's; 
 
 <br>
 
-Hence, the Spearman rank correlation descriptive coefficient and test are appropriate even if the data are not "bivariate" Gaussian (this just means both variables are Gaussian) or if the data are not strictly linear in their relationship.
+Hence, the Spearman rank correlation descriptive coefficient and test are appropriate even if the data are not or if the data are not strictly linear in their relationship.
 
 <br>
 
