@@ -85,15 +85,14 @@ The correlation coefficient can be calculated in `R` using the `cor()` function.
 # Try this:
 # use veg and arth from above
 
-# r the "hard way"
-
 # The Pearson correlation = ((covariance of x,y) / (std dev x * std dev y) )
 
+# r the "hard way"
 
 # sample covariance (hard way)
 (cov_veg_arth <- sum( (veg-mean(veg))*(arth-mean(arth))) / (length(veg) - 1 ))
 
-cov(veg,arth) # easy way
+cov(veg,arth) # (easy way)
 
 # r the "hard way"
 (r_arth_veg <- cov_veg_arth / (sd(veg) * sd(arth)))
