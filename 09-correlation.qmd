@@ -349,11 +349,11 @@ NB the correlation coefficient for the Spearman rank correlation is notated as "
 
 ## 7 Practice exercises
 
-For the following exercises, use the data from the file 2.3-cfseal.xlsx. The data are from a sample of Cape fur seals, and include measures of body weight, heart mass, and lung mass. There will be some data handling as part of the exercises below, a practical and important part of every real data analysis.
+For the following exercises, use the `waders` dataset available in the `MASS` package. The data are from counts of different wading bird species in summer in South Africa. There will be some data handling as part of the exercises below, a practical and important part of every real data analysis.
 
 <br>
 
-### 7.1 Exploring the Cape Fur Seal Dataset
+### 7.1 Exploring the `waders` dataset
 
 Read in the data from the file 2.3-cfseal.xlsx. Use the `read_excel()` function from the `readxl` package. Print the first few rows of the data, and check the correlation structure of the data for the first few columns. Show your code.
 
