@@ -87,7 +87,7 @@ The correlation coefficient can be calculated in `R` using the `cor()` function.
 
 # r the "hard way"
 
-# r <- ((covariance of x,y) / (std dev x * std dev y) )
+# The Pearson correlation = ((covariance of x,y) / (std dev x * std dev y) )
 
 
 # sample covariance (hard way)
@@ -104,7 +104,6 @@ cor(x = veg, y = arth,
     method = "pearson") # NB "pearson" is the default method if unspecified
 ```
 
-
 <br>
 
 ## 4 Graphing
@@ -115,9 +114,9 @@ We can look at a range of different correlation magnitudes, to think about diagn
 
 <br>
 
-If we really care and value making a correlation between two specific variables, traditionally we would use the scatterplot like above with the `veg` and `arth` data, and the calculation of the correlation coefficient (using `plot()` and `cor()` respectively).  
+If we want to examine the correlation between two specific variables, traditionally we would use the scatterplot, like above with the `veg` and `arth` data, and calculate the correlation coefficient (using `plot()` and `cor()`, respectively).  
 
-On the other hand, we might have loads of variables and just want to quickly assess the degree of correlation and intercorrelation.  To do this we might just make and print a matric of the correlation plot (using `pairs()`) and the correlation matrix (again using `cor()`)
+On the other hand, we might have loads of variables and just want to quickly assess the degree of correlation between them all.  To do this we might just make and print a matric of the correlation plot (using `pairs()`) and the correlation matrix (again using `cor()`)
 
 ```{r}
 ## Correlation matrices ####
@@ -130,22 +129,12 @@ names(iris)
 cor(iris[ , 1:4]) # all rows, just the numeric columns
 
 # fix the decimal output
-round(cor(iris[ , 1:4]), 2) # nicer
+round(cor(iris[ , 1:4]), 2) # rounding is nicer
 
 # pairs plot
 pairs(iris[ , 1:4], pch = 16, 
       col = iris$Species) # Set color to species...
 ```
-
-
-
-```{r}
-# Correlation table
-
-round(cor(iris[ , 1:4]), 2) # nicer output
-
-```
-
 
 <br>
 
