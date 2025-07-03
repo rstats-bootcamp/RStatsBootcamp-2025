@@ -28,7 +28,7 @@ Correlation is used in many applications and is a basic tool in the data science
 
 **The question** of correlation is simply whether there is a demonstrable **association** between two numeric variables.  For example, we might wonder this for two numeric variables, such as a measure of vegetation biomass and a measure of insect abundance.  Digging a little deeper, we are interested in seeing and quantifying whether and how the variables may **"co-vary"** (i.e, exhibit significant covariance). This covariance may be quantified as being either positive or negative and may vary in strength from zero, to perfect positive or negative correlation (+1, or -1).  We traditionally visualise correlation with a **scatterplot** (`plot()` in `R`).  If there is a relationship, the degree of "scatter" is related to strength of the correlation (more scatter = a weaker correlation).
 
-E.g., we can see in the figure below that the two variables tend to increase with each other positively, suggesting a positive correlation. 
+E.g., we can see in the figure below that the two variables tend to increase with each other, suggesting a positive correlation. 
 
 ![](img/2.3-pos-cor.png)
 
@@ -69,7 +69,7 @@ arth <- c(1002, 1006, 930, 893, 963, 998, 1071, 1052, 997, 1044, 923,
 
 "Traditional correlation" is sometimes referred to as the [Pearson correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient).  The data and assumptions are important for the Pearson correlation - we use this when there is a linear relationship between our variables of interest, and the numeric values are Gaussian distributed. 
 
-More technically, the Pearson correlation coefficient is the **covariance** of two variables, divided by the product of their standard deviations:
+Technically, the Pearson correlation coefficient can be calculated by taking the **covariance** of two variables and dividing it by the product of their standard deviations:
 
 <br>
 
@@ -383,7 +383,7 @@ pairs(x=waders[,1:3], pch = 16, col = "blue")
 
 # Calculate the correlation matrix for a numerical summary
 round(cor(waders[,1:3]), 2)
-```
+quarto preview 09-correlation.qmd```
 
 Based on the pairs plot and correlation matrix:
 
