@@ -357,7 +357,7 @@ For the following exercises, use the data from the file 2.3-cfseal.xlsx. The dat
 
 ### 7.1 Exploring the Cape Fur Seal Dataset
 
-Read in the data from the file 2.3-cfseal.xlsx. Use the `read_excel()` function from the `readxl` package. Print the first few rows of the data, and check the structure of the data. Show your code.
+Read in the data from the file 2.3-cfseal.xlsx. Use the `read_excel()` function from the `readxl` package. Print the first few rows of the data, and check the correlation structure of the data for the first few columns. Show your code.
 
 <br>
 
@@ -367,31 +367,22 @@ Read in the data from the file 2.3-cfseal.xlsx. Use the `read_excel()` function 
 #| echo: true
 #| eval: true
 
-# Load the MASS package and waders dataset if not already loaded
-if (!require(MASS)) {
-  # Create a simulated waders dataset if MASS is not available
-  set.seed(123)
-  waders <- data.frame(
-    S1 = rpois(20, 10),
-    S2 = rpois(20, 8),
-    S3 = rpois(20, 5)
-  )
-  # Add correlation between species
-  waders$S2 <- waders$S2 + 0.5 * waders$S1
-  waders$S3 <- waders$S3 + 0.3 * waders$S1 + 0.2 * waders$S2
-} else {
-  # Load the real dataset if MASS is available
-  data(waders)
-}
+# Load/install the MASS package and waders dataset if not already loaded
+# install.packages("MASS")
+library(MASS)
+data(waders)
 
 # Read the help page for the dataset
 # help(waders)
 
-# Use the pairs function to visualize intercorrelations
-pairs(waders, pch = 16, col = "blue")
+# Print the first few rows of the data
+head(waders)
+
+# Use the pairs function to visualize intercorrelations for the first few rows
+pairs(x=waders[,1:3], pch = 16, col = "blue")
 
 # Calculate the correlation matrix for a numerical summary
-round(cor(waders), 2)
+round(cor(waders[,1:3]), 2)
 ```
 
 Based on the pairs plot and correlation matrix:
