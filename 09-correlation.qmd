@@ -143,9 +143,9 @@ In this case, we can see that the correlation of plant parts is very strongly in
 
 ## 5 Test and alternatives
 
-We may want to perform a statistical test to determine whether a correlation coefficient is "significantly" different to zero, using Null Hypothesis Significance Testing.  There are a lot of options, but a simple solution is to use the `cor.test()` function.
+We may want to perform a statistical test to determine whether a correlation coefficient is "significantly" different to zero, using Null Hypothesis Significance Testing.  There are a lot of options, but a simple solution is to use the `cor.test()` function in `R`.
 
-An alternative to the **Pearson correlation** (the traditional correlation, assuming the variables in question are Gaussian), is the **Spearman rank correlation**, which can be used when the assumptions for the Pearson correlation are not met.  We will briefly perform both tests.
+The **Pearson correlation** is the default for the `cor.test()` function.  An alternative is the **Spearman rank correlation**, which can be used when the assumptions for the Pearson correlation are not met.  We will briefly perform both tests.
 
 [See here for further information on Pearson correlation](http://www.biostathandbook.com/linearregression.html)
 
@@ -157,7 +157,7 @@ Briefly, the principle assumptions of the Pearson correlation are:
 
 - The relationship between the variables is linear (i.e., not a curved relationship)
 
-- The variables exhibit a bivariate Gaussian distribution (in practice, it is often accepted that each variable is Gaussian)
+- The variables exhibit a bivariate Gaussian distribution (in practice, this assumption is often assessed by looking at the distribution of each variable and checking if it is Gaussian)
 
 - Homoscedasticity (i.e., the variance is similar across the range of the variables)
 
@@ -187,8 +187,8 @@ Let's try a statistical test of correlation.  We need to keep in mind an order o
 ## Correlation test ####
 # Try this:
 
-# 1 Question: whether Petal length and width are correlated?
-# (i.e. is there evidence the correlation coefficient different to zero)
+# 1 Question: Are Petal Length and Petal Width correlated?
+# (i.e. is there evidence the correlation coefficient is different to zero)
 ```
 
 
@@ -206,12 +206,32 @@ plot(iris$Petal.Width, iris$Petal.Length,
 cor.test(iris$Petal.Width, iris$Petal.Length)
 ```
 
+```{r}
+# 4 Validate
+# - Linear relationship between variables
+# Examine plot - looks linear? - OK
+plot(iris$Petal.Width, iris$Petal.Length)
+
+# - Gaussian distribution
+# Examine histograms - looks Gaussian? - not really
+hist(iris$Petal.Length)
+hist(iris$Petal.Width)
+
+# - the variance is similar for each variable
+# Examine variance - looks similar? - the variance is a bit different
+boxplot(iris$Petal.Length, iris$Petal.Width)
+
+# - Observations are independent
+# Because there are several observations per species - not really
+
+# Conclusion: We might violate some assumption for the Pearson correlation, so consider Spearman correlation
+```
 
 <br>
 
 ## 6 Note about results and reporting
 
-When we do report or document the results of an analysis we may do it in different ways depending on the intended audience.  
+When we do report or document the results of an analysis we may do it in different ways depending on the intended audience.  We will briefly look at two common ways to report results.
 
 <br>
 
@@ -223,7 +243,7 @@ It would be typical to just comment the `R` script and have your script and data
 
 - to organize the script as much as possible in a logical way, e.g. by pairing graphs with relevant analysis outputs
 
-- removing analyses that were tried but obsolete (e.g. because a better analysis was found)
+- removing analyses that were tried but were redundant (e.g. because a better analysis was decided)
 
 <br>
 
@@ -371,7 +391,7 @@ pairs(x=waders[,1:3], pch = 16, col = "blue")
 
 # Calculate the correlation matrix for a numerical summary
 round(cor(waders[,1:3]), 2)
-quarto preview 09-correlation.qmd```
+```
 
 Based on the pairs plot and correlation matrix:
 
