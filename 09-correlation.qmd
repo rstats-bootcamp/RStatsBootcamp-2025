@@ -665,7 +665,7 @@ Following our four-step workflow for analyzing the correlation between Greenshan
 
 ### 7.6 Create Your Own Correlation Question
 
-Write a plausible practice question involving any aspect of the use of correlation, and our workflow.  Make use of the `cfseal` data which you can [download here](https://github.com/weharris/RStatsBootcamp-2025/raw/refs/heads/main/data/2.3-cfseal.xlsx.
+Write a plausible practice question involving any aspect of the use of correlation, and our workflow.  Make use of the `cfseal` data which you can [download here](https://github.com/weharris/RStatsBootcamp-2025/raw/refs/heads/main/data/2.3-cfseal.xlsx).
 
 <br>
 
