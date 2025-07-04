@@ -218,7 +218,7 @@ hist(iris$Petal.Length)
 hist(iris$Petal.Width)
 
 # - the variance is similar for each variable
-# Examine variance - looks similar? - the variance is a bit different
+# Examine variance - looks similar? - the variances are a bit different
 boxplot(iris$Petal.Length, iris$Petal.Width)
 
 # - Observations are independent
@@ -355,7 +355,7 @@ For the following exercises, use the `waders` dataset available in the `MASS` pa
 
 ### 7.1 Exploring the `waders` dataset
 
-Read in the data from the file 2.3-cfseal.xlsx. Use the `read_excel()` function from the `readxl` package. Print the first few rows of the data, and check the correlation structure of the data for the first few columns. Show your code.
+Read in the data from the file `waders` dataset available in the `MASS` package. Print the first few rows of the data, and check the correlation structure of the data for the first few columns. Show your code.
 
 <br>
 
@@ -385,20 +385,20 @@ round(cor(waders[,1:3]), 2)
 
 Based on the pairs plot and correlation matrix:
 
-1. There appear to be moderate to strong positive correlations between some wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.
+1. There appear to be moderate to a positive correlation between some wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.
 
-2. Particularly strong correlations (r =~ 0.61) exist between a pair of species, such as S1 and S2.
+2. Particularly strong correlations (r =~ 0.61) exist between a pair of species, S1 and S2.
 
 3. Some species show weaker correlations with others (e.g., S1 and S3 has a low negative correlation), possibly suggesting some habitat specialization.
 
 4. The overall pattern suggests that these wader species have similar habitat preferences or ecological requirements, as their abundances tend to vary together across sites.
 
-A high degree of intercorrelation is ecologically meaningful amongst species, as these wader species share similar coastal and wetland habitats.
+Intercorrelation amongst species is ecologically meaningful, as these wader species share similar coastal and wetland habitats.
 :::
 
 <br>
 
-### 7.2 Visualizing the Relationship Between Weight and Heart Mass
+### 7.2 Visualizing the relationship between wader species counts
 
 Create a scatterplot of heart mass (y-axis) against body weight (x-axis) using the `plot()` function. Add appropriate axis labels and a title. Show your code.
 

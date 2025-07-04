@@ -547,7 +547,7 @@ window.Quarto = {
 <a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">7 Practice exercises</a>
   <ul class="collapse">
 <li><a href="#exploring-the-waders-dataset" id="toc-exploring-the-waders-dataset" class="nav-link" data-scroll-target="#exploring-the-waders-dataset">7.1 Exploring the <code>waders</code> dataset</a></li>
-  <li><a href="#visualizing-the-relationship-between-weight-and-heart-mass" id="toc-visualizing-the-relationship-between-weight-and-heart-mass" class="nav-link" data-scroll-target="#visualizing-the-relationship-between-weight-and-heart-mass">7.2 Visualizing the Relationship Between Weight and Heart Mass</a></li>
+  <li><a href="#visualizing-the-relationship-between-wader-species-counts" id="toc-visualizing-the-relationship-between-wader-species-counts" class="nav-link" data-scroll-target="#visualizing-the-relationship-between-wader-species-counts">7.2 Visualizing the relationship between wader species counts</a></li>
   <li><a href="#calculating-the-correlation-coefficient" id="toc-calculating-the-correlation-coefficient" class="nav-link" data-scroll-target="#calculating-the-correlation-coefficient">7.3 Calculating the Correlation Coefficient</a></li>
   <li><a href="#testing-the-correlation" id="toc-testing-the-correlation" class="nav-link" data-scroll-target="#testing-the-correlation">7.4 Testing the Correlation</a></li>
   <li><a href="#age-variable-analysis-and-weight-age-correlation" id="toc-age-variable-analysis-and-weight-age-correlation" class="nav-link" data-scroll-target="#age-variable-analysis-and-weight-age-correlation">7.5 Age Variable Analysis and Weight-Age Correlation</a></li>
@@ -797,7 +797,7 @@ sample estimates:
 </div>
 </div>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># - the variance is similar for each variable</span></span>
-<span><span class="co"># Examine variance - looks similar? - the variance is a bit different</span></span>
+<span><span class="co"># Examine variance - looks similar? - the variances are a bit different</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span>, <span class="va">iris</span><span class="op">$</span><span class="va">Petal.Width</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -935,7 +935,7 @@ sample estimates:
 <p>For the following exercises, use the <code>waders</code> dataset available in the <code>MASS</code> package. The data are from counts of different wading bird species in summer in South Africa. There will be some data handling as part of the exercises below, a practical and important part of every real data analysis.</p>
 <p><br></p>
 <section id="exploring-the-waders-dataset" class="level3"><h3 class="anchored" data-anchor-id="exploring-the-waders-dataset">7.1 Exploring the <code>waders</code> dataset</h3>
-<p>Read in the data from the file 2.3-cfseal.xlsx. Use the <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> function from the <code>readxl</code> package. Print the first few rows of the data, and check the correlation structure of the data for the first few columns. Show your code.</p>
+<p>Read in the data from the file <code>waders</code> dataset available in the <code>MASS</code> package. Print the first few rows of the data, and check the correlation structure of the data for the first few columns. Show your code.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -995,17 +995,17 @@ S3 -0.17 -0.21  1.00</code></pre>
 </div>
 <p>Based on the pairs plot and correlation matrix:</p>
 <ol type="1">
-<li><p>There appear to be moderate to strong positive correlations between some wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.</p></li>
-<li><p>Particularly strong correlations (r =~ 0.61) exist between a pair of species, such as S1 and S2.</p></li>
+<li><p>There appear to be moderate to a positive correlation between some wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.</p></li>
+<li><p>Particularly strong correlations (r =~ 0.61) exist between a pair of species, S1 and S2.</p></li>
 <li><p>Some species show weaker correlations with others (e.g., S1 and S3 has a low negative correlation), possibly suggesting some habitat specialization.</p></li>
 <li><p>The overall pattern suggests that these wader species have similar habitat preferences or ecological requirements, as their abundances tend to vary together across sites.</p></li>
 </ol>
-<p>A high degree of intercorrelation is ecologically meaningful amongst species, as these wader species share similar coastal and wetland habitats.</p>
+<p>Intercorrelation amongst species is ecologically meaningful, as these wader species share similar coastal and wetland habitats.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-</section><section id="visualizing-the-relationship-between-weight-and-heart-mass" class="level3"><h3 class="anchored" data-anchor-id="visualizing-the-relationship-between-weight-and-heart-mass">7.2 Visualizing the Relationship Between Weight and Heart Mass</h3>
+</section><section id="visualizing-the-relationship-between-wader-species-counts" class="level3"><h3 class="anchored" data-anchor-id="visualizing-the-relationship-between-wader-species-counts">7.2 Visualizing the relationship between wader species counts</h3>
 <p>Create a scatterplot of heart mass (y-axis) against body weight (x-axis) using the <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> function. Add appropriate axis labels and a title. Show your code.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-tip callout-titled">
