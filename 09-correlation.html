@@ -976,7 +976,7 @@ D    0   0
 E    0   0
 F  658  55</code></pre>
 </div>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Use the pairs function to visualize intercorrelations for the first few rows</span></span>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Use the pairs function to visualize correlations for the first few columns</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html">pairs</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">waders</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>, pch <span class="op">=</span> <span class="fl">16</span>, col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -995,12 +995,12 @@ S3 -0.17 -0.21  1.00</code></pre>
 </div>
 <p>Based on the pairs plot and correlation matrix:</p>
 <ol type="1">
-<li><p>There appear to be moderate to strong positive correlations between most wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.</p></li>
-<li><p>Particularly strong correlations (r &gt; 0.7) exist between several pairs of species, such as S1 and Dunlin.</p></li>
-<li><p>Some species show weaker correlations with others (e.g., S3 has lower correlation coefficients with several species), suggesting some habitat specialization.</p></li>
+<li><p>There appear to be moderate to strong positive correlations between some wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.</p></li>
+<li><p>Particularly strong correlations (r =~ 0.61) exist between a pair of species, such as S1 and S2.</p></li>
+<li><p>Some species show weaker correlations with others (e.g., S1 and S3 has a low negative correlation), possibly suggesting some habitat specialization.</p></li>
 <li><p>The overall pattern suggests that these wader species have similar habitat preferences or ecological requirements, as their abundances tend to vary together across sites.</p></li>
 </ol>
-<p>This high degree of intercorrelation is ecologically meaningful, as these wader species often share similar coastal and wetland habitats.</p>
+<p>A high degree of intercorrelation is ecologically meaningful amongst species, as these wader species share similar coastal and wetland habitats.</p>
 </div>
 </div>
 </div>
