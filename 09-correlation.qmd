@@ -400,7 +400,7 @@ Intercorrelation amongst species is ecologically meaningful, as these wader spec
 
 ### 7.2 Visualizing the relationship between wader species counts
 
-Create a scatterplot of heart mass (y-axis) against body weight (x-axis) using the `plot()` function. Add appropriate axis labels and a title. Show your code.
+Create a scatterplot of counts of species S1 (Oystercatcher) versus S2 (White-fronted Plover) using the `plot()` function. Use the `hist()` function to examine the distribution of variables. Add appropriate axis labels and titles. Show your code.
 
 <br>
 
@@ -414,89 +414,47 @@ Create a scatterplot of heart mass (y-axis) against body weight (x-axis) using t
 library(MASS)
 data(waders)
 
-# Examine the first few rows of the data
-head(waders)
-
-# Extract the first three columns (species)
-first_three <- waders[, 1:3]
-colnames(first_three)
-
-# Examine distribution of each variable with histograms
-hist(waders$S1)
-hist(waders$S2)
-hist(waders$S3)
-
-# Hypothesis statements:
-# H0: There is no correlation between S1 and S2 counts (r = 0)
-# H1: There is a correlation between S1 and S2 counts (r ≠ 0)
-#
-# H0: There is no correlation between S1 and S3 counts (r = 0)
-# H1: There is a correlation between S1 and S3 counts (r ≠ 0)
-#
-# H0: There is no correlation between S2 and S3 counts (r = 0)
-# H1: There is a correlation between S2 and S3 counts (r ≠ 0)
-
 # Create pairwise scatterplots with improved formatting
 # S1 vs S2
 plot(waders$S1, waders$S2, 
      pch = 16, col = "darkblue",
-     xlab = "S1 Count", 
-     ylab = "S2 Count",
-     main = "Correlation between S1 and S2")
+     xlab = "Ostercatcher counts", 
+     ylab = "White-fronted Plover counts",
+     main = "Correlation between species counts")
 
-# S1 vs S3
-plot(waders$S1, waders$S3, 
-     pch = 16, col = "darkgreen",
-     xlab = "S1 Count", 
-     ylab = "S3 Count",
-     main = "Correlation between S1 and S3")
+# S1 distribution
+hist(waders$S1, col = "darkgreen",
+     xlab = "Ostercatcher counts",
+     main = "S1 count distribution")
 
-# S2 vs S3
-plot(waders$S2, waders$S3, 
-     pch = 16, col = "darkred",
-     xlab = "S2 Count", 
-     ylab = "S3 Count",
-     main = "Correlation between S2 and S3")
+# S2 distribution
+hist(waders$S2, col = "goldenrod",
+     xlab = "White-fronted Plover counts",
+     main = "S2 count distribution")
 
-# Perform the three correlation tests
-# S1 vs S2
-cor.test(waders$S1, waders$S2)
 
-# S1 vs S3
-cor.test(waders$S1, waders$S3)
-
-# S2 vs S3
-cor.test(waders$S2, waders$S3)
 ```
 
-**Expectation of Gaussianity:**
-The waders data represents counts of bird species at different sites. Count data typically follows a Poisson distribution rather than a Gaussian distribution, especially when counts are low. Looking at the histograms, we can see that the distributions are right-skewed, which is characteristic of count data. Therefore, I would not expect these variables to be strictly Gaussian.
+**Graph aesthetics**
 
-**Correlation Test Results:**
+- Good titles
+- Properly labelled axes
+- Use of color is a visual cue to different species
 
-1. **S1 and S2**: 
-   - Strong positive correlation (r = 0.72)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a clear positive relationship
+**Assess distribution**
 
-2. **S1 and S3**:
-   - Moderate positive correlation (r = 0.55)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a positive relationship with more scatter
+- decidedly non-Gaussian
+- large amount of small counts, rare larger counts
+- Shape of distribution is typical of count data
+- Pearson correlation probably inappropriate; Spearman OK
 
-3. **S2 and S3**:
-   - Moderate positive correlation (r = 0.63)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a clear positive relationship
-
-All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between S1 and S2.
 :::
 
 <br>
 
-### 7.3 Calculating the Correlation Coefficient
+### 7.3 Calculating `r` the correlation coefficient
 
-Calculate the Pearson correlation coefficient between body weight and heart mass using the `cor()` function. Show your code and interpret the result.
+Calculate the Spearman correlation coefficient between S1 and S2 counts using the `cor()` function. Show your code and interpret the result.
 
 <br>
 
@@ -510,95 +468,34 @@ Calculate the Pearson correlation coefficient between body weight and heart mass
 library(MASS)
 data(waders)
 
-# Examine the first few rows of the data
-head(waders)
-
-# Extract the first three columns (species)
-first_three <- waders[, 1:3]
-colnames(first_three)
-
-# Examine distribution of each variable with histograms
-hist(waders$S1)
-hist(waders$S2)
-hist(waders$S3)
-
-# Hypothesis statements:
-# H0: There is no correlation between S1 and S2 counts (r = 0)
-# H1: There is a correlation between S1 and S2 counts (r ≠ 0)
-#
-# H0: There is no correlation between S1 and S3 counts (r = 0)
-# H1: There is a correlation between S1 and S3 counts (r ≠ 0)
-#
-# H0: There is no correlation between S2 and S3 counts (r = 0)
-# H1: There is a correlation between S2 and S3 counts (r ≠ 0)
-
-# Create pairwise scatterplots with improved formatting
+# Calculate the correlation 
 # S1 vs S2
-plot(waders$S1, waders$S2, 
-     pch = 16, col = "darkblue",
-     xlab = "S1 Count", 
-     ylab = "S2 Count",
-     main = "Correlation between S1 and S2")
+cor(x = waders$S1, 
+    y = waders$S2, 
+    method = "spearman")
 
-# S1 vs S3
-plot(waders$S1, waders$S3, 
-     pch = 16, col = "darkgreen",
-     xlab = "S1 Count", 
-     ylab = "S3 Count",
-     main = "Correlation between S1 and S3")
-
-# S2 vs S3
-plot(waders$S2, waders$S3, 
-     pch = 16, col = "darkred",
-     xlab = "S2 Count", 
-     ylab = "S3 Count",
-     main = "Correlation between S2 and S3")
-
-# Perform the three correlation tests
-# S1 vs S2
-cor.test(waders$S1, waders$S2)
-
-# S1 vs S3
-cor.test(waders$S1, waders$S3)
-
-# S2 vs S3
-cor.test(waders$S2, waders$S3)
 ```
 
-**Expectation of Gaussianity:**
-The waders data represents counts of bird species at different sites. Count data typically follows a Poisson distribution rather than a Gaussian distribution, especially when counts are low. Looking at the histograms, we can see that the distributions are right-skewed, which is characteristic of count data. Therefore, I would not expect these variables to be strictly Gaussian.
+**Correlation interpretation**
 
-**Correlation Test Results:**
+- Spearman's `rho` was 0.50
+- Medium magnitude correlation
+- Implies positive association between species counts for S1 and S2 
 
-1. **S1 and S2**: 
-   - Strong positive correlation (r = 0.72)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a clear positive relationship
-
-2. **S1 and S3**:
-   - Moderate positive correlation (r = 0.55)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a positive relationship with more scatter
-
-3. **S2 and S3**:
-   - Moderate positive correlation (r = 0.63)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a clear positive relationship
-
-All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between S1 and S2.
 :::
 
 <br>
 
 ### 7.4 Testing the Correlation
 
-Perform a statistical test to determine whether there is a significant correlation between body weight and heart mass. Use the `cor.test()` function. Show your code and interpret the result in the technical style.
+Perform a statistical test to determine whether there is a significant correlation between S1 and S2 counts in the `waders` data. Use the `cor.test()` function. Show your code and interpret the result in the technical style.
 
 <br>
 
 ::: {.callout-tip collapse="true"}
 ## Correlation Analysis of First Three Wader Species
 ```{r}
+
 #| echo: true
 #| eval: true
 
@@ -606,89 +503,41 @@ Perform a statistical test to determine whether there is a significant correlati
 library(MASS)
 data(waders)
 
-# Examine the first few rows of the data
-head(waders)
-
-# Extract the first three columns (species)
-first_three <- waders[, 1:3]
-colnames(first_three)
-
-# Examine distribution of each variable with histograms
-hist(waders$S1)
-hist(waders$S2)
-hist(waders$S3)
-
 # Hypothesis statements:
 # H0: There is no correlation between S1 and S2 counts (r = 0)
 # H1: There is a correlation between S1 and S2 counts (r ≠ 0)
-#
-# H0: There is no correlation between S1 and S3 counts (r = 0)
-# H1: There is a correlation between S1 and S3 counts (r ≠ 0)
-#
-# H0: There is no correlation between S2 and S3 counts (r = 0)
-# H1: There is a correlation between S2 and S3 counts (r ≠ 0)
 
-# Create pairwise scatterplots with improved formatting
+# Calculate the correlation 
 # S1 vs S2
-plot(waders$S1, waders$S2, 
-     pch = 16, col = "darkblue",
-     xlab = "S1 Count", 
-     ylab = "S2 Count",
-     main = "Correlation between S1 and S2")
-
-# S1 vs S3
-plot(waders$S1, waders$S3, 
-     pch = 16, col = "darkgreen",
-     xlab = "S1 Count", 
-     ylab = "S3 Count",
-     main = "Correlation between S1 and S3")
-
-# S2 vs S3
-plot(waders$S2, waders$S3, 
-     pch = 16, col = "darkred",
-     xlab = "S2 Count", 
-     ylab = "S3 Count",
-     main = "Correlation between S2 and S3")
-
-# Perform the three correlation tests
-# S1 vs S2
-cor.test(waders$S1, waders$S2)
-
-# S1 vs S3
-cor.test(waders$S1, waders$S3)
-
-# S2 vs S3
-cor.test(waders$S2, waders$S3)
+cor.test(x = waders$S1, 
+    y = waders$S2, 
+    method = "spearman")
 ```
 
-**Expectation of Gaussianity:**
-The waders data represents counts of bird species at different sites. Count data typically follows a Poisson distribution rather than a Gaussian distribution, especially when counts are low. Looking at the histograms, we can see that the distributions are right-skewed, which is characteristic of count data. Therefore, I would not expect these variables to be strictly Gaussian.
+**Interpret correlation test**
 
-**Correlation Test Results:**
+- `rho` = 0.50
+- P = 0.06
+- P > 0.05 so does not meet traditional threshold for being "significant"
+- Hence we conclude the correlation is not significantly different to zero
+
+**Report the test**
 
 1. **S1 and S2**: 
    - Strong positive correlation (r = 0.72)
    - Statistically significant (p < 0.001)
    - The scatterplot shows a clear positive relationship
 
-2. **S1 and S3**:
-   - Moderate positive correlation (r = 0.55)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a positive relationship with more scatter
+> We failed to find significant correlation between Oystercatcher and White-fronted Plover counts (Spearman's rho = 0..50, df = 148, P = 0.06).
 
-3. **S2 and S3**:
-   - Moderate positive correlation (r = 0.63)
-   - Statistically significant (p < 0.001)
-   - The scatterplot shows a clear positive relationship
-
-All three species pairs show significant positive correlations, suggesting they have similar habitat preferences or ecological requirements. The strongest correlation is between S1 and S2.
+These species do not show a significant correlation in their counts, suggesting they may not have similar habitat preferences or ecological requirements. 
 :::
 
 <br>
 
 ### 7.5 Age Variable Analysis and Weight-Age Correlation
 
-Comment on the expectation of Gaussian for the `age` variable in the `cfseal` data.  Would expect this variable to be Gaussian?  Briefly explain you answer and analyse the correlation between `weight` and `age`, using our four-step workflow and briefly report your results.
+Comment on the expectation of Gaussian for the `S10` (Greenshank) counts and `S14` (Sanderling) in the `waders` data.  Would we expect these variables to be Gaussian?  Briefly explain you answer and analyse the correlation between `S10` and `S14`, using our four-step workflow and briefly report your results.
 
 <br>
 
@@ -698,113 +547,125 @@ Comment on the expectation of Gaussian for the `age` variable in the `cfseal` da
 #| echo: true
 #| eval: true
 
-# Load required packages
-library(readxl)
+# Load the MASS package and waders dataset if not already loaded
+library(MASS)
+data(waders)
 
-# Load the data if not already loaded
-seals <- read_excel("data/2.3-cfseal.xlsx")
-
-# Examine the age variable
-summary(seals$age)
 
 # Step 1: Question
-# Question: Is there a correlation between age and weight in Cape fur seals?
-# H0: There is no correlation between age and weight (r = 0)
-# H1: There is a correlation between age and weight (r ≠ 0)
+# Question: Is there a correlation between S10 and S14 counts?
+# H0: There is no correlation between S10 and S14 (r = 0)
+# H1: There is a correlation between S10 and S14 (r ≠ 0)
 
-# Examine the distribution of age
-hist(seals$age, 
-     main = "Distribution of Cape Fur Seal Ages",
-     xlab = "Age (years)",
-     col = "lightblue",
-     breaks = 10)
-
-# Check for normality of age
-qqnorm(seals$age, main = "Q-Q Plot for Age")
-qqline(seals$age, col = "red", lwd = 2)
-
-# Formal test for normality
-shapiro.test(seals$age)
 
 # Step 2: Graph
 # Create scatterplot of weight vs age
-plot(seals$age, seals$weight,
-     xlab = "Age (years)",
-     ylab = "Weight (kg)",
-     main = "Relationship between Age and Weight",
-     pch = 16, col = "darkblue")
-abline(lm(weight ~ age, data = seals), col = "red", lwd = 2)
+plot(waders$S10, waders$S14,
+     xlab = "Greenshank counts (S10)",
+     ylab = "Sanderling counts (S14)",
+     main = "Relationship between S10 and S14 counts",
+     pch = 16, col = "dodgerblue")
 
 # Step 3: Test
 # Pearson correlation (if appropriate)
-pearson_cor <- cor.test(seals$age, seals$weight)
+pearson_cor <- cor.test(waders$S10, waders$S14)
 pearson_cor
 
 # Spearman correlation (non-parametric alternative)
-spearman_cor <- cor.test(seals$age, seals$weight, method = "spearman")
+spearman_cor <- cor.test(waders$S10, waders$S14, method = "spearman")
 spearman_cor
 
 # Step 4: Validate
 # Check for normality of weight
-hist(seals$weight, 
-     main = "Distribution of Cape Fur Seal Weights",
-     xlab = "Weight (kg)",
+
+# Check for normality of S10 and S14 counts - histograms + qqplots
+par(mfrow = c(2,2)) # set graph display 2x2
+
+hist(waders$S10, 
+     main = "Distribution of Greenshank (S10) counts",
+     xlab = "Greenshank counts",
      col = "lightgreen",
      breaks = 10)
 
-qqnorm(seals$weight, main = "Q-Q Plot for Weight")
-qqline(seals$weight, col = "red", lwd = 2)
+hist(waders$S14, 
+     main = "Distribution of Sanderling (S14) counts",
+     xlab = "Sanderling counts",
+     col = "darkgreen",
+     breaks = 10)
 
-shapiro.test(seals$weight)
+qqnorm(waders$S10, main = "Q-Q Plot for S10")
+qqline(waders$S10, col = "lightgreen", lwd = 2)
 
-# Compare the results of both correlation methods
-data.frame(
-  Method = c("Pearson", "Spearman"),
-  Correlation = c(pearson_cor$estimate, spearman_cor$estimate),
-  P_value = c(pearson_cor$p.value, spearman_cor$p.value)
-)
+qqnorm(waders$S14, main = "Q-Q Plot for S14")
+qqline(waders$S14, col = "darkgreen", lwd = 2)
+
+par(mfrow = c(1,1)) # set graph display back to default 1x1
+
+# Formal test for normality
+shapiro.test(waders$S10) 
+shapiro.test(waders$S14)
+
+
 ```
 
-**Expectation of Gaussianity for Age Variable:**
+**Assessment**
 
-I would **not** expect the age variable in the Cape fur seal data to follow a Gaussian distribution for several reasons:
+**Step 1: Question**
 
-1. **Biological Context**: Age is often not normally distributed in wild animal populations due to:
-   - Higher mortality in younger age classes
-   - Maximum lifespan limitations
-   - Sampling biases (certain age classes may be easier to sample)
+- Statement of the question and formal hypothesis as standard
 
-2. **Bounded Nature**: Age is bounded at zero and cannot be negative, which constrains the left tail of the distribution
+**Step 2: Graph**
 
-3. **Discrete Values**: Age is typically measured in whole years or discrete units, not as a continuous variable
+- Labelled scatterplot
 
-4. **Empirical Evidence**: The histogram shows a right-skewed distribution with more younger individuals, and the Q-Q plot shows clear deviations from normality. The Shapiro-Wilk test confirms significant deviation from normality (p < 0.001).
+- Relationship is not straightforward
 
-**Correlation Analysis Report:**
+**Step 3: Test**
 
-Following our four-step workflow for analyzing the correlation between weight and age:
+- Performed both Pearson's and Spearman correlation tests prior to validation
 
-1. **Question**: We investigated whether there is a correlation between age and weight in Cape fur seals.
+- Neither correlation coefficient is significantly different to zero
 
-2. **Graph**: The scatterplot revealed a positive relationship between age and weight, with weight generally increasing with age, though with considerable variation.
+**Step 4: Validate**
+
+I would **not** expect the species counts to follow a Gaussian distribution for several reasons:
+
+- **Biological Context**: Counts often are not normally distributed in wild animal populations
+
+- **Bounded nature of the measure**: Age is bounded at zero and cannot be negative, which constrains the left tail of the distribution
+
+- **Discrete Values**: Counts are typically measured in whole years or discrete units, not as a continuous variable
+
+- **Empirical Evidence**: The histograms shows a right-skewed distribution with more counts of few individuals for both species, and the Q-Q plots shows clear deviations from normality. The Shapiro-Wilk test confirms significant deviation from normality for both species (both P < 0.0001).
+
+**What a Correlation Analysis Report looks like:**
+
+Following our four-step workflow for analyzing the correlation between Greenshank and Sanderling:
+
+1. **Question**: We investigated whether there is a correlation between Greenshank and Sanderling counts.
+
+2. **Graph**: The scatterplot possibly suggests a weak negative relationship Greenshank and Sanderling counts, however the relationship is likely weak.
 
 3. **Test**: 
-   - Pearson correlation: r = 0.71, p < 0.001
-   - Spearman correlation: rho = 0.76, p < 0.001
+   - Pearson correlation: r = -0.31, p = 0.26
+   - Spearman correlation: rho = 0.03, p = 0.93
 
 4. **Validate**: 
    - Neither age nor weight variables are strictly normally distributed
    - The Spearman correlation is more appropriate given the non-normality
    - The relationship appears monotonic but not perfectly linear
 
-**Conclusion**: There is a strong positive correlation between age and weight in Cape fur seals (Spearman's rho = 0.76, p < 0.001), indicating that older seals tend to be heavier. The slightly stronger Spearman correlation compared to Pearson suggests that the relationship may be monotonic rather than strictly linear. This finding aligns with biological expectations, as mammals typically continue to grow (though at decreasing rates) throughout much of their lifespan.
+**Conclusion**: 
+
+> We found no correlation between counts of Greenshank and Sanderling (Spearman's rho = 0.03, p = 0.93)This finding aligns with biological expectations, as these species exhibit different habitat preferences...
+
 :::
 
 <br>
 
 ### 7.6 Create Your Own Correlation Question
 
-Write a plausible practice question involving any aspect of the use of correlation, and our workflow.  Make use of the data from either the `waders` data, or else the `cfseal` data.
+Write a plausible practice question involving any aspect of the use of correlation, and our workflow.  Make use of the `cfseal` data which you can [download here](https://github.com/weharris/RStatsBootcamp-2025/raw/refs/heads/main/data/2.3-cfseal.xlsx.
 
 <br>
 
