@@ -376,7 +376,7 @@ data(waders)
 # Print the first few rows of the data
 head(waders)
 
-# Use the pairs function to visualize intercorrelations for the first few rows
+# Use the pairs function to visualize correlations for the first few columns
 pairs(x=waders[,1:3], pch = 16, col = "blue")
 
 # Calculate the correlation matrix for a numerical summary
@@ -385,15 +385,15 @@ round(cor(waders[,1:3]), 2)
 
 Based on the pairs plot and correlation matrix:
 
-1. There appear to be moderate to strong positive correlations between most wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.
+1. There appear to be moderate to strong positive correlations between some wader species, indicating that sites that have high numbers of one species tend to have high numbers of other species as well.
 
-2. Particularly strong correlations (r > 0.7) exist between several pairs of species, such as S1 and Dunlin.
+2. Particularly strong correlations (r =~ 0.61) exist between a pair of species, such as S1 and S2.
 
-3. Some species show weaker correlations with others (e.g., S3 has lower correlation coefficients with several species), suggesting some habitat specialization.
+3. Some species show weaker correlations with others (e.g., S1 and S3 has a low negative correlation), possibly suggesting some habitat specialization.
 
 4. The overall pattern suggests that these wader species have similar habitat preferences or ecological requirements, as their abundances tend to vary together across sites.
 
-This high degree of intercorrelation is ecologically meaningful, as these wader species often share similar coastal and wetland habitats.
+A high degree of intercorrelation is ecologically meaningful amongst species, as these wader species share similar coastal and wetland habitats.
 :::
 
 <br>
