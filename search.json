@@ -780,113 +780,113 @@
     ]
   },
   {
-    "objectID": "slides/correlation_outline.html",
-    "href": "slides/correlation_outline.html",
+    "objectID": "slides/topics/correlation_outline.html",
+    "href": "slides/topics/correlation_outline.html",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "“Correlation does not imply causation” - basic principle\nCorrelation describes relationships between numeric variables\nUsed to test if variables vary together positively or negatively\nExample: Ice cream sales and forest fires correlate due to summer heat\n\n\n\n\n\nAnalyze correlation between two variables\nEvaluate correlation data and assumptions\nGraph correlated variables\nPerform correlation statistical tests and alternatives\n\n\n\n\n\nDemonstrates association between two numeric variables\nExamines how variables “co-vary” (exhibit significant covariance)\nCovariance ranges from -1 (perfect negative) to +1 (perfect positive)\nVisualized with scatterplots - more scatter = weaker correlation\n\n\n\n\n\n“Traditional correlation” = Pearson correlation\nAssumes linear relationship between variables\nRequires Gaussian distributed numeric values\nImage reference: Mathematical formula for Pearson correlation coefficient\n\n\n\n\n\nUse cor() function for correlation coefficient\nPearson correlation = covariance / (std dev x × std dev y)\ncor(x, y, method = \"pearson\") - “pearson” is default\nCan calculate manually or use built-in functions\n\n\n\n\n\nRange of correlation strengths can be visualized\nImage reference: Different correlation magnitude examples\nScatterplot shows relationship strength through scatter pattern\nStronger correlations show tighter data clustering\n\n\n\n\n\nUse plot() for scatterplots of two variables\nUse cor() for correlation coefficient\nExample: vegetation biomass vs insect abundance\nPositive correlation: both variables increase together\n\n\n\n\n\nExamine multiple variables simultaneously\nUse pairs() for correlation plot matrix\nUse cor() for correlation coefficient matrix\nExample: iris dataset flower measurements\n\n\n\n\n\nImage reference: Pairs plot colored by species\nCorrelation strongly influenced by grouping variables\nDemonstrates importance of considering categories\nStatistical summary + graphing = powerful combination\n\n\n\n\n\nDetermine if correlation significantly differs from zero\nUses Null Hypothesis Significance Testing\ncor.test() function provides statistical test\nPearson correlation is default method\n\n\n\n\n\nUsed when Pearson assumptions not met\nRelaxed assumptions: ranked/ordered data, independent rows\nAppropriate for non-linear relationships\nCorrelation coefficient noted as “rho” (ρ)\n\n\n\n\n\nExamine variance similarity between variables\nCheck for independence of observations\nUse boxplot() to compare variances\nConsider Spearman if assumptions violated\n\n\n\n\n\nReport three key quantities: test statistic, df/sample size, p-value\nExample: “significant correlation (Pearson’s r = 0.96, df = 148, P &lt; 0.0001)”\nRound to two decimal places consistently\nReport p &lt; 0.0001 (never scientific notation)\n\n\n\n\n\nNever present raw copied statistical output\nUse R Markdown for attractive summaries\nClean up redundant code before sharing\nOrganize scripts logically with paired graphs and analysis\n\n\n\n\n\nCorrelation identifies statistical relationships\nDoes not establish causation between variables\nImportant tool in data science toolbox\nAlways validate assumptions before interpreting results"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-1-introduction-to-correlation",
-    "href": "slides/correlation_outline.html#slide-1-introduction-to-correlation",
+    "objectID": "slides/topics/correlation_outline.html#slide-1-introduction-to-correlation",
+    "href": "slides/topics/correlation_outline.html#slide-1-introduction-to-correlation",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "“Correlation does not imply causation” - basic principle\nCorrelation describes relationships between numeric variables\nUsed to test if variables vary together positively or negatively\nExample: Ice cream sales and forest fires correlate due to summer heat"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-2-learning-objectives",
-    "href": "slides/correlation_outline.html#slide-2-learning-objectives",
+    "objectID": "slides/topics/correlation_outline.html#slide-2-learning-objectives",
+    "href": "slides/topics/correlation_outline.html#slide-2-learning-objectives",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Analyze correlation between two variables\nEvaluate correlation data and assumptions\nGraph correlated variables\nPerform correlation statistical tests and alternatives"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-3-the-question-of-correlation",
-    "href": "slides/correlation_outline.html#slide-3-the-question-of-correlation",
+    "objectID": "slides/topics/correlation_outline.html#slide-3-the-question-of-correlation",
+    "href": "slides/topics/correlation_outline.html#slide-3-the-question-of-correlation",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Demonstrates association between two numeric variables\nExamines how variables “co-vary” (exhibit significant covariance)\nCovariance ranges from -1 (perfect negative) to +1 (perfect positive)\nVisualized with scatterplots - more scatter = weaker correlation"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-4-pearson-correlation-basics",
-    "href": "slides/correlation_outline.html#slide-4-pearson-correlation-basics",
+    "objectID": "slides/topics/correlation_outline.html#slide-4-pearson-correlation-basics",
+    "href": "slides/topics/correlation_outline.html#slide-4-pearson-correlation-basics",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "“Traditional correlation” = Pearson correlation\nAssumes linear relationship between variables\nRequires Gaussian distributed numeric values\nImage reference: Mathematical formula for Pearson correlation coefficient"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-5-calculating-correlation-in-r",
-    "href": "slides/correlation_outline.html#slide-5-calculating-correlation-in-r",
+    "objectID": "slides/topics/correlation_outline.html#slide-5-calculating-correlation-in-r",
+    "href": "slides/topics/correlation_outline.html#slide-5-calculating-correlation-in-r",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Use cor() function for correlation coefficient\nPearson correlation = covariance / (std dev x × std dev y)\ncor(x, y, method = \"pearson\") - “pearson” is default\nCan calculate manually or use built-in functions"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-6-visualizing-correlation-magnitudes",
-    "href": "slides/correlation_outline.html#slide-6-visualizing-correlation-magnitudes",
+    "objectID": "slides/topics/correlation_outline.html#slide-6-visualizing-correlation-magnitudes",
+    "href": "slides/topics/correlation_outline.html#slide-6-visualizing-correlation-magnitudes",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Range of correlation strengths can be visualized\nImage reference: Different correlation magnitude examples\nScatterplot shows relationship strength through scatter pattern\nStronger correlations show tighter data clustering"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-7-basic-correlation-analysis",
-    "href": "slides/correlation_outline.html#slide-7-basic-correlation-analysis",
+    "objectID": "slides/topics/correlation_outline.html#slide-7-basic-correlation-analysis",
+    "href": "slides/topics/correlation_outline.html#slide-7-basic-correlation-analysis",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Use plot() for scatterplots of two variables\nUse cor() for correlation coefficient\nExample: vegetation biomass vs insect abundance\nPositive correlation: both variables increase together"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-8-correlation-matrices",
-    "href": "slides/correlation_outline.html#slide-8-correlation-matrices",
+    "objectID": "slides/topics/correlation_outline.html#slide-8-correlation-matrices",
+    "href": "slides/topics/correlation_outline.html#slide-8-correlation-matrices",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Examine multiple variables simultaneously\nUse pairs() for correlation plot matrix\nUse cor() for correlation coefficient matrix\nExample: iris dataset flower measurements"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-9-species-effects-on-correlation",
-    "href": "slides/correlation_outline.html#slide-9-species-effects-on-correlation",
+    "objectID": "slides/topics/correlation_outline.html#slide-9-species-effects-on-correlation",
+    "href": "slides/topics/correlation_outline.html#slide-9-species-effects-on-correlation",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Image reference: Pairs plot colored by species\nCorrelation strongly influenced by grouping variables\nDemonstrates importance of considering categories\nStatistical summary + graphing = powerful combination"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-10-statistical-testing-with-cor.test",
-    "href": "slides/correlation_outline.html#slide-10-statistical-testing-with-cor.test",
+    "objectID": "slides/topics/correlation_outline.html#slide-10-statistical-testing-with-cor.test",
+    "href": "slides/topics/correlation_outline.html#slide-10-statistical-testing-with-cor.test",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Determine if correlation significantly differs from zero\nUses Null Hypothesis Significance Testing\ncor.test() function provides statistical test\nPearson correlation is default method"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-11-alternative-spearman-correlation",
-    "href": "slides/correlation_outline.html#slide-11-alternative-spearman-correlation",
+    "objectID": "slides/topics/correlation_outline.html#slide-11-alternative-spearman-correlation",
+    "href": "slides/topics/correlation_outline.html#slide-11-alternative-spearman-correlation",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Used when Pearson assumptions not met\nRelaxed assumptions: ranked/ordered data, independent rows\nAppropriate for non-linear relationships\nCorrelation coefficient noted as “rho” (ρ)"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-12-assumption-checking",
-    "href": "slides/correlation_outline.html#slide-12-assumption-checking",
+    "objectID": "slides/topics/correlation_outline.html#slide-12-assumption-checking",
+    "href": "slides/topics/correlation_outline.html#slide-12-assumption-checking",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Examine variance similarity between variables\nCheck for independence of observations\nUse boxplot() to compare variances\nConsider Spearman if assumptions violated"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-13-reporting-results---technical-style",
-    "href": "slides/correlation_outline.html#slide-13-reporting-results---technical-style",
+    "objectID": "slides/topics/correlation_outline.html#slide-13-reporting-results---technical-style",
+    "href": "slides/topics/correlation_outline.html#slide-13-reporting-results---technical-style",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Report three key quantities: test statistic, df/sample size, p-value\nExample: “significant correlation (Pearson’s r = 0.96, df = 148, P &lt; 0.0001)”\nRound to two decimal places consistently\nReport p &lt; 0.0001 (never scientific notation)"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-14-results-documentation-best-practices",
-    "href": "slides/correlation_outline.html#slide-14-results-documentation-best-practices",
+    "objectID": "slides/topics/correlation_outline.html#slide-14-results-documentation-best-practices",
+    "href": "slides/topics/correlation_outline.html#slide-14-results-documentation-best-practices",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Never present raw copied statistical output\nUse R Markdown for attractive summaries\nClean up redundant code before sharing\nOrganize scripts logically with paired graphs and analysis"
   },
   {
-    "objectID": "slides/correlation_outline.html#slide-15-correlation-vs-causation-summary",
-    "href": "slides/correlation_outline.html#slide-15-correlation-vs-causation-summary",
+    "objectID": "slides/topics/correlation_outline.html#slide-15-correlation-vs-causation-summary",
+    "href": "slides/topics/correlation_outline.html#slide-15-correlation-vs-causation-summary",
     "title": "R Stats Bootcamp - Correlation Outline",
     "section": "",
     "text": "Correlation identifies statistical relationships\nDoes not establish causation between variables\nImportant tool in data science toolbox\nAlways validate assumptions before interpreting results"
