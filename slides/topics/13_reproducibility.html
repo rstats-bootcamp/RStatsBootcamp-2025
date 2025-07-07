@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>correlation – R Stats Bootcamp</title>
+<title>reproducibility – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -477,23 +477,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r-stats-bootcamp---correlation-outline" id="toc-r-stats-bootcamp---correlation-outline" class="nav-link active" data-scroll-target="#r-stats-bootcamp---correlation-outline">R Stats Bootcamp - Correlation Outline</a>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link active" data-scroll-target="#reproducibility">Reproducibility</a>
   <ul class="collapse">
-  <li><a href="#slide-1-introduction-to-correlation" id="toc-slide-1-introduction-to-correlation" class="nav-link" data-scroll-target="#slide-1-introduction-to-correlation">Slide 1: Introduction to Correlation</a></li>
-  <li><a href="#slide-2-learning-objectives" id="toc-slide-2-learning-objectives" class="nav-link" data-scroll-target="#slide-2-learning-objectives">Slide 2: Learning Objectives</a></li>
-  <li><a href="#slide-3-the-question-of-correlation" id="toc-slide-3-the-question-of-correlation" class="nav-link" data-scroll-target="#slide-3-the-question-of-correlation">Slide 3: The Question of Correlation</a></li>
-  <li><a href="#slide-4-pearson-correlation-basics" id="toc-slide-4-pearson-correlation-basics" class="nav-link" data-scroll-target="#slide-4-pearson-correlation-basics">Slide 4: Pearson Correlation Basics</a></li>
-  <li><a href="#slide-5-calculating-correlation-in-r" id="toc-slide-5-calculating-correlation-in-r" class="nav-link" data-scroll-target="#slide-5-calculating-correlation-in-r">Slide 5: Calculating Correlation in R</a></li>
-  <li><a href="#slide-6-visualizing-correlation-magnitudes" id="toc-slide-6-visualizing-correlation-magnitudes" class="nav-link" data-scroll-target="#slide-6-visualizing-correlation-magnitudes">Slide 6: Visualizing Correlation Magnitudes</a></li>
-  <li><a href="#slide-7-basic-correlation-analysis" id="toc-slide-7-basic-correlation-analysis" class="nav-link" data-scroll-target="#slide-7-basic-correlation-analysis">Slide 7: Basic Correlation Analysis</a></li>
-  <li><a href="#slide-8-correlation-matrices" id="toc-slide-8-correlation-matrices" class="nav-link" data-scroll-target="#slide-8-correlation-matrices">Slide 8: Correlation Matrices</a></li>
-  <li><a href="#slide-9-species-effects-on-correlation" id="toc-slide-9-species-effects-on-correlation" class="nav-link" data-scroll-target="#slide-9-species-effects-on-correlation">Slide 9: Species Effects on Correlation</a></li>
-  <li><a href="#slide-10-statistical-testing-with-cor.test" id="toc-slide-10-statistical-testing-with-cor.test" class="nav-link" data-scroll-target="#slide-10-statistical-testing-with-cor.test">Slide 10: Statistical Testing with cor.test()</a></li>
-  <li><a href="#slide-11-alternative-spearman-correlation" id="toc-slide-11-alternative-spearman-correlation" class="nav-link" data-scroll-target="#slide-11-alternative-spearman-correlation">Slide 11: Alternative: Spearman Correlation</a></li>
-  <li><a href="#slide-12-assumption-checking" id="toc-slide-12-assumption-checking" class="nav-link" data-scroll-target="#slide-12-assumption-checking">Slide 12: Assumption Checking</a></li>
-  <li><a href="#slide-13-reporting-results---technical-style" id="toc-slide-13-reporting-results---technical-style" class="nav-link" data-scroll-target="#slide-13-reporting-results---technical-style">Slide 13: Reporting Results - Technical Style</a></li>
-  <li><a href="#slide-14-results-documentation-best-practices" id="toc-slide-14-results-documentation-best-practices" class="nav-link" data-scroll-target="#slide-14-results-documentation-best-practices">Slide 14: Results Documentation Best Practices</a></li>
-  <li><a href="#slide-15-correlation-vs-causation-summary" id="toc-slide-15-correlation-vs-causation-summary" class="nav-link" data-scroll-target="#slide-15-correlation-vs-causation-summary">Slide 15: Correlation vs Causation Summary</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#why-reproducibility-matters" id="toc-why-reproducibility-matters" class="nav-link" data-scroll-target="#why-reproducibility-matters">Why Reproducibility Matters</a></li>
+  <li><a href="#definition-and-benefits" id="toc-definition-and-benefits" class="nav-link" data-scroll-target="#definition-and-benefits">Definition and Benefits</a></li>
+  <li><a href="#components-of-reproducible-workflows" id="toc-components-of-reproducible-workflows" class="nav-link" data-scroll-target="#components-of-reproducible-workflows">Components of Reproducible Workflows</a></li>
+  <li><a href="#code-documentation-standards" id="toc-code-documentation-standards" class="nav-link" data-scroll-target="#code-documentation-standards">Code Documentation Standards</a></li>
+  <li><a href="#environment-management" id="toc-environment-management" class="nav-link" data-scroll-target="#environment-management">Environment Management</a></li>
+  <li><a href="#data-management-principles" id="toc-data-management-principles" class="nav-link" data-scroll-target="#data-management-principles">Data Management Principles</a></li>
+  <li><a href="#file-organization-strategies" id="toc-file-organization-strategies" class="nav-link" data-scroll-target="#file-organization-strategies">File Organization Strategies</a></li>
+  <li><a href="#documentation-best-practices" id="toc-documentation-best-practices" class="nav-link" data-scroll-target="#documentation-best-practices">Documentation Best Practices</a></li>
+  <li><a href="#project-structure-template" id="toc-project-structure-template" class="nav-link" data-scroll-target="#project-structure-template">Project Structure Template</a></li>
+  <li><a href="#version-control-integration" id="toc-version-control-integration" class="nav-link" data-scroll-target="#version-control-integration">Version Control Integration</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -505,141 +501,105 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="r-stats-bootcamp---correlation-outline" class="level1">
-<h1>R Stats Bootcamp - Correlation Outline</h1>
-<section id="slide-1-introduction-to-correlation" class="level2">
-<h2 class="anchored" data-anchor-id="slide-1-introduction-to-correlation">Slide 1: Introduction to Correlation</h2>
+<section id="reproducibility" class="level1">
+<h1>Reproducibility</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>“Correlation does not imply causation” - basic principle</li>
-<li>Correlation describes relationships between numeric variables</li>
-<li>Used to test if variables vary together positively or negatively</li>
-<li>Example: Ice cream sales and forest fires correlate due to summer heat</li>
+<li>Explain why reproducibility matters in data science</li>
+<li>Identify key components of reproducible workflow</li>
+<li>Implement best practices for documentation</li>
+<li>Organize project files effectively</li>
 </ul>
 </section>
-<section id="slide-2-learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="slide-2-learning-objectives">Slide 2: Learning Objectives</h2>
+<section id="why-reproducibility-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-reproducibility-matters">Why Reproducibility Matters</h2>
 <ul>
-<li>Analyze correlation between two variables</li>
-<li>Evaluate correlation data and assumptions</li>
-<li>Graph correlated variables</li>
-<li>Perform correlation statistical tests and alternatives</li>
+<li>Cornerstone of scientific research and data analysis</li>
+<li>Ensures findings can be verified and methods understood</li>
+<li>Work can be built upon by others (including future self)</li>
+<li>Provides verification, collaboration, efficiency, impact, and trust</li>
 </ul>
 </section>
-<section id="slide-3-the-question-of-correlation" class="level2">
-<h2 class="anchored" data-anchor-id="slide-3-the-question-of-correlation">Slide 3: The Question of Correlation</h2>
+<section id="definition-and-benefits" class="level2">
+<h2 class="anchored" data-anchor-id="definition-and-benefits">Definition and Benefits</h2>
 <ul>
-<li>Demonstrates association between two numeric variables</li>
-<li>Examines how variables “co-vary” (exhibit significant covariance)</li>
-<li>Covariance ranges from -1 (perfect negative) to +1 (perfect positive)</li>
-<li>Visualized with scatterplots - more scatter = weaker correlation</li>
+<li>Analysis can be recreated using same data and methods</li>
+<li>Others can confirm your findings</li>
+<li>Team members can understand and contribute</li>
+<li>You can revisit and build upon your own work</li>
 </ul>
 </section>
-<section id="slide-4-pearson-correlation-basics" class="level2">
-<h2 class="anchored" data-anchor-id="slide-4-pearson-correlation-basics">Slide 4: Pearson Correlation Basics</h2>
+<section id="components-of-reproducible-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="components-of-reproducible-workflows">Components of Reproducible Workflows</h2>
 <ul>
-<li>“Traditional correlation” = Pearson correlation</li>
-<li>Assumes linear relationship between variables</li>
-<li>Requires Gaussian distributed numeric values</li>
-<li><strong>Image reference</strong>: Mathematical formula for Pearson correlation coefficient</li>
+<li>Documented code with clear comments and structure</li>
+<li>Version control systems like Git for tracking changes</li>
+<li>Environment management for consistent software conditions</li>
+<li>Proper data management with preserved raw data</li>
 </ul>
 </section>
-<section id="slide-5-calculating-correlation-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="slide-5-calculating-correlation-in-r">Slide 5: Calculating Correlation in R</h2>
+<section id="code-documentation-standards" class="level2">
+<h2 class="anchored" data-anchor-id="code-documentation-standards">Code Documentation Standards</h2>
 <ul>
-<li>Use <code>cor()</code> function for correlation coefficient</li>
-<li>Pearson correlation = covariance / (std dev x × std dev y)</li>
-<li><code>cor(x, y, method = "pearson")</code> - “pearson” is default</li>
-<li>Can calculate manually or use built-in functions</li>
+<li>Clear purpose statements and input/output descriptions</li>
+<li>Parameter explanations and usage examples</li>
+<li>Error checking and validation within functions</li>
+<li>Comments explaining why, not just what code does</li>
 </ul>
 </section>
-<section id="slide-6-visualizing-correlation-magnitudes" class="level2">
-<h2 class="anchored" data-anchor-id="slide-6-visualizing-correlation-magnitudes">Slide 6: Visualizing Correlation Magnitudes</h2>
+<section id="environment-management" class="level2">
+<h2 class="anchored" data-anchor-id="environment-management">Environment Management</h2>
 <ul>
-<li>Range of correlation strengths can be visualized</li>
-<li><strong>Image reference</strong>: Different correlation magnitude examples</li>
-<li>Scatterplot shows relationship strength through scatter pattern</li>
-<li>Stronger correlations show tighter data clustering</li>
+<li>Document software environment for recreation</li>
+<li>Use sessionInfo() to capture package versions</li>
+<li>Consider renv package for project-specific environments</li>
+<li>Ensure others can recreate same conditions</li>
 </ul>
 </section>
-<section id="slide-7-basic-correlation-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="slide-7-basic-correlation-analysis">Slide 7: Basic Correlation Analysis</h2>
+<section id="data-management-principles" class="level2">
+<h2 class="anchored" data-anchor-id="data-management-principles">Data Management Principles</h2>
 <ul>
-<li>Use <code>plot()</code> for scatterplots of two variables</li>
-<li>Use <code>cor()</code> for correlation coefficient</li>
-<li>Example: vegetation biomass vs insect abundance</li>
-<li>Positive correlation: both variables increase together</li>
+<li>Raw data preservation (never modify originals)</li>
+<li>Data cleaning scripts documenting all transformations</li>
+<li>Clear data documentation and metadata</li>
+<li>Transparent pipeline from raw to analysis-ready data</li>
 </ul>
 </section>
-<section id="slide-8-correlation-matrices" class="level2">
-<h2 class="anchored" data-anchor-id="slide-8-correlation-matrices">Slide 8: Correlation Matrices</h2>
+<section id="file-organization-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="file-organization-strategies">File Organization Strategies</h2>
 <ul>
-<li>Examine multiple variables simultaneously</li>
-<li>Use <code>pairs()</code> for correlation plot matrix</li>
-<li>Use <code>cor()</code> for correlation coefficient matrix</li>
-<li>Example: iris dataset flower measurements</li>
+<li>Clear directory structure with logical separation</li>
+<li>Numbered scripts indicating workflow order</li>
+<li>Separate folders for data, code, results, documentation</li>
+<li>README files explaining project structure and usage</li>
 </ul>
 </section>
-<section id="slide-9-species-effects-on-correlation" class="level2">
-<h2 class="anchored" data-anchor-id="slide-9-species-effects-on-correlation">Slide 9: Species Effects on Correlation</h2>
+<section id="documentation-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-best-practices">Documentation Best Practices</h2>
 <ul>
-<li><strong>Image reference</strong>: Pairs plot colored by species</li>
-<li>Correlation strongly influenced by grouping variables</li>
-<li>Demonstrates importance of considering categories</li>
-<li>Statistical summary + graphing = powerful combination</li>
+<li>Comprehensive information including all necessary details</li>
+<li>Clear language avoiding jargon when possible</li>
+<li>Current documentation updated as project evolves</li>
+<li>Accessible storage with project files</li>
 </ul>
 </section>
-<section id="slide-10-statistical-testing-with-cor.test" class="level2">
-<h2 class="anchored" data-anchor-id="slide-10-statistical-testing-with-cor.test">Slide 10: Statistical Testing with cor.test()</h2>
+<section id="project-structure-template" class="level2">
+<h2 class="anchored" data-anchor-id="project-structure-template">Project Structure Template</h2>
 <ul>
-<li>Determine if correlation significantly differs from zero</li>
-<li>Uses Null Hypothesis Significance Testing</li>
-<li><code>cor.test()</code> function provides statistical test</li>
-<li>Pearson correlation is default method</li>
+<li>README.md with project overview and instructions</li>
+<li>data/ folder with raw/ and processed/ subfolders</li>
+<li>code/ folder with numbered analysis scripts</li>
+<li>results/ folder for figures/ and tables/</li>
 </ul>
 </section>
-<section id="slide-11-alternative-spearman-correlation" class="level2">
-<h2 class="anchored" data-anchor-id="slide-11-alternative-spearman-correlation">Slide 11: Alternative: Spearman Correlation</h2>
+<section id="version-control-integration" class="level2">
+<h2 class="anchored" data-anchor-id="version-control-integration">Version Control Integration</h2>
 <ul>
-<li>Used when Pearson assumptions not met</li>
-<li>Relaxed assumptions: ranked/ordered data, independent rows</li>
-<li>Appropriate for non-linear relationships</li>
-<li>Correlation coefficient noted as “rho” (ρ)</li>
-</ul>
-</section>
-<section id="slide-12-assumption-checking" class="level2">
-<h2 class="anchored" data-anchor-id="slide-12-assumption-checking">Slide 12: Assumption Checking</h2>
-<ul>
-<li>Examine variance similarity between variables</li>
-<li>Check for independence of observations</li>
-<li>Use <code>boxplot()</code> to compare variances</li>
-<li>Consider Spearman if assumptions violated</li>
-</ul>
-</section>
-<section id="slide-13-reporting-results---technical-style" class="level2">
-<h2 class="anchored" data-anchor-id="slide-13-reporting-results---technical-style">Slide 13: Reporting Results - Technical Style</h2>
-<ul>
-<li>Report three key quantities: test statistic, df/sample size, p-value</li>
-<li>Example: “significant correlation (Pearson’s r = 0.96, df = 148, P &lt; 0.0001)”</li>
-<li>Round to two decimal places consistently</li>
-<li>Report p &lt; 0.0001 (never scientific notation)</li>
-</ul>
-</section>
-<section id="slide-14-results-documentation-best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="slide-14-results-documentation-best-practices">Slide 14: Results Documentation Best Practices</h2>
-<ul>
-<li>Never present raw copied statistical output</li>
-<li>Use R Markdown for attractive summaries</li>
-<li>Clean up redundant code before sharing</li>
-<li>Organize scripts logically with paired graphs and analysis</li>
-</ul>
-</section>
-<section id="slide-15-correlation-vs-causation-summary" class="level2">
-<h2 class="anchored" data-anchor-id="slide-15-correlation-vs-causation-summary">Slide 15: Correlation vs Causation Summary</h2>
-<ul>
-<li>Correlation identifies statistical relationships</li>
-<li>Does not establish causation between variables</li>
-<li>Important tool in data science toolbox</li>
-<li>Always validate assumptions before interpreting results</li>
+<li>Track changes to code and documentation over time</li>
+<li>Enable collaboration without file conflicts</li>
+<li>Ability to revert to previous versions if needed</li>
+<li>Essential component of modern reproducible research</li>
 </ul>
 
 
