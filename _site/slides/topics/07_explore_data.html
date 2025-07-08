@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>explore_data – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#explore-data" id="toc-explore-data" class="nav-link active" data-scroll-target="#explore-data">Explore Data</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#question-explore-analyze-workflow" id="toc-question-explore-analyze-workflow" class="nav-link" data-scroll-target="#question-explore-analyze-workflow">Question, Explore, Analyze Workflow</a></li>
+  <li><a href="#weighing-the-pig-concept" id="toc-weighing-the-pig-concept" class="nav-link" data-scroll-target="#weighing-the-pig-concept">Weighing the Pig Concept</a></li>
+  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a></li>
+  <li><a href="#question-formulation-and-nhst" id="toc-question-formulation-and-nhst" class="nav-link" data-scroll-target="#question-formulation-and-nhst">Question Formulation and NHST</a></li>
+  <li><a href="#nhst-core-components" id="toc-nhst-core-components" class="nav-link" data-scroll-target="#nhst-core-components">NHST Core Components</a></li>
+  <li><a href="#variables-and-graphing-principles" id="toc-variables-and-graphing-principles" class="nav-link" data-scroll-target="#variables-and-graphing-principles">Variables and Graphing Principles</a></li>
+  <li><a href="#scientific-graph-requirements" id="toc-scientific-graph-requirements" class="nav-link" data-scroll-target="#scientific-graph-requirements">Scientific Graph Requirements</a></li>
+  <li><a href="#analysis-versus-eda-distinction" id="toc-analysis-versus-eda-distinction" class="nav-link" data-scroll-target="#analysis-versus-eda-distinction">Analysis versus EDA Distinction</a></li>
+  <li><a href="#statistical-analysis-plan-concept" id="toc-statistical-analysis-plan-concept" class="nav-link" data-scroll-target="#statistical-analysis-plan-concept">Statistical Analysis Plan Concept</a></li>
+  <li><a href="#modern-scientific-method" id="toc-modern-scientific-method" class="nav-link" data-scroll-target="#modern-scientific-method">Modern Scientific Method</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +501,105 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="explore-data" class="level1">
+<h1>Explore Data</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Formulate appropriate statistical questions</li>
+<li>Perform hypothesis testing using NHST framework</li>
+<li>Summarize what “Weighing the Pig” means</li>
+<li>Distinguish between Analysis versus EDA</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="question-explore-analyze-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="question-explore-analyze-workflow">Question, Explore, Analyze Workflow</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Dataset often comes in imperfect state</li>
+<li>First task is to “weigh the pig” - understand data</li>
+<li>Order: Question, Explore, Analyze</li>
+<li>Choose analysis prior to collecting first data point</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="weighing-the-pig-concept" class="level2">
+<h2 class="anchored" data-anchor-id="weighing-the-pig-concept">Weighing the Pig Concept</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Term for creating summary-at-a-glance of dataset</li>
+<li>Includes graphics, statistical summary, and data amount</li>
+<li>Key consideration: specification of variables</li>
+<li>Best way to gain skill: practice with data</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="exploratory-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Examine variables: are they as expected?</li>
+<li>Graph data and examine numerical summaries</li>
+<li>Look for errors both trivial and serious</li>
+<li>May take large proportion of analysis time</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="question-formulation-and-nhst" class="level2">
+<h2 class="anchored" data-anchor-id="question-formulation-and-nhst">Question Formulation and NHST</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Null Hypothesis Significance Testing framework</li>
+<li>Population of interest cannot be directly measured</li>
+<li>Experimental samples drawn randomly from population</li>
+<li>Test statistics compared to expected under null hypothesis</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="nhst-core-components" class="level2">
+<h2 class="anchored" data-anchor-id="nhst-core-components">NHST Core Components</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Null hypothesis: consistent with no effect</li>
+<li>P-value: probability observed effect due to chance</li>
+<li>Alpha value: maximum acceptable probability of error (0.05)</li>
+<li>Alternative hypothesis: effect we predict to be true</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="variables-and-graphing-principles" class="level2">
+<h2 class="anchored" data-anchor-id="variables-and-graphing-principles">Variables and Graphing Principles</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Good graph tells whole story</li>
+<li>Bad graph worse than no graph at all</li>
+<li>Distinction between EDA graphs and evidence graphs</li>
+<li>Must convey relevant information and be self-contained</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="scientific-graph-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="scientific-graph-requirements">Scientific Graph Requirements</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Reflect hypothesis or statistical concept</li>
+<li>Appropriate to the data being analyzed</li>
+<li>Consistent in aesthetics throughout</li>
+<li>Build up information in layers</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="analysis-versus-eda-distinction" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-versus-eda-distinction">Analysis versus EDA Distinction</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Analysis: generates evidence, fits specific question</li>
+<li>EDA: informal exploration and assumptions testing</li>
+<li>Analysis designed for others, EDA usually private</li>
+<li>Both essential parts of complete data analysis process</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="statistical-analysis-plan-concept" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analysis-plan-concept">Statistical Analysis Plan Concept</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Formal document connecting hypothesis to analysis method</li>
+<li>Created before any data collection begins</li>
+<li>Specifies hypotheses, statistical models, and data collection</li>
+<li>Effect size and sample size justification included</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="modern-scientific-method" class="level2">
+<h2 class="anchored" data-anchor-id="modern-scientific-method">Modern Scientific Method</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Traditional cycle inadequate for best practice</li>
+<li>Analysis planning must occur with hypothesis formulation</li>
+<li>Experimental design phase with power analysis</li>
+<li>Statistical analysis plan produced prior to data collection</li>
 </ul>
 
 

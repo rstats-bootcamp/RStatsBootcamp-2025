@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>rmarkdown – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link active" data-scroll-target="#r-markdown">R Markdown</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#what-is-r-markdown" id="toc-what-is-r-markdown" class="nav-link" data-scroll-target="#what-is-r-markdown">What is R Markdown?</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#yaml-header-structure" id="toc-yaml-header-structure" class="nav-link" data-scroll-target="#yaml-header-structure">YAML Header Structure</a></li>
+  <li><a href="#markdown-text-formatting" id="toc-markdown-text-formatting" class="nav-link" data-scroll-target="#markdown-text-formatting">Markdown Text Formatting</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
+  <li><a href="#chunk-options-control" id="toc-chunk-options-control" class="nav-link" data-scroll-target="#chunk-options-control">Chunk Options Control</a></li>
+  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline Code</a></li>
+  <li><a href="#output-formats" id="toc-output-formats" class="nav-link" data-scroll-target="#output-formats">Output Formats</a></li>
+  <li><a href="#document-generation-process" id="toc-document-generation-process" class="nav-link" data-scroll-target="#document-generation-process">Document Generation Process</a></li>
+  <li><a href="#advanced-features" id="toc-advanced-features" class="nav-link" data-scroll-target="#advanced-features">Advanced Features</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +501,105 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="r-markdown" class="level1">
+<h1>R Markdown</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Understand the basics of R Markdown</li>
+<li>Create documents combining code, output, and narrative text</li>
+<li>Format text using Markdown syntax</li>
+<li>Generate reports in multiple formats (HTML, PDF, Word)</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="what-is-r-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-r-markdown">What is R Markdown?</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>File format combining R code, output, and narrative text</li>
+<li>Powerful tool for reproducible reports, presentations, dashboards</li>
+<li>Three key elements: YAML header, Markdown text, Code chunks</li>
+<li>Plain text files with special formatting syntax</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Create new R Markdown in RStudio: File → New File → R Markdown</li>
+<li>Choose document type (HTML, PDF, Word)</li>
+<li>Provide title and author information</li>
+<li>Template generated for modification</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="yaml-header-structure" class="level2">
+<h2 class="anchored" data-anchor-id="yaml-header-structure">YAML Header Structure</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Appears at top between triple dashes (—)</li>
+<li>Contains document metadata and formatting options</li>
+<li>Customize output format, table of contents, themes</li>
+<li>Can include dynamic dates and advanced formatting</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="markdown-text-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-text-formatting">Markdown Text Formatting</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Lightweight markup language for text formatting</li>
+<li>Headers using # symbols (# Header 1, ## Header 2)</li>
+<li>Bold text with <strong>text</strong>, italic with <em>text</em></li>
+<li>Links, images, lists, and tables with simple syntax</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="code-chunks" class="level2">
+<h2 class="anchored" data-anchor-id="code-chunks">Code Chunks</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Execute R code and display results in document</li>
+<li>Enclosed in triple backticks with {r} designation</li>
+<li>Control behavior with chunk options</li>
+<li>Include chunk names for organization and referencing</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="chunk-options-control" class="level2">
+<h2 class="anchored" data-anchor-id="chunk-options-control">Chunk Options Control</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>eval: whether to evaluate code (TRUE/FALSE)</li>
+<li>echo: whether to show code (TRUE/FALSE)</li>
+<li>include: whether to include chunk in output</li>
+<li>message/warning: control display of messages and warnings</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="inline-code" class="level2">
+<h2 class="anchored" data-anchor-id="inline-code">Inline Code</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Include R code directly within text using backticks</li>
+<li>Format: <code>r code_here</code> within sentences</li>
+<li>Calculates results and inserts into text</li>
+<li>Useful for dynamic reporting of values</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="output-formats" class="level2">
+<h2 class="anchored" data-anchor-id="output-formats">Output Formats</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>HTML: interactive, customizable, web-friendly</li>
+<li>PDF: formal appearance, requires LaTeX installation</li>
+<li>Word: familiar format for collaboration and editing</li>
+<li>Multiple formats can be specified in single document</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="document-generation-process" class="level2">
+<h2 class="anchored" data-anchor-id="document-generation-process">Document Generation Process</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Click Knit button in RStudio</li>
+<li>R Markdown runs all code chunks</li>
+<li>Generates outputs (tables, plots, etc.)</li>
+<li>Formats text according to Markdown syntax</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="advanced-features" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-features">Advanced Features</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Table of contents with toc: true</li>
+<li>Code folding for interactive documents</li>
+<li>Custom themes and syntax highlighting</li>
+<li>Floating TOC and section numbering</li>
 </ul>
 
 

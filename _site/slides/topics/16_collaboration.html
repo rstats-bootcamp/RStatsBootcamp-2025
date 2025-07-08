@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>collaboration – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#collaboration" id="toc-collaboration" class="nav-link active" data-scroll-target="#collaboration">Collaboration</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#why-collaborative-workflows-matter" id="toc-why-collaborative-workflows-matter" class="nav-link" data-scroll-target="#why-collaborative-workflows-matter">Why Collaborative Workflows Matter</a></li>
+  <li><a href="#key-collaboration-benefits" id="toc-key-collaboration-benefits" class="nav-link" data-scroll-target="#key-collaboration-benefits">Key Collaboration Benefits</a></li>
+  <li><a href="#project-organization-for-teams" id="toc-project-organization-for-teams" class="nav-link" data-scroll-target="#project-organization-for-teams">Project Organization for Teams</a></li>
+  <li><a href="#essential-documentation-components" id="toc-essential-documentation-components" class="nav-link" data-scroll-target="#essential-documentation-components">Essential Documentation Components</a></li>
+  <li><a href="#code-sharing-best-practices" id="toc-code-sharing-best-practices" class="nav-link" data-scroll-target="#code-sharing-best-practices">Code Sharing Best Practices</a></li>
+  <li><a href="#modular-code-development" id="toc-modular-code-development" class="nav-link" data-scroll-target="#modular-code-development">Modular Code Development</a></li>
+  <li><a href="#package-management" id="toc-package-management" class="nav-link" data-scroll-target="#package-management">Package Management</a></li>
+  <li><a href="#git-workflows-for-teams" id="toc-git-workflows-for-teams" class="nav-link" data-scroll-target="#git-workflows-for-teams">Git Workflows for Teams</a></li>
+  <li><a href="#code-review-process" id="toc-code-review-process" class="nav-link" data-scroll-target="#code-review-process">Code Review Process</a></li>
+  <li><a href="#maintaining-reproducibility" id="toc-maintaining-reproducibility" class="nav-link" data-scroll-target="#maintaining-reproducibility">Maintaining Reproducibility</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +501,105 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="collaboration" class="level1">
+<h1>Collaboration</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Organize data science projects for effective collaboration</li>
+<li>Implement best practices for code sharing and documentation</li>
+<li>Use Git and GitHub for team-based workflows</li>
+<li>Maintain reproducibility in collaborative environments</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="why-collaborative-workflows-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-collaborative-workflows-matter">Why Collaborative Workflows Matter</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Data science increasingly a team effort</li>
+<li>Requires more than technical skills - thoughtful organization</li>
+<li>Increases productivity through division of labor</li>
+<li>Improves quality through peer review and diverse perspectives</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="key-collaboration-benefits" class="level2">
+<h2 class="anchored" data-anchor-id="key-collaboration-benefits">Key Collaboration Benefits</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Enhanced creativity through diverse perspectives</li>
+<li>Continuity when team members change</li>
+<li>Systematic approach maximizing productivity</li>
+<li>Maintained reproducibility and quality standards</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="project-organization-for-teams" class="level2">
+<h2 class="anchored" data-anchor-id="project-organization-for-teams">Project Organization for Teams</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Well-organized structure helps team navigation</li>
+<li>Separate folders for data, code, results, documentation</li>
+<li>README.md with overview and setup instructions</li>
+<li>CONTRIBUTING.md with guidelines for contributors</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="essential-documentation-components" class="level2">
+<h2 class="anchored" data-anchor-id="essential-documentation-components">Essential Documentation Components</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Project overview with setup instructions and usage examples</li>
+<li>Code comments explaining why, not just what</li>
+<li>Function documentation with purpose, parameters, examples</li>
+<li>Data dictionary describing variables and sources</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="code-sharing-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="code-sharing-best-practices">Code Sharing Best Practices</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Follow consistent style guides (e.g., tidyverse style guide)</li>
+<li>Use consistent naming conventions throughout</li>
+<li>Format code for readability and understanding</li>
+<li>Consider linters and formatters for consistency</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="modular-code-development" class="level2">
+<h2 class="anchored" data-anchor-id="modular-code-development">Modular Code Development</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Break long scripts into functions</li>
+<li>Write code others can understand and reuse</li>
+<li>Clear function definitions with inputs and outputs</li>
+<li>Main workflow calling individual functions</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="package-management" class="level2">
+<h2 class="anchored" data-anchor-id="package-management">Package Management</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Ensure consistent package versions across team</li>
+<li>Use renv for project-specific package management</li>
+<li>Document package dependencies clearly</li>
+<li>Initialize and snapshot package environments</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="git-workflows-for-teams" class="level2">
+<h2 class="anchored" data-anchor-id="git-workflows-for-teams">Git Workflows for Teams</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Centralized workflow: simple approach for small teams</li>
+<li>Feature branch workflow: better for larger teams</li>
+<li>Forking workflow: common for open-source projects</li>
+<li>Choose appropriate workflow for team size and complexity</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="code-review-process" class="level2">
+<h2 class="anchored" data-anchor-id="code-review-process">Code Review Process</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Guidelines for reviewers: respectful, constructive, focus on code</li>
+<li>Guidelines for authors: explain changes, respond positively</li>
+<li>Keep pull requests focused and manageable</li>
+<li>Acknowledge good practices and thank reviewers</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="maintaining-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="maintaining-reproducibility">Maintaining Reproducibility</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Environment management with renv or conda</li>
+<li>Document system requirements and dependencies</li>
+<li>Establish protocols for data access and sharing</li>
+<li>Implement continuous integration for automated testing</li>
 </ul>
 
 

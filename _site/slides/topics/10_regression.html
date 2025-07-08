@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>regression – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#regression" id="toc-regression" class="nav-link active" data-scroll-target="#regression">Regression</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#regression-to-the-mean" id="toc-regression-to-the-mean" class="nav-link" data-scroll-target="#regression-to-the-mean">Regression to the Mean</a></li>
+  <li><a href="#the-question-of-simple-regression" id="toc-the-question-of-simple-regression" class="nav-link" data-scroll-target="#the-question-of-simple-regression">The Question of Simple Regression</a></li>
+  <li><a href="#regression-model-components" id="toc-regression-model-components" class="nav-link" data-scroll-target="#regression-model-components">Regression Model Components</a></li>
+  <li><a href="#data-and-assumptions" id="toc-data-and-assumptions" class="nav-link" data-scroll-target="#data-and-assumptions">Data and Assumptions</a></li>
+  <li><a href="#graphing-regression" id="toc-graphing-regression" class="nav-link" data-scroll-target="#graphing-regression">Graphing Regression</a></li>
+  <li><a href="#testing-assumptions" id="toc-testing-assumptions" class="nav-link" data-scroll-target="#testing-assumptions">Testing Assumptions</a></li>
+  <li><a href="#residual-analysis" id="toc-residual-analysis" class="nav-link" data-scroll-target="#residual-analysis">Residual Analysis</a></li>
+  <li><a href="#homoscedasticity-assessment" id="toc-homoscedasticity-assessment" class="nav-link" data-scroll-target="#homoscedasticity-assessment">Homoscedasticity Assessment</a></li>
+  <li><a href="#regression-results-interpretation" id="toc-regression-results-interpretation" class="nav-link" data-scroll-target="#regression-results-interpretation">Regression Results Interpretation</a></li>
+  <li><a href="#reporting-regression-results" id="toc-reporting-regression-results" class="nav-link" data-scroll-target="#reporting-regression-results">Reporting Regression Results</a></li>
+  <li><a href="#alternatives-to-regression" id="toc-alternatives-to-regression" class="nav-link" data-scroll-target="#alternatives-to-regression">Alternatives to Regression</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +502,114 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="regression" class="level1">
+<h1>Regression</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Evaluate the question of simple regression</li>
+<li>Discuss data and assumptions of simple regression</li>
+<li>Graph simple regression effectively</li>
+<li>Perform tests and alternatives for simple regression</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="regression-to-the-mean" class="level2">
+<h2 class="anchored" data-anchor-id="regression-to-the-mean">Regression to the Mean</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>One of most common and powerful statistical tools</li>
+<li>Created by Francis Galton for studying heritable traits</li>
+<li>Concept: whenever correlation imperfect, regression to mean occurs</li>
+<li>Foundation tool shared for greater scientific good</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="the-question-of-simple-regression" class="level2">
+<h2 class="anchored" data-anchor-id="the-question-of-simple-regression">The Question of Simple Regression</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Relate value of numeric variable to another variable</li>
+<li>Predict variable value based on another</li>
+<li>Quantify variation attributable to predictor</li>
+<li>Test significance of relationships</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="regression-model-components" class="level2">
+<h2 class="anchored" data-anchor-id="regression-model-components">Regression Model Components</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>α (alpha): intercept parameter</li>
+<li>β (beta): slope parameter</li>
+<li>y: dependent variable, x: predictor variable</li>
+<li>ε (epsilon): residual error term</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="data-and-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-assumptions">Data and Assumptions</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Linear relationship between variables</li>
+<li>Numeric continuous data for dependent variable</li>
+<li>Independence of observations</li>
+<li>Gaussian distribution of residuals (not raw data!)</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="graphing-regression" class="level2">
+<h2 class="anchored" data-anchor-id="graphing-regression">Graphing Regression</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Scatterplot with dependent variable on y-axis</li>
+<li>Predictor variable on x-axis</li>
+<li>Regression line shows line of best fit</li>
+<li>Line used for prediction of y given x values</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="testing-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="testing-assumptions">Testing Assumptions</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Data scientist responsible for validating model</li>
+<li>Test Gaussian residuals graphically and statistically</li>
+<li>Check homoscedasticity with residuals vs fitted plot</li>
+<li>Use diagnostic plots and formal tests</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="residual-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="residual-analysis">Residual Analysis</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Residuals represent deviation from predicted values</li>
+<li>Should be Gaussian distributed with mean zero</li>
+<li>Use histogram and q-q plots for visual assessment</li>
+<li>Shapiro-Wilk test for formal normality testing</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="homoscedasticity-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="homoscedasticity-assessment">Homoscedasticity Assessment</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Variance of residuals should be constant</li>
+<li>Plot residuals vs fitted values</li>
+<li>Look for even spread across x-axis</li>
+<li>Absence of systematic patterns indicates independence</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="regression-results-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="regression-results-interpretation">Regression Results Interpretation</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>F-statistic tests overall model significance</li>
+<li>R-squared shows proportion of variance explained</li>
+<li>Coefficient estimates show intercept and slope</li>
+<li>P-values test whether parameters differ from zero</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="reporting-regression-results" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-regression-results">Reporting Regression Results</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Include R-squared, degrees of freedom, and p-value</li>
+<li>Example: “significant linear relationship (R-squared = 0.97, df = 1,54, P &lt; 0.0001)”</li>
+<li>Never copy-paste raw statistical output</li>
+<li>Summarize appropriately for intended audience</li>
+</ul>
+</section>
+<section id="alternatives-to-regression" class="level2">
+<h2 class="anchored" data-anchor-id="alternatives-to-regression">Alternatives to Regression</h2>
+<ul>
+<li>Data transformation when assumptions violated</li>
+<li>Spearman rank correlation for relationship demonstration</li>
+<li>Nonparametric regression (Kendal-Theil-Siegel)</li>
+<li>Consider these when assumptions cannot be met</li>
 </ul>
 
 

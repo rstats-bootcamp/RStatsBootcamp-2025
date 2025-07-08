@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>data_subsetting – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#data-subsetting" id="toc-data-subsetting" class="nav-link active" data-scroll-target="#data-subsetting">Data Subsetting</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#data-sumo-philosophy" id="toc-data-sumo-philosophy" class="nav-link" data-scroll-target="#data-sumo-philosophy">Data Sumo Philosophy</a></li>
+  <li><a href="#indexing-concept-basics" id="toc-indexing-concept-basics" class="nav-link" data-scroll-target="#indexing-concept-basics">Indexing Concept Basics</a></li>
+  <li><a href="#vector-indexing" id="toc-vector-indexing" class="nav-link" data-scroll-target="#vector-indexing">Vector Indexing</a></li>
+  <li><a href="#matrix-indexing" id="toc-matrix-indexing" class="nav-link" data-scroll-target="#matrix-indexing">Matrix Indexing</a></li>
+  <li><a href="#array-indexing" id="toc-array-indexing" class="nav-link" data-scroll-target="#array-indexing">Array Indexing</a></li>
+  <li><a href="#the-which-function" id="toc-the-which-function" class="nav-link" data-scroll-target="#the-which-function">The which() Function</a></li>
+  <li><a href="#boolean-selection-strategies" id="toc-boolean-selection-strategies" class="nav-link" data-scroll-target="#boolean-selection-strategies">Boolean Selection Strategies</a></li>
+  <li><a href="#data-frame-selection" id="toc-data-frame-selection" class="nav-link" data-scroll-target="#data-frame-selection">Data Frame Selection</a></li>
+  <li><a href="#compound-boolean-operations" id="toc-compound-boolean-operations" class="nav-link" data-scroll-target="#compound-boolean-operations">Compound Boolean Operations</a></li>
+  <li><a href="#the-aggregate-function" id="toc-the-aggregate-function" class="nav-link" data-scroll-target="#the-aggregate-function">The aggregate() Function</a></li>
+  <li><a href="#custom-functions-in-aggregate" id="toc-custom-functions-in-aggregate" class="nav-link" data-scroll-target="#custom-functions-in-aggregate">Custom Functions in aggregate()</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +502,114 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="data-subsetting" class="level1">
+<h1>Data Subsetting</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Describe indexing concept for vectors and matrices</li>
+<li>Use which() function to subset data effectively</li>
+<li>Select specific parts of data frames</li>
+<li>Use aggregate() function to summarize data</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="data-sumo-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="data-sumo-philosophy">Data Sumo Philosophy</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Subsetting and manipulating data is core activity</li>
+<li>Essential for exploratory data analysis</li>
+<li>Used extensively in data acquisition and analysis</li>
+<li>Foundation for database queries and data manipulation</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="indexing-concept-basics" class="level2">
+<h2 class="anchored" data-anchor-id="indexing-concept-basics">Indexing Concept Basics</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Data objects store values accessible by “address”</li>
+<li>Vectors (1D), matrices (2D), arrays (3D+) have indices</li>
+<li>Index values correspond to position of data</li>
+<li>Essential for slicing and dicing data</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="vector-indexing" class="level2">
+<h2 class="anchored" data-anchor-id="vector-indexing">Vector Indexing</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Vector indices run from 1 to length of vector</li>
+<li>Use [1:i] notation to access elements</li>
+<li>R displays index in console output [1]</li>
+<li>Access single elements or ranges with brackets</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="matrix-indexing" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-indexing">Matrix Indexing</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Two dimensions: [rows, columns] or [i, j]</li>
+<li>Slice out entire rows or columns with blank space</li>
+<li>Can name rows and columns for easier access</li>
+<li>Use names in quotes for selection by name</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="array-indexing" class="level2">
+<h2 class="anchored" data-anchor-id="array-indexing">Array Indexing</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Three or more dimensions: [i, j, k, …]</li>
+<li>Each dimension represents different data organization</li>
+<li>More complex but follows same principles</li>
+<li>Useful for multi-dimensional data analysis</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="the-which-function" class="level2">
+<h2 class="anchored" data-anchor-id="the-which-function">The which() Function</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Returns index values where logical expression is TRUE</li>
+<li>Requires logical vector as input argument</li>
+<li>Powerful for constructing data queries</li>
+<li>Essential tool for conditional data selection</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="boolean-selection-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="boolean-selection-strategies">Boolean Selection Strategies</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Create logical expressions to identify data subsets</li>
+<li>Use which() to get index positions of TRUE values</li>
+<li>Apply indices to extract desired data values</li>
+<li>Alternative to creating multiple dataset versions</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="data-frame-selection" class="level2">
+<h2 class="anchored" data-anchor-id="data-frame-selection">Data Frame Selection</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Select rows based on values in one or more variables</li>
+<li>Combine multiple conditions with &amp; (and) and | (or)</li>
+<li>Use which() with complex boolean expressions</li>
+<li>Powerful method for data filtering and analysis</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="compound-boolean-operations" class="level2">
+<h2 class="anchored" data-anchor-id="compound-boolean-operations">Compound Boolean Operations</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Chain multiple conditions with logical operators</li>
+<li>Use parentheses to control evaluation order</li>
+<li>Build complex selection rules step by step</li>
+<li>Essential for sophisticated data manipulation</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="the-aggregate-function" class="level2">
+<h2 class="anchored" data-anchor-id="the-aggregate-function">The aggregate() Function</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Summarize data by groups using specified functions</li>
+<li>x argument: numeric data to summarize</li>
+<li>by argument: list of grouping variables</li>
+<li>FUN argument: function to apply (mean, sd, etc.)</li>
+</ul>
+</section>
+<section id="custom-functions-in-aggregate" class="level2">
+<h2 class="anchored" data-anchor-id="custom-functions-in-aggregate">Custom Functions in aggregate()</h2>
+<ul>
+<li>Create custom summary functions with function()</li>
+<li>Apply multiple statistics simultaneously</li>
+<li>Name output elements for clarity</li>
+<li>Powerful tool for grouped data analysis</li>
 </ul>
 
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>r_language – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#r-language" id="toc-r-language" class="nav-link active" data-scroll-target="#r-language">R Language</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#r-as-a-passive-aggressive-butler" id="toc-r-as-a-passive-aggressive-butler" class="nav-link" data-scroll-target="#r-as-a-passive-aggressive-butler">R as a Passive-Aggressive Butler</a></li>
+  <li><a href="#script-organization-importance" id="toc-script-organization-importance" class="nav-link" data-scroll-target="#script-organization-importance">Script Organization Importance</a></li>
+  <li><a href="#help-system-in-r" id="toc-help-system-in-r" class="nav-link" data-scroll-target="#help-system-in-r">Help System in R</a></li>
+  <li><a href="#math-operators" id="toc-math-operators" class="nav-link" data-scroll-target="#math-operators">Math Operators</a></li>
+  <li><a href="#logical-boolean-operators" id="toc-logical-boolean-operators" class="nav-link" data-scroll-target="#logical-boolean-operators">Logical Boolean Operators</a></li>
+  <li><a href="#selecting-with-booleans" id="toc-selecting-with-booleans" class="nav-link" data-scroll-target="#selecting-with-booleans">Selecting with Booleans</a></li>
+  <li><a href="#base-r-versus-tidyverse" id="toc-base-r-versus-tidyverse" class="nav-link" data-scroll-target="#base-r-versus-tidyverse">Base R versus Tidyverse</a></li>
+  <li><a href="#script-section-requirements" id="toc-script-section-requirements" class="nav-link" data-scroll-target="#script-section-requirements">Script Section Requirements</a></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">Practice Exercises</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +500,96 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="r-language" class="level1">
+<h1>R Language</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Navigate example scripts, comments, help, and pseudocode</li>
+<li>Use math operators effectively in R</li>
+<li>Apply logical Boolean operators for data manipulation</li>
+<li>Distinguish between base R and Tidyverse approaches</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="r-as-a-passive-aggressive-butler" class="level2">
+<h2 class="anchored" data-anchor-id="r-as-a-passive-aggressive-butler">R as a Passive-Aggressive Butler</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>R is popular statistical programming language and open source software</li>
+<li>Designed to help non-programmers perform statistical analyses</li>
+<li>Sometimes requires careful language to avoid unexpected outcomes</li>
+<li>Essential to view scripts as documentation of work</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="script-organization-importance" class="level2">
+<h2 class="anchored" data-anchor-id="script-organization-importance">Script Organization Importance</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Write scripts as documentation for respected colleagues</li>
+<li>Work through instructions using R and RStudio actively</li>
+<li>Type your own code rather than copy-pasting</li>
+<li>Document all code with clear, concise comments</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="help-system-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="help-system-in-r">Help System in R</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Use help() function with tool name in brackets</li>
+<li>Help pages organized consistently across all functions</li>
+<li>Function name, description, usage, and argument definitions</li>
+<li>Essential to understand for effective R use</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="math-operators" class="level2">
+<h2 class="anchored" data-anchor-id="math-operators">Math Operators</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Basic arithmetic: +, -, *, /, ^ (power)</li>
+<li>Order of operations follows standard mathematical rules</li>
+<li>Use parentheses to control calculation order</li>
+<li>Spacing improves readability (use single spaces)</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="logical-boolean-operators" class="level2">
+<h2 class="anchored" data-anchor-id="logical-boolean-operators">Logical Boolean Operators</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Boolean expressions resolve to TRUE or FALSE</li>
+<li>Common operators: &gt;, &lt;, ==, !=, &amp;, |, !</li>
+<li>Used for selecting groups of data effectively</li>
+<li>Powerful alternative to creating different datasets</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="selecting-with-booleans" class="level2">
+<h2 class="anchored" data-anchor-id="selecting-with-booleans">Selecting with Booleans</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Use Boolean expressions to select data subsets</li>
+<li>Square brackets act as index for data vectors</li>
+<li>Combine with logical operators for complex selections</li>
+<li>Essential skill for data manipulation</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="base-r-versus-tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="base-r-versus-tidyverse">Base R versus Tidyverse</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Base R: Traditional, powerful form of R language</li>
+<li>Tidyverse: Alternative approach with different conventions</li>
+<li>Both have benefits and philosophical differences</li>
+<li>Bootcamp focuses exclusively on base R first</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="script-section-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="script-section-requirements">Script Section Requirements</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Header: Contains name, date, and purpose</li>
+<li>Contents: Roadmap listing all major sections</li>
+<li>Both sections essential for every R script</li>
+<li>Foundation for reproducible research practices</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="practice-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="practice-exercises">Practice Exercises</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
-</ul>
-</section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
-<ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Working with Boolean expressions and operators</li>
+<li>Understanding help system navigation</li>
+<li>Writing expressions with proper spacing</li>
+<li>Creating and documenting script sections</li>
 </ul>
 
 

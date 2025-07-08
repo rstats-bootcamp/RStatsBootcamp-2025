@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>setup_intro – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#setup-introduction" id="toc-setup-introduction" class="nav-link active" data-scroll-target="#setup-introduction">Setup &amp; Introduction</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#how-the-r-stats-bootcamp-works" id="toc-how-the-r-stats-bootcamp-works" class="nav-link" data-scroll-target="#how-the-r-stats-bootcamp-works">How the R Stats Bootcamp Works</a></li>
+  <li><a href="#r-motivation" id="toc-r-motivation" class="nav-link" data-scroll-target="#r-motivation">R Motivation</a></li>
+  <li><a href="#installation-options" id="toc-installation-options" class="nav-link" data-scroll-target="#installation-options">Installation Options</a></li>
+  <li><a href="#rstudio-interface-components" id="toc-rstudio-interface-components" class="nav-link" data-scroll-target="#rstudio-interface-components">RStudio Interface Components</a></li>
+  <li><a href="#r-script-organization" id="toc-r-script-organization" class="nav-link" data-scroll-target="#r-script-organization">R Script Organization</a></li>
+  <li><a href="#script-structure-best-practices" id="toc-script-structure-best-practices" class="nav-link" data-scroll-target="#script-structure-best-practices">Script Structure Best Practices</a></li>
+  <li><a href="#code-execution-methods" id="toc-code-execution-methods" class="nav-link" data-scroll-target="#code-execution-methods">Code Execution Methods</a></li>
+  <li><a href="#comments-and-documentation" id="toc-comments-and-documentation" class="nav-link" data-scroll-target="#comments-and-documentation">Comments and Documentation</a></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises">Practice Exercises</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +500,96 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="setup-introduction" class="level1">
+<h1>Setup &amp; Introduction</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Understand how the R Stats Bootcamp works</li>
+<li>Describe the motivation for using R</li>
+<li>Install R and RStudio or set up RStudio Cloud</li>
+<li>Navigate RStudio components and interface</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="how-the-r-stats-bootcamp-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-r-stats-bootcamp-works">How the R Stats Bootcamp Works</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Provides practical, open instructional materials for learning R</li>
+<li>Reviews simple statistics in R</li>
+<li>Introduces reproducibility and collaboration tools</li>
+<li>Blend of practical material with videos and self-assessment</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="r-motivation" class="level2">
+<h2 class="anchored" data-anchor-id="r-motivation">R Motivation</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Designed for non-programmers to perform statistical analysis</li>
+<li>Growing popularity in universities, companies, and research</li>
+<li>Large community of users and high demand for R skills</li>
+<li>Free, open source, and cross-platform compatible</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="installation-options" class="level2">
+<h2 class="anchored" data-anchor-id="installation-options">Installation Options</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Option 1: Download R from CRAN and RStudio Desktop</li>
+<li>Option 2: Use RStudio Cloud for browser-based work</li>
+<li>Install R first, then RStudio for best results</li>
+<li>Consider your computer setup and preferences</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="rstudio-interface-components" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-interface-components">RStudio Interface Components</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Script window (upper left) for writing and executing code</li>
+<li>Console window (lower left) for output and messages</li>
+<li>Global Environment (upper right) for data objects</li>
+<li>Plots window (lower right) for graphics and help</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="r-script-organization" class="level2">
+<h2 class="anchored" data-anchor-id="r-script-organization">R Script Organization</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Documents analysis for exact reproducibility</li>
+<li>Interface between your commands and R software</li>
+<li>Should be clear for future collaborators</li>
+<li>Think of future self as respected colleague</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="script-structure-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="script-structure-best-practices">Script Structure Best Practices</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Header with name, date, and purpose</li>
+<li>Contents section as roadmap for analysis</li>
+<li>Code chunks with descriptive titles</li>
+<li>Consistent numbering and logical organization</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="code-execution-methods" class="level2">
+<h2 class="anchored" data-anchor-id="code-execution-methods">Code Execution Methods</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Ctrl+Enter (Cmd+Return on Mac) for current line</li>
+<li>Select code and Ctrl+Enter for specific sections</li>
+<li>Use Run button in Script window</li>
+<li>Access through Code menu for additional options</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="comments-and-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="comments-and-documentation">Comments and Documentation</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Use # character for comment lines</li>
+<li>Explain code like methods section of scientific paper</li>
+<li>Provide enough detail for exact replication</li>
+<li>Balance thoroughness with conciseness</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="practice-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="practice-exercises">Practice Exercises</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
-</ul>
-</section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
-<ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Download and examine sample scripts</li>
+<li>Practice running code and examining output</li>
+<li>Add code chunks with proper comments</li>
+<li>Create variables and calculate basic statistics</li>
 </ul>
 
 

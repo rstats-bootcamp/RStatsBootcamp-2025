@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>distributions – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#distributions" id="toc-distributions" class="nav-link active" data-scroll-target="#distributions">Distributions</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#sampling-and-statistical-inference" id="toc-sampling-and-statistical-inference" class="nav-link" data-scroll-target="#sampling-and-statistical-inference">Sampling and Statistical Inference</a></li>
+  <li><a href="#histogram-usage" id="toc-histogram-usage" class="nav-link" data-scroll-target="#histogram-usage">Histogram Usage</a></li>
+  <li><a href="#simulation-of-samples" id="toc-simulation-of-samples" class="nav-link" data-scroll-target="#simulation-of-samples">Simulation of Samples</a></li>
+  <li><a href="#gaussian-distribution" id="toc-gaussian-distribution" class="nav-link" data-scroll-target="#gaussian-distribution">Gaussian Distribution</a></li>
+  <li><a href="#gaussian-assumptions-in-analysis" id="toc-gaussian-assumptions-in-analysis" class="nav-link" data-scroll-target="#gaussian-assumptions-in-analysis">Gaussian Assumptions in Analysis</a></li>
+  <li><a href="#quartile-quartile-q-q-plots" id="toc-quartile-quartile-q-q-plots" class="nav-link" data-scroll-target="#quartile-quartile-q-q-plots">Quartile-Quartile (Q-Q) Plots</a></li>
+  <li><a href="#poisson-distribution" id="toc-poisson-distribution" class="nav-link" data-scroll-target="#poisson-distribution">Poisson Distribution</a></li>
+  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution">Binomial Distribution</a></li>
+  <li><a href="#distribution-diagnosis-process" id="toc-distribution-diagnosis-process" class="nav-link" data-scroll-target="#distribution-diagnosis-process">Distribution Diagnosis Process</a></li>
+  <li><a href="#diagnostic-best-practices" id="toc-diagnostic-best-practices" class="nav-link" data-scroll-target="#diagnostic-best-practices">Diagnostic Best Practices</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +501,105 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="distributions" class="level1">
+<h1>Distributions</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Create and use histograms to evaluate data distribution</li>
+<li>Identify Gaussian data and understand it’s not “normal”</li>
+<li>Identify Poisson and Binomial data distributions</li>
+<li>Diagnose common data distributions effectively</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="sampling-and-statistical-inference" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-and-statistical-inference">Sampling and Statistical Inference</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Sampling underpins traditional statistics fundamentals</li>
+<li>Population of interest cannot be directly measured</li>
+<li>Sample to estimate real measures of population</li>
+<li>Error depends on population variation and sample size</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="histogram-usage" class="level2">
+<h2 class="anchored" data-anchor-id="histogram-usage">Histogram Usage</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Plots numeric variable on x-axis (continuous or integers)</li>
+<li>Frequency or proportion of observations on y-axis</li>
+<li>Bars represent counts in ranges called “bins”</li>
+<li>Shape reveals distribution of data</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="simulation-of-samples" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-of-samples">Simulation of Samples</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Compare sample means to true population mean</li>
+<li>Sample means vary randomly around true mean</li>
+<li>Most samples close to true mean, fewer farther away</li>
+<li>Demonstrates sampling distribution concept</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="gaussian-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="gaussian-distribution">Gaussian Distribution</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Classic “bell curve” shaped distribution</li>
+<li>Most important for continuous numeric variables</li>
+<li>Expected for measurements like height, weight, length</li>
+<li>Described by mean and variance parameters</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="gaussian-assumptions-in-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="gaussian-assumptions-in-analysis">Gaussian Assumptions in Analysis</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Linear models assume Gaussian residuals (not raw data)</li>
+<li>Must test assumption for regression and ANOVA</li>
+<li>Two parameters: mean and variance control shape</li>
+<li>Different means shift curve position, different variances change spread</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="quartile-quartile-q-q-plots" class="level2">
+<h2 class="anchored" data-anchor-id="quartile-quartile-q-q-plots">Quartile-Quartile (Q-Q) Plots</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Compare data to theoretical Gaussian expectation</li>
+<li>Straight diagonal line indicates perfect Gaussian fit</li>
+<li>Systematic deviation indicates non-Gaussian distribution</li>
+<li>Useful diagnostic for model assumptions</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="poisson-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="poisson-distribution">Poisson Distribution</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Used for count data of discrete events</li>
+<li>Classic example: events occurring over time/space</li>
+<li>Data typically skewed to the right</li>
+<li>Single parameter λ (lambda) describes mean and variance</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="binomial-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="binomial-distribution">Binomial Distribution</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Describes data with exactly two outcomes (0/1, yes/no)</li>
+<li>Count of “successes” in series of independent trials</li>
+<li>Examples: coin flips, germination success, presence/absence</li>
+<li>Two parameters: number of trials (n) and probability (p)</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="distribution-diagnosis-process" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-diagnosis-process">Distribution Diagnosis Process</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Develop expectation based on data type</li>
+<li>Graph data with histogram and q-q plot</li>
+<li>Compare q-q plots with different theoretical distributions</li>
+<li>Try transformations if assumptions violated</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="diagnostic-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="diagnostic-best-practices">Diagnostic Best Practices</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Subjective endeavor requiring experience</li>
+<li>First examine type of data for expected distribution</li>
+<li>Use both graphical and statistical tests</li>
+<li>Consider transformations to meet assumptions</li>
 </ul>
 
 

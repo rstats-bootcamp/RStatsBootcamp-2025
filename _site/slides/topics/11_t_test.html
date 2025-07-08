@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>t_test – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#t-test" id="toc-t-test" class="nav-link active" data-scroll-target="#t-test">T-test</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#students-t-test-origins" id="toc-students-t-test-origins" class="nav-link" data-scroll-target="#students-t-test-origins">Student’s T-test Origins</a></li>
+  <li><a href="#the-question-of-the-t-test" id="toc-the-question-of-the-t-test" class="nav-link" data-scroll-target="#the-question-of-the-t-test">The Question of the T-test</a></li>
+  <li><a href="#two-independent-samples" id="toc-two-independent-samples" class="nav-link" data-scroll-target="#two-independent-samples">Two Independent Samples</a></li>
+  <li><a href="#one-sample-vs-known-mean" id="toc-one-sample-vs-known-mean" class="nav-link" data-scroll-target="#one-sample-vs-known-mean">One Sample vs Known Mean</a></li>
+  <li><a href="#paired-samples" id="toc-paired-samples" class="nav-link" data-scroll-target="#paired-samples">Paired Samples</a></li>
+  <li><a href="#t-test-assumptions" id="toc-t-test-assumptions" class="nav-link" data-scroll-target="#t-test-assumptions">T-test Assumptions</a></li>
+  <li><a href="#assumption-testing" id="toc-assumption-testing" class="nav-link" data-scroll-target="#assumption-testing">Assumption Testing</a></li>
+  <li><a href="#graphical-assessment" id="toc-graphical-assessment" class="nav-link" data-scroll-target="#graphical-assessment">Graphical Assessment</a></li>
+  <li><a href="#t-test-variations" id="toc-t-test-variations" class="nav-link" data-scroll-target="#t-test-variations">T-test Variations</a></li>
+  <li><a href="#mann-whitney-u-test-alternative" id="toc-mann-whitney-u-test-alternative" class="nav-link" data-scroll-target="#mann-whitney-u-test-alternative">Mann-Whitney U-test Alternative</a></li>
+  <li><a href="#results-reporting" id="toc-results-reporting" class="nav-link" data-scroll-target="#results-reporting">Results Reporting</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +502,114 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="t-test" class="level1">
+<h1>T-test</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Articulate the question of the t-test</li>
+<li>Evaluate data and assumptions for t-test</li>
+<li>Graph t-test data appropriately</li>
+<li>Perform tests and alternatives for t-test</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="students-t-test-origins" class="level2">
+<h2 class="anchored" data-anchor-id="students-t-test-origins">Student’s T-test Origins</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Foundation of modern statistical science</li>
+<li>Invented by William Sealy Gosset at Guinness brewery</li>
+<li>Published anonymously as “Student” for commercial protection</li>
+<li>Refined and supported by R.A. Fisher</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="the-question-of-the-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="the-question-of-the-t-test">The Question of the T-test</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Compare populations using independent samples</li>
+<li>Three common versions: 2 independent samples, 1 sample vs known mean, paired samples</li>
+<li>Basic question: are means different between groups?</li>
+<li>Used to test if samples came from different populations</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="two-independent-samples" class="level2">
+<h2 class="anchored" data-anchor-id="two-independent-samples">Two Independent Samples</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Numeric variable measured in two samples</li>
+<li>Question: are sample means different?</li>
+<li>Data in “long format” (one numeric, one factor) or “wide format” (two numeric vectors)</li>
+<li>Traditional visualization: boxplot with optional raw data points</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="one-sample-vs-known-mean" class="level2">
+<h2 class="anchored" data-anchor-id="one-sample-vs-known-mean">One Sample vs Known Mean</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>One sample compared to known population mean</li>
+<li>Question: did sample come from population with known mean?</li>
+<li>Data: single numeric vector and population mean value</li>
+<li>Visualization: boxplot with reference line for known mean</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="paired-samples" class="level2">
+<h2 class="anchored" data-anchor-id="paired-samples">Paired Samples</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Individual observations in samples are not independent</li>
+<li>Examples: before/after treatment, spatially paired plots</li>
+<li>Each pair represents relationship between measurements</li>
+<li>Visualization shows tendency for change between paired observations</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="t-test-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="t-test-assumptions">T-test Assumptions</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Gaussian distribution within each sample (not combined)</li>
+<li>Homoscedasticity (equal variance between samples)</li>
+<li>Independence of observations</li>
+<li>T-test somewhat robust to assumption violations</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="assumption-testing" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-testing">Assumption Testing</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Test Gaussian distribution separately for each group</li>
+<li>Use histograms, q-q plots, and Shapiro-Wilk test</li>
+<li>Check variance equality with Bartlett test or visual comparison</li>
+<li>Independence assumption critical and related to study design</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="graphical-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="graphical-assessment">Graphical Assessment</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Histogram and q-q plot for each sample separately</li>
+<li>Compare to expected Gaussian distribution</li>
+<li>Look for systematic deviations from normality</li>
+<li>Consider sample size in interpretation</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="t-test-variations" class="level2">
+<h2 class="anchored" data-anchor-id="t-test-variations">T-test Variations</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Two-sample t-test for independent groups</li>
+<li>One-sample t-test against known mean</li>
+<li>Paired t-test for dependent observations</li>
+<li>Each requires specific data structure and interpretation</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="mann-whitney-u-test-alternative" class="level2">
+<h2 class="anchored" data-anchor-id="mann-whitney-u-test-alternative">Mann-Whitney U-test Alternative</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Non-parametric alternative when assumptions not met</li>
+<li>Uses wilcox.test() function in R</li>
+<li>Good choice for small samples or skewed distributions</li>
+<li>Less statistical power but no distributional assumptions</li>
+</ul>
+</section>
+<section id="results-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="results-reporting">Results Reporting</h2>
+<ul>
+<li>Report test statistic, degrees of freedom, p-value</li>
+<li>Example: “significant difference (2-sample t-test: t = -8.63, df = 11.9, P &lt; 0.0001)”</li>
+<li>Always include all three key quantities</li>
+<li>Format p-values appropriately (P &lt; 0.0001 for small values)</li>
 </ul>
 
 

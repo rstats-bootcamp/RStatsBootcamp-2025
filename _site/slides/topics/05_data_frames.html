@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>data_frames – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link active" data-scroll-target="#data-frames">Data Frames</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#getting-data-into-r" id="toc-getting-data-into-r" class="nav-link" data-scroll-target="#getting-data-into-r">Getting Data into R</a></li>
+  <li><a href="#tidy-data-concept" id="toc-tidy-data-concept" class="nav-link" data-scroll-target="#tidy-data-concept">Tidy Data Concept</a></li>
+  <li><a href="#common-data-file-types" id="toc-common-data-file-types" class="nav-link" data-scroll-target="#common-data-file-types">Common Data File Types</a></li>
+  <li><a href="#excel-data-setup-best-practices" id="toc-excel-data-setup-best-practices" class="nav-link" data-scroll-target="#excel-data-setup-best-practices">Excel Data Setup Best Practices</a></li>
+  <li><a href="#data-dictionary-importance" id="toc-data-dictionary-importance" class="nav-link" data-scroll-target="#data-dictionary-importance">Data Dictionary Importance</a></li>
+  <li><a href="#reading-data-into-r" id="toc-reading-data-into-r" class="nav-link" data-scroll-target="#reading-data-into-r">Reading Data into R</a></li>
+  <li><a href="#working-directory-management" id="toc-working-directory-management" class="nav-link" data-scroll-target="#working-directory-management">Working Directory Management</a></li>
+  <li><a href="#data-frame-manipulation" id="toc-data-frame-manipulation" class="nav-link" data-scroll-target="#data-frame-manipulation">Data Frame Manipulation</a></li>
+  <li><a href="#key-data-frame-functions" id="toc-key-data-frame-functions" class="nav-link" data-scroll-target="#key-data-frame-functions">Key Data Frame Functions</a></li>
+  <li><a href="#index-operator-usage" id="toc-index-operator-usage" class="nav-link" data-scroll-target="#index-operator-usage">Index Operator Usage</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +501,105 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="data-frames" class="level1">
+<h1>Data Frames</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Describe and use common data file types</li>
+<li>Use Excel for data setup and create Data Dictionary</li>
+<li>Read data from Excel and CSV files effectively</li>
+<li>Manipulate variables within data frames</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="getting-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="getting-data-into-r">Getting Data into R</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>First step: making your data tidy and organized</li>
+<li>Excel or CSV files recommended for most users</li>
+<li>Avoid proprietary formats (SPSS, Genstat, Minitab)</li>
+<li>Take responsibility for your own data management</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="tidy-data-concept" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-concept">Tidy Data Concept</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Each variable should be in a column</li>
+<li>Each independent observation should be in a row</li>
+<li>Data dictionary should accompany dataset</li>
+<li>Facilitates complete reproducibility of analysis</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="common-data-file-types" class="level2">
+<h2 class="anchored" data-anchor-id="common-data-file-types">Common Data File Types</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>CSV (Comma Separated Values) - plain text format</li>
+<li>Excel spreadsheets - widely compatible and resilient</li>
+<li>Avoid proprietary formats for archiving purposes</li>
+<li>Stick to CSV or Excel unless very good reason</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="excel-data-setup-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="excel-data-setup-best-practices">Excel Data Setup Best Practices</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>One table for actual data in Tidy format</li>
+<li>Second tab for Data Dictionary with variable descriptions</li>
+<li>No formatting or results embedded in spreadsheet</li>
+<li>Clean separation of data and documentation</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="data-dictionary-importance" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-importance">Data Dictionary Importance</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Describes each variable in enough detail</li>
+<li>Enables complete reproduction of any analysis</li>
+<li>Essential component of reproducible research</li>
+<li>Should accompany every dataset</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="reading-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="reading-data-into-r">Reading Data into R</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Use read.xlsx() from openxlsx package for Excel</li>
+<li>Use read.csv() for CSV files</li>
+<li>Set working directory with setwd() first</li>
+<li>Ensure file paths use forward slashes</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="working-directory-management" class="level2">
+<h2 class="anchored" data-anchor-id="working-directory-management">Working Directory Management</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Formally set working directory for file operations</li>
+<li>Use getwd() to check current directory</li>
+<li>Use setwd() to change to desired location</li>
+<li>Essential for organizing input and output files</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="data-frame-manipulation" class="level2">
+<h2 class="anchored" data-anchor-id="data-frame-manipulation">Data Frame Manipulation</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Use names() to see variable names</li>
+<li>Use $ operator to access variables: data$variable</li>
+<li>Use str() to examine data frame structure</li>
+<li>Use [ , ] indexing for rows and columns</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="key-data-frame-functions" class="level2">
+<h2 class="anchored" data-anchor-id="key-data-frame-functions">Key Data Frame Functions</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>names(): returns variable names</li>
+<li>str(): shows structure and first few values</li>
+<li>attach(): makes variables directly accessible</li>
+<li>detach(): undoes attach() operation</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="index-operator-usage" class="level2">
+<h2 class="anchored" data-anchor-id="index-operator-usage">Index Operator Usage</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>[rows, columns] format for precise selection</li>
+<li>Leave blank for all: [ , ] returns everything</li>
+<li>Use variable names in quotes: [“variable_name”]</li>
+<li>Combine with c() for multiple selections</li>
 </ul>
 
 

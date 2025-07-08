@@ -1841,5 +1841,1572 @@
     "title": "R Stats Bootcamp",
     "section": "",
     "text": "MIT License\nCopyright (c) 2025 W. Ed Harris\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "02-r-lang.html#learning-objectives",
+    "href": "02-r-lang.html#learning-objectives",
+    "title": "\nGit and GitHub\n",
+    "section": "\nLearning Objectives\n",
+    "text": "Learning Objectives\n\n\n\nUnderstand basics of version control with Git\n\n\nSet up Git on your computer\n\n\nCreate GitHub account and repository\n\n\nPerform basic Git operations (clone, add, commit, push, pull)",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#what-is-version-control",
+    "href": "02-r-lang.html#what-is-version-control",
+    "title": "\nGit and GitHub\n",
+    "section": "\nWhat is Version Control?\n",
+    "text": "What is Version Control?\n\n\n\nSystem recording changes to files over time\n\n\nRecall specific versions later when needed\n\n\nTrack changes to code and documents\n\n\nCollaborate without overwriting others’ work",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#why-use-git-and-github",
+    "href": "02-r-lang.html#why-use-git-and-github",
+    "title": "\nGit and GitHub\n",
+    "section": "\nWhy Use Git and GitHub?\n",
+    "text": "Why Use Git and GitHub?\n\n\n\nHistory tracking documents analysis evolution\n\n\nSeamless collaboration with team members\n\n\nSecure cloud backup of code\n\n\nReproducibility through exact code access",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#git-vs-github",
+    "href": "02-r-lang.html#git-vs-github",
+    "title": "\nGit and GitHub\n",
+    "section": "\nGit vs GitHub\n",
+    "text": "Git vs GitHub\n\n\n\nGit: distributed version control system tracking file changes\n\n\nGitHub: web-based platform hosting Git repositories\n\n\nGitHub adds collaboration features to Git\n\n\nEssential tools for modern data science",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#installing-and-configuring-git",
+    "href": "02-r-lang.html#installing-and-configuring-git",
+    "title": "\nGit and GitHub\n",
+    "section": "\nInstalling and Configuring Git\n",
+    "text": "Installing and Configuring Git\n\n\n\nWindows: download from git-scm.com\n\n\nMac: install via Homebrew or download from git-scm.com\n\n\nLinux: use package manager (apt-get, yum)\n\n\nConfigure with name and email using git config",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#key-git-concepts",
+    "href": "02-r-lang.html#key-git-concepts",
+    "title": "\nGit and GitHub\n",
+    "section": "\nKey Git Concepts\n",
+    "text": "Key Git Concepts\n\n\n\nRepository (repo): directory where Git tracks changes\n\n\nCommit: snapshot of changes at point in time\n\n\nBranch: parallel version of repository\n\n\nRemote: repository version hosted elsewhere",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#creating-repositories",
+    "href": "02-r-lang.html#creating-repositories",
+    "title": "\nGit and GitHub\n",
+    "section": "\nCreating Repositories\n",
+    "text": "Creating Repositories\n\n\n\nGitHub: click “+” icon, select “New repository”\n\n\nLocal computer: mkdir project, cd project, git init\n\n\nConnect local to GitHub with git remote add origin\n\n\nInitialize with README and appropriate settings",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#basic-git-workflow",
+    "href": "02-r-lang.html#basic-git-workflow",
+    "title": "\nGit and GitHub\n",
+    "section": "\nBasic Git Workflow\n",
+    "text": "Basic Git Workflow\n\n\n\nMake changes to files in repository\n\n\nStage changes for commit with git add\n\n\nCommit changes with descriptive message\n\n\nPush changes to GitHub with git push",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#essential-git-commands",
+    "href": "02-r-lang.html#essential-git-commands",
+    "title": "\nGit and GitHub\n",
+    "section": "\nEssential Git Commands\n",
+    "text": "Essential Git Commands\n\n\n\ngit status: check repository status\n\n\ngit add: stage files for commit\n\n\ngit commit -m: commit with message\n\n\ngit push: send commits to remote repository",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#cloning-and-pulling",
+    "href": "02-r-lang.html#cloning-and-pulling",
+    "title": "\nGit and GitHub\n",
+    "section": "\nCloning and Pulling\n",
+    "text": "Cloning and Pulling\n\n\n\ngit clone: create local copy of remote repository\n\n\nNavigate into repository after cloning\n\n\ngit pull: get latest changes from remote\n\n\nEssential for collaboration and staying updated",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "02-r-lang.html#branching-and-merging",
+    "href": "02-r-lang.html#branching-and-merging",
+    "title": "\nGit and GitHub\n",
+    "section": "\nBranching and Merging\n",
+    "text": "Branching and Merging\n\n\n\nBranches allow work on different features safely\n\n\ngit branch: create new branch\n\n\ngit checkout: switch between branches\n\n\ngit merge: combine branch changes",
+    "crumbs": [
+      "Home",
+      "Module 1: R Foundations",
+      "02-r-lang.html"
+    ]
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html",
+    "href": "slides/topics/16_collaboration.html",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Organize data science projects for effective collaboration\nImplement best practices for code sharing and documentation\nUse Git and GitHub for team-based workflows\nMaintain reproducibility in collaborative environments\n\n\n\n\n\nData science increasingly a team effort\nRequires more than technical skills - thoughtful organization\nIncreases productivity through division of labor\nImproves quality through peer review and diverse perspectives\n\n\n\n\n\nEnhanced creativity through diverse perspectives\nContinuity when team members change\nSystematic approach maximizing productivity\nMaintained reproducibility and quality standards\n\n\n\n\n\nWell-organized structure helps team navigation\nSeparate folders for data, code, results, documentation\nREADME.md with overview and setup instructions\nCONTRIBUTING.md with guidelines for contributors\n\n\n\n\n\nProject overview with setup instructions and usage examples\nCode comments explaining why, not just what\nFunction documentation with purpose, parameters, examples\nData dictionary describing variables and sources\n\n\n\n\n\nFollow consistent style guides (e.g., tidyverse style guide)\nUse consistent naming conventions throughout\nFormat code for readability and understanding\nConsider linters and formatters for consistency\n\n\n\n\n\nBreak long scripts into functions\nWrite code others can understand and reuse\nClear function definitions with inputs and outputs\nMain workflow calling individual functions\n\n\n\n\n\nEnsure consistent package versions across team\nUse renv for project-specific package management\nDocument package dependencies clearly\nInitialize and snapshot package environments\n\n\n\n\n\nCentralized workflow: simple approach for small teams\nFeature branch workflow: better for larger teams\nForking workflow: common for open-source projects\nChoose appropriate workflow for team size and complexity\n\n\n\n\n\nGuidelines for reviewers: respectful, constructive, focus on code\nGuidelines for authors: explain changes, respond positively\nKeep pull requests focused and manageable\nAcknowledge good practices and thank reviewers\n\n\n\n\n\nEnvironment management with renv or conda\nDocument system requirements and dependencies\nEstablish protocols for data access and sharing\nImplement continuous integration for automated testing"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#learning-objectives",
+    "href": "slides/topics/16_collaboration.html#learning-objectives",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Organize data science projects for effective collaboration\nImplement best practices for code sharing and documentation\nUse Git and GitHub for team-based workflows\nMaintain reproducibility in collaborative environments"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#why-collaborative-workflows-matter",
+    "href": "slides/topics/16_collaboration.html#why-collaborative-workflows-matter",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Data science increasingly a team effort\nRequires more than technical skills - thoughtful organization\nIncreases productivity through division of labor\nImproves quality through peer review and diverse perspectives"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#key-collaboration-benefits",
+    "href": "slides/topics/16_collaboration.html#key-collaboration-benefits",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Enhanced creativity through diverse perspectives\nContinuity when team members change\nSystematic approach maximizing productivity\nMaintained reproducibility and quality standards"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#project-organization-for-teams",
+    "href": "slides/topics/16_collaboration.html#project-organization-for-teams",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Well-organized structure helps team navigation\nSeparate folders for data, code, results, documentation\nREADME.md with overview and setup instructions\nCONTRIBUTING.md with guidelines for contributors"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#essential-documentation-components",
+    "href": "slides/topics/16_collaboration.html#essential-documentation-components",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Project overview with setup instructions and usage examples\nCode comments explaining why, not just what\nFunction documentation with purpose, parameters, examples\nData dictionary describing variables and sources"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#code-sharing-best-practices",
+    "href": "slides/topics/16_collaboration.html#code-sharing-best-practices",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Follow consistent style guides (e.g., tidyverse style guide)\nUse consistent naming conventions throughout\nFormat code for readability and understanding\nConsider linters and formatters for consistency"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#modular-code-development",
+    "href": "slides/topics/16_collaboration.html#modular-code-development",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Break long scripts into functions\nWrite code others can understand and reuse\nClear function definitions with inputs and outputs\nMain workflow calling individual functions"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#package-management",
+    "href": "slides/topics/16_collaboration.html#package-management",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Ensure consistent package versions across team\nUse renv for project-specific package management\nDocument package dependencies clearly\nInitialize and snapshot package environments"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#git-workflows-for-teams",
+    "href": "slides/topics/16_collaboration.html#git-workflows-for-teams",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Centralized workflow: simple approach for small teams\nFeature branch workflow: better for larger teams\nForking workflow: common for open-source projects\nChoose appropriate workflow for team size and complexity"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#code-review-process",
+    "href": "slides/topics/16_collaboration.html#code-review-process",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Guidelines for reviewers: respectful, constructive, focus on code\nGuidelines for authors: explain changes, respond positively\nKeep pull requests focused and manageable\nAcknowledge good practices and thank reviewers"
+  },
+  {
+    "objectID": "slides/topics/16_collaboration.html#maintaining-reproducibility",
+    "href": "slides/topics/16_collaboration.html#maintaining-reproducibility",
+    "title": "Collaboration",
+    "section": "",
+    "text": "Environment management with renv or conda\nDocument system requirements and dependencies\nEstablish protocols for data access and sharing\nImplement continuous integration for automated testing"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html",
+    "href": "slides/topics/14_rmarkdown.html",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Understand the basics of R Markdown\nCreate documents combining code, output, and narrative text\nFormat text using Markdown syntax\nGenerate reports in multiple formats (HTML, PDF, Word)\n\n\n\n\n\nFile format combining R code, output, and narrative text\nPowerful tool for reproducible reports, presentations, dashboards\nThree key elements: YAML header, Markdown text, Code chunks\nPlain text files with special formatting syntax\n\n\n\n\n\nCreate new R Markdown in RStudio: File → New File → R Markdown\nChoose document type (HTML, PDF, Word)\nProvide title and author information\nTemplate generated for modification\n\n\n\n\n\nAppears at top between triple dashes (—)\nContains document metadata and formatting options\nCustomize output format, table of contents, themes\nCan include dynamic dates and advanced formatting\n\n\n\n\n\nLightweight markup language for text formatting\nHeaders using # symbols (# Header 1, ## Header 2)\nBold text with text, italic with text\nLinks, images, lists, and tables with simple syntax\n\n\n\n\n\nExecute R code and display results in document\nEnclosed in triple backticks with {r} designation\nControl behavior with chunk options\nInclude chunk names for organization and referencing\n\n\n\n\n\neval: whether to evaluate code (TRUE/FALSE)\necho: whether to show code (TRUE/FALSE)\ninclude: whether to include chunk in output\nmessage/warning: control display of messages and warnings\n\n\n\n\n\nInclude R code directly within text using backticks\nFormat: r code_here within sentences\nCalculates results and inserts into text\nUseful for dynamic reporting of values\n\n\n\n\n\nHTML: interactive, customizable, web-friendly\nPDF: formal appearance, requires LaTeX installation\nWord: familiar format for collaboration and editing\nMultiple formats can be specified in single document\n\n\n\n\n\nClick Knit button in RStudio\nR Markdown runs all code chunks\nGenerates outputs (tables, plots, etc.)\nFormats text according to Markdown syntax\n\n\n\n\n\nTable of contents with toc: true\nCode folding for interactive documents\nCustom themes and syntax highlighting\nFloating TOC and section numbering"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#learning-objectives",
+    "href": "slides/topics/14_rmarkdown.html#learning-objectives",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Understand the basics of R Markdown\nCreate documents combining code, output, and narrative text\nFormat text using Markdown syntax\nGenerate reports in multiple formats (HTML, PDF, Word)"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#what-is-r-markdown",
+    "href": "slides/topics/14_rmarkdown.html#what-is-r-markdown",
+    "title": "R Markdown",
+    "section": "",
+    "text": "File format combining R code, output, and narrative text\nPowerful tool for reproducible reports, presentations, dashboards\nThree key elements: YAML header, Markdown text, Code chunks\nPlain text files with special formatting syntax"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#getting-started",
+    "href": "slides/topics/14_rmarkdown.html#getting-started",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Create new R Markdown in RStudio: File → New File → R Markdown\nChoose document type (HTML, PDF, Word)\nProvide title and author information\nTemplate generated for modification"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#yaml-header-structure",
+    "href": "slides/topics/14_rmarkdown.html#yaml-header-structure",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Appears at top between triple dashes (—)\nContains document metadata and formatting options\nCustomize output format, table of contents, themes\nCan include dynamic dates and advanced formatting"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#markdown-text-formatting",
+    "href": "slides/topics/14_rmarkdown.html#markdown-text-formatting",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Lightweight markup language for text formatting\nHeaders using # symbols (# Header 1, ## Header 2)\nBold text with text, italic with text\nLinks, images, lists, and tables with simple syntax"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#code-chunks",
+    "href": "slides/topics/14_rmarkdown.html#code-chunks",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Execute R code and display results in document\nEnclosed in triple backticks with {r} designation\nControl behavior with chunk options\nInclude chunk names for organization and referencing"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#chunk-options-control",
+    "href": "slides/topics/14_rmarkdown.html#chunk-options-control",
+    "title": "R Markdown",
+    "section": "",
+    "text": "eval: whether to evaluate code (TRUE/FALSE)\necho: whether to show code (TRUE/FALSE)\ninclude: whether to include chunk in output\nmessage/warning: control display of messages and warnings"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#inline-code",
+    "href": "slides/topics/14_rmarkdown.html#inline-code",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Include R code directly within text using backticks\nFormat: r code_here within sentences\nCalculates results and inserts into text\nUseful for dynamic reporting of values"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#output-formats",
+    "href": "slides/topics/14_rmarkdown.html#output-formats",
+    "title": "R Markdown",
+    "section": "",
+    "text": "HTML: interactive, customizable, web-friendly\nPDF: formal appearance, requires LaTeX installation\nWord: familiar format for collaboration and editing\nMultiple formats can be specified in single document"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#document-generation-process",
+    "href": "slides/topics/14_rmarkdown.html#document-generation-process",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Click Knit button in RStudio\nR Markdown runs all code chunks\nGenerates outputs (tables, plots, etc.)\nFormats text according to Markdown syntax"
+  },
+  {
+    "objectID": "slides/topics/14_rmarkdown.html#advanced-features",
+    "href": "slides/topics/14_rmarkdown.html#advanced-features",
+    "title": "R Markdown",
+    "section": "",
+    "text": "Table of contents with toc: true\nCode folding for interactive documents\nCustom themes and syntax highlighting\nFloating TOC and section numbering"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html",
+    "href": "slides/topics/12_anova.html",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Articulate the question of 1-way ANOVA\nEvaluate data and assumptions for 1-way ANOVA\nGraph 1-way ANOVA data effectively\nPerform tests and alternatives for 1-way ANOVA\n\n\n\n\n\nRevolutionized objectivity in experimental data analysis\nInvented by R.A. Fisher at Rothamsted Research\n“Convenient method of arranging the arithmetic”\nFoundation of basic statistical practice today\n\n\n\n\n\nOne numeric continuous dependent variable\nFactor with 2 or more levels (often with control)\nWhen two levels: conceptually equivalent to t-test\nTest overall difference in means between factor levels\n\n\n\n\n\nOverall difference test between factor means\nComparison of each level with control/reference\nPost hoc tests between specific factor levels\nExamination of sources of variation in dependent variable\n\n\n\n\n\nProportion of variance between groups relative to within groups\nHigher F values suggest greater likelihood of real differences\nBased on comparison of mean squares\nFoundation for significance testing in ANOVA\n\n\n\n\n\nWide format: separate vectors for each factor level\nLong format (preferred): single numeric vector with factor vector\nEach row corresponds to single independent case\nTidy Data standard preferred for analysis\n\n\n\n\n\nGaussian residuals (test graphically and with NHST)\nHomoscedasticity (residuals vs fitted values plot)\nEquality of variance (residual vs factor plot and NHST)\nIndependent observations (assumed based on study design)\n\n\n\n\n\nUse aov() to create model object\nTest Gaussian residuals with histogram and qqPlot()\nShapiro-Wilk test for formal normality assessment\nBartlett test for equality of variance across groups\n\n\n\n\n\nClassic visualization: boxplot by factor levels\nShow central tendency separately for each group\nAdd raw data points over box summaries\nInclude reference line for grand mean\n\n\n\n\n\nUse aov() function for basic ANOVA\nAlternative: lm() for contrasts and linear model approach\nOutput in classic ANOVA table format\nF statistic, degrees of freedom, and p-value reported\n\n\n\n\n\nSet reference level with relevel() function\nCompare each factor level to reference\nPost hoc tests for all pairwise comparisons\nBonferroni adjustment for multiple testing\n\n\n\n\n\nBonferroni adjustment: conservative, divides alpha by comparisons\nTukey HSD: less conservative, ideal for 1-way ANOVA\nBoth control Type I error rate across tests\nChoose based on research questions and context\n\n\n\n\n\nKruskal-Wallis test when assumptions not met\nLess statistical power but no distributional requirements\nUse kruskal.test() function in R\nQualitatively similar interpretation to ANOVA"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#learning-objectives",
+    "href": "slides/topics/12_anova.html#learning-objectives",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Articulate the question of 1-way ANOVA\nEvaluate data and assumptions for 1-way ANOVA\nGraph 1-way ANOVA data effectively\nPerform tests and alternatives for 1-way ANOVA"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#analysis-of-variance-anova",
+    "href": "slides/topics/12_anova.html#analysis-of-variance-anova",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Revolutionized objectivity in experimental data analysis\nInvented by R.A. Fisher at Rothamsted Research\n“Convenient method of arranging the arithmetic”\nFoundation of basic statistical practice today"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#the-question-of-1-way-anova",
+    "href": "slides/topics/12_anova.html#the-question-of-1-way-anova",
+    "title": "ANOVA",
+    "section": "",
+    "text": "One numeric continuous dependent variable\nFactor with 2 or more levels (often with control)\nWhen two levels: conceptually equivalent to t-test\nTest overall difference in means between factor levels"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#anova-applications",
+    "href": "slides/topics/12_anova.html#anova-applications",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Overall difference test between factor means\nComparison of each level with control/reference\nPost hoc tests between specific factor levels\nExamination of sources of variation in dependent variable"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#f-ratio-test-statistic",
+    "href": "slides/topics/12_anova.html#f-ratio-test-statistic",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Proportion of variance between groups relative to within groups\nHigher F values suggest greater likelihood of real differences\nBased on comparison of mean squares\nFoundation for significance testing in ANOVA"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#data-format-requirements",
+    "href": "slides/topics/12_anova.html#data-format-requirements",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Wide format: separate vectors for each factor level\nLong format (preferred): single numeric vector with factor vector\nEach row corresponds to single independent case\nTidy Data standard preferred for analysis"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#anova-assumptions",
+    "href": "slides/topics/12_anova.html#anova-assumptions",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Gaussian residuals (test graphically and with NHST)\nHomoscedasticity (residuals vs fitted values plot)\nEquality of variance (residual vs factor plot and NHST)\nIndependent observations (assumed based on study design)"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#assumption-testing-process",
+    "href": "slides/topics/12_anova.html#assumption-testing-process",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Use aov() to create model object\nTest Gaussian residuals with histogram and qqPlot()\nShapiro-Wilk test for formal normality assessment\nBartlett test for equality of variance across groups"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#graphing-anova-data",
+    "href": "slides/topics/12_anova.html#graphing-anova-data",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Classic visualization: boxplot by factor levels\nShow central tendency separately for each group\nAdd raw data points over box summaries\nInclude reference line for grand mean"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#anova-f-test-and-alternatives",
+    "href": "slides/topics/12_anova.html#anova-f-test-and-alternatives",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Use aov() function for basic ANOVA\nAlternative: lm() for contrasts and linear model approach\nOutput in classic ANOVA table format\nF statistic, degrees of freedom, and p-value reported"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#contrasts-and-post-hoc-testing",
+    "href": "slides/topics/12_anova.html#contrasts-and-post-hoc-testing",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Set reference level with relevel() function\nCompare each factor level to reference\nPost hoc tests for all pairwise comparisons\nBonferroni adjustment for multiple testing"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#multiple-comparison-methods",
+    "href": "slides/topics/12_anova.html#multiple-comparison-methods",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Bonferroni adjustment: conservative, divides alpha by comparisons\nTukey HSD: less conservative, ideal for 1-way ANOVA\nBoth control Type I error rate across tests\nChoose based on research questions and context"
+  },
+  {
+    "objectID": "slides/topics/12_anova.html#non-parametric-alternative",
+    "href": "slides/topics/12_anova.html#non-parametric-alternative",
+    "title": "ANOVA",
+    "section": "",
+    "text": "Kruskal-Wallis test when assumptions not met\nLess statistical power but no distributional requirements\nUse kruskal.test() function in R\nQualitatively similar interpretation to ANOVA"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html",
+    "href": "slides/topics/10_regression.html",
+    "title": "Regression",
+    "section": "",
+    "text": "Evaluate the question of simple regression\nDiscuss data and assumptions of simple regression\nGraph simple regression effectively\nPerform tests and alternatives for simple regression\n\n\n\n\n\nOne of most common and powerful statistical tools\nCreated by Francis Galton for studying heritable traits\nConcept: whenever correlation imperfect, regression to mean occurs\nFoundation tool shared for greater scientific good\n\n\n\n\n\nRelate value of numeric variable to another variable\nPredict variable value based on another\nQuantify variation attributable to predictor\nTest significance of relationships\n\n\n\n\n\nα (alpha): intercept parameter\nβ (beta): slope parameter\ny: dependent variable, x: predictor variable\nε (epsilon): residual error term\n\n\n\n\n\nLinear relationship between variables\nNumeric continuous data for dependent variable\nIndependence of observations\nGaussian distribution of residuals (not raw data!)\n\n\n\n\n\nScatterplot with dependent variable on y-axis\nPredictor variable on x-axis\nRegression line shows line of best fit\nLine used for prediction of y given x values\n\n\n\n\n\nData scientist responsible for validating model\nTest Gaussian residuals graphically and statistically\nCheck homoscedasticity with residuals vs fitted plot\nUse diagnostic plots and formal tests\n\n\n\n\n\nResiduals represent deviation from predicted values\nShould be Gaussian distributed with mean zero\nUse histogram and q-q plots for visual assessment\nShapiro-Wilk test for formal normality testing\n\n\n\n\n\nVariance of residuals should be constant\nPlot residuals vs fitted values\nLook for even spread across x-axis\nAbsence of systematic patterns indicates independence\n\n\n\n\n\nF-statistic tests overall model significance\nR-squared shows proportion of variance explained\nCoefficient estimates show intercept and slope\nP-values test whether parameters differ from zero\n\n\n\n\n\nInclude R-squared, degrees of freedom, and p-value\nExample: “significant linear relationship (R-squared = 0.97, df = 1,54, P &lt; 0.0001)”\nNever copy-paste raw statistical output\nSummarize appropriately for intended audience\n\n\n\n\n\nData transformation when assumptions violated\nSpearman rank correlation for relationship demonstration\nNonparametric regression (Kendal-Theil-Siegel)\nConsider these when assumptions cannot be met"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#learning-objectives",
+    "href": "slides/topics/10_regression.html#learning-objectives",
+    "title": "Regression",
+    "section": "",
+    "text": "Evaluate the question of simple regression\nDiscuss data and assumptions of simple regression\nGraph simple regression effectively\nPerform tests and alternatives for simple regression"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#regression-to-the-mean",
+    "href": "slides/topics/10_regression.html#regression-to-the-mean",
+    "title": "Regression",
+    "section": "",
+    "text": "One of most common and powerful statistical tools\nCreated by Francis Galton for studying heritable traits\nConcept: whenever correlation imperfect, regression to mean occurs\nFoundation tool shared for greater scientific good"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#the-question-of-simple-regression",
+    "href": "slides/topics/10_regression.html#the-question-of-simple-regression",
+    "title": "Regression",
+    "section": "",
+    "text": "Relate value of numeric variable to another variable\nPredict variable value based on another\nQuantify variation attributable to predictor\nTest significance of relationships"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#regression-model-components",
+    "href": "slides/topics/10_regression.html#regression-model-components",
+    "title": "Regression",
+    "section": "",
+    "text": "α (alpha): intercept parameter\nβ (beta): slope parameter\ny: dependent variable, x: predictor variable\nε (epsilon): residual error term"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#data-and-assumptions",
+    "href": "slides/topics/10_regression.html#data-and-assumptions",
+    "title": "Regression",
+    "section": "",
+    "text": "Linear relationship between variables\nNumeric continuous data for dependent variable\nIndependence of observations\nGaussian distribution of residuals (not raw data!)"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#graphing-regression",
+    "href": "slides/topics/10_regression.html#graphing-regression",
+    "title": "Regression",
+    "section": "",
+    "text": "Scatterplot with dependent variable on y-axis\nPredictor variable on x-axis\nRegression line shows line of best fit\nLine used for prediction of y given x values"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#testing-assumptions",
+    "href": "slides/topics/10_regression.html#testing-assumptions",
+    "title": "Regression",
+    "section": "",
+    "text": "Data scientist responsible for validating model\nTest Gaussian residuals graphically and statistically\nCheck homoscedasticity with residuals vs fitted plot\nUse diagnostic plots and formal tests"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#residual-analysis",
+    "href": "slides/topics/10_regression.html#residual-analysis",
+    "title": "Regression",
+    "section": "",
+    "text": "Residuals represent deviation from predicted values\nShould be Gaussian distributed with mean zero\nUse histogram and q-q plots for visual assessment\nShapiro-Wilk test for formal normality testing"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#homoscedasticity-assessment",
+    "href": "slides/topics/10_regression.html#homoscedasticity-assessment",
+    "title": "Regression",
+    "section": "",
+    "text": "Variance of residuals should be constant\nPlot residuals vs fitted values\nLook for even spread across x-axis\nAbsence of systematic patterns indicates independence"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#regression-results-interpretation",
+    "href": "slides/topics/10_regression.html#regression-results-interpretation",
+    "title": "Regression",
+    "section": "",
+    "text": "F-statistic tests overall model significance\nR-squared shows proportion of variance explained\nCoefficient estimates show intercept and slope\nP-values test whether parameters differ from zero"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#reporting-regression-results",
+    "href": "slides/topics/10_regression.html#reporting-regression-results",
+    "title": "Regression",
+    "section": "",
+    "text": "Include R-squared, degrees of freedom, and p-value\nExample: “significant linear relationship (R-squared = 0.97, df = 1,54, P &lt; 0.0001)”\nNever copy-paste raw statistical output\nSummarize appropriately for intended audience"
+  },
+  {
+    "objectID": "slides/topics/10_regression.html#alternatives-to-regression",
+    "href": "slides/topics/10_regression.html#alternatives-to-regression",
+    "title": "Regression",
+    "section": "",
+    "text": "Data transformation when assumptions violated\nSpearman rank correlation for relationship demonstration\nNonparametric regression (Kendal-Theil-Siegel)\nConsider these when assumptions cannot be met"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html",
+    "href": "slides/topics/08_distributions.html",
+    "title": "Distributions",
+    "section": "",
+    "text": "Create and use histograms to evaluate data distribution\nIdentify Gaussian data and understand it’s not “normal”\nIdentify Poisson and Binomial data distributions\nDiagnose common data distributions effectively\n\n\n\n\n\nSampling underpins traditional statistics fundamentals\nPopulation of interest cannot be directly measured\nSample to estimate real measures of population\nError depends on population variation and sample size\n\n\n\n\n\nPlots numeric variable on x-axis (continuous or integers)\nFrequency or proportion of observations on y-axis\nBars represent counts in ranges called “bins”\nShape reveals distribution of data\n\n\n\n\n\nCompare sample means to true population mean\nSample means vary randomly around true mean\nMost samples close to true mean, fewer farther away\nDemonstrates sampling distribution concept\n\n\n\n\n\nClassic “bell curve” shaped distribution\nMost important for continuous numeric variables\nExpected for measurements like height, weight, length\nDescribed by mean and variance parameters\n\n\n\n\n\nLinear models assume Gaussian residuals (not raw data)\nMust test assumption for regression and ANOVA\nTwo parameters: mean and variance control shape\nDifferent means shift curve position, different variances change spread\n\n\n\n\n\nCompare data to theoretical Gaussian expectation\nStraight diagonal line indicates perfect Gaussian fit\nSystematic deviation indicates non-Gaussian distribution\nUseful diagnostic for model assumptions\n\n\n\n\n\nUsed for count data of discrete events\nClassic example: events occurring over time/space\nData typically skewed to the right\nSingle parameter λ (lambda) describes mean and variance\n\n\n\n\n\nDescribes data with exactly two outcomes (0/1, yes/no)\nCount of “successes” in series of independent trials\nExamples: coin flips, germination success, presence/absence\nTwo parameters: number of trials (n) and probability (p)\n\n\n\n\n\nDevelop expectation based on data type\nGraph data with histogram and q-q plot\nCompare q-q plots with different theoretical distributions\nTry transformations if assumptions violated\n\n\n\n\n\nSubjective endeavor requiring experience\nFirst examine type of data for expected distribution\nUse both graphical and statistical tests\nConsider transformations to meet assumptions"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#learning-objectives",
+    "href": "slides/topics/08_distributions.html#learning-objectives",
+    "title": "Distributions",
+    "section": "",
+    "text": "Create and use histograms to evaluate data distribution\nIdentify Gaussian data and understand it’s not “normal”\nIdentify Poisson and Binomial data distributions\nDiagnose common data distributions effectively"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#sampling-and-statistical-inference",
+    "href": "slides/topics/08_distributions.html#sampling-and-statistical-inference",
+    "title": "Distributions",
+    "section": "",
+    "text": "Sampling underpins traditional statistics fundamentals\nPopulation of interest cannot be directly measured\nSample to estimate real measures of population\nError depends on population variation and sample size"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#histogram-usage",
+    "href": "slides/topics/08_distributions.html#histogram-usage",
+    "title": "Distributions",
+    "section": "",
+    "text": "Plots numeric variable on x-axis (continuous or integers)\nFrequency or proportion of observations on y-axis\nBars represent counts in ranges called “bins”\nShape reveals distribution of data"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#simulation-of-samples",
+    "href": "slides/topics/08_distributions.html#simulation-of-samples",
+    "title": "Distributions",
+    "section": "",
+    "text": "Compare sample means to true population mean\nSample means vary randomly around true mean\nMost samples close to true mean, fewer farther away\nDemonstrates sampling distribution concept"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#gaussian-distribution",
+    "href": "slides/topics/08_distributions.html#gaussian-distribution",
+    "title": "Distributions",
+    "section": "",
+    "text": "Classic “bell curve” shaped distribution\nMost important for continuous numeric variables\nExpected for measurements like height, weight, length\nDescribed by mean and variance parameters"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#gaussian-assumptions-in-analysis",
+    "href": "slides/topics/08_distributions.html#gaussian-assumptions-in-analysis",
+    "title": "Distributions",
+    "section": "",
+    "text": "Linear models assume Gaussian residuals (not raw data)\nMust test assumption for regression and ANOVA\nTwo parameters: mean and variance control shape\nDifferent means shift curve position, different variances change spread"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#quartile-quartile-q-q-plots",
+    "href": "slides/topics/08_distributions.html#quartile-quartile-q-q-plots",
+    "title": "Distributions",
+    "section": "",
+    "text": "Compare data to theoretical Gaussian expectation\nStraight diagonal line indicates perfect Gaussian fit\nSystematic deviation indicates non-Gaussian distribution\nUseful diagnostic for model assumptions"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#poisson-distribution",
+    "href": "slides/topics/08_distributions.html#poisson-distribution",
+    "title": "Distributions",
+    "section": "",
+    "text": "Used for count data of discrete events\nClassic example: events occurring over time/space\nData typically skewed to the right\nSingle parameter λ (lambda) describes mean and variance"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#binomial-distribution",
+    "href": "slides/topics/08_distributions.html#binomial-distribution",
+    "title": "Distributions",
+    "section": "",
+    "text": "Describes data with exactly two outcomes (0/1, yes/no)\nCount of “successes” in series of independent trials\nExamples: coin flips, germination success, presence/absence\nTwo parameters: number of trials (n) and probability (p)"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#distribution-diagnosis-process",
+    "href": "slides/topics/08_distributions.html#distribution-diagnosis-process",
+    "title": "Distributions",
+    "section": "",
+    "text": "Develop expectation based on data type\nGraph data with histogram and q-q plot\nCompare q-q plots with different theoretical distributions\nTry transformations if assumptions violated"
+  },
+  {
+    "objectID": "slides/topics/08_distributions.html#diagnostic-best-practices",
+    "href": "slides/topics/08_distributions.html#diagnostic-best-practices",
+    "title": "Distributions",
+    "section": "",
+    "text": "Subjective endeavor requiring experience\nFirst examine type of data for expected distribution\nUse both graphical and statistical tests\nConsider transformations to meet assumptions"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html",
+    "href": "slides/topics/06_data_subsetting.html",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Describe indexing concept for vectors and matrices\nUse which() function to subset data effectively\nSelect specific parts of data frames\nUse aggregate() function to summarize data\n\n\n\n\n\nSubsetting and manipulating data is core activity\nEssential for exploratory data analysis\nUsed extensively in data acquisition and analysis\nFoundation for database queries and data manipulation\n\n\n\n\n\nData objects store values accessible by “address”\nVectors (1D), matrices (2D), arrays (3D+) have indices\nIndex values correspond to position of data\nEssential for slicing and dicing data\n\n\n\n\n\nVector indices run from 1 to length of vector\nUse [1:i] notation to access elements\nR displays index in console output [1]\nAccess single elements or ranges with brackets\n\n\n\n\n\nTwo dimensions: [rows, columns] or [i, j]\nSlice out entire rows or columns with blank space\nCan name rows and columns for easier access\nUse names in quotes for selection by name\n\n\n\n\n\nThree or more dimensions: [i, j, k, …]\nEach dimension represents different data organization\nMore complex but follows same principles\nUseful for multi-dimensional data analysis\n\n\n\n\n\nReturns index values where logical expression is TRUE\nRequires logical vector as input argument\nPowerful for constructing data queries\nEssential tool for conditional data selection\n\n\n\n\n\nCreate logical expressions to identify data subsets\nUse which() to get index positions of TRUE values\nApply indices to extract desired data values\nAlternative to creating multiple dataset versions\n\n\n\n\n\nSelect rows based on values in one or more variables\nCombine multiple conditions with & (and) and | (or)\nUse which() with complex boolean expressions\nPowerful method for data filtering and analysis\n\n\n\n\n\nChain multiple conditions with logical operators\nUse parentheses to control evaluation order\nBuild complex selection rules step by step\nEssential for sophisticated data manipulation\n\n\n\n\n\nSummarize data by groups using specified functions\nx argument: numeric data to summarize\nby argument: list of grouping variables\nFUN argument: function to apply (mean, sd, etc.)\n\n\n\n\n\nCreate custom summary functions with function()\nApply multiple statistics simultaneously\nName output elements for clarity\nPowerful tool for grouped data analysis"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#learning-objectives",
+    "href": "slides/topics/06_data_subsetting.html#learning-objectives",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Describe indexing concept for vectors and matrices\nUse which() function to subset data effectively\nSelect specific parts of data frames\nUse aggregate() function to summarize data"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#data-sumo-philosophy",
+    "href": "slides/topics/06_data_subsetting.html#data-sumo-philosophy",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Subsetting and manipulating data is core activity\nEssential for exploratory data analysis\nUsed extensively in data acquisition and analysis\nFoundation for database queries and data manipulation"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#indexing-concept-basics",
+    "href": "slides/topics/06_data_subsetting.html#indexing-concept-basics",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Data objects store values accessible by “address”\nVectors (1D), matrices (2D), arrays (3D+) have indices\nIndex values correspond to position of data\nEssential for slicing and dicing data"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#vector-indexing",
+    "href": "slides/topics/06_data_subsetting.html#vector-indexing",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Vector indices run from 1 to length of vector\nUse [1:i] notation to access elements\nR displays index in console output [1]\nAccess single elements or ranges with brackets"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#matrix-indexing",
+    "href": "slides/topics/06_data_subsetting.html#matrix-indexing",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Two dimensions: [rows, columns] or [i, j]\nSlice out entire rows or columns with blank space\nCan name rows and columns for easier access\nUse names in quotes for selection by name"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#array-indexing",
+    "href": "slides/topics/06_data_subsetting.html#array-indexing",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Three or more dimensions: [i, j, k, …]\nEach dimension represents different data organization\nMore complex but follows same principles\nUseful for multi-dimensional data analysis"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#the-which-function",
+    "href": "slides/topics/06_data_subsetting.html#the-which-function",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Returns index values where logical expression is TRUE\nRequires logical vector as input argument\nPowerful for constructing data queries\nEssential tool for conditional data selection"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#boolean-selection-strategies",
+    "href": "slides/topics/06_data_subsetting.html#boolean-selection-strategies",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Create logical expressions to identify data subsets\nUse which() to get index positions of TRUE values\nApply indices to extract desired data values\nAlternative to creating multiple dataset versions"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#data-frame-selection",
+    "href": "slides/topics/06_data_subsetting.html#data-frame-selection",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Select rows based on values in one or more variables\nCombine multiple conditions with & (and) and | (or)\nUse which() with complex boolean expressions\nPowerful method for data filtering and analysis"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#compound-boolean-operations",
+    "href": "slides/topics/06_data_subsetting.html#compound-boolean-operations",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Chain multiple conditions with logical operators\nUse parentheses to control evaluation order\nBuild complex selection rules step by step\nEssential for sophisticated data manipulation"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#the-aggregate-function",
+    "href": "slides/topics/06_data_subsetting.html#the-aggregate-function",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Summarize data by groups using specified functions\nx argument: numeric data to summarize\nby argument: list of grouping variables\nFUN argument: function to apply (mean, sd, etc.)"
+  },
+  {
+    "objectID": "slides/topics/06_data_subsetting.html#custom-functions-in-aggregate",
+    "href": "slides/topics/06_data_subsetting.html#custom-functions-in-aggregate",
+    "title": "Data Subsetting",
+    "section": "",
+    "text": "Create custom summary functions with function()\nApply multiple statistics simultaneously\nName output elements for clarity\nPowerful tool for grouped data analysis"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html",
+    "href": "slides/topics/04_data_objects.html",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Describe basic data types in R\nUse str() to inspect data objects effectively\nDescribe data with factors for categorical variables\nUse class() and convert between variable types\n\n\n\n\n\nImagine floating in R Global Environment\nAny visible data object can be called by name\nFundamental way to analyze data through code manipulation\nSystem of containers to store data effectively\n\n\n\n\n\nNumeric: numbers with decimal points\nInteger: whole numbers without decimals\nCharacter: text strings enclosed in quotes\nLogical: TRUE/FALSE boolean values\n\n\n\n\n\nMore abstract than visual spreadsheet representation\nCreate variables in code script files\nBring data from external files or web\nUse class() function to check variable types\n\n\n\n\n\nMost basic data structure in R\nCollection of elements of same type\nCreated using c() function\nOperations applied element-wise automatically\n\n\n\n\n\nNumeric vectors: c(1, 2, 3, 4)\nCharacter vectors: c(“apple”, “banana”, “cherry”)\nLogical vectors: c(TRUE, FALSE, TRUE)\nSequences: 1:10 or seq() function\n\n\n\n\n\nMust begin with letter, can contain numbers\nCannot contain spaces or forbidden characters\nShould be human-readable and consistent\nCase sensitive throughout R\n\n\n\n\n\nUsed for categorical data with limited categories\nNon-ordered factors: simple category names\nOrdered factors: specific sequence matters\nMust specify order explicitly when needed\n\n\n\n\n\nUse class() to check current data type\nConvert with as.numeric(), as.character(), as.factor()\nR usually guesses correctly but check when unsure\nSometimes manual conversion necessary\n\n\n\n\n\nVectors: single dimension storage (1 to i)\nMatrices: two dimensions (i rows, j columns)\nArrays: three or more dimensions\nAll must store same data type\n\n\n\n\n\nUse matrix() function with data, nrow, ncol\nCan name rows and columns with rownames(), colnames()\nAccess elements using bracket notation [i,j]\nUseful for mathematical operations and data organization"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#learning-objectives",
+    "href": "slides/topics/04_data_objects.html#learning-objectives",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Describe basic data types in R\nUse str() to inspect data objects effectively\nDescribe data with factors for categorical variables\nUse class() and convert between variable types"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#data-objects-in-r-space",
+    "href": "slides/topics/04_data_objects.html#data-objects-in-r-space",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Imagine floating in R Global Environment\nAny visible data object can be called by name\nFundamental way to analyze data through code manipulation\nSystem of containers to store data effectively"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#basic-data-types",
+    "href": "slides/topics/04_data_objects.html#basic-data-types",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Numeric: numbers with decimal points\nInteger: whole numbers without decimals\nCharacter: text strings enclosed in quotes\nLogical: TRUE/FALSE boolean values"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#the-global-environment",
+    "href": "slides/topics/04_data_objects.html#the-global-environment",
+    "title": "Data Objects",
+    "section": "",
+    "text": "More abstract than visual spreadsheet representation\nCreate variables in code script files\nBring data from external files or web\nUse class() function to check variable types"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#vector-fundamentals",
+    "href": "slides/topics/04_data_objects.html#vector-fundamentals",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Most basic data structure in R\nCollection of elements of same type\nCreated using c() function\nOperations applied element-wise automatically"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#creating-different-vector-types",
+    "href": "slides/topics/04_data_objects.html#creating-different-vector-types",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Numeric vectors: c(1, 2, 3, 4)\nCharacter vectors: c(“apple”, “banana”, “cherry”)\nLogical vectors: c(TRUE, FALSE, TRUE)\nSequences: 1:10 or seq() function"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#variable-naming-rules",
+    "href": "slides/topics/04_data_objects.html#variable-naming-rules",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Must begin with letter, can contain numbers\nCannot contain spaces or forbidden characters\nShould be human-readable and consistent\nCase sensitive throughout R"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#working-with-factors",
+    "href": "slides/topics/04_data_objects.html#working-with-factors",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Used for categorical data with limited categories\nNon-ordered factors: simple category names\nOrdered factors: specific sequence matters\nMust specify order explicitly when needed"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#data-conversion",
+    "href": "slides/topics/04_data_objects.html#data-conversion",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Use class() to check current data type\nConvert with as.numeric(), as.character(), as.factor()\nR usually guesses correctly but check when unsure\nSometimes manual conversion necessary"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#vector-and-matrix-operations",
+    "href": "slides/topics/04_data_objects.html#vector-and-matrix-operations",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Vectors: single dimension storage (1 to i)\nMatrices: two dimensions (i rows, j columns)\nArrays: three or more dimensions\nAll must store same data type"
+  },
+  {
+    "objectID": "slides/topics/04_data_objects.html#matrix-creation-and-manipulation",
+    "href": "slides/topics/04_data_objects.html#matrix-creation-and-manipulation",
+    "title": "Data Objects",
+    "section": "",
+    "text": "Use matrix() function with data, nrow, ncol\nCan name rows and columns with rownames(), colnames()\nAccess elements using bracket notation [i,j]\nUseful for mathematical operations and data organization"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html",
+    "href": "slides/topics/02_r_language.html",
+    "title": "R Language",
+    "section": "",
+    "text": "Navigate example scripts, comments, help, and pseudocode\nUse math operators effectively in R\nApply logical Boolean operators for data manipulation\nDistinguish between base R and Tidyverse approaches\n\n\n\n\n\nR is popular statistical programming language and open source software\nDesigned to help non-programmers perform statistical analyses\nSometimes requires careful language to avoid unexpected outcomes\nEssential to view scripts as documentation of work\n\n\n\n\n\nWrite scripts as documentation for respected colleagues\nWork through instructions using R and RStudio actively\nType your own code rather than copy-pasting\nDocument all code with clear, concise comments\n\n\n\n\n\nUse help() function with tool name in brackets\nHelp pages organized consistently across all functions\nFunction name, description, usage, and argument definitions\nEssential to understand for effective R use\n\n\n\n\n\nBasic arithmetic: +, -, *, /, ^ (power)\nOrder of operations follows standard mathematical rules\nUse parentheses to control calculation order\nSpacing improves readability (use single spaces)\n\n\n\n\n\nBoolean expressions resolve to TRUE or FALSE\nCommon operators: &gt;, &lt;, ==, !=, &, |, !\nUsed for selecting groups of data effectively\nPowerful alternative to creating different datasets\n\n\n\n\n\nUse Boolean expressions to select data subsets\nSquare brackets act as index for data vectors\nCombine with logical operators for complex selections\nEssential skill for data manipulation\n\n\n\n\n\nBase R: Traditional, powerful form of R language\nTidyverse: Alternative approach with different conventions\nBoth have benefits and philosophical differences\nBootcamp focuses exclusively on base R first\n\n\n\n\n\nHeader: Contains name, date, and purpose\nContents: Roadmap listing all major sections\nBoth sections essential for every R script\nFoundation for reproducible research practices\n\n\n\n\n\nWorking with Boolean expressions and operators\nUnderstanding help system navigation\nWriting expressions with proper spacing\nCreating and documenting script sections"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#learning-objectives",
+    "href": "slides/topics/02_r_language.html#learning-objectives",
+    "title": "R Language",
+    "section": "",
+    "text": "Navigate example scripts, comments, help, and pseudocode\nUse math operators effectively in R\nApply logical Boolean operators for data manipulation\nDistinguish between base R and Tidyverse approaches"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#r-as-a-passive-aggressive-butler",
+    "href": "slides/topics/02_r_language.html#r-as-a-passive-aggressive-butler",
+    "title": "R Language",
+    "section": "",
+    "text": "R is popular statistical programming language and open source software\nDesigned to help non-programmers perform statistical analyses\nSometimes requires careful language to avoid unexpected outcomes\nEssential to view scripts as documentation of work"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#script-organization-importance",
+    "href": "slides/topics/02_r_language.html#script-organization-importance",
+    "title": "R Language",
+    "section": "",
+    "text": "Write scripts as documentation for respected colleagues\nWork through instructions using R and RStudio actively\nType your own code rather than copy-pasting\nDocument all code with clear, concise comments"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#help-system-in-r",
+    "href": "slides/topics/02_r_language.html#help-system-in-r",
+    "title": "R Language",
+    "section": "",
+    "text": "Use help() function with tool name in brackets\nHelp pages organized consistently across all functions\nFunction name, description, usage, and argument definitions\nEssential to understand for effective R use"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#math-operators",
+    "href": "slides/topics/02_r_language.html#math-operators",
+    "title": "R Language",
+    "section": "",
+    "text": "Basic arithmetic: +, -, *, /, ^ (power)\nOrder of operations follows standard mathematical rules\nUse parentheses to control calculation order\nSpacing improves readability (use single spaces)"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#logical-boolean-operators",
+    "href": "slides/topics/02_r_language.html#logical-boolean-operators",
+    "title": "R Language",
+    "section": "",
+    "text": "Boolean expressions resolve to TRUE or FALSE\nCommon operators: &gt;, &lt;, ==, !=, &, |, !\nUsed for selecting groups of data effectively\nPowerful alternative to creating different datasets"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#selecting-with-booleans",
+    "href": "slides/topics/02_r_language.html#selecting-with-booleans",
+    "title": "R Language",
+    "section": "",
+    "text": "Use Boolean expressions to select data subsets\nSquare brackets act as index for data vectors\nCombine with logical operators for complex selections\nEssential skill for data manipulation"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#base-r-versus-tidyverse",
+    "href": "slides/topics/02_r_language.html#base-r-versus-tidyverse",
+    "title": "R Language",
+    "section": "",
+    "text": "Base R: Traditional, powerful form of R language\nTidyverse: Alternative approach with different conventions\nBoth have benefits and philosophical differences\nBootcamp focuses exclusively on base R first"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#script-section-requirements",
+    "href": "slides/topics/02_r_language.html#script-section-requirements",
+    "title": "R Language",
+    "section": "",
+    "text": "Header: Contains name, date, and purpose\nContents: Roadmap listing all major sections\nBoth sections essential for every R script\nFoundation for reproducible research practices"
+  },
+  {
+    "objectID": "slides/topics/02_r_language.html#practice-exercises",
+    "href": "slides/topics/02_r_language.html#practice-exercises",
+    "title": "R Language",
+    "section": "",
+    "text": "Working with Boolean expressions and operators\nUnderstanding help system navigation\nWriting expressions with proper spacing\nCreating and documenting script sections"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html",
+    "href": "slides/topics/00_about_bootcamp.html",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Comprehensive, self-paced course for researchers and students\nDevelops practical data science skills in R programming\nFocuses on statistical analysis and reproducible research practices\nMission to provide accessible, high-quality training\n\n\n\n\n\nAccessible to researchers at all levels\nPractical with focus on real-world applications\nReproducible to advance scientific integrity\nCollaborative to encourage knowledge sharing\n\n\n\n\n\nResearch students beginning their data analysis journey\nAcademic staff looking to update quantitative skills\nProfessionals transitioning to data-driven roles\nSelf-learners interested in R programming and statistics\n\n\n\n\n\nMaster fundamentals of R programming and RStudio environment\nLearn to manipulate data and create functions\nWork with different data structures\nBuild essential programming skills\n\n\n\n\n\nApply R skills to statistical analysis and data visualization\nExplore hypothesis testing, correlation, and regression\nLearn techniques for data exploration and analysis\nMaster essential statistical concepts\n\n\n\n\n\nDiscover tools and practices for reproducible science\nLearn R Markdown for dynamic documents\nMaster Git for version control\nDevelop collaborative workflow skills\n\n\n\n\n\nSelf-paced lessons that fit your schedule\nHands-on exercises to reinforce concepts\nReal-world examples relevant to research contexts\nProgressive difficulty building on previous knowledge\n\n\n\n\n\nBased on current best practices in data science education\nIncorporates feedback from learners and instructors\nReflects advances in R packages and statistical methods\nGrounded in research on effective teaching and learning\n\n\n\n\n\nDiscord community support coming soon\nAdditional resources linked throughout the course\nSelf-assessment tools and practice exercises\nLearning-by-doing methodology with practical focus"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#what-is-the-r-stats-bootcamp",
+    "href": "slides/topics/00_about_bootcamp.html#what-is-the-r-stats-bootcamp",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Comprehensive, self-paced course for researchers and students\nDevelops practical data science skills in R programming\nFocuses on statistical analysis and reproducible research practices\nMission to provide accessible, high-quality training"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#our-philosophy",
+    "href": "slides/topics/00_about_bootcamp.html#our-philosophy",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Accessible to researchers at all levels\nPractical with focus on real-world applications\nReproducible to advance scientific integrity\nCollaborative to encourage knowledge sharing"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#target-audience",
+    "href": "slides/topics/00_about_bootcamp.html#target-audience",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Research students beginning their data analysis journey\nAcademic staff looking to update quantitative skills\nProfessionals transitioning to data-driven roles\nSelf-learners interested in R programming and statistics"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#module-1-r-foundations",
+    "href": "slides/topics/00_about_bootcamp.html#module-1-r-foundations",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Master fundamentals of R programming and RStudio environment\nLearn to manipulate data and create functions\nWork with different data structures\nBuild essential programming skills"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#module-2-statistical-analysis",
+    "href": "slides/topics/00_about_bootcamp.html#module-2-statistical-analysis",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Apply R skills to statistical analysis and data visualization\nExplore hypothesis testing, correlation, and regression\nLearn techniques for data exploration and analysis\nMaster essential statistical concepts"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#module-3-reproducible-research",
+    "href": "slides/topics/00_about_bootcamp.html#module-3-reproducible-research",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Discover tools and practices for reproducible science\nLearn R Markdown for dynamic documents\nMaster Git for version control\nDevelop collaborative workflow skills"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#learning-approach",
+    "href": "slides/topics/00_about_bootcamp.html#learning-approach",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Self-paced lessons that fit your schedule\nHands-on exercises to reinforce concepts\nReal-world examples relevant to research contexts\nProgressive difficulty building on previous knowledge"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#course-development",
+    "href": "slides/topics/00_about_bootcamp.html#course-development",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Based on current best practices in data science education\nIncorporates feedback from learners and instructors\nReflects advances in R packages and statistical methods\nGrounded in research on effective teaching and learning"
+  },
+  {
+    "objectID": "slides/topics/00_about_bootcamp.html#getting-support",
+    "href": "slides/topics/00_about_bootcamp.html#getting-support",
+    "title": "About the Bootcamp",
+    "section": "",
+    "text": "Discord community support coming soon\nAdditional resources linked throughout the course\nSelf-assessment tools and practice exercises\nLearning-by-doing methodology with practical focus"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html",
+    "href": "slides/topics/01_setup_intro.html",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Understand how the R Stats Bootcamp works\nDescribe the motivation for using R\nInstall R and RStudio or set up RStudio Cloud\nNavigate RStudio components and interface\n\n\n\n\n\nProvides practical, open instructional materials for learning R\nReviews simple statistics in R\nIntroduces reproducibility and collaboration tools\nBlend of practical material with videos and self-assessment\n\n\n\n\n\nDesigned for non-programmers to perform statistical analysis\nGrowing popularity in universities, companies, and research\nLarge community of users and high demand for R skills\nFree, open source, and cross-platform compatible\n\n\n\n\n\nOption 1: Download R from CRAN and RStudio Desktop\nOption 2: Use RStudio Cloud for browser-based work\nInstall R first, then RStudio for best results\nConsider your computer setup and preferences\n\n\n\n\n\nScript window (upper left) for writing and executing code\nConsole window (lower left) for output and messages\nGlobal Environment (upper right) for data objects\nPlots window (lower right) for graphics and help\n\n\n\n\n\nDocuments analysis for exact reproducibility\nInterface between your commands and R software\nShould be clear for future collaborators\nThink of future self as respected colleague\n\n\n\n\n\nHeader with name, date, and purpose\nContents section as roadmap for analysis\nCode chunks with descriptive titles\nConsistent numbering and logical organization\n\n\n\n\n\nCtrl+Enter (Cmd+Return on Mac) for current line\nSelect code and Ctrl+Enter for specific sections\nUse Run button in Script window\nAccess through Code menu for additional options\n\n\n\n\n\nUse # character for comment lines\nExplain code like methods section of scientific paper\nProvide enough detail for exact replication\nBalance thoroughness with conciseness\n\n\n\n\n\nDownload and examine sample scripts\nPractice running code and examining output\nAdd code chunks with proper comments\nCreate variables and calculate basic statistics"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#learning-objectives",
+    "href": "slides/topics/01_setup_intro.html#learning-objectives",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Understand how the R Stats Bootcamp works\nDescribe the motivation for using R\nInstall R and RStudio or set up RStudio Cloud\nNavigate RStudio components and interface"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#how-the-r-stats-bootcamp-works",
+    "href": "slides/topics/01_setup_intro.html#how-the-r-stats-bootcamp-works",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Provides practical, open instructional materials for learning R\nReviews simple statistics in R\nIntroduces reproducibility and collaboration tools\nBlend of practical material with videos and self-assessment"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#r-motivation",
+    "href": "slides/topics/01_setup_intro.html#r-motivation",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Designed for non-programmers to perform statistical analysis\nGrowing popularity in universities, companies, and research\nLarge community of users and high demand for R skills\nFree, open source, and cross-platform compatible"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#installation-options",
+    "href": "slides/topics/01_setup_intro.html#installation-options",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Option 1: Download R from CRAN and RStudio Desktop\nOption 2: Use RStudio Cloud for browser-based work\nInstall R first, then RStudio for best results\nConsider your computer setup and preferences"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#rstudio-interface-components",
+    "href": "slides/topics/01_setup_intro.html#rstudio-interface-components",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Script window (upper left) for writing and executing code\nConsole window (lower left) for output and messages\nGlobal Environment (upper right) for data objects\nPlots window (lower right) for graphics and help"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#r-script-organization",
+    "href": "slides/topics/01_setup_intro.html#r-script-organization",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Documents analysis for exact reproducibility\nInterface between your commands and R software\nShould be clear for future collaborators\nThink of future self as respected colleague"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#script-structure-best-practices",
+    "href": "slides/topics/01_setup_intro.html#script-structure-best-practices",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Header with name, date, and purpose\nContents section as roadmap for analysis\nCode chunks with descriptive titles\nConsistent numbering and logical organization"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#code-execution-methods",
+    "href": "slides/topics/01_setup_intro.html#code-execution-methods",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Ctrl+Enter (Cmd+Return on Mac) for current line\nSelect code and Ctrl+Enter for specific sections\nUse Run button in Script window\nAccess through Code menu for additional options"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#comments-and-documentation",
+    "href": "slides/topics/01_setup_intro.html#comments-and-documentation",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Use # character for comment lines\nExplain code like methods section of scientific paper\nProvide enough detail for exact replication\nBalance thoroughness with conciseness"
+  },
+  {
+    "objectID": "slides/topics/01_setup_intro.html#practice-exercises",
+    "href": "slides/topics/01_setup_intro.html#practice-exercises",
+    "title": "Setup & Introduction",
+    "section": "",
+    "text": "Download and examine sample scripts\nPractice running code and examining output\nAdd code chunks with proper comments\nCreate variables and calculate basic statistics"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html",
+    "href": "slides/topics/03_functions.html",
+    "title": "R Functions",
+    "section": "",
+    "text": "Describe what functions do and how they work\nUse functions effectively with the help system\nUnderstand what packages are and their purpose\nFind, download, and use R packages\n\n\n\n\n\nR functions are tools that do work for you\nPackages are toolboxes containing related functions\nR comes with many packages, thousands more available\nFunctions grouped by task focus and functionality\n\n\n\n\n\nGeneric format: function_name()\nFunction name with required bracket notation\nR is case sensitive for function names\nDetails like capitalization matter significantly\n\n\n\n\n\nInput information or data into function brackets\nFunction output is the work being done\nArguments have unique names and values\nUse equals sign for argument assignment\n\n\n\n\n\nOften easy to guess: mean(), log(), sd()\nplot(), boxplot(), help() for common tasks\nNames usually reflect their purpose clearly\nHelp pages essential for learning usage\n\n\n\n\n\nEach argument has unique name\nValues assigned using equals sign\nArguments separated by commas\nOptional arguments indicated by “…”\n\n\n\n\n\nUse help() function as reference for arguments\nEssential until you memorize common functions\nCheck Usage and Arguments sections carefully\nKey to learning R in easiest way\n\n\n\n\n\nToolboxes built to solve specific problems\nOpen source and freely available\nDownload when you identify need for functions\nOver 18,000 packages currently available\n\n\n\n\n\nStep 1: install.packages(“package_name”)\nStep 2: library(“package_name”)\nInstalling downloads from remote repository\nLoading makes functions available for use\n\n\n\n\n\nUse Packages tab in lower right pane\nClick radio button to load packages\nClick Install button to install new packages\nSearch official CRAN repository by default\n\n\n\n\n\nAlways get help page up as reference\nLearn arguments and customization options\nPractice with common functions regularly\nUnderstand before memorizing function usage"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#learning-objectives",
+    "href": "slides/topics/03_functions.html#learning-objectives",
+    "title": "R Functions",
+    "section": "",
+    "text": "Describe what functions do and how they work\nUse functions effectively with the help system\nUnderstand what packages are and their purpose\nFind, download, and use R packages"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#the-garage-and-toolbox-metaphor",
+    "href": "slides/topics/03_functions.html#the-garage-and-toolbox-metaphor",
+    "title": "R Functions",
+    "section": "",
+    "text": "R functions are tools that do work for you\nPackages are toolboxes containing related functions\nR comes with many packages, thousands more available\nFunctions grouped by task focus and functionality"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#function-basics",
+    "href": "slides/topics/03_functions.html#function-basics",
+    "title": "R Functions",
+    "section": "",
+    "text": "Generic format: function_name()\nFunction name with required bracket notation\nR is case sensitive for function names\nDetails like capitalization matter significantly"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#using-functions",
+    "href": "slides/topics/03_functions.html#using-functions",
+    "title": "R Functions",
+    "section": "",
+    "text": "Input information or data into function brackets\nFunction output is the work being done\nArguments have unique names and values\nUse equals sign for argument assignment"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#common-function-names",
+    "href": "slides/topics/03_functions.html#common-function-names",
+    "title": "R Functions",
+    "section": "",
+    "text": "Often easy to guess: mean(), log(), sd()\nplot(), boxplot(), help() for common tasks\nNames usually reflect their purpose clearly\nHelp pages essential for learning usage"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#function-arguments",
+    "href": "slides/topics/03_functions.html#function-arguments",
+    "title": "R Functions",
+    "section": "",
+    "text": "Each argument has unique name\nValues assigned using equals sign\nArguments separated by commas\nOptional arguments indicated by “…”"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#getting-help-with-functions",
+    "href": "slides/topics/03_functions.html#getting-help-with-functions",
+    "title": "R Functions",
+    "section": "",
+    "text": "Use help() function as reference for arguments\nEssential until you memorize common functions\nCheck Usage and Arguments sections carefully\nKey to learning R in easiest way"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#r-packages",
+    "href": "slides/topics/03_functions.html#r-packages",
+    "title": "R Functions",
+    "section": "",
+    "text": "Toolboxes built to solve specific problems\nOpen source and freely available\nDownload when you identify need for functions\nOver 18,000 packages currently available"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#installing-and-loading-packages",
+    "href": "slides/topics/03_functions.html#installing-and-loading-packages",
+    "title": "R Functions",
+    "section": "",
+    "text": "Step 1: install.packages(“package_name”)\nStep 2: library(“package_name”)\nInstalling downloads from remote repository\nLoading makes functions available for use"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#rstudio-package-management",
+    "href": "slides/topics/03_functions.html#rstudio-package-management",
+    "title": "R Functions",
+    "section": "",
+    "text": "Use Packages tab in lower right pane\nClick radio button to load packages\nClick Install button to install new packages\nSearch official CRAN repository by default"
+  },
+  {
+    "objectID": "slides/topics/03_functions.html#best-practices",
+    "href": "slides/topics/03_functions.html#best-practices",
+    "title": "R Functions",
+    "section": "",
+    "text": "Always get help page up as reference\nLearn arguments and customization options\nPractice with common functions regularly\nUnderstand before memorizing function usage"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html",
+    "href": "slides/topics/05_data_frames.html",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Describe and use common data file types\nUse Excel for data setup and create Data Dictionary\nRead data from Excel and CSV files effectively\nManipulate variables within data frames\n\n\n\n\n\nFirst step: making your data tidy and organized\nExcel or CSV files recommended for most users\nAvoid proprietary formats (SPSS, Genstat, Minitab)\nTake responsibility for your own data management\n\n\n\n\n\nEach variable should be in a column\nEach independent observation should be in a row\nData dictionary should accompany dataset\nFacilitates complete reproducibility of analysis\n\n\n\n\n\nCSV (Comma Separated Values) - plain text format\nExcel spreadsheets - widely compatible and resilient\nAvoid proprietary formats for archiving purposes\nStick to CSV or Excel unless very good reason\n\n\n\n\n\nOne table for actual data in Tidy format\nSecond tab for Data Dictionary with variable descriptions\nNo formatting or results embedded in spreadsheet\nClean separation of data and documentation\n\n\n\n\n\nDescribes each variable in enough detail\nEnables complete reproduction of any analysis\nEssential component of reproducible research\nShould accompany every dataset\n\n\n\n\n\nUse read.xlsx() from openxlsx package for Excel\nUse read.csv() for CSV files\nSet working directory with setwd() first\nEnsure file paths use forward slashes\n\n\n\n\n\nFormally set working directory for file operations\nUse getwd() to check current directory\nUse setwd() to change to desired location\nEssential for organizing input and output files\n\n\n\n\n\nUse names() to see variable names\nUse $ operator to access variables: data$variable\nUse str() to examine data frame structure\nUse [ , ] indexing for rows and columns\n\n\n\n\n\nnames(): returns variable names\nstr(): shows structure and first few values\nattach(): makes variables directly accessible\ndetach(): undoes attach() operation\n\n\n\n\n\n[rows, columns] format for precise selection\nLeave blank for all: [ , ] returns everything\nUse variable names in quotes: [“variable_name”]\nCombine with c() for multiple selections"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#learning-objectives",
+    "href": "slides/topics/05_data_frames.html#learning-objectives",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Describe and use common data file types\nUse Excel for data setup and create Data Dictionary\nRead data from Excel and CSV files effectively\nManipulate variables within data frames"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#getting-data-into-r",
+    "href": "slides/topics/05_data_frames.html#getting-data-into-r",
+    "title": "Data Frames",
+    "section": "",
+    "text": "First step: making your data tidy and organized\nExcel or CSV files recommended for most users\nAvoid proprietary formats (SPSS, Genstat, Minitab)\nTake responsibility for your own data management"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#tidy-data-concept",
+    "href": "slides/topics/05_data_frames.html#tidy-data-concept",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Each variable should be in a column\nEach independent observation should be in a row\nData dictionary should accompany dataset\nFacilitates complete reproducibility of analysis"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#common-data-file-types",
+    "href": "slides/topics/05_data_frames.html#common-data-file-types",
+    "title": "Data Frames",
+    "section": "",
+    "text": "CSV (Comma Separated Values) - plain text format\nExcel spreadsheets - widely compatible and resilient\nAvoid proprietary formats for archiving purposes\nStick to CSV or Excel unless very good reason"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#excel-data-setup-best-practices",
+    "href": "slides/topics/05_data_frames.html#excel-data-setup-best-practices",
+    "title": "Data Frames",
+    "section": "",
+    "text": "One table for actual data in Tidy format\nSecond tab for Data Dictionary with variable descriptions\nNo formatting or results embedded in spreadsheet\nClean separation of data and documentation"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#data-dictionary-importance",
+    "href": "slides/topics/05_data_frames.html#data-dictionary-importance",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Describes each variable in enough detail\nEnables complete reproduction of any analysis\nEssential component of reproducible research\nShould accompany every dataset"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#reading-data-into-r",
+    "href": "slides/topics/05_data_frames.html#reading-data-into-r",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Use read.xlsx() from openxlsx package for Excel\nUse read.csv() for CSV files\nSet working directory with setwd() first\nEnsure file paths use forward slashes"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#working-directory-management",
+    "href": "slides/topics/05_data_frames.html#working-directory-management",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Formally set working directory for file operations\nUse getwd() to check current directory\nUse setwd() to change to desired location\nEssential for organizing input and output files"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#data-frame-manipulation",
+    "href": "slides/topics/05_data_frames.html#data-frame-manipulation",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Use names() to see variable names\nUse $ operator to access variables: data$variable\nUse str() to examine data frame structure\nUse [ , ] indexing for rows and columns"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#key-data-frame-functions",
+    "href": "slides/topics/05_data_frames.html#key-data-frame-functions",
+    "title": "Data Frames",
+    "section": "",
+    "text": "names(): returns variable names\nstr(): shows structure and first few values\nattach(): makes variables directly accessible\ndetach(): undoes attach() operation"
+  },
+  {
+    "objectID": "slides/topics/05_data_frames.html#index-operator-usage",
+    "href": "slides/topics/05_data_frames.html#index-operator-usage",
+    "title": "Data Frames",
+    "section": "",
+    "text": "[rows, columns] format for precise selection\nLeave blank for all: [ , ] returns everything\nUse variable names in quotes: [“variable_name”]\nCombine with c() for multiple selections"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html",
+    "href": "slides/topics/07_explore_data.html",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Formulate appropriate statistical questions\nPerform hypothesis testing using NHST framework\nSummarize what “Weighing the Pig” means\nDistinguish between Analysis versus EDA\n\n\n\n\n\nDataset often comes in imperfect state\nFirst task is to “weigh the pig” - understand data\nOrder: Question, Explore, Analyze\nChoose analysis prior to collecting first data point\n\n\n\n\n\nTerm for creating summary-at-a-glance of dataset\nIncludes graphics, statistical summary, and data amount\nKey consideration: specification of variables\nBest way to gain skill: practice with data\n\n\n\n\n\nExamine variables: are they as expected?\nGraph data and examine numerical summaries\nLook for errors both trivial and serious\nMay take large proportion of analysis time\n\n\n\n\n\nNull Hypothesis Significance Testing framework\nPopulation of interest cannot be directly measured\nExperimental samples drawn randomly from population\nTest statistics compared to expected under null hypothesis\n\n\n\n\n\nNull hypothesis: consistent with no effect\nP-value: probability observed effect due to chance\nAlpha value: maximum acceptable probability of error (0.05)\nAlternative hypothesis: effect we predict to be true\n\n\n\n\n\nGood graph tells whole story\nBad graph worse than no graph at all\nDistinction between EDA graphs and evidence graphs\nMust convey relevant information and be self-contained\n\n\n\n\n\nReflect hypothesis or statistical concept\nAppropriate to the data being analyzed\nConsistent in aesthetics throughout\nBuild up information in layers\n\n\n\n\n\nAnalysis: generates evidence, fits specific question\nEDA: informal exploration and assumptions testing\nAnalysis designed for others, EDA usually private\nBoth essential parts of complete data analysis process\n\n\n\n\n\nFormal document connecting hypothesis to analysis method\nCreated before any data collection begins\nSpecifies hypotheses, statistical models, and data collection\nEffect size and sample size justification included\n\n\n\n\n\nTraditional cycle inadequate for best practice\nAnalysis planning must occur with hypothesis formulation\nExperimental design phase with power analysis\nStatistical analysis plan produced prior to data collection"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#learning-objectives",
+    "href": "slides/topics/07_explore_data.html#learning-objectives",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Formulate appropriate statistical questions\nPerform hypothesis testing using NHST framework\nSummarize what “Weighing the Pig” means\nDistinguish between Analysis versus EDA"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#question-explore-analyze-workflow",
+    "href": "slides/topics/07_explore_data.html#question-explore-analyze-workflow",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Dataset often comes in imperfect state\nFirst task is to “weigh the pig” - understand data\nOrder: Question, Explore, Analyze\nChoose analysis prior to collecting first data point"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#weighing-the-pig-concept",
+    "href": "slides/topics/07_explore_data.html#weighing-the-pig-concept",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Term for creating summary-at-a-glance of dataset\nIncludes graphics, statistical summary, and data amount\nKey consideration: specification of variables\nBest way to gain skill: practice with data"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#exploratory-data-analysis-eda",
+    "href": "slides/topics/07_explore_data.html#exploratory-data-analysis-eda",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Examine variables: are they as expected?\nGraph data and examine numerical summaries\nLook for errors both trivial and serious\nMay take large proportion of analysis time"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#question-formulation-and-nhst",
+    "href": "slides/topics/07_explore_data.html#question-formulation-and-nhst",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Null Hypothesis Significance Testing framework\nPopulation of interest cannot be directly measured\nExperimental samples drawn randomly from population\nTest statistics compared to expected under null hypothesis"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#nhst-core-components",
+    "href": "slides/topics/07_explore_data.html#nhst-core-components",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Null hypothesis: consistent with no effect\nP-value: probability observed effect due to chance\nAlpha value: maximum acceptable probability of error (0.05)\nAlternative hypothesis: effect we predict to be true"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#variables-and-graphing-principles",
+    "href": "slides/topics/07_explore_data.html#variables-and-graphing-principles",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Good graph tells whole story\nBad graph worse than no graph at all\nDistinction between EDA graphs and evidence graphs\nMust convey relevant information and be self-contained"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#scientific-graph-requirements",
+    "href": "slides/topics/07_explore_data.html#scientific-graph-requirements",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Reflect hypothesis or statistical concept\nAppropriate to the data being analyzed\nConsistent in aesthetics throughout\nBuild up information in layers"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#analysis-versus-eda-distinction",
+    "href": "slides/topics/07_explore_data.html#analysis-versus-eda-distinction",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Analysis: generates evidence, fits specific question\nEDA: informal exploration and assumptions testing\nAnalysis designed for others, EDA usually private\nBoth essential parts of complete data analysis process"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#statistical-analysis-plan-concept",
+    "href": "slides/topics/07_explore_data.html#statistical-analysis-plan-concept",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Formal document connecting hypothesis to analysis method\nCreated before any data collection begins\nSpecifies hypotheses, statistical models, and data collection\nEffect size and sample size justification included"
+  },
+  {
+    "objectID": "slides/topics/07_explore_data.html#modern-scientific-method",
+    "href": "slides/topics/07_explore_data.html#modern-scientific-method",
+    "title": "Explore Data",
+    "section": "",
+    "text": "Traditional cycle inadequate for best practice\nAnalysis planning must occur with hypothesis formulation\nExperimental design phase with power analysis\nStatistical analysis plan produced prior to data collection"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html",
+    "href": "slides/topics/09_correlation.html",
+    "title": "Correlation",
+    "section": "",
+    "text": "Analyze correlation between two variables\nEvaluate correlation data and assumptions\nGraph correlated variables effectively\nPerform correlation statistical tests and alternatives\n\n\n\n\n\nCorrelation does not imply causation (fundamental principle)\nStatistical relationship doesn’t mean one causes the other\nExample: ice cream sales and forest fires correlate via summer heat\nBasic tool in data science toolbox for relationships\n\n\n\n\n\nWhether demonstrable association exists between numeric variables\nInterested in how variables may “co-vary” (exhibit covariance)\nCovariance quantified as positive or negative\nStrength varies from zero to perfect correlation (+1 or -1)\n\n\n\n\n\nPearson correlation for linear relationships\nRequires Gaussian distributed numeric values\nCalculated as covariance divided by product of standard deviations\nUse cor() function in R for calculation\n\n\n\n\n\nTraditionally visualized with scatterplot\nDegree of “scatter” relates to correlation strength\nCan examine specific pairs or correlation matrices\nUse pairs() and cor() for multiple variables\n\n\n\n\n\nQuickly assess correlation between many variables\nPowerful combination of statistical summary and graphing\nCan reveal influence of grouping variables (like species)\nEssential for multivariate data exploration\n\n\n\n\n\nUse cor.test() for statistical significance\nPearson correlation is default method\nSpearman rank correlation when assumptions not met\nFollow order: Question, Graph, Test, Validate\n\n\n\n\n\nLinear relationship between variables\nBivariate Gaussian distribution\nHomoscedasticity (similar variance across range)\nIndependence of observations and absence of outliers\n\n\n\n\n\nAlternative when Pearson assumptions not met\nRelaxed assumptions: ranked data and independence\nAppropriate for non-linear relationships\nCorrelation coefficient noted as “rho” (ρ)\n\n\n\n\n\nReport test statistic, sample size/df, and p-value\nExample: “significant correlation (Pearson’s r = 0.96, df = 148, P &lt; 0.0001)”\nRound to two decimal places consistently\nNever use scientific notation for p-values &lt; 0.0001\n\n\n\n\n\nCheck assumptions before interpreting results\nUse diagnostic plots and formal tests\nConsider alternative methods if assumptions violated\nDocument assumption testing in methods section"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#learning-objectives",
+    "href": "slides/topics/09_correlation.html#learning-objectives",
+    "title": "Correlation",
+    "section": "",
+    "text": "Analyze correlation between two variables\nEvaluate correlation data and assumptions\nGraph correlated variables effectively\nPerform correlation statistical tests and alternatives"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#statistical-relationships",
+    "href": "slides/topics/09_correlation.html#statistical-relationships",
+    "title": "Correlation",
+    "section": "",
+    "text": "Correlation does not imply causation (fundamental principle)\nStatistical relationship doesn’t mean one causes the other\nExample: ice cream sales and forest fires correlate via summer heat\nBasic tool in data science toolbox for relationships"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#the-question-of-correlation",
+    "href": "slides/topics/09_correlation.html#the-question-of-correlation",
+    "title": "Correlation",
+    "section": "",
+    "text": "Whether demonstrable association exists between numeric variables\nInterested in how variables may “co-vary” (exhibit covariance)\nCovariance quantified as positive or negative\nStrength varies from zero to perfect correlation (+1 or -1)"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#data-and-assumptions",
+    "href": "slides/topics/09_correlation.html#data-and-assumptions",
+    "title": "Correlation",
+    "section": "",
+    "text": "Pearson correlation for linear relationships\nRequires Gaussian distributed numeric values\nCalculated as covariance divided by product of standard deviations\nUse cor() function in R for calculation"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#graphing-correlation",
+    "href": "slides/topics/09_correlation.html#graphing-correlation",
+    "title": "Correlation",
+    "section": "",
+    "text": "Traditionally visualized with scatterplot\nDegree of “scatter” relates to correlation strength\nCan examine specific pairs or correlation matrices\nUse pairs() and cor() for multiple variables"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#correlation-matrices",
+    "href": "slides/topics/09_correlation.html#correlation-matrices",
+    "title": "Correlation",
+    "section": "",
+    "text": "Quickly assess correlation between many variables\nPowerful combination of statistical summary and graphing\nCan reveal influence of grouping variables (like species)\nEssential for multivariate data exploration"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#testing-correlation",
+    "href": "slides/topics/09_correlation.html#testing-correlation",
+    "title": "Correlation",
+    "section": "",
+    "text": "Use cor.test() for statistical significance\nPearson correlation is default method\nSpearman rank correlation when assumptions not met\nFollow order: Question, Graph, Test, Validate"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#pearson-correlation-assumptions",
+    "href": "slides/topics/09_correlation.html#pearson-correlation-assumptions",
+    "title": "Correlation",
+    "section": "",
+    "text": "Linear relationship between variables\nBivariate Gaussian distribution\nHomoscedasticity (similar variance across range)\nIndependence of observations and absence of outliers"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#spearman-rank-correlation",
+    "href": "slides/topics/09_correlation.html#spearman-rank-correlation",
+    "title": "Correlation",
+    "section": "",
+    "text": "Alternative when Pearson assumptions not met\nRelaxed assumptions: ranked data and independence\nAppropriate for non-linear relationships\nCorrelation coefficient noted as “rho” (ρ)"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#results-and-reporting",
+    "href": "slides/topics/09_correlation.html#results-and-reporting",
+    "title": "Correlation",
+    "section": "",
+    "text": "Report test statistic, sample size/df, and p-value\nExample: “significant correlation (Pearson’s r = 0.96, df = 148, P &lt; 0.0001)”\nRound to two decimal places consistently\nNever use scientific notation for p-values &lt; 0.0001"
+  },
+  {
+    "objectID": "slides/topics/09_correlation.html#validation-process",
+    "href": "slides/topics/09_correlation.html#validation-process",
+    "title": "Correlation",
+    "section": "",
+    "text": "Check assumptions before interpreting results\nUse diagnostic plots and formal tests\nConsider alternative methods if assumptions violated\nDocument assumption testing in methods section"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html",
+    "href": "slides/topics/11_t_test.html",
+    "title": "T-test",
+    "section": "",
+    "text": "Articulate the question of the t-test\nEvaluate data and assumptions for t-test\nGraph t-test data appropriately\nPerform tests and alternatives for t-test\n\n\n\n\n\nFoundation of modern statistical science\nInvented by William Sealy Gosset at Guinness brewery\nPublished anonymously as “Student” for commercial protection\nRefined and supported by R.A. Fisher\n\n\n\n\n\nCompare populations using independent samples\nThree common versions: 2 independent samples, 1 sample vs known mean, paired samples\nBasic question: are means different between groups?\nUsed to test if samples came from different populations\n\n\n\n\n\nNumeric variable measured in two samples\nQuestion: are sample means different?\nData in “long format” (one numeric, one factor) or “wide format” (two numeric vectors)\nTraditional visualization: boxplot with optional raw data points\n\n\n\n\n\nOne sample compared to known population mean\nQuestion: did sample come from population with known mean?\nData: single numeric vector and population mean value\nVisualization: boxplot with reference line for known mean\n\n\n\n\n\nIndividual observations in samples are not independent\nExamples: before/after treatment, spatially paired plots\nEach pair represents relationship between measurements\nVisualization shows tendency for change between paired observations\n\n\n\n\n\nGaussian distribution within each sample (not combined)\nHomoscedasticity (equal variance between samples)\nIndependence of observations\nT-test somewhat robust to assumption violations\n\n\n\n\n\nTest Gaussian distribution separately for each group\nUse histograms, q-q plots, and Shapiro-Wilk test\nCheck variance equality with Bartlett test or visual comparison\nIndependence assumption critical and related to study design\n\n\n\n\n\nHistogram and q-q plot for each sample separately\nCompare to expected Gaussian distribution\nLook for systematic deviations from normality\nConsider sample size in interpretation\n\n\n\n\n\nTwo-sample t-test for independent groups\nOne-sample t-test against known mean\nPaired t-test for dependent observations\nEach requires specific data structure and interpretation\n\n\n\n\n\nNon-parametric alternative when assumptions not met\nUses wilcox.test() function in R\nGood choice for small samples or skewed distributions\nLess statistical power but no distributional assumptions\n\n\n\n\n\nReport test statistic, degrees of freedom, p-value\nExample: “significant difference (2-sample t-test: t = -8.63, df = 11.9, P &lt; 0.0001)”\nAlways include all three key quantities\nFormat p-values appropriately (P &lt; 0.0001 for small values)"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#learning-objectives",
+    "href": "slides/topics/11_t_test.html#learning-objectives",
+    "title": "T-test",
+    "section": "",
+    "text": "Articulate the question of the t-test\nEvaluate data and assumptions for t-test\nGraph t-test data appropriately\nPerform tests and alternatives for t-test"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#students-t-test-origins",
+    "href": "slides/topics/11_t_test.html#students-t-test-origins",
+    "title": "T-test",
+    "section": "",
+    "text": "Foundation of modern statistical science\nInvented by William Sealy Gosset at Guinness brewery\nPublished anonymously as “Student” for commercial protection\nRefined and supported by R.A. Fisher"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#the-question-of-the-t-test",
+    "href": "slides/topics/11_t_test.html#the-question-of-the-t-test",
+    "title": "T-test",
+    "section": "",
+    "text": "Compare populations using independent samples\nThree common versions: 2 independent samples, 1 sample vs known mean, paired samples\nBasic question: are means different between groups?\nUsed to test if samples came from different populations"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#two-independent-samples",
+    "href": "slides/topics/11_t_test.html#two-independent-samples",
+    "title": "T-test",
+    "section": "",
+    "text": "Numeric variable measured in two samples\nQuestion: are sample means different?\nData in “long format” (one numeric, one factor) or “wide format” (two numeric vectors)\nTraditional visualization: boxplot with optional raw data points"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#one-sample-vs-known-mean",
+    "href": "slides/topics/11_t_test.html#one-sample-vs-known-mean",
+    "title": "T-test",
+    "section": "",
+    "text": "One sample compared to known population mean\nQuestion: did sample come from population with known mean?\nData: single numeric vector and population mean value\nVisualization: boxplot with reference line for known mean"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#paired-samples",
+    "href": "slides/topics/11_t_test.html#paired-samples",
+    "title": "T-test",
+    "section": "",
+    "text": "Individual observations in samples are not independent\nExamples: before/after treatment, spatially paired plots\nEach pair represents relationship between measurements\nVisualization shows tendency for change between paired observations"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#t-test-assumptions",
+    "href": "slides/topics/11_t_test.html#t-test-assumptions",
+    "title": "T-test",
+    "section": "",
+    "text": "Gaussian distribution within each sample (not combined)\nHomoscedasticity (equal variance between samples)\nIndependence of observations\nT-test somewhat robust to assumption violations"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#assumption-testing",
+    "href": "slides/topics/11_t_test.html#assumption-testing",
+    "title": "T-test",
+    "section": "",
+    "text": "Test Gaussian distribution separately for each group\nUse histograms, q-q plots, and Shapiro-Wilk test\nCheck variance equality with Bartlett test or visual comparison\nIndependence assumption critical and related to study design"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#graphical-assessment",
+    "href": "slides/topics/11_t_test.html#graphical-assessment",
+    "title": "T-test",
+    "section": "",
+    "text": "Histogram and q-q plot for each sample separately\nCompare to expected Gaussian distribution\nLook for systematic deviations from normality\nConsider sample size in interpretation"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#t-test-variations",
+    "href": "slides/topics/11_t_test.html#t-test-variations",
+    "title": "T-test",
+    "section": "",
+    "text": "Two-sample t-test for independent groups\nOne-sample t-test against known mean\nPaired t-test for dependent observations\nEach requires specific data structure and interpretation"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#mann-whitney-u-test-alternative",
+    "href": "slides/topics/11_t_test.html#mann-whitney-u-test-alternative",
+    "title": "T-test",
+    "section": "",
+    "text": "Non-parametric alternative when assumptions not met\nUses wilcox.test() function in R\nGood choice for small samples or skewed distributions\nLess statistical power but no distributional assumptions"
+  },
+  {
+    "objectID": "slides/topics/11_t_test.html#results-reporting",
+    "href": "slides/topics/11_t_test.html#results-reporting",
+    "title": "T-test",
+    "section": "",
+    "text": "Report test statistic, degrees of freedom, p-value\nExample: “significant difference (2-sample t-test: t = -8.63, df = 11.9, P &lt; 0.0001)”\nAlways include all three key quantities\nFormat p-values appropriately (P &lt; 0.0001 for small values)"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html",
+    "href": "slides/topics/13_reproducibility.html",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Explain why reproducibility matters in data science\nIdentify key components of reproducible workflow\nImplement best practices for documentation\nOrganize project files effectively\n\n\n\n\n\nCornerstone of scientific research and data analysis\nEnsures findings can be verified and methods understood\nWork can be built upon by others (including future self)\nProvides verification, collaboration, efficiency, impact, and trust\n\n\n\n\n\nAnalysis can be recreated using same data and methods\nOthers can confirm your findings\nTeam members can understand and contribute\nYou can revisit and build upon your own work\n\n\n\n\n\nDocumented code with clear comments and structure\nVersion control systems like Git for tracking changes\nEnvironment management for consistent software conditions\nProper data management with preserved raw data\n\n\n\n\n\nClear purpose statements and input/output descriptions\nParameter explanations and usage examples\nError checking and validation within functions\nComments explaining why, not just what code does\n\n\n\n\n\nDocument software environment for recreation\nUse sessionInfo() to capture package versions\nConsider renv package for project-specific environments\nEnsure others can recreate same conditions\n\n\n\n\n\nRaw data preservation (never modify originals)\nData cleaning scripts documenting all transformations\nClear data documentation and metadata\nTransparent pipeline from raw to analysis-ready data\n\n\n\n\n\nClear directory structure with logical separation\nNumbered scripts indicating workflow order\nSeparate folders for data, code, results, documentation\nREADME files explaining project structure and usage\n\n\n\n\n\nComprehensive information including all necessary details\nClear language avoiding jargon when possible\nCurrent documentation updated as project evolves\nAccessible storage with project files\n\n\n\n\n\nREADME.md with project overview and instructions\ndata/ folder with raw/ and processed/ subfolders\ncode/ folder with numbered analysis scripts\nresults/ folder for figures/ and tables/\n\n\n\n\n\nTrack changes to code and documentation over time\nEnable collaboration without file conflicts\nAbility to revert to previous versions if needed\nEssential component of modern reproducible research"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#learning-objectives",
+    "href": "slides/topics/13_reproducibility.html#learning-objectives",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Explain why reproducibility matters in data science\nIdentify key components of reproducible workflow\nImplement best practices for documentation\nOrganize project files effectively"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#why-reproducibility-matters",
+    "href": "slides/topics/13_reproducibility.html#why-reproducibility-matters",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Cornerstone of scientific research and data analysis\nEnsures findings can be verified and methods understood\nWork can be built upon by others (including future self)\nProvides verification, collaboration, efficiency, impact, and trust"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#definition-and-benefits",
+    "href": "slides/topics/13_reproducibility.html#definition-and-benefits",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Analysis can be recreated using same data and methods\nOthers can confirm your findings\nTeam members can understand and contribute\nYou can revisit and build upon your own work"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#components-of-reproducible-workflows",
+    "href": "slides/topics/13_reproducibility.html#components-of-reproducible-workflows",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Documented code with clear comments and structure\nVersion control systems like Git for tracking changes\nEnvironment management for consistent software conditions\nProper data management with preserved raw data"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#code-documentation-standards",
+    "href": "slides/topics/13_reproducibility.html#code-documentation-standards",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Clear purpose statements and input/output descriptions\nParameter explanations and usage examples\nError checking and validation within functions\nComments explaining why, not just what code does"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#environment-management",
+    "href": "slides/topics/13_reproducibility.html#environment-management",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Document software environment for recreation\nUse sessionInfo() to capture package versions\nConsider renv package for project-specific environments\nEnsure others can recreate same conditions"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#data-management-principles",
+    "href": "slides/topics/13_reproducibility.html#data-management-principles",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Raw data preservation (never modify originals)\nData cleaning scripts documenting all transformations\nClear data documentation and metadata\nTransparent pipeline from raw to analysis-ready data"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#file-organization-strategies",
+    "href": "slides/topics/13_reproducibility.html#file-organization-strategies",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Clear directory structure with logical separation\nNumbered scripts indicating workflow order\nSeparate folders for data, code, results, documentation\nREADME files explaining project structure and usage"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#documentation-best-practices",
+    "href": "slides/topics/13_reproducibility.html#documentation-best-practices",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Comprehensive information including all necessary details\nClear language avoiding jargon when possible\nCurrent documentation updated as project evolves\nAccessible storage with project files"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#project-structure-template",
+    "href": "slides/topics/13_reproducibility.html#project-structure-template",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "README.md with project overview and instructions\ndata/ folder with raw/ and processed/ subfolders\ncode/ folder with numbered analysis scripts\nresults/ folder for figures/ and tables/"
+  },
+  {
+    "objectID": "slides/topics/13_reproducibility.html#version-control-integration",
+    "href": "slides/topics/13_reproducibility.html#version-control-integration",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Track changes to code and documentation over time\nEnable collaboration without file conflicts\nAbility to revert to previous versions if needed\nEssential component of modern reproducible research"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html",
+    "href": "slides/topics/15_github_basics.html",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Understand basics of version control with Git\nSet up Git on your computer\nCreate GitHub account and repository\nPerform basic Git operations (clone, add, commit, push, pull)\n\n\n\n\n\nSystem recording changes to files over time\nRecall specific versions later when needed\nTrack changes to code and documents\nCollaborate without overwriting others’ work\n\n\n\n\n\nHistory tracking documents analysis evolution\nSeamless collaboration with team members\nSecure cloud backup of code\nReproducibility through exact code access\n\n\n\n\n\nGit: distributed version control system tracking file changes\nGitHub: web-based platform hosting Git repositories\nGitHub adds collaboration features to Git\nEssential tools for modern data science\n\n\n\n\n\nWindows: download from git-scm.com\nMac: install via Homebrew or download from git-scm.com\nLinux: use package manager (apt-get, yum)\nConfigure with name and email using git config\n\n\n\n\n\nRepository (repo): directory where Git tracks changes\nCommit: snapshot of changes at point in time\nBranch: parallel version of repository\nRemote: repository version hosted elsewhere\n\n\n\n\n\nGitHub: click “+” icon, select “New repository”\nLocal computer: mkdir project, cd project, git init\nConnect local to GitHub with git remote add origin\nInitialize with README and appropriate settings\n\n\n\n\n\nMake changes to files in repository\nStage changes for commit with git add\nCommit changes with descriptive message\nPush changes to GitHub with git push\n\n\n\n\n\ngit status: check repository status\ngit add: stage files for commit\ngit commit -m: commit with message\ngit push: send commits to remote repository\n\n\n\n\n\ngit clone: create local copy of remote repository\nNavigate into repository after cloning\ngit pull: get latest changes from remote\nEssential for collaboration and staying updated\n\n\n\n\n\nBranches allow work on different features safely\ngit branch: create new branch\ngit checkout: switch between branches\ngit merge: combine branch changes"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#learning-objectives",
+    "href": "slides/topics/15_github_basics.html#learning-objectives",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Understand basics of version control with Git\nSet up Git on your computer\nCreate GitHub account and repository\nPerform basic Git operations (clone, add, commit, push, pull)"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#what-is-version-control",
+    "href": "slides/topics/15_github_basics.html#what-is-version-control",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "System recording changes to files over time\nRecall specific versions later when needed\nTrack changes to code and documents\nCollaborate without overwriting others’ work"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#why-use-git-and-github",
+    "href": "slides/topics/15_github_basics.html#why-use-git-and-github",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "History tracking documents analysis evolution\nSeamless collaboration with team members\nSecure cloud backup of code\nReproducibility through exact code access"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#git-vs-github",
+    "href": "slides/topics/15_github_basics.html#git-vs-github",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Git: distributed version control system tracking file changes\nGitHub: web-based platform hosting Git repositories\nGitHub adds collaboration features to Git\nEssential tools for modern data science"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#installing-and-configuring-git",
+    "href": "slides/topics/15_github_basics.html#installing-and-configuring-git",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Windows: download from git-scm.com\nMac: install via Homebrew or download from git-scm.com\nLinux: use package manager (apt-get, yum)\nConfigure with name and email using git config"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#key-git-concepts",
+    "href": "slides/topics/15_github_basics.html#key-git-concepts",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Repository (repo): directory where Git tracks changes\nCommit: snapshot of changes at point in time\nBranch: parallel version of repository\nRemote: repository version hosted elsewhere"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#creating-repositories",
+    "href": "slides/topics/15_github_basics.html#creating-repositories",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "GitHub: click “+” icon, select “New repository”\nLocal computer: mkdir project, cd project, git init\nConnect local to GitHub with git remote add origin\nInitialize with README and appropriate settings"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#basic-git-workflow",
+    "href": "slides/topics/15_github_basics.html#basic-git-workflow",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Make changes to files in repository\nStage changes for commit with git add\nCommit changes with descriptive message\nPush changes to GitHub with git push"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#essential-git-commands",
+    "href": "slides/topics/15_github_basics.html#essential-git-commands",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "git status: check repository status\ngit add: stage files for commit\ngit commit -m: commit with message\ngit push: send commits to remote repository"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#cloning-and-pulling",
+    "href": "slides/topics/15_github_basics.html#cloning-and-pulling",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "git clone: create local copy of remote repository\nNavigate into repository after cloning\ngit pull: get latest changes from remote\nEssential for collaboration and staying updated"
+  },
+  {
+    "objectID": "slides/topics/15_github_basics.html#branching-and-merging",
+    "href": "slides/topics/15_github_basics.html#branching-and-merging",
+    "title": "Git and GitHub",
+    "section": "",
+    "text": "Branches allow work on different features safely\ngit branch: create new branch\ngit checkout: switch between branches\ngit merge: combine branch changes"
   }
 ]

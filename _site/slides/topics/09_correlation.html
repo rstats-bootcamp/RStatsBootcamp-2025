@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>correlation – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link active" data-scroll-target="#correlation">Correlation</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#statistical-relationships" id="toc-statistical-relationships" class="nav-link" data-scroll-target="#statistical-relationships">Statistical Relationships</a></li>
+  <li><a href="#the-question-of-correlation" id="toc-the-question-of-correlation" class="nav-link" data-scroll-target="#the-question-of-correlation">The Question of Correlation</a></li>
+  <li><a href="#data-and-assumptions" id="toc-data-and-assumptions" class="nav-link" data-scroll-target="#data-and-assumptions">Data and Assumptions</a></li>
+  <li><a href="#graphing-correlation" id="toc-graphing-correlation" class="nav-link" data-scroll-target="#graphing-correlation">Graphing Correlation</a></li>
+  <li><a href="#correlation-matrices" id="toc-correlation-matrices" class="nav-link" data-scroll-target="#correlation-matrices">Correlation Matrices</a></li>
+  <li><a href="#testing-correlation" id="toc-testing-correlation" class="nav-link" data-scroll-target="#testing-correlation">Testing Correlation</a></li>
+  <li><a href="#pearson-correlation-assumptions" id="toc-pearson-correlation-assumptions" class="nav-link" data-scroll-target="#pearson-correlation-assumptions">Pearson Correlation Assumptions</a></li>
+  <li><a href="#spearman-rank-correlation" id="toc-spearman-rank-correlation" class="nav-link" data-scroll-target="#spearman-rank-correlation">Spearman Rank Correlation</a></li>
+  <li><a href="#results-and-reporting" id="toc-results-and-reporting" class="nav-link" data-scroll-target="#results-and-reporting">Results and Reporting</a></li>
+  <li><a href="#validation-process" id="toc-validation-process" class="nav-link" data-scroll-target="#validation-process">Validation Process</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +501,105 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="correlation" class="level1">
+<h1>Correlation</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Analyze correlation between two variables</li>
+<li>Evaluate correlation data and assumptions</li>
+<li>Graph correlated variables effectively</li>
+<li>Perform correlation statistical tests and alternatives</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="statistical-relationships" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-relationships">Statistical Relationships</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Correlation does not imply causation (fundamental principle)</li>
+<li>Statistical relationship doesn’t mean one causes the other</li>
+<li>Example: ice cream sales and forest fires correlate via summer heat</li>
+<li>Basic tool in data science toolbox for relationships</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="the-question-of-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="the-question-of-correlation">The Question of Correlation</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>Whether demonstrable association exists between numeric variables</li>
+<li>Interested in how variables may “co-vary” (exhibit covariance)</li>
+<li>Covariance quantified as positive or negative</li>
+<li>Strength varies from zero to perfect correlation (+1 or -1)</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="data-and-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-assumptions">Data and Assumptions</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Pearson correlation for linear relationships</li>
+<li>Requires Gaussian distributed numeric values</li>
+<li>Calculated as covariance divided by product of standard deviations</li>
+<li>Use cor() function in R for calculation</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="graphing-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="graphing-correlation">Graphing Correlation</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Traditionally visualized with scatterplot</li>
+<li>Degree of “scatter” relates to correlation strength</li>
+<li>Can examine specific pairs or correlation matrices</li>
+<li>Use pairs() and cor() for multiple variables</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="correlation-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-matrices">Correlation Matrices</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Quickly assess correlation between many variables</li>
+<li>Powerful combination of statistical summary and graphing</li>
+<li>Can reveal influence of grouping variables (like species)</li>
+<li>Essential for multivariate data exploration</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="testing-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="testing-correlation">Testing Correlation</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Use cor.test() for statistical significance</li>
+<li>Pearson correlation is default method</li>
+<li>Spearman rank correlation when assumptions not met</li>
+<li>Follow order: Question, Graph, Test, Validate</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="pearson-correlation-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="pearson-correlation-assumptions">Pearson Correlation Assumptions</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Linear relationship between variables</li>
+<li>Bivariate Gaussian distribution</li>
+<li>Homoscedasticity (similar variance across range)</li>
+<li>Independence of observations and absence of outliers</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="spearman-rank-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="spearman-rank-correlation">Spearman Rank Correlation</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Alternative when Pearson assumptions not met</li>
+<li>Relaxed assumptions: ranked data and independence</li>
+<li>Appropriate for non-linear relationships</li>
+<li>Correlation coefficient noted as “rho” (ρ)</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="results-and-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-reporting">Results and Reporting</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Report test statistic, sample size/df, and p-value</li>
+<li>Example: “significant correlation (Pearson’s r = 0.96, df = 148, P &lt; 0.0001)”</li>
+<li>Round to two decimal places consistently</li>
+<li>Never use scientific notation for p-values &lt; 0.0001</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="validation-process" class="level2">
+<h2 class="anchored" data-anchor-id="validation-process">Validation Process</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Check assumptions before interpreting results</li>
+<li>Use diagnostic plots and formal tests</li>
+<li>Consider alternative methods if assumptions violated</li>
+<li>Document assumption testing in methods section</li>
 </ul>
 
 

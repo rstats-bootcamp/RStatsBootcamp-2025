@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>github_basics – R Stats Bootcamp</title>
+<title>anova – R Stats Bootcamp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02-r-lang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 R language</span></a>
+ <span class="menu-text">02-r-lang.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,19 +477,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link active" data-scroll-target="#git-and-github">Git and GitHub</a>
+  <li><a href="#anova" id="toc-anova" class="nav-link active" data-scroll-target="#anova">ANOVA</a>
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  <li><a href="#why-use-git-and-github" id="toc-why-use-git-and-github" class="nav-link" data-scroll-target="#why-use-git-and-github">Why Use Git and GitHub?</a></li>
-  <li><a href="#git-vs-github" id="toc-git-vs-github" class="nav-link" data-scroll-target="#git-vs-github">Git vs GitHub</a></li>
-  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and Configuring Git</a></li>
-  <li><a href="#key-git-concepts" id="toc-key-git-concepts" class="nav-link" data-scroll-target="#key-git-concepts">Key Git Concepts</a></li>
-  <li><a href="#creating-repositories" id="toc-creating-repositories" class="nav-link" data-scroll-target="#creating-repositories">Creating Repositories</a></li>
-  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git Workflow</a></li>
-  <li><a href="#essential-git-commands" id="toc-essential-git-commands" class="nav-link" data-scroll-target="#essential-git-commands">Essential Git Commands</a></li>
-  <li><a href="#cloning-and-pulling" id="toc-cloning-and-pulling" class="nav-link" data-scroll-target="#cloning-and-pulling">Cloning and Pulling</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging">Branching and Merging</a></li>
+  <li><a href="#analysis-of-variance-anova" id="toc-analysis-of-variance-anova" class="nav-link" data-scroll-target="#analysis-of-variance-anova">Analysis of Variance (ANOVA)</a></li>
+  <li><a href="#the-question-of-1-way-anova" id="toc-the-question-of-1-way-anova" class="nav-link" data-scroll-target="#the-question-of-1-way-anova">The Question of 1-way ANOVA</a></li>
+  <li><a href="#anova-applications" id="toc-anova-applications" class="nav-link" data-scroll-target="#anova-applications">ANOVA Applications</a></li>
+  <li><a href="#f-ratio-test-statistic" id="toc-f-ratio-test-statistic" class="nav-link" data-scroll-target="#f-ratio-test-statistic">F Ratio Test Statistic</a></li>
+  <li><a href="#data-format-requirements" id="toc-data-format-requirements" class="nav-link" data-scroll-target="#data-format-requirements">Data Format Requirements</a></li>
+  <li><a href="#anova-assumptions" id="toc-anova-assumptions" class="nav-link" data-scroll-target="#anova-assumptions">ANOVA Assumptions</a></li>
+  <li><a href="#assumption-testing-process" id="toc-assumption-testing-process" class="nav-link" data-scroll-target="#assumption-testing-process">Assumption Testing Process</a></li>
+  <li><a href="#graphing-anova-data" id="toc-graphing-anova-data" class="nav-link" data-scroll-target="#graphing-anova-data">Graphing ANOVA Data</a></li>
+  <li><a href="#anova-f-test-and-alternatives" id="toc-anova-f-test-and-alternatives" class="nav-link" data-scroll-target="#anova-f-test-and-alternatives">ANOVA F Test and Alternatives</a></li>
+  <li><a href="#contrasts-and-post-hoc-testing" id="toc-contrasts-and-post-hoc-testing" class="nav-link" data-scroll-target="#contrasts-and-post-hoc-testing">Contrasts and Post Hoc Testing</a></li>
+  <li><a href="#multiple-comparison-methods" id="toc-multiple-comparison-methods" class="nav-link" data-scroll-target="#multiple-comparison-methods">Multiple Comparison Methods</a></li>
+  <li><a href="#non-parametric-alternative" id="toc-non-parametric-alternative" class="nav-link" data-scroll-target="#non-parametric-alternative">Non-parametric Alternative</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,105 +503,123 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="git-and-github" class="level1">
-<h1>Git and GitHub</h1>
+<section id="anova" class="level1">
+<h1>ANOVA</h1>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand basics of version control with Git</li>
-<li>Set up Git on your computer</li>
-<li>Create GitHub account and repository</li>
-<li>Perform basic Git operations (clone, add, commit, push, pull)</li>
+<li>Articulate the question of 1-way ANOVA</li>
+<li>Evaluate data and assumptions for 1-way ANOVA</li>
+<li>Graph 1-way ANOVA data effectively</li>
+<li>Perform tests and alternatives for 1-way ANOVA</li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<section id="analysis-of-variance-anova" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-variance-anova">Analysis of Variance (ANOVA)</h2>
 <ul>
-<li>System recording changes to files over time</li>
-<li>Recall specific versions later when needed</li>
-<li>Track changes to code and documents</li>
-<li>Collaborate without overwriting others’ work</li>
+<li>Revolutionized objectivity in experimental data analysis</li>
+<li>Invented by R.A. Fisher at Rothamsted Research</li>
+<li>“Convenient method of arranging the arithmetic”</li>
+<li>Foundation of basic statistical practice today</li>
 </ul>
 </section>
-<section id="why-use-git-and-github" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-git-and-github">Why Use Git and GitHub?</h2>
+<section id="the-question-of-1-way-anova" class="level2">
+<h2 class="anchored" data-anchor-id="the-question-of-1-way-anova">The Question of 1-way ANOVA</h2>
 <ul>
-<li>History tracking documents analysis evolution</li>
-<li>Seamless collaboration with team members</li>
-<li>Secure cloud backup of code</li>
-<li>Reproducibility through exact code access</li>
+<li>One numeric continuous dependent variable</li>
+<li>Factor with 2 or more levels (often with control)</li>
+<li>When two levels: conceptually equivalent to t-test</li>
+<li>Test overall difference in means between factor levels</li>
 </ul>
 </section>
-<section id="git-vs-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs-github">Git vs GitHub</h2>
+<section id="anova-applications" class="level2">
+<h2 class="anchored" data-anchor-id="anova-applications">ANOVA Applications</h2>
 <ul>
-<li>Git: distributed version control system tracking file changes</li>
-<li>GitHub: web-based platform hosting Git repositories</li>
-<li>GitHub adds collaboration features to Git</li>
-<li>Essential tools for modern data science</li>
+<li>Overall difference test between factor means</li>
+<li>Comparison of each level with control/reference</li>
+<li>Post hoc tests between specific factor levels</li>
+<li>Examination of sources of variation in dependent variable</li>
 </ul>
 </section>
-<section id="installing-and-configuring-git" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and Configuring Git</h2>
+<section id="f-ratio-test-statistic" class="level2">
+<h2 class="anchored" data-anchor-id="f-ratio-test-statistic">F Ratio Test Statistic</h2>
 <ul>
-<li>Windows: download from git-scm.com</li>
-<li>Mac: install via Homebrew or download from git-scm.com</li>
-<li>Linux: use package manager (apt-get, yum)</li>
-<li>Configure with name and email using git config</li>
+<li>Proportion of variance between groups relative to within groups</li>
+<li>Higher F values suggest greater likelihood of real differences</li>
+<li>Based on comparison of mean squares</li>
+<li>Foundation for significance testing in ANOVA</li>
 </ul>
 </section>
-<section id="key-git-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-git-concepts">Key Git Concepts</h2>
+<section id="data-format-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="data-format-requirements">Data Format Requirements</h2>
 <ul>
-<li>Repository (repo): directory where Git tracks changes</li>
-<li>Commit: snapshot of changes at point in time</li>
-<li>Branch: parallel version of repository</li>
-<li>Remote: repository version hosted elsewhere</li>
+<li>Wide format: separate vectors for each factor level</li>
+<li>Long format (preferred): single numeric vector with factor vector</li>
+<li>Each row corresponds to single independent case</li>
+<li>Tidy Data standard preferred for analysis</li>
 </ul>
 </section>
-<section id="creating-repositories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-repositories">Creating Repositories</h2>
+<section id="anova-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="anova-assumptions">ANOVA Assumptions</h2>
 <ul>
-<li>GitHub: click “+” icon, select “New repository”</li>
-<li>Local computer: mkdir project, cd project, git init</li>
-<li>Connect local to GitHub with git remote add origin</li>
-<li>Initialize with README and appropriate settings</li>
+<li>Gaussian residuals (test graphically and with NHST)</li>
+<li>Homoscedasticity (residuals vs fitted values plot)</li>
+<li>Equality of variance (residual vs factor plot and NHST)</li>
+<li>Independent observations (assumed based on study design)</li>
 </ul>
 </section>
-<section id="basic-git-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="basic-git-workflow">Basic Git Workflow</h2>
+<section id="assumption-testing-process" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-testing-process">Assumption Testing Process</h2>
 <ul>
-<li>Make changes to files in repository</li>
-<li>Stage changes for commit with git add</li>
-<li>Commit changes with descriptive message</li>
-<li>Push changes to GitHub with git push</li>
+<li>Use aov() to create model object</li>
+<li>Test Gaussian residuals with histogram and qqPlot()</li>
+<li>Shapiro-Wilk test for formal normality assessment</li>
+<li>Bartlett test for equality of variance across groups</li>
 </ul>
 </section>
-<section id="essential-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="essential-git-commands">Essential Git Commands</h2>
+<section id="graphing-anova-data" class="level2">
+<h2 class="anchored" data-anchor-id="graphing-anova-data">Graphing ANOVA Data</h2>
 <ul>
-<li>git status: check repository status</li>
-<li>git add: stage files for commit</li>
-<li>git commit -m: commit with message</li>
-<li>git push: send commits to remote repository</li>
+<li>Classic visualization: boxplot by factor levels</li>
+<li>Show central tendency separately for each group</li>
+<li>Add raw data points over box summaries</li>
+<li>Include reference line for grand mean</li>
 </ul>
 </section>
-<section id="cloning-and-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="cloning-and-pulling">Cloning and Pulling</h2>
+<section id="anova-f-test-and-alternatives" class="level2">
+<h2 class="anchored" data-anchor-id="anova-f-test-and-alternatives">ANOVA F Test and Alternatives</h2>
 <ul>
-<li>git clone: create local copy of remote repository</li>
-<li>Navigate into repository after cloning</li>
-<li>git pull: get latest changes from remote</li>
-<li>Essential for collaboration and staying updated</li>
+<li>Use aov() function for basic ANOVA</li>
+<li>Alternative: lm() for contrasts and linear model approach</li>
+<li>Output in classic ANOVA table format</li>
+<li>F statistic, degrees of freedom, and p-value reported</li>
 </ul>
 </section>
-<section id="branching-and-merging" class="level2">
-<h2 class="anchored" data-anchor-id="branching-and-merging">Branching and Merging</h2>
+<section id="contrasts-and-post-hoc-testing" class="level2">
+<h2 class="anchored" data-anchor-id="contrasts-and-post-hoc-testing">Contrasts and Post Hoc Testing</h2>
 <ul>
-<li>Branches allow work on different features safely</li>
-<li>git branch: create new branch</li>
-<li>git checkout: switch between branches</li>
-<li>git merge: combine branch changes</li>
+<li>Set reference level with relevel() function</li>
+<li>Compare each factor level to reference</li>
+<li>Post hoc tests for all pairwise comparisons</li>
+<li>Bonferroni adjustment for multiple testing</li>
+</ul>
+</section>
+<section id="multiple-comparison-methods" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-comparison-methods">Multiple Comparison Methods</h2>
+<ul>
+<li>Bonferroni adjustment: conservative, divides alpha by comparisons</li>
+<li>Tukey HSD: less conservative, ideal for 1-way ANOVA</li>
+<li>Both control Type I error rate across tests</li>
+<li>Choose based on research questions and context</li>
+</ul>
+</section>
+<section id="non-parametric-alternative" class="level2">
+<h2 class="anchored" data-anchor-id="non-parametric-alternative">Non-parametric Alternative</h2>
+<ul>
+<li>Kruskal-Wallis test when assumptions not met</li>
+<li>Less statistical power but no distributional requirements</li>
+<li>Use kruskal.test() function in R</li>
+<li>Qualitatively similar interpretation to ANOVA</li>
 </ul>
 
 
