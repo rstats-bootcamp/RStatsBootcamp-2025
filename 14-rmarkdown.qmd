@@ -153,15 +153,15 @@ You can control how code chunks behave using options:
 
 Example:
 
-```` text
-```{r plot, fig.width=8, fig.height=4, echo=FALSE}
+````
+#```{r plot, fig.width=8, fig.height=4, echo=FALSE}
 # Create a plot without showing the code
 plot(mtcars$wt, mtcars$mpg, 
      main="Car Weight vs. Mileage",
      xlab="Weight (1000 lbs)",
      ylab="Miles Per Gallon",
      pch=19, col="blue")
-```
+#```
 ````
 
 ## 6 Inline Code
@@ -169,6 +169,7 @@ plot(mtcars$wt, mtcars$mpg,
 You can also include R code directly within text using backticks and `r`:
 
 ``` markdown
+# The average miles per gallon is <backtick>r mean(mtcars$mpg)<backtick>.
 The average miles per gallon is `r mean(mtcars$mpg)`.
 ```
 
@@ -188,7 +189,7 @@ R Markdown will: - Run all the code chunks - Generate all outputs (tables, plots
 
 Here's a simple example of an R Markdown document for data analysis:
 
-```` text
+```` markdown
 ---
 title: "Car Performance Analysis"
 author: "Data Scientist"
