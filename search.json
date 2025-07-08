@@ -696,135 +696,87 @@
     ]
   },
   {
-    "objectID": "02-r-lang.html#learning-objectives",
-    "href": "02-r-lang.html#learning-objectives",
-    "title": "\nGit and GitHub\n",
-    "section": "\nLearning Objectives\n",
-    "text": "Learning Objectives\n\n\n\nUnderstand basics of version control with Git\n\n\nSet up Git on your computer\n\n\nCreate GitHub account and repository\n\n\nPerform basic Git operations (clone, add, commit, push, pull)",
+    "objectID": "02-r-lang.html",
+    "href": "02-r-lang.html",
+    "title": "02 R language",
+    "section": "",
+    "text": "Choose your language carefully",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
-      "02-r-lang.html"
+      "02 R language"
     ]
   },
   {
-    "objectID": "02-r-lang.html#what-is-version-control",
-    "href": "02-r-lang.html#what-is-version-control",
-    "title": "\nGit and GitHub\n",
-    "section": "\nWhat is Version Control?\n",
-    "text": "What is Version Control?\n\n\n\nSystem recording changes to files over time\n\n\nRecall specific versions later when needed\n\n\nTrack changes to code and documents\n\n\nCollaborate without overwriting others’ work",
+    "objectID": "02-r-lang.html#r-syntax-basics-r-as-a-passive-aggressive-butler",
+    "href": "02-r-lang.html#r-syntax-basics-r-as-a-passive-aggressive-butler",
+    "title": "02 R language",
+    "section": "1 R Syntax basics (R as a passive-aggressive butler)",
+    "text": "1 R Syntax basics (R as a passive-aggressive butler)\n\n\n\n\n\n\nLearning Objectives\n\n\n\nBy the end of this lesson, you will be able to:\n\nNavigate an example script, comments, help, pseudocode\nUse math operators\nUse logical Boolean operators\nDiscuss differences between “base R” and the Tidyverse\n\n\n\n\n\nWe love the R language, but sometimes it is a little bit like talking to a passive aggressive butler - if you aren’t careful with your language, the interaction may have unexpected outcomes…\n\nR is a very popular statistical programming language and open source software design to help scientists and other non-programmers perform statistical analyses and to make great graphs. This page is intended to guide people through some of the basics of the R programming language, just enough to get started. We hope that these pages help make learning R simple (though it can difficult at times while you are learning)",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
-      "02-r-lang.html"
+      "02 R language"
     ]
   },
   {
-    "objectID": "02-r-lang.html#why-use-git-and-github",
-    "href": "02-r-lang.html#why-use-git-and-github",
-    "title": "\nGit and GitHub\n",
-    "section": "\nWhy Use Git and GitHub?\n",
-    "text": "Why Use Git and GitHub?\n\n\n\nHistory tracking documents analysis evolution\n\n\nSeamless collaboration with team members\n\n\nSecure cloud backup of code\n\n\nReproducibility through exact code access",
+    "objectID": "02-r-lang.html#example-script-comments-help-pseudocode",
+    "href": "02-r-lang.html#example-script-comments-help-pseudocode",
+    "title": "02 R language",
+    "section": "2 Example script, comments, help, pseudocode",
+    "text": "2 Example script, comments, help, pseudocode\n\nThe most important thing to keep in mind right at the beginning of learning R is to view the script as something you are writing to document a piece of work (e.g. progress in a workshop like this, an analysis, a research project, etc.). Organizing every script you write is extremely important to build “good habits” for reproducibility of your work. A good guideline for best practice in writing scripts is to pretend you are writing the script, comments and contents, for a respected colleague - someone who you respect and want to impress, but might not be able to explain in person about the purpose of the script (even if this is your future self).\nTo get the most out of this page, we strongly recommend that you:\n\nWork through the instructions here while using R and RStudio as you go along.\nType you own code rather than using copy and paste\nDocument all the code in your own script and write clear, concise comments\n\n2.1 Example script\nDownload this example script.\nSave it in a logical place on your computer. Open it in RStudio.\n\nRight at the top you should see the HEADER.\n## HEADER ####\n## Who: &lt;YOUR NAME&gt;\n## What: 2 R language basics\n## Last edited: &lt;DATE TODAY in yyyy-mm-dd format)\n####\n\nGo ahead and fill in the header with your own information.\nNext you should see the CONTENTS section. The idea here is for you to list the CONTENTS of a script that can act as a roadmap to the user, but that can also help organize a large project into manageable chunks. Each title under the CONTENTS section will become the title in a code chunk below. You should see the contents section in the script you downloaded like this:\n## CONTENTS ####\n## 2 Example script, help, pseudocode  \n## 3 Math operators  \n## 4 Logical Boolean operators  \n## 5 Regarding base R and the Tidyverse   \n## 6 Practice exercises  \n\nEach item in the CONTENTS section will become the title of individual code chunks. RStudio recognizes code chunks that have a particular syntax:\nCode chunks begin with 2 “##” signs (1 works too, we prefer 2)\nCode chunks end with at least 4 “####” signs\nThe first code chunk should already be placed in your script\n## 2 Example script, help, pseudocode  ####\n\n2.2 Help\nOne of the great things about using R is the community and the spirit of helping others. However, there are so many websites, books, blogs and other resources that it can be overwhelming. Best practice is to learn to use the R Help system first, then seek help elsewhere.\nThe basic way to access the built-in help in R, is to use the help() function, with the name of tool you need help using inside the brackets. For example, to calculate the mean of some numbers, we would use the function mean(), and to display the help for the mean() function we would run. Run the following code in your own script:\n# Display help page for the function mean\nhelp(mean)\n\nYou should see:\n\n\n\nMean help page (pun intended)\n\n\n\nDoes this help look mean enough?\nLet’s orient to the information that is here because the help pages are essential to understand and every help page on every subject is organised in exactly the same way (and we will practice a lot using them).\n\n1 Function name {Package name} This field let’s you know what “R package” the function belongs to. We can ignore this for now, but it can be very useful.\n2 Short description This tells you in a few words what the function does.\n3 (longer) description This gives a longer description of what the function does\n4 Usage This usually gives an example of the function in use and lists the “arguments” that you are required to supply to the function for it to work on. Of course, you need to know about the arguments…\n5 Argument definitions This field tells you what the argument are and do!\n\n2.3 Deeper help\nUsing the Usage and Argument fields, we can figure out how to make the function do the work we want.\n# Under Usage:\n# mean(x, ...)\n\n# The \"x\" is an argument that is required\n# The \"...\" means there are other optional arguments\n\n# Under Arguments:\n\n# x \n# An R object... for numeric/logical vectors ...\n\n# try this code in your own script\nmy_length &lt;- c(101, 122, 97) # 3 numerical measures\nmean(x = my_length) \n\n2.4 Pseudocode\nThe idea of pseudocode is to break up a big task into a series of smaller tasks. An example of a task might be ANALYZE YOUR DATA (in shouty capitals because it is a big task). To accomplish this task, we might have to walk through a series of steps, e.g.,\nAnalyze your data:\n\nRead data into R\nTest assumption for statistical testing\nGraph the data\nPerform statistical test\nOrganize outputs to communicate in report\n\n\nIt is often a good idea to break down a task into pseudocode both to organize and document the methods in a logical way, but also to conceptually simplify a problem that is difficult to solve. Practically, the items in a typical table of contents in an R script might be similar to psuedocode. Note that this technique extends very well to any problem, not just R code and programming.\nE.g., what steps would be involved in a problem like: Send a rocket with people in it to Mars such that they survive and return to Earth.",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
-      "02-r-lang.html"
+      "02 R language"
     ]
   },
   {
-    "objectID": "02-r-lang.html#git-vs-github",
-    "href": "02-r-lang.html#git-vs-github",
-    "title": "\nGit and GitHub\n",
-    "section": "\nGit vs GitHub\n",
-    "text": "Git vs GitHub\n\n\n\nGit: distributed version control system tracking file changes\n\n\nGitHub: web-based platform hosting Git repositories\n\n\nGitHub adds collaboration features to Git\n\n\nEssential tools for modern data science",
+    "objectID": "02-r-lang.html#math-operators",
+    "href": "02-r-lang.html#math-operators",
+    "title": "02 R language",
+    "section": "3 Math operators",
+    "text": "3 Math operators\nBasic manipulation of numbers in R is very easy to do and is so intuitive that you may be able to guess what they are and what they do. There are just a few specifics that we will practice. This list is not exhaustive; the goal is to get enough to begin practicing.\n\n3.1 Arithmetic\nTry these in your practice script:\n# There are a few others, but these are the basics\n\n# Add with \"+\"\n2 + 5\n\n# Subtract with \"-\"\n10 - 15\n\n# Multiply with \"*\"\n6 * 4.2\n\n# Divide by \"/\"\n\n10 / 4\n\n# raise to the power of x\n2^3 \n9^(1/2) # same as sqrt()!\n\nYour output should look similar to this:\n\n# There are a few others, but these are the basics\n\n# Add with \"+\"\n2 + 5\n\n[1] 7\n\n# Subtract with \"-\"\n10 - 15\n\n[1] -5\n\n# Multiply with \"*\"\n6 * 4.2\n\n[1] 25.2\n\n# Divide by \"/\"\n\n10 / 4\n\n[1] 2.5\n\n# raise to the power of x\n2^3 \n\n[1] 8\n\n9^(1/2) # same as sqrt()!\n\n[1] 3\n\n\n\nOrder of operation\nThe “order of operation” refers to the order in which mathematical calculations are carried out. A phrase like 2 + 2 is simple, but we need to consider order for more complicated phrases like 2 + 2 * 8 - 6. In general multiplication and division are carried out before addition and subtraction unless specific order is coded.\n# Try this\n\n4 + 2 * 3\n\n# Order control - same\n4 + (2 * 3)\n\n# Order control - different...\n(4 + 2) * 3\n\n3.2 Use of spaces\nIn some cases, the use of spaces does not matter in the R language. Which one of the following ways of writing math operation might be easier to document and read?\n# Try this\n\n6+10                                  # no spaces\n7     -5                              # uneven spaces\n1.6             /                2.3  # large spaces\n16 * 3                                # exactly 1 space\n\n# exactly 1 space is probably easiest to read...\nYour output should look like this:\n\n# Try this\n\n6+10                                  # no spaces\n\n[1] 16\n\n7     -5                              # uneven spaces\n\n[1] 2\n\n1.6             /                2.3  # large spaces\n\n[1] 0.6956522\n\n16 * 3                                # exactly 1 space\n\n[1] 48",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
-      "02-r-lang.html"
+      "02 R language"
     ]
   },
   {
-    "objectID": "02-r-lang.html#installing-and-configuring-git",
-    "href": "02-r-lang.html#installing-and-configuring-git",
-    "title": "\nGit and GitHub\n",
-    "section": "\nInstalling and Configuring Git\n",
-    "text": "Installing and Configuring Git\n\n\n\nWindows: download from git-scm.com\n\n\nMac: install via Homebrew or download from git-scm.com\n\n\nLinux: use package manager (apt-get, yum)\n\n\nConfigure with name and email using git config",
+    "objectID": "02-r-lang.html#logical-boolean-operators",
+    "href": "02-r-lang.html#logical-boolean-operators",
+    "title": "02 R language",
+    "section": "4 Logical “Boolean” operators",
+    "text": "4 Logical “Boolean” operators\nBoolean operators are expressions that resolve TRUE (treated as 1 in most computing systems including R) versus FALSE (0). A typical expression might be something like asking if 5 &gt; 3, which is TRUE. More sophisticated phrases are possible, and sometimes useful.\n4.1 Boolean example\n# Try this\n# simplest example\n3 &gt; 5\n\n# 3 is compared to each element\n3 &lt; c(1, 2, 3, 4, 5, 6) \n\n# Logic and math\n# & (ampersand) means \"and\"\n# | (pipe) means \"or\"\n\n# This asks if both phrases are true (true AND true)\n# notice \"TRUE\" has a special meaning in R\n\nTRUE & TRUE # both phrases are the same and true, TRUE\n\n3 &gt; 1 & 1 &lt; 5 # both phrases are true\n\n# Are these phrases true?\n\nTRUE & FALSE # are both true?\n\nFALSE & FALSE # are both true?\n\nBoolean expressions are often used to select groups of data, for example asking whether values in a column of variables are greater than some threshold.\n4.2 Selecting with Booleans\nWe often use Booleans to select particular parts of our data in a powerful way, as an alternative to creating different versions of a particular dataset.\n# Try this\n\n# Put some data into a variable and then print the variable\n# Note \"&lt;-\" is the ASSIGNMENT syntax in R, which puts the value on the left \"into\" x\n\nx &lt;- c(21, 3, 5, 6, 22)\nx\n\nx &gt; 20\n\n# the square brackets act as the index for the data vector\nx[x &gt; 20]\n\n4.3 The “not” operator, ! (Sorry !Sorry)**\nThe ! operator sets a Boolean value to the opposite. This is sometimes used when an expression can be made simpler by representing it as an opposite. For now we will just demonstrate how it works.\n# Try this\nTRUE # plain true\n\n!FALSE # not false is true!\n\n6 &lt; 5 #definitely false\n\n!(6 &lt; 5) #not false...\n\n!(c(23, 44, 16, 51, 12) &gt; 50)",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
-      "02-r-lang.html"
+      "02 R language"
     ]
   },
   {
-    "objectID": "02-r-lang.html#key-git-concepts",
-    "href": "02-r-lang.html#key-git-concepts",
-    "title": "\nGit and GitHub\n",
-    "section": "\nKey Git Concepts\n",
-    "text": "Key Git Concepts\n\n\n\nRepository (repo): directory where Git tracks changes\n\n\nCommit: snapshot of changes at point in time\n\n\nBranch: parallel version of repository\n\n\nRemote: repository version hosted elsewhere",
+    "objectID": "02-r-lang.html#base-r-versus-the-tidyverse",
+    "href": "02-r-lang.html#base-r-versus-the-tidyverse",
+    "title": "02 R language",
+    "section": "5 “Base R” versus the ‘Tidyverse’",
+    "text": "5 “Base R” versus the ‘Tidyverse’\n5.1 Base R\n\nThe R language as it was invented and continues to be developed is extremely popular, powerful and easy to use, especially for people without formal programming training or experience in different computing languages. In general, we refer to this pure form of R as Base R.\nSince the late 1990s, the R-user community and Base R resources on have exploded on the web and this form of the language continues to be extremely popular for experts and beginners alike. If interested, you can read more here.\n\n5.2 Tidyverse R\n\nRelatively recently, a second version of R has evolved that puts forward different conventions in the R lanuage. The differences are practical, but also philosophical. This form of R use is generally referred to as The Tidyverse. The Tidyverse is extremely powerful and we love it. However, we feel that it is far more efficient to first learn base R for non-programmers, before learning the Tidyverse, and we will exclusively use base R for this bootcamp.\nThere is some disagreement over which “version” of R is better or easier to learn and teach with. You will definitely encounter the Tidyverse at some point and eventually you can choose how much or how little you will use it.\n\nThe Argument for Base R\nThe Argument for the Tidyverse",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
-      "02-r-lang.html"
+      "02 R language"
     ]
   },
   {
-    "objectID": "02-r-lang.html#creating-repositories",
-    "href": "02-r-lang.html#creating-repositories",
-    "title": "\nGit and GitHub\n",
-    "section": "\nCreating Repositories\n",
-    "text": "Creating Repositories\n\n\n\nGitHub: click “+” icon, select “New repository”\n\n\nLocal computer: mkdir project, cd project, git init\n\n\nConnect local to GitHub with git remote add origin\n\n\nInitialize with README and appropriate settings",
+    "objectID": "02-r-lang.html#practice-exercises",
+    "href": "02-r-lang.html#practice-exercises",
+    "title": "02 R language",
+    "section": "6 Practice exercises",
+    "text": "6 Practice exercises\n\n6.1 Script Sections\nName and describe the purpose of the first 2 sections that should be present in every R script\n\n\n\n\n\n\n\nScript Structure\n\n\n\n\n\n\n# The first two sections that should be present in every R script are:\n\n# 1. HEADER - Contains your name, the date of the most recent edit, and a short description \n#    of the PURPOSE of the script. This helps document who created the script and when.\n\n# 2. CONTENTS - Provides a road map for the analysis, listing all the major sections \n#    of the script. This helps organize the script and makes navigation easier.\n\nThese sections help make your scripts more organized, reproducible, and easier for others (or your future self) to understand.\n\n\n\n\n6.2 Boxplot Subset\nWhat is the purpose of “subset” argument in the boxplot() function (hint: use help())\n\n\n\n\n\n\n\nBoxplot Subset Parameter\n\n\n\n\n\n\n# Using help(boxplot) reveals that the \"subset\" argument allows you to:\n# Select a subset of observations to plot. It specifies which observations \n# are used to produce the boxplot.\n\n# For example:\ndata(mtcars)\n# This would create a boxplot using only the rows where cyl equals 6:\nboxplot(mpg ~ cyl, data = mtcars, subset = cyl == 6)\n\nThe subset parameter lets you create boxplots using only specific observations that meet certain criteria, without having to create a separate dataset.\n\n\n\n\n6.3 R Expression\nWrite an expression using good R spacing syntax that takes the sum of 3, 6, and 12 and divides it by 25\n\n\n\n\n\n\n\nSum and Division Expression\n\n\n\n\n\n\n# Using good spacing syntax:\n(3 + 6 + 12) / 25\n\n[1] 0.84\n\n\nThe expression adds 3, 6, and 12 (total 21) and then divides by 25, resulting in 0.84.\n\n\n\n\n6.4 Cylinder Volume\nWrite pseudocode steps for calculating the volume of a cylinder (hint, if you do not know it by heart, you may need to research the equation for the volume of a cylinder!). For a cylinder of height = 3.2 cm and end radius of 5.5 cm, report the volume in cm to 2 decimal points of accuracy. Use at least 3 decimal points of accuracy for pi (hint, the quantity named pi is a standard variable in R!).\n\n\n\n\n\n\n\nCylinder Volume Calculation\n\n\n\n\n\n\n# Pseudocode steps:\n# 1. Calculate the area of the circular end: pi * radius^2\n# 2. Multiply the area by the height to get volume\n\n# Implementation:\nradius &lt;- 5.5\nheight &lt;- 3.2\n\n# Calculate the area of the circle\ncircle_area &lt;- pi * radius^2\n\n# Calculate the volume of the cylinder\nvolume &lt;- circle_area * height\n\n# Display the result with 2 decimal points\nround(volume, 2)\n\n[1] 304.11\n\n\nThe volume of a cylinder with radius 5.5 cm and height 3.2 cm is 304.34 cm³ (rounded to 2 decimal places).\n\n\n\n\n6.5 Boolean Evaluation\nExecute the code and explain the outcome in comments.\nTRUE & 3 &lt; 5 & 6 &gt; 2 & !FALSE\n\n\n\n\n\n\n\nBoolean Expression Evaluation\n\n\n\n\n\n\n# Let's break down the expression:\nTRUE & 3 &lt; 5 & 6 &gt; 2 & !FALSE\n\n[1] TRUE\n\n# Each part evaluates to:\n# TRUE - is TRUE\n# 3 &lt; 5 - is TRUE (3 is less than 5)\n# 6 &gt; 2 - is TRUE (6 is greater than 2)\n# !FALSE - is TRUE (not FALSE is TRUE)\n\n# Since all components are TRUE, and they're connected with & (AND) operators,\n# the entire expression evaluates to TRUE\n\nThe expression evaluates to TRUE because all individual conditions are TRUE, and they’re connected with AND operators.\n\n\n\n\n6.6 Not Operator\nWrite a plausible practice question involving the use of the not Boolean operator, !.\n\n\n\n\n\n\n\nNot Operator Question\n\n\n\n\n\n\n# A plausible practice question could be:\n\n# \"Create a logical vector that identifies all elements in the vector c(15, 8, 22, 7, 19) \n# that are NOT greater than 10.\"\n\n# Solution:\nnumbers &lt;- c(15, 8, 22, 7, 19)\n!(numbers &gt; 10)\n\n[1] FALSE  TRUE FALSE  TRUE FALSE\n\n# This returns: FALSE TRUE FALSE TRUE FALSE\n# Indicating which elements are NOT greater than 10 (the 8 and 7)\n\nThis question tests understanding of the NOT operator by asking to identify elements that do NOT meet a certain condition.\n\n\n\nSCRIPT 2 Example SOLUTIONS",
     "crumbs": [
       "Home",
       "Module 1: R Foundations",
-      "02-r-lang.html"
-    ]
-  },
-  {
-    "objectID": "02-r-lang.html#basic-git-workflow",
-    "href": "02-r-lang.html#basic-git-workflow",
-    "title": "\nGit and GitHub\n",
-    "section": "\nBasic Git Workflow\n",
-    "text": "Basic Git Workflow\n\n\n\nMake changes to files in repository\n\n\nStage changes for commit with git add\n\n\nCommit changes with descriptive message\n\n\nPush changes to GitHub with git push",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "02-r-lang.html"
-    ]
-  },
-  {
-    "objectID": "02-r-lang.html#essential-git-commands",
-    "href": "02-r-lang.html#essential-git-commands",
-    "title": "\nGit and GitHub\n",
-    "section": "\nEssential Git Commands\n",
-    "text": "Essential Git Commands\n\n\n\ngit status: check repository status\n\n\ngit add: stage files for commit\n\n\ngit commit -m: commit with message\n\n\ngit push: send commits to remote repository",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "02-r-lang.html"
-    ]
-  },
-  {
-    "objectID": "02-r-lang.html#cloning-and-pulling",
-    "href": "02-r-lang.html#cloning-and-pulling",
-    "title": "\nGit and GitHub\n",
-    "section": "\nCloning and Pulling\n",
-    "text": "Cloning and Pulling\n\n\n\ngit clone: create local copy of remote repository\n\n\nNavigate into repository after cloning\n\n\ngit pull: get latest changes from remote\n\n\nEssential for collaboration and staying updated",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "02-r-lang.html"
-    ]
-  },
-  {
-    "objectID": "02-r-lang.html#branching-and-merging",
-    "href": "02-r-lang.html#branching-and-merging",
-    "title": "\nGit and GitHub\n",
-    "section": "\nBranching and Merging\n",
-    "text": "Branching and Merging\n\n\n\nBranches allow work on different features safely\n\n\ngit branch: create new branch\n\n\ngit checkout: switch between branches\n\n\ngit merge: combine branch changes",
-    "crumbs": [
-      "Home",
-      "Module 1: R Foundations",
-      "02-r-lang.html"
+      "02 R language"
     ]
   },
   {
