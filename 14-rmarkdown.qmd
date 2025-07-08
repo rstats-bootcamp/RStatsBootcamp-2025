@@ -153,7 +153,7 @@ You can control how code chunks behave using options:
 
 Example:
 
-```` markdown
+```` text
 ```{r plot, fig.width=8, fig.height=4, echo=FALSE}
 # Create a plot without showing the code
 plot(mtcars$wt, mtcars$mpg, 
@@ -188,7 +188,7 @@ R Markdown will: - Run all the code chunks - Generate all outputs (tables, plots
 
 Here's a simple example of an R Markdown document for data analysis:
 
-```` markdown
+```` text
 ---
 title: "Car Performance Analysis"
 author: "Data Scientist"
