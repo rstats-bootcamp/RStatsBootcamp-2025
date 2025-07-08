@@ -3408,5 +3408,77 @@
     "title": "Git and GitHub",
     "section": "",
     "text": "Branches allow work on different features safely\ngit branch: create new branch\ngit checkout: switch between branches\ngit merge: combine branch changes"
+  },
+  {
+    "objectID": "14-rmarkdown.html#data-visualization",
+    "href": "14-rmarkdown.html#data-visualization",
+    "title": "14 R Markdown",
+    "section": "Data Visualization",
+    "text": "Data Visualization\n\n# Create a scatterplot of sepal dimensions by species\nplot(iris$Sepal.Length, iris$Sepal.Width,\n     main = \"Sepal Dimensions by Iris Species\",\n     xlab = \"Sepal Length (cm)\",\n     ylab = \"Sepal Width (cm)\",\n     pch = 19,\n     col = as.numeric(iris$Species))\n\n# Add a legend\nlegend(\"topright\",\n       legend = levels(iris$Species),\n       col = 1:3,\n       pch = 19,\n       title = \"Species\")",
+    "crumbs": [
+      "Home",
+      "Module 3: Reproducible Research",
+      "14 R Markdown"
+    ]
+  },
+  {
+    "objectID": "14-rmarkdown.html#conclusion-1",
+    "href": "14-rmarkdown.html#conclusion-1",
+    "title": "14 R Markdown",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe visualization reveals clear clustering of iris species based on sepal dimensions. Setosa irises (shown in black) have shorter sepals that are wider, while versicolor (red) and virginica (green) have longer, narrower sepals. This simple analysis demonstrates how morphological measurements can be used to distinguish between iris species.\n\nThis R Markdown document includes: 1. A YAML header with title, author, and date 2. A brief introduction to the dataset 3. A code chunk that loads and summarizes the iris dataset 4. A visualization showing the relationship between sepal dimensions by species 5. A brief conclusion interpreting the visualization\n:::\n\n9.2 Output Formats\nExperiment with different output formats (HTML, PDF, Word) and observe the differences.\n\n\n\n\n\n\n\nSolution: Output Format Comparison\n\n\n\n\n\nTo experiment with different output formats, you would modify the YAML header of your R Markdown document as follows:\nFor HTML output:\n```{verbatim}\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\ndate: \"2025-07-08\"\noutput: html_document\n---\n```\nFor PDF output:\n```{verbatim}\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\ndate: \"2025-07-08\"\noutput: pdf_document\n---\n```\nFor Word output:\n```{verbatim}\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\ndate: \"2025-07-08\"\noutput: word_document\n---\n```\nFor multiple output formats:\n```{verbatim}\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\ndate: \"2025-07-08\"\noutput:\n  html_document:\n    toc: true\n    toc_float: true\n  pdf_document:\n    toc: true\n  word_document:\n    toc: true\n---\n```\nKey differences between formats:\n\n\nHTML:\n\nMost interactive and customizable\nSupports interactive elements (e.g., plotly plots, shiny apps)\nEasy to share online\nSupports custom CSS styling\nIncludes features like floating table of contents and code folding\n\n\n\nPDF:\n\nMore formal appearance, suitable for printing\nRequires LaTeX installation (TinyTeX recommended)\nBetter for precise layout control\nGood for academic papers and reports\nMay have issues with very large tables or complex plots\n\n\n\nWord:\n\nFamiliar format for non-technical collaborators\nEasy for others to edit and add comments\nGood for documents that need further editing\nLimited in terms of formatting control compared to HTML/PDF\nMay have inconsistent rendering of complex elements\n\n\n\nTo fully experience these differences, you would need to knit the same document to each format and compare the results.\n\n\n\n\n9.3 Advanced Features\nCreate an R Markdown document with a table of contents, code folding, and a custom theme.\n\n\n\n\n\n\n\nSolution: Advanced R Markdown Features\n\n\n\n\n\nHere’s an example of an R Markdown document with a table of contents, code folding, and a custom theme:\n```{verbatim}\n---\ntitle: \"Advanced R Markdown Features\"\nauthor: \"Your Name\"\ndate: \"2025-07-08\"\noutput:\n  html_document:\n    toc: true\n    toc_float: \n      collapsed: false\n      smooth_scroll: true\n    toc_depth: 3\n    number_sections: true\n    theme: flatly\n    highlight: tango\n    code_folding: show\n    df_print: paged\n---\n\n\n\n# Introduction\n\nThis document demonstrates advanced R Markdown features including a floating table of contents, code folding, and a custom theme.\n\n# Data Analysis\n\n## Loading Libraries\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(datasets)\n```",
+    "crumbs": [
+      "Home",
+      "Module 3: Reproducible Research",
+      "14 R Markdown"
+    ]
+  },
+  {
+    "objectID": "14-rmarkdown.html#data-exploration",
+    "href": "14-rmarkdown.html#data-exploration",
+    "title": "14 R Markdown",
+    "section": "Data Exploration",
+    "text": "Data Exploration\nLet’s explore the built-in mtcars dataset:\n\ndata(mtcars)\nstr(mtcars)\n\n#&gt; 'data.frame':    32 obs. of  11 variables:\n#&gt;  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n#&gt;  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...\n#&gt;  $ disp: num  160 160 108 258 360 ...\n#&gt;  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...\n#&gt;  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...\n#&gt;  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...\n#&gt;  $ qsec: num  16.5 17 18.6 19.4 17 ...\n#&gt;  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...\n#&gt;  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...\n#&gt;  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...\n#&gt;  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...\n\nsummary(mtcars)\n\n#&gt;       mpg             cyl             disp             hp       \n#&gt;  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n#&gt;  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n#&gt;  Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n#&gt;  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n#&gt;  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n#&gt;  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n#&gt;       drat             wt             qsec             vs        \n#&gt;  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n#&gt;  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n#&gt;  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n#&gt;  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n#&gt;  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n#&gt;  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n#&gt;        am              gear            carb      \n#&gt;  Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n#&gt;  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n#&gt;  Median :0.0000   Median :4.000   Median :2.000  \n#&gt;  Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n#&gt;  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n#&gt;  Max.   :1.0000   Max.   :5.000   Max.   :8.000",
+    "crumbs": [
+      "Home",
+      "Module 3: Reproducible Research",
+      "14 R Markdown"
+    ]
+  },
+  {
+    "objectID": "14-rmarkdown.html#data-visualization-1",
+    "href": "14-rmarkdown.html#data-visualization-1",
+    "title": "14 R Markdown",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nBasic Plot\n\nplot(mtcars$wt, mtcars$mpg,\n     main = \"Car Weight vs. Mileage\",\n     xlab = \"Weight (1000 lbs)\",\n     ylab = \"Miles Per Gallon\",\n     pch = 19, col = \"blue\")\n\n\n\n\n\n\n\nGrouped Analysis\n\n# Add a categorical variable\nmtcars$cyl_factor &lt;- as.factor(mtcars$cyl)\n\n# Boxplot by cylinder groups\nboxplot(mpg ~ cyl_factor, data = mtcars,\n        main = \"MPG by Number of Cylinders\",\n        xlab = \"Cylinders\",\n        ylab = \"Miles Per Gallon\",\n        col = c(\"lightblue\", \"lightgreen\", \"lightpink\"))",
+    "crumbs": [
+      "Home",
+      "Module 3: Reproducible Research",
+      "14 R Markdown"
+    ]
+  },
+  {
+    "objectID": "14-rmarkdown.html#linear-regression",
+    "href": "14-rmarkdown.html#linear-regression",
+    "title": "14 R Markdown",
+    "section": "Linear Regression",
+    "text": "Linear Regression\n\n# Fit a linear model\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\n\n# Display model summary\nsummary(model)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = mpg ~ wt + hp, data = mtcars)\n#&gt; \n#&gt; Residuals:\n#&gt;    Min     1Q Median     3Q    Max \n#&gt; -3.941 -1.600 -0.182  1.050  5.854 \n#&gt; \n#&gt; Coefficients:\n#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    \n#&gt; (Intercept) 37.22727    1.59879  23.285  &lt; 2e-16 ***\n#&gt; wt          -3.87783    0.63273  -6.129 1.12e-06 ***\n#&gt; hp          -0.03177    0.00903  -3.519  0.00145 ** \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; Residual standard error: 2.593 on 29 degrees of freedom\n#&gt; Multiple R-squared:  0.8268, Adjusted R-squared:  0.8148 \n#&gt; F-statistic: 69.21 on 2 and 29 DF,  p-value: 9.109e-12",
+    "crumbs": [
+      "Home",
+      "Module 3: Reproducible Research",
+      "14 R Markdown"
+    ]
+  },
+  {
+    "objectID": "14-rmarkdown.html#diagnostic-plots",
+    "href": "14-rmarkdown.html#diagnostic-plots",
+    "title": "14 R Markdown",
+    "section": "Diagnostic Plots",
+    "text": "Diagnostic Plots\n\npar(mfrow = c(2, 2))\nplot(model)",
+    "crumbs": [
+      "Home",
+      "Module 3: Reproducible Research",
+      "14 R Markdown"
+    ]
   }
 ]
