@@ -18,6 +18,7 @@ This self-paced bootcamp will take most people about 40-60 hours to complete. Th
 
 | Module | Lesson | Resources |
 |---|---|---|
+| | 0. [About the Bootcamp](about.qmd) | [Slides](assets/slides/00_about_bootcamp.pptx) |
 | **1: R Foundations** | | |
 | | 1. [01 Setup & intro](01-setup.qmd) | [Slides](assets/slides/01_setup_intro.pptx) |
 | | 2. [02 R language](02-r-lang.qmd) | [Slides](assets/slides/02_r_language.pptx) |
