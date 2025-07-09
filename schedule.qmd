@@ -16,199 +16,27 @@ This self-paced bootcamp will take most people about 40-60 hours to complete. Th
 - Discord coming soon
 :::
 
-## Module 1: R Foundations {.module-header}
-
-Learn the fundamentals of R programming and the RStudio environment.
-
-::: module-content
-### 1. R and RStudio Setup
-
-**Getting started with the R programming environment**
-
--   Installing R and RStudio
--   Navigating the RStudio interface
--   Creating your first R script
--   Understanding R packages
-
-[Begin Lesson →](01-setup.qmd) \| [Slides](docs/ppt/RSB01.pptx)
-
-### 2. R Language Basics
-
-**Core concepts of the R programming language**
-
--   R syntax and data types
--   Variables and assignment
--   Basic operations and calculations
--   Control structures (if/else, loops)
-
-[Begin Lesson →](02-r-lang.qmd) \| [Slides](docs/ppt/RSB02.pptx)
-
-### 3. Functions and Packages
-
-**Working with functions and extending R's capabilities**
-
--   Using built-in functions
--   Creating your own functions
--   Installing and loading packages
--   Function documentation and help
-
-[Begin Lesson →](03-functions.qmd)
-
-### 4. Data Objects
-
-**Understanding R's data structures**
-
--   Vectors, matrices, and arrays
--   Lists and factors
--   Working with dates and times
--   Type conversion and coercion
-
-[Begin Lesson →](04-data.qmd)
-
-### 5. Data Frames
-
-**Working with tabular data in R**
-
--   Creating and manipulating data frames
--   Accessing data frame elements
--   Adding and modifying columns
--   Merging data frames
-
-[Begin Lesson →](05-data-frames.qmd)
-
-### 6. Data Manipulation
-
-**Techniques for cleaning and transforming data**
-
--   Filtering and subsetting data
--   Sorting and arranging data
--   Summarizing data
--   Reshaping data (wide vs. long format)
-
-[Begin Lesson →](06-data-manipulation.qmd)
-:::
-
-## Module 2: Statistical Analysis {.module-header}
-
-Apply R programming to statistical analysis and data visualization.
-
-::: module-content
-### 7. Question, Explore, Analyze
-
-**The data analysis workflow**
-
--   Formulating research questions
--   Exploratory data analysis
--   Data visualization principles
--   Communicating findings
-
-[Begin Lesson →](07-question-explore.qmd)
-
-### 8. Sampling Distributions
-
-**Understanding probability and sampling**
-
--   Random sampling
--   Probability distributions
--   The Central Limit Theorem
--   Confidence intervals
-
-[Begin Lesson →](08-sampling-dist.qmd)
-
-### 9. Correlation
-
-**Measuring relationships between variables**
-
--   Correlation coefficients
--   Visualizing correlations
--   Testing correlation significance
--   Correlation vs. causation
-
-[Begin Lesson →](09-correlation.qmd)
-
-### 10. Simple Linear Regression
-
-**Modeling relationships between variables**
-
--   Linear regression concepts
--   Fitting regression models in R
--   Interpreting regression output
--   Assessing model fit
-
-[Begin Lesson →](10-regression.qmd)
-
-### 11. T-tests
-
-**Comparing group means**
-
--   One-sample t-tests
--   Independent samples t-tests
--   Paired samples t-tests
--   Effect sizes and power
-
-[Begin Lesson →](11-t-test.qmd)
-
-### 12. One-way ANOVA
-
-**Analyzing variance between groups**
-
--   ANOVA concepts and assumptions
--   Conducting ANOVA in R
--   Post-hoc tests
--   Reporting ANOVA results
-
-[Begin Lesson →](12-1-way-anova.qmd)
-:::
-
-## Module 3: Reproducible Research {.module-header}
-
-Learn essential tools and practices for reproducible data science.
-
-::: module-content
-### 13. Reproducibility Principles
-
-**Introduction to reproducible research**
-
--   Why reproducibility matters
--   Components of reproducible workflows
--   Documentation best practices
--   File organization strategies
-
-[Begin Lesson →](13-reproducibility.qmd)
-
-### 14. R Markdown
-
-**Creating dynamic documents**  
-
--   R Markdown basics
--   Combining code, results, and narrative
--   Document formatting options
--   Generating reports in multiple formats
-
-[Begin Lesson →](14-rmarkdown.qmd)
-
-### 15. Git and GitHub Basics
-
-**Version control for data science**
-
--   Understanding version control
--   Setting up Git and GitHub
--   Basic Git workflow
--   Tracking changes to your code
-
-[Begin Lesson →](15-github-basics.qmd)
-
-### 16. Collaborative Workflows
-
-**Working effectively with others**
-
--   Project organization
--   Sharing code and data
--   Collaboration best practices
--   Maintaining reproducibility in teams
-
-[Begin Lesson →](16-collaborative-workflows.qmd)
-:::
+| Module | Lesson | Resources |
+|---|---|---|
+| **1: R Foundations** | | |
+| | 1. [01 Setup & intro](01-setup.qmd) | [Slides](assets/slides/01_setup_intro.pptx) |
+| | 2. [02 R language](02-r-lang.qmd) | [Slides](assets/slides/02_r_language.pptx) |
+| | 3. [03 R Functions](03-functions.qmd) | [Slides](assets/slides/03_functions.pptx) |
+| | 4. [04 Data objects](04-data.qmd) | [Slides](assets/slides/04_data_objects.pptx) |
+| | 5. [05 Data frames](05-data-frames.qmd) | [Slides](assets/slides/05_data_frames.pptx) |
+| | 6. [06 Data subsetting](06-data-manipulation.qmd) | [Slides](assets/slides/06_data_subsetting.pptx) |
+| **2: Statistical Analysis** | | |
+| | 7. [07 Explore data](07-question-explore.qmd) | [Slides](assets/slides/07_explore_data.pptx) |
+| | 8. [08 Distributions](08-sampling-dist.qmd) | [Slides](assets/slides/08_distributions.pptx) |
+| | 9. [09 Correlation](09-correlation.qmd) | [Slides](assets/slides/09_correlation.pptx) |
+| | 10. [10 Regression](10-regression.qmd) | [Slides](assets/slides/10_regression.pptx) |
+| | 11. [11 T-test](11-t-test.qmd) | [Slides](assets/slides/11_t_test.pptx) |
+| | 12. [12 ANOVA](12-1-way-anova.qmd) | [Slides](assets/slides/12_anova.pptx) |
+| **3: Reproducible Research** | | |
+| | 13. [13 Reproducibility](13-reproducibility.qmd) | [Slides](assets/slides/13_reproducibility.pptx) |
+| | 14. [14 R Markdown](14-rmarkdown.qmd) | [Slides](assets/slides/14_rmarkdown.pptx) |
+| | 15. [15 Git and GitHub](15-github-basics.qmd) | [Slides](assets/slides/15_github_basics.pptx) |
+| | 16. [16 Collaboration](16-collaborative-workflows.qmd) | [Slides](assets/slides/16_collaboration.pptx) |
 
 ::: footer-section
 
